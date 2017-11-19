@@ -1,0 +1,54 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 25
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "conse.nrc.org.co.conse"
+        minSdkVersion 17
+        targetSdkVersion 25
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    signingConfigs{
+        key{
+            keyAlias 'app_postobon_soho'
+            keyPassword '1053795119'
+            storeFile file('/Applications/Android Studio.app/Contents/bin/android_development')
+            storePassword 'Dan50620'
+        }
+    }
+
+    buildTypes {
+        debug {
+            //signingConfig signingConfigs.key
+            buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
+            buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'
+            applicationIdSuffix ".debug"
+        }
+        release {
+            minifyEnabled false
+            buildConfigField "String", "SERVER_URL", '"dd"'
+            buildConfigField "String", "API_KEY", '"53634TEF"'
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.key
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    compile 'com.android.support:appcompat-v7:25.0.1'
+    compile 'com.android.support:support-v4:25.0.1'
+    testCompile 'junit:junit:4.12'
+    compile files('libs/YouTubeAndroidPlayerApi.jar')
+    compile 'com.mcxiaoke.volley:library:1.0.18'
+    compile 'com.loopj.android:android-async-http:1.4.9'
+    compile 'org.apache.httpcomponents:httpcore:4.3.2'
+    compile 'com.google.code.gson:gson:2.8.0'
+}

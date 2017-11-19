@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">Conse</string>
+
+    <string name="title_activity_welcome">Welcome</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="start_video">Ver video</string>
+    <string name="register_tittle">Completa tu perfil:</string>
+    <string name="name_et_hint">Tus nombres</string>
+    <string name="name_et_last_name">Tus apellidos</string>
+    <string name="name_et_birth_date_hint">AÑO-MES-DÍA</string>
+    <string name="birth_date_tittle_h2">Fecha de nacimiento</string>
+    <string name="document_tittle_h2">Documento de identidad</string>
+    <string name="document_number_et_last_name">Número de documento</string>
+    <string name="gender_tittle_h2">Género</string>
+    <string name="is_nrc_beneficiary_checkbox">Soy beneficiario de los programas NRC</string>
+    <string name="account_tittle_h2">Usuario Conse</string>
+    <string name="pasword_et_last_name">Contraseña</string>
+    <string name="email_et_hint">Correo electrónico</string>
+    <string name="ethnic_group_tittle_h2">Grupo étnico</string>
+    <string name="geographic_location_tittle_h2">Localizacion geográfica</string>
+    <string name="condition_tittle_h2">Condición</string>
+    <string name="origin_town_tittle_h2">Municipio de origen</string>
+    <string name="user_profile_tittle_h2">Perfil del usuario</string>
+    <string name="accept_terms_conditions_checkbox">Acepto los términos, condiciones, políticas de privacidad y de tratamiento de datos</string>
+    <string name="getting_app_conf">Obteniendo configuración de aplicación</string>
+    <string name="select_hint">Seleccione</string>
+    <string name="must_fill_field">Debe diligenciar este campo</string>
+    <string name="must_select_option">Debe seleccionar una opción</string>
+    <string name="you_must_accept_t_c">Debes aceptar términos y condiciones</string>
+    <string name="must_complete_information">Debe completar información</string>
+    <string name="registering_user">Registrando usuario...</string>
+</resources>

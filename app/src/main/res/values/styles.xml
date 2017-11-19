@@ -1,0 +1,121 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/Theme.AppCompat.NoActionBar</item>
+        <item name="android:windowActionBarOverlay">false</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="ConseExitText" parent="android:Widget.EditText">
+        <item name="android:background">@drawable/lineacampos</item>
+        <item name="android:textColorHint">@color/grey_dark</item>
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">bottom|left</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+
+    </style>
+
+
+    <style name="ConseTittleTextH1" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">22sp</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">0dp</item>
+    </style>
+
+    <style name="ConseTittleTextH2" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:gravity">left</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="ConseSpinnerSelected" parent="android:Widget.TextView">
+        <item name="android:background">@drawable/lineacampos</item>
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">bottom|left</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+
+    </style>
+
+    <style name="ConseSpinnerOption" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:gravity">left|bottom</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+    </style>
+
+    <style name="ConseSpinner" parent="Base.Widget.AppCompat.Spinner">
+        <item name="android:background">@drawable/lineacampos</item>
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">bottom|left</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+    <style name="ConseCheckbox" parent="Base.Widget.AppCompat.CompoundButton.CheckBox">
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:drawableLeft">@drawable/conse_checkbox</item>
+        <item name="android:drawablePadding">10dip</item>
+        <item name="android:button">@android:color/transparent</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textAlignment">gravity</item>
+        <item name="android:gravity">bottom|left</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:paddingBottom">4dp</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_marginRight">15dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginBottom">5dp</item>
+    </style>
+
+
+
+
+</resources>
