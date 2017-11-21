@@ -6,4 +6,7 @@
     <dimen name="iv_bottom_margin">12dp</dimen>
     <dimen name="iv_top_margin">5dp</dimen>
 
+    <dimen name="padding_page_indicator">15dp</dimen>
+    <dimen name="padding_page_indicator_padding">20dp</dimen>
+
 </resources>

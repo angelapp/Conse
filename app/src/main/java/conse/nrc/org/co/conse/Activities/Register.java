@@ -2,6 +2,7 @@ package conse.nrc.org.co.conse.Activities;
 
 import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -420,11 +421,18 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
             case LocalConstants.REGISTER_USER_TASK_ID:
                 Models.RegisterUserResponse res = (Models.RegisterUserResponse) response;
                 UtilsFunctions.saveSharedString(this, LocalConstants.USER_TOKEN, res.token);
+                goToSelectContacts();
                 break;
             default:
                 break;
         }
 
+    }
+
+    private void goToSelectContacts() {
+        Intent next = new Intent(this, SelectContact.class);
+        startActivity(next);
+        this.finish();
     }
 
     @Override

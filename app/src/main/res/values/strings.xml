@@ -30,4 +30,15 @@
     <string name="you_must_accept_t_c">Debes aceptar términos y condiciones</string>
     <string name="must_complete_information">Debe completar información</string>
     <string name="registering_user">Registrando usuario...</string>
+    <string name="add_contacts_tittle">Configura el botón de alerta</string>
+    <string name="add_contact_message">Selecciona dos contactos de confianza a quienes les llegarán las alertas en caso que te encuentres en una situación de riesgo.</string>
+    <string name="contact_no_has_number">El contacto no tiene número telefónico</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="send_alert_tittle">Haz una prueba de funcionamiento</string>
+    <string name="send_alert_indications">MANTÉN PULSADO EL BOTÓN PARA ENVIAR</string>
+    <string name="send_alert_touch_message_example">\"Estoy probando el envío de un mensaje de alerta\"</string>
+    <string name="send_alert_touch_tittle">¿Estás seguro de enviar esta alerta?</string>
+    <string name="send_alert_success">Tu alerta ha sido enviada con éxito</string>
 </resources>

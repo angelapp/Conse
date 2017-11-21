@@ -46,7 +46,7 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
     }
 
     private void goToVideo() {
-        Intent tutorial = new Intent(this, VideoTutorial.class);
+        Intent tutorial = new Intent(this, SelectContact.class);
         startActivity(tutorial);
         this.finish();
     }
