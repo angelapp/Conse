@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_marginLeft="5dp"
+    android:layout_marginRight="5dp"
+    android:layout_width="70dp"
+    android:layout_height="70dp">
+
+    <RadioButton
+        android:id="@+id/rb_avatar_piece"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:button="@drawable/conse_avatar_radiobutton"
+        android:checked="true"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:gravity="center_vertical|center_horizontal"
+        />
+
+    <ImageView
+        app:srcCompat="@drawable/conse"
+        android:id="@+id/iv_piece"
+        android:layout_gravity="center_vertical|center_horizontal"
+        android:layout_width="80dp"
+        android:layout_height="80dp" />
+</FrameLayout>

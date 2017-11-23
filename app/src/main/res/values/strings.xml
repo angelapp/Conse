@@ -41,4 +41,15 @@
     <string name="send_alert_touch_message_example">\"Estoy probando el envío de un mensaje de alerta\"</string>
     <string name="send_alert_touch_tittle">¿Estás seguro de enviar esta alerta?</string>
     <string name="send_alert_success">Tu alerta ha sido enviada con éxito</string>
+    <string name="select_avatar_message">Inicia por escoger el género, después, podrás definir las características físicas que más te gusten para tu Consejero o Consejera ¡Será quien te acompañe mientras usas la aplicación!</string>
+    <string name="select_avatar_tittle">Arma tu Conse</string>
+    <string name="let_start_message">Hola soy tu Conse y voy a estar acompañándote en este recorrido. Traigo mucha información y herramientas que me gustaría compartir contigo</string>
+    <string name="let_start_tittle">¡Iniciemos!</string>
+    <string name="title_activity_main">MainActivity</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+    <string name="home_tittle">Selecciona un curso para comenzar</string>
 </resources>

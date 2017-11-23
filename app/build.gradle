@@ -24,8 +24,11 @@ android {
     buildTypes {
         debug {
             //signingConfig signingConfigs.key
-            buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
-            buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'
+            //buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
+            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+            //buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
+            buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"' //live
+
             applicationIdSuffix ".debug"
         }
         release {
@@ -50,5 +53,7 @@ dependencies {
     compile 'com.loopj.android:android-async-http:1.4.9'
     compile 'org.apache.httpcomponents:httpcore:4.3.2'
     compile 'com.google.code.gson:gson:2.8.0'
+    compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
+    compile 'com.android.support:design:25.0.1'
     testCompile 'junit:junit:4.12'
 }
