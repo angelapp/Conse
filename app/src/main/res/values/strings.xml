@@ -8,7 +8,7 @@
     <string name="register_tittle">Completa tu perfil:</string>
     <string name="name_et_hint">Tus nombres</string>
     <string name="name_et_last_name">Tus apellidos</string>
-    <string name="name_et_birth_date_hint">AÑO-MES-DÍA</string>
+    <string name="name_et_birth_date_hint">DÍA/MES/AÑO</string>
     <string name="birth_date_tittle_h2">Fecha de nacimiento</string>
     <string name="document_tittle_h2">Documento de identidad</string>
     <string name="document_number_et_last_name">Número de documento</string>
@@ -52,4 +52,9 @@
 
     <string name="action_settings">Settings</string>
     <string name="home_tittle">Selecciona un curso para comenzar</string>
+    <string name="missing_avatar_selection">Falta seleccionar una parte del ávatar</string>
+    <string name="confirm_password_et">Confirmar contraseña</string>
+    <string name="password_not_matches">Las contraseñas no coinciden</string>
+    <string name="vbg_course_start_message">Recibe la bienvenida al contenido de Atención y Prevención de Violencias Basadas en Género, prepárate para conocer la respuesta a preguntas como: ¿Qué es violencia de género?, ¿Todas las violencias son iguales?, ¿Cómo puedo protegerme?, ¿Dónde puedo encontrar ayuda? Resuelve tus dudas y recibe mucha más información  sobre cómo prevenir y actuar en casos de violencia basada en género.</string>
+    <string name="vbg_course_start_tittle">Atención y Prevención de Violencias Basadas en Género</string>
 </resources>

@@ -28,6 +28,9 @@ public class LocalConstants {
     public static final String CONTACT_NAME_ = "CONTACT_NAME_";
     public static final String CONTACT_ID_ = "CONTACT_ID_";
 
+    public static final String AVATAR_SELECTED_PART_ = "AVATAR_SELECTED_PART_";
+
+
     //Endpoints
     public static final String SERVER_DOMAIN = BuildConfig.SERVER_URL;
     public static final String API_DIRECTORY = "api/";

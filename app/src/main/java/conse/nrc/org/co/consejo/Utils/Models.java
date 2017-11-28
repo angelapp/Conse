@@ -67,6 +67,15 @@ public class Models {
             }
             return list;
         }
+
+        public AvatarPiece getAvatarPieceById(int id){
+            for (AvatarPiece piece : avatar_pieces_list){
+                if (piece.id == id){
+                    return piece;
+                }
+            }
+            return null;
+        }
     }
 
     public static class DocumentType{

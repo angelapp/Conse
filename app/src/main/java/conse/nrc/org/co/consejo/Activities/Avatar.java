@@ -18,7 +18,7 @@ public class Avatar extends AppCompatActivity implements AvatarInterfaces {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_avatar);
-        getSupportFragmentManager().beginTransaction().replace(R.id.ly_content, new SelectAvatarGenderFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_content, new SelectAvatarGenderFragment()).addToBackStack(null).commit();
     }
 
     @Override
@@ -26,7 +26,7 @@ public class Avatar extends AppCompatActivity implements AvatarInterfaces {
 
         SelectAvatarPiecesFragment piecesFragment = new SelectAvatarPiecesFragment();
         piecesFragment.mGender  = gender;
-        getSupportFragmentManager().beginTransaction().replace(R.id.ly_content, new SelectAvatarPiecesFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_content, new SelectAvatarPiecesFragment()).addToBackStack(null).commit();
     }
 
     @Override

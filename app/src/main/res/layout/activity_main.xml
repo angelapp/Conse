@@ -8,18 +8,191 @@
     android:fitsSystemWindows="true"
     tools:openDrawer="start">
 
-    <include
-        layout="@layout/app_bar_main"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/grey_light">
+
+            <android.support.design.widget.AppBarLayout
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:theme="@style/AppTheme.AppBarOverlay"
+                android:background="@null">
+
+                <android.support.v7.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="0dp"
+                    android:background="@null"
+                    android:layout_height="0dp"
+                    android:minHeight="0dp" />
+
+            </android.support.design.widget.AppBarLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/ly_home_content"
+                android:layout_marginTop="55dp"
+                android:background="@color/grey_light">
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dp"
+                android:layout_marginTop="10dp"
+                android:translationZ="12dp"
+                android:background="@color/grey_light"
+                android:gravity="center_vertical"
+                android:foregroundGravity="center_vertical">
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp">
+
+                    <Button
+                        android:id="@+id/bt_ham"
+                        android:background="@drawable/menuhamburguesa"
+                        android:layout_height="30dp"
+                        android:layout_width="30dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="right"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginTop="5dp">
+
+                    <Button
+                        android:layout_height="30dp"
+                        android:id="@+id/bt_progress"
+                        android:background="@drawable/botonavance"
+                        android:layout_width="50dp" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <Button
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_alert"
+                android:background="@drawable/alertainternas"
+                android:gravity="bottom|center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom|center_horizontal" />
+
+
+        </FrameLayout>
+    </LinearLayout>
+
 
     <android.support.design.widget.NavigationView
         android:id="@+id/nav_view"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        app:headerLayout="@layout/nav_header_main"
-        app:menu="@menu/activity_main_drawer" />
+        android:background="@color/hard_gray" >
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_vertical"
+            android:id="@+id/ly_menu">
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_docs"
+                android:background="@drawable/button_menu_library"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_protection_guides"
+                android:background="@drawable/button_menu_protection_guides"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_courses"
+                android:background="@drawable/button_menu_courses"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_analize"
+                android:background="@drawable/button_menu_analize"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_news"
+                android:background="@drawable/button_menu_news"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_contact"
+                android:background="@drawable/button_menu_contact_us"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_about_nrc"
+                android:background="@drawable/button_menu_about_nrc"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_edit_profile"
+                android:background="@drawable/button_menu_edit_profile"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_close_sesion"
+                android:background="@drawable/button_menu_close_sesion"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+        </LinearLayout>
+    </android.support.design.widget.NavigationView>
 
 </android.support.v4.widget.DrawerLayout>

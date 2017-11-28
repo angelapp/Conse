@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -33,11 +34,12 @@ import conse.nrc.org.co.consejo.R;
 public class Register extends AppCompatActivity implements DatePickerDialog.OnDateSetListener, RequestTask.OnRequestCompleted{
 
 
-    EditText mEtBirthdate, mEtName, mEtLastname, mEtDocumentNumber, mEtEmail, mEtPassword;
+    EditText mEtBirthdate, mEtName, mEtLastname, mEtDocumentNumber, mEtEmail, mEtPassword, mEtPasswordConfirm;
     Spinner mSpGender, mSpDocumentType, mSpEthnicGroup, mSpGeographicLocation, mSpCondition, mSpOriginTown, mSpRole;
     CheckBox mCbIsNrcBeneficiary, mCbAcceptTermsConditions;
     Button mBtNext;
     ProgressDialog listener;
+    String birthDateTosave;
     List<String> gender_list, document_type_list, ethnic_group_list, geographic_location_list, condition_list, origin_town_list, role_list;
 
     @Override
@@ -51,6 +53,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         mEtDocumentNumber = (EditText)findViewById(R.id.et_document_number);
         mEtEmail = (EditText)findViewById(R.id.et_email);
         mEtPassword = (EditText)findViewById(R.id.et_password);
+        mEtPasswordConfirm = (EditText)findViewById(R.id.et_confirm_password);
 
         mSpGender = (Spinner)findViewById(R.id.sp_gender);
         mSpDocumentType = (Spinner)findViewById(R.id.sp_document_type);
@@ -64,6 +67,8 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
 
         fillSpinners();
 
+        findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
+
         mCbAcceptTermsConditions = (CheckBox)findViewById(R.id.cb_accept_terms_conditions);
         mCbIsNrcBeneficiary = (CheckBox)findViewById(R.id.cb_is_nrc_beneficiary);
 
@@ -73,6 +78,18 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
             @Override
             public void onClick(View v) {
                 validateData();
+            }
+        });
+
+
+        mCbIsNrcBeneficiary.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    findViewById(R.id.ly_nrc_data).setVisibility(View.VISIBLE);
+                } else{
+                    findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
+                }
             }
         });
 
@@ -88,6 +105,7 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
     private void validateData() {
 
         boolean error = false;
+        boolean password_confirm = false;
         int gender=0, documentType=0, ethnicGroup=0, geographicLocation=0, condition=0, originTown=0, role=0;
 
         if(mEtBirthdate.getText().length() == 0){
@@ -110,9 +128,16 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
             mEtEmail.setError(getString(R.string.must_fill_field));
             error = true;
         }
+
         if(mEtPassword.getText().length() == 0){
             mEtPassword.setError(getString(R.string.must_fill_field));
             error = true;
+        } else{
+            if (mEtPassword.getText().toString().equals(mEtPasswordConfirm.getText().toString())){
+                password_confirm = true;
+            } else {
+                password_confirm = false;
+            }
         }
 
         if (mSpGender.getSelectedItemPosition() > 0){
@@ -129,39 +154,42 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
             error = true;
         }
 
-        if (mSpEthnicGroup.getSelectedItemPosition() > 0){
-            ethnicGroup = ConseApp.appConfiguration.ethnic_group_list.get(mSpEthnicGroup.getSelectedItemPosition()-1).id;
-        } else {
-            ((TextView)((LinearLayout)(mSpEthnicGroup.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
-            error = true;
-        }
+        if(mCbIsNrcBeneficiary.isChecked()) {
 
-        if (mSpGeographicLocation.getSelectedItemPosition() > 0){
-            geographicLocation = ConseApp.appConfiguration.city_list.get(mSpGeographicLocation.getSelectedItemPosition()-1).id;
-        } else {
-            ((TextView)((LinearLayout)(mSpGeographicLocation.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
-            error = true;
-        }
+            if (mSpEthnicGroup.getSelectedItemPosition() > 0) {
+                ethnicGroup = ConseApp.appConfiguration.ethnic_group_list.get(mSpEthnicGroup.getSelectedItemPosition() - 1).id;
+            } else {
+                ((TextView) ((LinearLayout) (mSpEthnicGroup.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
+                error = true;
+            }
 
-        if (mSpCondition.getSelectedItemPosition() > 0){
-            condition = ConseApp.appConfiguration.condition_list.get(mSpCondition.getSelectedItemPosition()-1).id;
-        } else {
-            ((TextView)((LinearLayout)(mSpCondition.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
-            error = true;
-        }
+            if (mSpGeographicLocation.getSelectedItemPosition() > 0) {
+                geographicLocation = ConseApp.appConfiguration.city_list.get(mSpGeographicLocation.getSelectedItemPosition() - 1).id;
+            } else {
+                ((TextView) ((LinearLayout) (mSpGeographicLocation.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
+                error = true;
+            }
 
-        if (mSpOriginTown.getSelectedItemPosition() > 0){
-            originTown = ConseApp.appConfiguration.city_list.get(mSpOriginTown.getSelectedItemPosition()-1).id;
-        } else {
-            ((TextView)((LinearLayout)(mSpOriginTown.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
-            error = true;
-        }
+            if (mSpCondition.getSelectedItemPosition() > 0) {
+                condition = ConseApp.appConfiguration.condition_list.get(mSpCondition.getSelectedItemPosition() - 1).id;
+            } else {
+                ((TextView) ((LinearLayout) (mSpCondition.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
+                error = true;
+            }
 
-        if (mSpRole.getSelectedItemPosition() > 0){
-            role = ConseApp.appConfiguration.role_list.get(mSpRole.getSelectedItemPosition()-1).id;
-        } else {
-            ((TextView)((LinearLayout)(mSpRole.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
-            error = true;
+            if (mSpOriginTown.getSelectedItemPosition() > 0) {
+                originTown = ConseApp.appConfiguration.city_list.get(mSpOriginTown.getSelectedItemPosition() - 1).id;
+            } else {
+                ((TextView) ((LinearLayout) (mSpOriginTown.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
+                error = true;
+            }
+
+            if (mSpRole.getSelectedItemPosition() > 0) {
+                role = ConseApp.appConfiguration.role_list.get(mSpRole.getSelectedItemPosition() - 1).id;
+            } else {
+                ((TextView) ((LinearLayout) (mSpRole.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
+                error = true;
+            }
         }
 
         if(!mCbAcceptTermsConditions.isChecked()){
@@ -170,7 +198,11 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         }
 
         if(!error){
-            registerUser(gender,documentType,ethnicGroup,condition,role,geographicLocation,originTown);
+            if(password_confirm) {
+                registerUser(gender, documentType, ethnicGroup, condition, role, geographicLocation, originTown);
+            } else {
+                Toast.makeText(this, getString(R.string.password_not_matches), Toast.LENGTH_SHORT).show();
+            }
         } else {
             Toast.makeText(this, getString(R.string.must_complete_information), Toast.LENGTH_SHORT).show();
         }
@@ -184,18 +216,20 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         user.last_name = mEtLastname.getText().toString();
         user.email = mEtEmail.getText().toString();
         user.password = mEtPassword.getText().toString();
-        user.birthdate = mEtBirthdate.getText().toString();
+        user.birthdate = birthDateTosave;
         user.document_number = mEtDocumentNumber.getText().toString();
+        user.gender = gender;
+        user.document_type = documentType;
+        user.isNRCBeneficiary = mCbIsNrcBeneficiary.isChecked();
 //        user.contact_phone = ;
 //        user.address = ;
-        user.role = role;
-        user.gender = gender;
-        user.ethnic_group = ethnicGroup;
-        user.condition = condition;
-        user.document_type = documentType;
-        user.origin_city = originTown;
-        user.actual_city = geographicLocation;
-        user.isNRCBeneficiary = mCbIsNrcBeneficiary.isChecked();
+        if(mCbIsNrcBeneficiary.isChecked()){
+            user.role = role;
+            user.ethnic_group = ethnicGroup;
+            user.condition = condition;
+            user.origin_city = originTown;
+            user.actual_city = geographicLocation;
+        }
 //        user.latitude = ;
 //        user.longitude = ;
 
@@ -410,7 +444,8 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         int _birthYear = year;
         int _month = month + 1;
         int _day = dayOfMonth;
-        mEtBirthdate.setText(_birthYear + "-" + _month +"-" + _day);
+        birthDateTosave = _birthYear + "-" + _month +"-" + _day;
+        mEtBirthdate.setText(_day + "/" + _month +"/" + _birthYear);
     }
 
     @Override

@@ -149,6 +149,15 @@
                     style="@style/ConseExitText"
                     android:inputType="textWebPassword" />
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/confirm_password_et"
+                    android:ems="10"
+                    android:id="@+id/et_confirm_password"
+                    style="@style/ConseExitText"
+                    android:inputType="textWebPassword" />
+
             </LinearLayout>
 
             <CheckBox
@@ -158,70 +167,78 @@
                 android:id="@+id/cb_is_nrc_beneficiary"
                 style="@style/ConseCheckbox" />
 
-            <TextView
-                android:text="@string/ethnic_group_tittle_h2"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_ethnic_group_tittle_h2"
-                style="@style/ConseTittleTextH2" />
+                android:layout_height="match_parent"
+                android:id="@+id/ly_nrc_data">
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sp_ethnic_group"
-                android:background="@null" />
+                <TextView
+                    android:text="@string/ethnic_group_tittle_h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_ethnic_group_tittle_h2"
+                    style="@style/ConseTittleTextH2" />
 
-            <TextView
-                android:text="@string/geographic_location_tittle_h2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_geographic_location_tittle_h2"
-                style="@style/ConseTittleTextH2" />
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp_ethnic_group"
+                    android:background="@null" />
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sp_geographic_location"
-                android:background="@null"/>
+                <TextView
+                    android:text="@string/geographic_location_tittle_h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_geographic_location_tittle_h2"
+                    style="@style/ConseTittleTextH2" />
 
-            <TextView
-                android:text="@string/condition_tittle_h2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_condition_tittle_h2"
-                style="@style/ConseTittleTextH2" />
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp_geographic_location"
+                    android:background="@null"/>
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sp_condition_type"
-                android:background="@null" />
+                <TextView
+                    android:text="@string/condition_tittle_h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_condition_tittle_h2"
+                    style="@style/ConseTittleTextH2" />
 
-            <TextView
-                android:text="@string/origin_town_tittle_h2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_origin_town_tittle_h2"
-                style="@style/ConseTittleTextH2" />
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp_condition_type"
+                    android:background="@null" />
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sp_origin_town"
-                android:background="@null"/>
+                <TextView
+                    android:text="@string/origin_town_tittle_h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_origin_town_tittle_h2"
+                    style="@style/ConseTittleTextH2" />
 
-            <TextView
-                android:text="@string/user_profile_tittle_h2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/tv_user_profile_tittle_h2"
-                style="@style/ConseTittleTextH2" />
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp_origin_town"
+                    android:background="@null"/>
 
-            <Spinner
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/sp_user_profile"
-                android:background="@null" />
+                <TextView
+                    android:text="@string/user_profile_tittle_h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_user_profile_tittle_h2"
+                    style="@style/ConseTittleTextH2" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp_user_profile"
+                    android:background="@null" />
+
+            </LinearLayout>
 
             <CheckBox
                 android:text="@string/accept_terms_conditions_checkbox"

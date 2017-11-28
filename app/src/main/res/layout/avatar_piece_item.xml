@@ -13,10 +13,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:button="@drawable/conse_avatar_radiobutton"
-        android:checked="true"
         android:layout_gravity="center_vertical|center_horizontal"
         android:gravity="center_vertical|center_horizontal"
-        />
+        android:checked="false" />
 
     <ImageView
         app:srcCompat="@drawable/conse"

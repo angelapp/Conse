@@ -14,7 +14,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.R;
 
-public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickListener {
+public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickListener, YouTubePlayer.PlayerStateChangeListener  {
 
     private YouTubePlayerView youTubePlayerView;
     private YouTubePlayer.OnInitializedListener onInitializedListener;
@@ -27,6 +27,7 @@ public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickLi
         LinearLayout lyYoutube = (LinearLayout) findViewById(R.id.ly_youtube_video);
         mBtNetx = (Button) findViewById(R.id.bt_go_to_register);
         mBtNetx.setOnClickListener(this);
+        mBtNetx.setVisibility(View.GONE);
 //        lyYoutube.removeAllViews();
         youTubePlayerView = new YouTubePlayerView(this);
         lyYoutube.addView(youTubePlayerView);
@@ -34,6 +35,7 @@ public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickLi
             @Override
             public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
                 youTubePlayer.loadVideo(LocalConstants.YOUTUBE_VIDEO_ID);
+                youTubePlayer.setPlayerStateChangeListener(VideoTutorial.this);
             }
 
             @Override
@@ -51,7 +53,9 @@ public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickLi
             }
         });
 
+
     }
+
 
     @Override
     public void onClick(View v) {
@@ -67,5 +71,36 @@ public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickLi
     private void goToRegister() {
         Intent register = new Intent(this, Register.class);
         startActivity(register);
+    }
+
+    @Override
+    public void onLoading() {
+
+    }
+
+    @Override
+    public void onLoaded(String s) {
+
+    }
+
+    @Override
+    public void onAdStarted() {
+
+    }
+
+    @Override
+    public void onVideoStarted() {
+
+    }
+
+    @Override
+    public void onVideoEnded() {
+
+        mBtNetx.setVisibility(View.VISIBLE);
+    }
+
+    @Override
+    public void onError(YouTubePlayer.ErrorReason errorReason) {
+
     }
 }

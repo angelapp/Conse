@@ -6,6 +6,6 @@ package conse.nrc.org.co.consejo.Interfaces;
 
 public interface AvatarInterfaces {
 
-    public void genderSelected(int gender);
-    public void finishAvatarConstruction();
+    void genderSelected(int gender);
+    void finishAvatarConstruction();
 }

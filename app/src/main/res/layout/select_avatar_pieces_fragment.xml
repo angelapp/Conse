@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
@@ -9,7 +10,43 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
-        android:id="@+id/fl_preview">
+        android:id="@+id/fl_preview"
+        android:layout_gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@null"
+            android:id="@+id/iv_accesory"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@null"
+            android:id="@+id/iv_hair"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@null"
+            android:id="@+id/iv_nose"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@null"
+            android:id="@+id/iv_eyes"
+            android:layout_gravity="center_horizontal" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@null"
+            android:id="@+id/iv_head"
+            android:layout_gravity="center_horizontal" />
 
     </FrameLayout>
 
@@ -27,6 +64,13 @@
             android:gravity="center_horizontal"
             android:layout_height="0dp">
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rg_head"
+                android:orientation="horizontal">
+
+            </RadioGroup>
         </LinearLayout>
 
         <LinearLayout
@@ -36,6 +80,11 @@
             android:layout_weight="1"
             android:id="@+id/ly_eyes">
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rg_eyes"
+                android:orientation="horizontal"/>
         </LinearLayout>
 
         <LinearLayout
@@ -45,6 +94,11 @@
             android:layout_weight="1"
             android:id="@+id/ly_nose">
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rg_nose"
+                android:orientation="horizontal"/>
         </LinearLayout>
 
         <LinearLayout
@@ -54,6 +108,11 @@
             android:layout_weight="1"
             android:id="@+id/ly_hair">
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rg_hair"
+                android:orientation="horizontal"/>
         </LinearLayout>
 
         <LinearLayout
@@ -63,6 +122,11 @@
             android:layout_weight="1"
             android:id="@+id/ly_accesory">
 
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rg_accesory"
+                android:orientation="horizontal"/>
         </LinearLayout>
     </LinearLayout>
 

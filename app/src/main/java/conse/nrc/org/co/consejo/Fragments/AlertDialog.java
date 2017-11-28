@@ -69,7 +69,7 @@ public class AlertDialog extends DialogFragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //actualStep = 0;
-        View mView = inflater.inflate(R.layout.send_alert_confirmation_dialog, container, false);
+        View mView = inflater.inflate(R.layout.send_alert_test_confirmation_dialog, container, false);
 
         mBtSendAlert = (Button) mView.findViewById(R.id.bt_yes_sure);
 

@@ -17,6 +17,7 @@ import conse.nrc.org.co.consejo.Utils.Models;
 import conse.nrc.org.co.consejo.Utils.RequestTask;
 import conse.nrc.org.co.consejo.Utils.ServerRequest;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 public class Welcome extends AppCompatActivity implements View.OnClickListener, RequestTask.OnRequestCompleted{
 
@@ -64,10 +65,19 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
             case LocalConstants.GET_APP_CONF_TASK_ID:
                 Models.ApplicationConfiguration appConf = (Models.ApplicationConfiguration) response;
                 ConseApp.appConfiguration = appConf;
+                if(UtilsFunctions.getSharedString(this, LocalConstants.USER_TOKEN) != null){
+                    goToHome();
+                }
                 break;
             default:
                 break;
         }
+    }
+
+    private void goToHome() {
+        Intent tutorial = new Intent(this, MainActivity.class);
+        startActivity(tutorial);
+        this.finish();
     }
 
     @Override

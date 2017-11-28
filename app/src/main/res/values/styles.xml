@@ -23,7 +23,7 @@
     <style name="ConseExitText" parent="android:Widget.EditText">
         <item name="android:background">@drawable/lineacampos</item>
         <item name="android:textColorHint">@color/grey_dark</item>
-        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:textColor">@color/hard_gray</item>
         <item name="android:textSize">18sp</item>
         <item name="android:textAlignment">gravity</item>
         <item name="android:gravity">bottom|left</item>
