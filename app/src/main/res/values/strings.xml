@@ -57,4 +57,92 @@
     <string name="password_not_matches">Las contraseñas no coinciden</string>
     <string name="vbg_course_start_message">Recibe la bienvenida al contenido de Atención y Prevención de Violencias Basadas en Género, prepárate para conocer la respuesta a preguntas como: ¿Qué es violencia de género?, ¿Todas las violencias son iguales?, ¿Cómo puedo protegerme?, ¿Dónde puedo encontrar ayuda? Resuelve tus dudas y recibe mucha más información  sobre cómo prevenir y actuar en casos de violencia basada en género.</string>
     <string name="vbg_course_start_tittle">Atención y Prevención de Violencias Basadas en Género</string>
+
+    <string name="number_1">1</string>
+    <string name="number_2">2</string>
+    <string name="number_3">3</string>
+    <string name="number_4">4</string>
+    <string name="number_5">5</string>
+    <string name="number_6">6</string>
+    <string name="number_7">7</string>
+    <string name="number_8">8</string>
+    <string name="number_9">9</string>
+    <string name="number_10">10</string>
+    <string name="number_11">11</string>
+
+    <string name="course_1_1_a">¿Qué son las Violencias Basadas en Género</string>
+    <string name="course_1_1_b">Son aquellas \r\nformas de violencia que se \r\nejercen contra una persona por su condición de género o sexo, y que responden a relaciones \r\ndesiguales de poder entre \r\nhombres y mujeres</string>
+    <string name="course_1_1_c">Guia divulgadora de ONU Mujeres</string>
+    <string name="course_1_1_d">La VBG puede ser ejercida conra personas que no se adecuan a lo esperado por la sociedad según su sexo, como es el caso de personas con orientación sexual diversa (gays, lebianas, y bisexuales) o con identidad de género diversa (transexuales), pero se ejerce principalmente contra mujeres, niñas y adolecentes, de alli que cuando se hable de violencia de g´nero, se asocie mayormente con violencia contra las mujeres</string>
+    <string name="course_1_1_e">¡Ahora sí, estás lista para iniciar!</string>
+    <string name="course_1_2_a">¿Cómo saber si soy víctima de violencia?</string>
+    <string name="course_1_2_b">El prmer paso para identificar si eres vícitma de violencia es tener claro ¿qué se entiende por violencia contra las mujeres?</string>
+    <string name="course_1_2_c">La ley define la violencia contra las mujeres como:</string>
+    <string name="course_1_2_d">"Cualquier acción u omisión, que le cause muerte, daño o sufrimiento fisico, sexual, psicologico, economico o patrimonial por su condición de mujer, así como las amenazas de tales actos, la coacción o la privación arbitraria de la libertad, bien sea que se presente en el ámbito público o privado"</string>
+    <string name="course_1_2_e">(Ley 1257/08, art.2).</string>
+    <string name="course_1_2_f">Módulo 1</string>
+    <string name="course_1_3_a">¿Cómo saber si soy victima de violencia?</string>
+    <string name="course_1_3_b">Según la ley, la violencia contra las mujeres presenta las siguientes caracteristicas</string>
+    <string name="course_1_3_1_c">Te ocurre por ser mujer. Esto significa que ser mujer es lo que te pone en riesgo</string>
+    <string name="course_1_3_2_c">Te puede ocurrir a ti o a cualquier mujer, no hay excepciones.</string>
+    <string name="course_1_3_3_c">Es un delito y por lo tanto merece un castigo o pena.</string>
+    <string name="course_1_3_4_c">Puede ocasionarte un daño, sufrimiento o muerte. También incluye las amenazas de cometer esos hechos.</string>
+    <string name="course_1_3_5_c">Se puede presetar en cualquier tipo de espacio público o privado dónde desarolles tus actividades.</string>
+    <string name="course_1_4_a">Conoce cada uno de los ámbitos donde se presenta la violencia.</string>
+    <string name="course_1_4_b">Pulsa sobre el triángulo dentro del circulo para escuchar la descripción de cada uno de los ámbitos</string>
+    <string name="course_1_4_1_a">En la familia</string>
+    <string name="course_1_4_2_a">En la comunidad</string>
+    <string name="course_1_4_3_a">En el ámbito estatal</string>
+    <string name="course_1_4_4_a">En el conflicto armado</string>
+    <string name="course_1_5_a">Si crees ser victima de violencia en el marco del conflicto armado hay varios factores adicionales que debes tener en cuenta, revisa la siguiente infografia con información sobre el tema:</string>
+    <string name="course_1_5_b">La corte constitucional reconoció que las mujeres, por su condición de mujeres, en el conflicto armado enfrentan riesgos diferentes a los que viven los hombres. Estos son:</string>
+    <string name="course_1_5_c">Esclavización o explotación para realizar lores considerados como femeninos y labores de la casa como cocinar, lavar o cuidar enfermos.</string>
+    <string name="course_1_5_d">Reclutamiento forzado de tus hijos e hijas por grupos armado ilegales</string>
+    <string name="course_1_5_e">Señalamientos o venganzas por tu relación o contacto con integrantes de algún grupo armado.</string>
+    <string name="course_1_5_f">Riesgos por tu labor de liderazgo o pertenencia a una organización comunitaria, social o politica</string>
+    <string name="course_1_5_g">Persecución y asesinato por la imposición de normas de comportamiento relacionadas con el vestuario, horarios y relaciones personales</string>
+    <string name="course_1_5_h">Despojo de tierras y del patrimonio</string>
+    <string name="course_1_5_i">Pertenencia a una comunidad indigena o afrocolombiana</string>
+    <string name="course_1_5_j">Perdida y ausencia del compañero o esposo durante el desplazamiento</string>
+    <string name="course_1_5_k">Explotación minera ilegal</string>
+    <string name="course_1_5_l">Identidad y orientación de género diversa.</string>
+    <string name="course_1_6_a">Otro aspecto a tener en cuentra es que, aunque no existe un listado de hechos que se consideren violentos contra las mujeres, la ley describe que las siguientes modalidades mediante las cuales se puede manifestar violencia en cualquiera de los espacios mensionados anteriormente</string>
+    <string name="course_1_6_b">Los siguientes son los tipos de violencia a los que estan expuestas las mujeres; conocerlos te puede ayudar a identificar si eres victima. Pulsa sobre el triangulo dentro del circulo para escuchar el audio con su descripción</string>
+    <string name="course_1_7_a">Violencia física</string>
+    <string name="course_1_7_b">Violencia sexual</string>
+    <string name="course_1_7_c">Violencia psicológica</string>
+    <string name="course_1_7_d">Violencia economica o patrimonial</string>
+    <string name="course_1_7_e">Por último, pero no menos importante, adopta los siguientes consejos como leyes inquebrantables para tu vida diaria</string>
+    <string name="course_1_8_a">Nunca olvides que...</string>
+    <string name="course_1_9_a">¡Buenísimo! Has finalizado tu primer módulo de formación, responde al siguiente crucigrama y recibiras tu primer reconocimiento.</string>
+    <string name="course_1_10_a">Completa el crucigrama. Pulsa sobre el número para ver la pista</string>
+    <string name="course_1_11_a">No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!</string>
+    <string name="course_1_12_a">¡Buen trabajo!</string>
+    <string name="course_1_12_b">¡Es un honor concederte el titulo de Consejera Principiante!</string>
+    <string name="course_1_13_a">¿Qué derechos tengo?</string>
+    <string name="course_1_13_b">Ahora que sabes qué es la víolencia de género, donde se puede presentar y por parte de quien, es hora de que sepas cómo puedes protegerte. Si te reconoces como una mujer víctima de cualquier tipo de ciolencia, incluidas las cometidas en el conflicto armado, y decides acudir a una entidad de tu minicipio en busca de ayuda, primero ten presente cuáles son tus derechos según la ley:</string>
+    <string name="course_1_13_c">Como mujer victima de violencia, tienes derecho a:</string>
+    <string name="course_1_13_d">Módulo 2</string>
+    <string name="course_1_13_e">¡Muy bien! ¡Has explorado todo el contenido! Realiza la siguiente prueba y consigue el titulo de Consejera Conocedora</string>
+
+
+    <string name="clue_1">Módulo 2</string>
+    <string name="clue_2">Módulo 2</string>
+    <string name="clue_3">Módulo 2</string>
+    <string name="clue_4">Módulo 2</string>
+    <string name="clue_5">Módulo 2</string>
+    <string name="clue_6">Módulo 2</string>
+
+
+
+    <string-array name="clueTexts">
+        <item>Cuando la violencia se manifiesta mediante insultos, ataques verbales, chantajes o celos extremos, es:</item>
+        <item>Cuando la violencia se manifiesta a través del uso de la fuerza, como golpes, ahogamientos o empujones, es violencia:  </item>
+        <item>Que te obliguen a tener algún tipo de comportamiento sexual no deseado, es violencia: </item>
+        <item>La violencia que se manifiesta a través del control del dinero e inasistencia alimentaria, es: </item>
+        <item>Cuando la violencia proviene del esposo, compañero permanente, padre, madre, abuelos o nietos; se le llama violencia en la: </item>
+        <item>Cuando la violencia la realiza algún integrante de un grupo armado, se denomina violencia en el Conflicto:</item>
+    </string-array>
+
+
 </resources>

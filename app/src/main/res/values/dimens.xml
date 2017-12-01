@@ -13,5 +13,8 @@
     <dimen name="nav_header_height">160dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="menu_item_bottom_margin">15dp</dimen>
+    <dimen name="ilustration_woman">180dp</dimen>
+    <dimen name="square_padding_top">40dp</dimen>
+
 
 </resources>

@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <FrameLayout
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:background="@color/grey_light">
@@ -33,13 +33,27 @@
 
             </android.support.design.widget.AppBarLayout>
 
+            <Button
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_alert"
+                android:background="@drawable/alertainternas"
+                android:gravity="bottom|center_horizontal"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="bottom|center_horizontal"
+                />
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/ly_home_content"
                 android:layout_marginTop="55dp"
-                android:background="@color/grey_light">
+                android:background="@color/grey_light"
+                android:layout_above="@id/bt_alert"
+                >
 
 
             </LinearLayout>
@@ -87,19 +101,10 @@
                 </RelativeLayout>
             </LinearLayout>
 
-            <Button
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bt_alert"
-                android:background="@drawable/alertainternas"
-                android:gravity="bottom|center_horizontal"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="bottom|center_horizontal" />
 
 
-        </FrameLayout>
+
+        </RelativeLayout>
     </LinearLayout>
 
 

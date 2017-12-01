@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/fab_margin"
+            android:paddingRight="@dimen/fab_margin">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"/>
+
+            <TextView
+                android:text="@string/course_1_3_a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                style="@style/ConseTittleTextH2"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"/>
+
+
+
+            <TextView
+                android:text="@string/course_1_3_b"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2"
+                style="@style/ConseParagraphText"/>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/down_arrow_1"
+                    style="style/ConseTittleTextH2White"
+                    android:text="@string/number_1"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="@string/course_1_3_1_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView3"
+                    style="@style/ConseParagraphText"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/down_arrow_2"
+                    style="style/ConseTittleTextH2White"
+                    android:text="@string/number_2"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="@string/course_1_3_2_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView4"
+                    style="@style/ConseParagraphText"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/down_arrow_3"
+                    style="style/ConseTittleTextH2White"
+                    android:text="@string/number_3"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="@string/course_1_3_3_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5"
+                    style="@style/ConseParagraphText"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/down_arrow_4"
+                    style="style/ConseTittleTextH2White"
+                    android:text="@string/number_4"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="@string/course_1_3_1_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView6"
+                    style="@style/ConseParagraphText"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/down_arrow_5"
+                    style="style/ConseTittleTextH2White"
+                    android:text="@string/number_5"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="@string/course_1_3_5_c"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView7"
+                    style="@style/ConseParagraphText"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/down_arrow_5"
+                    style="style/ConseTittleTextH2White"
+                    android:text="@string/number_6"
+                    android:gravity="center"/>
+
+                <TextView
+                    android:text="@string/course_1_6_a"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView8"
+                    style="@style/ConseParagraphText"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:text="@string/course_1_6_b"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                style="@style/ConseParagraphText"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+
+                <Button
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:id="@+id/bt_back"
+                    android:background="@drawable/button_back" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:id="@+id/bt_forward"
+                    android:background="@drawable/button_next"
+                    android:layout_marginLeft="20dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

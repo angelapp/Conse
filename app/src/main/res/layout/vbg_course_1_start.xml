@@ -5,25 +5,12 @@
     android:gravity="center_vertical|center_horizontal"
     android:background="@color/grey_light">
 
-    <TextView
-        android:text="@string/vbg_course_start_tittle"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView9"
-        style="@style/ConseTittleTextH1"
-        android:layout_marginBottom="15dp" />
-
-    <TextView
-        android:text="@string/vbg_course_start_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView10"
-        style="@style/ConseParagraphText" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bt_start_vbg"
-        android:background="@drawable/button_start_vbg"
-        android:layout_marginTop="15dp" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:id="@+id/course_container">
+       <include layout="@layout/vbg_course_1_0" />
+    </LinearLayout>
 </LinearLayout>
