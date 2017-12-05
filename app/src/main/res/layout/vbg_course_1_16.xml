@@ -3,4 +3,104 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/ConseTittleTextH2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/course_1_16_a" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay" />
+
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ruta1_16">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/aviso_2"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingLeft="150dp">
+
+
+
+                    <TextView
+                        style="@style/ConseParagraphText"
+                        android:layout_width="170dp"
+                        android:layout_height="180dp"
+                        android:background="@drawable/globo_1_16"
+                        android:paddingBottom="10dp"
+                        android:paddingLeft="10dp"
+                        android:paddingRight="10dp"
+                        android:paddingTop="10dp"
+                        android:textSize="12sp"
+                        android:text="@string/course_1_16_b" />
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/punto"
+                        android:layout_gravity="center_horizontal"/>
+
+                </LinearLayout>
+
+            </RelativeLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/square_padding_top"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/bt_back"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/button_back" />
+
+
+                <Button
+                    android:id="@+id/bt_forward"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button_next" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
 </LinearLayout>

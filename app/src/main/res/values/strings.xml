@@ -134,6 +134,61 @@
     <string name="clue_6">Módulo 2</string>
 
 
+    <string name="course_1_14_a">Organizaciones de mujeres y redes comunitarias</string>
+    <string name="course_1_14_b">Despachos de oficinas municipales que intervienen en la atención a las muejeres, como: Personerías, Policia judicial, Defensores de familia (funcionarios o funcionarias del instituto colobiano de bienestar familiar, ICBF), Comisarios de familia, Fiscales o jueces</string>
+    <string name="course_1_14_c">Entidades de la gobernación o alcaldia, como: secretarias o consejerias de la mujer u oficinas de género</string>
+    <string name="course_1_14_d">Llama a la línea de orientación a las mujeres vñictimas de violencia número 155 desde tu teléfono fijo o celular, de manera gratuita, durante las 24 horas del día, todos los días de la semana.</string>
+    <string name="course_1_14_e">Si la violencia es contra niños, niñas y adolecentes, comunícate a la línea 141 del ICBF desde tu teléfono fijo o celular, de manera gratuita, durante las 24 horas del día, todos los días de la semana.</string>
+    <string name="course_1_15_a">¿Qué puedo hacer si creo ser victima de violencia?</string>
+    <string name="course_1_15_b">Solicita atención en salud</string>
+    <string name="course_1_15_c">Tienes el derecho de acudir o ser transladada un centro de salud, hospital o clñinica, para que te brinden la atención médica y psicológica</string>
+    <string name="course_1_15_d">Ten en cuenta...</string>
+    <string name="course_1_16_a">¿Qué puedo hacer si creo ser victima de violencia?</string>
+    <string name="course_1_16_b">Centros de salud, hospitales o clinicas de cualquier nivel. \r\nSi requieres atención especializada esmas probable conseguirla en hospitales o clinicas de ciudades capitales.</string>
+    <string name="course_1_17_a">Accede a la justicia</string>
+    <string name="course_1_17_b">Tienes derecho a que los hechos sean investigados y que el agresor sea juzgado y castiado, asi tu podrás exigir la reparación de los daños que has sufrido y la no repetición de los hechos.</string>
+    <string name="course_1_18_a">Presentar tu denuncia en:</string>
+    <string name="course_1_18_b">Fiscalia General de la Nación.\r\nÉsta atiende en:</string>
+    <string name="course_1_18_c">Unidades de reacción inmediata (URI).</string>
+    <string name="course_1_18_d">Salas de Atención al Usuario</string>
+    <string name="course_1_18_e">Casas de justicia</string>
+    <string name="course_1_18_f">Centros de Atención especializada como: CAIVAS (Centro de Atención e Investigación Integral a las Victivas de Delitos Sexuales), CAVIF (Centro de Atención e Investigación Integral contra la Violencia Intrafamiliar) y el CAVIP (Centro de Atención Penal Integral a Victimas).</string>
+    <string name="course_1_18_g">Presenta tu denuncia ante Policia Judicial: CTI de la Fiscalía; SIJIN y DIJIN de la Policia</string>
+    <string name="course_1_18_h">Si en tu municipio no estan presentes las entidades mencionadas puedes ir a la Policía Nacional o Comisarías de Familia.</string>
+    <string name="course_1_19_a">Solicita medidas de protección</string>
+    <string name="course_1_19_b">Tienes derecho a proteger tu integridad y la de tus hijos e hijas y poner fin a la violencia. Para ello, existen medidas especificas e inmediatas conocidas como "medidas de protección" que pueden ser otorgadas por las autoridades competentes.</string>
+    <string name="course_1_20_a">Si los hechos violendos suceden en un contexto diferente al familiar o si son conocidos por la Fiscalia:</string>
+    <string name="course_1_20_b">Una vez has presentado la denuncia o si la Fiscalia ha iniciado la investigación, tu o la Fiscalia pueden solicitar al Juez de Control de Garanticas designado, la medida de protección</string>
+    <string name="course_1_20_c">Si se trata de hechos violentos que ocurren en el contexto familiar y son conocidos por la Fiscalia, el caso luego será enviado a la Comisaria de Familia o Juez para que continuen con el procedimiento.</string>
+    <string name="course_1_21_a">Hechos violentos que ocurren en el contexto </string>
+    <string name="course_1_21_b">Solicitala a la Comisaria de Familia</string>
+    <string name="course_1_21_c">Su en tu minicipio no hay Comisaria de Familia, puedes pedir la medida de protección al Juez Civil o Promiscuo Municipal.</string>
+    <string name="course_1_21_d">La solicitud la puedes hacer tú, un familiar, el defensor de familia (Instituto Colombia de Bienestar Familiar ICBF) o cualquier otra persona que actué en tu nombre.</string>
+    <string name="course_1_21_e">Recibiras medidas de protección de tipo provisional, de acuerdo con la gravedad de los hechos, y hasta tanto se agoten las etapas del procedimiento.</string>
+    <string name="course_1_22_a">Si los hechos violentos ocurren en el contexto familiar y forma parte de una comunidad infigena:</string>
+    <string name="course_1_22_b">Solicitala a respectiva autoridad indigena</string>
+    <string name="course_1_22_c">Si ésta no puede asegurar las medidas adeucadas o tú no quieres que tu comunidad se entere de lo ocurrido, puedes decir a las autoridades estatales mencionadas anteriormente.</string>
+    <string name="course_1_23_a">Solicita medidas de atención</string>
+    <string name="course_1_23_b">Tienes derecho, si es necesario, a acceder a servicios temporales de habitación, alimentación y/o trasnporte para ti y tus hijos e hijas. Estos servicios forman parte de tu derecho fundamental a la salud.</string>
+    <string name="course_1_24_a">Juez decontrol de garantias, si los hechos son conocidos por la Fiscalia General de la Nacion o si se trata de hechos violentos que suceden en un espacio diferente al familiar.</string>
+    <string name="course_1_24_b">Comisaria de Familia, en caso que se trate de hechos violentos que ocurren en el contexto familiar</string>
+    <string name="course_1_24_c">Si en tu municipio no hay Comisaria de Familia, puedes pediras al Juez Civil o Promiscuo Municipal</string>
+    <string name="course_1_25_a">¡Felicitaciones! Has trabajado duro y ahora estás my cerca de convertirte en Consejera Avanzada. Responde el siguiente cuestionario y consigue el titulo.</string>
+    <string name="course_1_26_a">Responde a las siguientes preguntas seleccionando una o varias respuestas según lo consideres necesario.</string>
+    <string name="course_1_26_p_1">1. Si requieres medidas de protección al ser victima de hechos violentos en el contexto familiar, debes acudir a:</string>
+    <string name="course_1_26_r_1">Comisaria de Familia</string>
+    <string name="course_1_26_r_2">Organizaciones de mujeres y redes comunitarias.</string>
+    <string name="course_1_26_r_3">Juez Civil o Prmiscuo Municipal</string>
+    <string name="course_1_26_b">¡Muy bien, respuesta correcta!</string>
+    <string name="course_1_26_c">Las organizaciones de mujeres y redes comunitarias pueden brindarte orientación si eres victima de violencia y requieres información, pero no son las entidades encargadas de brindarte medidas de protección</string>
+    <string name="course_1_27_p_1">2. Si eres victima de violencia sexual tienes derecho a:</string>
+    <string name="course_1_27_r_1">A que te practiquen examenes para detectar enfermedades de transmisión sexual</string>
+    <string name="course_1_27_r_2">A que te lleven con el agresor para que puedas enfrentarle personalmente</string>
+
+
+
+
+
 
     <string-array name="clueTexts">
         <item>Cuando la violencia se manifiesta mediante insultos, ataques verbales, chantajes o celos extremos, es:</item>
