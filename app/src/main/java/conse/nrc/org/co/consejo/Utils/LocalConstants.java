@@ -27,6 +27,7 @@ public class LocalConstants {
     public static final String CONTACT_NUMBER_ = "CONTACT_NUMBER_";
     public static final String CONTACT_NAME_ = "CONTACT_NAME_";
     public static final String CONTACT_ID_ = "CONTACT_ID_";
+    public static final String AVATAR_GENDER_ID_ = "AVATAR_GENDER_ID_";
 
     public static final String AVATAR_SELECTED_PART_ = "AVATAR_SELECTED_PART_";
 

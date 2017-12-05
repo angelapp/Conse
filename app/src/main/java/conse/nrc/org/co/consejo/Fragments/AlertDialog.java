@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
 import conse.nrc.org.co.consejo.Interfaces.AlertTestInterfaces;
 import conse.nrc.org.co.consejo.R;
@@ -31,6 +32,7 @@ public class AlertDialog extends DialogFragment {
     long down,up;
     Context mCtx;
     AlertTestInterfaces alertTestInterfaces;
+    public static boolean isTest = true;
 
 
     long MILISECONDS_TO_PRESS = 3000;
@@ -78,15 +80,9 @@ public class AlertDialog extends DialogFragment {
             public boolean onTouch(View view, MotionEvent motionEvent) {
                 switch (motionEvent.getAction()){
                     case MotionEvent.ACTION_DOWN :
-                        //Toast.makeText(MainActivity.this, "Down", Toast.LENGTH_SHORT).show();
-                        //down=System.currentTimeMillis();
                         timer.start();
                         break;
                     case MotionEvent.ACTION_UP :
-                        //Toast.makeText(MainActivity.this, "Up", Toast.LENGTH_SHORT).show();
-                        //up=System.currentTimeMillis();
-                        //if(up-down>3000)
-                            //Toast.makeText(MainActivity.this, "More than 3", Toast.LENGTH_SHORT).show();
                         timer.cancel();
                         return true;
                 }
@@ -94,6 +90,18 @@ public class AlertDialog extends DialogFragment {
             }
         });
         Log.d("Alert", getEmegencyContactsString());
+
+        if(!isTest){
+            ((TextView)mView.findViewById(R.id.tv_message)).setText(R.string.send_alert_message);
+            (mView.findViewById(R.id.tv_cancel)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    AlertDialog.this.dismiss();
+                }
+            });
+        } else{
+            (mView.findViewById(R.id.tv_cancel)).setVisibility(View.GONE);
+        }
 
 
         return mView;
@@ -104,7 +112,9 @@ public class AlertDialog extends DialogFragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
-        alertTestInterfaces = (AlertTestInterfaces)mCtx;
+        if(isTest) {
+            alertTestInterfaces = (AlertTestInterfaces) mCtx;
+        }
 
     }
 
@@ -117,7 +127,11 @@ public class AlertDialog extends DialogFragment {
     private void sendSms() {
         String recipients = LocalConstants.SMS_CONTACT_PREFIX + getEmegencyContactsString();
         Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(recipients));
-        smsIntent.putExtra("sms_body", getString(R.string.send_alert_touch_message_example));
+        if(isTest) {
+            smsIntent.putExtra("sms_body", getString(R.string.send_alert_touch_message_example));
+        } else{
+            smsIntent.putExtra("sms_body", getString(R.string.send_alert_message));
+        }
         startActivityForResult(smsIntent, 1);
     }
 
@@ -141,7 +155,9 @@ public class AlertDialog extends DialogFragment {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode){
             case 1:
-                alertTestInterfaces.alertTestSuccess();
+                if (isTest) {
+                    alertTestInterfaces.alertTestSuccess();
+                }
                 this.dismiss();
                 break;
             default:

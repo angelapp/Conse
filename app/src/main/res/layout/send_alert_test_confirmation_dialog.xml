@@ -26,7 +26,7 @@
         android:text="@string/send_alert_touch_message_example"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2"
+        android:id="@+id/tv_message"
         style="@style/ConseTittleTextH1"
         android:layout_marginTop="30dp" />
 
@@ -49,4 +49,13 @@
         android:gravity="center_horizontal"
         android:textColor="@color/salmon"
         android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:text="@string/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_cancel"
+        style="@style/ConseTittleTextH2"
+        android:textColor="@android:color/holo_blue_light"
+        android:gravity="center_horizontal" />
 </LinearLayout>

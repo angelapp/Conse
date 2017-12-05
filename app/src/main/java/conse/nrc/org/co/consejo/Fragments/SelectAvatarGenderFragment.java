@@ -10,6 +10,8 @@ import android.widget.Button;
 
 import conse.nrc.org.co.consejo.Interfaces.AvatarInterfaces;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.LocalConstants;
+import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.FEMALE;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MALE;
@@ -36,6 +38,7 @@ public class SelectAvatarGenderFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 launchAvatarSelection(MALE);
+                UtilsFunctions.saveSharedInteger(mCtx, LocalConstants.AVATAR_GENDER_ID_, MALE);
             }
         });
 
@@ -43,6 +46,7 @@ public class SelectAvatarGenderFragment extends Fragment{
             @Override
             public void onClick(View v) {
                 launchAvatarSelection(FEMALE);
+                UtilsFunctions.saveSharedInteger(mCtx, LocalConstants.AVATAR_GENDER_ID_, FEMALE);
             }
         });
 

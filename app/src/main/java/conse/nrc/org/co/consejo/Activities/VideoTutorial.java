@@ -27,7 +27,7 @@ public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickLi
         LinearLayout lyYoutube = (LinearLayout) findViewById(R.id.ly_youtube_video);
         mBtNetx = (Button) findViewById(R.id.bt_go_to_register);
         mBtNetx.setOnClickListener(this);
-        mBtNetx.setVisibility(View.GONE);
+        //mBtNetx.setVisibility(View.GONE);
 //        lyYoutube.removeAllViews();
         youTubePlayerView = new YouTubePlayerView(this);
         lyYoutube.addView(youTubePlayerView);

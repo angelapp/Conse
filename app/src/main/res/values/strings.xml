@@ -132,7 +132,8 @@
     <string name="clue_4">Módulo 2</string>
     <string name="clue_5">Módulo 2</string>
     <string name="clue_6">Módulo 2</string>
-
+    <string name="cancel">Cancelar</string>
+    <string name="send_alert_message">Estoy en PELIGRO, necesito ayuda URGENTE</string>
 
 
     <string-array name="clueTexts">

@@ -1,5 +1,6 @@
 package conse.nrc.org.co.consejo.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -20,10 +21,13 @@ import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import conse.nrc.org.co.consejo.Fragments.AlertDialog;
 import conse.nrc.org.co.consejo.Fragments.CourseSelectionFragment;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.VbgCourse1Start;
+import conse.nrc.org.co.consejo.Fragments.aboutNrcFragment;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, MainInterface {
@@ -137,10 +141,20 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.bt_send_alert:
+            case R.id.bt_alert:
+                sendAlert();
                 break;
             case R.id.bt_docs:
-                Toast.makeText(this, "asascsac", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Mis documentos", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.bt_courses:
+                setCourseSelectionFragment();
+                break;
+            case R.id.bt_close_sesion:
+                closeSesion();
+                break;
+            case R.id.bt_about_nrc:
+                openAboutNrc();
                 break;
             case R.id.bt_vbg:
                 initVbgCourse();
@@ -148,6 +162,26 @@ public class MainActivity extends AppCompatActivity
                 break;
 
         }
+
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void sendAlert() {
+        AlertDialog alertDialog = new AlertDialog();
+        alertDialog.isTest = false;
+        alertDialog.show(getSupportFragmentManager(), "tag");
+    }
+
+    private void openAboutNrc() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new aboutNrcFragment()).addToBackStack(null).commitAllowingStateLoss();
+
+    }
+
+    private void closeSesion() {
+        UtilsFunctions.resetSharedPreferences(this);
+        startActivity(new Intent(this, Welcome.class));
+        this.finish();
     }
 
     private void initVbgCourse() {
