@@ -14,7 +14,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="@dimen/fab_margin"
-            android:paddingRight="@dimen/fab_margin">
+            android:paddingRight="@dimen/fab_margin"
+            android:gravity="center_horizontal">
 
             <View
                 android:layout_width="match_parent"
@@ -45,9 +46,9 @@
                 android:gravity="left"/>
 
             <ImageView
-                android:layout_width="@dimen/ilustration_woman"
+                android:layout_width="wrap_content"
                 android:layout_height="@dimen/ilustration_woman"
-                android:src="@drawable/mujer_ilustracion"/>
+                android:src="@drawable/ilustrvbg3"/>
 
             <TextView
                 android:text="@string/course_1_2_b"

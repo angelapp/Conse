@@ -64,8 +64,8 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
         switch (taskId){
             case LocalConstants.GET_APP_CONF_TASK_ID:
                 Models.ApplicationConfiguration appConf = (Models.ApplicationConfiguration) response;
-                ConseApp.appConfiguration = appConf;
-                if(UtilsFunctions.getSharedString(this, LocalConstants.USER_TOKEN) != null){
+                ConseApp.setAppConfiguration(this, appConf);
+                if(ConseApp.getActualUser(this) != null){
                     goToHome();
                 }
                 break;

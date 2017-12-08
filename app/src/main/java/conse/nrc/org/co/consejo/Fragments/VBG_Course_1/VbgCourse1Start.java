@@ -1492,12 +1492,13 @@ public class VbgCourse1Start extends Fragment {
         btForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (word1.equals(getString(R.string.clue_1)) &&
-                        word2.equals(getString(R.string.clue_2)) &&
-                        word3.equals(getString(R.string.clue_3)) &&
-                        word4.equals(getString(R.string.clue_4)) &&
-                        word5.equals(getString(R.string.clue_5)) &&
-                        word6.equals(getString(R.string.clue_6))){
+//                if (word1.equals(getString(R.string.clue_1)) &&
+//                        word2.equals(getString(R.string.clue_2)) &&
+//                        word3.equals(getString(R.string.clue_3)) &&
+//                        word4.equals(getString(R.string.clue_4)) &&
+//                        word5.equals(getString(R.string.clue_5)) &&
+//                        word6.equals(getString(R.string.clue_6))){
+                if(true){
                     goForward();
                 }else{
                     notAcerted.show(getActivity().getFragmentManager(),"");
@@ -1602,7 +1603,7 @@ public class VbgCourse1Start extends Fragment {
         btForward.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                goForward();
+                //goForward();
             }
         });
 

@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 
+import com.google.gson.Gson;
+
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -40,6 +42,13 @@ public abstract class UtilsFunctions {
         preferences.edit().putBoolean(key, value).apply();
     }
 
+    public static void saveSharedObject(Context ctx, String key, Object object){
+        SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        Gson gson = new Gson();
+        String json = gson.toJson(object);
+        preferences.edit().putString(key, json).apply();
+    }
+
     public static String getSharedString(Context ctx, String key){
         SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCES, Context.MODE_PRIVATE);
         return preferences.getString(key, null);
@@ -55,6 +64,15 @@ public abstract class UtilsFunctions {
     public static boolean getSharedBoolean(Context ctx, String key){
         SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCES, Context.MODE_PRIVATE);
         return preferences.getBoolean(key, false);
+    }
+
+    public static <GenericClass> GenericClass getSavedObjectFromPreference(Context ctx, String preferenceKey, Class<GenericClass> classType) {
+        SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        if (preferences.contains(preferenceKey)) {
+            final Gson gson = new Gson();
+            return gson.fromJson(preferences.getString(preferenceKey, ""), classType);
+        }
+        return null;
     }
 
     public static void resetSharedPreferences(Context ctx){

@@ -31,7 +31,7 @@ public class ClueDialog extends android.app.DialogFragment {
         TextView numerClue = (TextView) view.findViewById(R.id.number_clue);
 
         clue.setText(getResources().getStringArray(R.array.clueTexts)[getClueNumber()]);
-        numerClue.setText(getClueNumber()+1);
+        numerClue.setText(String.valueOf(getClueNumber()+1));
 
         return view;
     }

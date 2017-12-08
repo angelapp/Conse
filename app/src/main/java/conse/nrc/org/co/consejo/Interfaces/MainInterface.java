@@ -7,4 +7,6 @@ package conse.nrc.org.co.consejo.Interfaces;
 public interface MainInterface {
 
     void startVbgCourse();
+
+    void setPreviousFragment();
 }

@@ -454,7 +454,9 @@ public class Register extends AppCompatActivity implements DatePickerDialog.OnDa
         switch (taskId){
             case LocalConstants.REGISTER_USER_TASK_ID:
                 Models.RegisterUserResponse res = (Models.RegisterUserResponse) response;
-                UtilsFunctions.saveSharedString(this, LocalConstants.USER_TOKEN, res.token);
+                ConseApp.setActualUser(this, res);
+                UtilsFunctions.saveSharedString(this, LocalConstants.USER_PSW, mEtPassword.getText().toString());
+                //UtilsFunctions.saveSharedString(this, LocalConstants.USER_TOKEN, res.token);
                 goToSelectContacts();
                 break;
             default:

@@ -17,11 +17,11 @@ public class Models {
         public String last_name;
         public String email;
         public String password;
+
         public String birthdate;
         public String document_number;
         public String contact_phone;
         public String address;
-
         public int role;
         public int gender;
         public int ethnic_group;
@@ -39,6 +39,34 @@ public class Models {
     public static class RegisterUserResponse{
 
         public String token;
+        public int id;
+        public UserSerializer user;
+        public ProfileSerializer profile;
+    }
+
+
+    public static class UserSerializer{
+
+        public int id;
+        public String first_name;
+        public String last_name;
+        public String username;
+        public String email;
+    }
+
+    public static class ProfileSerializer{
+
+        public int id;
+        public String document_number;
+        public String birthdate;
+        public boolean isNRCBeneficiary;
+        public String contact_phone;
+        public Role role;
+        public Gender gender;
+        public EthnicGroup ethnic_group;
+        public Condition condition;
+        public DocumentType document_type;
+        public City origin_city;
     }
 
     public static class ApplicationConfiguration{
@@ -56,6 +84,7 @@ public class Models {
         public List<Role> role_list;
         public List<BodyParts> body_parts_list;
         public List<AvatarPiece> avatar_pieces_list;
+        public List<ContactFormType> contact_form_type_list;
 
         public List<AvatarPiece> getAvatarPiecesByGenderAndPart(int gender, int body_part){
             List<AvatarPiece> list = new ArrayList<>();
@@ -158,5 +187,22 @@ public class Models {
         public String description;
         public String icon;
 
+    }
+
+    public static class ContactFormType{
+
+        public int id;
+        public String name;
+        public String abreviature;
+        public String description;
+        public String icon;
+
+    }
+
+
+    public static class ContactForm {
+        public int user;
+        public int message_type;
+        public String detail;
     }
 }

@@ -22,6 +22,9 @@ public class LocalConstants {
     public static final int CONTACT_NUMBER = 2;
 
     //Shared Preferences Keys
+    public static final String USER_DATA = "USER_DATA";
+    public static final String USER_PSW = "USER_PSW";
+    public static final String APP_CONFIGURATION = "APP_CONFIGURATION";
     public static final String USER_TOKEN = "USER_TOKEN";
     public static final String CONTACT_SIZE = "CONTACT_SIZE";
     public static final String CONTACT_NUMBER_ = "CONTACT_NUMBER_";
@@ -37,11 +40,13 @@ public class LocalConstants {
     public static final String API_DIRECTORY = "api/";
     public static final String GET_APP_CONFIGURATION = "applicationConfiguration/1/";
     public static final String POST_USER_PROFILE = "create_user/";
+    public static final String POST_CONTACT_FORM = "contact_form/";
 
     //Task id for server views
     public static final int GET_APP_CONF_TASK_ID = 19;
     public static final int REGISTER_USER_TASK_ID = 20;
     public static final int LOGGIN_USER_TASK_ID = 21;
+    public static final int CONTACT_FORM_TASK_ID = 22;
 
 
 }

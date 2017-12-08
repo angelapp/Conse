@@ -1,6 +1,7 @@
 package conse.nrc.org.co.consejo.Utils;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 
 /**
  * Created by apple on 11/19/16.
@@ -23,6 +24,17 @@ public class ServerRequest {
 
             setRequest(user);
             setResponse(new Models.RegisterUserResponse());
+        }
+
+    }
+
+    public static class PostContactForm extends RequestTask{
+        public PostContactForm(Context ctx, OnRequestCompleted listener, ProgressDialog loader, int taskId, Models.ContactForm form){
+            super(ctx, listener, loader, taskId);
+            setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.POST_CONTACT_FORM );
+
+            setRequest(form);
+            setResponse(new Models.ContactForm());
         }
 
     }

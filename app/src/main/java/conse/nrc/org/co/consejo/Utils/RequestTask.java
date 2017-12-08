@@ -528,6 +528,11 @@ public abstract class RequestTask {
     }
 
     private void processError(VolleyError error) {
+        try{
+            Log.d("Volley Error", new String(error.networkResponse.data, "utf-8"));
+        } catch (Exception ea){
+            ea.printStackTrace();
+        }
 
         if (error != null) {
 
