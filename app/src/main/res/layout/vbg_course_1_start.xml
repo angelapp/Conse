@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
-        android:id="@+id/course_container">
+        android:id="@+id/course_container"
+        android:gravity="center">
        <include layout="@layout/vbg_course_1_0" />
     </LinearLayout>
 </LinearLayout>

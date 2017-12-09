@@ -13,6 +13,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 
+import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 
 /**
@@ -25,6 +26,7 @@ public class VbgCourse1Start extends Fragment {
     private View view;
     private Context mCtx;
     private LayoutInflater inflater;
+    MainInterface mainInterface;
 
     private LinearLayout courseContainer;
     private int index;
@@ -58,6 +60,7 @@ public class VbgCourse1Start extends Fragment {
             @Override
             public void onClick(View v) {
                 goForward();
+                mainInterface.saveActivityCompleted(1);
             }
         });
 
@@ -68,6 +71,7 @@ public class VbgCourse1Start extends Fragment {
     public void onAttach(Context context) {
         super.onAttach(context);
         mCtx = context;
+        mainInterface = (MainInterface) mCtx;
     }
 
 
@@ -78,15 +82,19 @@ public class VbgCourse1Start extends Fragment {
                 break;
             case 1:
                 drawPage1();
+                mainInterface.saveActivityCompleted(2);
                 break;
             case 2:
                 drawPage2();
+                mainInterface.saveActivityCompleted(3);
                 break;
             case 3:
                 drawPage3();
+                mainInterface.saveActivityCompleted(4);
                 break;
             case 4:
                 drawPage4();
+                mainInterface.saveActivityCompleted(5);
                 break;
             case 5:
                 drawPage5();
@@ -168,8 +176,13 @@ public class VbgCourse1Start extends Fragment {
     }
 
     private int getIndexPlusOne(){
-        if (index < layouts.length) {index ++; return index;}
-        else {return index;}
+        if (index < layouts.length) {
+            index ++;
+            return index;
+        }
+        else {
+            return index;
+        }
     }
 
     private int getIndexLessOne(){

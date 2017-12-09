@@ -15,6 +15,7 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
         <activity android:name=".Activities.Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,10 +29,12 @@
         <activity android:name=".Activities.SendAlert" />
         <activity android:name=".Activities.Avatar" />
         <activity android:name=".Activities.LetStart" />
+        <activity android:name=".Activities.ProgressActivity" />
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/title_activity_main"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme">
+        </activity>
     </application>
 
 </manifest>

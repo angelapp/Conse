@@ -191,6 +191,10 @@
     <string name="contact_form_tittle">CONTÁCTENOS</string>
     <string name="sending_contact_form">Enviando formulario...</string>
     <string name="send_contact_success">Se ha enviado tu mensaje</string>
+    <string name="registering_avatar_list">Guardando avatar...</string>
+    <string name="avatar_list_successful">Avatar guardado satisfactoriamente!</string>
+    <string name="saving_user_progress">Guardando progreso...</string>
+    <string name="progress_tittle">MI PROGRESO</string>
 
 
     <string-array name="clueTexts">

@@ -1,9 +1,11 @@
 package conse.nrc.org.co.consejo.Activities;
 
+import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.support.design.widget.NavigationView;
@@ -21,29 +23,51 @@ import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import conse.nrc.org.co.consejo.Fragments.AlertDialog;
 import conse.nrc.org.co.consejo.Fragments.ContactFormFragment;
 import conse.nrc.org.co.consejo.Fragments.CourseSelectionFragment;
+import conse.nrc.org.co.consejo.Fragments.ProgressFragment;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.VbgCourse1Start;
 import conse.nrc.org.co.consejo.Fragments.aboutNrcFragment;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.ConseApp;
+import conse.nrc.org.co.consejo.Utils.DataBase;
+import conse.nrc.org.co.consejo.Utils.LocalConstants;
+import conse.nrc.org.co.consejo.Utils.Models;
+import conse.nrc.org.co.consejo.Utils.RequestTask;
+import conse.nrc.org.co.consejo.Utils.ServerRequest;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, MainInterface {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, MainInterface, RequestTask.OnRequestCompleted {
 
     Button mBtMenu, mBtSendAlert;
     LinearLayout mLyMenu;
+    ProgressDialog listener;
+    List<Models.UserActivityProgress> mActivityProgressListSend = new ArrayList<>();
+    public static DataBase dataBase;
+
+    Toolbar toolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        requestWindowFeature(Window.FEATURE_NO_TITLE);
+        requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
+
         setContentView(R.layout.activity_main);
 
         this.setTheme(R.style.AppTheme);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
 
 
@@ -52,11 +76,13 @@ public class MainActivity extends AppCompatActivity
         mBtSendAlert.setOnClickListener(this);
 
         final DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
-        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
-        toggle.syncState();
-        toolbar.setVisibility(View.GONE);
+//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
+//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
+//        drawer.setDrawerListener(toggle);
+//        toggle.syncState();
+
+        dataBase = new DataBase(this);
+        dataBase.getInstance(this);
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
@@ -72,12 +98,32 @@ public class MainActivity extends AppCompatActivity
         });
 
         setCourseSelectionFragment();
+        listener = new ProgressDialog(this);
 
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
+        ImageLoader.getInstance().init(config);
+
+        //logCoursEstructure();
+    }
+
+    private void logCoursEstructure() {
+
+        List<Models.Course> course = ConseApp.getAppConfiguration(this).course_list;
+
+        for (Models.Course cusero : course){
+            Log.d("Curse Structures", "Curse: " + cusero.id + " - " + cusero.name);
+            for (Models.Topic topic: cusero.course_topics){
+                Log.d("Curse Structures", "Topic: " + topic.id + " - " + topic.name);
+                for (Models.TopicActivity activity : topic.topic_activity_list){
+                    Log.d("Curse Structures", "Act: " + activity.id + " - " + activity.description);
+                }
+            }
+        }
     }
 
     private void setCourseSelectionFragment() {
 
-        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new CourseSelectionFragment()).addToBackStack(null).commitAllowingStateLoss();
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new CourseSelectionFragment()).commitAllowingStateLoss();
 
     }
 
@@ -142,6 +188,9 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void onClick(View v) {
         switch (v.getId()){
+            case R.id.bt_progress:
+                openProgressFragment();
+                break;
             case R.id.bt_alert:
                 sendAlert();
                 break;
@@ -162,6 +211,7 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.bt_vbg:
                 initVbgCourse();
+                break;
             default:
                 break;
 
@@ -169,6 +219,15 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void openProgressFragment() {
+
+//        getSupportFragmentManager().beginTransaction().replace(R.id.rl_total_home_content, new ProgressFragment()).addToBackStack(null).commitAllowingStateLoss();
+//        hideToolBar(true);
+
+        startActivity(new Intent(this, ProgressActivity.class));
+
     }
 
     private void setContactForm() {
@@ -204,5 +263,55 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void setPreviousFragment() {
         super.onBackPressed();
+    }
+
+
+
+    @Override
+    public void saveActivityCompleted(int activity_code){
+        dataBase.insertTopicActivity(new Models.UserActivityProgress(activity_code, ConseApp.user.user.id));
+        mActivityProgressListSend.clear();
+        mActivityProgressListSend = dataBase.getTopicActivitiesCompletedNotSent();
+        listener.setMessage(getString(R.string.saving_user_progress));
+        new ServerRequest.PostUserActivityProgress(this, this, listener,
+                LocalConstants.POST_USER_PROGRESS_LIST_TASK_ID, mActivityProgressListSend).executePostList();
+
+    }
+
+    @Override
+    public void hideToolBar(boolean hide) {
+//        if (hide) {
+//            getSupportActionBar().hide();
+////            toolbar.setVisibility(View.GONE);
+//        } else {
+//            getSupportActionBar().show();
+////            toolbar.setVisibility(View.VISIBLE);
+//        }
+    }
+
+    @Override
+    public void onRequestResponse(Object response, int taskId) {
+
+        switch (taskId){
+            case LocalConstants.POST_USER_PROGRESS_LIST_TASK_ID:
+                dataBase.updateTopicActivitySent(mActivityProgressListSend);
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    @Override
+    public void onRequestError(int errorCode, String errorMsg, int taskId) {
+
+        switch (taskId){
+            case LocalConstants.POST_USER_PROGRESS_LIST_TASK_ID:
+                Toast.makeText(this, errorMsg, Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+
     }
 }

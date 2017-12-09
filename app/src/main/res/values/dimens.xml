@@ -15,6 +15,7 @@
     <dimen name="menu_item_bottom_margin">15dp</dimen>
     <dimen name="ilustration_woman">180dp</dimen>
     <dimen name="square_padding_top">40dp</dimen>
+    <dimen name="height_size_40">40dp</dimen>
 
 
 </resources>

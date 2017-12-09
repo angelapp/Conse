@@ -1,0 +1,86 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@android:color/white">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/salmon"
+        android:gravity="center"
+        android:id="@+id/relative_tab">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/fl_header">
+
+            <Button
+                android:id="@+id/bt_back"
+                android:background="@drawable/regresar"
+                android:gravity="right"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="15dp"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="right" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/insignia"
+                    android:id="@+id/imageView3"
+                    android:layout_below="@+id/bt_back"
+                    android:layout_marginTop="50dp" />
+
+                <TextView
+                    android:text="@string/progress_tittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    style="@style/ConseTittleTextH1"
+                    android:id="@+id/textView12"
+                    android:layout_marginTop="10dp" />
+            </LinearLayout>
+        </FrameLayout>
+
+        <com.astuetz.PagerSlidingTabStrip
+            android:id="@+id/progress_tabs_pager"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/height_size_40"
+            style="@style/PagerTabStrip"
+            app:pstsIndicatorColor="@color/white"
+            app:pstsDividerColor="@android:color/transparent"
+            app:pstsTabTextColor="@color/white"
+            app:pstsTabTextAllCaps="false"
+            android:layout_below="@+id/fl_header"
+
+            />
+
+
+    </RelativeLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/progress_view_pager"
+        android:layout_below="@+id/relative_tab">
+
+
+    </android.support.v4.view.ViewPager>
+
+
+</RelativeLayout>

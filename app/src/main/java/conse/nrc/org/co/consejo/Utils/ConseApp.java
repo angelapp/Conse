@@ -7,6 +7,9 @@ import android.util.Log;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by apple on 11/18/17.
  */
@@ -39,6 +42,18 @@ public class ConseApp extends Application {
     public static Models.ApplicationConfiguration getAppConfiguration(Context ctx){
         appConfiguration = UtilsFunctions.getSavedObjectFromPreference(ctx, LocalConstants.APP_CONFIGURATION, Models.ApplicationConfiguration.class);
         return appConfiguration;
+    }
+
+    public static List<Models.UserAvatar> getUserAvatarList(Context ctx){
+        List<Models.UserAvatar> userAvatarsList = new ArrayList<>();
+
+        for(int i = 1; i<=5; i++){
+            userAvatarsList.add(new Models.UserAvatar(user.user.id,
+                    UtilsFunctions.getSharedInteger(ctx, LocalConstants.AVATAR_SELECTED_PART_+String.valueOf(i))));
+        }
+
+        return userAvatarsList;
+
     }
 
 }

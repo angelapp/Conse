@@ -1,7 +1,7 @@
 <resources>
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
@@ -141,6 +141,19 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <style name="PagerTabStrip">
+        <item name="android:textColor">@color/grey_dark</item>
+        <item name="android:layout_gravity">top</item>
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:textSize">18dp</item>
+    </style>
+
+    <style name = "ConseProgressBar" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
+        <item name="android:progressDrawable">@drawable/progress_bar_drawable</item>
+        <!--<item name="minHeight">20dp</item>-->
+        <!--<item name="maxHeight">50dp</item>-->
+    </style>
 
 
 </resources>

@@ -14,7 +14,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical"
-                    android:gravity="center_horizontal">
+                    android:gravity="center_vertical|center_horizontal">
                         <TextView
                             android:text="@string/vbg_course_start_tittle"
                             android:layout_width="match_parent"

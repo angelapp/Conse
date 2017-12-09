@@ -15,6 +15,7 @@
     <color name="grey_dark">#95989a</color>
     <color name="white">#fff</color>
     <color name="hard_gray">#333</color>
+    <color name="progress_green">#0ef90a</color>
 
 
 </resources>

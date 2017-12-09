@@ -1,5 +1,6 @@
 package conse.nrc.org.co.consejo.Fragments;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
@@ -26,13 +27,15 @@ import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.Models;
+import conse.nrc.org.co.consejo.Utils.RequestTask;
+import conse.nrc.org.co.consejo.Utils.ServerRequest;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 /**
  * Created by apple on 11/22/17.
  */
 
-public class SelectAvatarPiecesFragment extends Fragment {
+public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.OnRequestCompleted{
 
     View mView;
     Context mCtx;
@@ -48,6 +51,7 @@ public class SelectAvatarPiecesFragment extends Fragment {
     RadioGroup mRgHead, mRgHair, mRgNose, mRgEyes, mRgAccesory;
     private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
     DisplayImageOptions options, optionsPreview;
+    ProgressDialog listener;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -125,6 +129,9 @@ public class SelectAvatarPiecesFragment extends Fragment {
 
         fillLayouts();
 
+        listener = new ProgressDialog(mCtx);
+        listener.setMessage(getString(R.string.registering_avatar_list));
+
         return mView;
     }
 
@@ -194,10 +201,14 @@ public class SelectAvatarPiecesFragment extends Fragment {
         }
 
         if(!miss_selection){
-            nextActivity();
+            sendToServerAvatarPieces();
         } else {
             Toast.makeText(mCtx, R.string.missing_avatar_selection, Toast.LENGTH_SHORT).show();
         }
+    }
+
+    private void sendToServerAvatarPieces() {
+        new ServerRequest.PostUserAvatarPieces(mCtx, this, listener, LocalConstants.POST_AVATAR_LIST_TASK_ID, ConseApp.getUserAvatarList(mCtx)).executePostList();
     }
 
     private void savePiecesSelected(List<Integer> tag) {
@@ -215,4 +226,30 @@ public class SelectAvatarPiecesFragment extends Fragment {
         avatarInterfaces = (AvatarInterfaces) mCtx;
     }
 
+    @Override
+    public void onRequestResponse(Object response, int taskId) {
+
+        switch (taskId){
+            case LocalConstants.POST_AVATAR_LIST_TASK_ID:
+                Toast.makeText(mCtx, getString(R.string.avatar_list_successful), Toast.LENGTH_SHORT).show();
+                nextActivity();
+                break;
+            default:
+                break;
+        }
+
+    }
+
+    @Override
+    public void onRequestError(int errorCode, String errorMsg, int taskId) {
+
+        switch (taskId){
+            case LocalConstants.REGISTER_USER_TASK_ID:
+                Toast.makeText(mCtx, errorMsg, Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
+
+    }
 }

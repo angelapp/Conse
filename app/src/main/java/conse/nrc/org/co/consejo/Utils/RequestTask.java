@@ -14,11 +14,14 @@ import com.android.volley.Response;
 import com.android.volley.Response.Listener;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.ImageRequest;
+import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.google.gson.Gson;
+import com.google.gson.JsonArray;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.RequestParams;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -35,7 +38,7 @@ public abstract class RequestTask {
     private static final boolean DEBUG = true;
     private final int MAX_REQUEST_TIMEOUT_MS = 20*1000;
 
-    private static final String KEY_USER_TOKEN = "USERID";
+    private static final String KEY_USER_TOKEN = "Authorization";
     private static final String API_KEY = "Api-Key";
 
 
@@ -151,12 +154,12 @@ public abstract class RequestTask {
             volleyExecutePost();
     }
 
-    public void executePost(String childId) {
+    public void executePostList() {
         onPreExecute();
         if (isUploadFile)
             uploadFileExecute();
         else
-            volleyExecutePost(childId);
+            volleyExecutePostList();
     }
 
     public void executePost(String childId, String restrictionId) {
@@ -228,15 +231,16 @@ public abstract class RequestTask {
 
     }
 
-    private void volleyExecutePost(final String childId) {
+    private void volleyExecutePostList() {
 
         if (DEBUG) Log.d(TAG, "[REQUEST_TASK] POST_METHOD URL: " + url);
 
-        JsonObjectRequest jsonRequet = new JsonObjectRequest(Method.POST, url, getRequest(),
 
-                new Listener<JSONObject>() {
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Method.POST, url, getListRequest(),
 
-                    public void onResponse(JSONObject result) {
+                new Response.Listener<JSONArray>(){
+
+                    public void onResponse(JSONArray result) {
 
                         onPostExecute();
 
@@ -246,8 +250,6 @@ public abstract class RequestTask {
 
                         Object resp = new Gson().fromJson(result.toString(), response.getClass());
                         listener.onRequestResponse(resp, id);
-
-
                     }
 
                 },
@@ -267,9 +269,9 @@ public abstract class RequestTask {
             }
 
         };
-        jsonRequet.setTag(TAG);
+        jsonArrayRequest.setTag(TAG);
         RequestQueue mQueue = VolleyInstance.getRequestQueue(this.ctx);
-        mQueue.add(jsonRequet);
+        mQueue.add(jsonArrayRequest);
     }
 
     private void volleyExecutePost(final String childId, final String restrctionId) {
@@ -521,8 +523,12 @@ public abstract class RequestTask {
         Map<String, String> params = new HashMap<>();
         //read token saved on sharedPreference previously and them put token on headers
         params.put(API_KEY, LocalConstants.API_KEY);
-        if(UtilsFunctions.getSharedString(ctx, LocalConstants.USER_TOKEN)!= null){
-            params.put(KEY_USER_TOKEN, UtilsFunctions.getSharedString(ctx, LocalConstants.USER_TOKEN));
+        try {
+            if (ConseApp.getActualUser(ctx).token != null) {
+                params.put(KEY_USER_TOKEN, "token " + ConseApp.getActualUser(ctx).token);
+            }
+        } catch (Exception ea){
+            ea.printStackTrace();
         }
         return params;
     }
@@ -653,7 +659,23 @@ public abstract class RequestTask {
             return null;
 
         }
+    }
 
+    private JSONArray getListRequest(){
+        try {
+            String req = new Gson().toJson(request);;
+            if (DEBUG) Log.d(TAG, "[REQUEST_TASK] JSON_SEND: " + req);
+            return new JSONArray(req);
+
+        } catch (JSONException e) {
+
+            if (DEBUG) Log.d(TAG, "[REQUEST_TASK] JSONException");
+            listener.onRequestError(ErrorCodes.JSON_ERROR, e.getMessage(), id);
+//			Crashlytics.logException(e);
+            if (DEBUG) e.printStackTrace();
+            return null;
+
+        }
     }
 
     private void onPreExecute() {

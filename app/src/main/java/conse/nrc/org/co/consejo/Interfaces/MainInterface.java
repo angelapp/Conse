@@ -9,4 +9,8 @@ public interface MainInterface {
     void startVbgCourse();
 
     void setPreviousFragment();
+
+    void saveActivityCompleted(int activity_code);
+
+    void hideToolBar(boolean hide);
 }

@@ -3,6 +3,9 @@ package conse.nrc.org.co.consejo.Utils;
 import android.app.ProgressDialog;
 import android.content.Context;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by apple on 11/19/16.
  */
@@ -35,6 +38,29 @@ public class ServerRequest {
 
             setRequest(form);
             setResponse(new Models.ContactForm());
+        }
+
+    }
+
+    public static class PostUserAvatarPieces extends RequestTask{
+        public PostUserAvatarPieces(Context ctx, OnRequestCompleted listener, ProgressDialog loader, int taskId, List<Models.UserAvatar> avatarList){
+            super(ctx, listener, loader, taskId);
+            setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.POST_AVATAR_LIST );
+
+            setRequest(avatarList);
+            setResponse(new ArrayList<Models.UserAvatar>());
+        }
+
+    }
+
+    public static class PostUserActivityProgress extends RequestTask{
+        public PostUserActivityProgress(Context ctx, OnRequestCompleted listener,
+                                        ProgressDialog loader, int taskId, List<Models.UserActivityProgress> userActivityProgressList){
+            super(ctx, listener, loader, taskId);
+            setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.POST_USER_PROGRESS_LIST );
+
+            setRequest(userActivityProgressList);
+            setResponse(new ArrayList<Models.UserActivityProgress>());
         }
 
     }

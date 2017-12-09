@@ -41,12 +41,17 @@ public class LocalConstants {
     public static final String GET_APP_CONFIGURATION = "applicationConfiguration/1/";
     public static final String POST_USER_PROFILE = "create_user/";
     public static final String POST_CONTACT_FORM = "contact_form/";
+    public static final String POST_AVATAR_LIST = "user_avatar/";
+    public static final String POST_USER_PROGRESS_LIST = "user_progress/";
+
 
     //Task id for server views
     public static final int GET_APP_CONF_TASK_ID = 19;
     public static final int REGISTER_USER_TASK_ID = 20;
     public static final int LOGGIN_USER_TASK_ID = 21;
     public static final int CONTACT_FORM_TASK_ID = 22;
+    public static final int POST_AVATAR_LIST_TASK_ID = 23;
+    public static final int POST_USER_PROGRESS_LIST_TASK_ID = 24;
 
 
 }
