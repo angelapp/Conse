@@ -21,10 +21,21 @@ public class ServerRequest {
     }
 
     public static class RegisterUser extends RequestTask{
-        public RegisterUser(OnRequestCompleted listener, ProgressDialog loader, int taskId, Models.RegisterUserProfileModel user){
-            super(listener, loader, taskId);
+        public RegisterUser(Context ctx,OnRequestCompleted listener, ProgressDialog loader, int taskId, Models.RegisterUserProfileModel user){
+            super(ctx, listener, loader, taskId);
             setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.POST_USER_PROFILE );
 
+            setRequest(user);
+            setResponse(new Models.RegisterUserResponse());
+        }
+
+    }
+
+    public static class UpdateUserProfile extends RequestTask{
+        public UpdateUserProfile(Context ctx, OnRequestCompleted listener, ProgressDialog loader, int taskId, Models.RegisterUserProfileModel user){
+            super(ctx, listener, loader, taskId);
+            setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY +
+                    LocalConstants.PUT_USER_PROFILE_EDIT + ConseApp.getActualUser(ctx).profile.id +"/");
             setRequest(user);
             setResponse(new Models.RegisterUserResponse());
         }

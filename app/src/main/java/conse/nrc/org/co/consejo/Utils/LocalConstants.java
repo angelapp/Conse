@@ -43,6 +43,7 @@ public class LocalConstants {
     public static final String POST_CONTACT_FORM = "contact_form/";
     public static final String POST_AVATAR_LIST = "user_avatar/";
     public static final String POST_USER_PROGRESS_LIST = "user_progress/";
+    public static final String PUT_USER_PROFILE_EDIT = "profile/";
 
 
     //Task id for server views
@@ -52,6 +53,7 @@ public class LocalConstants {
     public static final int CONTACT_FORM_TASK_ID = 22;
     public static final int POST_AVATAR_LIST_TASK_ID = 23;
     public static final int POST_USER_PROGRESS_LIST_TASK_ID = 24;
+    public static final int PUT_USER_PROFILE_EDIT_TASK_ID = 25;
 
 
 }

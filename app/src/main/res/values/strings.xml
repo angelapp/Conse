@@ -195,6 +195,8 @@
     <string name="avatar_list_successful">Avatar guardado satisfactoriamente!</string>
     <string name="saving_user_progress">Guardando progreso...</string>
     <string name="progress_tittle">MI PROGRESO</string>
+    <string name="updating_profile_data">Actualizando datos...</string>
+    <string name="updated_profile_info">Información actualizada</string>
 
 
     <string-array name="clueTexts">

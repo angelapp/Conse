@@ -38,7 +38,7 @@ public class DataBase extends SQLiteOpenHelper {
 
     //Scripts Delete
     public String queryDeleteTopicActivity =
-            "DELETE * FROM " + USER_TOPIC_PROGRESS;
+            "DELETE FROM " + USER_TOPIC_PROGRESS;
 
 
     //Scripts to mark activity as sent
@@ -96,6 +96,10 @@ public class DataBase extends SQLiteOpenHelper {
                     + topic_activity + " DATE: " + topic_activity.date_completed);
         }
         cursor.close();
+    }
+
+    public void clearTopicActivity(){
+        this.getWritableDatabase().execSQL(queryDeleteTopicActivity);
     }
 
     public void updateTopicActivitySent(int topic_activity){

@@ -32,6 +32,7 @@ import java.util.List;
 import conse.nrc.org.co.consejo.Fragments.AlertDialog;
 import conse.nrc.org.co.consejo.Fragments.ContactFormFragment;
 import conse.nrc.org.co.consejo.Fragments.CourseSelectionFragment;
+import conse.nrc.org.co.consejo.Fragments.ProfileFragment;
 import conse.nrc.org.co.consejo.Fragments.ProgressFragment;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.VbgCourse1Start;
 import conse.nrc.org.co.consejo.Fragments.aboutNrcFragment;
@@ -203,6 +204,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.bt_contact:
                 setContactForm();
                 break;
+            case R.id.bt_edit_profile:
+                openEditProfileFragment();
+                break;
             case R.id.bt_close_sesion:
                 closeSesion();
                 break;
@@ -219,6 +223,12 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void openEditProfileFragment() {
+        ProfileFragment fragment = new ProfileFragment();
+        fragment.editionMode = true;
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, fragment).addToBackStack(null).commitAllowingStateLoss();
     }
 
     private void openProgressFragment() {
@@ -273,8 +283,10 @@ public class MainActivity extends AppCompatActivity
         mActivityProgressListSend.clear();
         mActivityProgressListSend = dataBase.getTopicActivitiesCompletedNotSent();
         listener.setMessage(getString(R.string.saving_user_progress));
-        new ServerRequest.PostUserActivityProgress(this, this, listener,
-                LocalConstants.POST_USER_PROGRESS_LIST_TASK_ID, mActivityProgressListSend).executePostList();
+        if (mActivityProgressListSend.size()>0) {
+            new ServerRequest.PostUserActivityProgress(this, this, listener,
+                    LocalConstants.POST_USER_PROGRESS_LIST_TASK_ID, mActivityProgressListSend).executePostList();
+        }
 
     }
 

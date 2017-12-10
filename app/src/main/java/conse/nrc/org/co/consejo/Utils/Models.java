@@ -78,6 +78,8 @@ public class Models {
         public String emergency_message;
         public String about_noruegan_council;
         public int min_pin_length;
+        public String psw_regular_expression;
+        public String psw_error_recomendation;
 
         public List<DocumentType> document_type_list;
         public List<Gender> gender_list;

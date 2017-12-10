@@ -16,8 +16,8 @@ import java.util.List;
 
 public class ConseApp extends Application {
 
-    public static Models.ApplicationConfiguration appConfiguration = new Models.ApplicationConfiguration();
-    public static Models.RegisterUserResponse user = new Models.RegisterUserResponse();
+    public static Models.ApplicationConfiguration appConfiguration;
+    public static Models.RegisterUserResponse user;
 
     @Override
     public void onCreate(){

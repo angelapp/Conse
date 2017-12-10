@@ -162,12 +162,12 @@ public abstract class RequestTask {
             volleyExecutePostList();
     }
 
-    public void executePost(String childId, String restrictionId) {
+    public void executePut() {
         onPreExecute();
         if (isUploadFile)
             uploadFileExecute();
         else
-            volleyExecutePost(childId, restrictionId);
+            volleyExecutePut();
     }
 
     public void executeGetImage() {
@@ -274,11 +274,11 @@ public abstract class RequestTask {
         mQueue.add(jsonArrayRequest);
     }
 
-    private void volleyExecutePost(final String childId, final String restrctionId) {
+    private void volleyExecutePut() {
 
-        if (DEBUG) Log.d(TAG, "[REQUEST_TASK] POST_METHOD URL: " + url);
+        if (DEBUG) Log.d(TAG, "[REQUEST_TASK] PUT_METHOD URL: " + url);
 
-        JsonObjectRequest jsonRequet = new JsonObjectRequest(Method.POST, url, getRequest(),
+        JsonObjectRequest jsonRequet = new JsonObjectRequest(Method.PUT, url, getRequest(),
 
                 new Listener<JSONObject>() {
 
