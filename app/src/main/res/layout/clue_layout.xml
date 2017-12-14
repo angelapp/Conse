@@ -5,12 +5,11 @@
     android:gravity="center">
 
     <TextView
-        android:text="@string/vbg_course_start_message"
+        android:text="1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/number_clue"
-        style="@style/ConseParagraphText"
-        android:background="@color/black_overlay"
+        style="@style/ConseTittleTextH1"
         android:textColor="@color/white"
         android:layout_marginLeft="@dimen/square_padding_top"
         android:layout_marginRight="@dimen/square_padding_top"/>
@@ -21,7 +20,6 @@
         android:layout_height="wrap_content"
         android:id="@+id/text_clue"
         style="@style/ConseParagraphText"
-        android:background="@color/black_overlay"
         android:textColor="@color/white"
         android:layout_marginLeft="@dimen/square_padding_top"
         android:layout_marginRight="@dimen/square_padding_top"/>

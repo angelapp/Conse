@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -12,7 +13,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="55dp">
 
             <View
                 android:layout_width="match_parent"
@@ -83,10 +85,12 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_1"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:onClick="onClick"
+                        android:tag="como_mujer_victima_tienes_derecho" />
 
                 </RelativeLayout>
 
@@ -109,16 +113,19 @@
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_back"
-                    android:background="@drawable/button_back"/>
+                    android:id="@+id/bt_previous"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
 
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_forward"
+                    android:id="@+id/bt_next"
                     android:background="@drawable/button_next"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:onClick="onClick"
+                    android:tag="MOD_2_R" />
 
             </LinearLayout>
 

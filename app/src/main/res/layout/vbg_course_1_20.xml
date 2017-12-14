@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:tag="need_avatar">
-
+    android:layout_height="match_parent">
 
 
     <ScrollView
@@ -14,7 +11,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="@dimen/fab_margin"
             android:paddingRight="@dimen/fab_margin"
@@ -26,7 +23,7 @@
                 android:background="@color/black_overlay"/>
 
             <TextView
-                android:text="@string/course_1_3_a"
+                android:text="@string/course_1_20_tittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
@@ -40,53 +37,69 @@
 
 
 
-            <RelativeLayout
+            <TextView
+                android:text="@string/course_1_20_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top">
+                android:id="@+id/textView2"
+                style="@style/ConseTittleTextH1"
+                android:drawableLeft="@drawable/uno"
+                android:gravity="left|center_vertical"
+                android:drawablePadding="15dp"
+                android:layout_marginTop="15dp" />
 
 
-                <FrameLayout
+            <TextView
+                android:text="@string/course_1_20_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView9"
+                style="@style/ConseParagraphText"
+                android:layout_marginTop="10dp"
+                android:gravity="center_vertical"/>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/white"/>
+
+                <RelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/globitoparaaudio"
-                    android:id="@+id/fl_image">
+                    android:orientation="horizontal">
 
                     <TextView
-                        android:text="@string/course_1_8_a"
-                        android:layout_width="wrap_content"
+                        android:text="@string/course_1_20_text_2"
+                        android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
-                        style="@style/ConseTittleTextH1"
-                        android:gravity="center"
-                        android:layout_marginLeft="@dimen/fab_margin"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginTop="-15dp" />
-
+                        style="@style/ConseTittleTextH2"
+                        android:layout_marginBottom="30dp"
+                        android:layout_marginTop="30dp"
+                        android:textColor="@color/salmon"/>
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
                         android:id="@+id/bt_play"
                         android:background="@drawable/play"
+                        android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
-                        android:layout_marginRight="@dimen/fab_margin"
                         android:onClick="onClick"
-                        android:tag="nunca_olvides_que"
-                        android:gravity="top|right"
-                        android:layout_gravity="right|center_vertical"
-                        android:layout_marginTop="-15dp" />
-                </FrameLayout>
+                        android:tag="tu_eres_quien_decide" />
 
-                <FrameLayout
+                </RelativeLayout>
+
+
+                <View
                     android:layout_width="match_parent"
-                    android:layout_below="@+id/fl_image"
-                    android:layout_marginTop="-30dp"
-                    android:tag="here_avatar"
-                    android:layout_height="200dp">
-
-                </FrameLayout>
-
-            </RelativeLayout>
+                    android:layout_height="1dp"
+                    android:background="@color/white"/>
+            </LinearLayout>
 
 
 
@@ -95,7 +108,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="30dp">
+                android:layout_marginTop="15dp">
 
                 <Button
                     android:layout_width="56dp"
@@ -111,16 +124,13 @@
                     android:id="@+id/bt_next"
                     android:background="@drawable/button_next"
                     android:layout_marginLeft="20dp"
-                    android:onClick="onClick"
-                    android:tag="MOD_1_R" />
+                    android:onClick="onClick" />
 
             </LinearLayout>
 
         </LinearLayout>
 
     </ScrollView>
-
-
 
 
 </LinearLayout>

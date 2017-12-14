@@ -19,30 +19,34 @@
             android:background="@color/grey_light"
             android:id="@+id/rl_total_home_content">
 
-            <Button
-
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/bt_alert"
-                android:background="@drawable/alertainternas"
-                android:gravity="bottom|center_horizontal"
-                android:layout_alignParentBottom="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="bottom|center_horizontal"
-                android:layout_marginTop="15dp" />
-
-            <LinearLayout
-                android:orientation="vertical"
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/ly_home_content"
-                android:layout_marginTop="55dp"
-                android:background="@color/grey_light"
-                android:layout_above="@id/bt_alert"
-                >
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/ly_home_content"
+                    android:layout_marginTop="55dp"
+                    android:background="@color/grey_light"
+                    android:paddingBottom="0dp">
 
 
-            </LinearLayout>
+                </LinearLayout>
+
+                <Button
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bt_alert"
+                    android:background="@drawable/alertainternas"
+                    android:gravity="bottom|center_horizontal"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:layout_gravity="bottom|center_horizontal"
+                    android:layout_marginTop="15dp" />
+            </FrameLayout>
 
             <LinearLayout
                 android:orientation="horizontal"

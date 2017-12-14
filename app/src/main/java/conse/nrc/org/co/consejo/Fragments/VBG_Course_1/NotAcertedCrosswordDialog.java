@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.TextView;
 
 import conse.nrc.org.co.consejo.R;
 
@@ -18,6 +19,7 @@ import conse.nrc.org.co.consejo.R;
 public class NotAcertedCrosswordDialog extends android.app.DialogFragment {
 
 
+    public static String mMesaggeText;
 
 
     @Override
@@ -25,8 +27,8 @@ public class NotAcertedCrosswordDialog extends android.app.DialogFragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.vbg_course_1_10, container, false);
 
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
+        Button btBack = (Button) view.findViewById(R.id.bt_previous);
+
 
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -35,13 +37,9 @@ public class NotAcertedCrosswordDialog extends android.app.DialogFragment {
             }
         });
 
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                dismiss();
-            }
-        });
-
+        if(mMesaggeText != null){
+            ((TextView)view.findViewById(R.id.tv_message)).setText(mMesaggeText);
+        }
         return view;
     }
 

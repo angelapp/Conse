@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:minWidth="450dp"
+    android:minHeight="450dp">
 
 
     <ImageView
-        android:layout_width="180dp"
-        android:layout_height="180dp"
         android:src="@drawable/admiracion"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/square_padding_top"
-        />
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
 
 
     <TextView
         android:text="@string/course_1_11_a"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView5"
+        android:id="@+id/tv_message"
         style="@style/ConseTittleTextH1"
         android:gravity="center"
         android:textColor="@color/white"/>
@@ -29,19 +30,14 @@
         android:gravity="center"
         android:layout_marginTop="15dp" >
 
-        <Button
-            android:layout_width="56dp"
-            android:layout_height="56dp"
-            android:id="@+id/bt_back"
-            android:background="@drawable/button_back"/>
-
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:id="@+id/bt_forward"
+            android:id="@+id/bt_previous"
             android:background="@drawable/button_new_intent"
-            android:layout_marginLeft="20dp" />
+            android:layout_marginLeft="20dp"
+            android:onClick="onClick" />
 
     </LinearLayout>
 

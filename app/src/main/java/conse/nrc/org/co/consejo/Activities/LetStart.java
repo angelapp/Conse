@@ -6,7 +6,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
@@ -23,6 +25,7 @@ public class LetStart extends AppCompatActivity {
     List<ImageView> mIvList = new ArrayList<>();
     DisplayImageOptions optionsPreview;
     private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
+    FrameLayout mFyContent;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +33,14 @@ public class LetStart extends AppCompatActivity {
         setContentView(R.layout.activity_let_start);
         Button bt_start = (Button) findViewById(R.id.bt_let_start);
 
+        mFyContent = (FrameLayout) findViewById(R.id.fl_avatar);
 
-        mIvList.add((ImageView) findViewById(R.id.iv_head));
-        mIvList.add((ImageView) findViewById(R.id.iv_hair));
-        mIvList.add((ImageView) findViewById(R.id.iv_accesory));
-        mIvList.add((ImageView) findViewById(R.id.iv_eyes));
-        mIvList.add((ImageView) findViewById(R.id.iv_nose));
+
+//        mIvList.add((ImageView) findViewById(R.id.iv_head));
+//        mIvList.add((ImageView) findViewById(R.id.iv_hair));
+//        mIvList.add((ImageView) findViewById(R.id.iv_accesory));
+//        mIvList.add((ImageView) findViewById(R.id.iv_eyes));
+//        mIvList.add((ImageView) findViewById(R.id.iv_nose));
 
 
         optionsPreview = new DisplayImageOptions.Builder()
@@ -61,10 +66,14 @@ public class LetStart extends AppCompatActivity {
     }
 
     private void drawAvatar() {
-        for (int i = 1; i<= mIvList.size() ; i++){
-            int pieceId = UtilsFunctions.getSharedInteger(this, LocalConstants.AVATAR_SELECTED_PART_ + String.valueOf(i));
-            imageLoader.displayImage(ConseApp.appConfiguration.getAvatarPieceById(pieceId).icon, mIvList.get(i-1), optionsPreview);
-        }
+
+        mFyContent.removeAllViews();
+        mFyContent.addView(ConseApp.getAvatarFrame(this, imageLoader, optionsPreview));
+
+//        for (int i = 1; i<= mIvList.size() ; i++){
+//            int pieceId = UtilsFunctions.getSharedInteger(this, LocalConstants.AVATAR_SELECTED_PART_ + String.valueOf(i));
+//            imageLoader.displayImage(ConseApp.appConfiguration.getAvatarPieceById(pieceId).icon, mIvList.get(i-1), optionsPreview);
+//        }
     }
 
     private void startMain() {

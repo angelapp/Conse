@@ -15,7 +15,7 @@
     <string name="gender_tittle_h2">Género</string>
     <string name="is_nrc_beneficiary_checkbox">Soy beneficiario de los programas NRC</string>
     <string name="account_tittle_h2">Usuario Conse</string>
-    <string name="pasword_et_last_name">Contraseña</string>
+    <string name="pasword_et_last_name">Contraseña, 8 caracteres</string>
     <string name="email_et_hint">Correo electrónico</string>
     <string name="ethnic_group_tittle_h2">Grupo étnico</string>
     <string name="geographic_location_tittle_h2">Localizacion geográfica</string>
@@ -71,7 +71,7 @@
     <string name="number_11">11</string>
 
     <string name="course_1_1_a">¿Qué son las Violencias Basadas en Género</string>
-    <string name="course_1_1_b">Son aquellas \r\nformas de violencia que se \r\nejercen contra una persona por su condición de género o sexo, y que responden a relaciones \r\ndesiguales de poder entre \r\nhombres y mujeres</string>
+    <string name="course_1_1_b">Son aquellas \r\nformas de violencia que \r\n se ejercen contra una persona por su condición de género o sexo, y que responden a relaciones \r\ndesiguales de poder entre \r\nhombres y mujeres</string>
     <string name="course_1_1_c">Guia divulgadora de ONU Mujeres</string>
     <string name="course_1_1_d">La VBG puede ser ejercida conra personas que no se adecuan a lo esperado por la sociedad según su sexo, como es el caso de personas con orientación sexual diversa (gays, lebianas, y bisexuales) o con identidad de género diversa (transexuales), pero se ejerce principalmente contra mujeres, niñas y adolecentes, de alli que cuando se hable de violencia de g´nero, se asocie mayormente con violencia contra las mujeres</string>
     <string name="course_1_1_e">¡Ahora sí, estás lista para iniciar!</string>
@@ -115,15 +115,22 @@
     <string name="course_1_7_e">Por último, pero no menos importante, adopta los siguientes consejos como leyes inquebrantables para tu vida diaria</string>
     <string name="course_1_8_a">Nunca olvides que...</string>
     <string name="course_1_9_a">¡Buenísimo! Has finalizado tu primer módulo de formación, responde al siguiente crucigrama y recibiras tu primer reconocimiento.</string>
-    <string name="course_1_10_a">Completa el crucigrama. Pulsa sobre el número para ver la pista</string>
+    <string name="course_1_10_a">Completa el crucigrama. Pulsa doble clic sobre el número para ver la pista</string>
     <string name="course_1_11_a">No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!</string>
     <string name="course_1_12_a">¡Buen trabajo!</string>
-    <string name="course_1_12_b">¡Es un honor concederte el titulo de Consejera Principiante!</string>
+    <string name="course_1_12_b">¡Es un honor concederte el titulo de Consejera Conocedora!</string>
     <string name="course_1_13_a">¿Qué derechos tengo?</string>
     <string name="course_1_13_b">Ahora que sabes qué es la víolencia de género, donde se puede presentar y por parte de quien, es hora de que sepas cómo puedes protegerte. Si te reconoces como una mujer víctima de cualquier tipo de ciolencia, incluidas las cometidas en el conflicto armado, y decides acudir a una entidad de tu minicipio en busca de ayuda, primero ten presente cuáles son tus derechos según la ley:</string>
     <string name="course_1_13_c">Como mujer victima de violencia, tienes derecho a:</string>
     <string name="course_1_13_d">Módulo 2</string>
-    <string name="course_1_13_e">¡Muy bien! ¡Has explorado todo el contenido! Realiza la siguiente prueba y consigue el titulo de Consejera Conocedora</string>
+    <string name="course_1_13_e">¡Muy bien! ¡Has explorado todo el contenido! Realiza la siguiente prueba y consigue el titulo de Consejera Experta</string>
+    <string name="course_1_16_c">Revisa el siguiente listado y y haz clic sobre las tres opciones que consideres acertadas.</string>
+    <string name="course_1_16_e">Como mujer víctima de violencia, tienes derecho a:</string>
+    <string name="course_1_16_f">A una atención integral, oportuna, especializada y de calidad.</string>
+    <string name="course_1_16_g">A pasar por el proceso de conciliación, ent todos los conflictos el primer paso debe ser siempre la conciliación</string>
+    <string name="course_1_16_h">A un trato humano, respetuoso y digno</string>
+    <string name="course_1_16_i">A que se te comuniquen todas las decisiones que puedan afectar tus derechos</string>
+    <string name="course_1_16_j">A que la comunidad se entere de lo ocurrido para que puedan identificarte a ti y a tu familia como víctimas</string>
 
 
     <string name="clue_1">psicologica</string>
@@ -142,7 +149,7 @@
     <string name="course_1_14_e">Si la violencia es contra niños, niñas y adolecentes, comunícate a la línea 141 del ICBF desde tu teléfono fijo o celular, de manera gratuita, durante las 24 horas del día, todos los días de la semana.</string>
     <string name="course_1_15_a">¿Qué puedo hacer si creo ser victima de violencia?</string>
     <string name="course_1_15_b">Solicita atención en salud</string>
-    <string name="course_1_15_c">Tienes el derecho de acudir o ser transladada un centro de salud, hospital o clñinica, para que te brinden la atención médica y psicológica</string>
+    <string name="course_1_15_c">Tienes el derecho de acudir o ser transladada un centro de salud, hospital o clínica, para que te brinden la atención médica y psicológica</string>
     <string name="course_1_15_d">Ten en cuenta...</string>
     <string name="course_1_16_a">¿Qué puedo hacer si creo ser victima de violencia?</string>
     <string name="course_1_16_b">Centros de salud, hospitales o clinicas de cualquier nivel. \r\nSi requieres atención especializada esmas probable conseguirla en hospitales o clinicas de ciudades capitales.</string>
@@ -197,7 +204,35 @@
     <string name="progress_tittle">MI PROGRESO</string>
     <string name="updating_profile_data">Actualizando datos...</string>
     <string name="updated_profile_info">Información actualizada</string>
+    <string name="crossword">Crucigrama</string>
+    <string name="need_avatar">need_avatar</string>
+    <string name="mod_2_q1_not_acerted_message">Nunca olvides que tienes derecho a decidir voluntariamente si quieres ser confrontada con el agresor o agresores y a manifestar tu intención de conciliar. \n\r Recuerda que tienes el derecho a la reserva de tu intimidad, de tus datos personales, y los de tus familiares y personas allegadas. \n\r Aunque te equivoques sigues aprendiendo</string>
+    <string name="course_1_18_consejera_experta">Ahora debo llamarte Consejera Experta. ¡Buen trabajo!</string>
+    <string name="send_alert_also_call">También puedes llamar gratis, todos los días y a cualquier hora, a las siguientes líneas telefónicas:</string>
+    <string name="linea_123">Línea nacional de atención de emergencias <b>123</b></string>
+    <string name="linea_155">Línea de orientación a las mujeres vícitmas de violencia <b>155</b></string>
+    <string name="linea_141">Línea de orientación del ICBF si la violencia es contra niños, niñas y adolescentes <b>141</b></string>
+    <string name="app_not_found">Aplicación no encontrada</string>
+    <string name="course_1_19_mod_3">Módulo 3</string>
+    <string name="course_1_19_question">Qué puedo hacer si creo ser víctima de violencia?</string>
+    <string name="course_1_19_text">Ahora que identificas las violencias contra las mujeres y conoces los derechos
+        que contempla la ley para mujeres y niñas víctimas de violencia en Colombia, llegó el momento de explorar
+        cuáles son las acciones y entidades disponibles para proteger tu integridad y poner fin a la violencia.</string>
+    <string name="course_1_19_dialog">Si consideras que eres una mujer víctima de cualquier tipo de violencia, incluidas las cometidas en el conflicto armado, puedes tomar alguna o todas las siguientes opciones señaladas por la ley</string>
 
+    <string name="course_1_20_tittle">¿Qué puedo hacer si creo ser víctima de violencia?</string>
+    <string name="course_1_20_header">Solicita información</string>
+
+    <string name="course_1_20_text">Tienes derecho a informarte y buscar orientación acerca de: \n \n
+                                    \u25CF Procedimientos legales que se originan de los hechos violentos \n \n
+                                    \u25CF Entidades estatales que pueden protegerte \n \n
+                                    \u25CF Servicios y medidas disponibles para atender las necesidades que hayan generado los hechos \n</string>
+    <string name="course_1_20_text_2">Ten en cuenta que: </string>
+
+    <string name="course_1_24_header">Accede a la justicia</string>
+
+    <string name="course_1_24_text">Tienes derecho a que los hechos sean investigados y que el agresor sea juzgado y
+        castigado, así tú podrás exigir la reparación de los daños que has sufrido y la no repetición de los hechos.</string>
 
     <string-array name="clueTexts">
         <item>Cuando la violencia se manifiesta mediante insultos, ataques verbales, chantajes o celos extremos, es:</item>

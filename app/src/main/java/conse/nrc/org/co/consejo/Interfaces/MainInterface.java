@@ -13,4 +13,6 @@ public interface MainInterface {
     void saveActivityCompleted(int activity_code);
 
     void hideToolBar(boolean hide);
+
+    void setCourseSelectionFragment();
 }

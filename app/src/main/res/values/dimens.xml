@@ -16,6 +16,7 @@
     <dimen name="ilustration_woman">180dp</dimen>
     <dimen name="square_padding_top">40dp</dimen>
     <dimen name="height_size_40">40dp</dimen>
+    <dimen name="bottom_padding_for_alert">55dp</dimen>
 
 
 </resources>

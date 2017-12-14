@@ -20,13 +20,14 @@ import conse.nrc.org.co.consejo.R;
 
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_ID_;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_NAME_;
-import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_NUMBER;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_NUMBER_;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_SIZE;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.MAX_CONTACT_NUMBER;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.MIN_CONTACT_NUMBER;
 
 public class SelectContact extends AppCompatActivity {
 
-    Button mBtAddContact;
+    Button mBtAddContact, mBtNext;
     LinearLayout mLyContactList;
     TextView mTvPreviewMessage;
     int mContactInEdition;
@@ -39,18 +40,29 @@ public class SelectContact extends AppCompatActivity {
         setContentView(R.layout.activity_select_contact);
 
         mBtAddContact = (Button) findViewById(R.id.bt_add_contact);
+        mBtNext = (Button)findViewById(R.id.bt_next);
         mLyContactList = (LinearLayout) findViewById(R.id.ly_contact_list);
         mTvPreviewMessage = (TextView) findViewById(R.id.tv_add_contact_message);
         inEditionMode = false;
 
+        mBtNext.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                goToNext();
+            }
+        });
+
+        mBtNext.setVisibility(View.GONE);
+
         mBtAddContact.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(mLyContactList.getChildCount()<= CONTACT_NUMBER -1 ){
+                if(mLyContactList.getChildCount()<= MAX_CONTACT_NUMBER - 1 ) {
                     addContact();
-                } else {
-                    goToNext();
                 }
+//                } else {
+//                    goToNext();
+//                }
             }
         });
     }
@@ -87,18 +99,7 @@ public class SelectContact extends AppCompatActivity {
                 if (hasPhone.equals("1")) {
                     int index = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
                     number = cursor.getString(index);
-//                    Cursor phones = getContentResolver().query
-//                            (ContactsContract.CommonDataKinds.Phone.CONTENT_URI, null,
-//                                    ContactsContract.CommonDataKinds.Phone.CONTACT_ID
-//                                            + " = " + contactId, null, null);
-//                    while (phones.moveToNext()) {
-//                        Log.d("Contacts", phones.toString());
-//                        number = phones.getString(phones.getColumnIndex
-//                                (ContactsContract.CommonDataKinds.Phone.NUMBER)).replaceAll("[-() ]", "");
-//                    }
-//                    phones.close();
                     drawContact(contactName, number, contactId);
-                    //Do something with number
                 } else {
                     Toast.makeText(getApplicationContext(), getString(R.string.contact_no_has_number), Toast.LENGTH_LONG).show();
                 }
@@ -134,8 +135,11 @@ public class SelectContact extends AppCompatActivity {
         }
         saveContact(contactName,number,contactId);
 
-        if(mLyContactList.getChildCount() >= CONTACT_NUMBER){
-            mBtAddContact.setBackgroundResource(R.drawable.button_go_to_register);
+        if(mLyContactList.getChildCount() >= MIN_CONTACT_NUMBER){
+            mBtNext.setVisibility(View.VISIBLE);
+        }
+        if (mLyContactList.getChildCount()>= MAX_CONTACT_NUMBER){
+            mBtAddContact.setVisibility(View.GONE);
         }
     }
 

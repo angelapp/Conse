@@ -4,7 +4,9 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:gravity="center_horizontal"
-    android:background="@color/grey_light">
+    android:background="@color/grey_light"
+    android:id="@+id/ly_principal_content"
+    android:layout_gravity="center_horizontal">
 
     <FrameLayout
         android:layout_width="match_parent"
@@ -17,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@null"
-            android:id="@+id/iv_accesory"
+            android:id="@+id/iv_head"
             android:layout_gravity="center_horizontal" />
 
         <ImageView
@@ -45,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@null"
-            android:id="@+id/iv_head"
+            android:id="@+id/iv_accesory"
             android:layout_gravity="center_horizontal" />
 
     </FrameLayout>
@@ -54,7 +56,9 @@
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2">
+        android:layout_weight="2"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal">
 
         <LinearLayout
             android:orientation="horizontal"
@@ -62,13 +66,16 @@
             android:layout_weight="1"
             android:id="@+id/ly_head"
             android:gravity="center_horizontal"
-            android:layout_height="0dp">
+            android:layout_height="0dp"
+            android:layout_gravity="center_horizontal">
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/rg_head"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal">
 
             </RadioGroup>
         </LinearLayout>
@@ -78,41 +85,17 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/ly_eyes">
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/rg_eyes"
-                android:orientation="horizontal"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/ly_nose">
-
-            <RadioGroup
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/rg_nose"
-                android:orientation="horizontal"/>
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:id="@+id/ly_hair">
+            android:id="@+id/ly_hair"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal">
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/rg_hair"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal" />
         </LinearLayout>
 
         <LinearLayout
@@ -120,13 +103,53 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/ly_accesory">
+            android:id="@+id/ly_nose"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rg_nose"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ly_eyes"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal">
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/rg_eyes"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:id="@+id/ly_accesory"
+            android:gravity="center_horizontal"
+            android:layout_gravity="center_horizontal">
 
             <RadioGroup
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:id="@+id/rg_accesory"
-                android:orientation="horizontal"/>
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center_horizontal" />
         </LinearLayout>
     </LinearLayout>
 

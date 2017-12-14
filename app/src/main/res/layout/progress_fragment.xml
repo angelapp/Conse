@@ -19,7 +19,7 @@
             android:id="@+id/fl_header">
 
             <Button
-                android:id="@+id/bt_back"
+                android:id="@+id/bt_previous"
                 android:background="@drawable/regresar"
                 android:gravity="right"
                 android:layout_alignParentTop="true"
@@ -42,7 +42,7 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/insignia"
                     android:id="@+id/imageView3"
-                    android:layout_below="@+id/bt_back"
+                    android:layout_below="@+id/bt_previous"
                     android:layout_marginTop="50dp" />
 
                 <TextView

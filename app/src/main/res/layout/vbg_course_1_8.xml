@@ -56,16 +56,18 @@
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_back"
-                    android:background="@drawable/button_back" />
+                    android:id="@+id/bt_previous"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
 
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_forward"
+                    android:id="@+id/bt_next"
                     android:background="@drawable/button_crossword"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:onClick="onClick" />
 
             </LinearLayout>
 

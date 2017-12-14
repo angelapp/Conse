@@ -80,6 +80,15 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
 
         fillSpinners();
 
+        mEtPassword.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus){
+                    Toast.makeText(mCtx, ConseApp.getAppConfiguration(mCtx).psw_error_recomendation, Toast.LENGTH_LONG).show();
+                }
+            }
+        });
+
         mCbAcceptTermsConditions = (CheckBox)mView.findViewById(R.id.cb_accept_terms_conditions);
         mCbIsNrcBeneficiary = (CheckBox)mView.findViewById(R.id.cb_is_nrc_beneficiary);
 

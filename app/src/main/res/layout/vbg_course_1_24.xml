@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:tag="need_avatar">
-
 
 
     <ScrollView
@@ -14,36 +12,65 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/fab_margin"
-            android:paddingRight="@dimen/fab_margin"
             android:paddingBottom="55dp">
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black_overlay"/>
+                android:background="@color/black_overlay" />
 
             <TextView
-                android:text="@string/course_1_3_a"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:id="@+id/textView1"
                 style="@style/ConseTittleTextH2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="15dp"
+                android:text="@string/course_1_16_a" />
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="@color/black_overlay"/>
+                android:background="@color/black_overlay" />
 
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp">
+
+
+                <TextView
+                    android:text="@string/course_1_24_header"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ConseTittleTextH1"
+                    android:drawableLeft="@drawable/tres"
+                    android:gravity="left|center_vertical"
+                    android:drawablePadding="15dp" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:text="@string/course_1_15_c"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                style="@style/ConseParagraphText"
+                android:padding="@dimen/fab_margin"/>
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top">
+                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp">
 
 
                 <FrameLayout
@@ -53,7 +80,7 @@
                     android:id="@+id/fl_image">
 
                     <TextView
-                        android:text="@string/course_1_8_a"
+                        android:text="@string/course_1_20_text_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView5"
@@ -71,7 +98,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="@dimen/fab_margin"
                         android:onClick="onClick"
-                        android:tag="nunca_olvides_que"
+                        android:tag="todas_las_investigaciones"
                         android:gravity="top|right"
                         android:layout_gravity="right|center_vertical"
                         android:layout_marginTop="-15dp" />
@@ -88,38 +115,36 @@
 
             </RelativeLayout>
 
-
-
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:layout_marginTop="@dimen/square_padding_top"
                 android:gravity="center"
-                android:layout_marginTop="30dp">
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
 
                 <Button
+                    android:id="@+id/bt_previous"
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_previous"
                     android:background="@drawable/button_back"
                     android:onClick="onClick" />
 
 
                 <Button
+                    android:id="@+id/bt_next"
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_next"
-                    android:background="@drawable/button_next"
                     android:layout_marginLeft="20dp"
-                    android:onClick="onClick"
-                    android:tag="MOD_1_R" />
+                    android:background="@drawable/button_next"
+                    android:onClick="onClick" />
 
             </LinearLayout>
+
 
         </LinearLayout>
 
     </ScrollView>
-
 
 
 

@@ -2,9 +2,13 @@ package conse.nrc.org.co.consejo.Activities;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.SyncStateContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -18,6 +22,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
@@ -26,9 +31,12 @@ import android.widget.Toast;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
+import java.security.Permission;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.jar.Manifest;
 
+import conse.nrc.org.co.consejo.Fragments.AlertAndCallFragment;
 import conse.nrc.org.co.consejo.Fragments.AlertDialog;
 import conse.nrc.org.co.consejo.Fragments.ContactFormFragment;
 import conse.nrc.org.co.consejo.Fragments.CourseSelectionFragment;
@@ -46,6 +54,8 @@ import conse.nrc.org.co.consejo.Utils.RequestTask;
 import conse.nrc.org.co.consejo.Utils.ServerRequest;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
+import static android.Manifest.permission.CALL_PHONE;
+
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, MainInterface, RequestTask.OnRequestCompleted {
 
@@ -54,6 +64,9 @@ public class MainActivity extends AppCompatActivity
     ProgressDialog listener;
     List<Models.UserActivityProgress> mActivityProgressListSend = new ArrayList<>();
     public static DataBase dataBase;
+
+    private static VbgCourse1Start vbgCourse1Start = new VbgCourse1Start();
+    private int actualCourse;
 
     Toolbar toolbar;
 
@@ -122,10 +135,9 @@ public class MainActivity extends AppCompatActivity
         }
     }
 
-    private void setCourseSelectionFragment() {
-
+    @Override
+    public void setCourseSelectionFragment() {
         getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new CourseSelectionFragment()).commitAllowingStateLoss();
-
     }
 
 
@@ -188,6 +200,7 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void onClick(View v) {
+//        Log.d("VBG MOD", "Click listened: id:" + v.getId());
         switch (v.getId()){
             case R.id.bt_progress:
                 openProgressFragment();
@@ -216,6 +229,21 @@ public class MainActivity extends AppCompatActivity
             case R.id.bt_vbg:
                 initVbgCourse();
                 break;
+            //Managing course inner buttons
+            case R.id.bt_next: case R.id.bt_previous:case R.id.bt_play:case R.id.bt_finish:
+                switch (actualCourse){
+                    case LocalConstants.VBG_COURSE_ID:
+                        if(vbgCourse1Start != null){
+                            vbgCourse1Start.processOuterClick(v);
+                        }
+                        break;
+                    case LocalConstants.LEADERS_COURSE_ID:
+                        break;
+                }
+                break;
+            case R.id.bt_call:
+                makeCall(v);
+                break;
             default:
                 break;
 
@@ -225,13 +253,29 @@ public class MainActivity extends AppCompatActivity
         drawer.closeDrawer(GravityCompat.START);
     }
 
+    private void makeCall(View v) {
+        try {
+            if (ActivityCompat.checkSelfPermission(this,
+                    CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + (String) v.getTag()));
+                startActivity(intent);
+            } else {
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+                dialIntent.setData(Uri.parse("tel:" + (String) v.getTag()));
+                startActivity(dialIntent);
+            }
+        } catch (android.content.ActivityNotFoundException e){
+            Toast.makeText(getApplicationContext(),R.string.app_not_found,Toast.LENGTH_LONG).show();
+        }
+    }
+
     private void openEditProfileFragment() {
         ProfileFragment fragment = new ProfileFragment();
         fragment.editionMode = true;
         getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, fragment).addToBackStack(null).commitAllowingStateLoss();
     }
 
-    private void openProgressFragment() {
+    public void openProgressFragment() {
 
 //        getSupportFragmentManager().beginTransaction().replace(R.id.rl_total_home_content, new ProgressFragment()).addToBackStack(null).commitAllowingStateLoss();
 //        hideToolBar(true);
@@ -245,9 +289,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void sendAlert() {
-        AlertDialog alertDialog = new AlertDialog();
-        alertDialog.isTest = false;
-        alertDialog.show(getSupportFragmentManager(), "tag");
+        AlertAndCallFragment alertAndCallFragment = new AlertAndCallFragment();
+        alertAndCallFragment.show(getSupportFragmentManager(), "tag");
     }
 
     private void openAboutNrc() {
@@ -262,7 +305,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void initVbgCourse() {
-        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new VbgCourse1Start()).addToBackStack(null).commitAllowingStateLoss();
+        actualCourse = LocalConstants.VBG_COURSE_ID;
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, vbgCourse1Start).addToBackStack(null).commitAllowingStateLoss();
     }
 
     @Override

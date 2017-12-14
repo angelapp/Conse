@@ -14,7 +14,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="@dimen/fab_margin"
-            android:paddingRight="@dimen/fab_margin">
+            android:paddingRight="@dimen/fab_margin"
+            android:paddingBottom="55dp">
 
             <View
                 android:layout_width="match_parent"
@@ -64,10 +65,12 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_1"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:onClick="onClick"
+                        android:tag="violencia_fisica" />
 
                 </RelativeLayout>
 
@@ -111,10 +114,12 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_2"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:onClick="onClick"
+                        android:tag="violencia_sexual" />
 
                 </RelativeLayout>
 
@@ -155,10 +160,12 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_3"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:onClick="onClick"
+                        android:tag="violencia_psicologica" />
 
                 </RelativeLayout>
 
@@ -184,28 +191,32 @@
                     android:layout_height="1dp"
                     android:background="@color/white"/>
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:text="@string/course_1_7_d"
-                        android:layout_width="match_parent"
+                        android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         style="@style/ConseTittleTextH2"
                         android:layout_marginBottom="30dp"
                         android:layout_marginTop="30dp"
-                        android:textColor="@color/salmon"/>
+                        android:textColor="@color/salmon"
+                        android:layout_weight="3" />
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_4"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:onClick="onClick"
+                        android:tag="violencia_economica" />
 
-                </RelativeLayout>
+                </LinearLayout>
 
 
                 <View
@@ -238,16 +249,18 @@
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_back"
-                    android:background="@drawable/button_back" />
+                    android:id="@+id/bt_previous"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick"/>
 
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_forward"
+                    android:id="@+id/bt_next"
                     android:background="@drawable/button_next"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:onClick="onClick"/>
 
             </LinearLayout>
 

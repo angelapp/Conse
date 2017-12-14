@@ -78,7 +78,7 @@ public class ProgressFragment extends Fragment {
         progress_tabs_pager.setViewPager(progress_view_pager);
 
 
-        ((Button) view.findViewById(R.id.bt_back)).setOnClickListener(new View.OnClickListener() {
+        ((Button) view.findViewById(R.id.bt_previous)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 getActivity().onBackPressed();

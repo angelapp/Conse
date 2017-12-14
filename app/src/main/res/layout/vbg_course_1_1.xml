@@ -12,7 +12,8 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="55dp">
 
             <TextView
                 android:text="@string/course_1_1_a"
@@ -25,13 +26,16 @@
 
             <TextView
                 android:text="@string/course_1_1_b"
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
                 style="@style/ConseParagraphText"
                 android:background="@drawable/circulo_naranja"
                 android:padding="@dimen/fab_margin"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="60dp" />
 
 
             <TextView
@@ -71,16 +75,18 @@
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_back"
-                    android:background="@drawable/button_back"/>
+                    android:id="@+id/bt_previous"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
 
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_forward"
+                    android:id="@+id/bt_next"
                     android:background="@drawable/button_forward"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:onClick="onClick" />
 
             </LinearLayout>
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_select_contact"
     android:layout_width="match_parent"
@@ -10,42 +10,70 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="conse.nrc.org.co.consejo.Activities.SelectContact"
     android:orientation="vertical"
-    android:background="@color/grey_light">
-
-    <TextView
-        android:text="@string/add_contacts_tittle"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_add_contacts_tittle"
-        style="@style/ConseTittleTextH1"
-        android:layout_marginTop="30dp" />
+    android:background="@color/grey_light"
+    android:gravity="center_vertical|center_horizontal">
 
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@id/tv_add_contacts_tittle"
-        android:id="@+id/ly_contact_list"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:layout_height="0dp"
+        android:layout_weight="2">
+
+        <TextView
+            android:text="@string/add_contacts_tittle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_add_contacts_tittle"
+            style="@style/ConseTittleTextH1"
+            android:layout_marginTop="30dp" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_add_contacts_tittle"
+            android:id="@+id/ly_contact_list"
+            android:gravity="center_vertical">
+
+        </LinearLayout>
+
+        <TextView
+            android:text="@string/add_contact_message"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_add_contact_message"
+            style="@style/ConseParagraphText"
+            android:gravity="center_horizontal"
+            android:layout_centerVertical="true"
+            android:layout_centerHorizontal="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="bottom|center_horizontal"
+        android:layout_weight="1">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_add_contact"
+            android:background="@drawable/button_add_contact"
+            android:layout_above="@+id/bt_next"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/bt_next"
+            android:background="@drawable/button_go_to_register"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
 
     </LinearLayout>
 
-    <TextView
-        android:text="@string/add_contact_message"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_add_contact_message"
-        style="@style/ConseParagraphText"
-        android:gravity="center_horizontal"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/bt_add_contact"
-        android:background="@drawable/button_add_contact"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
-
-</RelativeLayout>
+</LinearLayout>

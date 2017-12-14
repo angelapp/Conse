@@ -75,6 +75,13 @@ public abstract class UtilsFunctions {
         return null;
     }
 
+    public static void deleteKeySharedPreferences(Context ctx, String key){
+        SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCES, Context.MODE_PRIVATE);
+        preferences.edit().remove(key).commit();
+    }
+
+
+
     public static void resetSharedPreferences(Context ctx){
         SharedPreferences preferences = ctx.getSharedPreferences(LocalConstants.SHARED_PREFERENCES, Context.MODE_PRIVATE);
         preferences.edit().clear().apply();

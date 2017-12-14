@@ -13,7 +13,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingLeft="@dimen/fab_margin"
-            android:paddingRight="@dimen/fab_margin">
+            android:paddingRight="@dimen/fab_margin"
+            android:paddingBottom="55dp">
 
             <View
                 android:layout_width="match_parent"
@@ -81,10 +82,12 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_1"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:onClick="onClick"
+                        android:tag="en_la_familia" />
 
                 </RelativeLayout>
 
@@ -128,10 +131,12 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_2"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:tag="en_la_comunidad"
+                        android:onClick="onClick" />
 
                 </RelativeLayout>
 
@@ -172,10 +177,12 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_3"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:tag="en_el_ambito_estatal"
+                        android:onClick="onClick" />
 
                 </RelativeLayout>
 
@@ -217,10 +224,12 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play_4"
+                        android:id="@+id/bt_play"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
-                        android:layout_alignParentRight="true"/>
+                        android:layout_alignParentRight="true"
+                        android:onClick="onClick"
+                        android:tag="en_el_conflicto_armado" />
 
                 </RelativeLayout>
 
@@ -250,16 +259,18 @@
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_back"
-                    android:background="@drawable/button_back" />
+                    android:id="@+id/bt_previous"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
 
 
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_forward"
+                    android:id="@+id/bt_next"
                     android:background="@drawable/button_next"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:onClick="onClick" />
 
             </LinearLayout>
 

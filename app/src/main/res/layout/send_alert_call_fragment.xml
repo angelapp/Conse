@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="1000dp"
+    android:minHeight="1000dp"
+    android:background="@color/yellow"
+    android:gravity="center_vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/bt_send_alert"
+                android:background="@drawable/enviaralerta"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="150dp"
+                android:layout_height="150dp" />
+
+            <TextView
+                android:text="@string/send_alert_also_call"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_send_alert_tittle"
+                style="@style/ConseTittleTextH2"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_marginBottom="25dp"
+                android:layout_marginTop="20dp"
+                android:gravity="center_horizontal" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="15dp">
+
+                    <TextView
+                        android:text="@string/linea_123"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView13"
+                        android:layout_weight="5"
+                        style="@style/ConseParagraphText"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="left|center_vertical"
+                        android:layout_marginTop="0dp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bt_call"
+                        android:onClick="onClick"
+                        android:layout_weight="1"
+                        android:background="@drawable/telefono"
+                        android:tag="123" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="15dp">
+
+                    <TextView
+                        android:text="@string/linea_155"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView13"
+                        android:layout_weight="5"
+                        style="@style/ConseParagraphText"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="left|center_vertical"
+                        android:layout_marginTop="0dp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bt_call"
+                        android:layout_weight="1"
+                        android:onClick="onClick"
+                        android:background="@drawable/telefono"
+                        android:tag="155" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:text="@string/linea_141"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView13"
+                        android:layout_weight="5"
+                        style="@style/ConseParagraphText"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="left|center_vertical"
+                        android:layout_marginTop="0dp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bt_call"
+                        android:onClick="onClick"
+                        android:layout_weight="1"
+                        android:background="@drawable/telefono"
+                        android:tag="141" />
+                </LinearLayout>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

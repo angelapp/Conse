@@ -41,14 +41,11 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
     Context mCtx;
     public static int mGender;
     AvatarInterfaces avatarInterfaces;
-    LinearLayout mLyHead, mLyHair, mLyNose, mLyEyes, mLyAccesory;
-    List<LinearLayout> mLyList = new ArrayList<>();
     List<RadioGroup> mRgList = new ArrayList<>();
-    List<ImageView> mIvList = new ArrayList<>();
+//    List<ImageView> mIvList = new ArrayList<>();
     List<Integer> mSelectedPiecesList = new ArrayList<>();
     FrameLayout mFlPreview;
-    ImageView mIvHead, mIvHair, mIvNose, mIvEyes, mIvAccesory;
-    RadioGroup mRgHead, mRgHair, mRgNose, mRgEyes, mRgAccesory;
+    LinearLayout mLyPrincipalContent;
     private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
     DisplayImageOptions options, optionsPreview;
     ProgressDialog listener;
@@ -58,41 +55,20 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
                              Bundle savedInstanceState) {
         mView = inflater.inflate(R.layout.select_avatar_pieces_fragment, container, false);
 
-        mLyHead = (LinearLayout) mView.findViewById(R.id.ly_head);
-        mLyHair = (LinearLayout) mView.findViewById(R.id.ly_hair);
-        mLyNose = (LinearLayout) mView.findViewById(R.id.ly_nose);
-        mLyEyes = (LinearLayout) mView.findViewById(R.id.ly_eyes);
-        mLyAccesory = (LinearLayout) mView.findViewById(R.id.ly_accesory);
+        mLyPrincipalContent = (LinearLayout) mView.findViewById(R.id.ly_principal_content);
 
-        mRgHead = (RadioGroup) mView.findViewById(R.id.rg_head);
-        mRgHair = (RadioGroup) mView.findViewById(R.id.rg_hair);
-        mRgNose = (RadioGroup) mView.findViewById(R.id.rg_nose);
-        mRgEyes = (RadioGroup) mView.findViewById(R.id.rg_eyes);
-        mRgAccesory = (RadioGroup) mView.findViewById(R.id.rg_accesory);
 
-        mIvHead = (ImageView) mView.findViewById(R.id.iv_head);
-        mIvHair = (ImageView) mView.findViewById(R.id.iv_hair);
-        mIvNose = (ImageView) mView.findViewById(R.id.iv_nose);
-        mIvEyes = (ImageView) mView.findViewById(R.id.iv_eyes);
-        mIvAccesory = (ImageView) mView.findViewById(R.id.iv_accesory);
+        mRgList.add((RadioGroup) mView.findViewById(R.id.rg_head));
+        mRgList.add((RadioGroup) mView.findViewById(R.id.rg_hair));
+        mRgList.add((RadioGroup) mView.findViewById(R.id.rg_eyes));
+        mRgList.add((RadioGroup) mView.findViewById(R.id.rg_nose));
+        mRgList.add((RadioGroup) mView.findViewById(R.id.rg_accesory));
 
-        mLyList.add(mLyAccesory);
-        mLyList.add(mLyHair);
-        mLyList.add(mLyHead);
-        mLyList.add(mLyEyes);
-        mLyList.add(mLyNose);
-
-        mRgList.add(mRgAccesory);
-        mRgList.add(mRgHair);
-        mRgList.add(mRgHead);
-        mRgList.add(mRgEyes);
-        mRgList.add(mRgNose);
-
-        mIvList.add(mIvHead);
-        mIvList.add(mIvHair);
-        mIvList.add(mIvAccesory);
-        mIvList.add(mIvEyes);
-        mIvList.add(mIvNose);
+        mSelectedPiecesList.add(0);
+        mSelectedPiecesList.add(0);
+        mSelectedPiecesList.add(0);
+        mSelectedPiecesList.add(0);
+        mSelectedPiecesList.add(0);
 
         mFlPreview = (FrameLayout)mView.findViewById(R.id.fl_preview);
 
@@ -104,6 +80,7 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
                 validateSelection();
             }
         });
+
 
         imageLoader = imageLoader.getInstance();
 
@@ -136,7 +113,7 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
     }
 
     private void fillLayouts() {
-        for(int i = 1; i<=5; i++) {
+        for(int i : LocalConstants.AVATAR_BODY_PARTS_ORDER) {
             fillPieceList(i ,ConseApp.appConfiguration.getAvatarPiecesByGenderAndPart(mGender, i));
         }
     }
@@ -151,9 +128,11 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
                 List<Integer> tags = new ArrayList<>();
                 tags.add(index); // Body part
                 tags.add(piece.id); // Avatar piece id
-                piece_icon.setTag(tags);
+
                 RadioButton radioButton = (RadioButton) avatarPiece.findViewById(R.id.rb_avatar_piece);
                 radioButton.setTag(tags);
+                piece_icon.setTag(tags);
+                avatarPiece.setTag(tags);
                 radioButton.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
@@ -175,9 +154,12 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
     private void setAvatarPreview(View v) {
         List<Integer> tag = (List<Integer>) v.getTag();
         Log.d("Avatar", "On click listen: ");
-        imageLoader.displayImage(ConseApp.appConfiguration.getAvatarPieceById(tag.get(1)).icon, mIvList.get(tag.get(0)-1), optionsPreview);
+        mSelectedPiecesList.set(tag.get(0)-1, tag.get(1));
+        //imageLoader.displayImage(ConseApp.appConfiguration.getAvatarPieceById(tag.get(1)).icon, mIvList.get(tag.get(0)-1), optionsPreview);
         changeRadioGroupSelection(tag.get(0), v);
         savePiecesSelected(tag);
+        mFlPreview.removeAllViews();
+        mFlPreview.addView(ConseApp.getAvatarFrame(mCtx, imageLoader, optionsPreview),0);
     }
 
     private void changeRadioGroupSelection(Integer index, View v) {
@@ -194,8 +176,8 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
     private void validateSelection() {
 
         boolean miss_selection = false;
-        for(int i = 1; i<= mIvList.size(); i++){
-            if(mIvList.get(i-1).getDrawable() == null){
+        for(int i : mSelectedPiecesList ){
+            if(i == 0){
                 miss_selection = true;
             }
         }

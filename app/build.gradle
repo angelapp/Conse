@@ -24,10 +24,10 @@ android {
     buildTypes {
         debug {
             //signingConfig signingConfigs.key
-            buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
-            //buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
-            buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
-            //buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"' //live
+//            buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
+            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+//            buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
+            buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"' //live
             applicationIdSuffix ".debug"
         }
         debugLive {
@@ -35,12 +35,15 @@ android {
             //buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
             buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
             //buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
-            buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"' //live
+            buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"'
+            //live
             applicationIdSuffix ".debugLive"
+            debuggable true
         }
         release {
             minifyEnabled false
-            buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"' //live
+            buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"'
+            //live
             buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.key
@@ -49,7 +52,7 @@ android {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })

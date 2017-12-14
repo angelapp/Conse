@@ -26,19 +26,32 @@ public class DataBase extends SQLiteOpenHelper {
 
     //Tables Name
     private String USER_TOPIC_PROGRESS = "USER_TOPIC_PROGRESS";
+    private String USER_COURSE_PAGE_VIEWS = "USER_COURSE_PAGE_VIEWS";
 
-    //ORDER Columns
+    //USER_TOPIC_PROGRESS Columns
     public String topic_activity = "topic_activity";
     public String date_completed = "date_completed";
     public String send_to_server = "send_to_server";
 
-    //Scripts Create
+    //USER_COURSE_PAGE_VIEWS Columns
+    public String course_id = "course_id";
+    public String last_page_read = "last_page_read";
+
+    //Scripts Create Tables
     private String queryCreateTopicActivity = "CREATE TABLE " + USER_TOPIC_PROGRESS + " ("
             + topic_activity + " INTEGER, " + date_completed + " TEXT, " + send_to_server + " INTEGER )";
+
+    private String queryCreateCoursePages = "CREATE TABLE " + USER_COURSE_PAGE_VIEWS + " ("
+            + course_id + " INTEGER, " + last_page_read + " INTEGER)";
+
 
     //Scripts Delete
     public String queryDeleteTopicActivity =
             "DELETE FROM " + USER_TOPIC_PROGRESS;
+
+    public String queryDeleteUserCourseReadPages =
+            "DELETE FROM " + USER_COURSE_PAGE_VIEWS;
+
 
 
     //Scripts to mark activity as sent
@@ -47,10 +60,22 @@ public class DataBase extends SQLiteOpenHelper {
                 + " WHERE " + this.topic_activity + " = " + String.valueOf(topic_activity);
     }
 
+    //Scripts to update page read for an course
+    private String scriptUpdateLastPageReadForCourse(int course, int page) {
+        return "UPDATE " + USER_COURSE_PAGE_VIEWS + " SET " + last_page_read + "= " + String.valueOf(page)
+                + " WHERE " + course_id + " = " + String.valueOf(course);
+    }
+
     //Query for get activity
     private String queryTopicActivity(int topic_activity) {
         return "SELECT * FROM " + USER_TOPIC_PROGRESS +
                 " WHERE " + this.topic_activity + " = " + String.valueOf(topic_activity);
+    }
+
+    //Query for get last page for course
+    private String queryLastPageForCourse(int course) {
+        return "SELECT * FROM " + USER_COURSE_PAGE_VIEWS +
+                " WHERE " + this.course_id + " = " + String.valueOf(course);
     }
 
     private String queryTopicActivities() {
@@ -74,12 +99,14 @@ public class DataBase extends SQLiteOpenHelper {
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(queryCreateTopicActivity);
+        sqLiteDatabase.execSQL(queryCreateCoursePages);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL(queryCreateTopicActivity);
+        sqLiteDatabase.execSQL(queryCreateCoursePages);
     }
 
 
@@ -98,8 +125,38 @@ public class DataBase extends SQLiteOpenHelper {
         cursor.close();
     }
 
+    //Metodo para insertar/actualizar ùltima pàgina para cierto curso
+    public void insertUpdateLastPage(int course, int page) {
+        Cursor cursor = this.getReadableDatabase().rawQuery(queryLastPageForCourse(course), null);
+        if (!cursor.moveToFirst()) {
+            ContentValues values = new ContentValues();
+            values.put(course_id, course);
+            values.put(last_page_read, page);
+            long id = this.getWritableDatabase().insert(USER_COURSE_PAGE_VIEWS, null, values);
+            Log.d(TAG, " PAGE REGISTER: ROW: " + id + " COURSE: "
+                    + course + " PAGE: " + page);
+        } else {
+            this.getWritableDatabase().execSQL(scriptUpdateLastPageReadForCourse(course, page));
+        }
+        cursor.close();
+    }
+
     public void clearTopicActivity(){
         this.getWritableDatabase().execSQL(queryDeleteTopicActivity);
+    }
+
+    public void clearPagesRead(){
+        this.getWritableDatabase().execSQL(queryDeleteUserCourseReadPages);
+    }
+
+
+    public int getLastPageReadForCurse(int course){
+        Cursor cursor = this.getReadableDatabase().rawQuery(queryLastPageForCourse(course),null);
+        if (!cursor.moveToFirst()){
+            return 0;
+        } else {
+            return cursor.getInt(1);
+        }
     }
 
     public void updateTopicActivitySent(int topic_activity){

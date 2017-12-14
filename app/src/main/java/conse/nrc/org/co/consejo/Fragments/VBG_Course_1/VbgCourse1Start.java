@@ -1,35 +1,64 @@
 package conse.nrc.org.co.consejo.Fragments.VBG_Course_1;
 
 import android.content.Context;
+import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.FrameLayout;
+import android.widget.GridLayout;
 import android.widget.LinearLayout;
+import android.widget.RadioButton;
 
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+
+import conse.nrc.org.co.consejo.Activities.MainActivity;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.ConseApp;
+import conse.nrc.org.co.consejo.Utils.DataBase;
+import conse.nrc.org.co.consejo.Utils.LocalConstants;
 
 /**
  * Created by apple on 11/27/17.
  */
 
-public class VbgCourse1Start extends Fragment {
+public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
 
+
+    public final static int COURSE_ID = 1;
     private View view;
     private Context mCtx;
     private LayoutInflater inflater;
     MainInterface mainInterface;
 
+    MediaPlayer player1;
+    int actualPlaying;
+    Button preLastClickedButton;
+
+    GridLayout mCrossword;
+
+    LinearLayout mActualQuestionaryPage;
+
+    DisplayImageOptions optionsPreview;
+    private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
+
+    private int mAvatarGender;
+
     private LinearLayout courseContainer;
     private int index;
+
+    DataBase dataBase;
 
     private int [] layouts;
 
@@ -37,11 +66,19 @@ public class VbgCourse1Start extends Fragment {
     public void onStart() {
         super.onStart();
         index = 0;
-        layouts = new int[]{R.layout.vbg_course_1_0,R.layout.vbg_course_1_1,R.layout.vbg_course_1_2,R.layout.vbg_course_1_3,
-                R.layout.vbg_course_1_4,R.layout.vbg_course_1_5,R.layout.vbg_course_1_6,R.layout.vbg_course_1_7,
-                R.layout.vbg_course_1_8,R.layout.vbg_course_1_9,R.layout.vbg_course_1_11,
-                R.layout.vbg_course_1_12,R.layout.vbg_course_1_13};
 
+
+        optionsPreview = new DisplayImageOptions.Builder()
+                .showImageOnLoading(null)
+                .showImageForEmptyUri(null)
+                .showImageOnFail(null)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .considerExifParams(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .build();
+
+        imageLoader = imageLoader.getInstance();
 
     }
 
@@ -49,22 +86,171 @@ public class VbgCourse1Start extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         this.inflater =  inflater;
-
         view = inflater.inflate(R.layout.vbg_course_1_start, container, false);
-
-        Button btInit = (Button) view.findViewById(R.id.bt_start_vbg);
-
         courseContainer = (LinearLayout) view.findViewById(R.id.course_container);
+        dataBase = MainActivity.dataBase;
+        setInitialPageToShow();
+        mAvatarGender = ConseApp.getAvatarGender(mCtx);
 
-        btInit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-                mainInterface.saveActivityCompleted(1);
-            }
-        });
+
+//        //Just development
+//        ((Button)view.findViewById(R.id.bt_reset)).setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                dataBase.clearPagesRead();
+//                dataBase.clearTopicActivity();
+//                setInitialPageToShow();
+//            }
+//        });
 
         return view;
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        setInitialPageToShow();
+    }
+
+    private void setInitialPageToShow() {
+        try{
+            index = dataBase.getLastPageReadForCurse(COURSE_ID);
+            if (index > LocalConstants.VBG_LAYOUT_LIST.size()) {
+                index = LocalConstants.VBG_LAYOUT_LIST.size();
+            }
+        } catch (Exception ea){
+            index = 0;
+            updateReadPage();
+            ea.printStackTrace();
+        }
+        Log.d("VBG Mod 1", "Page to show: " + index);
+        inflateLayout();
+    }
+
+    private void updateReadPage(){
+        if (index <= LocalConstants.VBG_LAYOUT_LIST.size()){
+            dataBase.insertUpdateLastPage(COURSE_ID, index);
+        } else if(index < 0){
+            dataBase.insertUpdateLastPage(COURSE_ID, 0);
+        } else{
+            dataBase.insertUpdateLastPage(COURSE_ID, LocalConstants.VBG_LAYOUT_LIST.size());
+        }
+    }
+
+    public void setNextPage(){
+            index++;
+        if (index < LocalConstants.VBG_LAYOUT_LIST.size()-1){
+            inflateLayout();
+            updateReadPage();
+        } else if(index >= LocalConstants.VBG_LAYOUT_LIST.size()) {
+            finishCourse();
+        }
+    }
+
+    public void setPreviousPage(){
+        if (index > 0){
+            index--;
+            inflateLayout();
+        }
+    }
+
+    private void finishCourse() {
+        mainInterface.setCourseSelectionFragment();
+    }
+
+    private void inflateLayout() {
+        courseContainer.removeAllViews();
+        final View view = inflater.inflate(LocalConstants.VBG_LAYOUT_LIST.get(index), null, false);
+//        view.setOnClickListener(this);
+        courseContainer.addView(view);
+        if(player1 != null) {
+            try {
+                player1.stop();
+            } catch (Exception ea) {
+                ea.printStackTrace();
+            }
+        }
+        prepareFragmentForView(view);
+    }
+
+    private void prepareFragmentForView(View view) {
+
+        if (view.getTag() !=  null) {
+            Log.d("VBg Mod", "The view tag is: " + view.getTag().toString());
+
+            switch ((String) view.getTag()) {
+                case LocalConstants.NEED_AVATAR_TAG:
+                    try {
+                        FrameLayout avatar = (FrameLayout) view.findViewWithTag(LocalConstants.HERE_AVATAR_TAG);
+                        avatar.removeAllViews();
+                        avatar.addView(ConseApp.getAvatarFrame(mCtx, imageLoader, optionsPreview));
+                    } catch (Exception ea) {
+                        ea.printStackTrace();
+                    }
+
+                    break;
+                case LocalConstants.MOD_1_CW1_SCREEN:
+                    setCrossWordMod1();
+                    break;
+                case LocalConstants.HAS_QUESTIONARY:
+                    mActualQuestionaryPage = (LinearLayout)view.findViewWithTag(LocalConstants.QUESTIONARY_CONTAINER);
+                    Log.d("VBg Mod", "Find questionary container" + mActualQuestionaryPage.getTag().toString());
+                    break;
+                default:
+                    break;
+            }
+        } else {
+            Log.d("VBg Mod", "The view tag is: null");
+        }
+
+    }
+
+    private void setCrossWordMod1() {
+        mCrossword = (GridLayout) courseContainer.findViewById(R.id.gl_crossword);
+        for (int i = 0; i < mCrossword.getChildCount(); i++){
+            Log.d("VBg Mod", "Index is: " + i);
+            final EditText et = (EditText)mCrossword.getChildAt(i);
+
+            if (et.isFocusable()){
+                Log.d("VBg Mod", "Index is: " + i + " The tag is: " + et.getTag().toString());
+
+                et.addTextChangedListener(new TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+                    }
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+                    }
+
+                    @Override
+                    public void afterTextChanged(Editable s) {
+
+                        if (et.getNextFocusDownId() != View.NO_ID) {
+                            mCrossword.findViewById(et.getNextFocusDownId()).requestFocus();
+                        } else if(et.getNextFocusRightId() != View.NO_ID) {
+                            mCrossword.findViewById(et.getNextFocusRightId()).requestFocus();
+                        }
+
+                    }
+                });
+            }
+
+            final ClueDialog cluedialog = new ClueDialog();
+
+            if(et.getHint() != null && et.getHint().toString().length()>0){
+                et.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        cluedialog.setClueNumber(Integer.valueOf(et.getHint().toString())-1);
+                        cluedialog.show(getActivity().getFragmentManager(),"");
+                    }
+                });
+
+            }
+        }
     }
 
     @Override
@@ -74,1583 +260,190 @@ public class VbgCourse1Start extends Fragment {
         mainInterface = (MainInterface) mCtx;
     }
 
+    private void markActivityAsComplete(int activity_id){
+        mainInterface.saveActivityCompleted(activity_id);
+    }
 
-    private void goForward(){
-        switch (getIndexPlusOne()){
-            case 0:
-                drawPage0();
+    @Override
+    public void onClick(View v) {
+        Log.d("VBG MOD", "Click listened: id:" + v.getId());
+        switch (v.getId()){
+            case R.id.bt_previous:
+                setPreviousPage();
                 break;
-            case 1:
-                drawPage1();
-                mainInterface.saveActivityCompleted(2);
+            case R.id.bt_next:
+                setNextPage();
                 break;
-            case 2:
-                drawPage2();
-                mainInterface.saveActivityCompleted(3);
+            default:
                 break;
-            case 3:
-                drawPage3();
-                mainInterface.saveActivityCompleted(4);
-                break;
-            case 4:
-                drawPage4();
-                mainInterface.saveActivityCompleted(5);
-                break;
-            case 5:
-                drawPage5();
-                break;
-            case 6:
-                drawPage6();
-                break;
-            case 7:
-                drawPage7();
-                break;
-            case 8:
-                drawPage8();
-                break;
-            case 9:
-                drawPage9();
-                break;
-            case 10:
-                drawPage10();
-                break;
-            case 11:
-                drawPage11();
-                break;
-            case 12:
-                drawPage12();
-                break;
-            case 13:
-                drawPage13();
-                break;
-
         }
     }
 
-    private void goBackward(){
-        switch (getIndexLessOne()){
-            case 0:
-                drawPage0();
+    public void processOuterClick(View v){
+        Log.d("VBG MOD", "Click listened: id:" + v.getId());
+        switch (v.getId()){
+            case R.id.bt_previous:
+                setPreviousPage();
                 break;
-            case 1:
-                drawPage1();
+            case R.id.bt_next:
+                setNextPage();
                 break;
-            case 2:
-                drawPage2();
-                break;
-            case 3:
-                drawPage3();
-                break;
-            case 4:
-                drawPage4();
-                break;
-            case 5:
-                drawPage5();
-                break;
-            case 6:
-                drawPage6();
-                break;
-            case 7:
-                drawPage7();
-                break;
-            case 8:
-                drawPage8();
-                break;
-            case 9:
-                drawPage9();
-                break;
-            case 10:
-                drawPage10();
-                break;
-            case 11:
-                drawPage11();
-                break;
-            case 12:
-                drawPage12();
-                break;
-            case 13:
-                drawPage13();
-                break;
+            case R.id.bt_play:
+               playSound(v);
+            default:
 
+                break;
+        }
+        if (v.getTag() != null) {
+            processButtonTag(v);
         }
     }
 
-    private int getIndexPlusOne(){
-        if (index < layouts.length) {
-            index ++;
-            return index;
+    private void processButtonTag(View v) {
+
+        switch ((String)v.getTag()){
+            case LocalConstants.MOD_1_R:
+                markActivityAsComplete(1);
+                break;
+            case LocalConstants.MOD_1_CW1_VALIDATION:
+                validateCrossword();
+                break;
+            case LocalConstants.MOD_2_R:
+                markActivityAsComplete(3);
+                break;
+            case LocalConstants.MOD_2_Q1_VALIDATION:
+                validateQuestionary();
+            default:
+                break;
         }
-        else {
-            return index;
+    }
+
+    private void validateQuestionary() {
+        Log.d("VBG","In validate questionary: " + (mActualQuestionaryPage != null)
+                + " " + (mActualQuestionaryPage == (LinearLayout) view.findViewWithTag(LocalConstants.HAS_QUESTIONARY)));
+        if (mActualQuestionaryPage != null ){
+            Log.d("VBG","actual questionary not null");
+            boolean isCorrect = true;
+
+            for (int i = 0 ; i < mActualQuestionaryPage.getChildCount(); i++){
+                View v = mActualQuestionaryPage.getChildAt(i);
+                if (v.getTag() != null) {
+                    if (v instanceof CheckBox) {
+                        Log.d("VBG", "Is instance of checkbox");
+                        if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((CheckBox) v).isChecked())) {
+                            isCorrect = false;
+                            break;
+                        }
+                    } else if (v instanceof RadioButton) {
+                        Log.d("VBG", "Is instance of radiobutton");
+                        if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((RadioButton) v).isChecked())) {
+                            isCorrect = false;
+                            break;
+                        }
+                    } else {
+                        Log.d("VBG", "Is instance of nothing");
+                    }
+                } else if(((CheckBox)v).isChecked()) {
+                    isCorrect = false;
+                    break;
+                }
+
+            }
+            if (isCorrect){
+                setNextPage();
+                markActivityAsComplete(4);
+            } else {
+                final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
+                notAcerted.mMesaggeText = getString(R.string.mod_2_q1_not_acerted_message);
+                notAcerted.show(getActivity().getFragmentManager(),"");
+            }
         }
     }
 
-    private int getIndexLessOne(){
-        if (index > 0){index --; return index;}
-        else {return index;}
+    private void validateCrossword() {
+        boolean error = false;
+
+        for (int i = 0; i< mCrossword.getColumnCount()*mCrossword.getRowCount(); i++){
+            try {
+                EditText et = (EditText)mCrossword.getChildAt(i);
+                String tag = (String)et.getTag();
+                if (tag !=null && !tag.equals(et.getText().toString())){
+                    error = true;
+                    continue;
+                }
+            } catch (Exception ea){
+                ea.printStackTrace();
+            }
+        }
+
+        if (error){
+            final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
+            notAcerted.show(getActivity().getFragmentManager(),"");
+        } else {
+            setNextPage();
+            mainInterface.saveActivityCompleted(2);
+        }
+
     }
 
+    public void playSound(final View button) {
 
-    private void drawPage0(){
-        courseContainer.removeAllViews();
+        String tag = (String) button.getTag();
+        int audioResourceid = LocalConstants.AUDIO_ARRAY_LIST.get(LocalConstants.AUDIO_TAG_INDEX.get(tag))[mAvatarGender-1];
 
-        view = inflater.inflate(layouts[index], null, false);
+        //Se instancia reporductor
+        if (player1 == null) {
+            player1 = MediaPlayer.create(mCtx, audioResourceid);
 
-        Button btInit = (Button) view.findViewById(R.id.bt_start_vbg);
-
-        btInit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage1(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage2(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage3(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage4(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-
-        final MediaPlayer player1  = MediaPlayer.create(getActivity(), R.raw.audio_1);
-        final MediaPlayer player2  = MediaPlayer.create(getActivity(), R.raw.audio_2);
-        final MediaPlayer player3  = MediaPlayer.create(getActivity(), R.raw.audio_3);
-        final MediaPlayer player4  = MediaPlayer.create(getActivity(), R.raw.audio_4);
-        final Button play1 = (Button) view.findViewById(R.id.bt_play_1);
-        final Button play2 = (Button) view.findViewById(R.id.bt_play_2);
-        final Button play3 = (Button) view.findViewById(R.id.bt_play_3);
-        final Button play4 = (Button) view.findViewById(R.id.bt_play_4);
-
-        play1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play1.isSelected()){
-                    play1.setSelected(!play1.isSelected());
+        }
+        //Se instancia previo botòn para manejar drawable de estado
+        if (preLastClickedButton == null) {
+            preLastClickedButton = (Button) button;
+        }
+        if (player1 != null) {
+            //Está reproduciendo
+            if (player1.isPlaying()) {
+                //Se da click sobre el mismo botón = Pausa()
+                if (actualPlaying == audioResourceid) {
                     player1.pause();
-                    play1.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play1.setSelected(!play1.isSelected());
+                    ((Button) button).setSelected(false);
+                    button.setBackground(getResources().getDrawable(R.drawable.play));
+                } else { //Se da click sobre otro audio mientras el otro se està reproduciendo, se detiene el actual y se inicia el otro
+                    player1.stop();
+                    player1.release();
+                    player1 = MediaPlayer.create(mCtx, audioResourceid);
+                    preLastClickedButton.setBackground(getResources().getDrawable(R.drawable.play));
+                    button.setBackground(getResources().getDrawable(R.drawable.pausa));
                     player1.start();
-                    play1.setBackground(getResources().getDrawable(R.drawable.pausa));
                     player1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mp) {
-                            play1.setBackground(getResources().getDrawable(R.drawable.play));
-                            play1.setSelected(false);
-
+                            button.setBackground(getResources().getDrawable(R.drawable.play));
                         }
                     });
                 }
-
-            }
-        });
-
-        play2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play2.isSelected()){
-                    play2.setSelected(!play2.isSelected());
-                    player2.pause();
-                    play2.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play2.setSelected(!play2.isSelected());
-                    player2.start();
-                    play2.setBackground(getResources().getDrawable(R.drawable.pausa));
-                    player2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play2.setBackground(getResources().getDrawable(R.drawable.play));
-                            play2.setSelected(false);
-
-                        }
-                    });
-                }
-            }
-        });
-
-
-        play3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play3.isSelected()){
-                    play3.setSelected(false);
-                    player3.pause();
-                    play3.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play3.setSelected(true);
-                    player3.start();
-                    play3.setBackground(getResources().getDrawable(R.drawable.pausa));
-                    player3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play3.setBackground(getResources().getDrawable(R.drawable.play));
-                            play3.setSelected(false);
-
-                        }
-                    });
-                }
-            }
-        });
-
-        play4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play4.isSelected()){
-                    play4.setSelected(false);
-                    player4.pause();
-                    play4.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play4.setSelected(true);
-                    player4.start();
-                    play4.setBackground(getResources().getDrawable(R.drawable.pausa));
-                    player4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play4.setBackground(getResources().getDrawable(R.drawable.play));
-                            play4.setSelected(false);
-
-                        }
-                    });
-                }
-
-            }
-        });
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage5(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage6(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-        final MediaPlayer player1  = MediaPlayer.create(getActivity(), R.raw.audio_5);
-        final MediaPlayer player2  = MediaPlayer.create(getActivity(), R.raw.audio_6);
-        final MediaPlayer player3  = MediaPlayer.create(getActivity(), R.raw.audio_7);
-        final MediaPlayer player4  = MediaPlayer.create(getActivity(), R.raw.audio_8);
-        final Button play1 = (Button) view.findViewById(R.id.bt_play_1);
-        final Button play2 = (Button) view.findViewById(R.id.bt_play_2);
-        final Button play3 = (Button) view.findViewById(R.id.bt_play_3);
-        final Button play4 = (Button) view.findViewById(R.id.bt_play_4);
-
-        play1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play1.isSelected()){
-                    play1.setSelected(!play1.isSelected());
-                    player1.pause();
-                    play1.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play1.setSelected(!play1.isSelected());
+            } else {
+                //Se inicio reproducciòn del mismo audio, mientras player1 estaba detenido
+                if (actualPlaying == audioResourceid) {
                     player1.start();
-                    play1.setBackground(getResources().getDrawable(R.drawable.pausa));
+                    button.setBackground(getResources().getDrawable(R.drawable.pausa));
                     player1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
                         @Override
                         public void onCompletion(MediaPlayer mp) {
-                            play1.setBackground(getResources().getDrawable(R.drawable.play));
-                            play1.setSelected(false);
-
+                            button.setBackground(getResources().getDrawable(R.drawable.play));
                         }
                     });
-                }
-
-            }
-        });
-
-        play2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play2.isSelected()){
-                    play2.setSelected(!play2.isSelected());
-                    player2.pause();
-                    play2.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play2.setSelected(!play2.isSelected());
-                    player2.start();
-                    play2.setBackground(getResources().getDrawable(R.drawable.pausa));
-                    player2.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play2.setBackground(getResources().getDrawable(R.drawable.play));
-                            play2.setSelected(false);
-
-                        }
-                    });
-                }
-            }
-        });
-
-
-        play3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play3.isSelected()){
-                    play3.setSelected(false);
-                    player3.pause();
-                    play3.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play3.setSelected(true);
-                    player3.start();
-                    play3.setBackground(getResources().getDrawable(R.drawable.pausa));
-                    player3.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play3.setBackground(getResources().getDrawable(R.drawable.play));
-                            play3.setSelected(false);
-
-                        }
-                    });
-                }
-            }
-        });
-
-        play4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play4.isSelected()){
-                    play4.setSelected(false);
-                    player4.pause();
-                    play4.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play4.setSelected(true);
-                    player4.start();
-                    play4.setBackground(getResources().getDrawable(R.drawable.pausa));
-                    player4.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play4.setBackground(getResources().getDrawable(R.drawable.play));
-                            play4.setSelected(false);
-
-                        }
-                    });
-                }
-
-            }
-        });
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage7(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-        final MediaPlayer player1  = MediaPlayer.create(getActivity(), R.raw.audio_9);
-        final Button play1 = (Button) view.findViewById(R.id.bt_play_1);
-
-
-        play1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play1.isSelected()){
-                    play1.setSelected(!play1.isSelected());
-                    player1.pause();
-                    play1.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play1.setSelected(!play1.isSelected());
+                } else { //Se empezò la reproducciòn de otro audio, mientras el player1 estaba detenido
+                    player1.stop();
+                    player1.release();
+                    player1 = MediaPlayer.create(mCtx, audioResourceid);
                     player1.start();
-                    play1.setBackground(getResources().getDrawable(R.drawable.pausa));
-                    player1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play1.setBackground(getResources().getDrawable(R.drawable.play));
-                            play1.setSelected(false);
-
-                        }
-                    });
+                    button.setBackground(getResources().getDrawable(R.drawable.pausa));
                 }
-
             }
-        });
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
+            actualPlaying = audioResourceid;
+            preLastClickedButton = (Button) button;
+        }
     }
-
-    private void drawPage8(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    //Crossword
-
-    private void drawPage9(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-        final ClueDialog cluedialog = new ClueDialog();
-
-        final EditText p1_1 = (EditText) view.findViewById(R.id.p1_1);
-        final EditText p1_2 = (EditText) view.findViewById(R.id.p1_2);
-        final EditText p1_3 = (EditText) view.findViewById(R.id.p1_3);
-        final EditText p1_4 = (EditText) view.findViewById(R.id.p1_4);
-        final EditText p1_5 = (EditText) view.findViewById(R.id.p1_5);
-        final EditText p1_6 = (EditText) view.findViewById(R.id.p1_6);
-        final EditText p1_7 = (EditText) view.findViewById(R.id.p1_7);
-        final EditText p1_8 = (EditText) view.findViewById(R.id.p1_8);
-        final EditText p1_9 = (EditText) view.findViewById(R.id.p1_9);
-        final EditText p1_10 = (EditText) view.findViewById(R.id.p1_10);
-        final EditText p1_11 = (EditText) view.findViewById(R.id.p1_11);
-        final EditText p2_1 = (EditText) view.findViewById(R.id.p2_1);
-        final EditText p2_2 = (EditText) view.findViewById(R.id.p2_2);
-        final EditText p2_4 = (EditText) view.findViewById(R.id.p2_4);
-        final EditText p2_5 = (EditText) view.findViewById(R.id.p2_5);
-        final EditText p2_6 = (EditText) view.findViewById(R.id.p2_6);
-        final EditText p3_1 = (EditText) view.findViewById(R.id.p3_1);
-        final EditText p3_2 = (EditText) view.findViewById(R.id.p3_2);
-        final EditText p3_3 = (EditText) view.findViewById(R.id.p3_3);
-        final EditText p3_4 = (EditText) view.findViewById(R.id.p3_4);
-        final EditText p3_5 = (EditText) view.findViewById(R.id.p3_5);
-        final EditText p3_6 = (EditText) view.findViewById(R.id.p3_6);
-        EditText p4_2 = (EditText) view.findViewById(R.id.p4_2);
-        final EditText p4_3 = (EditText) view.findViewById(R.id.p4_3);
-        final EditText p4_4 = (EditText) view.findViewById(R.id.p4_4);
-        final EditText p4_5 = (EditText) view.findViewById(R.id.p4_5);
-        final EditText p4_6 = (EditText) view.findViewById(R.id.p4_6);
-        final EditText p4_7 = (EditText) view.findViewById(R.id.p4_7);
-        EditText p4_9 = (EditText) view.findViewById(R.id.p4_9);
-        final EditText p5_1 = (EditText) view.findViewById(R.id.p5_1);
-        final EditText p5_2 = (EditText) view.findViewById(R.id.p5_2);
-        final EditText p5_3 = (EditText) view.findViewById(R.id.p5_3);
-        EditText p5_5 = (EditText) view.findViewById(R.id.p5_5);
-        final EditText p5_6 = (EditText) view.findViewById(R.id.p5_6);
-        final EditText p5_7 = (EditText) view.findViewById(R.id.p5_7);
-        final EditText p6_1 = (EditText) view.findViewById(R.id.p6_1);
-        final EditText p6_2 = (EditText) view.findViewById(R.id.p6_2);
-        final EditText p6_3 = (EditText) view.findViewById(R.id.p6_3);
-        EditText p6_5 = (EditText) view.findViewById(R.id.p6_5);
-        final EditText p6_6 = (EditText) view.findViewById(R.id.p6_6);
-
-        p1_1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_2.requestFocus();
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_2.requestFocus();
-            }
-        });
-
-
-        p1_2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_3.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_3.requestFocus();
-            }
-        });
-        p1_3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_4.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_4.requestFocus();
-            }
-        });
-
-
-        p1_4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_5.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_5.requestFocus();
-            }
-        });
-
-
-        p1_5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_6.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_6.requestFocus();
-            }
-        });
-
-
-        p1_6.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_7.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_7.requestFocus();
-            }
-        });
-
-
-        p1_7.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_8.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_8.requestFocus();
-            }
-        });
-
-
-        p1_8.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_9.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_9.requestFocus();
-            }
-        });
-
-
-        p1_9.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_10.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_10.requestFocus();
-            }
-        });
-
-
-        p1_10.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_11.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_11.requestFocus();
-            }
-        });
-
-
-        p1_11.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_1.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_1.requestFocus();
-            }
-        });
-
-
-        p2_1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p2_2.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p2_2.requestFocus();
-            }
-        });
-
-
-        p2_2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_2.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_2.requestFocus();
-            }
-        });
-
-
-        p2_4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p2_5.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p2_5.requestFocus();
-            }
-        });
-
-
-        p2_5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p2_6.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p2_6.requestFocus();
-
-            }
-        });
-
-
-        p2_6.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p2_1.requestFocus();
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p2_1.requestFocus();
-
-            }
-        });
-
-
-        p3_1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p3_2.requestFocus();
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p3_2.requestFocus();
-
-            }
-        });
-
-
-        p3_2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p3_3.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p3_3.requestFocus();
-            }
-        });
-
-
-        p3_3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p3_4.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p3_4.requestFocus();
-            }
-        });
-
-
-        p3_4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p3_5.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p3_5.requestFocus();
-            }
-        });
-
-
-        p3_5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p3_6.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p3_6.requestFocus();
-            }
-        });
-
-
-        p3_6.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p3_1.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p3_1.requestFocus();
-            }
-        });
-
-
-        p4_2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p4_3.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p4_3.requestFocus();
-            }
-        });
-
-
-        p4_3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p4_4.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p4_4.requestFocus();
-            }
-        });
-
-
-        p4_4.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p4_5.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p4_5.requestFocus();
-            }
-        });
-
-
-        p4_5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p4_6.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p4_6.requestFocus();
-            }
-        });
-
-
-        p4_6.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p4_7.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p4_7.requestFocus();
-            }
-        });
-
-
-        p4_7.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_4.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_4.requestFocus();
-            }
-        });
-
-
-        p4_9.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p3_2.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p3_2.requestFocus();
-            }
-        });
-
-
-        p5_1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p5_2.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p5_2.requestFocus();
-            }
-        });
-
-
-        p5_2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p5_3.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p5_3.requestFocus();
-            }
-        });
-
-
-        p5_3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_9.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_9.requestFocus();
-            }
-        });
-
-
-        p5_5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p5_6.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p5_6.requestFocus();
-            }
-        });
-
-
-        p5_6.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p5_7.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p5_7.requestFocus();
-            }
-        });
-
-
-        p5_7.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p5_1.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p5_1.requestFocus();
-            }
-        });
-
-
-        p6_1.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p6_2.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p6_2.requestFocus();
-            }
-        });
-
-
-        p6_2.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p6_3.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p6_3.requestFocus();
-            }
-        });
-
-
-        p6_3.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p1_11.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p1_11.requestFocus();
-            }
-        });
-
-
-        p6_5.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p6_6.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p6_6.requestFocus();
-            }
-        });
-
-
-        p6_6.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                p6_1.requestFocus();
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-                p6_1.requestFocus();
-            }
-        });
-
-
-
-        p1_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cluedialog.setClueNumber(0);
-                cluedialog.show(getActivity().getFragmentManager(),"");
-            }
-        });
-
-        p2_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cluedialog.setClueNumber(1);
-                cluedialog.show(getActivity().getFragmentManager(),"");
-            }
-        });
-
-        p3_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cluedialog.setClueNumber(2);
-                cluedialog.show(getActivity().getFragmentManager(),"");
-            }
-        });
-
-        p3_2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cluedialog.setClueNumber(3);
-                cluedialog.show(getActivity().getFragmentManager(),"");
-            }
-        });
-
-        p5_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cluedialog.setClueNumber(4);
-                cluedialog.show(getActivity().getFragmentManager(),"");
-            }
-        });
-
-        p6_1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                cluedialog.setClueNumber(5);
-                cluedialog.show(getActivity().getFragmentManager(),"");
-            }
-        });
-
-        final String word1 = p1_1.getText().toString()+p1_2.getText().toString()+p1_3.getText().toString()
-                +p1_4.getText().toString()+p1_5.getText().toString()+p1_6.getText().toString()+p1_7.getText().toString()
-                +p1_8.getText().toString()+p1_9.getText().toString()+p1_10.getText().toString()+p1_11.getText().toString();
-
-        final String word2 = p2_1.getText().toString()+p2_2.getText().toString()+p1_2.getText().toString()+p2_4.getText().toString()
-                +p2_5.getText().toString()+p2_6.getText().toString();
-
-        final String word3 = p3_1.getText().toString()+p3_2.getText().toString()+p3_3.getText().toString()
-                +p3_4.getText().toString()+p3_5.getText().toString()+p3_6.getText().toString();
-
-        final String word4 = p3_2.getText().toString()+p4_2.getText().toString()+p4_3.getText().toString()+p4_4.getText().toString()
-                +p4_5.getText().toString()+p4_6.getText().toString()+p4_7.getText().toString()+p1_4.getText().toString()
-                +p4_9.getText().toString();
-
-        final String word5 = p5_1.getText().toString()+p5_2.getText().toString()+p5_3.getText().toString()
-                +p1_9.getText().toString()+p5_5.getText().toString()+p5_6.getText().toString()+p5_7.getText().toString();
-
-        final String word6 = p6_1.getText().toString()+p6_2.getText().toString()+p6_3.getText().toString()
-                +p1_11.getText().toString()+p6_5.getText().toString()+p6_6.getText().toString();
-
-
-        final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
-
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-//                if (word1.equals(getString(R.string.clue_1)) &&
-//                        word2.equals(getString(R.string.clue_2)) &&
-//                        word3.equals(getString(R.string.clue_3)) &&
-//                        word4.equals(getString(R.string.clue_4)) &&
-//                        word5.equals(getString(R.string.clue_5)) &&
-//                        word6.equals(getString(R.string.clue_6))){
-                if(true){
-                    goForward();
-                }else{
-                    notAcerted.show(getActivity().getFragmentManager(),"");
-                }
-
-
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage10(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btFinish = (Button) view.findViewById(R.id.bt_finish);
-
-
-        btFinish.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage11(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-        final MediaPlayer player1  = MediaPlayer.create(getActivity(), R.raw.audio_10);
-        final Button play1 = (Button) view.findViewById(R.id.bt_play_1);
-
-
-        play1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (play1.isSelected()){
-                    play1.setSelected(!play1.isSelected());
-                    player1.pause();
-                    play1.setBackground(getResources().getDrawable(R.drawable.play));
-                }else{
-                    play1.setSelected(!play1.isSelected());
-                    player1.start();
-                    play1.setBackground(getResources().getDrawable(R.drawable.pausa));
-                    player1.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-                        @Override
-                        public void onCompletion(MediaPlayer mp) {
-                            play1.setBackground(getResources().getDrawable(R.drawable.play));
-                            play1.setSelected(false);
-
-                        }
-                    });
-                }
-
-            }
-        });
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage12(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //goForward();
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-    private void drawPage13(){
-        courseContainer.removeAllViews();
-
-        view = inflater.inflate(layouts[index], null, false);
-
-        Button btBack = (Button) view.findViewById(R.id.bt_back);
-        Button btForward = (Button) view.findViewById(R.id.bt_forward);
-
-
-        btBack.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                goBackward();
-            }
-        });
-
-        btForward.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-            }
-        });
-
-        courseContainer.addView(view);
-    }
-
-
-
-
 
 }
