@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.CheckBox;
@@ -30,6 +31,7 @@ import java.util.regex.Pattern;
 import conse.nrc.org.co.consejo.Activities.SelectContact;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
+import conse.nrc.org.co.consejo.Utils.DataBase;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.Models;
 import conse.nrc.org.co.consejo.Utils.RequestTask;
@@ -46,12 +48,12 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
     Context mCtx;
     public boolean editionMode = false;
     EditText mEtBirthdate, mEtName, mEtLastname, mEtDocumentNumber, mEtEmail, mEtPassword, mEtPasswordConfirm;
-    Spinner mSpGender, mSpDocumentType, mSpEthnicGroup, mSpGeographicLocation, mSpCondition, mSpOriginTown, mSpRole;
+    Spinner mSpGender, mSpDocumentType, mSpEthnicGroup, mSpState, mSpCondition, mSpCity, mSpRole;
     CheckBox mCbIsNrcBeneficiary, mCbAcceptTermsConditions;
     Button mBtNext;
     ProgressDialog listener;
     String birthDateTosave;
-    List<String> gender_list, document_type_list, ethnic_group_list, geographic_location_list, condition_list, origin_town_list, role_list;
+    List<String> gender_list, document_type_list, ethnic_group_list, state_list, condition_list, city_list, role_list;
 
 
     @Override
@@ -71,9 +73,9 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         mSpGender = (Spinner)mView.findViewById(R.id.sp_gender);
         mSpDocumentType = (Spinner)mView.findViewById(R.id.sp_document_type);
         mSpEthnicGroup = (Spinner)mView.findViewById(R.id.sp_ethnic_group);
-        mSpGeographicLocation = (Spinner)mView.findViewById(R.id.sp_geographic_location);
+        mSpState = (Spinner)mView.findViewById(R.id.sp_state);
         mSpCondition = (Spinner)mView.findViewById(R.id.sp_condition_type);
-        mSpOriginTown = (Spinner)mView.findViewById(R.id.sp_origin_town);
+        mSpCity = (Spinner)mView.findViewById(R.id.sp_origin_town);
         mSpRole = (Spinner)mView.findViewById(R.id.sp_user_profile);
 
         fillSpinnersData();
@@ -154,36 +156,38 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             }
 
             try{
-                mSpDocumentType.setSelection(user.profile.document_type.id);
+                mSpDocumentType.setSelection(ConseApp.getAppConfiguration(mCtx).getRoleIndexById(user.profile.document_type.id)+1);
             } catch (Exception ea){
                 ea.printStackTrace();
             }
 
             try{
-                mSpEthnicGroup.setSelection(user.profile.ethnic_group.id);
+                mSpEthnicGroup.setSelection(ConseApp.getAppConfiguration(mCtx).getRoleIndexById(user.profile.ethnic_group.id)+1);
             } catch (Exception ea){
                 ea.printStackTrace();
             }
             try{
-                mSpGeographicLocation.setSelection(user.profile.origin_city.id);
+                mSpState.setSelection(ConseApp.getAppConfiguration(mCtx).getStateIndexByName(user.profile.origin_city.state));
+                setCityAdapter(ConseApp.getAppConfiguration(mCtx).getCityForStateName(user.profile.origin_city.state));
 
             } catch (Exception ea){
                 ea.printStackTrace();
             }
             try{
-                mSpCondition.setSelection(user.profile.condition.id);
+                mSpCondition.setSelection(ConseApp.getAppConfiguration(mCtx).getRoleIndexById(user.profile.condition.id)+1);
 
             } catch (Exception ea){
                 ea.printStackTrace();
             }
             try{
-
-                mSpOriginTown.setSelection(user.profile.origin_city.id);
+                mSpCity.setSelection(ConseApp.getAppConfiguration(mCtx).getCityIndexByName(user.profile.origin_city.state,
+                        user.profile.origin_city.name));
             } catch (Exception ea){
                 ea.printStackTrace();
             }
             try{
-                mSpRole.setSelection(user.profile.role.id);
+                mSpRole.setSelection(ConseApp.getAppConfiguration(mCtx).getRoleIndexById(user.profile.role.id)+1);
+//                mSpRole.setSelection(1);
 
             } catch (Exception ea){
                 ea.printStackTrace();
@@ -267,10 +271,10 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 error = true;
             }
 
-            if (mSpGeographicLocation.getSelectedItemPosition() > 0) {
-                geographicLocation = ConseApp.appConfiguration.city_list.get(mSpGeographicLocation.getSelectedItemPosition() - 1).id;
+            if (mSpState.getSelectedItemPosition() > 0) {
+                geographicLocation = ConseApp.appConfiguration.city_list.get(mSpState.getSelectedItemPosition() - 1).id;
             } else {
-                ((TextView) ((LinearLayout) (mSpGeographicLocation.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
+                ((TextView) ((LinearLayout) (mSpState.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
                 error = true;
             }
 
@@ -281,10 +285,12 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 error = true;
             }
 
-            if (mSpOriginTown.getSelectedItemPosition() > 0) {
-                originTown = ConseApp.appConfiguration.city_list.get(mSpOriginTown.getSelectedItemPosition() - 1).id;
+            if (mSpCity.getSelectedItemPosition() > 0) {
+                originTown = ConseApp.getAppConfiguration(mCtx).getCityByName(city_list.get(mSpCity.getSelectedItemPosition()),
+                        state_list.get(mSpState.getSelectedItemPosition())).id;
+//                originTown = ConseApp.appConfiguration.city_list.get(mSpCity.getSelectedItemPosition() - 1).id;
             } else {
-                ((TextView) ((LinearLayout) (mSpOriginTown.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
+                ((TextView) ((LinearLayout) (mSpCity.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
                 error = true;
             }
 
@@ -359,17 +365,17 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         gender_list = new ArrayList<>();
         document_type_list = new ArrayList<>();
         ethnic_group_list = new ArrayList<>();
-        geographic_location_list = new ArrayList<>();
+        state_list = new ArrayList<>();
         condition_list = new ArrayList<>();
-        origin_town_list = new ArrayList<>();
+        city_list = new ArrayList<>();
         role_list = new ArrayList<>();
 
         gender_list.add(getString(R.string.select_hint));
         document_type_list.add(getString(R.string.select_hint));
         ethnic_group_list.add(getString(R.string.select_hint));
-        geographic_location_list.add(getString(R.string.select_hint));
+        state_list.add(getString(R.string.select_hint));
         condition_list.add(getString(R.string.select_hint));
-        origin_town_list.add(getString(R.string.select_hint));
+        city_list.add(getString(R.string.select_hint));
         role_list.add(getString(R.string.select_hint));
 
         if(ConseApp.appConfiguration.gender_list != null){
@@ -387,9 +393,9 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 ethnic_group_list.add(ethnicGroup.name);
             }
         }
-        if(ConseApp.appConfiguration.city_list != null){
-            for (Models.City city: ConseApp.appConfiguration.city_list){
-                geographic_location_list.add(city.name);
+        if(ConseApp.appConfiguration.state_list != null){
+            for (Models.State state: ConseApp.appConfiguration.state_list){
+                state_list.add(state.name);
             }
         }
         if(ConseApp.appConfiguration.condition_list != null){
@@ -397,11 +403,11 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 condition_list.add(condition.name);
             }
         }
-        if(ConseApp.appConfiguration.city_list != null){
-            for (Models.City city: ConseApp.appConfiguration.city_list){
-                origin_town_list.add(city.name);
-            }
-        }
+//        if(ConseApp.appConfiguration.city_list != null){
+//            for (Models.City city: ConseApp.appConfiguration.city_list){
+//                city_list.add(city.name);
+//            }
+//        }
         if(ConseApp.appConfiguration.role_list!= null){
             for (Models.Role role: ConseApp.appConfiguration.role_list){
                 role_list.add(role.name);
@@ -469,7 +475,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         mSpEthnicGroup.setAdapter(spinerEthnicGroupArrayAdapter);
 
         ArrayAdapter<String> spinerGeographicLocationArrayAdapter =
-                new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, geographic_location_list){
+                new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, state_list){
 
                     @Override
                     public boolean isEnabled(int position){
@@ -484,7 +490,20 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     }
                 };
         spinerGeographicLocationArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpGeographicLocation.setAdapter(spinerGeographicLocationArrayAdapter);
+        mSpState.setAdapter(spinerGeographicLocationArrayAdapter);
+        mSpState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                if (position > 0){
+                    List<Models.City> citites = ConseApp.getAppConfiguration(mCtx).getCityForStateName(state_list.get(position));
+                    setCityAdapter(citites);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
+            }
+        });
 
         ArrayAdapter<String> spinerConditionArrayAdapter =
                 new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, condition_list){
@@ -504,23 +523,6 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         spinerConditionArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
         mSpCondition.setAdapter(spinerConditionArrayAdapter);
 
-        ArrayAdapter<String> spinerOriginTownArrayAdapter =
-                new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, origin_town_list){
-
-                    @Override
-                    public boolean isEnabled(int position){
-                        if(position == 0)
-                        {
-                            return false;
-                        }
-                        else
-                        {
-                            return true;
-                        }
-                    }
-                };
-        spinerOriginTownArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpOriginTown.setAdapter(spinerOriginTownArrayAdapter);
 
         ArrayAdapter<String> spinerRoleArrayAdapter =
                 new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, role_list){
@@ -540,6 +542,31 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         spinerRoleArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
         mSpRole.setAdapter(spinerRoleArrayAdapter);
 
+    }
+
+    private void setCityAdapter(List<Models.City> citites){
+
+        city_list = new ArrayList<String>();
+        for (Models.City ci : citites){
+            city_list.add(ci.name);
+        }
+        ArrayAdapter<String> spinerOriginTownArrayAdapter =
+            new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, city_list){
+
+                @Override
+                public boolean isEnabled(int position){
+                    if(position == 0)
+                    {
+                        return false;
+                    }
+                    else
+                    {
+                        return true;
+                    }
+                }
+            };
+        spinerOriginTownArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
+        mSpCity.setAdapter(spinerOriginTownArrayAdapter);
     }
 
     private void setBirthdatePicker(){
@@ -578,6 +605,11 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 ConseApp.setActualUser(mCtx, res);
                 UtilsFunctions.saveSharedString(mCtx, LocalConstants.USER_PSW, mEtPassword.getText().toString());
                 //UtilsFunctions.saveSharedString(this, LocalConstants.USER_TOKEN, res.token);
+                UtilsFunctions.saveSharedBoolean(mCtx, LocalConstants.USER_IS_IN_DEVICE, true);
+                UtilsFunctions.saveSharedBoolean(mCtx, LocalConstants.IS_USER_LOGGED_IN, true);
+                DataBase dataBase = new DataBase(mCtx);
+                dataBase.clearTopicActivity();
+                dataBase.clearPagesRead();
                 goToSelectContacts();
                 break;
             case LocalConstants.PUT_USER_PROFILE_EDIT_TASK_ID:

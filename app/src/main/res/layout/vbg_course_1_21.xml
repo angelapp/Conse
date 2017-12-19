@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
@@ -35,222 +36,236 @@
                 android:background="@color/black_overlay" />
 
 
-            <RelativeLayout
+            <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ruta">
-
+                android:layout_height="match_parent">
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/aviso" />
-
-                <LinearLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical">
+                    app:srcCompat="@drawable/ruta"
+                    android:id="@+id/imageView11"
+                    android:scaleType="centerCrop"
+                    android:scrollY="-350dp"
+                    android:layout_height="750dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:src="@drawable/aviso"
+                        android:id="@+id/iv"
+                        android:layout_height="80dp" />
 
                     <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="90dp"
-                        android:layout_marginTop="40dp"
-                        android:orientation="vertical">
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:layout_below="@+id/iv">
 
-                        <ImageView
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="90dp"
+                            android:layout_marginTop="0dp"
+                            android:orientation="vertical">
+
+                            <ImageView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginRight="0dp"
+                                android:src="@drawable/punto" />
+
+                            <TextView
+                                style="@style/ConseParagraphText"
+                                android:layout_width="120dp"
+                                android:background="@drawable/globo1"
+                                android:paddingBottom="10dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="20dp"
+                                android:text="@string/course_1_14_a"
+                                android:textSize="12sp"
+                                android:layout_marginTop="5dp"
+                                android:layout_height="100dp"
+                                android:layout_marginRight="30dp"
+                                android:layout_marginLeft="40dp" />
+                        </LinearLayout>
+
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_gravity="right"
-                            android:layout_marginRight="50dp"
-                            android:src="@drawable/punto" />
+                            android:layout_marginRight="90dp"
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
 
-                        <TextView
-                            style="@style/ConseParagraphText"
+                            <TextView
+                                style="@style/ConseParagraphText"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/globo2"
+                                android:paddingBottom="5dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="10dp"
+                                android:textSize="12sp"
+                                android:text="@string/course_1_14_b"
+                                android:layout_height="140dp" />
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.2">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:layout_marginRight="10dp"
+                                    android:src="@drawable/punto"
+                                    android:layout_marginTop="40dp"/>
+                            </RelativeLayout>
+
+
+
+                        </LinearLayout>
+
+                        <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:background="@drawable/globo1"
-                            android:paddingBottom="20dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:paddingTop="40dp"
-                            android:text="@string/course_1_14_a"
-                            android:textSize="12sp" />
-                    </LinearLayout>
+                            android:layout_marginTop="40dp"
+                            android:orientation="horizontal">
 
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="90dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:gravity="right">
 
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="0dp"
-                            android:layout_height="210dp"
-                            android:layout_weight="1"
-                            android:background="@drawable/globo2"
-                            android:paddingBottom="20dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:paddingTop="40dp"
-                            android:textSize="12sp"
-                            android:text="@string/course_1_14_b" />
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@drawable/punto"
+                                    android:layout_centerVertical="true"
+                                    android:layout_alignParentEnd="true" />
+                            </RelativeLayout>
 
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2">
 
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:layout_marginRight="10dp"
-                                android:src="@drawable/punto"
-                                android:layout_marginTop="40dp"/>
-                        </RelativeLayout>
+                            <TextView
+                                style="@style/ConseParagraphText"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/globo3"
+                                android:paddingBottom="20dp"
+                                android:paddingLeft="30dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="10dp"
+                                android:textSize="12sp"
+                                android:text="@string/course_1_14_c"
+                                android:layout_height="90dp" />
+
+
+                        </LinearLayout>
 
 
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
-
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="right">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:src="@drawable/punto"
-                                android:layout_marginTop="40dp"
-                                />
-                        </RelativeLayout>
-
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/globo3"
-                            android:paddingBottom="20dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:paddingTop="40dp"
-                            android:textSize="12sp"
-                            android:text="@string/course_1_14_c" />
+                            android:layout_marginTop="-10dp"
+                            android:orientation="horizontal">
+
+
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.5"
+                                android:gravity="right">
+
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@drawable/punto"
+                                    android:layout_marginTop="40dp" />
+                            </RelativeLayout>
+
+
+                            <TextView
+                                style="@style/ConseParagraphText"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/globo4"
+                                android:paddingBottom="20dp"
+                                android:paddingLeft="30dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="10dp"
+                                android:textSize="12sp"
+                                android:text="@string/course_1_14_d"
+                                android:layout_height="120dp" />
 
 
 
 
 
-                    </LinearLayout>
+                        </LinearLayout>
 
 
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="-10dp"
-                        android:orientation="horizontal">
-
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.8"
-                            android:gravity="right">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:src="@drawable/punto"
-                                android:layout_marginTop="40dp"
-                                />
-                        </RelativeLayout>
-
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="0dp"
+                        <LinearLayout
+                            android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/globo4"
-                            android:paddingBottom="20dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:paddingTop="40dp"
-                            android:textSize="12sp"
-                            android:text="@string/course_1_14_d" />
+                            android:layout_marginTop="10dp"
+                            android:orientation="horizontal">
 
 
 
 
 
-                    </LinearLayout>
+                            <TextView
+                                style="@style/ConseParagraphText"
+                                android:layout_width="0dp"
+                                android:layout_weight="1"
+                                android:background="@drawable/globo5"
+                                android:paddingBottom="20dp"
+                                android:paddingLeft="20dp"
+                                android:paddingRight="20dp"
+                                android:paddingTop="10dp"
+                                android:textSize="12sp"
+                                android:text="@string/course_1_14_d"
+                                android:layout_height="100dp"
+                                android:layout_marginTop="25dp" />
 
 
+                            <RelativeLayout
+                                android:layout_width="0dp"
+                                android:layout_height="match_parent"
+                                android:layout_weight="0.3"
+                                android:gravity="left">
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
-
-
-
-
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/globo5"
-                            android:paddingBottom="20dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:paddingTop="40dp"
-                            android:textSize="12sp"
-                            android:text="@string/course_1_14_d" />
+                                <ImageView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_gravity="right"
+                                    android:src="@drawable/punto"
+                                    android:layout_marginTop="40dp"
+                                    />
+                            </RelativeLayout>
 
 
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.3"
-                            android:gravity="left">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:src="@drawable/punto"
-                                android:layout_marginTop="40dp"
-                                />
-                        </RelativeLayout>
-
+                        </LinearLayout>
 
                     </LinearLayout>
 
-                </LinearLayout>
 
-
-            </RelativeLayout>
+                </RelativeLayout>
+            </FrameLayout>
 
 
             <LinearLayout

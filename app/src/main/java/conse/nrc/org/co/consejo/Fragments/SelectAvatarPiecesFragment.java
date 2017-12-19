@@ -59,9 +59,9 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
 
 
         mRgList.add((RadioGroup) mView.findViewById(R.id.rg_head));
-        mRgList.add((RadioGroup) mView.findViewById(R.id.rg_hair));
         mRgList.add((RadioGroup) mView.findViewById(R.id.rg_eyes));
         mRgList.add((RadioGroup) mView.findViewById(R.id.rg_nose));
+        mRgList.add((RadioGroup) mView.findViewById(R.id.rg_hair));
         mRgList.add((RadioGroup) mView.findViewById(R.id.rg_accesory));
 
         mSelectedPiecesList.add(0);
@@ -85,9 +85,9 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
         imageLoader = imageLoader.getInstance();
 
         options = new DisplayImageOptions.Builder()
-                .showImageOnLoading(R.drawable.conse)
-                .showImageForEmptyUri(R.drawable.conse)
-                .showImageOnFail(R.drawable.conse)
+                .showImageOnLoading(R.drawable.circulo)
+                .showImageForEmptyUri(R.drawable.circulo)
+                .showImageOnFail(R.drawable.circulo)
                 .cacheInMemory(true)
                 .cacheOnDisk(true)
                 .considerExifParams(true)
@@ -113,8 +113,10 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
     }
 
     private void fillLayouts() {
+        int layout_index = 1;
         for(int i : LocalConstants.AVATAR_BODY_PARTS_ORDER) {
-            fillPieceList(i ,ConseApp.appConfiguration.getAvatarPiecesByGenderAndPart(mGender, i));
+            fillPieceList(layout_index ,ConseApp.appConfiguration.getAvatarPiecesByGenderAndPart(mGender, i));
+            layout_index++;
         }
     }
 

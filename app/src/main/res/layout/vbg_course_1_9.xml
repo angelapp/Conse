@@ -70,7 +70,8 @@
                 android:nextFocusRight="@+id/p1_2" />
                 <!--19--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_2" android:gravity="center"
                 android:tag="s" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusRight="@+id/p2_4" />
+                android:nextFocusRight="@+id/p2_4"
+                android:nextFocusDown="@+id/p1_3" />
                 <!--20--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p2_4" android:gravity="center"
                 android:tag="i" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusRight="@+id/p2_5" />
@@ -99,7 +100,8 @@
                 android:hint="@string/number_4" android:gravity="center"
                 android:tag="e" android:inputType="text" android:maxLength="1"
                 android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusRight="@+id/p4_2" />
+                android:nextFocusRight="@+id/p4_2"
+                android:nextFocusDown="@+id/p3_3" />
                 <!--35--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p4_2" android:gravity="center"
                 android:tag="c" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusRight="@+id/p4_3" />
@@ -120,7 +122,8 @@
                 android:nextFocusRight="@+id/p1_4" />
                 <!--41--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_4" android:gravity="center"
                 android:tag="c" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusRight="@+id/p4_9" />
+                android:nextFocusRight="@+id/p4_9"
+                android:nextFocusDown="@+id/p1_5" />
                 <!--42--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p4_9" android:gravity="center"
                 android:tag="a" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"/>
                 <!--43--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
@@ -200,7 +203,8 @@
                 android:nextFocusRight="@+id/p1_9" />
                 <!--96--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_9" android:gravity="center"
                 android:tag="i" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusRight="@+id/p5_5" />
+                android:nextFocusRight="@+id/p5_5"
+                android:nextFocusDown="@+id/p1_10" />
                 <!--97--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p5_5" android:gravity="center"
                 android:tag="l" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusRight="@+id/p5_6" />

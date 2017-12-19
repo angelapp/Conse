@@ -197,7 +197,7 @@
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/sp_geographic_location"
+                    android:id="@+id/sp_state"
                     android:background="@null"/>
 
                 <TextView

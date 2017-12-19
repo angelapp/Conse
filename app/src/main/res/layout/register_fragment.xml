@@ -189,7 +189,7 @@
                     android:background="@null" />
 
                 <TextView
-                    android:text="@string/geographic_location_tittle_h2"
+                    android:text="@string/department"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_geographic_location_tittle_h2"
@@ -198,7 +198,20 @@
                 <Spinner
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/sp_geographic_location"
+                    android:id="@+id/sp_state"
+                    android:background="@null"/>
+
+                <TextView
+                    android:text="@string/origin_town_tittle_h2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_origin_town_tittle_h2"
+                    style="@style/ConseTittleTextH2" />
+
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sp_origin_town"
                     android:background="@null"/>
 
                 <TextView
@@ -213,19 +226,6 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/sp_condition_type"
                     android:background="@null" />
-
-                <TextView
-                    android:text="@string/origin_town_tittle_h2"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/tv_origin_town_tittle_h2"
-                    style="@style/ConseTittleTextH2" />
-
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/sp_origin_town"
-                    android:background="@null"/>
 
                 <TextView
                     android:text="@string/user_profile_tittle_h2"

@@ -18,6 +18,7 @@ public class LocalConstants {
 
     public static final String SHARED_PREFERENCES = "CONSE";
     public static final String API_KEY = BuildConfig.API_KEY;
+    public static final boolean DEV_VERSION = BuildConfig.DEV_VERSION;
 
     public final static String SMS_CONTACT_PREFIX = "smsto:";
 
@@ -34,6 +35,8 @@ public class LocalConstants {
     //Shared Preferences Keys
     public static final String USER_DATA = "USER_DATA";
     public static final String USER_PSW = "USER_PSW";
+    public static final String IS_USER_LOGGED_IN = "IS_USER_LOGGED_IN";
+    public static final String USER_IS_IN_DEVICE = "USER_IS_IN_DEVICE";
     public static final String APP_CONFIGURATION = "APP_CONFIGURATION";
     public static final String USER_TOKEN = "USER_TOKEN";
     public static final String CONTACT_SIZE = "CONTACT_SIZE";
@@ -55,6 +58,8 @@ public class LocalConstants {
     public static final String POST_AVATAR_LIST = "user_avatar/";
     public static final String POST_USER_PROGRESS_LIST = "user_progress/";
     public static final String PUT_USER_PROFILE_EDIT = "profile/";
+    public static final String POST_USER_LOGGIN = "user_auth/";
+    public static final String POST_PASSWORD_RECOVERY = "user_password_recovery/";
 
 
     //Task id for server views
@@ -65,11 +70,15 @@ public class LocalConstants {
     public static final int POST_AVATAR_LIST_TASK_ID = 23;
     public static final int POST_USER_PROGRESS_LIST_TASK_ID = 24;
     public static final int PUT_USER_PROFILE_EDIT_TASK_ID = 25;
+    public static final int POST_USER_LOGGIN_TASK_ID = 26;
+    public static final int POST_PASSWORD_RECERY_TASK_ID = 27;
 
 
     //LAYOUTS TAGS
     public static final String NEED_AVATAR_TAG = "need_avatar"; //Indica que el layout necesita avatar
     public static final String HERE_AVATAR_TAG = "here_avatar"; // Indica el framelayout donde va el avatar
+    public static final String NEED_YOUTUBE_VIDEO_TAG = "need_youtube_video"; //Indica que el layout necesita avatar
+    public static final String HERE_VIDEO_TAG = "here_video"; // Indica el framelayout donde va el avatar
     public static final String HAS_QUESTIONARY = "has_questionary"; //Indica que el layout tiene un cuestionario
     public static final String QUESTIONARY_CONTAINER = "questionary_container"; //Indica el linear layout donde están los checkbos o radio buttons con las respuestas
     public static final String CORRECT_OPTION="correct_option"; // Opcion que debe ser marcada como correcta
@@ -77,7 +86,15 @@ public class LocalConstants {
     public static final String MOD_1_CW1_VALIDATION = "validate_crossword_mod_1"; //Validar crucigrama mod 1
     public static final String MOD_1_CW1_SCREEN = "MOD_1_CW1_SCREEN"; //Carga ventana de crucigrama modulo 1
     public static final String MOD_2_R = "MOD_2_R"; // Lectura modulo 2
-    public static final String MOD_2_Q1_VALIDATION = "MOD_2_Q1_VALIDATION"; // Lectura modulo 2
+    public static final String MOD_2_Q1_VALIDATION = "MOD_2_Q1_VALIDATION"; // Validar cuestionario modulo 2
+    public static final String MOD_3_R = "MOD_3_R";
+    public static final String MOD_3_Q1 = "MOD_3_Q1";
+    public static final String MOD_3_Q2 = "MOD_3_Q2";
+    public static final String MOD_3_Q3 = "MOD_3_Q3";
+    public static final String MOD_3_Q4 = "MOD_3_Q4";
+    public static final String MOD_4_R = "MOD_4_R";
+    public static final String MOD_4_Q1 = "MOD_4_Q1";
+
 
     public static final int VBG_COURSE_ID = 1;
     public static final int LEADERS_COURSE_ID = 2;
@@ -87,9 +104,9 @@ public class LocalConstants {
 
     public static final List<Integer> AVATAR_BODY_PARTS_ORDER = new ArrayList<Integer>(){{
         add(3); //Head
-        add(2); //Hair
         add(5); //Eyes
         add(4); //Nose
+        add(2); //Hair
         add(1); //Accessory
     }};
 
@@ -131,6 +148,19 @@ public class LocalConstants {
         put("tu_eres_quien_decide", 10);
         put("en_todas_las_actuaciones", 11);
         put("todas_las_investigaciones", 12);
+        put("existen_varios_tipos", 13);
+        put("las_entidades_del_sector", 14);
+        put("existen_medidas_de_proteccion", 15);
+        put("asistencia_en_salud", 16);
+        put("medidas_estabilizacion_economica", 17);
+        put("medidas_reparacion_integral", 18);
+        put("para_solicitar_la_inscripcion", 19);
+        put("ten_presente_que_si_una_entidad", 20);
+
+
+
+
+
 //        put("",);
 //        put("",);
 //        put("",);
@@ -163,6 +193,40 @@ public class LocalConstants {
         add(R.layout.vbg_course_1_22);
         add(R.layout.vbg_course_1_23);
         add(R.layout.vbg_course_1_24);
+        add(R.layout.vbg_course_1_25);
+        add(R.layout.vbg_course_1_26);
+        add(R.layout.vbg_course_1_27);
+        add(R.layout.vbg_course_1_28);
+        add(R.layout.vbg_course_1_29);
+        add(R.layout.vbg_course_1_30);
+        add(R.layout.vbg_course_1_31);
+        add(R.layout.vbg_course_1_32);
+        add(R.layout.vbg_course_1_33);
+        add(R.layout.vbg_course_1_36);
+        add(R.layout.vbg_course_1_39);
+        add(R.layout.vbg_course_1_42);
+        add(R.layout.vbg_course_1_45);
+        add(R.layout.vbg_course_1_47);
+        add(R.layout.vbg_course_1_48);
+        add(R.layout.vbg_course_1_48_1);
+        add(R.layout.vbg_course_1_49);
+        add(R.layout.vbg_course_1_50);
+        add(R.layout.vbg_course_1_51);
+        add(R.layout.vbg_course_1_52);
+        add(R.layout.vbg_course_1_53);
+        add(R.layout.vbg_course_1_54);
+        add(R.layout.vbg_course_1_55);
+        add(R.layout.vbg_course_1_56);
+        add(R.layout.vbg_course_1_57);
+        add(R.layout.vbg_course_1_58);
+        add(R.layout.vbg_course_1_59);
+        add(R.layout.vbg_course_1_60);
+        add(R.layout.vbg_course_1_61);
+        add(R.layout.vbg_course_1_62);
+        add(R.layout.vbg_course_1_63);
+        add(R.layout.vbg_course_1_64);
+        add(R.layout.vbg_course_1_66);
+
     }};
 
 }

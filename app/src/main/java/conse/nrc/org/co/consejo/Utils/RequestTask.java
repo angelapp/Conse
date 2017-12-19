@@ -543,42 +543,23 @@ public abstract class RequestTask {
         if (error != null) {
 
             try {
-                String responseBody;
-                if((id == LocalConstants.LOGGIN_USER_TASK_ID) && error.networkResponse!= null){
-                    if(error.networkResponse.statusCode == ErrorCodes.SERVICE_NOTFOUND_404){
-                        listener.onRequestError(error.networkResponse.statusCode, ErrorMessage.notUserFound, id);
-                    } else if(error.networkResponse.statusCode == ErrorCodes.SERVICE_NOTFOUND_400){
-                        listener.onRequestError(error.networkResponse.statusCode, ErrorMessage.notUserValidCredentials, id);
+                if (error.networkResponse != null){
+                    String responseBody = "";
+                    if (error.networkResponse.data != null) {
+                        responseBody = new String(error.networkResponse.data, "utf-8");
                     }
-                } else if (error.networkResponse != null) {
-                    responseBody = new String(error.networkResponse.data, "utf-8");
                     JSONObject jsonObject = new JSONObject(responseBody);
-                    String errorIna = (String) jsonObject.getJSONArray(ErrorMessage.NON_FIELD_ERRORS).get(0);
-                    Log.d(TAG, "ERROR LOGIN : "+ errorIna);
-                    int errorCode = error.networkResponse.statusCode;
-                    if (DEBUG) Log.d(TAG, "[REQUEST_TASK] VOLLEY ERROR FOR TASK ID: " + id  + ": " + responseBody);
-                    if (DEBUG) Log.d(TAG, "[REQUEST_TASK] VOLLEY STATUS CODE TASK ID: "+ id  + ": " + errorCode);
-                    if (errorCode == ErrorCodes.SERVICE_NOTFOUND_404) {
-                        listener.onRequestError(errorCode, ErrorMessage.serviceNotFound, id);
-                    }else if (errorCode == ErrorCodes.SERVICE_NOTFOUND_400) {
-                        if (errorIna.equals(ErrorMessage.INNACTIVE_ACCOUNT)) ;{
-                            listener.onRequestError(errorCode, errorIna, id);
-                        }
-                        if (!errorIna.equals(ErrorMessage.INNACTIVE_ACCOUNT)) {
-                            listener.onRequestError(errorCode, ErrorMessage.serviceNotFound, id);
-                        }
-                    } else
-                        listener.onRequestError(ErrorCodes.IO_EXCEPT, jsonObject.getString("email"), id);
+                    String errorMessage = jsonObject.getString("detail");
+                    listener.onRequestError(error.networkResponse.statusCode, errorMessage, id);
+                    Log.d(TAG, "Error response code: " + error.networkResponse.statusCode + " Detail: " + errorMessage
+                    + "For task: " + id);
                 } else {
-                    if (DEBUG)
-                        Log.d(TAG, "[REQUEST_TASK] VOLLEY NETWORK RESPONSE IS NULL! FOR TASK ID: " + id  + ": " + error.getMessage());
-                    listener.onRequestError(ErrorCodes.IO_EXCEPT, ErrorMessage.VOLLEY_ERROR_NO_MESSAGE, id);
+                    Log.d(TAG, "[REQUEST_TASK] VOLLEY NETWORK RESPONSE IS NULL! FOR TASK ID: " + id  + ": " + error.getMessage());
+                    listener.onRequestError(ErrorCodes.IO_EXCEPT, ErrorMessage.VOLLEY_ERROR_NETWORK, id);
                 }
-
-
             } catch (JSONException e) {
                 if (DEBUG) Log.d(TAG, "[REQUEST_TASK] VOLLEY ERROR JSONException FOR TASK ID: " + id );
-                listener.onRequestError(ErrorCodes.WRONG_RESP, ErrorMessage.WRONG_RESP, id);
+                listener.onRequestError(ErrorCodes.WRONG_RESP, ErrorMessage.VOLLEY_ERROR_NETWORK, id);
             } catch (UnsupportedEncodingException e) {
                 if (DEBUG) Log.d(TAG, "[REQUEST_TASK] VOLLEY ERROR UnsupportedEncodingException FOR TASK ID: " + id);
             }
@@ -588,10 +569,8 @@ public abstract class RequestTask {
         } else {
 
             if (DEBUG) Log.d(TAG, "[REQUEST_TASK] VOLLEY ERROR is NULL FOR TASK ID: " + id);
-            listener.onRequestError(ErrorCodes.VOLLEY_NULL, ErrorMessage.VOLLEY_ERROR_NULL, id);
-
+            listener.onRequestError(ErrorCodes.VOLLEY_NULL, ErrorMessage.VOLLEY_ERROR_NETWORK, id);
         }
-
     }
 
     private void imageDownloadExecute() {

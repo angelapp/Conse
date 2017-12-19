@@ -83,6 +83,7 @@ public class Models {
 
         public List<DocumentType> document_type_list;
         public List<Gender> gender_list;
+        public List<State> state_list;
         public List<City> city_list;
         public List<Condition> condition_list;
         public List<EthnicGroup> ethnic_group_list;
@@ -92,6 +93,104 @@ public class Models {
         public List<ContactFormType> contact_form_type_list;
         public List<Course> course_list;
 
+        public int getRoleIndexById(int id){
+            int i = 0;
+            for (Role rol: role_list){
+                if (rol.id == id){
+                    return i;
+                }
+            }
+            return i;
+        }
+
+        public int getEthnicIndexById(int id){
+            int i = 0;
+            for (EthnicGroup et: ethnic_group_list){
+                if (et.id == id){
+                    return i;
+                }
+            }
+            return i;
+        }
+
+        public int getDocumentTypeIndexById(int id){
+            int i = 0;
+            for (DocumentType dt: document_type_list){
+                if (dt.id == id){
+                    return i;
+                }
+            }
+            return i;
+        }
+
+        public int getConditionIndexById(int id){
+            int i = 0;
+            for (Condition dt: condition_list){
+                if (dt.id == id){
+                    return i;
+                }
+            }
+            return i;
+        }
+
+
+        public State getStateByName(String name){
+            State state = null;
+            for (State st: state_list){
+                if (st.name.equals(name)){
+                    return st;
+                }
+            }
+            return state;
+        }
+
+        public int getStateIndexByName(String name){
+            State state = null;
+            int i = 0;
+            for (State st: state_list){
+                if (st.name.equals(name)){
+                    return i;
+                }
+                i++;
+            }
+            return i;
+        }
+
+
+        public City getCityByName(String city_name, String state_name){
+            for (State st:state_list){
+                if (st.name.equals(state_name)){
+                    for (City ci:getCityForStateName(st.name)){
+                        if (ci.name.equals(city_name)){
+                            return ci;
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+
+        public List<City> getCityForStateName(String name){
+            List<City> cities = new ArrayList<>();
+            for (City st: city_list){
+                if (st.state.equals(name)){
+                    cities.add(st);
+                }
+            }
+            return cities;
+        }
+
+        public int getCityIndexByName(String state_name, String city_name){
+            int i = 0;
+            for(City cit : getCityForStateName(state_name)){
+                if (cit.name.equals(city_name)){
+                    return i;
+                }
+                i++;
+            }
+            return i;
+        }
 
         public List<AvatarPiece> getAvatarPiecesByGenderAndPart(int gender, int body_part){
             List<AvatarPiece> list = new ArrayList<>();
@@ -163,6 +262,18 @@ public class Models {
         public int id;
         public String name;
         public String abreviature;
+        public String icon;
+
+    }
+
+    public static class State{
+
+        public int id;
+        public String name;
+        public String code;
+        public String abreviature;
+        public String country;
+        public String description;
         public String icon;
 
     }
@@ -311,6 +422,11 @@ public class Models {
         public String icon;
         public int ponderation_progress;
 
+    }
+
+    public static class SimpleResponseModel{
+
+        public String detail;
     }
 
     public static class UserActivityProgress{

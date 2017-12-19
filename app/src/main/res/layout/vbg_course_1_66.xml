@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_66"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/globo"
+        android:gravity="center"
+        android:paddingBottom="20dp">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/trofeo_66" />
+
+        <TextView
+            android:text="@string/course_1_66_tittle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView9"
+            style="@style/ConseTittleTextH1"
+            android:layout_marginTop="15dp"/>
+
+        <TextView
+            android:text="@string/course_1_66_msg"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView4"
+            style="@style/ConseParagraphText"
+            android:lines="4"
+            android:layout_marginBottom="5dp"
+            android:gravity="center_horizontal" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:id="@+id/bt_next"
+            android:background="@drawable/button_finish"
+            android:onClick="onClick" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -31,6 +31,26 @@ public class ServerRequest {
 
     }
 
+    public static class PasswordRecovery extends RequestTask{
+        public PasswordRecovery(Context ctx,OnRequestCompleted listener, ProgressDialog loader, int taskId, Models.RegisterUserProfileModel user){
+            super(ctx, listener, loader, taskId);
+            setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.POST_PASSWORD_RECOVERY );
+            setRequest(user);
+            setResponse(new Models.SimpleResponseModel());
+        }
+
+    }
+
+    public static class LogginUser extends RequestTask{
+        public LogginUser(Context ctx,OnRequestCompleted listener, ProgressDialog loader, int taskId, Models.RegisterUserProfileModel user){
+            super(ctx, listener, loader, taskId);
+            setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.POST_USER_LOGGIN);
+            setRequest(user);
+            setResponse(new Models.RegisterUserResponse());
+        }
+
+    }
+
     public static class UpdateUserProfile extends RequestTask{
         public UpdateUserProfile(Context ctx, OnRequestCompleted listener, ProgressDialog loader, int taskId, Models.RegisterUserProfileModel user){
             super(ctx, listener, loader, taskId);

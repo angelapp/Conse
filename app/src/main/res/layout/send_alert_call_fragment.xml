@@ -65,7 +65,7 @@
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/bt_call"
+                        android:id="@+id/bt_call_123"
                         android:onClick="onClick"
                         android:layout_weight="1"
                         android:background="@drawable/telefono"
@@ -96,7 +96,7 @@
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/bt_call"
+                        android:id="@+id/bt_call_155"
                         android:layout_weight="1"
                         android:onClick="onClick"
                         android:background="@drawable/telefono"
@@ -126,7 +126,7 @@
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/bt_call"
+                        android:id="@+id/bt_call_141"
                         android:onClick="onClick"
                         android:layout_weight="1"
                         android:background="@drawable/telefono"

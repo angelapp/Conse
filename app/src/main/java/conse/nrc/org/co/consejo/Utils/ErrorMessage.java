@@ -3,7 +3,7 @@ package conse.nrc.org.co.consejo.Utils;
 public class ErrorMessage {
 	
 	public static final String VOLLEY_ERROR_NO_MESSAGE		= "VolleyErrorNoMessage";
-	public static final String VOLLEY_ERROR_NETWORK		= "VolleyErrorNetworkResponseNull";
+	public static final String VOLLEY_ERROR_NETWORK		= "No hay respuesta del servidor, por favor revise su conexión a internet";
 	public static final String VOLLEY_ERROR_NULL  = "VolleyErrorNull";
 	public static final String serviceNotFound = "Service or resourse not found";
 	public static final String WRONG_RESP = "WRONG_RESP";

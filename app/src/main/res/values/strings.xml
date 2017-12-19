@@ -16,11 +16,12 @@
     <string name="is_nrc_beneficiary_checkbox">Soy beneficiario de los programas NRC</string>
     <string name="account_tittle_h2">Usuario Conse</string>
     <string name="pasword_et_last_name">Contraseña, 8 caracteres</string>
+    <string name="password">Contraseña</string>
     <string name="email_et_hint">Correo electrónico</string>
     <string name="ethnic_group_tittle_h2">Grupo étnico</string>
     <string name="geographic_location_tittle_h2">Localizacion geográfica</string>
     <string name="condition_tittle_h2">Condición</string>
-    <string name="origin_town_tittle_h2">Municipio de origen</string>
+    <string name="origin_town_tittle_h2">Municipio</string>
     <string name="user_profile_tittle_h2">Perfil del usuario</string>
     <string name="accept_terms_conditions_checkbox">Acepto los términos, condiciones, políticas de privacidad y de tratamiento de datos</string>
     <string name="getting_app_conf">Obteniendo configuración de aplicación</string>
@@ -233,6 +234,476 @@
 
     <string name="course_1_24_text">Tienes derecho a que los hechos sean investigados y que el agresor sea juzgado y
         castigado, así tú podrás exigir la reparación de los daños que has sufrido y la no repetición de los hechos.</string>
+
+    <string name="course_1_25_text"> <b>Acude y presenta tu denuncia en:</b> \n \n
+        \u25CF Fiscalía General de la Nación. Ésta atiende en: \n\n
+        <pre>&#9;</pre>\u25CB Unidades de Reacción Inmediata (URI) \n\n
+        <pre>&#9;</pre>\u25CB Salas de Atención al Usuario (SAU) \n\n
+        <pre>&#9;</pre>\u25CB Casas de Justicia \n\n
+        <pre>&#9;</pre>\u25CB Centros de Atención Especializada como: CAIVAS (Centro de Atención e Investigación Integral a las Víctimas de Delitos Sexuales), CAVIF (Centro de Atención e Investigación Integral contra la Violencia Intrafamiliar) y el CAVIP (Centro de Atención Penal Integral a Víctimas). \n\n
+        \u25CF Presenta tu denuncia ante Policía Judicial: CTI de la Fiscalía; SIJIN y DIJIN de la Policía. \n\n
+        \u25CF Si en tu municipio no están presentes las entidades mencionadas puedes ir a la Policía Nacional o Comisarías de Familia. \n\n
+</string>
+
+    <string name="course_1_26_tittle">Solicita medidas de protección</string>
+    <string name="course_1_26_text">Tienes derecho a proteger tu integridad y la de tus hijos e hijas y poner fin a la violencia. Para ello, existen medidas específicas e inmediatas conocidas como “medidas de protección” que pueden ser otorgadas por las autoridades competentes.</string>
+
+    <string name="course_1_27_tittle">Hechos violentos que suceden en un contexto diferente al familiar o si son conocidos por la Fiscalía:</string>
+    <string name="course_1_27_text">
+        \u25CF Una vez has presentado la denuncia o si la Fiscalía ha iniciado la investigación, tú o la Fiscalía, pueden solicitar al Juez de Control de Garantías designado, la medida de protección. \n\n
+        \u25CF Si se trata de hechos violentos que ocurren en el contexto familiar y son conocidos por la Fiscalía, el caso luego será enviado a la Comisaría de Familia o Juez para que continúen con el procedimiento.</string>
+
+
+    <string name="course_1_28_tittle">Hechos violentos que ocurren en el contexto familiar:</string>
+    <string name="course_1_28_text">
+        \u25CF Solicítala a la Comisaría de Familia. \n
+        \u25CF Si en tu municipio no hay Comisaría de Familia, puedes pedir la medida de protección al Juez Civil o Promiscuo Municipal.\n
+        \u25CF La solicitud la puedes hacer tú, un familiar, el defensor de familia (Instituto Colombiano de Bienestar Familiar ICBF) o cualquier otra persona que actué en tu nombre.\n
+        \u25CF Recibirás medidas de protección de tipo provisional, de acuerdo con la gravedad de los hechos, y hasta tanto se agoten las etapas del procedimiento.
+    </string>
+
+
+    <string name="course_1_29_tittle">Hechos violentos en el contexto familiar si formas parte de una comunidad indígena:</string>
+    <string name="course_1_29_text">
+        \u25CF La respectiva autoridad indígena. \n
+        \u25CF Si ésta no puede asegurar las medidas adecuadas o tú no quieres que tu comunidad se entere de lo ocurrido, puedes acudir a las autoridades estatales mencionadas anteriormente.
+    </string>
+
+    <string name="course_1_30_tittle">Solicita medidas de atención</string>
+    <string name="course_1_30_text">
+        Tienes derecho, si es necesario, a acceder a servicios temporales de habitación, alimentación y/o transporte para ti y tus hijos e hijas. Estos servicios forman parte de tu derecho fundamental a la salud.
+    </string>
+
+    <string name="course_1_31_text1">
+        Juez de Control de Garantías, si los hechos son conocidos por la Fiscalía General de la Nación o si se trata de hechos violentos que suceden en un espacio diferente al familiar.
+    </string>
+    <string name="course_1_31_text2">
+        Comisaría de Familia, en caso que se trate de hechos violentos que ocurren en el contexto familiar.
+    </string>
+    <string name="course_1_31_text3">
+        Si en tu municipio no hay Comisaría de Familia, puedes pedirlas al Juez Civil o Promiscuo Municipal.
+    </string>
+
+    <string name="course_1_32_tittle">
+        ¡Felicitaciones! Has trabajado duro y ahora estás muy cerca de convertirte en Consejera Avanzada. Responde el siguiente cuestionario y consigue el título.
+    </string>
+
+    <string name="course_1_32_header">
+       ¿Cómo saber si soy víctima de violencia?
+    </string>
+
+
+    <string name="course_1_33_tittle">
+       Responde a las siguientes preguntas seleccionando una o varias respuestas según lo consideres necesario.
+    </string>
+
+    <string name="course_1_33_question">
+       1. Si requieres medidas de protección al ser víctima de hechos violentos en el contexto familiar, debes acudir a:
+    </string>
+    <string name="course_1_33_opt1">
+       Comisaría de Familia
+    </string>
+    <string name="course_1_33_opt2">
+       Juez Civil o Promiscuo Municipal
+    </string>
+    <string name="course_1_33_opt3">
+       Organizaciones de mujeres y redes comunitarias.
+    </string>
+
+    <string name="course_1_34_ok">
+       ¡Muy bien, respuesta correcta!
+    </string>
+
+    <string name="course_1_35_bad">
+       Las organizaciones de mujeres y redes comunitarias pueden brindarte orientación si eres víctima de violencia y requieres información, pero no son las entidades encargadas de brindarte medidas de protección.
+    </string>
+
+
+    <string name="course_1_36_question">
+       2. Si eres víctima de violencia sexual tienes derecho a:
+    </string>
+    <string name="course_1_36_opt1">
+       A que te practiquen exámenes para detectar enfermedades de transmisión sexual
+    </string>
+    <string name="course_1_36_opt2">
+       A que te lleven con el agresor para que puedas enfrentarle personalmente
+    </string>
+    <string name="course_1_36_opt3">
+       A que te suministren de manera gratuita anticoncepción de emergencia
+    </string>
+
+    <string name="course_1_36_opt4">
+       A que te realicen una prueba de embarazo
+    </string>
+
+    <string name="course_1_38_bad">
+       La Ley establece que la mujer víctima de violencia tiene derecho a decidir voluntariamente si puede ser confrontada con el agresor
+    </string>
+
+    <string name="course_1_39_question">
+       3. Si decides acceder a la justicia debes tener en cuenta:
+    </string>
+    <string name="course_1_39_opt1">
+       Contar con el dinero necesario para pagar una abogada.
+    </string>
+    <string name="course_1_39_opt2">
+       Que la autoridad que te haya atendido te entregue la copia de la denuncia penal.
+    </string>
+    <string name="course_1_39_opt3">
+       No ser sometida a pruebas repetitivas o que signifiquen una intromisión innecesaria a tu derecho a la intimidad.
+    </string>
+
+    <string name="course_1_41_bad">
+       Recuerda, si lo necesitas, la Defensoría del Pueblo tiene la obligación de brindarte de manera gratuita servicios de orientación, asesoría y/o representación judicial.
+    </string>
+
+    <string name="course_1_42_question">
+       4. Si solicitas atención en salud debes tener en cuenta:
+    </string>
+    <string name="course_1_42_opt1">
+       Siempre deben explicarte claramente los procedimientos que te realizarán y tú debes dar tu autorización de manera expresa.
+    </string>
+    <string name="course_1_42_opt2">
+     Contar con una afiliación vigente al sistema de seguridad social en salud.
+    </string>
+    <string name="course_1_42_opt3">
+       Deben entregarte una copia de la historia clínica dónde queden escritas todas las actuaciones y procedimientos realizados.
+    </string>
+
+    <string name="course_1_42_opt4">
+       Si eres víctima de violencia sexual la atención médica debe ser prioritaria, inmediata, gratuita y debe ser tratada como una urgencia.
+    </string>
+
+    <string name="course_1_44_bad">
+       Si no te encuentras afiliada al sistema de Seguridad Social en Salud (SGSSS), la IPS (centro de salud, hospital o clínica) debe informar a la alcaldía de tu municipio para que ésta realice el trámite de afiliación.
+    </string>
+
+    <string name="course_1_45_tittle">
+       ¡Excelente!
+    </string>
+    <string name="course_1_45_text">
+        ¡Mira que lejos estás del inicio! ¡Felicitaciones ya eres una Consejera Avanzada! ¡Ve por más!
+    </string>
+
+
+    <string name="course_1_47_mod_name">
+        Módulo 4
+    </string>
+
+    <string name="course_1_47_tittle">
+        ¿Qué puedo hacer si creo ser víctima de violencia en el conflicto armado?
+    </string>
+
+    <string name="course_1_47_text">
+        Si consideras que eres una mujer víctima de cualquier tipo de violencia cometida en el conflicto armado, además de todas las medidas señaladas en el punto anterior, puedes tomar alguna o todas las siguientes opciones especiales dispuestas por la ley, teniendo siempre en cuenta tus intereses y situación particular.\n
+        Recuerda que en casos de violencia cometidos por actores armados, las mujeres tienen derecho de acceder tanto a las medidas generales desarrolladas para las mujeres víctimas de violencia fuera del conflicto, como a medidas especiales aplicables a las víctimas del conflicto armado.
+    </string>
+
+
+    <string name="course_1_48_tittle">
+        Accede a la justicia en el marco de la ley de justicia y paz (ley 975/05)
+    </string>
+
+
+
+    <string name="course_1_48_text1">
+        Tienes el derecho de acceder al procedimiento especial de la Ley de Justicia y Paz (Ley 975/05), siempre que hayas sido víctima de delitos cometidos por un grupo armado ilegal (conocidos como Grupos Armados Organizados al Margen de la Ley, GAOML).
+    </string>
+
+    <string name="course_1_48_text2">
+        La Fiscalía General de la Nación. Esta atiende en las Unidades de Justicia Transicional.
+    </string>
+
+    <string name="course_1_48_text3">
+        A la Policía Judicial: CTI de la Fiscalía; y SIJIN y DIJIN de la Policía.
+    </string>
+
+    <string name="course_1_48_text4">
+        Si en tu municipio no están estas entidades puedes ir a la Policía Nacional o a las Comisarías de Familia.
+    </string>
+
+    <string name="course_1_48_text5">
+        Recuerda que allí se diligencia el Formato de Registro de Hechos Atribuibles a Grupos Organizados al Margen de la Ley.
+    </string>
+
+
+    <string name="course_1_48_1_tittle">
+        Solicita medidas de protección especiales
+    </string>
+
+    <string name="course_1_48_1_text1_5">
+        Si eres una lideresa, una defensora de derechos humanos o una mujer víctima del conflicto armado; amenazada y en riesgo, tienes derecho a proteger tu vida, integridad, libertad y seguridad.
+    </string>
+
+    <string name="course_1_48_1_text1">
+        Si eres defensora amenazada o en situación de riesgo
+    </string>
+
+    <string name="course_1_48_1_text2">
+        La Unidad Nacional de Protección (UNP). Ten cuenta que debes diligenciar el Formato de Solicitud de Protección.
+    </string>
+
+    <string name="course_1_48_1_text3">
+        Si eres víctima de desplazamiento forzado
+    </string>
+
+    <string name="course_1_48_1_text4_5">
+        La Secretaría del Interior y/o de Gobierno de la alcaldía de tu municipio.
+    </string>
+
+    <string name="course_1_48_1_text4">
+        Si requieres medidas que no están al alcance de la alcaldía puedes acudir a la Secretaría del Interior y/o de Gobierno de la gobernación de tu departamento.
+    </string>
+
+    <string name="course_1_48_1_text5">
+        O a la Unidad Nacional de Protección (UNP) en caso que ni la alcaldía y gobernación tengan la capacidad para brindarlas.
+    </string>
+
+    <string name="course_1_49_tittle">
+        Puedes acceder a las medidas de asistencia y atención, de estabilización económica y reparación integral en el marco de la Ley de Víctimas (Ley 1448/11).
+    </string>
+
+    <string name="course_1_49_text1">
+        En caso que seas una mujer víctima del conflicto armado tienes derecho a recibir las siguientes medidas:
+    </string>
+
+    <string name="course_1_49_text2">
+        Medidas de asistencia y atención
+    </string>
+
+    <string name="course_1_49_text3">
+        Medidas de estabilización económica
+    </string>
+
+    <string name="course_1_49_text4">
+        Medidas de reparación integral
+    </string>
+
+    <string name="course_1_50_text1">
+        Ahora que conoces cuáles son las medidas de protección a las que tienes derecho y a qué entidades debes acudir para obtenerlas, ten presentes las siguientes recomendaciones:
+    </string>
+
+
+    <string name="course_1_51_tittle">
+        Para acceder a las medidas protección mencionadas, es necesario que declares los hechos de los que fuiste víctima y te inscribas en el Registro Único de Víctimas (RUV). Recuerda que este es un trámite gratuito y que no requiere de un representante. El camino para la inscripción en el RUV tiene los siguientes pasos:
+    </string>
+
+    <string name="course_1_51_text1">
+        <b>Declaración</b> \n
+        La puedes realizar ante el Ministerio Público que está conformado por: la Procuraduría General de la Nación, la Defensoría del Pueblo y Personerías municipales.
+    </string>
+
+    <string name="course_1_51_text2">
+        <b>Recuerda que:</b> \n \n
+
+        \u25CF Allí se diligencia el Formato Único de Declaración (FUD). \n
+
+        \u25CF En lo posible, debes presentar tu declaración por TODOS los hechos de los que has sido víctima. \n
+
+        \u25CF No deben exigirte documentos que comprueben los hechos de los que fuiste víctima. \n
+
+        \u25CF No deben negarse bajo ningún motivo a recibir tu declaración.  \n
+
+        Ten en cuenta que con la sola declaración tienes la posibilidad de acceder a medidas de ayuda humanitaria inmediata. \n
+    </string>
+
+    <string name="course_1_52_tittle">
+        Remisión
+    </string>
+
+     <string name="course_1_52_text1">
+        Consiste en el envío del formato diligenciado y el resto de documentos a la Unidad de Víctimas para que esta revise si está completa.
+    </string>
+
+    <string name="course_1_52_text2">
+        Verificación
+    </string>
+
+    <string name="course_1_52_text3">
+        Consiste en la revisión del formato y el resto de documentos por parte de la Unidad de Víctimas. Pueden ocurrir dos situaciones: \n
+        \u25CF Si el formato está completo, continúa al siguiente paso. \n
+        \u25CF Si el formato está incompleto, es devuelto a la entidad que envió la declaración para que la complete.
+    </string>
+
+    <string name="course_1_53_text1">
+        Valoración
+    </string>
+
+    <string name="course_1_53_text2">
+        Consiste en el estudio del formato y el resto de documentos por parte de la Unidad de Víctimas.
+    </string>
+
+
+     <string name="course_1_53_text3">
+        Decisión
+    </string>
+
+    <string name="course_1_53_text4">
+        Consiste en la definición acerca de tu inclusión en el registro por parte de la Unidad de Víctimas. Pueden ocurrir dos situaciones:\n
+
+        \u25CF Ser incluida. En este caso tienes acceso a las medias de asistencia y reparación integral. \n
+        \u25CF No ser incluida. En este caso puedes hacer uso de recursos para pedir la revisión de la decisión.
+    </string>
+
+
+     <string name="course_1_54_tittle">
+        ¿QUÉ PUEDO HACER EN CASO QUE LAS ENTIDADES NO CUMPLAN SUS FUNCIONES O NO GARANTICEN MIS DERECHOS?
+    </string>
+
+     <string name="course_1_54_text1">
+        Si te eres víctima de violencia de género y las entidades encargadas de orientarte, atenderte o protegerte no han cumplido con sus funciones según lo establece la ley, toma nota de las siguientes recomendaciones:
+    </string>
+
+    <string name="course_1_55_text1">
+        Has llegado al final del camino, estás a un paso de obtener la recompensa por todo tu esfuerzo. Mira atentamente el siguiente video y pon a prueba tu mente respondiendo algunas preguntas.
+    </string>
+
+    <string name="course_1_57_tittle">
+        Selecciona una o varias respuestas según lo consideres necesario
+    </string>
+
+    <string name="course_1_57_question">
+       1. Cuando la violencia proviene del esposo, compañero permanente, padre, madre, abuelos o nietos; se le llama violencia en la:
+    </string>
+    <string name="course_1_57_opt1">
+       Familia
+    </string>
+    <string name="course_1_57_opt2">
+     Conflicto armado
+    </string>
+    <string name="course_1_57_opt3">
+       Comunidad
+    </string>
+
+    <string name="course_1_57_opt4">
+       En el ámbito estatal
+    </string>
+
+    <string name="course_1_57_bad">
+       Has fallado, intenta de nuevo
+    </string>
+
+
+    <string name="course_1_58_question">
+       2. Se manifiesta a través del uso de la fuerza, como golpes, ahogamientos, empujones:
+    </string>
+    <string name="course_1_58_opt1">
+       Violencia sexual
+    </string>
+    <string name="course_1_58_opt2">
+     Violencia psicológica
+    </string>
+    <string name="course_1_58_opt3">
+       Violencia económica
+    </string>
+
+    <string name="course_1_58_opt4">
+       Violencia física
+    </string>
+
+    <string name="course_1_59_question">
+       3. Escribe el número de la línea de orientación a las mujeres víctimas de violencia
+    </string>
+    <string name="course_1_59_et_hint">
+       Escríbelo aquí
+    </string>
+
+    <string name="course_1_60_question">
+       4. Como mujer víctima de violencia, tienes derecho a:
+    </string>
+    <string name="course_1_60_opt1">
+       A una atención integral, oportuna, especializada y de calidad.
+    </string>
+    <string name="course_1_60_opt2">
+     A pasar por el proceso de conciliación, en todos los conflictos el primer paso debe ser siempre la conciliación.
+    </string>
+    <string name="course_1_60_opt3">
+       A un trato humano, respetuoso y digno.
+    </string>
+
+    <string name="course_1_60_opt4">
+       A que se te comuniquen todas las decisiones que puedan afectar tus derechos.
+    </string>
+
+    <string name="course_1_61_question">
+       5. Si requieres medidas de protección al ser víctima de hechos violentos en el contexto familiar, debes acudir a:
+    </string>
+    <string name="course_1_61_opt1">
+       Comisaría de Familia
+    </string>
+    <string name="course_1_61_opt2">
+     Juez Civil o Promiscuo Municipal
+    </string>
+    <string name="course_1_61_opt3">
+       Organizaciones de mujeres y redes comunitarias.
+    </string>
+
+    <string name="course_1_62_question">
+       6. Si decides acceder a la justicia debes tener en cuenta:
+    </string>
+    <string name="course_1_62_opt1">
+       Contar con el dinero necesario para pagar una abogada.
+    </string>
+    <string name="course_1_62_opt2">
+     Que la autoridad que te haya atendido te entregue la copia de la denuncia penal.
+    </string>
+    <string name="course_1_62_opt3">
+       No ser sometida a pruebas repetitivas o que signifiquen una intromisión innecesaria a tu derecho a la intimidad.
+    </string>
+
+    <string name="course_1_63_question">
+       7. Si soy víctima de desplazamiento forzado tengo derecho a:
+    </string>
+    <string name="course_1_63_opt1">
+       Atención médica y psicológica de emergencia
+    </string>
+    <string name="course_1_63_opt2">
+     Transporte y alojamiento transitorio
+    </string>
+    <string name="course_1_63_opt3">
+       Apoyo a procesos de retorno
+    </string>
+
+    <string name="course_1_63_opt4">
+       Descuentos especiales en planes de vivienda
+    </string>
+
+        <string name="course_1_64_question">
+       8. ¿Qué instancias realizan control sobre las entidades estatales?
+    </string>
+    <string name="course_1_64_opt1">
+       Procuraduría General de la Nación
+    </string>
+    <string name="course_1_64_opt2">
+     Defensoría del Pueblo
+    </string>
+    <string name="course_1_64_opt3">
+       Personerías
+    </string>
+
+    <string name="course_1_64_opt4">
+       Comisarías de Familia
+    </string>
+    <string name="course_1_65_msg">
+        No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!
+    </string>
+
+    <string name="course_1_66_tittle">
+        ¡Buen trabajo!
+    </string>
+
+    <string name="course_1_66_msg">
+        Te has esforzado al máximo y has logrado cumplir la meta. Finalmente has alcanzado el último nivel ¡Felicitaciones Consejera Estrella!
+    </string>
+    <string name="latitude">Latitud</string>
+    <string name="longitude">Longitud</string>
+    <string name="loggin">Autenticando usuario...</string>
+    <string name="credential_not_valid">Las credenciales no coinciden</string>
+    <string name="tv_init_sesion">O inicia sesión</string>
+    <string name="you_must_loggin_again">Debe volver a autenticarse</string>
+    <string name="tv_recovery_psw">Recuperar contraseña</string>
+    <string name="recovering_password">Recuperando contraseña...</string>
+    <string name="department">Departamento</string>
 
     <string-array name="clueTexts">
         <item>Cuando la violencia se manifiesta mediante insultos, ataques verbales, chantajes o celos extremos, es:</item>

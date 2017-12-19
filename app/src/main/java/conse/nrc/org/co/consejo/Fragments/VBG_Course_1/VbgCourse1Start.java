@@ -19,6 +19,8 @@ import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 
+import com.google.android.youtube.player.YouTubePlayer;
+import com.google.android.youtube.player.YouTubePlayerView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import conse.nrc.org.co.consejo.Activities.MainActivity;
@@ -42,6 +44,9 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
     private LayoutInflater inflater;
     MainInterface mainInterface;
 
+    private YouTubePlayerView youTubePlayerView;
+    private YouTubePlayer.OnInitializedListener onInitializedListener;
+
     MediaPlayer player1;
     int actualPlaying;
     Button preLastClickedButton;
@@ -57,6 +62,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
     private LinearLayout courseContainer;
     private int index;
+    private int crosswordActualOrientation;
 
     DataBase dataBase;
 
@@ -92,17 +98,18 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
         setInitialPageToShow();
         mAvatarGender = ConseApp.getAvatarGender(mCtx);
 
-
-//        //Just development
-//        ((Button)view.findViewById(R.id.bt_reset)).setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                dataBase.clearPagesRead();
-//                dataBase.clearTopicActivity();
-//                setInitialPageToShow();
-//            }
-//        });
-
+        if (LocalConstants.DEV_VERSION){
+            ((Button)view.findViewById(R.id.bt_reset)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dataBase.clearPagesRead();
+                    dataBase.clearTopicActivity();
+                    setInitialPageToShow();
+                }
+            });
+        } else{
+            ((Button)view.findViewById(R.id.bt_reset)).setVisibility(View.GONE);
+        }
         return view;
     }
 
@@ -139,7 +146,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
     public void setNextPage(){
             index++;
-        if (index < LocalConstants.VBG_LAYOUT_LIST.size()-1){
+        if (index < LocalConstants.VBG_LAYOUT_LIST.size()){
             inflateLayout();
             updateReadPage();
         } else if(index >= LocalConstants.VBG_LAYOUT_LIST.size()) {
@@ -150,6 +157,13 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
     public void setPreviousPage(){
         if (index > 0){
             index--;
+            inflateLayout();
+        }
+    }
+
+    private void return_to_layout(int tag) {
+        if (tag < LocalConstants.VBG_LAYOUT_LIST.size() && tag >= 0){
+            index = tag;
             inflateLayout();
         }
     }
@@ -196,6 +210,9 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                     mActualQuestionaryPage = (LinearLayout)view.findViewWithTag(LocalConstants.QUESTIONARY_CONTAINER);
                     Log.d("VBg Mod", "Find questionary container" + mActualQuestionaryPage.getTag().toString());
                     break;
+                case LocalConstants.NEED_YOUTUBE_VIDEO_TAG:
+                    setYoutubeVideo(view);
+                    break;
                 default:
                     break;
             }
@@ -203,6 +220,34 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
             Log.d("VBg Mod", "The view tag is: null");
         }
 
+    }
+
+    private void setYoutubeVideo(View mView) {
+
+//        youTubePlayerView = new YouTubePlayerView(mCtx);
+//        LinearLayout lyYoutube = (LinearLayout)mView.findViewWithTag(LocalConstants.HERE_VIDEO_TAG);
+//        lyYoutube.addView(youTubePlayerView);
+//        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
+//            @Override
+//            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
+//                youTubePlayer.loadVideo(LocalConstants.YOUTUBE_VIDEO_ID);
+//                //youTubePlayer.setPlayerStateChangeListener();
+//            }
+//
+//            @Override
+//            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
+//
+//            }
+//        };
+
+//        final Button mPlayButton = (Button) mView.findViewById(R.id.bt_start_video);
+//        mPlayButton.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                youTubePlayerView.initialize(LocalConstants.YOUTUBE_API_KEY, onInitializedListener);
+//                mPlayButton.setVisibility(View.GONE);
+//            }
+//        });
     }
 
     private void setCrossWordMod1() {
@@ -290,14 +335,19 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                 break;
             case R.id.bt_play:
                playSound(v);
+                break;
+            case R.id.bt_return_to:
+                return_to_layout((Integer) v.getTag());
+                break;
             default:
-
                 break;
         }
         if (v.getTag() != null) {
             processButtonTag(v);
         }
     }
+
+
 
     private void processButtonTag(View v) {
 
@@ -312,13 +362,35 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                 markActivityAsComplete(3);
                 break;
             case LocalConstants.MOD_2_Q1_VALIDATION:
-                validateQuestionary();
+                validateQuestionary(4,getString(R.string.mod_2_q1_not_acerted_message) );
+                break;
+            case LocalConstants.MOD_3_R:
+                markActivityAsComplete(5);
+                break;
+            case LocalConstants.MOD_3_Q1:
+                validateQuestionary(6, getString(R.string.course_1_35_bad));
+                break;
+            case LocalConstants.MOD_3_Q2:
+                validateQuestionary(7, getString(R.string.course_1_38_bad));
+                break;
+            case LocalConstants.MOD_3_Q3:
+                validateQuestionary(8, getString(R.string.course_1_41_bad));
+                break;
+            case LocalConstants.MOD_3_Q4:
+                validateQuestionary(9,getString(R.string.course_1_44_bad));
+                break;
+            case LocalConstants.MOD_4_R:
+                markActivityAsComplete(10);
+                break;
+            case LocalConstants.MOD_4_Q1:
+                validateQuestionary(11, getString(R.string.course_1_57_bad));
+                break;
             default:
                 break;
         }
     }
 
-    private void validateQuestionary() {
+    private void validateQuestionary(int activity, String errorString) {
         Log.d("VBG","In validate questionary: " + (mActualQuestionaryPage != null)
                 + " " + (mActualQuestionaryPage == (LinearLayout) view.findViewWithTag(LocalConstants.HAS_QUESTIONARY)));
         if (mActualQuestionaryPage != null ){
@@ -327,34 +399,37 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
             for (int i = 0 ; i < mActualQuestionaryPage.getChildCount(); i++){
                 View v = mActualQuestionaryPage.getChildAt(i);
-                if (v.getTag() != null) {
-                    if (v instanceof CheckBox) {
-                        Log.d("VBG", "Is instance of checkbox");
-                        if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((CheckBox) v).isChecked())) {
-                            isCorrect = false;
-                            break;
+                if (v instanceof CheckBox) {
+                    if (v.getTag() != null) {
+                        if (v instanceof CheckBox) {
+                            Log.d("VBG", "Is instance of checkbox");
+                            if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((CheckBox) v).isChecked())) {
+                                isCorrect = false;
+                                break;
+                            }
+                        } else if (v instanceof RadioButton) {
+                            Log.d("VBG", "Is instance of radiobutton");
+                            if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((RadioButton) v).isChecked())) {
+                                isCorrect = false;
+                                break;
+                            }
+                        } else {
+                            Log.d("VBG", "Is instance of nothing");
                         }
-                    } else if (v instanceof RadioButton) {
-                        Log.d("VBG", "Is instance of radiobutton");
-                        if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((RadioButton) v).isChecked())) {
-                            isCorrect = false;
-                            break;
-                        }
-                    } else {
-                        Log.d("VBG", "Is instance of nothing");
+                    } else if (((CheckBox) v).isChecked()) {
+                        isCorrect = false;
+                        break;
                     }
-                } else if(((CheckBox)v).isChecked()) {
-                    isCorrect = false;
-                    break;
                 }
+
 
             }
             if (isCorrect){
                 setNextPage();
-                markActivityAsComplete(4);
+                markActivityAsComplete(activity);
             } else {
                 final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
-                notAcerted.mMesaggeText = getString(R.string.mod_2_q1_not_acerted_message);
+                notAcerted.mMesaggeText = errorString;
                 notAcerted.show(getActivity().getFragmentManager(),"");
             }
         }
@@ -376,7 +451,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
             }
         }
 
-        if (error){
+        if (error && !LocalConstants.DEV_VERSION){
             final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
             notAcerted.show(getActivity().getFragmentManager(),"");
         } else {

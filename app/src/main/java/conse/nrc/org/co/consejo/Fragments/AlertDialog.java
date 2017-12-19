@@ -3,10 +3,14 @@ package conse.nrc.org.co.consejo.Fragments;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,17 +26,23 @@ import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.CALL_PHONE;
+import static android.location.LocationManager.GPS_PROVIDER;
+
 /**
  * Created by apple on 11/20/17.
  */
 
 public class AlertDialog extends DialogFragment {
 
+
     Button mBtSendAlert;
     long down,up;
     Context mCtx;
     AlertTestInterfaces alertTestInterfaces;
     public static boolean isTest = true;
+    LocationManager mLocManager;
 
 
     long MILISECONDS_TO_PRESS = 3000;
@@ -103,6 +113,8 @@ public class AlertDialog extends DialogFragment {
             (mView.findViewById(R.id.tv_cancel)).setVisibility(View.GONE);
         }
 
+        mLocManager = (LocationManager)
+                mCtx.getSystemService(Context.LOCATION_SERVICE);
 
         return mView;
     }
@@ -127,27 +139,37 @@ public class AlertDialog extends DialogFragment {
     private void sendSms() {
         String recipients = LocalConstants.SMS_CONTACT_PREFIX + getEmegencyContactsString();
         Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(recipients));
+        String coordinates = " ";
+        if (ActivityCompat.checkSelfPermission(mCtx,
+                ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+            Location location = mLocManager.getLastKnownLocation(GPS_PROVIDER);
+            try {
+                coordinates += getString(R.string.latitude) + ": " + String.valueOf(location.getLatitude());
+                coordinates += ", " + getString(R.string.longitude) + ": " + String.valueOf(location.getLongitude());
+            }catch (Exception ea){
+                ea.printStackTrace();
+            }
+        }
         if(isTest) {
-            smsIntent.putExtra("sms_body", getString(R.string.send_alert_touch_message_example));
+            smsIntent.putExtra("sms_body", getString(R.string.send_alert_touch_message_example) + coordinates);
         } else{
-            smsIntent.putExtra("sms_body", getString(R.string.send_alert_message));
+            smsIntent.putExtra("sms_body", getString(R.string.send_alert_message) + coordinates);
         }
         startActivityForResult(smsIntent, 1);
     }
 
     public String getEmegencyContactsString() {
 
-        int contacts_size = UtilsFunctions.getSharedInteger(mCtx, LocalConstants.CONTACT_SIZE);
-        int i = 1;
-        String emergencyContactsString = "";
-
-        for(i = 1; i <= contacts_size; i++){
-            emergencyContactsString = emergencyContactsString
-                    + ";" + UtilsFunctions.getSharedString(mCtx, LocalConstants.CONTACT_NUMBER_ + String.valueOf(i));
-            Log.d("Alert", UtilsFunctions.getSharedString(mCtx, LocalConstants.CONTACT_NUMBER_ + String.valueOf(i)));
-        }
-
-        return emergencyContactsString;
+//        int contacts_size = UtilsFunctions.getSharedInteger(mCtx, LocalConstants.CONTACT_SIZE);
+//        int i = 1;
+//        String emergencyContactsString = "";
+//
+//        for(i = 1; i <= contacts_size; i++){
+//            emergencyContactsString = emergencyContactsString
+//                    + ";" + UtilsFunctions.getSharedString(mCtx, LocalConstants.CONTACT_NUMBER_ + String.valueOf(i));
+//            Log.d("Alert", UtilsFunctions.getSharedString(mCtx, LocalConstants.CONTACT_NUMBER_ + String.valueOf(i)));
+//        }
+        return UtilsFunctions.getEmegencyContactsString(mCtx);
     }
 
     @Override

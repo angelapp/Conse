@@ -93,9 +93,10 @@ public class ConseApp extends Application {
         int i = 0;
         for (Models.UserAvatar avatar: userAvatars){
             if (avatar != null && avatar.avatar_piece != 0) {
+                Models.AvatarPiece avatarPiece = ConseApp.appConfiguration.getAvatarPieceById(avatar.avatar_piece);
                 Log.d("Avatar", "Avatar id: " + avatar.avatar_piece);
                 imageLoader.displayImage(ConseApp.appConfiguration.getAvatarPieceById(avatar.avatar_piece).icon,
-                        (ImageView) frameLayout.getChildAt(i), options);
+                        (ImageView) frameLayout.findViewWithTag(String.valueOf(avatarPiece.body_part)), options);
             }
             i++;
         }

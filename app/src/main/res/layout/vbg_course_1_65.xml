@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:minWidth="450dp"
+    android:minHeight="450dp">
+
+
+    <ImageView
+        android:src="@drawable/admiracion"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/square_padding_top"
+        android:layout_width="150dp"
+        android:layout_height="150dp" />
+
+
+    <TextView
+        android:text="@string/course_1_65_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_message"
+        style="@style/ConseTittleTextH1"
+        android:gravity="center"
+        android:textColor="@color/white"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="15dp" >
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:background="@drawable/button_new_intent"
+            android:layout_marginLeft="20dp"
+            android:onClick="onClick"
+            android:id="@+id/bt_return_to"
+            android:tag="45" />
+
+    </LinearLayout>
+
+</LinearLayout>

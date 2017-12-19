@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="has_questionary">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="55dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"/>
+
+            <TextView
+                android:text="@string/course_1_32_header"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/ConseTittleTextH2"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"/>
+
+
+            <TextView
+                android:text="@string/course_1_33_tittle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView4"
+                style="@style/ConseParagraphText"
+                android:gravity="center_horizontal" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginRight="@dimen/fab_margin"
+                android:background="@drawable/hoja"
+                android:paddingTop="35dp"
+                android:tag="questionary_container"
+                android:layout_marginTop="30dp"
+                android:layout_height="350dp">
+
+
+                <TextView
+                    android:text="@string/course_1_33_question"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv"
+                    style="@style/ConseTittleTextH2"
+                    android:layout_marginBottom="15dp" />
+
+                <CheckBox
+                    android:text="@string/course_1_33_opt1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:tag="correct_option" />
+                <CheckBox
+                    android:text="@string/course_1_33_opt2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:tag="correct_option" />
+                <CheckBox
+                    android:text="@string/course_1_33_opt3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    style="@style/ConseCheckboxBlackLetter" />
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp" >
+
+                <Button
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:id="@+id/bt_previous"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:id="@+id/bt_finish"
+                    android:background="@drawable/button_ready"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="onClick"
+                    android:tag="MOD_3_Q1" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

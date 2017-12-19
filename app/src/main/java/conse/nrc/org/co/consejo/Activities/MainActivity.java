@@ -230,7 +230,7 @@ public class MainActivity extends AppCompatActivity
                 initVbgCourse();
                 break;
             //Managing course inner buttons
-            case R.id.bt_next: case R.id.bt_previous:case R.id.bt_play:case R.id.bt_finish:
+            case R.id.bt_next: case R.id.bt_previous:case R.id.bt_play:case R.id.bt_finish:case R.id.bt_return_to:
                 switch (actualCourse){
                     case LocalConstants.VBG_COURSE_ID:
                         if(vbgCourse1Start != null){
@@ -241,7 +241,7 @@ public class MainActivity extends AppCompatActivity
                         break;
                 }
                 break;
-            case R.id.bt_call:
+            case R.id.bt_call_141:
                 makeCall(v);
                 break;
             default:
@@ -299,7 +299,8 @@ public class MainActivity extends AppCompatActivity
     }
 
     private void closeSesion() {
-        UtilsFunctions.resetSharedPreferences(this);
+        //UtilsFunctions.resetSharedPreferences(this);
+        UtilsFunctions.saveSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN, false);
         startActivity(new Intent(this, Welcome.class));
         this.finish();
     }

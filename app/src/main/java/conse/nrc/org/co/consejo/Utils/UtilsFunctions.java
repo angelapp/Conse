@@ -146,6 +146,20 @@ public abstract class UtilsFunctions {
         inputMethodManager.hideSoftInputFromWindow(
                 activity.getCurrentFocus().getWindowToken(), 0);
     }
+    public static String getEmegencyContactsString(Context mCtx) {
+
+        int contacts_size = UtilsFunctions.getSharedInteger(mCtx, LocalConstants.CONTACT_SIZE);
+        int i = 1;
+        String emergencyContactsString = "";
+
+        for(i = 1; i <= contacts_size; i++){
+            emergencyContactsString = emergencyContactsString
+                    + ";" + UtilsFunctions.getSharedString(mCtx, LocalConstants.CONTACT_NUMBER_ + String.valueOf(i));
+            Log.d("Alert", UtilsFunctions.getSharedString(mCtx, LocalConstants.CONTACT_NUMBER_ + String.valueOf(i)));
+        }
+
+        return emergencyContactsString;
+    }
 
 
 }

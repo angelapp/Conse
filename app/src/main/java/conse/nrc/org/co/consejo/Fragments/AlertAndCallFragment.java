@@ -2,7 +2,11 @@ package conse.nrc.org.co.consejo.Fragments;
 
 import android.app.Dialog;
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,15 +16,18 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import conse.nrc.org.co.consejo.Interfaces.AlertTestInterfaces;
 import conse.nrc.org.co.consejo.R;
+
+import static android.Manifest.permission.CALL_PHONE;
 
 /**
  * Created by apple on 12/13/17.
  */
 
-public class AlertAndCallFragment extends DialogFragment{
+public class AlertAndCallFragment extends DialogFragment implements View.OnClickListener{
 
 
     Button mBtSendAlert;
@@ -59,6 +66,10 @@ public class AlertAndCallFragment extends DialogFragment{
             }
         });
 
+        ((Button)mView.findViewById(R.id.bt_call_123)).setOnClickListener(this);
+        ((Button)mView.findViewById(R.id.bt_call_155)).setOnClickListener(this);
+        ((Button)mView.findViewById(R.id.bt_call_141)).setOnClickListener(this);
+
         return mView;
     }
 
@@ -68,5 +79,29 @@ public class AlertAndCallFragment extends DialogFragment{
         super.onAttach(context);
         mCtx = context;
 
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.bt_call_123:case R.id.bt_call_141: case R.id.bt_call_155:
+                makeCall(v);
+        }
+    }
+
+    private void makeCall(View v) {
+        try {
+            if (ActivityCompat.checkSelfPermission(mCtx,
+                    CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + (String) v.getTag()));
+                startActivity(intent);
+            } else {
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+                dialIntent.setData(Uri.parse("tel:" + (String) v.getTag()));
+                startActivity(dialIntent);
+            }
+        } catch (android.content.ActivityNotFoundException e){
+            Toast.makeText(mCtx.getApplicationContext(),R.string.app_not_found,Toast.LENGTH_LONG).show();
+        }
     }
 }

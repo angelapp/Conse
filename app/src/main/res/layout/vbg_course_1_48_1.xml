@@ -1,0 +1,300 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingBottom="55dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/ConseTittleTextH2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/course_1_47_tittle" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay" />
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp">
+
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/dos_48"
+                    android:layout_marginRight="15dp" />
+
+                <TextView
+                    android:text="@string/course_1_48_1_tittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ConseTittleTextH1"
+                    android:layout_marginRight="10dp" />
+
+            </LinearLayout>
+
+            <TextView
+                android:text="@string/course_1_48_1_text1_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView16"
+                style="@style/ConseParagraphText"
+                android:layout_marginLeft="40dp"
+                android:layout_marginBottom="10dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"
+                android:backgroundTint="@color/white"
+                android:layout_marginRight="20dp"
+                android:layout_marginLeft="20dp" />
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView17"
+                    android:layout_weight="1"
+                    style="@style/ConseTittleTextH2"
+                    android:textColor="@color/salmon"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/course_1_15_d" />
+
+                <Button
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:id="@+id/bt_play"
+                    android:background="@drawable/play"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="@dimen/fab_margin"
+                    android:onClick="onClick"
+                    android:tag="existen_medidas_de_proteccion"
+                    android:gravity="top|right"
+                    android:layout_gravity="right|center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"
+                android:backgroundTint="@color/white"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp" />
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="600dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ruta_48"
+                    android:id="@+id/imageView6"
+                    android:scaleType="centerCrop"
+                    android:scrollY="-60dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="70dp"
+                            app:srcCompat="@drawable/acude_48_1"
+                            android:id="@+id/imageView7"
+                            android:layout_weight="1" />
+
+                        <TextView
+                            android:text="@string/course_1_48_1_text1"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView18"
+                            android:layout_weight="1"
+                            style="@style/ConseTittleTextH2"
+                            android:layout_marginTop="5dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="right|center_vertical"
+                        android:layout_marginRight="20dp">
+
+                        <TextView
+                            style="@style/ConseParagraphText"
+                            android:background="@drawable/globo1_48"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="@string/course_1_48_1_text2"
+                            android:textSize="12sp"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="70dp"
+                            android:layout_width="190dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical|center_horizontal">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="70dp"
+                            app:srcCompat="@drawable/acude_48_1"
+                            android:id="@+id/imageView7" />
+
+                        <TextView
+                            android:text="@string/course_1_48_1_text3"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView18"
+                            style="@style/ConseTittleTextH2"
+                            android:layout_width="150dp"
+                            android:layout_marginTop="5dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            style="@style/ConseParagraphText"
+                            android:background="@drawable/globo4_48"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="@string/course_1_48_1_text4_5"
+                            android:textSize="12sp"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="70dp"
+                            android:layout_width="200dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            style="@style/ConseParagraphText"
+                            android:background="@drawable/globo4_48"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="@string/course_1_48_1_text4"
+                            android:textSize="12sp"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="wrap_content"
+                            android:layout_width="200dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center_horizontal">
+
+                        <TextView
+                            style="@style/ConseParagraphText"
+                            android:background="@drawable/globo4_48"
+                            android:paddingBottom="5dp"
+                            android:paddingLeft="20dp"
+                            android:paddingRight="20dp"
+                            android:text="@string/course_1_48_1_text5"
+                            android:textSize="12sp"
+                            android:paddingTop="5dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_height="70dp"
+                            android:layout_width="200dp" />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="-50dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/bt_previous"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
+
+
+                <Button
+                    android:id="@+id/bt_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button_next"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
