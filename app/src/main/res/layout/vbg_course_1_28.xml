@@ -42,89 +42,10 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    app:srcCompat="@drawable/ruta_28"
+                    app:srcCompat="@drawable/ruta28"
                     android:id="@+id/imageView12"
-                    android:layout_height="600dp"
-                    android:scaleType="centerCrop"
-                    android:scrollY="-100dp"
-                    android:scrollX="50dp" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
-
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/ly_1"
-                        android:layout_alignParentTop="true">
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/acude"
-                            android:id="@+id/iv_sign"
-                            android:layout_weight="0.8"
-                            android:layout_marginTop="140dp" />
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/punto"
-                            android:layout_marginTop="155dp"
-                            android:layout_gravity="bottom"
-                            android:layout_weight="0.2" />
-
-                        <TextView
-                            android:text="@string/course_1_28_tittle"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:id="@+id/textView14"
-                            android:layout_alignParentRight="true"
-                            android:layout_marginRight="30dp"
-                            style="@style/ConseTittleTextH2"
-                            android:layout_weight="1"
-                            android:textSize="16sp" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        android:layout_below="@+id/ly_1">
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:orientation="vertical"
-                            android:paddingLeft="20dp">
-
-                            <TextView
-                                style="@style/ConseParagraphText"
-                                android:layout_width="wrap_content"
-                                android:layout_weight="1"
-                                android:background="@drawable/globo_28"
-                                android:paddingLeft="20dp"
-                                android:paddingRight="10dp"
-                                android:paddingTop="20dp"
-                                android:textSize="14sp"
-                                android:text="@string/course_1_28_text"
-                                android:layout_marginLeft="10dp"
-                                android:layout_marginRight="10dp"
-                                android:gravity="left|right"
-                                android:layout_height="250dp" />
-
-
-                        </LinearLayout>
-
-
-                    </LinearLayout>
-
-
-                </RelativeLayout>
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop" />
 
             </FrameLayout>
 
@@ -132,10 +53,10 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-100dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/square_padding_top">
 
                 <Button
                     android:id="@+id/bt_previous"

@@ -2,22 +2,25 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey_light">
+    android:background="@color/grey_light"
+    android:gravity="center_vertical">
 
     <LinearLayout android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:id="@+id/ly_content"
         android:orientation="vertical"
         android:gravity="center_vertical|center_horizontal"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_weight="1">
 
         <TextView
             android:text="@string/select_avatar_tittle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/textView4"
-            style="@style/ConseTittleTextH1" />
+            style="@style/ConseTittleTextH1"
+            android:layout_marginTop="30dp" />
 
         <TextView
             android:text="@string/select_avatar_message"
@@ -27,13 +30,21 @@
             android:gravity="center_horizontal"
             style="@style/ConseParagraphText" />
 
+    </LinearLayout>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center_vertical|center_horizontal"
+        android:layout_weight="1">
+
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/bt_avatar_male"
             android:background="@drawable/button_select_avatar_male"
-            android:layout_marginBottom="20dp"
-            android:layout_marginTop="20dp" />
+            android:layout_marginBottom="20dp" />
 
         <Button
             android:layout_width="wrap_content"

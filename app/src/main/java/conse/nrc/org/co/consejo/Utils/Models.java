@@ -77,6 +77,7 @@ public class Models {
         public String video_tutorial_id;
         public String emergency_message;
         public String about_noruegan_council;
+        public String terms_condition_url;
         public int min_pin_length;
         public String psw_regular_expression;
         public String psw_error_recomendation;
@@ -445,5 +446,29 @@ public class Models {
             this.user = user;
             this.date_completed = date_completed;
         }
+    }
+
+
+    public static class Document {
+        public int id;
+        public String name;
+        public String description;
+        public String date;
+        public String code;
+        public String url;
+        public String extension;
+        public String icon;
+        public String file;
+    }
+
+    public static class DocumentTextType {
+        public int id;
+        public int course;
+        public String name;
+        public String abreviature;
+        public String description;
+        public String icon;
+        public List<Document> document_by_type;
+
     }
 }

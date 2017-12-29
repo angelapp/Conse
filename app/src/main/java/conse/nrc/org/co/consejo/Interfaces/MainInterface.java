@@ -15,4 +15,12 @@ public interface MainInterface {
     void hideToolBar(boolean hide);
 
     void setCourseSelectionFragment();
+
+    void openDoc(String doc);
+
+    void shareDoc(String doc);
+
+    boolean validateGpsStatus(boolean show_alert);
+
+    boolean validateNetworkStatus(boolean show_alert);
 }

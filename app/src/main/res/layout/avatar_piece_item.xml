@@ -21,6 +21,6 @@
         app:srcCompat="@drawable/conse"
         android:id="@+id/iv_piece"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:layout_width="80dp"
-        android:layout_height="80dp" />
+        android:layout_width="65dp"
+        android:layout_height="65dp" />
 </FrameLayout>

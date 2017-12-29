@@ -11,13 +11,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:background="@drawable/globo"
-        android:gravity="center"
-        android:paddingBottom="20dp">
+        android:gravity="center">
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/insignia_45"/>
+            android:src="@drawable/insignia_45"
+            android:layout_marginTop="25dp" />
 
         <TextView
             android:text="@string/course_1_45_tittle"
@@ -44,7 +44,7 @@
             android:id="@+id/bt_next"
             android:background="@drawable/button_finish"
             android:onClick="onClick"
-            android:layout_marginBottom="15dp" />
+            android:layout_marginBottom="80dp" />
     </LinearLayout>
 
 </LinearLayout>

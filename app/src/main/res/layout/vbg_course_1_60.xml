@@ -44,7 +44,7 @@
                 android:paddingTop="35dp"
                 android:tag="questionary_container"
                 android:layout_marginTop="30dp"
-                android:layout_height="500dp">
+                android:layout_height="wrap_content">
 
 
                 <TextView
@@ -53,30 +53,32 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/tv"
                     style="@style/ConseTittleTextH2"
-                    android:layout_marginBottom="15dp" />
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/check_box_margin"
+                    android:layout_marginRight="@dimen/check_box_margin" />
 
                 <CheckBox
                     android:text="@string/course_1_60_opt1"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/check_box_margin"
+                    android:layout_marginRight="@dimen/check_box_margin"
                     style="@style/ConseCheckboxBlackLetter"
                     android:tag="correct_option" />
                 <CheckBox
                     android:text="@string/course_1_60_opt2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/check_box_margin"
+                    android:layout_marginRight="@dimen/check_box_margin"
                     style="@style/ConseCheckboxBlackLetter" />
 
                 <CheckBox
                     android:text="@string/course_1_60_opt3"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/check_box_margin"
+                    android:layout_marginRight="@dimen/check_box_margin"
                     style="@style/ConseCheckboxBlackLetter"
                     android:tag="correct_option" />
 
@@ -84,30 +86,30 @@
                     android:text="@string/course_1_60_opt4"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/check_box_margin"
+                    android:layout_marginRight="@dimen/check_box_margin"
                     style="@style/ConseCheckboxBlackLetter"
                     android:tag="correct_option" />
 
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="20dp">
 
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="15dp" >
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="56dp"
+                        android:id="@+id/bt_finish"
+                        android:background="@drawable/button_ready"
+                        android:layout_marginLeft="20dp"
+                        android:onClick="onClick"
+                        android:tag="MOD_4_Q4" />
 
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="56dp"
-                    android:id="@+id/bt_finish"
-                    android:background="@drawable/button_ready"
-                    android:layout_marginLeft="20dp"
-                    android:onClick="onClick"
-                    android:tag="MOD_3_Q2" />
+                </LinearLayout>
 
             </LinearLayout>
 

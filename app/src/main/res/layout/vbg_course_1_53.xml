@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -36,58 +36,127 @@
                 android:background="@color/black_overlay" />
 
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/paso4_53"
-                android:id="@+id/imageView9"
-                android:layout_gravity="left"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp" />
-
-            <TextView
-                android:text="@string/course_1_53_text1"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView20"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginLeft="40dp" />
+                android:layout_height="match_parent">
 
-            <TextView
-                android:text="@string/course_1_53_text2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView4"
-                style="@style/ConseParagraphText"
-                android:padding="@dimen/fab_margin"/>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="15dp">
+
+                    <TextView
+                        android:text="@string/course_1_53_text2"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView4"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="55"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp" />
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/paso52_4"
+                        android:id="@+id/imageView9"
+                        android:layout_gravity="left"
+                        android:layout_marginRight="20dp"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="45" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:paddingTop="15dp">
+
+                    <ImageView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/paso53_5"
+                        android:id="@+id/imageView8"
+                        android:layout_marginLeft="15dp"
+                        android:layout_weight="45" />
+
+                    <TextView
+                        android:text="@string/course_1_53_text4"
+                        android:layout_width="0dp"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="15dp"
+                        android:layout_weight="55"
+                        android:layout_marginTop="0dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="top"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/bullet"
+                            android:id="@+id/imageView11"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:text="@string/course_1_53_text4_1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView10"
+                            style="@style/ConseParagraphText"
+                            android:layout_weight="1"
+                            android:paddingBottom="10dp"
+                            android:layout_marginTop="0dp" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"
+                        android:gravity="top"
+                        android:layout_marginBottom="10dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            app:srcCompat="@drawable/bullet"
+                            android:id="@+id/imageView11"
+                            android:layout_marginTop="10dp" />
+
+                        <TextView
+                            android:text="@string/course_1_53_text4_2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView10"
+                            style="@style/ConseParagraphText"
+                            android:layout_weight="1"
+                            android:paddingBottom="10dp"
+                            android:layout_marginTop="0dp" />
+                    </LinearLayout>
 
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:srcCompat="@drawable/paso5_53"
-                android:id="@+id/imageView8"
-                android:layout_marginLeft="30dp" />
+                </LinearLayout>
+            </LinearLayout>
 
-            <TextView
-                android:text="@string/course_1_53_text3"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/textView19"
-                style="@style/ConseParagraphText"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="30dp"
-                android:textStyle="normal|bold" />
-
-            <TextView
-                android:text="@string/course_1_53_text4"
-                android:layout_width="match_parent"
-                android:id="@+id/textView19"
-                style="@style/ConseParagraphText"
-                android:layout_marginLeft="30dp"
-                android:padding="5dp"
-                android:layout_height="wrap_content" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

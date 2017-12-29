@@ -71,8 +71,6 @@ public class SelectContact extends AppCompatActivity {
 
         Intent intent= new Intent(this, SendAlert.class);
         startActivity(intent);
-        this.finish();
-
     }
 
     private void addContact() {

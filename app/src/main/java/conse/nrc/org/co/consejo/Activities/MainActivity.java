@@ -1,10 +1,20 @@
 package conse.nrc.org.co.consejo.Activities;
 
 import android.app.ProgressDialog;
+import android.content.ActivityNotFoundException;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.res.AssetManager;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.MailTo;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.provider.Settings;
 import android.provider.SyncStateContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -21,6 +31,7 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.Window;
+import android.webkit.MimeTypeMap;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ExpandableListAdapter;
@@ -31,6 +42,11 @@ import android.widget.Toast;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.security.Permission;
 import java.util.ArrayList;
 import java.util.List;
@@ -40,6 +56,7 @@ import conse.nrc.org.co.consejo.Fragments.AlertAndCallFragment;
 import conse.nrc.org.co.consejo.Fragments.AlertDialog;
 import conse.nrc.org.co.consejo.Fragments.ContactFormFragment;
 import conse.nrc.org.co.consejo.Fragments.CourseSelectionFragment;
+import conse.nrc.org.co.consejo.Fragments.DocsBankFragment;
 import conse.nrc.org.co.consejo.Fragments.ProfileFragment;
 import conse.nrc.org.co.consejo.Fragments.ProgressFragment;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.VbgCourse1Start;
@@ -141,6 +158,8 @@ public class MainActivity extends AppCompatActivity
     }
 
 
+
+
     @Override
     public void onBackPressed() {
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -209,7 +228,7 @@ public class MainActivity extends AppCompatActivity
                 sendAlert();
                 break;
             case R.id.bt_docs:
-                Toast.makeText(this, "Mis documentos", Toast.LENGTH_SHORT).show();
+                openLibrary();
                 break;
             case R.id.bt_courses:
                 setCourseSelectionFragment();
@@ -251,6 +270,14 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void openLibrary() {
+        Log.d("MainActivity", "Is location enabled: " + isLocationEnabled() + " Is internet connected: " + isNetworkAvailable());
+        if (!isLocationEnabled()){
+            showGpsAlert();
+        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new DocsBankFragment()).addToBackStack(null).commitAllowingStateLoss();
     }
 
     private void makeCall(View v) {
@@ -369,6 +396,189 @@ public class MainActivity extends AppCompatActivity
             default:
                 break;
         }
+    }
 
+    public boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+    }
+
+    private boolean isLocationEnabled() {
+        return ((LocationManager)
+                this.getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.GPS_PROVIDER) ||
+                ((LocationManager)
+                        this.getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+    }
+
+    @Override
+    public boolean validateGpsStatus(boolean show_alert) {
+        if (isLocationEnabled()){
+            return true;
+        } else if (show_alert){
+            showGpsAlert();
+        }
+        return false;
+    }
+
+    @Override
+    public boolean validateNetworkStatus(boolean show_alert) {
+        if (isNetworkAvailable()){
+            return true;
+        } else if (show_alert){
+            showNetworkConnectionAlert();
+        }
+        return false;
+    }
+
+
+    private void showGpsAlert() {
+        final android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(this);
+        dialog.setTitle(getString(R.string.inactive_geolocation))
+                .setMessage(getString(R.string.conse_need_gps))
+                .setPositiveButton(getString(R.string.config), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                        Intent myIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivity(myIntent);
+                    }
+                })
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                    }
+                });
+        dialog.show();
+    }
+
+    private void showNetworkConnectionAlert() {
+        final android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(this);
+        dialog.setTitle(getString(R.string.not_network_conection))
+                .setMessage(getString(R.string.conse_need_network))
+                .setPositiveButton(getString(R.string.config), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                        Intent myIntent = new Intent(Settings.ACTION_SETTINGS);
+                        startActivity(myIntent);
+                    }
+                })
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                    }
+                });
+        dialog.show();
+    }
+
+    @Override
+    public void openDoc(String doc) {
+        File docFile = new File(Environment.getExternalStorageDirectory() + "/" + doc);
+        if (!docFile.exists())
+        {
+            CopyAssets(doc);
+        }
+
+        /** PDF reader code */
+        File file = new File(Environment.getExternalStorageDirectory() + "/" + doc);
+
+        MimeTypeMap myMime = MimeTypeMap.getSingleton();
+        String mimeType = myMime.getMimeTypeFromExtension(file.getName().substring(1));
+
+        Log.d("Open doc", "Extension: " + mimeType);
+
+        Intent intent = new Intent(Intent.ACTION_VIEW);
+//        intent.setDataAndType(Uri.fromFile(file), mimeType);
+
+        String extension = android.webkit.MimeTypeMap.getFileExtensionFromUrl(Uri.fromFile(file).toString());
+        String mimetype = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+        if (extension.equalsIgnoreCase("") || mimetype == null) {
+            // if there is no extension or there is no definite mimetype, still try to open the file
+            intent.setData(Uri.fromFile(file));
+        } else {
+            intent.setDataAndType(Uri.fromFile(file), mimetype);
+        }
+        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        try
+        {
+            getApplicationContext().startActivity(intent);
+        }
+        catch (ActivityNotFoundException e)
+        {
+            Toast.makeText(this, getString(R.string.not_activity_found), Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    @Override
+    public void shareDoc(String doc) {
+
+        File docFile = new File(Environment.getExternalStorageDirectory() + "/" + doc);
+        if (!docFile.exists())
+        {
+            CopyAssets(doc);
+        }
+
+        /** PDF reader code */
+        File file = new File(Environment.getExternalStorageDirectory() + "/" + doc);
+
+        Log.d("Mailing doc", "Extension: " + doc);
+
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+        intent.setType("vnd.android.cursor.dir/email");
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_mail_text) + " " + doc);
+        intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_email_subject));
+        startActivity(Intent.createChooser(intent, getString(R.string.sending_email)));
+    }
+
+
+
+
+    //method to write the PDFs file to sd card
+    public void CopyAssets(String doc) {
+        AssetManager assetManager = getAssets();
+        String[] files = null;
+        try
+        {
+            files = assetManager.list("");
+        }
+        catch (IOException e)
+        {
+            Log.e("tag", e.getMessage());
+        }
+        for(int i=0; i<files.length; i++)
+        {
+            String fStr = files[i];
+            if(fStr.equalsIgnoreCase(doc))
+            {
+                InputStream in = null;
+                OutputStream out = null;
+                try
+                {
+                    in = assetManager.open(files[i]);
+                    out = new FileOutputStream(Environment.getExternalStorageDirectory() + "/" + files[i]);
+                    copyFile(in, out);
+                    in.close();
+                    in = null;
+                    out.flush();
+                    out.close();
+                    out = null;
+                    break;
+                }
+                catch(Exception e)
+                {
+                    Log.e("tag", e.getMessage());
+                }
+            }
+        }
+    }
+
+    public void copyFile(InputStream in, OutputStream out) throws IOException {
+        byte[] buffer = new byte[1024];
+        int read;
+        while((read = in.read(buffer)) != -1){
+            out.write(buffer, 0, read);
+        }
     }
 }

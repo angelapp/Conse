@@ -243,7 +243,7 @@
             </LinearLayout>
 
             <CheckBox
-                android:text="@string/accept_terms_conditions_checkbox"
+                android:text="@string/accept_terms_conditions_checkbox1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cb_accept_terms_conditions"

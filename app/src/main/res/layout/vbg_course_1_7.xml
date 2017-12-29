@@ -18,7 +18,7 @@
             android:orientation="vertical"
             android:paddingLeft="@dimen/fab_margin"
             android:paddingRight="@dimen/fab_margin"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -80,9 +80,11 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_below="@+id/fl_image"
-                    android:layout_marginTop="-30dp"
+                    android:layout_marginTop="-60dp"
                     android:tag="here_avatar"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    android:foregroundGravity="left"
+                    android:paddingRight="120dp">
 
                 </FrameLayout>
 

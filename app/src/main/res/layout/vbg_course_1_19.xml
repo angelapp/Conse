@@ -66,17 +66,18 @@
                     style="@style/ConseParagraphText"
                     android:paddingLeft="@dimen/fab_margin"
                     android:paddingRight="@dimen/fab_margin"
-                    android:paddingBottom="70dp"
-                    android:background="@drawable/globitoparaaudio"
-                    android:paddingTop="5dp" />
+                    android:paddingBottom="55dp"
+                    android:background="@drawable/globo_19_1"
+                    android:paddingTop="25dp" />
 
                 <FrameLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:layout_weight="1"
                     android:tag="here_avatar"
                     android:layout_below="@+id/tv_dialog"
-                    android:layout_marginTop="-30dp">
+                    android:layout_marginTop="-60dp"
+                    android:paddingRight="120dp">
 
                 </FrameLayout>
             </RelativeLayout>

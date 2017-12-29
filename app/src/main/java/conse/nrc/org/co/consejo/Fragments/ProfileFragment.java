@@ -6,6 +6,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -126,6 +129,17 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             loadValues();
         } else {
             mView.findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
+
+            Spanned tittleString;
+            tittleString = Html.fromHtml(getString(R.string.accept_terms_conditions_checkbox1)
+                    + " <FONT COLOR=#ffffff><a href=\""+ ConseApp.getAppConfiguration(mCtx).terms_condition_url +"\">"
+                    + getString(R.string.accept_terms_conditions_checkbox2) + " </a></font>" + getString(R.string.accept_terms_conditions_checkbox3)
+            );
+
+            mCbAcceptTermsConditions.setText(tittleString);
+
+            //_cb_accept_term_conditions.setClickable(true);
+            mCbAcceptTermsConditions.setMovementMethod (LinkMovementMethod.getInstance());
         }
 
         return mView;
@@ -285,7 +299,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 error = true;
             }
 
-            if (mSpCity.getSelectedItemPosition() > 0) {
+            if (true) {
                 originTown = ConseApp.getAppConfiguration(mCtx).getCityByName(city_list.get(mSpCity.getSelectedItemPosition()),
                         state_list.get(mSpState.getSelectedItemPosition())).id;
 //                originTown = ConseApp.appConfiguration.city_list.get(mSpCity.getSelectedItemPosition() - 1).id;
@@ -624,6 +638,17 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
 
     @Override
     public void onRequestError(int errorCode, String errorMsg, int taskId) {
+
+        switch (taskId) {
+            case LocalConstants.REGISTER_USER_TASK_ID:
+                Toast.makeText(mCtx, errorMsg, Toast.LENGTH_SHORT).show();
+                break;
+            case LocalConstants.PUT_USER_PROFILE_EDIT_TASK_ID:
+                Toast.makeText(mCtx, errorMsg, Toast.LENGTH_SHORT).show();
+                break;
+            default:
+                break;
+        }
 
     }
 }

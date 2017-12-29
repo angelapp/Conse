@@ -31,36 +31,59 @@
             <GridLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:columnCount="11"
+                android:columnCount="12"
                 android:layout_gravity="center_horizontal"
                 android:id="@+id/gl_crossword">
 
 
 
-                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--2--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--3--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--4--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--5--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--6--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--7--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/yellow" android:editable="false" android:focusable="false"
+                android:gravity="center"
+                android:text="@string/number_1"
+                android:tag="@string/clue" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--2--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--3--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--4--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--5--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--6--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--7--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--8--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_1"
-                android:hint="@string/number_1"
                 android:maxLength="1"
                 android:gravity="center"
                 android:tag="p"
                 android:inputType="text" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusDown="@+id/p1_3" />
-                <!--9--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--10--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--11--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--12--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--13--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--14--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--15--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--16--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                android:nextFocusDown="@+id/p1_2" />
+                <!--9--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--10--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--11--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--12--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/yellow" android:editable="false" android:focusable="false"
+                android:gravity="center"
+                android:text="@string/number_3"
+                android:tag="@string/clue" />
+                <!--13--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--14--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--15--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--16--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/yellow" android:editable="false" android:focusable="false"
+                android:text="@string/number_2"
+                android:gravity="center_vertical|center_horizontal"
+                android:tag="@string/clue" />
                 <!--17--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p2_1"
-                android:hint="@string/number_2" android:gravity="center"
+                android:gravity="center"
                 android:tag="f"
                 android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusRight="@+id/p2_2" />
@@ -71,33 +94,44 @@
                 <!--19--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_2" android:gravity="center"
                 android:tag="s" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusRight="@+id/p2_4"
-                android:nextFocusDown="@+id/p1_3" />
+                android:nextFocusDown="@+id/p1_3"
+                android:maxLength="1" />
                 <!--20--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p2_4" android:gravity="center"
                 android:tag="i" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusRight="@+id/p2_5" />
+                android:nextFocusRight="@+id/p2_5"
+                android:maxLength="1" />
                 <!--21--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p2_5" android:gravity="center"
                 android:tag="c" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusRight="@+id/p2_6" />
+                android:nextFocusRight="@+id/p2_6"
+                android:maxLength="1" />
                 <!--22--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p2_6" android:gravity="center"
-                android:tag="a" android:textColor="@color/black" android:textColorHint="@color/grey_dark"/>
+                android:tag="a" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
+                android:maxLength="1" />
+
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--23--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p3_1"
-                android:hint="@string/number_3" android:gravity="center"
+                android:gravity="center"
                 android:tag="s" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusDown="@+id/p3_3" />
-                <!--24--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--25--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--26--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--27--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--28--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--29--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                android:nextFocusDown="@+id/p3_2" />
+                <!--24--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--25--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--26--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--27--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--28--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--29--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--30--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_3" android:gravity="center"
                 android:tag="i" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusDown="@+id/p1_5" />
-                <!--31--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--32--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--33--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                android:nextFocusDown="@+id/p1_4" />
+                <!--31--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--32--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--33--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/yellow" android:editable="false" android:focusable="false"
+                android:text="@string/number_4"
+                android:gravity="center"
+                android:tag="@string/clue" />
                 <!--34--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p3_2"
-                android:hint="@string/number_4" android:gravity="center"
+                android:gravity="center"
                 android:tag="e" android:inputType="text" android:maxLength="1"
                 android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusRight="@+id/p4_2"
@@ -126,73 +160,84 @@
                 android:nextFocusDown="@+id/p1_5" />
                 <!--42--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p4_9" android:gravity="center"
                 android:tag="a" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"/>
-                <!--43--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--44--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--43--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--44--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--45--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p3_3" android:gravity="center"
                 android:tag="x" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusDown="@+id/p3_4" />
-                <!--46--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--47--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--48--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--49--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--50--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--51--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--46--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--47--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--48--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--49--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--50--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--51--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--52--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_5" android:gravity="center"
                 android:tag="o" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusDown="@+id/p1_6" />
-                <!--53--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--54--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--55--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--53--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--54--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--55--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--56--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p3_4" android:gravity="center"
                 android:tag="u" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusDown="@+id/p3_5" />
-                <!--57--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--58--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--59--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--60--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--61--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--62--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--57--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--58--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--59--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--60--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--61--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--62--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--63--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_6" android:gravity="center"
                 android:tag="l" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusDown="@+id/p1_7" />
-                <!--64--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--65--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--66--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--64--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--65--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--66--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--67--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p3_5" android:gravity="center"
                 android:tag="a" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusDown="@+id/p3_6" />
-                <!--68--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--69--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--70--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--71--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--72--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--73--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--68--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--69--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--70--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--71--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--72--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--73--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--74--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_7" android:gravity="center"
                 android:tag="o" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusDown="@+id/p1_8" />
-                <!--75--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--76--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--77--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--75--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--76--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--77--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
                 <!--78--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p3_6" android:gravity="center"
                 android:tag="l" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"/>
-                <!--79--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--80--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--81--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--82--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--83--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--84--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--79--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--80--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--81--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--82--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--83--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--84--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
                 <!--85--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_8" android:gravity="center"
                 android:tag="g" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
-                android:nextFocusDown="@+id/p1_10" />
-                <!--86--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--87--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--88--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--89--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--90--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--91--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--92--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                android:nextFocusDown="@+id/p1_9" />
+                <!--86--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--87--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--88--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--89--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--90--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--91--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--92--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/yellow"  android:editable="false" android:focusable="false"
+                android:text="@string/number_5"
+                android:layout_gravity="center_vertical|center_horizontal"
+                android:gravity="center"
+                android:tag="@string/clue" />
                 <!--93--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p5_1" android:gravity="center"
-                android:hint="@string/number_5"
                 android:tag="f" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusRight="@+id/p5_2" />
                 <!--94--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p5_2" android:gravity="center"
@@ -213,25 +258,31 @@
                 android:nextFocusRight="@+id/p5_7" />
                 <!--99--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p5_7" android:gravity="center"
                 android:tag="a" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"/>
-                <!--100--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--101--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--102--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--103--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--104--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--105--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--106--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+                <!--100--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--101--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--102--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--103--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--104--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--105--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--106--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
                 <!--107--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p1_10" android:gravity="center"
                 android:tag="c" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusDown="@+id/p1_11" />
-                <!--108--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--109--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--110--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--111--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--112--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--113--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
-                <!--114--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--108--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--109--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--110--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+
+                <!--1--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light" android:editable="false" android:focusable="false" />
+
+                <!--111--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--112--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--113--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
+                <!--114--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/yellow"  android:editable="false" android:focusable="false"
+                android:gravity="center"
+                android:text="@string/number_6"
+                android:tag="@string/clue" />
                 <!--115--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p6_1" android:gravity="center"
-                android:hint="@string/number_6"
                 android:tag="a" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"
                 android:nextFocusRight="@+id/p6_2" />
                 <!--116--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p6_2" android:gravity="center"
@@ -248,7 +299,7 @@
                 android:nextFocusRight="@+id/p6_6" />
                 <!--120--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@drawable/crossword_background" android:id="@+id/p6_6" android:gravity="center"
                 android:tag="o" android:inputType="text" android:maxLength="1" android:textColor="@color/black" android:textColorHint="@color/grey_dark"/>
-                <!--121--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_dark" android:editable="false" android:focusable="false" />
+                <!--121--><EditText android:layout_width="30dp"  android:layout_height="30dp"  android:background="@color/grey_light"  android:editable="false" android:focusable="false" />
 
 
 

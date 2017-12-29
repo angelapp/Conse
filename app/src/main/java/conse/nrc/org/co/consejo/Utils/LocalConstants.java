@@ -1,7 +1,9 @@
 package conse.nrc.org.co.consejo.Utils;
 
+import android.support.v4.util.ArrayMap;
 import android.support.v4.util.Pair;
 
+import java.io.ObjectStreamException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -24,6 +26,12 @@ public class LocalConstants {
 
     public static final int MALE = 1;
     public static final int FEMALE = 2;
+
+    public static final int opened = 1;
+    public static final int closed = 2;
+
+    public static final int crowd_horizontal = 1;
+    public static final int crowd_vertical = 2;
 
     public final static String YOUTUBE_VIDEO_ID = "KuUWKzD8e00";
     public static final String YOUTUBE_API_KEY = "AIzaSyAcvZs2JqEhMsKEYU5lkoRTCkbcbSFQMkM";
@@ -60,6 +68,7 @@ public class LocalConstants {
     public static final String PUT_USER_PROFILE_EDIT = "profile/";
     public static final String POST_USER_LOGGIN = "user_auth/";
     public static final String POST_PASSWORD_RECOVERY = "user_password_recovery/";
+    public static final String GET_LIBRARY_DOCS = "get_library_docs/";
 
 
     //Task id for server views
@@ -72,6 +81,7 @@ public class LocalConstants {
     public static final int PUT_USER_PROFILE_EDIT_TASK_ID = 25;
     public static final int POST_USER_LOGGIN_TASK_ID = 26;
     public static final int POST_PASSWORD_RECERY_TASK_ID = 27;
+    public static final int GET_LIBRARY_DOCS_TASK_ID = 27;
 
 
     //LAYOUTS TAGS
@@ -94,6 +104,13 @@ public class LocalConstants {
     public static final String MOD_3_Q4 = "MOD_3_Q4";
     public static final String MOD_4_R = "MOD_4_R";
     public static final String MOD_4_Q1 = "MOD_4_Q1";
+    public static final String MOD_4_Q2 = "MOD_4_Q2";
+    public static final String MOD_4_Q3 = "MOD_4_Q3";
+    public static final String MOD_4_Q4 = "MOD_4_Q4";
+    public static final String MOD_4_Q5 = "MOD_4_Q5";
+    public static final String MOD_4_Q6 = "MOD_4_Q6";
+    public static final String MOD_4_Q7 = "MOD_4_Q7";
+    public static final String MOD_4_Q8 = "MOD_4_Q8";
 
 
     public static final int VBG_COURSE_ID = 1;
@@ -178,6 +195,7 @@ public class LocalConstants {
         add(R.layout.vbg_course_1_3);
         add(R.layout.vbg_course_1_4);
         add(R.layout.vbg_course_1_5);
+        add(R.layout.vbg_course_1_6_5);
         add(R.layout.vbg_course_1_6);
         add(R.layout.vbg_course_1_7);
         add(R.layout.vbg_course_1_8);
@@ -228,5 +246,17 @@ public class LocalConstants {
         add(R.layout.vbg_course_1_66);
 
     }};
+
+
+    public static final List<Pair> TEMPLATE_LIBRARY_LIST = new ArrayList<Pair>(){{
+
+        add(new Pair("Acción de tutela", "accion_de_tutela.docx"));
+        add(new Pair("Derecho de petición Alcaldías y Gobernaciones","derecho_de_peticion_alcaldias_y_gobernaciones.docx" ));
+        add(new Pair("Derecho de petición UNP", "derecho_de_peticion_unp.docx"));
+        add(new Pair("Formulario de inscripción UNP para la Ruta de Protección Colectiva","formulario_inscripcion_unp_para_ruta_proteccion_colectiva.pdf" ));
+        add(new Pair("Formulario de inscripciòn UNP Protección Individual", "formulario_inscripcion_unp_proteccion_individual.pdf"));
+        add(new Pair("Recurso de reposición y apelación", "recurso_de_reposicion_y_apelacion.docx"));
+    }};
+
 
 }

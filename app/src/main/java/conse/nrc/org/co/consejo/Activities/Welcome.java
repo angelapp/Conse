@@ -50,6 +50,8 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
 
         if (!UtilsFunctions.getSharedBoolean(this, LocalConstants.USER_IS_IN_DEVICE)){
             mBtSendAlert.setVisibility(View.GONE);
+        } else {
+            mBtGoToVideo.setVisibility(View.GONE);
         }
 
         new ServerRequest.GetAppConfiguration(this,listener, LocalConstants.GET_APP_CONF_TASK_ID).executeGet();
@@ -106,13 +108,35 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
                 ConseApp.setAppConfiguration(this, appConf);
                 if (UtilsFunctions.getSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN)){
                     if(ConseApp.getActualUser(this) != null){
-                        goToHome();
+                        goToNextactivity();
                     }
                 }
                 break;
             default:
                 break;
         }
+    }
+
+    private void goToNextactivity(){
+        if (UtilsFunctions.getEmegencyContactsString(this).length() < 2){
+            goToContact();
+        } else if (UtilsFunctions.getSharedInteger(this, LocalConstants.AVATAR_SELECTED_PART_ + String.valueOf(1)) == 0){
+            goToAvatar();
+        } else{
+            goToHome();
+        }
+    }
+
+    private void goToAvatar() {
+        Intent avatar = new Intent(this, Avatar.class);
+        startActivity(avatar);
+        this.finish();
+    }
+
+    private void goToContact() {
+        Intent contact = new Intent(this, SelectContact.class);
+        startActivity(contact);
+        this.finish();
     }
 
     private void goToHome() {
@@ -130,7 +154,7 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
                         && ConseApp.getActualUser(this) != null
                         && UtilsFunctions.getSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN)
                         && errorCode <= VOLLEY_UPLOAD_FAIL){
-                    goToHome();
+                    goToNextactivity();
                 } else if(!UtilsFunctions.getSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN)
                         && ConseApp.getActualUser(this) != null
                         &&ConseApp.getAppConfiguration(this) != null

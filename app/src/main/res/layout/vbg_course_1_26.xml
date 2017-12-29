@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -68,7 +68,7 @@
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginTop="20dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp">
 
@@ -107,9 +107,10 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_below="@+id/fl_image"
-                    android:layout_marginTop="-30dp"
+                    android:layout_marginTop="-60dp"
                     android:tag="here_avatar"
-                    android:layout_height="200dp">
+                    android:layout_height="200dp"
+                    android:paddingRight="120dp">
 
                 </FrameLayout>
 
@@ -118,7 +119,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal">

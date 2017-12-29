@@ -84,6 +84,15 @@ public class ServerRequest {
 
     }
 
+    public static class GetLibraryDocs extends RequestTask{
+        public GetLibraryDocs(Context ctx, OnRequestCompleted listener, ProgressDialog loader, int taskId){
+            super(ctx, listener, loader, taskId);
+            setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.GET_LIBRARY_DOCS );
+            Models.DocumentTextType[] list = new Models.DocumentTextType[]{};
+            setResponse(list);
+        }
+    }
+
     public static class PostUserActivityProgress extends RequestTask{
         public PostUserActivityProgress(Context ctx, OnRequestCompleted listener,
                                         ProgressDialog loader, int taskId, List<Models.UserActivityProgress> userActivityProgressList){

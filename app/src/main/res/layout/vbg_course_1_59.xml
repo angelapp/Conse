@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -40,11 +40,11 @@
                 android:orientation="vertical"
                 android:layout_marginLeft="@dimen/fab_margin"
                 android:layout_marginRight="@dimen/fab_margin"
-                android:background="@drawable/hoja"
+                android:background="@drawable/hoja59"
                 android:paddingTop="35dp"
                 android:tag="questionary_container"
                 android:layout_marginTop="30dp"
-                android:layout_height="350dp">
+                android:layout_height="wrap_content">
 
 
                 <TextView
@@ -53,7 +53,9 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/tv"
                     style="@style/ConseTittleTextH2"
-                    android:layout_marginBottom="15dp" />
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginLeft="@dimen/check_box_margin"
+                    android:layout_marginRight="@dimen/check_box_margin" />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -66,26 +68,24 @@
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp" />
 
-            </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:layout_marginTop="25dp" >
 
 
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="56dp"
+                        android:id="@+id/bt_finish"
+                        android:background="@drawable/button_ready"
+                        android:layout_marginLeft="20dp"
+                        android:onClick="onClick"
+                        android:tag="MOD_4_Q3" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:gravity="center"
-                android:layout_marginTop="15dp" >
-
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="56dp"
-                    android:id="@+id/bt_finish"
-                    android:background="@drawable/button_ready"
-                    android:layout_marginLeft="20dp"
-                    android:onClick="onClick"
-                    android:tag="MOD_3_Q2" />
+                </LinearLayout>
 
             </LinearLayout>
 

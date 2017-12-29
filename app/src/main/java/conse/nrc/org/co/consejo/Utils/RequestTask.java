@@ -136,6 +136,11 @@ public abstract class RequestTask {
         volleyExecuteGet();
     }
 
+    public void executeGetList() {
+        onPreExecute();
+        volleyExecuteGetList();
+    }
+
     public void executeGet(String range, String childId) {
         onPreExecute();
         volleyExecuteGet(range, childId);
@@ -369,6 +374,54 @@ public abstract class RequestTask {
 
         RequestQueue mQueue = VolleyInstance.getRequestQueue(this.ctx);
         mQueue.add(jsonRequet);
+
+    }
+
+
+    private void volleyExecuteGetList() {
+
+        if (DEBUG) Log.d(TAG, "[REQUEST_TASK] GET_METHOD URL: " + url);
+
+        JsonArrayRequest jsonArrayRequest = new JsonArrayRequest(Method.GET, url, (String) null,
+
+                new Response.Listener<JSONArray>(){
+
+                    public void onResponse(JSONArray result) {
+
+                        onPostExecute();
+
+                        if (DEBUG) Log.d(TAG, "[REQUEST_TASK] JSON_RECV:" + result.toString());
+                        if (DEBUG)
+                            Log.d(TAG, "[REQUEST_TASK] PARSE_AS:" + response.getClass().getSimpleName());
+
+                        Object resp = new Gson().fromJson(result.toString(), response.getClass());
+                        listener.onRequestResponse(resp, id);
+                    }
+
+                },
+
+                new Response.ErrorListener() {
+
+                    public void onErrorResponse(VolleyError error) {
+                        onPostExecute();
+                        processError(error);
+                    }
+
+                }) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                return getConfigHeaders();
+            }
+        };
+
+        jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MAX_REQUEST_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+
+        RequestQueue mQueue = VolleyInstance.getRequestQueue(this.ctx);
+        mQueue.add(jsonArrayRequest);
 
     }
 

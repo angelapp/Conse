@@ -17,7 +17,8 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:src="@drawable/trofeo_66" />
+            android:src="@drawable/trofeo_66"
+            android:layout_marginTop="40dp" />
 
         <TextView
             android:text="@string/course_1_66_tittle"
@@ -34,7 +35,7 @@
             android:id="@+id/textView4"
             style="@style/ConseParagraphText"
             android:lines="4"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="25dp"
             android:gravity="center_horizontal" />
 
 
@@ -43,7 +44,8 @@
             android:layout_height="56dp"
             android:id="@+id/bt_next"
             android:background="@drawable/button_finish"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:layout_marginBottom="60dp" />
     </LinearLayout>
 
 </LinearLayout>

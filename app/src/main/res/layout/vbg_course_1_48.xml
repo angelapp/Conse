@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -47,7 +47,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/dos_48"
+                    android:src="@drawable/uno_48"
                     android:layout_marginRight="15dp" />
 
                 <TextView
@@ -55,7 +55,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/ConseTittleTextH1"
-                    android:layout_marginRight="10dp" />
+                    android:layout_marginRight="10dp"
+                    android:gravity="left" />
 
             </LinearLayout>
 
@@ -65,139 +66,46 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView16"
                 style="@style/ConseParagraphText"
-                android:layout_marginLeft="40dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginLeft="80dp"
+                android:layout_marginBottom="25dp" />
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="450dp">
+                android:layout_height="wrap_content">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/ruta_48"
+                    app:srcCompat="@drawable/ruta47"
                     android:id="@+id/imageView6" />
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical">
-
-
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical">
-
-                        <ImageView
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:src="@drawable/acude_48"
-                            android:layout_weight="1" />
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="0dp"
-                            android:background="@drawable/globo1_48"
-                            android:paddingBottom="5dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="@string/course_1_48_text2"
-                            android:textSize="12sp"
-                            android:layout_weight="1"
-                            android:paddingTop="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_height="70dp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="right">
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:background="@drawable/globo1_48"
-                            android:paddingBottom="5dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="@string/course_1_48_text3"
-                            android:textSize="12sp"
-                            android:paddingTop="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_height="70dp"
-                            android:layout_width="160dp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="right">
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:background="@drawable/globo1_48"
-                            android:paddingBottom="5dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="@string/course_1_48_text4"
-                            android:textSize="12sp"
-                            android:paddingTop="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_height="70dp"
-                            android:layout_width="150dp" />
-                    </LinearLayout>
-                    <LinearLayout
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center_vertical|center_horizontal">
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:background="@drawable/globo4_48"
-                            android:paddingBottom="5dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:text="@string/course_1_48_text5"
-                            android:textSize="12sp"
-                            android:paddingTop="5dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_height="70dp"
-                            android:layout_width="200dp"
-                            android:gravity="center_vertical" />
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="@dimen/square_padding_top"
-                        android:gravity="center"
-                        android:orientation="horizontal"
-                        android:layout_gravity="center_horizontal">
-
-                        <Button
-                            android:id="@+id/bt_previous"
-                            android:layout_width="56dp"
-                            android:layout_height="56dp"
-                            android:background="@drawable/button_back"
-                            android:onClick="onClick" />
-
-
-                        <Button
-                            android:id="@+id/bt_next"
-                            android:layout_width="wrap_content"
-                            android:layout_height="56dp"
-                            android:layout_marginLeft="20dp"
-                            android:background="@drawable/button_next"
-                            android:onClick="onClick" />
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
             </FrameLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp">
+
+                <Button
+                    android:id="@+id/bt_previous"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
+
+
+                <Button
+                    android:id="@+id/bt_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button_next"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
 
 
         </LinearLayout>

@@ -13,7 +13,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -63,42 +63,41 @@
 
 
                 <CheckBox
-                    android:text="@string/course_1_16_f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+
                     style="@style/ConseCheckboxBlackLetter"
-                    android:tag="correct_option" />
+                    android:tag="correct_option"
+                    android:gravity="left|center_vertical"
+                    android:layout_marginRight="0dp"
+                    android:layout_marginTop="0dp"
+                    android:text="@string/course_1_16_f" />
+
                 <CheckBox
                     android:text="@string/course_1_16_g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+
                     style="@style/ConseCheckboxBlackLetter"/>
                 <CheckBox
                     android:text="@string/course_1_16_h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+
                     style="@style/ConseCheckboxBlackLetter"
                     android:tag="correct_option" />
                 <CheckBox
                     android:text="@string/course_1_16_i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+
                     style="@style/ConseCheckboxBlackLetter"
                     android:tag="correct_option" />
                 <CheckBox
                     android:text="@string/course_1_16_j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+
                     style="@style/ConseCheckboxBlackLetter" />
             </LinearLayout>
 

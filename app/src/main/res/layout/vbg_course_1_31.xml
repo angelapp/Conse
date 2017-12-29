@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -42,129 +42,9 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    app:srcCompat="@drawable/ruta_31"
+                    app:srcCompat="@drawable/ruta31_1"
                     android:id="@+id/imageView5"
-                    android:scaleType="center"
-                    android:layout_height="500dp"
-                    android:scrollY="-10dp" />
-
-                <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="vertical"
-                        android:layout_alignParentTop="true"
-                        android:layout_alignParentStart="true">
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="40dp"
-                            android:orientation="horizontal">
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:layout_marginRight="50dp"
-                                android:src="@drawable/punto"
-                                android:layout_weight="1"
-                                android:layout_marginLeft="50dp" />
-
-                            <ImageView
-                                android:layout_width="0dp"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/acude_31"
-                                android:layout_weight="2"
-                                android:layout_gravity="left"
-                                android:scrollX="50dp" />
-
-                        </LinearLayout>
-
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="wrap_content"
-                            android:background="@drawable/globo_28"
-                            android:paddingBottom="5dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:paddingTop="5dp"
-                            android:text="@string/course_1_31_text1"
-                            android:textSize="12sp"
-                            android:layout_height="80dp"
-                            android:layout_marginLeft="40dp"
-                            android:layout_marginRight="60dp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.2"
-                            android:layout_marginRight="130dp">
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/punto"
-                                android:layout_marginTop="60dp"
-                                android:layout_centerInParent="true" />
-
-                        </RelativeLayout>
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/globo_28"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="10dp"
-                            android:paddingTop="5dp"
-                            android:textSize="12sp"
-                            android:text="@string/course_1_31_text2"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginLeft="80dp"
-                            android:layout_marginRight="30dp"
-                            android:paddingBottom="10dp"
-                            android:layout_height="70dp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_weight="0.5"
-                            android:gravity="left"
-                            android:layout_marginLeft="50dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:src="@drawable/punto"
-                                android:layout_marginTop="40dp"
-                                android:layout_gravity="left" />
-                        </RelativeLayout>
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="match_parent"
-                            android:layout_weight="1"
-                            android:background="@drawable/globo_28"
-                            android:paddingBottom="5dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:textSize="12sp"
-                            android:text="@string/course_1_31_text3"
-                            android:layout_marginRight="80dp"
-                            android:paddingTop="10dp"
-                            android:layout_height="60dp" />
-
-
-                    </LinearLayout>
-
-
-                </RelativeLayout>
+                    android:layout_height="wrap_content" />
 
             </FrameLayout>
 

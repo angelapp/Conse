@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_modulo_1"
+    android:background="@drawable/fondo_ros"
     android:gravity="center">
 
     <LinearLayout
@@ -39,7 +39,8 @@
             android:layout_height="56dp"
             android:id="@+id/bt_next"
             android:background="@drawable/button_finish"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:layout_marginBottom="20dp" />
     </LinearLayout>
 
 </LinearLayout>

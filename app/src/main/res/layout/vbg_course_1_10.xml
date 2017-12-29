@@ -21,7 +21,13 @@
         android:id="@+id/tv_message"
         style="@style/ConseTittleTextH1"
         android:gravity="center"
-        android:textColor="@color/white"/>
+        android:textColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:textSize="18sp"
+        android:textStyle="normal"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"

@@ -37,64 +37,14 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ruta1_25">
+                android:layout_height="wrap_content">
 
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/aviso_2"
+                    android:src="@drawable/ruta25"
                     android:id="@+id/iv_sign" />
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"
-                    android:layout_below="@+id/iv_sign">
-
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="60dp"
-                        android:layout_marginTop="10dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            style="@style/ConseParagraphText"
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:background="@drawable/globo1_25"
-                            android:paddingBottom="20dp"
-                            android:paddingLeft="20dp"
-                            android:paddingRight="20dp"
-                            android:paddingTop="40dp"
-                            android:textSize="14sp"
-                            android:text="@string/course_1_25_text" />
-
-                        <RelativeLayout
-                            android:layout_width="0dp"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="0.2"
-                            android:layout_marginTop="60dp">
-
-                            <ImageView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_gravity="right"
-                                android:src="@drawable/punto"
-                                android:layout_marginTop="55dp"
-                                android:layout_marginLeft="10dp" />
-                        </RelativeLayout>
-
-
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
 
 
             </RelativeLayout>
@@ -103,7 +53,6 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-50dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal">

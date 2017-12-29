@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="15dp"
+    android:layout_marginLeft="25dp">
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:gravity="center_horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:srcCompat="@drawable/bullet"
+            android:id="@+id/imageView11"
+            android:layout_marginTop="5dp" />
+
+        <TextView
+            android:text="@string/course_1_20_text_1_2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_doc_name"
+            style="@style/ConseParagraphText"
+            android:layout_marginTop="0dp"
+            android:gravity="center_vertical"
+            android:paddingBottom="10dp" />
+    </LinearLayout>
+
+
+</LinearLayout>

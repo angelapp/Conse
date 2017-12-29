@@ -9,6 +9,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -63,6 +64,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
     private LinearLayout courseContainer;
     private int index;
     private int crosswordActualOrientation;
+    private boolean erasing = false;
 
     DataBase dataBase;
 
@@ -255,9 +257,34 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
         for (int i = 0; i < mCrossword.getChildCount(); i++){
             Log.d("VBg Mod", "Index is: " + i);
             final EditText et = (EditText)mCrossword.getChildAt(i);
+            if (et.getTag() != null) {
+                if (((String) et.getTag()).equals(getString(R.string.clue))) {
+                    et.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            final ClueDialog cluedialog = new ClueDialog();
+                            cluedialog.setClueNumber(Integer.valueOf(et.getText().toString()) - 1);
+                            cluedialog.show(getActivity().getFragmentManager(), "");
+                        }
+                    });
+                }
+            }
 
             if (et.isFocusable()){
                 Log.d("VBg Mod", "Index is: " + i + " The tag is: " + et.getTag().toString());
+
+                et.setOnTouchListener(new View.OnTouchListener() {
+                    @Override
+                    public boolean onTouch(View v, MotionEvent event) {
+                        if (et.getNextFocusDownId() != View.NO_ID){
+                            crosswordActualOrientation = LocalConstants.crowd_vertical;
+                        } else {
+                            crosswordActualOrientation = LocalConstants.crowd_horizontal;
+                        }
+                        return false;
+                    }
+                });
+
 
                 et.addTextChangedListener(new TextWatcher() {
                     @Override
@@ -267,34 +294,59 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
                     @Override
                     public void onTextChanged(CharSequence s, int start, int before, int count) {
-
+                        Log.d("Crosword", "On TextChanged");
+                        if (s.length() == 0){
+                            erasing = true;
+                        } else {
+                            erasing = false;
+                        }
                     }
 
                     @Override
                     public void afterTextChanged(Editable s) {
-
-                        if (et.getNextFocusDownId() != View.NO_ID) {
-                            mCrossword.findViewById(et.getNextFocusDownId()).requestFocus();
-                        } else if(et.getNextFocusRightId() != View.NO_ID) {
-                            mCrossword.findViewById(et.getNextFocusRightId()).requestFocus();
+                        if (!erasing) {
+                            switch (crosswordActualOrientation) {
+                                case LocalConstants.crowd_horizontal:
+                                    if (et.getNextFocusRightId() != View.NO_ID) {
+                                        mCrossword.findViewById(et.getNextFocusRightId()).requestFocus();
+                                        if (((EditText)mCrossword.findViewById(et.getNextFocusRightId())).getText().length()>0) {
+                                            ((EditText) mCrossword.findViewById(et.getNextFocusRightId())).setSelection(0, 1);
+                                        }
+                                    }
+                                    break;
+                                case LocalConstants.crowd_vertical:
+                                    if (et.getNextFocusDownId() != View.NO_ID) {
+                                        mCrossword.findViewById(et.getNextFocusDownId()).requestFocus();
+                                        if (((EditText)mCrossword.findViewById(et.getNextFocusDownId())).getText().length()>0) {
+                                            ((EditText) mCrossword.findViewById(et.getNextFocusDownId())).setSelection(0, 1);
+                                        }
+                                    }
+                                    break;
+                                default:
+                                    break;
+                            }
                         }
-
+//                        if (et.getNextFocusDownId() != View.NO_ID) {
+//                            mCrossword.findViewById(et.getNextFocusDownId()).requestFocus();
+//                        } else if(et.getNextFocusRightId() != View.NO_ID) {
+//                                mCrossword.findViewById(et.getNextFocusRightId()).requestFocus();
+//                        }
                     }
                 });
             }
 
-            final ClueDialog cluedialog = new ClueDialog();
-
-            if(et.getHint() != null && et.getHint().toString().length()>0){
-                et.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View v) {
-                        cluedialog.setClueNumber(Integer.valueOf(et.getHint().toString())-1);
-                        cluedialog.show(getActivity().getFragmentManager(),"");
-                    }
-                });
-
-            }
+//            final ClueDialog cluedialog = new ClueDialog();
+//
+//            if(et.getHint() != null && et.getHint().toString().length()>0){
+//                et.setOnClickListener(new View.OnClickListener() {
+//                    @Override
+//                    public void onClick(View v) {
+//                        cluedialog.setClueNumber(Integer.valueOf(et.getHint().toString())-1);
+//                        cluedialog.show(getActivity().getFragmentManager(),"");
+//                    }
+//                });
+//
+//            }
         }
     }
 
@@ -383,7 +435,28 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                 markActivityAsComplete(10);
                 break;
             case LocalConstants.MOD_4_Q1:
-                validateQuestionary(11, getString(R.string.course_1_57_bad));
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[0]);
+                break;
+            case LocalConstants.MOD_4_Q2:
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[1]);
+                break;
+            case LocalConstants.MOD_4_Q3:
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[2]);
+                break;
+            case LocalConstants.MOD_4_Q4:
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[3]);
+                break;
+            case LocalConstants.MOD_4_Q5:
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[4]);
+                break;
+            case LocalConstants.MOD_4_Q6:
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[5]);
+                break;
+            case LocalConstants.MOD_4_Q7:
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[6]);
+                break;
+            case LocalConstants.MOD_4_Q8:
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[7]);
                 break;
             default:
                 break;
@@ -424,6 +497,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
 
             }
+            //if (isCorrect || LocalConstants.DEV_VERSION){
             if (isCorrect){
                 setNextPage();
                 markActivityAsComplete(activity);
@@ -442,7 +516,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
             try {
                 EditText et = (EditText)mCrossword.getChildAt(i);
                 String tag = (String)et.getTag();
-                if (tag !=null && !tag.equals(et.getText().toString())){
+                if (tag !=null && !tag.equals(et.getText().toString().toLowerCase())){
                     error = true;
                     continue;
                 }

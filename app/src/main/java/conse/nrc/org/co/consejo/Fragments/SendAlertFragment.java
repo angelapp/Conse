@@ -42,6 +42,7 @@ public class SendAlertFragment extends Fragment {
     private void launchAlertDialog() {
         FragmentManager fm = getFragmentManager();
         AlertDialog alertDialog= new AlertDialog();
+        alertDialog.mCtx = mCtx;
         alertDialog.show(fm, "");
     }
 

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true"
-        android:drawable="@drawable/btnatencionhover" /> <!-- pressed -->
+        android:drawable="@drawable/btn_vbg_hover" /> <!-- pressed -->
     <item android:state_focused="true"
-        android:drawable="@drawable/btnatencion" /> <!-- focused -->
-    <item android:drawable="@drawable/btnatencion" /> <!-- default -->
+        android:drawable="@drawable/btn_vbg" /> <!-- focused -->
+    <item android:drawable="@drawable/btn_vbg" /> <!-- default -->
 </selector>

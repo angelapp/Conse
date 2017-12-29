@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -49,7 +49,9 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/ConseTittleTextH1"
-                    android:gravity="left|center_vertical" />
+                    android:gravity="left|center_vertical"
+                    android:paddingLeft="16dp"
+                    android:layout_marginRight="25dp" />
 
             </LinearLayout>
 

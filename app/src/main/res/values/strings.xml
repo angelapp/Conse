@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">Conse</string>
 
+    <string name="gmaps_sms">http://maps.google.com/?q=%1$s,%2$s</string>
     <string name="title_activity_welcome">Welcome</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
@@ -23,7 +24,9 @@
     <string name="condition_tittle_h2">Condición</string>
     <string name="origin_town_tittle_h2">Municipio</string>
     <string name="user_profile_tittle_h2">Perfil del usuario</string>
-    <string name="accept_terms_conditions_checkbox">Acepto los términos, condiciones, políticas de privacidad y de tratamiento de datos</string>
+    <string name="accept_terms_conditions_checkbox1">Acepto los </string>
+    <string name="accept_terms_conditions_checkbox2">términos, condiciones, políticas de privacidad y de tratamiento de datos</string>
+    <string name="accept_terms_conditions_checkbox3">del NRC</string>
     <string name="getting_app_conf">Obteniendo configuración de aplicación</string>
     <string name="select_hint">Seleccione</string>
     <string name="must_fill_field">Debe diligenciar este campo</string>
@@ -32,14 +35,14 @@
     <string name="must_complete_information">Debe completar información</string>
     <string name="registering_user">Registrando usuario...</string>
     <string name="add_contacts_tittle">Configura el botón de alerta</string>
-    <string name="add_contact_message">Selecciona dos contactos de confianza a quienes les llegarán las alertas en caso que te encuentres en una situación de riesgo.</string>
+    <string name="add_contact_message">Selecciona hasta tres contactos de confianza a quienes les llegarán las alertas en caso que te encuentres en una situación de riesgo.</string>
     <string name="contact_no_has_number">El contacto no tiene número telefónico</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="send_alert_tittle">Haz una prueba de funcionamiento</string>
     <string name="send_alert_indications">MANTÉN PULSADO EL BOTÓN PARA ENVIAR</string>
-    <string name="send_alert_touch_message_example">\"Estoy probando el envío de un mensaje de alerta\"</string>
+    <string name="send_alert_touch_message_example">Ahora eres mi contacto de emergencia. Esta es una prueba</string>
     <string name="send_alert_touch_tittle">¿Estás seguro de enviar esta alerta?</string>
     <string name="send_alert_success">Tu alerta ha sido enviada con éxito</string>
     <string name="select_avatar_message">Inicia por escoger el género, después, podrás definir las características físicas que más te gusten para tu Consejero o Consejera ¡Será quien te acompañe mientras usas la aplicación!</string>
@@ -56,8 +59,8 @@
     <string name="missing_avatar_selection">Falta seleccionar una parte del ávatar</string>
     <string name="confirm_password_et">Confirmar contraseña</string>
     <string name="password_not_matches">Las contraseñas no coinciden</string>
-    <string name="vbg_course_start_message">Recibe la bienvenida al contenido de Atención y Prevención de Violencias Basadas en Género, prepárate para conocer la respuesta a preguntas como: ¿Qué es violencia de género?, ¿Todas las violencias son iguales?, ¿Cómo puedo protegerme?, ¿Dónde puedo encontrar ayuda? Resuelve tus dudas y recibe mucha más información  sobre cómo prevenir y actuar en casos de violencia basada en género.</string>
-    <string name="vbg_course_start_tittle">Atención y Prevención de Violencias Basadas en Género</string>
+    <string name="vbg_course_start_message">Recibe la bienvenida al curso, prepárate para conocer la respuesta a preguntas como: ¿Qué es violencia de género?, ¿Todas las violencias son iguales?, ¿Dónde puedo encontrar ayuda? ¡Adelante! ¡Inicia el recorrido y resuelve tus dudas!</string>
+    <string name="vbg_course_start_tittle">Atención y Prevención \n de Violencia \n Basada en Género</string>
 
     <string name="number_1">1</string>
     <string name="number_2">2</string>
@@ -128,7 +131,7 @@
     <string name="course_1_16_c">Revisa el siguiente listado y y haz clic sobre las tres opciones que consideres acertadas.</string>
     <string name="course_1_16_e">Como mujer víctima de violencia, tienes derecho a:</string>
     <string name="course_1_16_f">A una atención integral, oportuna, especializada y de calidad.</string>
-    <string name="course_1_16_g">A pasar por el proceso de conciliación, ent todos los conflictos el primer paso debe ser siempre la conciliación</string>
+    <string name="course_1_16_g">A pasar por el proceso de conciliación, en todos los conflictos el primer paso debe ser siempre la conciliación</string>
     <string name="course_1_16_h">A un trato humano, respetuoso y digno</string>
     <string name="course_1_16_i">A que se te comuniquen todas las decisiones que puedan afectar tus derechos</string>
     <string name="course_1_16_j">A que la comunidad se entere de lo ocurrido para que puedan identificarte a ti y a tu familia como víctimas</string>
@@ -224,10 +227,16 @@
     <string name="course_1_20_tittle">¿Qué puedo hacer si creo ser víctima de violencia?</string>
     <string name="course_1_20_header">Solicita información</string>
 
-    <string name="course_1_20_text">Tienes derecho a informarte y buscar orientación acerca de: \n \n
-                                    \u25CF Procedimientos legales que se originan de los hechos violentos \n \n
-                                    \u25CF Entidades estatales que pueden protegerte \n \n
-                                    \u25CF Servicios y medidas disponibles para atender las necesidades que hayan generado los hechos \n</string>
+    <string name="course_1_20_text">Tienes derecho a informarte y buscar orientación acerca de:
+                                    </string>
+
+    <string name="course_1_20_text_1_1">Procedimientos legales que se originan de los hechos violentos
+                                    </string>
+    <string name="course_1_20_text_1_2">Entidades estatales que pueden protegerte
+                                    </string>
+    <string name="course_1_20_text_1_3">Servicios y medidas disponibles para atender las necesidades que hayan generado los hechos
+                                    </string>
+
     <string name="course_1_20_text_2">Ten en cuenta que: </string>
 
     <string name="course_1_24_header">Accede a la justicia</string>
@@ -395,7 +404,7 @@
     </string>
 
     <string name="course_1_47_text">
-        Si consideras que eres una mujer víctima de cualquier tipo de violencia cometida en el conflicto armado, además de todas las medidas señaladas en el punto anterior, puedes tomar alguna o todas las siguientes opciones especiales dispuestas por la ley, teniendo siempre en cuenta tus intereses y situación particular.\n
+        Si consideras que eres una mujer víctima de cualquier tipo de violencia cometida en el conflicto armado, además de todas las medidas señaladas en el punto anterior, puedes tomar alguna o todas las siguientes opciones especiales dispuestas por la ley, teniendo siempre en cuenta tus intereses y situación particular.\n\n
         Recuerda que en casos de violencia cometidos por actores armados, las mujeres tienen derecho de acceder tanto a las medidas generales desarrolladas para las mujeres víctimas de violencia fuera del conflicto, como a medidas especiales aplicables a las víctimas del conflicto armado.
     </string>
 
@@ -489,22 +498,31 @@
     </string>
 
     <string name="course_1_51_text1">
-        <b>Declaración</b> \n
         La puedes realizar ante el Ministerio Público que está conformado por: la Procuraduría General de la Nación, la Defensoría del Pueblo y Personerías municipales.
     </string>
 
     <string name="course_1_51_text2">
-        <b>Recuerda que:</b> \n \n
+        <b>Recuerda que:</b>
+    </string>
 
-        \u25CF Allí se diligencia el Formato Único de Declaración (FUD). \n
+    <string name="course_1_51_text2_1">
+        Allí se diligencia el Formato Único de Declaración (FUD).
+    </string>
 
-        \u25CF En lo posible, debes presentar tu declaración por TODOS los hechos de los que has sido víctima. \n
+    <string name="course_1_51_text2_2">
+        En lo posible, debes presentar tu declaración por TODOS los hechos de los que has sido víctima.
+    </string>
 
-        \u25CF No deben exigirte documentos que comprueben los hechos de los que fuiste víctima. \n
+    <string name="course_1_51_text2_3">
+         No deben exigirte documentos que comprueben los hechos de los que fuiste víctima.
+    </string>
 
-        \u25CF No deben negarse bajo ningún motivo a recibir tu declaración.  \n
+    <string name="course_1_51_text2_4">
+        No deben negarse bajo ningún motivo a recibir tu declaración.
+    </string>
 
-        Ten en cuenta que con la sola declaración tienes la posibilidad de acceder a medidas de ayuda humanitaria inmediata. \n
+    <string name="course_1_51_text2_5">
+        Ten en cuenta que con la sola declaración tienes la posibilidad de acceder a medidas de ayuda humanitaria inmediata.
     </string>
 
     <string name="course_1_52_tittle">
@@ -520,9 +538,15 @@
     </string>
 
     <string name="course_1_52_text3">
-        Consiste en la revisión del formato y el resto de documentos por parte de la Unidad de Víctimas. Pueden ocurrir dos situaciones: \n
-        \u25CF Si el formato está completo, continúa al siguiente paso. \n
-        \u25CF Si el formato está incompleto, es devuelto a la entidad que envió la declaración para que la complete.
+        Consiste en la revisión del formato y el resto de documentos por parte de la Unidad de Víctimas. Pueden ocurrir dos situaciones:
+    </string>
+
+    <string name="course_1_52_text3_1">
+        Si el formato está completo, continúa al siguiente paso.
+    </string>
+
+    <string name="course_1_52_text3_2">
+        Si el formato está incompleto, es devuelto a la entidad que envió la declaración para que la complete.
     </string>
 
     <string name="course_1_53_text1">
@@ -539,15 +563,20 @@
     </string>
 
     <string name="course_1_53_text4">
-        Consiste en la definición acerca de tu inclusión en el registro por parte de la Unidad de Víctimas. Pueden ocurrir dos situaciones:\n
+        Consiste en la definición acerca de tu inclusión en el registro por parte de la Unidad de Víctimas. Pueden ocurrir dos situaciones:
+    </string>
 
-        \u25CF Ser incluida. En este caso tienes acceso a las medias de asistencia y reparación integral. \n
-        \u25CF No ser incluida. En este caso puedes hacer uso de recursos para pedir la revisión de la decisión.
+    <string name="course_1_53_text4_1">
+       <b>Ser incluida.</b> En este caso tienes acceso a las medias de asistencia y reparación integral.
+    </string>
+
+    <string name="course_1_53_text4_2">
+        <b>No ser incluida.</b> En este caso puedes hacer uso de recursos para pedir la revisión de la decisión.
     </string>
 
 
      <string name="course_1_54_tittle">
-        ¿QUÉ PUEDO HACER EN CASO QUE LAS ENTIDADES NO CUMPLAN SUS FUNCIONES O NO GARANTICEN MIS DERECHOS?
+        ¿Qué puedo hacer en caso que las entidades no cumpla sus funciones o no garanticen mis derechos?
     </string>
 
      <string name="course_1_54_text1">
@@ -704,6 +733,67 @@
     <string name="tv_recovery_psw">Recuperar contraseña</string>
     <string name="recovering_password">Recuperando contraseña...</string>
     <string name="department">Departamento</string>
+    <string name="inactive_geolocation">Geolocalización desactivada</string>
+    <string name="conse_need_gps">Conse necesita acceso a tu ubicación. Activa los servicios de geolocalización</string>
+    <string name="config">Configuración</string>
+    <string name="bank_docs_tittle">BANCO DE \nDOCUMENTOS</string>
+    <string name="course_1_2_y">(Ley 1257/08, art. 2)</string>
+    <string name="share_mail_text">Plantilla</string>
+    <string name="sending_email">Enviar email ...</string>
+    <string name="share_email_subject">Plantilla compartida desde Conse</string>
+    <string name="not_activity_found">No se encuentra una aplicación para abrir el archivo</string>
+    <string name="not_network_conection">No hay conexión a internet</string>
+    <string name="conse_need_network">Debes tener una conexión activa a internet</string>
+    <string name="getting_library_docs">Obteniendo biblioteca ...</string>
+    <string name="download">Descargar</string>
+    <string name="about_nrc_tittle">SOBRE EL CONSEJO \n NORUEGO PARA REFUGIADOS</string>
+
+    <string name="about_nrc_page1_1">Somos una organización no gubernamental internacional, independiente, humanitaria, sin ánimo de lucro, establecida en 1946. Respondemos durante situaciones de conflicto armado y nos comprometemos en otros contextos donde nuestras competencias provean un valor añadido. Estamos presentes en 30 países alrededor del mundo. \n \n
+        Promovemos la resiliencia y la participación de las personas desplazadas y refugiadas en el diseño y ejecución de programas. Proveemos asistencia alimentaria, agua potable, albergue, asistencia legal y educación. En situaciones de emergenica nuestra <b>Unidad de Respuesta Rápida</b> está preparada para complementar la respuesta del Estado. \n\n
+        <b>Valores NRC</b>\n
+        Estamos comprometidos con nuestros valores centrales:</string>
+
+    <string name="about_nrc_page1_2">Dedicación</string>
+    <string name="about_nrc_page1_3">Inclusión</string>
+    <string name="about_nrc_page1_4">Innovación</string>
+    <string name="about_nrc_page1_5">Rendición de cuentas</string>
+
+
+    <string name="about_nrc_page2_1">Ofrecemos una respuesta de alta calidad donde hay mayores necesidades a través de nuestras competencias en: \n\n
+    <b>Educación</b>
+    </string>
+
+    <string name="about_nrc_page2_2">Aseguramos que la población afectada por el conflicto continúe aprendiendo y preparamos el camino para una educación de calidad.\n\n
+    <b>Asistencia Legal</b>
+    </string>
+
+    <string name="about_nrc_page2_3">Promovemos la protección de personas que se ven obligadas a huir de sus hogares y se enfrentan a violaciones de los derechos humanos.\n\n
+    <b>Alojamiento e infraestructura</b>
+    </string>
+
+    <string name="about_nrc_page2_4">Promovemos el acceso a espacios seguros para familias que se ven obligadas a huir de sus hogares
+    </string>
+
+    <string name="about_nrc_page2_5"><a href="www.nrc.org.co"> Más información en nuestro sitio web </a>
+    </string>
+
+    <string name="about_nrc_page3_1">En Colombia, estamos presentes en 11 departamentos: Arauca, Caquetá, Cauca, Chocó, Guajira, Magdalena, Meta, Nariño, Norte de Santander, Cesar y Guaviare. Nuestra Unidad de Respuesta Rápida tiene el potencial de brindar asistencia en cualquier parte del territorio donde la situación humanitaria lo requiera.\n\n
+        Brindamos respuesta humanitaria a través de 12 oficinas en Colombia y 9 oficinas en América Latina: Panamá, Venezuela, Ecuador y Honduras.
+    </string>
+
+    <string name="about_nrc_page3_2"><a href="http://www.nrc.org.co/directorio-oficinas-nrc/">Conoce nuestras oficinas</a>
+    </string>
+
+    <string name="about_nrc_page3_3"><a href="https://www.facebook.com/consejonoruegopararefugiados/">Consejo Noruego para Refugiados</a>
+    </string>
+
+    <string name="about_nrc_page3_4"><a href="https://twitter.com/nrc_lac?lang=es">@NRC_LAC</a>
+    </string>
+
+
+    <string name="clue">clue
+    </string>
+
 
     <string-array name="clueTexts">
         <item>Cuando la violencia se manifiesta mediante insultos, ataques verbales, chantajes o celos extremos, es:</item>
@@ -713,6 +803,32 @@
         <item>Cuando la violencia proviene del esposo, compañero permanente, padre, madre, abuelos o nietos; se le llama violencia en la: </item>
         <item>Cuando la violencia la realiza algún integrante de un grupo armado, se denomina violencia en el Conflicto:</item>
     </string-array>
+
+    <string-array name="errorResponseQuestionaryMod4">
+        <item>Recuerda que si la violencia proviene del esposo, el compañero permanente, los padres, abuelos o nietos se denomina violencia en la familia</item>
+        <item>Recuerda que la violencia física se manifiesta a través del uso de la fuerza, como golpes, ahogamientos, empujones.</item>
+        <item>Marca el número 155 para comunicarte con la línea de orientación a las mujeres víctimas de violencia, desde tu teléfono fijo o celular, de manera gratuita, durante las 24 horas del día, todos los días de la semana.</item>
+        <item>Nunca olvides que tienes derecho a una atención integral, oportuna, especializada y de calidad, a decidir voluntariamente si quieres ser confrontada con el agresor o agresores y a manifestar tu intención de no conciliar. También tienes el derecho a la reserva de tu intimidad, de tus datos personales, y los de tus familiares y personas allegadas.</item>
+        <item>Recuerda acudir a la Comisaría de Familia, ante un Juez Civil o Promiscuo Municipal, cuando has sido víctima de hechos violentos en el contexto familiar</item>
+        <item>Recuerda, si lo necesitas, la Defensoría del Pueblo tiene la obligación de brindarte de manera gratuita servicios de orientación, asesoría y/o representación judicial.</item>
+        <item>Recuerda que si eres víctima de desplazamiento forzado tienes derecho a atención médica y psicológica de emergencia, apoyo a procesos de retorno y a transporte y alojamiento transitorio</item>
+        <item>Ten presente que si una entidad estatal no cumple con sus funciones o no protege tus derechos, puedes denunciarlo ante Ministerio Público que está conformado por la Procuraduría General de la Nación, la Defensoría del Pueblo y Personerías.</item>
+    </string-array>
+
+    <string-array name="bank_docs_tabs_tittles">
+        <item>BANCO DE FORMATOS</item>
+        <item>MARCO JURÍDICO</item>
+        <item>ESCUDOS DE PROTECCIÓN</item>
+    </string-array>
+
+    <string-array name="about_nrc_tabs_tittles">
+        <item>QUIÉNES SOMOS</item>
+        <item>QUÉ HACEMOS</item>
+        <item>DÓNDE TRABAJAMOS</item>
+    </string-array>
+
+
+
 
 
 </resources>

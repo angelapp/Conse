@@ -17,7 +17,7 @@
             android:paddingLeft="@dimen/fab_margin"
             android:paddingRight="@dimen/fab_margin"
             android:gravity="center_horizontal"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -82,17 +82,36 @@
                 android:id="@+id/textView4"
                 style="@style/ConseTittleTextH2"/>
 
-            <TextView
-                android:text="@string/course_1_2_d"
+            <LinearLayout
+                android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView5"
-                style="@style/ConseParagraphText"
-                android:background="@drawable/cuadro_banda"
-                android:paddingLeft="@dimen/fab_margin"
-                android:paddingRight="@dimen/fab_margin"
-                android:paddingTop="@dimen/square_padding_top"
-                android:paddingBottom="@dimen/fab_margin"/>
+                android:background="@drawable/cuadro_banda">
+
+                <TextView
+                    android:text="@string/course_1_2_d"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5"
+                    style="@style/ConseParagraphText"
+                    android:paddingLeft="@dimen/fab_margin"
+                    android:paddingRight="@dimen/fab_margin"
+                    android:paddingTop="@dimen/square_padding_top"
+                    android:paddingBottom="@dimen/fab_margin"
+                    android:layout_marginTop="25dp" />
+
+                <TextView
+                    android:text="@string/course_1_2_y"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView22"
+                    style="@style/ConseParagraphText"
+                    android:textSize="14sp"
+                    android:gravity="right"
+                    android:layout_marginTop="0dp"
+                    android:textStyle="normal|italic"
+                    android:layout_marginBottom="15dp" />
+            </LinearLayout>
 
 
             <LinearLayout

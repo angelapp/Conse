@@ -12,7 +12,8 @@
         style="@style/ConseTittleTextH1"
         android:textColor="@color/white"
         android:layout_marginLeft="@dimen/square_padding_top"
-        android:layout_marginRight="@dimen/square_padding_top"/>
+        android:layout_marginRight="@dimen/square_padding_top"
+        android:textSize="45sp" />
 
     <TextView
         android:text="@string/vbg_course_start_message"

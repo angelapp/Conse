@@ -71,7 +71,7 @@
                         android:id="@+id/bt_ham"
                         android:background="@drawable/menuhamburguesa"
                         android:layout_height="30dp"
-                        android:layout_width="30dp" />
+                        android:layout_width="40dp" />
                 </RelativeLayout>
 
                 <RelativeLayout
@@ -84,9 +84,9 @@
                     <Button
                         android:id="@+id/bt_progress"
                         android:background="@drawable/botonavance"
-                        android:layout_width="50dp"
                         android:onClick="onClick"
-                        android:layout_height="40dp" />
+                        android:layout_height="30dp"
+                        android:layout_width="40dp" />
                 </RelativeLayout>
             </LinearLayout>
 

@@ -20,6 +20,7 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import conse.nrc.org.co.consejo.Interfaces.AlertTestInterfaces;
 import conse.nrc.org.co.consejo.R;
@@ -27,8 +28,8 @@ import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
-import static android.Manifest.permission.CALL_PHONE;
 import static android.location.LocationManager.GPS_PROVIDER;
+import static android.location.LocationManager.NETWORK_PROVIDER;
 
 /**
  * Created by apple on 11/20/17.
@@ -101,6 +102,15 @@ public class AlertDialog extends DialogFragment {
         });
         Log.d("Alert", getEmegencyContactsString());
 
+        if (LocalConstants.DEV_VERSION) {
+            mBtSendAlert.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    sendAlert();
+                }
+            });
+        }
+
         if(!isTest){
             ((TextView)mView.findViewById(R.id.tv_message)).setText(R.string.send_alert_message);
             (mView.findViewById(R.id.tv_cancel)).setOnClickListener(new View.OnClickListener() {
@@ -133,29 +143,36 @@ public class AlertDialog extends DialogFragment {
     private void sendAlert() {
         Vibrator v = (Vibrator) mCtx.getSystemService(Context.VIBRATOR_SERVICE);
         v.vibrate(TIME_TO_VIBRATE);
-        sendSms();
+        requestCoordinates();
     }
 
-    private void sendSms() {
-        String recipients = LocalConstants.SMS_CONTACT_PREFIX + getEmegencyContactsString();
-        Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(recipients));
+    private void requestCoordinates() {
+//        String recipients = LocalConstants.SMS_CONTACT_PREFIX + getEmegencyContactsString();
+//        Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(recipients));
         String coordinates = " ";
+        String coordinates2 = " ";
         if (ActivityCompat.checkSelfPermission(mCtx,
                 ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
             Location location = mLocManager.getLastKnownLocation(GPS_PROVIDER);
+            Location wifiLocation = mLocManager.getLastKnownLocation(NETWORK_PROVIDER);
+            String coorUrl = getString(R.string.gmaps_sms);
             try {
-                coordinates += getString(R.string.latitude) + ": " + String.valueOf(location.getLatitude());
-                coordinates += ", " + getString(R.string.longitude) + ": " + String.valueOf(location.getLongitude());
+                sendSms(String.format(coorUrl, String.valueOf(location.getLatitude()),
+                        String.valueOf(location.getLongitude())));
+
             }catch (Exception ea){
                 ea.printStackTrace();
+                try {
+                    sendSms(String.format(coorUrl, String.valueOf(wifiLocation.getLatitude()),
+                            String.valueOf(wifiLocation.getLongitude())));
+                }catch (Exception eae){
+                    eae.printStackTrace();
+                    sendSms("");
+                }
             }
+
         }
-        if(isTest) {
-            smsIntent.putExtra("sms_body", getString(R.string.send_alert_touch_message_example) + coordinates);
-        } else{
-            smsIntent.putExtra("sms_body", getString(R.string.send_alert_message) + coordinates);
-        }
-        startActivityForResult(smsIntent, 1);
     }
 
     public String getEmegencyContactsString() {
@@ -174,6 +191,7 @@ public class AlertDialog extends DialogFragment {
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        Log.d("SMS", "Result code for " + requestCode + " is: " + resultCode );
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode){
             case 1:
@@ -187,4 +205,47 @@ public class AlertDialog extends DialogFragment {
         }
 
     }
+
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, String permissions[], int[] grantResults) {
+//
+//        switch (requestCode) {
+//            case 1:
+//                String coordinates = " ";
+//                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+//                    Toast.makeText(mCtx,"GPS permission granted", Toast.LENGTH_LONG).show();
+//
+//                    if (ActivityCompat.checkSelfPermission(mCtx,
+//                            ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+//                        Location location = mLocManager.getLastKnownLocation(GPS_PROVIDER);
+//                        try {
+//                            coordinates += getString(R.string.latitude) + ": " + String.valueOf(location.getLatitude());
+//                            coordinates += ", " + getString(R.string.longitude) + ": " + String.valueOf(location.getLongitude());
+//                        } catch (Exception ea) {
+//                            ea.printStackTrace();
+//                        }
+//                    }
+//                    //  get Location from your device by some method or code
+//
+//                } else {
+//                    Toast.makeText(mCtx,"GPS permission denied", Toast.LENGTH_LONG).show();
+//                    // show user that permission was denied. inactive the location based feature or force user to close the app
+//                }
+//                sendSms(coordinates);
+//                break;
+//        }
+//    }
+
+    private void sendSms(String coordinates) {
+        String recipients = LocalConstants.SMS_CONTACT_PREFIX + getEmegencyContactsString();
+        Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(recipients));
+        if(isTest) {
+            smsIntent.putExtra("sms_body", getString(R.string.send_alert_touch_message_example)+ " " + coordinates);
+        } else{
+            smsIntent.putExtra("sms_body", getString(R.string.send_alert_message) + " " + coordinates);
+        }
+        startActivityForResult(smsIntent, 1);
+        Log.d("SMS", "Started for result" );
+    }
+
 }

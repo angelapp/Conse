@@ -14,7 +14,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingBottom="55dp">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -55,7 +55,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/ConseTittleTextH1"
-                    android:layout_marginRight="10dp" />
+                    android:layout_marginRight="10dp"
+                    android:gravity="left" />
 
             </LinearLayout>
 
@@ -65,7 +66,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView16"
                 style="@style/ConseParagraphText"
-                android:layout_marginLeft="40dp"
+                android:layout_marginLeft="80dp"
                 android:layout_marginBottom="10dp" />
 
             <View

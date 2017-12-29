@@ -39,7 +39,9 @@
                 android:layout_height="wrap_content"
                 style="@style/ConseTittleTextH1"
                 android:layout_marginBottom="15dp"
-                android:layout_marginTop="@dimen/square_padding_top"/>
+                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp" />
 
 
 

@@ -16,7 +16,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:id="@+id/course_container"
-        android:gravity="center"
+        android:gravity="center_horizontal"
         android:paddingBottom="0dp">
 
     </LinearLayout>
