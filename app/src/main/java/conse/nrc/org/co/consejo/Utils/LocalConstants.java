@@ -69,6 +69,8 @@ public class LocalConstants {
     public static final String POST_USER_LOGGIN = "user_auth/";
     public static final String POST_PASSWORD_RECOVERY = "user_password_recovery/";
     public static final String GET_LIBRARY_DOCS = "get_library_docs/";
+    public static final String GET_SHIELDS = "get_corporate_phone_book";
+
 
 
     //Task id for server views
@@ -82,6 +84,11 @@ public class LocalConstants {
     public static final int POST_USER_LOGGIN_TASK_ID = 26;
     public static final int POST_PASSWORD_RECERY_TASK_ID = 27;
     public static final int GET_LIBRARY_DOCS_TASK_ID = 27;
+    public static final int GET_SHIELDS_TASK_ID = 28;
+
+    //GET PARAMETERS
+    public static final String LATITUDE = "latitude=";
+    public static final String LONGITUDE = "longitude=";
 
 
     //LAYOUTS TAGS

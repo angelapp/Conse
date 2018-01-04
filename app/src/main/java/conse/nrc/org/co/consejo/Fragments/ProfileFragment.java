@@ -129,17 +129,27 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             loadValues();
         } else {
             mView.findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
+            TextView term = (TextView)mView.findViewById(R.id.tv_terms_text);
 
             Spanned tittleString;
             tittleString = Html.fromHtml(getString(R.string.accept_terms_conditions_checkbox1)
-                    + " <FONT COLOR=#ffffff><a href=\""+ ConseApp.getAppConfiguration(mCtx).terms_condition_url +"\">"
+                    + " <FONT COLOR=#eb5c3f><a href=\""+ ConseApp.getAppConfiguration(mCtx).terms_condition_url +"\">"
                     + getString(R.string.accept_terms_conditions_checkbox2) + " </a></font>" + getString(R.string.accept_terms_conditions_checkbox3)
             );
+            term.setText(tittleString);
 
-            mCbAcceptTermsConditions.setText(tittleString);
+            term.setMovementMethod(LinkMovementMethod.getInstance());
+            term.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mCbAcceptTermsConditions.setChecked(!(mCbAcceptTermsConditions.isChecked()));
+                }
+            });
+
+            //mCbAcceptTermsConditions.setText(tittleString);
 
             //_cb_accept_term_conditions.setClickable(true);
-            mCbAcceptTermsConditions.setMovementMethod (LinkMovementMethod.getInstance());
+            //mCbAcceptTermsConditions.setMovementMethod (LinkMovementMethod.getInstance());
         }
 
         return mView;

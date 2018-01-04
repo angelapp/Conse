@@ -3,6 +3,10 @@ package conse.nrc.org.co.consejo.Utils;
 import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.support.v4.app.ActivityCompat;
 import android.util.Log;
 import android.view.inputmethod.InputMethodManager;
 
@@ -16,6 +20,11 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+import conse.nrc.org.co.consejo.R;
+
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.location.LocationManager.GPS_PROVIDER;
+import static android.location.LocationManager.NETWORK_PROVIDER;
 import static java.util.Calendar.DATE;
 import static java.util.Calendar.DAY_OF_MONTH;
 import static java.util.Calendar.MONTH;
@@ -159,6 +168,36 @@ public abstract class UtilsFunctions {
         }
 
         return emergencyContactsString;
+    }
+
+    public static float[] requestCoordinates(Context mCtx) {
+//        String recipients = LocalConstants.SMS_CONTACT_PREFIX + getEmegencyContactsString();
+//        Intent smsIntent = new Intent(Intent.ACTION_SENDTO, Uri.parse(recipients));
+        LocationManager mLocManager = (LocationManager) mCtx.getSystemService(Context.LOCATION_SERVICE);
+        float[] list = new float[2];
+        if (ActivityCompat.checkSelfPermission(mCtx,
+                ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions(getActivity(), new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, 1);
+            Location location = mLocManager.getLastKnownLocation(GPS_PROVIDER);
+            Location wifiLocation = mLocManager.getLastKnownLocation(NETWORK_PROVIDER);
+            try {
+                list[0] = (float)location.getLatitude();
+                list[1] = (float)location.getLongitude();
+                return list;
+
+            }catch (Exception ea){
+                ea.printStackTrace();
+                try {
+                    list[0] = (float)wifiLocation.getLatitude();
+                    list[1] = (float)wifiLocation.getLongitude();
+                    return list;
+                }catch (Exception eae){
+                    eae.printStackTrace();
+                }
+            }
+
+        }
+        return list;
     }
 
 

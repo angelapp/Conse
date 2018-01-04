@@ -6,6 +6,9 @@ import android.content.Context;
 import java.util.ArrayList;
 import java.util.List;
 
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LATITUDE;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LONGITUDE;
+
 /**
  * Created by apple on 11/19/16.
  */
@@ -89,6 +92,23 @@ public class ServerRequest {
             super(ctx, listener, loader, taskId);
             setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.GET_LIBRARY_DOCS );
             Models.DocumentTextType[] list = new Models.DocumentTextType[]{};
+            setResponse(list);
+        }
+    }
+
+    public static class GetShieldList extends RequestTask{
+        public GetShieldList(Context ctx, OnRequestCompleted listener, ProgressDialog loader, int taskId, float lat, float lng){
+            super(ctx, listener, loader, taskId);
+            if (lat != 0 && lng != 0) {
+                setUrl(LocalConstants.SERVER_DOMAIN +
+                        LocalConstants.API_DIRECTORY +
+                        LocalConstants.GET_SHIELDS + "?" +
+                LATITUDE + String.valueOf(lat) + "&" +
+                LONGITUDE + String.valueOf(lng));
+            } else {
+                setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.GET_SHIELDS);
+            }
+            Models.OrganizationType[] list = new Models.OrganizationType[]{};
             setResponse(list);
         }
     }

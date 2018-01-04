@@ -793,6 +793,9 @@
 
     <string name="clue">clue
     </string>
+    <string name="near_of">Ubicado o cerca a:</string>
+    <string name="getting_shield_list">Obteniendo Listado de Escudos de Protección</string>
+    <string name="no_address_found">No se encontró la dirección</string>
 
 
     <string-array name="clueTexts">

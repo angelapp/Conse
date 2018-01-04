@@ -77,7 +77,7 @@ public class DocsBankFragment extends Fragment {
         tab_tittle = new ArrayList<String>();
         fragmentList.add(new TemplateLibrary());
         fragmentList.add(new JurisprudenceDocs());
-        fragmentList.add(new TemplateLibrary());
+        fragmentList.add(new ShieldsList());
         for (String tab : getResources().getStringArray(R.array.bank_docs_tabs_tittles)){
             tab_tittle.add(tab);
             Log.d("Progress Fragment", "Added page for tab: " + tab);

@@ -242,13 +242,34 @@
 
             </LinearLayout>
 
-            <CheckBox
-                android:text="@string/accept_terms_conditions_checkbox1"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/cb_accept_terms_conditions"
-                style="@style/ConseCheckbox"
-                android:layout_marginBottom="15dp" />
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp">
+
+                <CheckBox
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/cb_accept_terms_conditions"
+                    style="@style/ConseCheckbox"
+                    android:layout_marginBottom="0dp"
+                    android:paddingBottom="0dp"
+                    android:layout_marginTop="0dp"
+                    android:layout_marginRight="5dp" />
+
+                <TextView
+                    android:text="@string/accept_terms_conditions_checkbox1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_terms_text"
+                    style="@style/ConseParagraphText"
+                    android:layout_marginTop="0dp"
+                    android:textColor="@color/grey_dark"
+                    android:layout_marginLeft="0dp" />
+            </LinearLayout>
 
             <Button
                 android:layout_width="wrap_content"

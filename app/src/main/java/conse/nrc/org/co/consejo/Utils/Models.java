@@ -471,4 +471,34 @@ public class Models {
         public List<Document> document_by_type;
 
     }
+
+
+    public static class OrganizationType{
+
+        public int id;
+        public String name;
+        public String description;
+        public String icon;
+        public List<CorporatePhoneBook> organization_by_type;
+
+    }
+
+    public static class CorporatePhoneBook{
+
+        public int id;
+        public int organization_type;
+        public int city;
+        public String name;
+        public String description;
+        public String phone;
+        public String mobile_phone;
+        public String address;
+        public String url;
+        public String twitter;
+        public String email;
+        public String schedule;
+        public float latitude;
+        public float longitude;
+        public String icon;
+    }
 }
