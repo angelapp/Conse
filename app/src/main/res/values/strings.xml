@@ -28,21 +28,21 @@
     <string name="accept_terms_conditions_checkbox2">términos, condiciones, políticas de privacidad y de tratamiento de datos</string>
     <string name="accept_terms_conditions_checkbox3">del NRC</string>
     <string name="getting_app_conf">Obteniendo configuración de aplicación</string>
-    <string name="select_hint">Seleccione</string>
+    <string name="select_hint">Selecciona</string>
     <string name="must_fill_field">Debe diligenciar este campo</string>
     <string name="must_select_option">Debe seleccionar una opción</string>
     <string name="you_must_accept_t_c">Debes aceptar términos y condiciones</string>
     <string name="must_complete_information">Debe completar información</string>
     <string name="registering_user">Registrando usuario...</string>
     <string name="add_contacts_tittle">Configura el botón de alerta</string>
-    <string name="add_contact_message">Selecciona hasta tres contactos de confianza a quienes les llegarán las alertas en caso que te encuentres en una situación de riesgo.</string>
+    <string name="add_contact_message">Ingrese de 1 a 3 contactos</string>
     <string name="contact_no_has_number">El contacto no tiene número telefónico</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="send_alert_tittle">Haz una prueba de funcionamiento</string>
     <string name="send_alert_indications">MANTÉN PULSADO EL BOTÓN PARA ENVIAR</string>
-    <string name="send_alert_touch_message_example">Ahora eres mi contacto de emergencia. Esta es una prueba</string>
+    <string name="send_alert_touch_message_example"> Ahora eres mi contacto de emergencia. Esta es una prueba. Estoy ubicado en </string>
     <string name="send_alert_touch_tittle">¿Estás seguro de enviar esta alerta?</string>
     <string name="send_alert_success">Tu alerta ha sido enviada con éxito</string>
     <string name="select_avatar_message">Inicia por escoger el género, después, podrás definir las características físicas que más te gusten para tu Consejero o Consejera ¡Será quien te acompañe mientras usas la aplicación!</string>
@@ -119,7 +119,7 @@
     <string name="course_1_7_e">Por último, pero no menos importante, adopta los siguientes consejos como leyes inquebrantables para tu vida diaria</string>
     <string name="course_1_8_a">Nunca olvides que...</string>
     <string name="course_1_9_a">¡Buenísimo! Has finalizado tu primer módulo de formación, responde al siguiente crucigrama y recibiras tu primer reconocimiento.</string>
-    <string name="course_1_10_a">Completa el crucigrama. Pulsa doble clic sobre el número para ver la pista</string>
+    <string name="course_1_10_a">Completa el crucigrama. Pulsa sobre el ícono para ver la pista y escribe a continuación tu respuesta</string>
     <string name="course_1_11_a">No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!</string>
     <string name="course_1_12_a">¡Buen trabajo!</string>
     <string name="course_1_12_b">¡Es un honor concederte el titulo de Consejera Conocedora!</string>
@@ -199,7 +199,7 @@
     <string name="message_type_tittle">Tipo de mensaje</string>
     <string name="write_here">Escribe aquí tu mensaje</string>
     <string name="your_message_tittle_h2">Tu mensaje</string>
-    <string name="contact_form_tittle">CONTÁCTENOS</string>
+    <string name="contact_form_tittle">CONTÁCTANOS</string>
     <string name="sending_contact_form">Enviando formulario...</string>
     <string name="send_contact_success">Se ha enviado tu mensaje</string>
     <string name="registering_avatar_list">Guardando avatar...</string>
@@ -796,6 +796,14 @@
     <string name="near_of">Ubicado o cerca a:</string>
     <string name="getting_shield_list">Obteniendo Listado de Escudos de Protección</string>
     <string name="no_address_found">No se encontró la dirección</string>
+    <string name="news_tittle">NOTICIAS</string>
+    <string name="news_tab_instruction">Pulse sobre cada enlace para acceder a información actualizada en temas de protección y seguridad. Debes estar conectado a internet para poder ver los contenidos.</string>
+    <string name="getting_news">Obteniendo listado de noticias...</string>
+    <string name="edit_profile_tittle">Edita tu perfil</string>
+    <string name="learning_community_tittle">ANALIZO MI \nCOMUNIDAD</string>
+    <string name="protection_paths_tittle">MIS RUTAS \nDE PROTECCIÓN</string>
+    <string name="protection_paths_vbg_button">Ruta de atención para víctimas de violencias basadas en género (VBG)</string>
+    <string name="protection_paths_leaders_button">Ruta de atención para líderes comunitarios</string>
 
 
     <string-array name="clueTexts">

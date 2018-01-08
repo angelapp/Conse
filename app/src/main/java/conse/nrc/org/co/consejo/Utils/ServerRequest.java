@@ -96,6 +96,15 @@ public class ServerRequest {
         }
     }
 
+    public static class GetNews extends RequestTask{
+        public GetNews(Context ctx, OnRequestCompleted listener, ProgressDialog loader, int taskId){
+            super(ctx, listener, loader, taskId);
+            setUrl(LocalConstants.SERVER_DOMAIN + LocalConstants.API_DIRECTORY + LocalConstants.GET_NEWS );
+            Models.NewsCategory[] list = new Models.NewsCategory[]{};
+            setResponse(list);
+        }
+    }
+
     public static class GetShieldList extends RequestTask{
         public GetShieldList(Context ctx, OnRequestCompleted listener, ProgressDialog loader, int taskId, float lat, float lng){
             super(ctx, listener, loader, taskId);

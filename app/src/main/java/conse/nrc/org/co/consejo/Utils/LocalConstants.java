@@ -70,6 +70,7 @@ public class LocalConstants {
     public static final String POST_PASSWORD_RECOVERY = "user_password_recovery/";
     public static final String GET_LIBRARY_DOCS = "get_library_docs/";
     public static final String GET_SHIELDS = "get_corporate_phone_book";
+    public static final String GET_NEWS = "get_news_list/";
 
 
 
@@ -85,6 +86,7 @@ public class LocalConstants {
     public static final int POST_PASSWORD_RECERY_TASK_ID = 27;
     public static final int GET_LIBRARY_DOCS_TASK_ID = 27;
     public static final int GET_SHIELDS_TASK_ID = 28;
+    public static final int GET_NEWS_TASK_ID = 28;
 
     //GET PARAMETERS
     public static final String LATITUDE = "latitude=";
@@ -265,5 +267,21 @@ public class LocalConstants {
         add(new Pair("Recurso de reposición y apelación", "recurso_de_reposicion_y_apelacion.docx"));
     }};
 
+
+    public static final List<Models.LearningItem> LEARNING_MY_COMMUNITY_LIST = new ArrayList<Models.LearningItem>(){{
+
+        add(new Models.LearningItem("Objetivo: Reducir los riesgos de violencia en líderes y lideresas comunitarias",
+                "Nota: Esta herramienta está basada en la observación. Puede ser o no relevante en determinados conextos." +
+                        "En áreas de inseguridad, no debe completar este cuestionario caminando por la comunidad; se recomienda" +
+                        "observar y retener la información mentalmente, para posteriormente completar el formato en un lugar seguro",
+                "Descargue o comparta la auditoría",
+                "accion_de_tutela.docx"));
+        add(new Models.LearningItem("Objetivo: Reducir los riesgos de violencia en líderes y lideresas comunitarias",
+                "Nota: Esta herramienta está basada en la observación. Puede ser o no relevante en determinados conextos." +
+                        "En áreas de inseguridad, no debe completar este cuestionario caminando por la comunidad; se recomienda" +
+                        "observar y retener la información mentalmente, para posteriormente completar el formato en un lugar seguro",
+                "Descargue o comparta la auditoría",
+                "derecho_de_peticion_alcaldias_y_gobernaciones.docx"));
+    }};
 
 }

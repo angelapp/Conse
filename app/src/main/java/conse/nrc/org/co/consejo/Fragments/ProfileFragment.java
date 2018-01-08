@@ -157,9 +157,12 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
 
     private void loadValues() {
         Models.RegisterUserResponse user = ConseApp.getActualUser(mCtx);
-        mCbAcceptTermsConditions.setVisibility(View.GONE);
+        ((LinearLayout)mView.findViewById(R.id.ly_term_cond)).setVisibility(View.GONE);
+//        mCbAcceptTermsConditions.setVisibility(View.GONE);
         mEtPassword.setVisibility(View.GONE);
         mEtPasswordConfirm.setVisibility(View.GONE);
+
+        ((TextView)mView.findViewById(R.id.tv_profile_tittle)).setText(R.string.edit_profile_tittle);
 
         mEtEmail.setText(user.user.email);
         mEtEmail.setEnabled(false);

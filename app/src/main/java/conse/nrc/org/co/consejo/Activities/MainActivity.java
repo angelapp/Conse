@@ -19,6 +19,7 @@ import android.provider.SyncStateContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.util.Pair;
 import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
@@ -57,6 +58,8 @@ import conse.nrc.org.co.consejo.Fragments.AlertDialog;
 import conse.nrc.org.co.consejo.Fragments.ContactFormFragment;
 import conse.nrc.org.co.consejo.Fragments.CourseSelectionFragment;
 import conse.nrc.org.co.consejo.Fragments.DocsBankFragment;
+import conse.nrc.org.co.consejo.Fragments.LearningAboutMyCommunity;
+import conse.nrc.org.co.consejo.Fragments.NewsFragment;
 import conse.nrc.org.co.consejo.Fragments.ProfileFragment;
 import conse.nrc.org.co.consejo.Fragments.ProgressFragment;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.VbgCourse1Start;
@@ -72,6 +75,7 @@ import conse.nrc.org.co.consejo.Utils.ServerRequest;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 import static android.Manifest.permission.CALL_PHONE;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.TEMPLATE_LIBRARY_LIST;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, MainInterface, RequestTask.OnRequestCompleted {
@@ -230,6 +234,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.bt_docs:
                 openLibrary();
                 break;
+            case R.id.bt_analize:
+                openLearningMyCommunity();
+                break;
             case R.id.bt_courses:
                 setCourseSelectionFragment();
                 break;
@@ -247,6 +254,9 @@ public class MainActivity extends AppCompatActivity
                 break;
             case R.id.bt_vbg:
                 initVbgCourse();
+                break;
+            case R.id.bt_news:
+                openNews();
                 break;
             //Managing course inner buttons
             case R.id.bt_next: case R.id.bt_previous:case R.id.bt_play:case R.id.bt_finish:case R.id.bt_return_to:
@@ -270,6 +280,18 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void openLearningMyCommunity() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new LearningAboutMyCommunity()).addToBackStack(null).commitAllowingStateLoss();
+    }
+
+    private void openNews() {
+        Log.d("MainActivity", "Is location enabled: " + isLocationEnabled() + " Is internet connected: " + isNetworkAvailable());
+        if (!isNetworkAvailable()){
+            showNetworkConnectionAlert();
+        }
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new NewsFragment()).addToBackStack(null).commitAllowingStateLoss();
     }
 
     private void openLibrary() {
@@ -524,15 +546,25 @@ public class MainActivity extends AppCompatActivity
 
         Log.d("Mailing doc", "Extension: " + doc);
 
+        String doc_name = getTemplatyLibraryDocName(doc);
+
         Intent intent = new Intent(Intent.ACTION_SEND);
         intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
         intent.setType("vnd.android.cursor.dir/email");
-        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_mail_text) + " " + doc);
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_mail_text) + " " + doc_name);
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_email_subject));
         startActivity(Intent.createChooser(intent, getString(R.string.sending_email)));
     }
 
+    private String getTemplatyLibraryDocName(String doc) {
 
+        for (Pair<String, String> register : TEMPLATE_LIBRARY_LIST){
+            if (register.second.equals(doc)){
+                return register.first;
+            }
+        }
+        return "";
+    }
 
 
     //method to write the PDFs file to sd card

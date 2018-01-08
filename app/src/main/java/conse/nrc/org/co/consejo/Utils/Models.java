@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.Log;
 
 import java.util.ArrayList;
+import java.util.FormatFlagsConversionMismatchException;
 import java.util.List;
 
 import conse.nrc.org.co.consejo.Activities.MainActivity;
@@ -500,5 +501,71 @@ public class Models {
         public float latitude;
         public float longitude;
         public String icon;
+    }
+
+    public static class NewsCategory{
+
+        public int id;
+        public String name;
+        public String abreviature;
+        public String description;
+        public String icon;
+        public List<News> news_category;
+
+        public boolean hasNews(){
+            return news_category.size()>0;
+        }
+
+        public NewsCategory NewsFilterByCityId(int city_id){
+
+            boolean has_news_in_city = false;
+            NewsCategory cat = new NewsCategory();
+            cat.news_category = new ArrayList<>();
+
+            for (News n:news_category){
+                if (n.city.id == city_id){
+                    cat.news_category.add(n);
+                    has_news_in_city = true;
+                }
+            }
+            if (has_news_in_city){
+                cat.id = this.id;
+                cat.name = this.name;
+                cat.abreviature = this.abreviature;
+                cat.description = this.description;
+                cat.icon = this.icon;
+                return cat;
+            }
+
+            return null;
+        }
+
+    }
+
+    public static class News{
+        public int id;
+        public String tittle;
+        public City city;
+        public String more_info_link;
+    }
+
+    public static class NewsOrderByCity{
+        public City city;
+        public List<NewsCategory> news = new ArrayList<>();
+    }
+
+    public static class LearningItem{
+        public String tittle;
+        public String description;
+        public String downloadTittle;
+        public String file_name;
+
+        public LearningItem(String tittle, String description, String downloadTittle, String file_name){
+            this.tittle = tittle;
+            this.description = description;
+            this.downloadTittle = downloadTittle;
+            this.file_name = file_name;
+        }
+
     }
 }

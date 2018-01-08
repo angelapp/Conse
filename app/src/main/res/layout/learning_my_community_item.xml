@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/grey_light">
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_tittle"
+        style="@style/ConseTittleTextH2"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_description"
+        style="@style/ConseParagraphText"
+        android:textStyle="normal|italic"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:background="@drawable/bottom_white_line_grey_light_background">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_download_name"
+            android:layout_weight="4"
+            android:layout_marginLeft="25dp"
+            style="@style/ConseTittleTextH2"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:textStyle="bold|italic"
+            android:layout_marginRight="25dp" />
+
+        <Button
+            android:id="@+id/bt_download"
+            android:background="@drawable/button_download_template"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="40dp"
+            android:layout_width="40dp" />
+
+        <Button
+            android:id="@+id/bt_share"
+            android:background="@drawable/button_share_template"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="40dp"
+            android:layout_width="40dp" />
+    </LinearLayout>
+</LinearLayout>
