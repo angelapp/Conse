@@ -58,6 +58,7 @@ import conse.nrc.org.co.consejo.Fragments.AlertDialog;
 import conse.nrc.org.co.consejo.Fragments.ContactFormFragment;
 import conse.nrc.org.co.consejo.Fragments.CourseSelectionFragment;
 import conse.nrc.org.co.consejo.Fragments.DocsBankFragment;
+import conse.nrc.org.co.consejo.Fragments.LEADERS_COURSE_2.LeadersCourseFragment;
 import conse.nrc.org.co.consejo.Fragments.LearningAboutMyCommunity;
 import conse.nrc.org.co.consejo.Fragments.NewsFragment;
 import conse.nrc.org.co.consejo.Fragments.ProfileFragment;
@@ -88,6 +89,7 @@ public class MainActivity extends AppCompatActivity
     public static DataBase dataBase;
 
     private static VbgCourse1Start vbgCourse1Start = new VbgCourse1Start();
+    private static LeadersCourseFragment leadersCourseFragment= new LeadersCourseFragment();
     private int actualCourse;
 
     Toolbar toolbar;
@@ -259,6 +261,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.bt_vbg:
                 initVbgCourse();
                 break;
+            case R.id.bt_leaders:
+                initLeadersCourse();
+                break;
             case R.id.bt_news:
                 openNews();
                 break;
@@ -271,6 +276,9 @@ public class MainActivity extends AppCompatActivity
                         }
                         break;
                     case LocalConstants.LEADERS_COURSE_ID:
+                        if(leadersCourseFragment != null){
+                            leadersCourseFragment.processOuterClick(v);
+                        }
                         break;
                 }
                 break;
@@ -284,6 +292,11 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void initLeadersCourse() {
+        actualCourse = LocalConstants.LEADERS_COURSE_ID;
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, leadersCourseFragment).addToBackStack(null).commitAllowingStateLoss();
     }
 
     private void openProtectionPaths() {
@@ -370,6 +383,11 @@ public class MainActivity extends AppCompatActivity
     @Override
     public void startVbgCourse() {
         initVbgCourse();
+    }
+
+    @Override
+    public void startLeadersCourse() {
+        initLeadersCourse();
     }
 
     @Override

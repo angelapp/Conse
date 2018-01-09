@@ -47,6 +47,10 @@ public class CourseSelectionFragment extends Fragment implements View.OnClickLis
         switch (v.getId()){
             case R.id.bt_vbg:
                 mainInterface.startVbgCourse();
+                break;
+            case R.id.bt_leaders:
+                mainInterface.startLeadersCourse();
+                break;
             default:
                 break;
 

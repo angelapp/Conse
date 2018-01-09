@@ -71,7 +71,7 @@
                         android:id="@+id/bt_next"
                         android:background="@drawable/button_checklist"
                         android:layout_marginLeft="20dp"
-                        android:onClick="onClick (VideoTutorial)" />
+                        android:onClick="onClick" />
 
                 </LinearLayout>
             </LinearLayout>

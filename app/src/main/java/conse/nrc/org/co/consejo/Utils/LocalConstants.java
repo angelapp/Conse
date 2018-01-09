@@ -256,6 +256,68 @@ public class LocalConstants {
 
     }};
 
+    public static final List<Integer> LEADERS_LAYOUT_LIST = new ArrayList<Integer>(){
+        {
+            add(R.layout.leaders_1);
+            add(R.layout.leaders_2);
+            add(R.layout.leaders_3);
+            add(R.layout.leaders_4);
+            add(R.layout.leaders_5);
+            add(R.layout.leaders_6);
+            add(R.layout.leaders_7);
+            add(R.layout.leaders_8);
+            add(R.layout.leaders_9);
+            add(R.layout.leaders_11);
+            add(R.layout.leaders_12);
+            add(R.layout.leaders_13);
+            add(R.layout.leaders_14);
+            add(R.layout.leaders_15);
+            add(R.layout.leaders_16);
+            add(R.layout.leaders_17);
+            add(R.layout.leaders_18);
+            add(R.layout.leaders_19);
+            add(R.layout.leaders_22);
+            add(R.layout.leaders_23);
+            add(R.layout.leaders_24);
+            add(R.layout.leaders_25);
+            add(R.layout.leaders_26);
+            add(R.layout.leaders_27);
+            add(R.layout.leaders_28);
+            add(R.layout.leaders_29);
+            add(R.layout.leaders_31);
+            add(R.layout.leaders_32);
+            add(R.layout.leaders_33);
+            add(R.layout.leaders_34);
+            add(R.layout.leaders_35);
+            add(R.layout.leaders_36);
+            add(R.layout.leaders_37);
+            add(R.layout.leaders_38);
+            add(R.layout.leaders_39);
+            add(R.layout.leaders_40);
+            add(R.layout.leaders_41);
+            add(R.layout.leaders_42);
+            add(R.layout.leaders_43);
+            add(R.layout.leaders_44);
+            add(R.layout.leaders_45);
+            add(R.layout.leaders_46);
+            add(R.layout.leaders_47);
+            add(R.layout.leaders_48);
+            add(R.layout.leaders_50);
+            add(R.layout.leaders_51);
+            add(R.layout.leaders_52);
+            add(R.layout.leaders_53);
+            add(R.layout.leaders_54);
+            add(R.layout.leaders_55);
+            add(R.layout.leaders_56);
+            add(R.layout.leaders_57);
+            add(R.layout.leaders_58);
+            add(R.layout.leaders_59);
+            add(R.layout.leaders_60);
+            add(R.layout.leaders_61);
+            add(R.layout.leaders_62);
+            add(R.layout.leaders_64);
+        }};
+
     public static final List<Integer> VBG_PROTECION_PATH_LAYOUT_LIST = new ArrayList<Integer>(){
         {
             add(R.layout.protection_path_vbg_1);

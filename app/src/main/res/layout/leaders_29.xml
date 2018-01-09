@@ -70,14 +70,12 @@
                     android:text="@string/lideres_29_03"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter"
-                    android:tag="correct_option" />
+                    style="@style/ConseCheckboxBlackLetter" />
                 <CheckBox
                     android:text="@string/lideres_29_04"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter"
-                    android:tag="correct_option" />
+                    style="@style/ConseCheckboxBlackLetter" />
                 <CheckBox
                     android:text="@string/lideres_29_05"
                     android:layout_width="match_parent"
@@ -88,13 +86,15 @@
                     android:text="@string/lideres_29_06"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter" />
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:tag="correct_option" />
 
                 <CheckBox
                     android:text="@string/lideres_29_07"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter" />
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:tag="correct_option" />
 
                 <CheckBox
                     android:text="@string/lideres_29_08"
@@ -106,7 +106,8 @@
                     android:text="@string/lideres_29_09"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter" />
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:tag="correct_option" />
 
                 <CheckBox
                     android:text="@string/lideres_29_10"
@@ -118,7 +119,8 @@
                     android:text="@string/lideres_29_11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter" />
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:tag="correct_option" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
