@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_vertical|center_horizontal"
+    android:background="@color/grey_light">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:gravity="center_vertical|center_horizontal"
+                    android:paddingBottom="@dimen/bottom_padding_for_alert">
+                        <TextView
+                            android:text="@string/lideres_01_01"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView9"
+                            style="@style/ConseTittleTextH1"
+                            android:layout_marginBottom="15dp"
+                            android:layout_marginLeft="45dp"
+                            android:layout_marginRight="45dp"
+                            android:lines="3" />
+
+                        <TextView
+                            android:text="@string/lideres_01_02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/textView10"
+                            style="@style/ConseParagraphText"
+                            android:gravity="center_horizontal" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                                <Button
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:id="@+id/bt_next"
+                                    android:background="@drawable/button_start_vbg"
+                                    android:onClick="onClick"
+                                    android:layout_alignParentBottom="true"
+                                    android:layout_centerHorizontal="true"
+                                    android:layout_marginBottom="40dp" />
+                        </RelativeLayout>
+
+                </LinearLayout>
+
+        </ScrollView>
+
+</LinearLayout>

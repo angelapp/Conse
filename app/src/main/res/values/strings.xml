@@ -838,6 +838,740 @@
         <item>DÓNDE TRABAJAMOS</item>
     </string-array>
 
+    <string-array name="vbg_protection_paths_tabs_tittles">
+        <item>RUTA VBG</item>
+        <item>VIDEO</item>
+    </string-array>
+
+    <string-array name="leaders_protection_paths_tabs_tittles">
+        <item>RUTA VBG</item>
+        <item>VIDEO</item>
+    </string-array>
+
+
+
+    <string name="lideres_01_01">Lideresas y líderes de la comunidad: tus derechos, tu cuidado, tu protección
+    </string>
+
+    <string name="lideres_01_02">Recibe la bienvenida al contenido de Protección de Líderes y Lideresas de la Comunidad, prepárate para recorrer un camino en el que conocerás tus derechos, las rutas de protección creadas por el Estado y las recomendaciones de cuidado y protección en el marco del conflicto armado en Colombia.
+
+        \n\n
+        ¡Es hora de iniciar! ¡Aprovecha al máximo este recorrido!
+    </string>
+
+    <string name="lideres_02_01">Módulo 1
+    </string>
+
+    <string name="lideres_02_02">Derechos de lideresas y líderes de la comunidad y de defensoras y defensores de los derechos humanos tipo oración
+    </string>
+
+
+    <string name="lideres_02_03">A continuación, encontrarás una serie de preguntas y respuestas sobre los derechos de las defensoras y defensores de los Derechos Humanos. Pulsa sobre cada pregunta para escuchar el audio con la respuesta.
+    </string>
+
+    <string name="lideres_02_04">¿Soy lideresa o líder en mi comunidad?
+    </string>
+
+    <string name="lideres_02_05">¿Si soy lideresa o líder de mi comunidad eso me hace defensor o defensora de los derechos humanos?
+    </string>
+
+
+    <string name="lideres_03_00">Derechos de lideresas y líderes de la comunidad
+    </string>
+    <string name="lideres_03_01">¿Cuáles son mis derechos como defensor o defensora?
+    </string>
+
+    <string name="lideres_03_02">Tienes derecho a:
+    </string>
+
+    <string name="lideres_03_03">Ejercer la defensa de los Derechos Humanos individualmente o con otras personas.
+    </string>
+    <string name="lideres_03_04">A reunirte o manifestarte pacíficamente, a conformar asociaciones y organizaciones no gubernamentales.
+    </string>
+    <string name="lideres_03_05">A conseguir, obtener, recibir y poseer información sobre tus derechos, a dirigirte sin obstáculos y comunicarte con organizaciones no gubernamentales y del gobierno.
+    </string>
+    <string name="lideres_03_06">A expresar libremente tus ideas y opiniones, esto incluye debatir, criticar y presentar propuestas sobre las acciones del Estado y de las organizaciones relacionadas con los Derechos Humanos.
+    </string>
+    <string name="lideres_03_07">A presentar denuncias contra las políticas y acciones del Estado y a que sean resueltas.
+    </string>
+
+    <string name="lideres_03_08">A una protección efectiva por tu actividad en la defensa de los Derechos Humanos.
+    </string>
+
+
+    <string name="lideres_04_01">¿Las defensoras y defensores de derechos humanos necesitamos una protección especial del Estado?
+    </string>
+
+    <string name="lideres_04_02">¿Qué es el derecho a la seguridad personal?
+    </string>
+
+    <string name="lideres_04_03">¿Es la seguridad personal un derecho protegido por la constitución?
+    </string>
+
+    <string name="lideres_04_04">¿Cuándo están en riesgo mis derechos a la vida, libertad, integridad y seguridad personal?
+    </string>
+
+
+
+    <string name="lideres_05_01"> <b>Ejemplo:</b> Una mujer lideresa, trabaja
+        defendiendo la restitución de tierras para las víctimas del conflicto,
+        debido a esto su vida ha sido amenazada por grupos armados. \n\n
+
+        Ella no está obligada a dejar su actividad,
+        pero, al seguir ejerciéndola está en riesgo
+        su vida, y <b>es víctima de una amenaza a su seguridad personal.</b>
+    </string>
+
+    <string name="lideres_05_02">¿Qué tipo de riesgo atenta contra mi vida, libertad, integridad o seguridad personal?
+    </string>
+
+    <string name="lideres_06_01"><b>Ejemplo 1: </b> Todas las personas que conducen automóviles
+        deben saber que siempre existe un riesgo de accidentalidad,
+        que puede afectar su integridad personal o la de otros.\n\n
+
+        Es un riesgo que está presente, pero es de carácter ordinario.\n\n
+
+        <b>Ejemplo 2:</b> María es representante de víctimas de su municipio,
+        debido a esto, los grupos armados al margen de la ley
+        la están amenazando enviándole panfletos con gente que no es
+        de su municipio para que deje de ejercer su actividad o atentarán contra su vida.
+    </string>
+
+    <string name="lideres_06_02">¿Sabías que?
+    </string>
+
+    <string name="lideres_06_03">
+        Una amenaza son las situaciones o hechos externos,
+        con la potencialidad de causar daño a una persona,
+        grupo o comunidad.
+    </string>
+
+    <string name="lideres_07_01">¿Cómo identificas qué es un riesgo extraordinario?
+    </string>
+
+    <string name="lideres_07_02">Escucha este ejemplo:
+    </string>
+
+    <string name="lideres_07_03">¿Qué sucede cuando quienes están en riesgo son mujeres que asumen la defensa de los Derechos Humanos?
+    </string>
+
+    <string name="lideres_08_01">¡Felicitaciones! \n
+        ¡Ha llegado el momento de realizar la primera actividad práctica!
+    </string>
+
+    <string name="lideres_09_01">Completa las frases
+    </string>
+
+    <string name="lideres_09_02">
+        Elige la palabra adecuada para completar las frases que te
+        ayudarán a identificar qué es un riesgo extraordinario.
+        Escribe las palabras en los espacios disponibles,
+        según el orden que quieras darles.
+    </string>
+
+    <string name="lideres_09_03"> acciones - concreto \nhechos - supuestos
+    </string>
+
+    <string name="lideres_09_04">1. Es
+    </string>
+
+    <string name="lideres_09_05">, fundado en
+    </string>
+
+    <string name="lideres_09_06"> o
+    </string>
+
+    <string name="lideres_09_07">particulares y manifiestos, y no en
+    </string>
+
+    <string name="lideres_09_08"> específico - persona \ngrupo
+    </string>
+
+    <string name="lideres_09_09">2. Es
+    </string>
+
+
+    <string name="lideres_09_10">y se puede determinar
+    </string>
+
+    <string name="lideres_09_10_5">a quién va dirigido, ya sea a una
+    </string>
+
+
+    <string name="lideres_09_11"> o
+    </string>
+
+    <string name="lideres_09_12"> de personas.
+    </string>
+
+
+    <string name="lideres_09_13"> amenaza - vida \nlibertad
+    </string>
+
+    <string name="lideres_09_14">3.
+    </string>
+
+    <string name="lideres_09_15">derechos, como: la
+    </string>
+
+    <string name="lideres_09_16">, la
+    </string>
+
+    <string name="lideres_09_17"> y la integridad
+    </string>
+
+    <string name="lideres_10_01">
+        No has acertado en todas las respuestas ¡Inténtalo de nuevo! \n\n
+        Recuerda: el riesgo extraordinario es específico y se puede
+        determinar a quién va dirigido, ya sea a una persona o grupo de personas.
+        Es concreto, fundado en acciones o hechos particulares y no en supuestos.
+        Amenaza derechos, como: la vida y la libertad
+    </string>
+
+    <string name="lideres_11_01">
+        ¡Felicitaciones!
+    </string>
+
+    <string name="lideres_11_02">
+        Has finalizado el primer módulo de formación,
+        ya puedes ver como tus esfuerzos están dando resultados.
+        Recibe con gusto tu primera insignia, ahora eres: Conse Conocedor.
+    </string>
+
+    <string name="lideres_12_01">
+Módulo 2
+    </string>
+
+    <string name="lideres_12_02">
+Responsabilidades de las instituciones en la prevención y protección
+    </string>
+    <string name="lideres_12_03">
+Ya conoces tus derechos como líder o lideresa, ahora, entérate de cuáles son algunas de las responsabilidades de las instituciones en temas de prevención y protección. Ten presente que la implementación de estas medidas se realiza a través de dos estrategias diferentes: una Estrategia de Prevención y otra de Estrategia de Protección.
+    </string>
+
+
+    <string name="lideres_13_01">
+¿Cuáles son las entidades con responsabilidades en las estrategias de Prevención y Protección?
+    </string>
+
+    <string name="lideres_13_02">
+Ministerio del Interior.
+    </string>
+
+    <string name="lideres_13_03">
+Unidad Nacional de Protección.
+    </string>
+
+    <string name="lideres_13_04">
+Ministerio de Defensa Nacional.
+    </string>
+
+    <string name="lideres_13_05">
+Policía Nacional.
+    </string>
+
+    <string name="lideres_13_06">
+Unidad para la Atención y Reparación Integral a las Víctimas.
+    </string>
+
+    <string name="lideres_13_07">
+Consejería Presidencial para los Derechos Humanos.
+    </string>
+
+    <string name="lideres_13_08">
+Dirección para la Acción Integral contra Minas Antipersonales.
+    </string>
+
+    <string name="lideres_13_09">
+Entidades Territoriales: Alcaldías y Gobernaciones.
+    </string>
+
+    <string name="lideres_13_10">
+Ministerio Público: Procuraduría, Defensoría del Pueblo, Personerías.
+    </string>
+
+    <string name="lideres_13_11">
+Fiscalía General de la Nación.
+    </string>
+
+    <string name="lideres_14_01">
+        Estrategia de prevención
+    </string>
+
+    <string name="lideres_14_02">
+        La estrategia de prevención busca evitar las violaciones
+        a los Derechos Humanos y las infracciones al Derecho
+        Internacional Humanitario, reducir los efectos ocasionados
+        por los riesgos y generar garantías para la no repetición
+        de los hechos.
+    </string>
+
+    <string name="lideres_14_03">
+        Para la adecuada implementación de la estrategia de prevención, las Alcaldías y Gobernaciones
+        deben integrar una <b>Mesa Territorial de Prevención</b> con
+        las siguientes responsabilidades:
+    </string>
+
+    <string name="lideres_14_04">Identificar y proyectar los posibles escenarios de riesgo en su territorio.
+    </string>
+
+    <string name="lideres_14_05">Formular planes para la prevención de estos riesgos.
+    </string>
+
+    <string name="lideres_14_06">Vigilar y hacer seguimiento a las estrategias de los planes de prevención y protección
+    </string>
+
+    <string name="lideres_14_07">Realizar un trabajo conjunto entre las autoridades y las comunidades con el fin de mejorar la estrategia de prevención.
+    </string>
+
+
+    <string name="lideres_15_01">¿Cuáles son las instancias con responsabilidades en la Estrategia de Prevención?
+    </string>
+
+    <string name="lideres_15_02">¿Cuáles son las responsabilidades de la Dirección de Derechos Humanos del Ministerio del Interior, en el marco de la estrategia de prevención?
+    </string>
+
+     <string name="lideres_16_01">¿Cuáles son las responsabilidades de la Unidad Nacional de Protección, en el marco de la estrategia de prevención?
+    </string>
+
+    <string name="lideres_16_02">Apoyar al Ministerio del Interior en la selección de los territorios en donde se harán acciones preventivas.
+    </string>
+
+    <string name="lideres_16_03">Apoyar a las Alcaldías, Gobernaciones y comunidades en la implementación de las estrategias de prevención
+    </string>
+
+    <string name="lideres_16_04">¿Cuáles son las responsabilidades del Ministerio de Defensa, en el marco de la estrategia de prevención?
+    </string>
+
+    <string name="lideres_16_05">Participar a través de las Fuerzas Militares y la Policía Nacional en la identificación de riesgo, y en la formulación y seguimiento de estrategias de prevención.
+    </string>
+
+    <string name="lideres_16_06">Hacer seguimiento a la evolución de los actores que generan amenaza en la zona y contrarrestarlos según sus funciones.
+    </string>
+
+    <string name="lideres_16_07">Generar espacios de acercamiento entre las comunidades y la Fuerza Pública.
+    </string>
+
+    <string name="lideres_17_01">¿Cuáles son las responsabilidades de los Departamentos y Municipios, en el marco de la estrategia de prevención?
+    </string>
+
+    <string name="lideres_17_02">Participar en el proceso de selección de los territorios en donde se harán acciones preventivas, identificar y analizar los riesgos de su territorio e implementar estrategias de prevención.
+    </string>
+
+    <string name="lideres_17_03">Generar espacios de acercamiento entre las comunidades y las autoridades, y espacios para la rendición de cuentas de las estrategias de prevención.
+    </string>
+
+    <string name="lideres_17_04">Los municipios que no puedan implementar estrategias de prevención deberán solicitar el apoyo del departamento.
+    </string>
+
+    <string name="lideres_18_01">¡Muy bien!\n
+        ¡Has explorado la estrategia de prevención!\n
+        Ahora pon a prueba tu mente realizando la siguiente actividad.
+    </string>
+
+    <string name="lideres_19_01">Selecciona una o varias respuestas según lo consideres necesario
+    </string>
+
+    <string name="lideres_19_02">1. ¿Qué entidades tienen responsabilidades directas en la estrategia de prevención? Revisa el siguiente listado y haz clic sobre las opciones que consideres acertadas.
+    </string>
+
+    <string name="lideres_19_03">Contaduría General de la Nación
+    </string>
+
+    <string name="lideres_19_04">Prosperidad Social
+    </string>
+
+
+    <string name="lideres_19_05">Policía Nacional
+    </string>
+
+
+    <string name="lideres_19_06">Procuraduría General de la Nación
+    </string>
+
+
+    <string name="lideres_19_07">Centro Nacional de Memoria Histórica
+    </string>
+
+
+    <string name="lideres_19_08">Alcaldías
+    </string>
+
+
+    <string name="lideres_19_09">Contraloría General de la Nación
+    </string>
+
+
+
+    <string name="lideres_19_10">Alcaldías
+    </string>
+
+
+    <string name="lideres_20_01">
+        Recuerda que entre las entidades que tienen
+        responsabilidades directas en la estrategia
+        de prevención, se encuentran: la Policía Nacional,
+        la Procuraduría General de la Nación, las Alcaldías y
+        la Defensoría del Pueblo. \n\n
+        Aunque te equivoques sigues aprendiendo ¡inténtalo de nuevo!
+
+    </string>
+
+
+    <string name="lideres_21_01">
+        ¡Muy bien, respuesta correcta! ¡Continúa el recorrido!
+    </string>
+
+
+    <string name="lideres_22_01">Estrategia de protección
+    </string>
+
+    <string name="lideres_22_02">Esta estrategia busca la adopción de medidas de protección para personas, grupos o comunidades que se encuentran en riesgo extraordinario o extremo. La coordinación de la Estrategia de Protección está a cargo de la Unidad Nacional de Protección (UNP).
+    </string>
+
+    <string name="lideres_22_03">¿Cuáles son las responsabilidades de la Dirección de Derechos Humanos del Ministerio del Interior?
+    </string>
+
+    <string name="lideres_22_04">Crear los lineamientos y hacer seguimiento a la implementación de la política pública de protección para quienes se encuentren en situación de riesgo extraordinario o extremo.
+    </string>
+
+    <string name="lideres_23_01">¿Cuáles son las Responsabilidades de la Unidad Nacional de Protección?
+    </string>
+
+    <string name="lideres_23_02">Recibir y dar trámite a las solicitudes de protección e informar a los solicitantes las decisiones y sus motivos.
+    </string>
+
+    <string name="lideres_23_03">Coordinar la implementación de medidas preventivas de protección.
+    </string>
+
+    <string name="lideres_23_04">Evaluar el riesgo en el que se encuentran los solicitantes.
+    </string>
+
+    <string name="lideres_23_05">Presentar los casos ante el Grupo de Valoración Preliminar GVP y posteriormente al Comité de Evaluación de Riesgo y Recomendación de Medidas CERREM.
+    </string>
+
+    <string name="lideres_23_06">Hacer seguimiento e implementar las medidas de protección.
+    </string>
+
+    <string name="lideres_23_07">Trasladar a la Fiscalía General de la Nación las amenazas que se reportan en las solicitudes de protección y hacer seguimiento al avance de los procesos.
+    </string>
+
+    <string name="lideres_24_01">¿Cuáles son las Responsabilidades de la Policía Nacional?
+    </string>
+
+    <string name="lideres_24_02">Elaborar y actualizar mapas de riesgo y participar en el programa de protección.
+    </string>
+
+    <string name="lideres_24_03">Implementar las medidas de prevención y protección, a través de:
+    </string>
+
+    <string name="lideres_24_04">Curso de autoprotección: a través de este curso se pretende brindar a las personas, grupos o comunidades en situación de riesgo, elementos prácticos que permitan disminuir vulnerabilidades e incrementar capacidades a fin de realizar una mejor gestión del riesgo.
+    </string>
+
+    <string name="lideres_24_05">Patrullaje: actividad dirigida a la población en general con el fin de identificar, contrarrestar y neutralizar la amenaza.
+    </string>
+
+    <string name="lideres_24_06">Revista Policial: actividad con un enfoque particular para prevenir y disuadir, encaminada a tener una comunicación periódica con el solicitante de la medida.
+    </string>
+
+    <string name="lideres_24_07">Esquemas de protección, en lo relacionado con las personas encargadas de protegerte.
+    </string>
+
+    <string name="lideres_25_01">¿Cuáles son las Responsabilidades de la Unidad para la Atención y Reparación Integral a las Víctimas?
+    </string>
+
+     <string name="lideres_25_02">Articular servicios que puedan implementarse con las personas que se encuentran en el programa de Prevención y Protección, así como brindar información de las personas que se encuentran en el Registro Único de Víctimas.
+    </string>
+
+     <string name="lideres_25_03">Aportar información para analizar los casos y peticiones de protección.
+    </string>
+
+    <string name="lideres_26_01">¿Cuáles son las Responsabilidades de la Unidad para la Gestión de Restitución de Tierras Despojadas?
+    </string>
+
+    <string name="lideres_26_02">La Unidad para la Gestión de Restitución de Tierras Despojadas, regula los procedimientos para proteger los predios de las víctimas de desplazamiento forzado que se encuentren en un proceso de restitución, las medidas tomadas por esta Unidad tienen como objeto impedir la venta, donación, cesión u otro tipo de transferencia de títulos de propiedad de estos bienes, que se hagan en contra de la voluntad de los titulares.
+    </string>
+
+    <string name="lideres_27_01">¿Cuáles son las responsabilidades de los departamentos y municipios?
+    </string>
+
+    <string name="lideres_27_02">Orientar y brindar información en relación con el programa de protección, así como desarrollar actividades en la ruta de protección de la población víctima de desplazamiento forzado.
+    </string>
+
+    <string name="lideres_27_03">Definir, con la Unidad Nacional de Protección y las autoridades, estrategias de protección para situaciones particulares de riesgo.
+    </string>
+
+    <string name="lideres_27_04">Los departamentos deberán ser el enlace entre el nivel nacional y municipal en relación con los temas de protección.
+    </string>
+
+    <string name="lideres_27_05">Los municipios que no puedan implementar medidas de protección deberán solicitar el apoyo del departamento.
+    </string>
+
+    <string name="lideres_28_01">¡Muy bien!\n
+¡Has explorado la estrategia de prevención! Ahora pon a prueba tu mente realizando la siguiente actividad.
+    </string>
+
+    <string name="lideres_29_01">Selecciona una o varias respuestas según lo consideres necesario
+    </string>
+
+    <string name="lideres_29_02">1. ¿Qué entidades tienen responsabilidades directas en la estrategia de protección? Revisa el siguiente listado y haz clic sobre las opciones que consideres acertadas.
+    </string>
+
+    <string name="lideres_29_03">Archivo General de la Nación
+    </string>
+
+    <string name="lideres_29_04">Agencia Nacional de Defensa
+    </string>
+
+    <string name="lideres_29_05">Jurídica del Estado
+    </string>
+
+    <string name="lideres_29_06">Unidad para la Gestión de Restitución de Tierras Despojadas
+    </string>
+
+    <string name="lideres_29_07">Policía Nacional
+    </string>
+
+    <string name="lideres_29_08">Centro Nacional de Memoria Histórica
+    </string>
+
+    <string name="lideres_29_09">Gobernaciones
+    </string>
+
+    <string name="lideres_29_10">Agencia Nacional del Espectro
+    </string>
+
+    <string name="lideres_29_11">Unidad para la Atención y Reparación Integral a las Víctimas
+    </string>
+
+
+    <string name="lideres_30_01">
+Recuerda que entre las entidades que tienen responsabilidades directas en la estrategia de prevención, se encuentran: la Policía Nacional, Unidad para la Gestión de Restitución de Tierras Despojadas, las Gobernaciones y la Unidad para la Atención y Reparación Integral a las Víctimas.
+\n\nAunque te equivoques sigues aprendiendo ¡inténtalo de nuevo!
+
+    </string>
+
+    <string name="lideres_31_01">¡Muy bien, encontraste las respuestas correctas! \n\n
+        ¡Felicitaciones! Ya puedes ver como tus esfuerzos están dando resultados. Sigue coleccionando insignias, ahora eres: \n
+        Conse Avanzado.
+    </string>
+
+
+    <string name="lideres_32_00">Módulo 3
+    </string>
+    <string name="lideres_32_01">Rutas estatales de protección individual para lideresas y líderes
+    </string>
+
+    <string name="lideres_32_02">Ahora que conoces tus derechos y las responsabilidades del Estado a la hora de protegerlos, entérate cómo utilizar esta información para acceder a las rutas estatales de protección.
+\n\nEn Colombia existen dos programas de protección, estos son:
+    </string>
+
+    <string name="lideres_32_03">El Programa de Prevención y Protección de los Derechos a la Vida, la Libertad, la Integridad y la Seguridad de Personas, Grupos y Comunidades del Ministerio del Interior y de la Unidad Nacional de Protección. (Programa del Ministerio del Interior y de la Unidad Nacional de Protección).
+    </string>
+
+    <string name="lideres_32_04">Y el Programa de Protección para Víctimas y Testigos de la Ley de Justicia y Paz.
+    </string>
+
+    <string name="lideres_33_01">¿Sabías que?
+    </string>
+
+    <string name="lideres_33_02">El Programa de Protección para Víctimas y Testigos de la Ley de Justicia y Paz (Ley 975 de 2005) es para aquellas personas que se encuentran en riesgo como consecuencia directa de su condición de víctima, dentro de un proceso de Justicia y Paz.
+
+\n\nSi eres parte de un proceso de Justicia y Paz y tu riesgo o amenazas son consecuencia de participar en este proceso, esta es tu ruta adecuada de protección. Para iniciar debes acercarte a la Policía Nacional, donde te remitirán a su enlace de Derechos Humanos para que te acompañe y active la ruta.
+    </string>
+
+    <string name="lideres_34_01">Recomendación:
+    </string>
+
+    <string name="lideres_34_02">Antes de iniciar una de las rutas para acceder a medidas de protección solicita tu inclusión en el Registro Único de Víctimas y denuncia la situación ante la Fiscalía General de la Nación, estos procesos no son necesarios para acceder a las medidas de protección, pero sí facilitarán la ruta, ya que contarás con un análisis previo de tu caso. Y como beneficio adicional, podrás ser destinatario de Medidas de Atención, Asistencia y Reparación Integral.
+    </string>
+    <string name="lideres_34_03">Declara ante el Ministerio Público en el marco de la Ley 1448 de 2011, acudiendo a: Procuradurías, Personerías o la Defensoría del Pueblo y solicita la inscripción en el Registro Único de Víctimas para poder ser destinatario de Medidas de Atención, Asistencia y Reparación Integral.
+
+    </string>
+    <string name="lideres_34_04">Denuncia ante la Fiscalía General de la Nación, para que inicien un proceso de investigación y sanción a los responsables. Puedes encontrar oficinas de la Fiscalía en las Unidades de Reacción Inmediata (URI), Salas de Atención al Usuario (SAU), las Casas de Justicia y los Centros de Atención Especializada.
+    </string>
+
+    <string name="lideres_34_05">También puedes presentar tu denuncia ante la Policía Judicial: CTI de la Fiscalía; SIJIN y DIJIN de la Policía.
+    </string>
+
+    <string name="lideres_35_01">Recuerda mencionar cómo fueron las amenazas o los hechos, y mencionar cómo se relacionan con tu actividad como lideresa o líder.
+
+\n\nSi debido a la amenaza te desplazaste de tu territorio debes informarlo.
+
+\n\nEl Ministerio Público enviará la declaración a la Unidad para las Víctimas la cual tiene 60 días hábiles, después de recibida la declaración, para informar si te incluyeron o no en el RUV.
+
+\n\nCon la declaración, puedes solicitar en la Alcaldía una ayuda humanitaria inmediata (no es necesario esperar la respuesta de la Unidad para las Víctimas).
+    </string>
+
+    <string name="lideres_36_01">¿Cómo se implementa la ruta del programa del Ministerio del Interior y de la Unidad Nacional de Protección?
+    </string>
+
+    <string name="lideres_36_02">Lo primero que debes saber es que existe un programa de Protección Individual y un Programa de Protección Colectiva.
+\n\nPulsa sobre la flecha del Programa de Protección Individual para conocer los pasos que debes seguir.
+    </string>
+
+    <string name="lideres_36_03">Programa de Protección \nIndividual
+    </string>
+
+    <string name="lideres_37_01">¿Cuál es la población que puede acceder a esta ruta y bajo qué condiciones?
+    </string>
+
+    <string name="lideres_37_02">Para ser parte de las medidas de protección debes encontrarte en alguna de las siguientes poblaciones:
+    </string>
+
+    <string name="lideres_37_03">Dirigentes de grupos políticos (especialmente de oposición), de grupos que suscribieron acuerdos de paz con el Gobierno Nacional.
+    </string>
+
+    <string name="lideres_37_04">Dirigentes o activistas de organizaciones de Derechos Humanos, de víctimas, sindicales, sociales, cívicas, gremiales, comunales o campesinas.
+    </string>
+
+    <string name="lideres_37_05">Miembros de grupos étnicos.
+    </string>
+
+    <string name="lideres_37_06">Miembros de la misión médica, periodistas, comunicadores sociales, docentes.
+    </string>
+
+    <string name="lideres_37_07">Testigos de violaciones a los Derechos Humanos y al Derecho Humanitario.
+    </string>
+
+    <string name="lideres_37_08">Dirigentes, líderes, representantes de población desplazada o reclamantes de tierras.
+    </string>
+
+    <string name="lideres_37_09">Servidores o ex servidores públicos con responsabilidad en Derechos Humanos.
+    </string>
+
+    <string name="lideres_37_10">Apoderados de procesos judiciales por violaciones a los Derechos Humanos y al Derecho Humanitario.
+    </string>
+
+    <string name="lideres_38_01">¿Sabías que?
+    </string>
+
+    <string name="lideres_38_02">Tú puedes decidir dónde iniciar tu ruta de protección, es decir, puedes acudir directamente ante la Unidad Nacional de Protección (UNP) o puedes acudir a una entidad territorial, como Alcaldías o Gobernaciones, las cuales podrán implementar la ruta de protección si cuentan con los mecanismos y/o recursos necesarios. Si no se encuentran en la capacidad de atenderte te remitirán a la UNP.
+\n\nA continuación te presentamos la ruta a seguir para las dos entidades:
+    </string>
+
+    <string name="lideres_45_01">
+        Llego el momento de practicar lo aprendido, realizar la siguiente actividad y... ¡Felicitaciones! \nHabrás finalizado el tercer módulo del curso.
+    </string>
+
+    <string name="lideres_46_01">Lee atentamente las siguientes situaciones y contesta sí o no a la pregunta.
+    </string>
+
+    <string name="lideres_46_02">1. Juan es un joven estudiante que le gusta hacer fiestas en su casa a altas horas de la noche y con mucho volumen, su vecino lo amenaza con hacerle daño si no deja de hacer estas actividades. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para Juan?
+    </string>
+
+    <string name="lideres_46_03">SÍ
+    </string>
+
+    <string name="lideres_46_04">NO
+    </string>
+
+     <string name="lideres_47_02">2. Camilo es nombrado representante de la mesa nacional de víctimas de desplazamiento forzado la semana pasada, desde hace cuatro meses le debe dinero a José quien le prestó para comprar un televisor, el día de hoy después de regresar de una jornada de la mesa nacional, se encuentra con José quien le dice que, si no le paga mañana, le hará daño. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para Camilo?
+    </string>
+
+    <string name="lideres_47_03">SÍ
+    </string>
+
+    <string name="lideres_47_04">NO
+    </string>
+
+    <string name="lideres_48_02">3. La señora Constanza es profesora de una escuela donde enseña Derechos Humanos y derechos de las víctimas del conflicto, un grupo armado al margen de la Ley le ordena no volver a hablar de estos temas o le hará daño. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para la señora Constanza?
+    </string>
+
+    <string name="lideres_48_03">SÍ
+    </string>
+
+    <string name="lideres_48_04">NO
+    </string>
+
+    <string name="lideres_49_01">No has acertado en todas las respuestas, pero, aunque te equivoques sigues aprendiendo \n¡Inténtalo de nuevo!
+\n\nTen en cuenta que: para hacer parte del programa debes estar dentro de la población objetivo  y el riesgo que corres debe ser consecuencia de tu actividad como líder o lideresa.
+    </string>
+
+    <string name="lideres_50_01">¡Excelente!\n
+        Te has esforzado y ahora te has ganado la insignia de Conse Experto
+        \n¡Buen trabajo!
+    </string>
+
+    <string name="lideres_51_01">Módulo 4
+    </string>
+
+    <string name="lideres_51_02">Rutas estatales de protección colectiva para lideresas y líderes
+    </string>
+
+    <string name="lideres_51_03">La Ruta de Protección Colectiva tiene muchos aspectos similares a la Ruta de Protección Individual, a continuación, algunos aspectos a tener en cuenta, en primer lugar, debes saber cuál es la población que puede acceder a esta ruta y bajo qué características.
+    </string>
+
+    <string name="lideres_52_01">Rutas estatales de protección colectiva para lideresas y líderes
+    </string>
+
+
+    <string name="lideres_52_02">La población objeto del programa de protección colectiva será:
+    </string>
+
+
+    <string name="lideres_52_03">Grupos, comunidades, organizaciones sociales o políticas de las poblaciones objeto para el Programa del Ministerio del Interior y de la Unidad Nacional de Protección, es decir:
+\n\nGrupos políticos; grupos que suscribieron acuerdos de paz con el Gobierno Nacional; organizaciones de Derechos Humanos, de víctimas, sindicales, sociales, cívicas, gremiales, comunales o campesinas; comunidades étnicas; misión médica, periodistas, comunicadores sociales, docentes; testigos y víctimas de violaciones a los Derechos Humanos y al Derecho Humanitario; población desplazada, reclamantes de tierras; servidores o ex servidores públicos con responsabilidad en Derechos Humanos; apoderados de procesos judiciales por violaciones a los Derechos Humanos y al Derecho Humanitario.
+    </string>
+
+
+    <string name="lideres_53_01">Estos grupos, comunidades u organizaciones deberán contar con un reconocimiento jurídico o social.
+\n\nPuedes activar la Ruta Colectiva de Protección, por iniciativa propia, sin embargo, es mejor si eres el representante de un colectivo o presentas la solicitud en acuerdo con tu comunidad u organización. Inicia dirigiéndote a la Unidad Nacional de Protección.
+    </string>
+
+
+    <string name="lideres_54_01"> Programa de Protección \nColectiva
+    </string>
+
+    <string name="lideres_58_01">Ahora que has terminado de revisar las rutas de protección disponibles para líderes y lideresas, observa atentamente el siguiente video que te ayudará a reforzar el conocimiento adquirido. Video Rutas de Protección.
+    </string>
+
+    <string name="lideres_60_01">Lee atentamente las siguientes situaciones y contesta sí o no a la pregunta.
+    </string>
+
+    <string name="lideres_60_02">1. María es la representante de una organización que trabaja por los derechos de mujeres víctimas de violencia, ella inició su trabajo como defensora después a una agresión que sufrió y quedo en la impunidad, recientemente su agresor ha regresado y amenaza con atentar contra ella ¿Es la Ruta de Protección Colectiva la adecuada para María?
+    </string>
+
+    <string name="lideres_60_03">SÍ
+    </string>
+
+    <string name="lideres_60_04">NO
+    </string>
+
+    <string name="lideres_61_02">2. Juan es desde hace varios años, líder de una comunidad que trabaja por la restitución de las tierras que perdieron en el marco del conflicto, debido a esto, grupos armados al margen de la ley lo han estado siguiendo y ahora amenazan con atentar contra él y los otros miembros de la comunidad que han logrado identificar. ¿Es la Ruta de Protección Colectiva la adecuada para Juan y su comunidad?
+    </string>
+
+    <string name="lideres_61_03">SÍ
+    </string>
+
+    <string name="lideres_61_04">NO
+    </string>
+
+    <string name="lideres_62_02">3. Jacobo fue víctima de desplazamiento forzado, actualmente se encuentra en un proceso de restitución de tierras y lo están amenazando por seguir en el proceso, Jacobo quiere solicitar protección colectiva, para él y su familia, ya que hace parte de la gran cantidad de personas que se encuentran en esa misma situación. ¿Es la Ruta de Protección Colectiva la adecuada para Jacobo?
+    </string>
+
+    <string name="lideres_62_03">SÍ
+    </string>
+
+    <string name="lideres_62_04">NO
+    </string>
+
+    <string name="lideres_63_01">No has acertado en todas las respuestas ¡Inténtalo de nuevo!
+        \n\nTen en cuenta que: para hacer parte del Programa de Protección Colectiva debes hacer parte de un grupo, comunidad u organización y debe existir una relación directa entre los hechos y las actividades o la pertenencia al grupo.
+    </string>
+
+
+    <string name="lideres_64_01">¡Felicitaciones!
+    </string>
+
+    <string name="lideres_64_02">¡Muy bien! ¡Sembraste esfuerzo y ahora cosechas logros! Como premio a tu constancia recibe la insignia de \nConse Estrella.
+\n\n¡Felicitaciones, has terminado todos los módulos del curso!
+
+    </string>
+
+
+
+
 
 
 

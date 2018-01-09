@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 
 import com.astuetz.PagerSlidingTabStrip;
 
@@ -52,7 +53,6 @@ public class ProtectionPathsCourseFragment extends Fragment {
         super.onAttach(context);
         mCtx = context;
         mainInterface = (MainInterface) context;
-//        homeInterface.changeTopToolbar(ConfigurationFile.BAR_WITHOUT_BUTTONS);
     }
 
     @Override
@@ -60,16 +60,29 @@ public class ProtectionPathsCourseFragment extends Fragment {
                              Bundle savedInstanceState) {
 
         View view =  inflater.inflate(R.layout.protection_paths_course_fragment, container, false);
-        protection_paths_course_view_pager = (ViewPager) view.findViewById(R.id.docs_content);
-        protection_paths_course_tabs_pager = (PagerSlidingTabStrip) view.findViewById(R.id.bank_docs_tabs_pager);
-        fragmentList = new ArrayList<Fragment>();
-        tab_tittle = new ArrayList<String>();
-        fragmentList.add(new TemplateLibrary());
-        fragmentList.add(new JurisprudenceDocs());
-        fragmentList.add(new ShieldsList());
-        for (String tab : getResources().getStringArray(R.array.bank_docs_tabs_tittles)){
-            tab_tittle.add(tab);
-            Log.d("Progress Fragment", "Added page for tab: " + tab);
+        protection_paths_course_view_pager = (ViewPager) view.findViewById(R.id.paths_content);
+        protection_paths_course_tabs_pager = (PagerSlidingTabStrip) view.findViewById(R.id.protection_path_course_tabs_pager);
+        fragmentList = new ArrayList<>();
+        tab_tittle = new ArrayList<>();
+        ProtectionPathsVBG fragment = new ProtectionPathsVBG();
+        ProtectionPathVideoFragment videoFragment = new ProtectionPathVideoFragment();
+
+        fragment.COURSE_ID = course_id;
+        videoFragment.video_id = course_id;
+
+        fragmentList.add(fragment);
+        fragmentList.add(videoFragment);
+
+        if (course_id == 1) {
+            for (String tab : getResources().getStringArray(R.array.vbg_protection_paths_tabs_tittles)) {
+                tab_tittle.add(tab);
+                Log.d("PROTECTION Fragment", "Added page for tab: " + tab);
+            }
+        } else if (course_id == 2){
+            for (String tab : getResources().getStringArray(R.array.leaders_protection_paths_tabs_tittles)) {
+                tab_tittle.add(tab);
+                Log.d("PROTECTION Fragment", "Added page for tab: " + tab);
+            }
         }
         pagerAdapterFragment = new PagerAdapterFragment(getChildFragmentManager(),fragmentList,tab_tittle);
         protection_paths_course_view_pager.setAdapter(pagerAdapterFragment);

@@ -27,6 +27,7 @@ public class DataBase extends SQLiteOpenHelper {
     //Tables Name
     private String USER_TOPIC_PROGRESS = "USER_TOPIC_PROGRESS";
     private String USER_COURSE_PAGE_VIEWS = "USER_COURSE_PAGE_VIEWS";
+    private String USER_PROTECTION_PATHS_PAGE_VIEWS = "USER_PROTECTION_PATHS_PAGE_VIEWS";
 
     //USER_TOPIC_PROGRESS Columns
     public String topic_activity = "topic_activity";
@@ -45,6 +46,9 @@ public class DataBase extends SQLiteOpenHelper {
             + course_id + " INTEGER, " + last_page_read + " INTEGER)";
 
 
+    private String queryCreateProtectionPages = "CREATE TABLE " + USER_PROTECTION_PATHS_PAGE_VIEWS + " ("
+            + course_id + " INTEGER, " + last_page_read + " INTEGER)";
+
     //Scripts Delete
     public String queryDeleteTopicActivity =
             "DELETE FROM " + USER_TOPIC_PROGRESS;
@@ -52,6 +56,8 @@ public class DataBase extends SQLiteOpenHelper {
     public String queryDeleteUserCourseReadPages =
             "DELETE FROM " + USER_COURSE_PAGE_VIEWS;
 
+    public String queryDeleteUserProtectionReadPages =
+            "DELETE FROM " + USER_PROTECTION_PATHS_PAGE_VIEWS;
 
 
     //Scripts to mark activity as sent
@@ -66,6 +72,12 @@ public class DataBase extends SQLiteOpenHelper {
                 + " WHERE " + course_id + " = " + String.valueOf(course);
     }
 
+    //Scripts to update page read for an protection path
+    private String scriptUpdateLastPageReadForProtectionPath(int course, int page) {
+        return "UPDATE " + USER_PROTECTION_PATHS_PAGE_VIEWS + " SET " + last_page_read + "= " + String.valueOf(page)
+                + " WHERE " + course_id + " = " + String.valueOf(course);
+    }
+
     //Query for get activity
     private String queryTopicActivity(int topic_activity) {
         return "SELECT * FROM " + USER_TOPIC_PROGRESS +
@@ -75,6 +87,12 @@ public class DataBase extends SQLiteOpenHelper {
     //Query for get last page for course
     private String queryLastPageForCourse(int course) {
         return "SELECT * FROM " + USER_COURSE_PAGE_VIEWS +
+                " WHERE " + this.course_id + " = " + String.valueOf(course);
+    }
+
+    //Query for get last page for course
+    private String queryLastPageForProtectionPath(int course) {
+        return "SELECT * FROM " + USER_PROTECTION_PATHS_PAGE_VIEWS +
                 " WHERE " + this.course_id + " = " + String.valueOf(course);
     }
 
@@ -100,6 +118,7 @@ public class DataBase extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
         sqLiteDatabase.execSQL(queryCreateTopicActivity);
         sqLiteDatabase.execSQL(queryCreateCoursePages);
+        sqLiteDatabase.execSQL(queryCreateProtectionPages);
 
     }
 
@@ -107,6 +126,7 @@ public class DataBase extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase sqLiteDatabase, int i, int i1) {
         sqLiteDatabase.execSQL(queryCreateTopicActivity);
         sqLiteDatabase.execSQL(queryCreateCoursePages);
+        sqLiteDatabase.execSQL(queryCreateProtectionPages);
     }
 
 
@@ -141,6 +161,22 @@ public class DataBase extends SQLiteOpenHelper {
         cursor.close();
     }
 
+    //Metodo para insertar/actualizar ùltima pàgina para cierto ruta de protecci[on
+    public void insertUpdateLastPageProtectionPath(int course, int page) {
+        Cursor cursor = this.getReadableDatabase().rawQuery(queryLastPageForCourse(course), null);
+        if (!cursor.moveToFirst()) {
+            ContentValues values = new ContentValues();
+            values.put(course_id, course);
+            values.put(last_page_read, page);
+            long id = this.getWritableDatabase().insert(USER_PROTECTION_PATHS_PAGE_VIEWS, null, values);
+            Log.d(TAG, " PAGE REGISTER: ROW: " + id + " COURSE: "
+                    + course + " PAGE: " + page);
+        } else {
+            this.getWritableDatabase().execSQL(scriptUpdateLastPageReadForCourse(course, page));
+        }
+        cursor.close();
+    }
+
     public void clearTopicActivity(){
         this.getWritableDatabase().execSQL(queryDeleteTopicActivity);
     }
@@ -149,9 +185,22 @@ public class DataBase extends SQLiteOpenHelper {
         this.getWritableDatabase().execSQL(queryDeleteUserCourseReadPages);
     }
 
+    public void clearPagesReadProtectionPaths(){
+        this.getWritableDatabase().execSQL(queryDeleteUserProtectionReadPages);
+    }
+
 
     public int getLastPageReadForCurse(int course){
         Cursor cursor = this.getReadableDatabase().rawQuery(queryLastPageForCourse(course),null);
+        if (!cursor.moveToFirst()){
+            return 0;
+        } else {
+            return cursor.getInt(1);
+        }
+    }
+
+    public int getLastPageReadForProtectionPath(int course){
+        Cursor cursor = this.getReadableDatabase().rawQuery(queryLastPageForProtectionPath(course),null);
         if (!cursor.moveToFirst()){
             return 0;
         } else {

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/fondo_ros"
+    android:gravity="center">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/globo_l31"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/diploma"
+            android:layout_marginTop="25dp" />
+
+        <TextView
+            android:text="@string/lideres_31_01"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView9"
+            style="@style/ConseParagraphText"
+            android:layout_marginTop="15dp"
+            android:textStyle="normal"
+            android:paddingRight="15dp"
+            android:textAlignment="center"
+            android:layout_marginBottom="10dp"
+            android:lines="9" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="56dp"
+            android:id="@+id/bt_next"
+            android:background="@drawable/button_finish"
+            android:onClick="onClick"
+            android:layout_marginBottom="80dp"
+            android:layout_marginTop="15dp" />
+    </LinearLayout>
+
+</LinearLayout>

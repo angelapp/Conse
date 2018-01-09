@@ -24,6 +24,8 @@ import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
+import java.util.List;
+
 import conse.nrc.org.co.consejo.Activities.MainActivity;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.ClueDialog;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.NotAcertedCrosswordDialog;
@@ -33,6 +35,9 @@ import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.DataBase;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LEADERS_PROTECION_PATH_LAYOUT_LIST;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_PROTECION_PATH_LAYOUT_LIST;
+
 /**
  * Created by apple on 11/27/17.
  */
@@ -41,33 +46,14 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
 
 
 
-    public final static int COURSE_ID = 1;
+    public int COURSE_ID;
+    List<Integer> layout_list;
     private View view;
     private Context mCtx;
     private LayoutInflater inflater;
     MainInterface mainInterface;
-
-    private YouTubePlayerView youTubePlayerView;
-    private YouTubePlayer.OnInitializedListener onInitializedListener;
-
-    MediaPlayer player1;
-    int actualPlaying;
-    Button preLastClickedButton;
-
-    GridLayout mCrossword;
-
-    LinearLayout mActualQuestionaryPage;
-
-    DisplayImageOptions optionsPreview;
-    private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
-
-    private int mAvatarGender;
-
-    private LinearLayout courseContainer;
+    private FrameLayout courseContainer;
     private int index;
-    private int crosswordActualOrientation;
-    private boolean erasing = false;
-
     DataBase dataBase;
 
     @Override
@@ -81,23 +67,17 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
                              Bundle savedInstanceState) {
         this.inflater =  inflater;
         view = inflater.inflate(R.layout.protecion_paths_course_basic_layout, container, false);
-        courseContainer = (LinearLayout) view.findViewById(R.id.course_container);
+        courseContainer = (FrameLayout) view.findViewById(R.id.course_container);
         dataBase = MainActivity.dataBase;
-        setInitialPageToShow();
-        mAvatarGender = ConseApp.getAvatarGender(mCtx);
 
-        if (LocalConstants.DEV_VERSION){
-            ((Button)view.findViewById(R.id.bt_reset)).setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    dataBase.clearPagesRead();
-                    dataBase.clearTopicActivity();
-                    setInitialPageToShow();
-                }
-            });
-        } else{
-            ((Button)view.findViewById(R.id.bt_reset)).setVisibility(View.GONE);
+        if (COURSE_ID == 1){
+            layout_list = VBG_PROTECION_PATH_LAYOUT_LIST;
+        } else if(COURSE_ID ==2){
+            layout_list = LEADERS_PROTECION_PATH_LAYOUT_LIST;
         }
+
+        setInitialPageToShow();
+
         return view;
     }
 
@@ -109,35 +89,35 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
 
     private void setInitialPageToShow() {
         try{
-            index = dataBase.getLastPageReadForCurse(COURSE_ID);
-            if (index > LocalConstants.VBG_LAYOUT_LIST.size()) {
-                index = LocalConstants.VBG_LAYOUT_LIST.size();
+            index = dataBase.getLastPageReadForProtectionPath(COURSE_ID);
+            if (index > layout_list.size()) {
+                index = layout_list.size();
             }
         } catch (Exception ea){
             index = 0;
             updateReadPage();
             ea.printStackTrace();
         }
-        Log.d("VBG Mod 1", "Page to show: " + index);
+        Log.d("Protection Path", "Page to show: " + index);
         inflateLayout();
     }
 
     private void updateReadPage(){
-        if (index <= LocalConstants.VBG_LAYOUT_LIST.size()){
-            dataBase.insertUpdateLastPage(COURSE_ID, index);
+        if (index <= layout_list.size()){
+            dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, index);
         } else if(index < 0){
-            dataBase.insertUpdateLastPage(COURSE_ID, 0);
+            dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, 0);
         } else{
-            dataBase.insertUpdateLastPage(COURSE_ID, LocalConstants.VBG_LAYOUT_LIST.size());
+            dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, layout_list.size());
         }
     }
 
     public void setNextPage(){
             index++;
-        if (index < LocalConstants.VBG_LAYOUT_LIST.size()){
+        if (index < layout_list.size()){
             inflateLayout();
             updateReadPage();
-        } else if(index >= LocalConstants.VBG_LAYOUT_LIST.size()) {
+        } else if(index >= layout_list.size()) {
             finishCourse();
         }
     }
@@ -150,7 +130,7 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
     }
 
     private void return_to_layout(int tag) {
-        if (tag < LocalConstants.VBG_LAYOUT_LIST.size() && tag >= 0){
+        if (tag < layout_list.size() && tag >= 0){
             index = tag;
             inflateLayout();
         }
@@ -162,20 +142,23 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
 
     private void inflateLayout() {
         courseContainer.removeAllViews();
-        final View view = inflater.inflate(LocalConstants.VBG_LAYOUT_LIST.get(index), null, false);
-//        view.setOnClickListener(this);
+        final View view = inflater.inflate(layout_list.get(index), null, false);
         courseContainer.addView(view);
-        if(player1 != null) {
-            try {
-                player1.stop();
-            } catch (Exception ea) {
-                ea.printStackTrace();
-            }
-        }
         prepareFragmentForView(view);
     }
 
     private void prepareFragmentForView(View view) {
+
+        try{
+            ((Button)view.findViewById(R.id.bt_previous)).setOnClickListener(this);
+        } catch (Exception ea){
+            ea.printStackTrace();
+        }
+        try{
+            ((Button)view.findViewById(R.id.bt_next)).setOnClickListener(this);
+        } catch (Exception ea){
+            ea.printStackTrace();
+        }
 
     }
 
@@ -193,7 +176,7 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
 
     @Override
     public void onClick(View v) {
-        Log.d("VBG MOD", "Click listened: id:" + v.getId());
+        Log.d("Protection Path", "Click listened: id:" + v.getId());
         switch (v.getId()){
             case R.id.bt_previous:
                 setPreviousPage();

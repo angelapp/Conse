@@ -1,0 +1,467 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"/>
+
+            <TextView
+                android:text="@string/lideres_03_00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                style="@style/ConseTittleTextH2"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"/>
+
+
+            <TextView
+                android:text="@string/lideres_09_01"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView25"
+                style="@style/ConseTittleTextH1"
+                android:layout_marginTop="25dp" />
+
+            <TextView
+                android:text="@string/lideres_09_02"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView26"
+                style="@style/ConseParagraphText"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:layout_marginBottom="25dp" />
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hoja1_l9"
+                android:paddingTop="35dp">
+
+                <TextView
+                    android:text="@string/lideres_09_03"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView23"
+                    style="@style/ConseTittleTextH1"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:background="@drawable/opciones_l9" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/lideres_09_04"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="90dp" />
+
+                    <TextView
+                        android:text="@string/lideres_09_05"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp">
+
+                    <EditText
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_height="30dp"
+                        android:layout_width="100dp" />
+
+                    <TextView
+                        android:text="@string/lideres_09_06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                    <EditText
+                        android:layout_height="30dp"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="130dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/lideres_09_07"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginBottom="25dp">
+
+                    <EditText
+                        android:layout_height="30dp"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="130dp"
+                        android:layout_marginLeft="0dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hoja1_l9"
+                android:paddingTop="35dp"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:text="@string/lideres_09_08"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView23"
+                    style="@style/ConseTittleTextH1"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:background="@drawable/opciones_l9" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/lideres_09_09"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="70dp" />
+
+                    <TextView
+                        android:text="@string/lideres_09_10"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/lideres_09_10_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp">
+
+                    <EditText
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_height="30dp"
+                        android:layout_width="100dp" />
+
+                    <TextView
+                        android:text="@string/lideres_09_06"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                    <EditText
+                        android:layout_height="30dp"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="130dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginBottom="25dp">
+
+                    <TextView
+                        android:text="@string/lideres_09_12"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/hoja1_l9"
+                android:paddingTop="35dp"
+                android:layout_marginTop="25dp">
+
+                <TextView
+                    android:text="@string/lideres_09_13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView23"
+                    style="@style/ConseTittleTextH1"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginTop="15dp"
+                    android:gravity="center"
+                    android:background="@drawable/opciones_l9" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/lideres_09_14"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                    <EditText
+                        android:layout_height="wrap_content"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="90dp" />
+
+                    <TextView
+                        android:text="@string/lideres_09_15"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="25dp">
+
+                    <EditText
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_height="30dp"
+                        android:layout_width="100dp" />
+
+                    <TextView
+                        android:text="@string/lideres_09_16"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                    <EditText
+                        android:layout_height="30dp"
+                        android:inputType="textPersonName"
+                        android:ems="10"
+                        android:id="@+id/editText2"
+                        style="@style/ConseExitText"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_width="130dp" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:text="@string/lideres_09_17"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView19"
+                        style="@style/ConseParagraphText"
+                        android:layout_marginLeft="25dp"
+                        android:layout_marginRight="5dp"
+                        android:layout_marginTop="5dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/square_padding_top"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/bt_previous"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
+
+
+                <Button
+                    android:id="@+id/bt_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button_ready"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay" />
+
+            <TextView
+                android:id="@+id/textView1"
+                style="@style/ConseTittleTextH2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"
+                android:text="@string/lideres_32_01" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay" />
+
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/ruta_l42"
+                    android:id="@+id/imageView13"
+                    android:scaleType="centerCrop"
+                    android:scrollY="100dp" />
+
+                <LinearLayout
+                    android:orientation="vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_horizontal">
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/globo_l43_1"
+                        android:id="@+id/imageView17"
+                        android:layout_marginTop="25dp" />
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/globo_l43_2"
+                        android:layout_marginTop="20dp"
+                        android:gravity="right">
+
+                        <Button
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:id="@+id/bt_play"
+                            android:background="@drawable/play"
+                            android:layout_alignParentRight="true"
+                            android:onClick="onClick"
+                            android:tag="nunca_olvides_que"
+                            android:gravity="top|right"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="15dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="horizontal"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/globo_l43_3"
+                        android:layout_marginTop="20dp"
+                        android:gravity="right">
+
+                        <Button
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:id="@+id/bt_play"
+                            android:background="@drawable/play"
+                            android:layout_alignParentRight="true"
+                            android:onClick="onClick"
+                            android:tag="nunca_olvides_que"
+                            android:gravity="top|right"
+                            android:layout_gravity="right|center_vertical"
+                            android:layout_marginRight="15dp" />
+
+                    </LinearLayout>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:srcCompat="@drawable/globo_l43_4"
+                        android:id="@+id/imageView17"
+                        android:layout_marginTop="25dp" />
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-170dp"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <Button
+                    android:id="@+id/bt_previous"
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
+
+
+                <Button
+                    android:id="@+id/bt_next"
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:layout_marginLeft="20dp"
+                    android:background="@drawable/button_next"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>

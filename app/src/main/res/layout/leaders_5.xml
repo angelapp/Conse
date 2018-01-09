@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:tag="@string/need_avatar">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:paddingLeft="@dimen/fab_margin"
+            android:paddingRight="@dimen/fab_margin"
+            android:gravity="center_horizontal"
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"/>
+
+            <TextView
+                android:text="@string/lideres_03_00"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1"
+                style="@style/ConseTittleTextH2"
+                android:layout_marginBottom="15dp"
+                android:layout_marginTop="15dp"/>
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/black_overlay"/>
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:text="@string/lideres_05_01"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/textView5"
+                    style="@style/ConseParagraphText"
+                    android:paddingLeft="@dimen/fab_margin"
+                    android:paddingRight="@dimen/fab_margin"
+                    android:paddingTop="55dp"
+                    android:paddingBottom="@dimen/fab_margin"
+                    android:layout_marginTop="35dp"
+                    android:background="@drawable/cuadro_banda" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="15dp">
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/white"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:text="@string/lideres_05_02"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            style="@style/ConseTittleTextH2"
+                            android:layout_marginBottom="30dp"
+                            android:layout_marginTop="30dp"
+                            android:textColor="@color/salmon"
+                            android:layout_marginRight="65dp" />
+                        <Button
+                            android:layout_width="56dp"
+                            android:layout_height="56dp"
+                            android:id="@+id/bt_play"
+                            android:background="@drawable/play"
+                            android:layout_centerVertical="true"
+                            android:layout_alignParentRight="true"
+                            android:onClick="onClick"
+                            android:tag="violencia_psicologica" />
+
+                    </RelativeLayout>
+
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="1dp"
+                        android:background="@color/white"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="15dp">
+
+                <Button
+                    android:layout_width="56dp"
+                    android:layout_height="56dp"
+                    android:id="@+id/bt_previous"
+                    android:background="@drawable/button_back"
+                    android:onClick="onClick" />
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="56dp"
+                    android:id="@+id/bt_next"
+                    android:background="@drawable/button_next"
+                    android:layout_marginLeft="20dp"
+                    android:onClick="onClick" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

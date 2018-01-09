@@ -256,6 +256,24 @@ public class LocalConstants {
 
     }};
 
+    public static final List<Integer> VBG_PROTECION_PATH_LAYOUT_LIST = new ArrayList<Integer>(){
+        {
+            add(R.layout.protection_path_vbg_1);
+            add(R.layout.protection_path_vbg_2);
+            add(R.layout.protection_path_vbg_3);
+            add(R.layout.protection_path_vbg_4);
+            add(R.layout.protection_path_vbg_5);
+            add(R.layout.protection_path_vbg_6);
+        }};
+
+    public static final List<Integer> LEADERS_PROTECION_PATH_LAYOUT_LIST = new ArrayList<Integer>(){
+        {
+            add(R.layout.vbg_course_1_58);
+            add(R.layout.vbg_course_1_59);
+            add(R.layout.vbg_course_1_60);
+            add(R.layout.vbg_course_1_61);
+        }};
+
 
     public static final List<Pair> TEMPLATE_LIBRARY_LIST = new ArrayList<Pair>(){{
 

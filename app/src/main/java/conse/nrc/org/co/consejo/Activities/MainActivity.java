@@ -62,6 +62,7 @@ import conse.nrc.org.co.consejo.Fragments.LearningAboutMyCommunity;
 import conse.nrc.org.co.consejo.Fragments.NewsFragment;
 import conse.nrc.org.co.consejo.Fragments.ProfileFragment;
 import conse.nrc.org.co.consejo.Fragments.ProgressFragment;
+import conse.nrc.org.co.consejo.Fragments.ProtectionPathsFragment;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.VbgCourse1Start;
 import conse.nrc.org.co.consejo.Fragments.aboutNrcFragment;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
@@ -234,6 +235,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.bt_docs:
                 openLibrary();
                 break;
+            case R.id.bt_protection_guides:
+                openProtectionPaths();
+                break;
             case R.id.bt_analize:
                 openLearningMyCommunity();
                 break;
@@ -280,6 +284,10 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void openProtectionPaths() {
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new ProtectionPathsFragment()).addToBackStack(null).commitAllowingStateLoss();
     }
 
     private void openLearningMyCommunity() {

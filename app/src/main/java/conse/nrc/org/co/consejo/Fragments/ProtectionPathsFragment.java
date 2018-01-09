@@ -63,7 +63,7 @@ public class ProtectionPathsFragment extends Fragment {
             }
         });
 
-        ((Button) view.findViewById(R.id.bt_left)).setOnClickListener(new View.OnClickListener() {
+        ((Button) view.findViewById(R.id.bt_right)).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 goToLeadersPaths();
@@ -75,9 +75,15 @@ public class ProtectionPathsFragment extends Fragment {
 
     private void goToLeadersPaths() {
 
+
     }
 
     private void goToVbgPaths() {
+
+        flContent.removeAllViews();
+        ProtectionPathsCourseFragment pathsCourseFragment = new ProtectionPathsCourseFragment();
+        pathsCourseFragment.course_id = 1;
+        getFragmentManager().beginTransaction().replace(R.id.ly_paths_content, pathsCourseFragment).addToBackStack(null).commitAllowingStateLoss();
 
     }
 
