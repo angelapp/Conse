@@ -249,6 +249,9 @@ public class MainActivity extends AppCompatActivity
             case R.id.bt_contact:
                 setContactForm();
                 break;
+            case R.id.bt_videotut:
+                openVideoTutorial();
+                break;
             case R.id.bt_edit_profile:
                 openEditProfileFragment();
                 break;
@@ -292,6 +295,12 @@ public class MainActivity extends AppCompatActivity
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
+    }
+
+    private void openVideoTutorial() {
+        Intent tuto = new Intent(this, VideoTutorial.class);
+        startActivity(tuto);
+
     }
 
     private void initLeadersCourse() {

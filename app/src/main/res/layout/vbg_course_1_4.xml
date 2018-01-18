@@ -14,7 +14,8 @@
             android:orientation="vertical"
             android:paddingLeft="@dimen/fab_margin"
             android:paddingRight="@dimen/fab_margin"
-            android:paddingBottom="@dimen/bottom_padding_for_alert">
+            android:paddingBottom="@dimen/bottom_padding_for_alert"
+            android:paddingTop="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"

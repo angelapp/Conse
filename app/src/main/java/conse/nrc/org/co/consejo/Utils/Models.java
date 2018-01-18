@@ -555,15 +555,15 @@ public class Models {
     }
 
     public static class LearningItem{
-        public String tittle;
+        //public String tittle;
         public String description;
-        public String downloadTittle;
+        //public String downloadTittle;
         public String file_name;
 
-        public LearningItem(String tittle, String description, String downloadTittle, String file_name){
-            this.tittle = tittle;
+        public LearningItem(String description, String file_name){
+            //this.tittle = tittle;
             this.description = description;
-            this.downloadTittle = downloadTittle;
+            //this.downloadTittle = downloadTittle;
             this.file_name = file_name;
         }
 

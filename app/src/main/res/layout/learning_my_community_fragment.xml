@@ -3,7 +3,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:paddingTop="@dimen/padding_top_for_courses">
 
     <LinearLayout
         android:orientation="horizontal"
@@ -13,8 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="left|center_horizontal"
         android:layout_marginLeft="25dp"
-        android:layout_marginBottom="20dp"
-        android:layout_marginTop="40dp">
+        android:layout_marginBottom="20dp">
 
         <ImageView
             android:layout_width="wrap_content"

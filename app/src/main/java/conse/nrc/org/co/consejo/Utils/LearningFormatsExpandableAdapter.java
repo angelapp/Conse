@@ -52,9 +52,9 @@ public class LearningFormatsExpandableAdapter extends BaseExpandableListAdapter 
                     .getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             convertView = layoutInflater.inflate(R.layout.learning_my_community_item, null);
         }
-        ((TextView)convertView.findViewById(R.id.tv_tittle)).setText(expandedListText.tittle);
+        //((TextView)convertView.findViewById(R.id.tv_tittle)).setText(expandedListText.tittle);
         ((TextView)convertView.findViewById(R.id.tv_description)).setText(expandedListText.description);
-        ((TextView)convertView.findViewById(R.id.tv_download_name)).setText(expandedListText.downloadTittle);
+        ((TextView)convertView.findViewById(R.id.tv_download_name)).setText(context.getString(R.string.about_community_download));
 
         ((Button)convertView.findViewById(R.id.bt_download)).setOnClickListener(new View.OnClickListener() {
             @Override

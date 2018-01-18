@@ -25,6 +25,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import conse.nrc.org.co.consejo.Activities.MainActivity;
+import conse.nrc.org.co.consejo.Fragments.AcertedCrosswordDialog;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.ClueDialog;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.NotAcertedCrosswordDialog;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
@@ -207,23 +208,16 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
                     } catch (Exception ea) {
                         ea.printStackTrace();
                     }
-
-                    break;
-                case LocalConstants.MOD_1_CW1_SCREEN:
-                    setCrossWordMod1();
                     break;
                 case LocalConstants.HAS_QUESTIONARY:
                     mActualQuestionaryPage = (LinearLayout)view.findViewWithTag(LocalConstants.QUESTIONARY_CONTAINER);
-                    Log.d("VBg Mod", "Find questionary container" + mActualQuestionaryPage.getTag().toString());
-                    break;
-                case LocalConstants.NEED_YOUTUBE_VIDEO_TAG:
-                    setYoutubeVideo(view);
+                    Log.d("Leaders Mod", "Find questionary container " + mActualQuestionaryPage.getTag().toString());
                     break;
                 default:
                     break;
             }
         } else {
-            Log.d("VBg Mod", "The view tag is: null");
+            Log.d("Leaders Mod", "The view tag is: null");
         }
 
     }
@@ -256,104 +250,6 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
 //        });
     }
 
-    private void setCrossWordMod1() {
-        mCrossword = (GridLayout) courseContainer.findViewById(R.id.gl_crossword);
-        for (int i = 0; i < mCrossword.getChildCount(); i++){
-            Log.d("VBg Mod", "Index is: " + i);
-            final EditText et = (EditText)mCrossword.getChildAt(i);
-            if (et.getTag() != null) {
-                if (((String) et.getTag()).equals(getString(R.string.clue))) {
-                    et.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            final ClueDialog cluedialog = new ClueDialog();
-                            cluedialog.setClueNumber(Integer.valueOf(et.getText().toString()) - 1);
-                            cluedialog.show(getActivity().getFragmentManager(), "");
-                        }
-                    });
-                }
-            }
-
-            if (et.isFocusable()){
-                Log.d("VBg Mod", "Index is: " + i + " The tag is: " + et.getTag().toString());
-
-                et.setOnTouchListener(new View.OnTouchListener() {
-                    @Override
-                    public boolean onTouch(View v, MotionEvent event) {
-                        if (et.getNextFocusDownId() != View.NO_ID){
-                            crosswordActualOrientation = LocalConstants.crowd_vertical;
-                        } else {
-                            crosswordActualOrientation = LocalConstants.crowd_horizontal;
-                        }
-                        return false;
-                    }
-                });
-
-
-                et.addTextChangedListener(new TextWatcher() {
-                    @Override
-                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-                    }
-
-                    @Override
-                    public void onTextChanged(CharSequence s, int start, int before, int count) {
-                        Log.d("Crosword", "On TextChanged");
-                        if (s.length() == 0){
-                            erasing = true;
-                        } else {
-                            erasing = false;
-                        }
-                    }
-
-                    @Override
-                    public void afterTextChanged(Editable s) {
-                        if (!erasing) {
-                            switch (crosswordActualOrientation) {
-                                case LocalConstants.crowd_horizontal:
-                                    if (et.getNextFocusRightId() != View.NO_ID) {
-                                        mCrossword.findViewById(et.getNextFocusRightId()).requestFocus();
-                                        if (((EditText)mCrossword.findViewById(et.getNextFocusRightId())).getText().length()>0) {
-                                            ((EditText) mCrossword.findViewById(et.getNextFocusRightId())).setSelection(0, 1);
-                                        }
-                                    }
-                                    break;
-                                case LocalConstants.crowd_vertical:
-                                    if (et.getNextFocusDownId() != View.NO_ID) {
-                                        mCrossword.findViewById(et.getNextFocusDownId()).requestFocus();
-                                        if (((EditText)mCrossword.findViewById(et.getNextFocusDownId())).getText().length()>0) {
-                                            ((EditText) mCrossword.findViewById(et.getNextFocusDownId())).setSelection(0, 1);
-                                        }
-                                    }
-                                    break;
-                                default:
-                                    break;
-                            }
-                        }
-//                        if (et.getNextFocusDownId() != View.NO_ID) {
-//                            mCrossword.findViewById(et.getNextFocusDownId()).requestFocus();
-//                        } else if(et.getNextFocusRightId() != View.NO_ID) {
-//                                mCrossword.findViewById(et.getNextFocusRightId()).requestFocus();
-//                        }
-                    }
-                });
-            }
-
-//            final ClueDialog cluedialog = new ClueDialog();
-//
-//            if(et.getHint() != null && et.getHint().toString().length()>0){
-//                et.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        cluedialog.setClueNumber(Integer.valueOf(et.getHint().toString())-1);
-//                        cluedialog.show(getActivity().getFragmentManager(),"");
-//                    }
-//                });
-//
-//            }
-        }
-    }
-
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
@@ -367,7 +263,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
 
     @Override
     public void onClick(View v) {
-        Log.d("VBG MOD", "Click listened: id:" + v.getId());
+        Log.d("Leaders MOD", "Click listened: id:" + v.getId());
         switch (v.getId()){
             case R.id.bt_previous:
                 setPreviousPage();
@@ -408,137 +304,136 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
     private void processButtonTag(View v) {
 
         switch ((String)v.getTag()){
-            case LocalConstants.MOD_1_R:
-                markActivityAsComplete(1);
+            case LocalConstants.L_MOD_1_R:
+                markActivityAsComplete(12);
                 break;
-            case LocalConstants.MOD_1_CW1_VALIDATION:
-                validateCrossword();
+            case LocalConstants.L_MOD_2_R:
+                markActivityAsComplete(14);
                 break;
-            case LocalConstants.MOD_2_R:
-                markActivityAsComplete(3);
+            case LocalConstants.L_MOD_3_R:
+                markActivityAsComplete(17);
                 break;
-            case LocalConstants.MOD_2_Q1_VALIDATION:
-                validateQuestionary(4,getString(R.string.mod_2_q1_not_acerted_message) );
+            case LocalConstants.L_MOD_4_R:
+                markActivityAsComplete(21);
                 break;
-            case LocalConstants.MOD_3_R:
-                markActivityAsComplete(5);
+            case LocalConstants.L_MOD_1_COMPLETE_VALIDATION:
+                validateComplete(13);
                 break;
-            case LocalConstants.MOD_3_Q1:
-                validateQuestionary(6, getString(R.string.course_1_35_bad));
+            case LocalConstants.L_MOD_2_Q1:
+                validateQuestionary(15, getString(R.string.lideres_20_01), getString(R.string.lideres_21_01));
                 break;
-            case LocalConstants.MOD_3_Q2:
-                validateQuestionary(7, getString(R.string.course_1_38_bad));
+            case LocalConstants.L_MOD_2_Q2:
+                validateQuestionary(16, getString(R.string.lideres_30_01), null);
                 break;
-            case LocalConstants.MOD_3_Q3:
-                validateQuestionary(8, getString(R.string.course_1_41_bad));
+            case LocalConstants.L_MOD_3_Q1:
+                validateQuestionary(18, getString(R.string.lideres_49_01), null);
                 break;
-            case LocalConstants.MOD_3_Q4:
-                validateQuestionary(9,getString(R.string.course_1_44_bad));
+            case LocalConstants.L_MOD_3_Q2:
+                validateQuestionary(19, getString(R.string.lideres_49_01), null);
                 break;
-            case LocalConstants.MOD_4_R:
-                markActivityAsComplete(10);
+            case LocalConstants.L_MOD_3_Q3:
+                validateQuestionary(20, getString(R.string.lideres_49_01), null);
                 break;
-            case LocalConstants.MOD_4_Q1:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[0]);
+            case LocalConstants.L_MOD_4_Q1:
+                validateQuestionary(23, getString(R.string.lideres_63_01), null);
                 break;
-            case LocalConstants.MOD_4_Q2:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[1]);
+            case LocalConstants.L_MOD_4_VIDEO:
+                markActivityAsComplete(22);
                 break;
-            case LocalConstants.MOD_4_Q3:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[2]);
+            case LocalConstants.L_MOD_4_Q2:
+                validateQuestionary(24, getString(R.string.lideres_63_01), null);
                 break;
-            case LocalConstants.MOD_4_Q4:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[3]);
-                break;
-            case LocalConstants.MOD_4_Q5:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[4]);
-                break;
-            case LocalConstants.MOD_4_Q6:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[5]);
-                break;
-            case LocalConstants.MOD_4_Q7:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[6]);
-                break;
-            case LocalConstants.MOD_4_Q8:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[7]);
+            case LocalConstants.L_MOD_4_Q3:
+                validateQuestionary(25, getString(R.string.lideres_63_01), null);
                 break;
             default:
+                //setNextPage(); //This has to die
                 break;
         }
     }
 
-    private void validateQuestionary(int activity, String errorString) {
-        Log.d("VBG","In validate questionary: " + (mActualQuestionaryPage != null)
-                + " " + (mActualQuestionaryPage == (LinearLayout) view.findViewWithTag(LocalConstants.HAS_QUESTIONARY)));
-        if (mActualQuestionaryPage != null ){
-            Log.d("VBG","actual questionary not null");
-            boolean isCorrect = true;
+    private void validateComplete(int activityId) {
+        boolean error = false;
+        for (String tag : LocalConstants.getLeadersCourseStringValidation(mCtx)){
+            EditText editText = (EditText)view.findViewWithTag(tag);
+            if (!editText.getText().toString().toLowerCase().equals(tag)){
+                editText.setError(getString(R.string.error));
+                error = true;
+            }
+        }
+        if (!error || LocalConstants.DEV_VERSION){
+//        if (!error){
+            markActivityAsComplete(activityId);
+            setNextPage();
+        } else {
+            setErrorDialog(getString(R.string.lideres_10_01));
+        }
+    }
 
+    private void setErrorDialog(String msg){
+        final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
+        notAcerted.mMesaggeText = msg;
+        notAcerted.show(getActivity().getFragmentManager(),"");
+    }
+
+    private void setAccertedDialog(String msg){
+        final AcertedCrosswordDialog accerted = new AcertedCrosswordDialog();
+        accerted.mMesaggeText = msg;
+        accerted.leadersCourseFragment = this;
+        accerted.show(getActivity().getFragmentManager(),"");
+    }
+
+
+
+    private boolean validateQuestionary(int activity, String errorString, String accertedString) {
+        Log.d("Leaders","In validate questionary: " + (mActualQuestionaryPage != null)
+                + " " + (mActualQuestionaryPage == (LinearLayout) view.findViewWithTag(LocalConstants.HAS_QUESTIONARY)));
+
+        boolean isCorrect = true;
+
+        if (mActualQuestionaryPage != null ){
+            Log.d("Leaders","actual questionary not null");
             for (int i = 0 ; i < mActualQuestionaryPage.getChildCount(); i++){
                 View v = mActualQuestionaryPage.getChildAt(i);
                 if (v instanceof CheckBox) {
                     if (v.getTag() != null) {
                         if (v instanceof CheckBox) {
-                            Log.d("VBG", "Is instance of checkbox");
+                            Log.d("Leaders", "Is instance of checkbox");
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((CheckBox) v).isChecked())) {
                                 isCorrect = false;
                                 break;
                             }
                         } else if (v instanceof RadioButton) {
-                            Log.d("VBG", "Is instance of radiobutton");
+                            Log.d("Leaders", "Is instance of radiobutton");
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((RadioButton) v).isChecked())) {
                                 isCorrect = false;
                                 break;
                             }
                         } else {
-                            Log.d("VBG", "Is instance of nothing");
+                            Log.d("Leaders", "Is instance of nothing");
                         }
                     } else if (((CheckBox) v).isChecked()) {
                         isCorrect = false;
                         break;
                     }
                 }
-
-
             }
-            if(true){
-            //if (isCorrect || LocalConstants.DEV_VERSION){
-            //if (isCorrect){
-                setNextPage();
+//            if(true){
+//            if (isCorrect || LocalConstants.DEV_VERSION){
+            if (isCorrect){
+                if (accertedString != null){
+                    setAccertedDialog(accertedString);
+                } else {
+                    setNextPage();
+                }
                 markActivityAsComplete(activity);
             } else {
-                final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
-                notAcerted.mMesaggeText = errorString;
-                notAcerted.show(getActivity().getFragmentManager(),"");
+                setErrorDialog(errorString);
             }
         }
+        return isCorrect;
     }
 
-    private void validateCrossword() {
-        boolean error = false;
-
-        for (int i = 0; i< mCrossword.getColumnCount()*mCrossword.getRowCount(); i++){
-            try {
-                EditText et = (EditText)mCrossword.getChildAt(i);
-                String tag = (String)et.getTag();
-                if (tag !=null && !tag.equals(et.getText().toString().toLowerCase())){
-                    error = true;
-                    continue;
-                }
-            } catch (Exception ea){
-                ea.printStackTrace();
-            }
-        }
-
-        if (error && !LocalConstants.DEV_VERSION){
-            final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
-            notAcerted.show(getActivity().getFragmentManager(),"");
-        } else {
-            setNextPage();
-            mainInterface.saveActivityCompleted(2);
-        }
-
-    }
 
     public void playSound(final View button) {
 

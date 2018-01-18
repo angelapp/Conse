@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/bottom_padding_for_alert">
+            android:paddingBottom="@dimen/bottom_padding_for_alert"
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -66,7 +67,6 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/rectangulo_51"
                     android:layout_marginLeft="15dp"
                     android:layout_marginRight="15dp"
                     android:gravity="top"

@@ -37,6 +37,7 @@
     <string name="add_contacts_tittle">Configura el botón de alerta</string>
     <string name="add_contact_message">Ingrese de 1 a 3 contactos</string>
     <string name="contact_no_has_number">El contacto no tiene número telefónico</string>
+    <string name="error">Respuesta incorrecta</string>
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -972,6 +973,31 @@
     <string name="lideres_09_03"> acciones - concreto \nhechos - supuestos
     </string>
 
+    <string-array name="leaders_validation_chain">
+        <item>concreto</item>
+        <item>acciones</item>
+        <item>hechos</item>
+        <item>supuestos</item>
+        <item>específico</item>
+        <item>persona</item>
+        <item>grupo</item>
+        <item>amenaza</item>
+        <item>vida</item>
+        <item>libertad</item>
+    </string-array>
+
+    <string name="lideres_09_03_01">concreto
+    </string>
+
+    <string name="lideres_09_03_02">acciones
+    </string>
+
+    <string name="lideres_09_03_03">hechos
+    </string>
+
+    <string name="lideres_09_03_04">supuestos
+    </string>
+
     <string name="lideres_09_04">1. Es
     </string>
 
@@ -985,6 +1011,15 @@
     </string>
 
     <string name="lideres_09_08"> específico - persona \ngrupo
+    </string>
+
+    <string name="lideres_09_08_01">específico
+    </string>
+
+    <string name="lideres_09_08_02">persona
+    </string>
+
+    <string name="lideres_09_08_03">grupo
     </string>
 
     <string name="lideres_09_09">2. Es
@@ -1006,6 +1041,15 @@
 
 
     <string name="lideres_09_13"> amenaza - vida \nlibertad
+    </string>
+
+    <string name="lideres_09_13_01">amenaza
+    </string>
+
+    <string name="lideres_09_13_02">vida
+    </string>
+
+    <string name="lideres_09_13_03">libertad
     </string>
 
     <string name="lideres_09_14">3.
@@ -1203,7 +1247,7 @@ Fiscalía General de la Nación.
 
 
 
-    <string name="lideres_19_10">Alcaldías
+    <string name="lideres_19_10">Defensoría del Pueblo
     </string>
 
 
@@ -1320,10 +1364,7 @@ Fiscalía General de la Nación.
     <string name="lideres_29_03">Archivo General de la Nación
     </string>
 
-    <string name="lideres_29_04">Agencia Nacional de Defensa
-    </string>
-
-    <string name="lideres_29_05">Jurídica del Estado
+    <string name="lideres_29_04">Agencia Nacional de Defensa Jurídica del Estado
     </string>
 
     <string name="lideres_29_06">Unidad para la Gestión de Restitución de Tierras Despojadas
@@ -1570,10 +1611,77 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     </string>
 
 
+    <string name="about_community_download">Descarga o comparte la auditoría
+    </string>
 
+<string name="about_my_community_001"><b>¿Te has detenido a analizar los riesgos que corren las niñas y mujeres de tu comunidad?</b> \n\n
+    A continuación, te brindamos una herramienta para analizar los riesgos de violencia basada en género para mujeres y niñas en tu comunidad. \n
+Esta herramienta está basada en la observación. \n
+Si tu comunidad es muy insegura, no deberías completar este cuestionario caminando. En ese caso, se recomienda observar y retener información mentalmente, para posteriormente completar el formato en un lugar seguro.\n\n
 
+A través de esta herramienta puedes obtener información acerca de tu comunidad en los siguientes aspectos: características generales, acceso a servicios básicos, salud, alimentación, seguridad, presencia institucional.
+\n\n
+Una vez completes la herramienta, podrás utilizarla para trabajar con tu comunidad, así como con autoridades, organizaciones humanitarias, agencias de Naciones Unidas, ONGs en acciones de prevención y mitigación de riesgos.
+\n\n
+Así mismo, podrá serte útil para hacer incidencia ante los funcionarios públicos y gestionar recursos, proyectos y programas especiales que permitan disminuir los riesgos de protección que enfrentan mujeres y niñas.
+\n\n
+Pasos a seguir:\n\n
+1) Descarga e imprime la herramienta\n
+2) Observa y responde las preguntas\n
+3) ¡Ahora tienes un mejor panorama sobre los riesgos en tu comunidad!
+    </string>
 
+<string name="about_my_community_002"><b>¿Has analizado los riesgos de protección que corren líderes y lideresas en tu comunidad? </b> \n\n
+    A continuación, te brindamos una herramienta para analizar los riesgos de protección que enfrentan líderes y lideresas en tu comunidad.
 
+    \nEsta herramienta está basada en la observación.
+\nSi tu comunidad es muy insegura, no deberías completar este cuestionario caminando. En ese caso, se recomienda observar y retener información mentalmente, para posteriormente completar el formato en un lugar seguro.
+\n\n
+A través de esta herramienta puedes obtener información acerca de tu comunidad en los siguientes aspectos: características generales, acceso a servicios básicos, salud, alimentación, seguridad, presencia institucional.
+\n\n
+Una vez completes la herramienta, podrás utilizarla para trabajar con tu comunidad, así como con autoridades, organizaciones humanitarias, agencias de Naciones Unidas, ONGs en acciones de prevención y mitigación de riesgos.
+\n\n
+Así mismo, podrá serte útil para hacer incidencia ante los funcionarios públicos y gestionar recursos, medidas de protección individuales y colectivas, proyectos y programas especiales que permitan disminuir los riesgos de protección que enfrentan líderes y lideresas.
+\n\n
+Pasos a seguir:\n
+1) Descarga e imprime la herramienta\n
+2) Observa y responde las preguntas\n
+3) ¡Ahora tienes un mejor panorama sobre los riesgos de protección en tu comunidad!
+    </string>
+
+    <string-array name="about_my_community">
+        <item><b>¿Te has detenido a analizar los riesgos que corren las niñas y mujeres de tu comunidad?</b> \n\n
+    A continuación, te brindamos una herramienta para analizar los riesgos de violencia basada en género para mujeres y niñas en tu comunidad. \n
+Esta herramienta está basada en la observación. \n
+Si tu comunidad es muy insegura, no deberías completar este cuestionario caminando. En ese caso, se recomienda observar y retener información mentalmente, para posteriormente completar el formato en un lugar seguro.\n\n
+
+A través de esta herramienta puedes obtener información acerca de tu comunidad en los siguientes aspectos: características generales, acceso a servicios básicos, salud, alimentación, seguridad, presencia institucional.
+\n\n
+Una vez completes la herramienta, podrás utilizarla para trabajar con tu comunidad, así como con autoridades, organizaciones humanitarias, agencias de Naciones Unidas, ONGs en acciones de prevención y mitigación de riesgos.
+\n\n
+Así mismo, podrá serte útil para hacer incidencia ante los funcionarios públicos y gestionar recursos, proyectos y programas especiales que permitan disminuir los riesgos de protección que enfrentan mujeres y niñas.
+\n\n
+Pasos a seguir:\n\n
+1) Descarga e imprime la herramienta\n
+2) Observa y responde las preguntas\n
+3) ¡Ahora tienes un mejor panorama sobre los riesgos en tu comunidad!</item>
+        <item><b>¿Has analizado los riesgos de protección que corren líderes y lideresas en tu comunidad? </b> \n\n
+    A continuación, te brindamos una herramienta para analizar los riesgos de protección que enfrentan líderes y lideresas en tu comunidad.
+
+    \nEsta herramienta está basada en la observación.
+\nSi tu comunidad es muy insegura, no deberías completar este cuestionario caminando. En ese caso, se recomienda observar y retener información mentalmente, para posteriormente completar el formato en un lugar seguro.
+\n\n
+A través de esta herramienta puedes obtener información acerca de tu comunidad en los siguientes aspectos: características generales, acceso a servicios básicos, salud, alimentación, seguridad, presencia institucional.
+\n\n
+Una vez completes la herramienta, podrás utilizarla para trabajar con tu comunidad, así como con autoridades, organizaciones humanitarias, agencias de Naciones Unidas, ONGs en acciones de prevención y mitigación de riesgos.
+\n\n
+Así mismo, podrá serte útil para hacer incidencia ante los funcionarios públicos y gestionar recursos, medidas de protección individuales y colectivas, proyectos y programas especiales que permitan disminuir los riesgos de protección que enfrentan líderes y lideresas.
+\n\n
+Pasos a seguir:\n
+1) Descarga e imprime la herramienta\n
+2) Observa y responde las preguntas\n
+3) ¡Ahora tienes un mejor panorama sobre los riesgos de protección en tu comunidad!</item>
+    </string-array>
 
 
 </resources>

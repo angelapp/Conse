@@ -13,6 +13,7 @@ import com.google.android.youtube.player.YouTubePlayerView;
 
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickListener, YouTubePlayer.PlayerStateChangeListener  {
 
@@ -61,7 +62,7 @@ public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickLi
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.bt_go_to_register:
-                goToRegister();
+                goToNextactivity();
                 break;
             default:
                 break;
@@ -72,6 +73,15 @@ public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickLi
         Intent register = new Intent(this, Register.class);
         startActivity(register);
     }
+
+    private void goToNextactivity(){
+        if(UtilsFunctions.getSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN)){
+            super.onBackPressed();
+        } else {
+            goToRegister();
+        }
+    }
+
 
     @Override
     public void onLoading() {

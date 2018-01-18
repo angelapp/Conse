@@ -1,5 +1,7 @@
 package conse.nrc.org.co.consejo.Utils;
 
+import android.content.Context;
+import android.content.res.Resources;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.util.Pair;
 
@@ -122,6 +124,46 @@ public class LocalConstants {
     public static final String MOD_4_Q8 = "MOD_4_Q8";
 
 
+    //Tags for leaders course activities
+    public static final String L_MOD_1_R = "L_MOD_1_R";
+    public static final String L_MOD_1_COMPLETE_VALIDATION = "L_MOD_1_COMPLETE_VALIDATION";
+    public static final String L_MOD_2_R = "L_MOD_2_R";
+    public static final String L_MOD_2_Q1 = "L_MOD_2_Q1";
+    public static final String L_MOD_2_Q2 = "L_MOD_2_Q2";
+    public static final String L_MOD_3_R= "L_MOD_3_R";
+    public static final String L_MOD_3_Q1 = "L_MOD_3_Q1";
+    public static final String L_MOD_3_Q2 = "L_MOD_3_Q2";
+    public static final String L_MOD_3_Q3 = "L_MOD_3_Q3";
+    public static final String L_MOD_4_R= "L_MOD_4_R";
+    public static final String L_MOD_4_VIDEO = "L_MOD_4_VIDEO";
+    public static final String L_MOD_4_Q1 = "L_MOD_4_Q1";
+    public static final String L_MOD_4_Q2 = "L_MOD_4_Q2";
+    public static final String L_MOD_4_Q3 = "L_MOD_4_Q3";
+    public static final String L_MOD_4_CUESTIONARY = "L_MOD_4_CUESTIONARY";
+
+    public static List<String> getLeadersCourseStringValidation(Context ctx){
+        List<String> list = new ArrayList<>();
+        for(int indice=0; indice< ctx.getResources().getStringArray(R.array.leaders_validation_chain).length; indice++){
+            list.add(ctx.getResources().getStringArray(R.array.leaders_validation_chain)[indice]);
+        }
+        return list;
+    }
+
+//    public static final List<String> LEADERS_COURSE_STRING_VALIDATION = new ArrayList<String>(){{
+//        add(get(R.string.lideres_09_03_01));
+//        add(get(R.string.lideres_09_03_02));
+//        add(get(R.string.lideres_09_03_03));
+//        add(get(R.string.lideres_09_03_04));
+//        add(get(R.string.lideres_09_08_01));
+//        add(get(R.string.lideres_09_08_02));
+//        add(get(R.string.lideres_09_08_03));
+//        add(get(R.string.lideres_09_13_01));
+//        add(get(R.string.lideres_09_13_02));
+//        add(get(R.string.lideres_09_13_03));
+//    }};
+
+
+
     public static final int VBG_COURSE_ID = 1;
     public static final int LEADERS_COURSE_ID = 2;
 
@@ -182,18 +224,6 @@ public class LocalConstants {
         put("medidas_reparacion_integral", 18);
         put("para_solicitar_la_inscripcion", 19);
         put("ten_presente_que_si_una_entidad", 20);
-
-
-
-
-
-//        put("",);
-//        put("",);
-//        put("",);
-//        put("",);
-//        put("",);
-//        put("",);
-//        put("",);
 
     }};
 
@@ -337,6 +367,7 @@ public class LocalConstants {
         }};
 
 
+
     public static final List<Pair> TEMPLATE_LIBRARY_LIST = new ArrayList<Pair>(){{
 
         add(new Pair("Acción de tutela", "accion_de_tutela.docx"));
@@ -348,20 +379,19 @@ public class LocalConstants {
     }};
 
 
-    public static final List<Models.LearningItem> LEARNING_MY_COMMUNITY_LIST = new ArrayList<Models.LearningItem>(){{
-
-        add(new Models.LearningItem("Objetivo: Reducir los riesgos de violencia en líderes y lideresas comunitarias",
-                "Nota: Esta herramienta está basada en la observación. Puede ser o no relevante en determinados conextos." +
-                        "En áreas de inseguridad, no debe completar este cuestionario caminando por la comunidad; se recomienda" +
-                        "observar y retener la información mentalmente, para posteriormente completar el formato en un lugar seguro",
-                "Descargue o comparta la auditoría",
-                "accion_de_tutela.docx"));
-        add(new Models.LearningItem("Objetivo: Reducir los riesgos de violencia en líderes y lideresas comunitarias",
-                "Nota: Esta herramienta está basada en la observación. Puede ser o no relevante en determinados conextos." +
-                        "En áreas de inseguridad, no debe completar este cuestionario caminando por la comunidad; se recomienda" +
-                        "observar y retener la información mentalmente, para posteriormente completar el formato en un lugar seguro",
-                "Descargue o comparta la auditoría",
-                "derecho_de_peticion_alcaldias_y_gobernaciones.docx"));
+    public static final List<String> LEARNING_MY_COMMUNITY_LIST = new ArrayList<String>(){{
+        add("auditoria_vbg.pdf");
+        add("auditoria_lideres.pdf");
     }};
+
+    public static List<Models.LearningItem> getLearningMyCommunityList(Context ctx){
+
+        List<Models.LearningItem> list = new ArrayList<>();
+        for (int endice =0; endice< LEARNING_MY_COMMUNITY_LIST.size();endice++){
+            list.add(new Models.LearningItem(ctx.getResources().getStringArray(R.array.about_my_community)[endice], LEARNING_MY_COMMUNITY_LIST.get(endice)));
+        }
+
+        return list;
+    }
 
 }

@@ -29,7 +29,7 @@ public class LearningCommunityDocsList {
         for (int i = 0; i< LearningCategories.size(); i++){
             final int a = i;
             expandableListDetail.put(LearningCategories.get(i),new ArrayList<Models.LearningItem>(){{
-               add(LocalConstants.LEARNING_MY_COMMUNITY_LIST.get(a));
+               add(LocalConstants.getLearningMyCommunityList(mCtx).get(a));
             }});
         }
         return expandableListDetail;

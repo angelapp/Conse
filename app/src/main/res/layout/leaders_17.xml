@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/bottom_padding_for_alert">
+            android:paddingBottom="@dimen/bottom_padding_for_alert"
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -40,7 +41,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/hoja_papel_l17"
-                android:paddingTop="35dp">
+                android:paddingTop="35dp"
+                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginRight="@dimen/fab_margin">
 
                 <TextView
                     android:text="@string/lideres_17_01"

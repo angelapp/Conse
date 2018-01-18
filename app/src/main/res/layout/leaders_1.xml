@@ -16,7 +16,8 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center_vertical|center_horizontal"
-                    android:paddingBottom="@dimen/bottom_padding_for_alert">
+                    android:paddingBottom="@dimen/bottom_padding_for_alert"
+                    android:paddingTop="@dimen/padding_top_for_courses">
                         <TextView
                             android:text="@string/lideres_01_01"
                             android:layout_width="match_parent"

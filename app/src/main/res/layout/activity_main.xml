@@ -28,7 +28,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/ly_home_content"
-                    android:layout_marginTop="55dp"
                     android:background="@color/grey_light"
                     android:paddingBottom="0dp">
 
@@ -54,8 +53,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="0dp"
                 android:layout_marginTop="15dp"
-                android:translationZ="12dp"
-                android:background="@color/grey_light"
                 android:gravity="center_vertical"
                 android:foregroundGravity="center_vertical">
 
@@ -167,6 +164,14 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/bt_about_nrc"
                 android:background="@drawable/button_menu_about_nrc"
+                android:layout_marginBottom="@dimen/menu_item_bottom_margin"
+                android:onClick="onClick"/>
+
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_videotut"
+                android:background="@drawable/videotut"
                 android:layout_marginBottom="@dimen/menu_item_bottom_margin"
                 android:onClick="onClick"/>
 

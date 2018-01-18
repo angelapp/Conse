@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/bottom_padding_for_alert">
+            android:paddingBottom="@dimen/bottom_padding_for_alert"
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -138,7 +139,7 @@
                         android:background="@drawable/button_ready"
                         android:layout_marginLeft="20dp"
                         android:onClick="onClick"
-                        android:tag="MOD_3_Q1" />
+                        android:tag="L_MOD_2_Q1" />
 
                 </LinearLayout>
 

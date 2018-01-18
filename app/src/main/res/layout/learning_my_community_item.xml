@@ -11,7 +11,8 @@
         android:id="@+id/tv_tittle"
         style="@style/ConseTittleTextH2"
         android:layout_marginLeft="25dp"
-        android:layout_marginRight="25dp" />
+        android:layout_marginRight="25dp"
+        android:visibility="gone" />
 
     <TextView
         android:text="TextView"

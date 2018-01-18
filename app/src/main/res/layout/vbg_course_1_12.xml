@@ -14,7 +14,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/bottom_padding_for_alert">
+            android:paddingBottom="@dimen/bottom_padding_for_alert"
+            android:paddingTop="@dimen/bottom_padding_for_alert">
 
             <View
                 android:layout_width="match_parent"
@@ -84,7 +85,7 @@
                         android:layout_marginTop="30dp"
                         android:textColor="@color/salmon"
                         android:paddingRight="@dimen/square_padding_top"
-                        />
+                        android:layout_marginRight="55dp" />
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"

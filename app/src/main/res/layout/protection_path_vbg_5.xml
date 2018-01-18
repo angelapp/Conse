@@ -24,10 +24,10 @@
 
                 <ImageView
                     android:layout_width="match_parent"
-                    app:srcCompat="@drawable/banco_rutavbg03"
+                    app:srcCompat="@drawable/protection_path_vbg_05"
                     android:id="@+id/imageView13"
-                    android:scaleType="fitXY"
-                    android:layout_height="400dp" />
+                    android:scaleType="center"
+                    android:layout_height="wrap_content" />
             </RelativeLayout>
 
 

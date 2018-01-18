@@ -100,6 +100,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
         setInitialPageToShow();
         mAvatarGender = ConseApp.getAvatarGender(mCtx);
 
+//        if(false){
         if (LocalConstants.DEV_VERSION){
             ((Button)view.findViewById(R.id.bt_reset)).setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -516,7 +517,8 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
             try {
                 EditText et = (EditText)mCrossword.getChildAt(i);
                 String tag = (String)et.getTag();
-                if (tag !=null && !tag.equals(et.getText().toString().toLowerCase())){
+                if (tag !=null && tag.length() == 1 && !tag.equals(et.getText().toString().toLowerCase())){
+                    Log.d("Crossword error", "Tag: " + tag + " Word: " + et.getText().toString().toLowerCase());
                     error = true;
                     continue;
                 }
@@ -526,6 +528,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
         }
 
         if (error && !LocalConstants.DEV_VERSION){
+//        if(error){
             final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
             notAcerted.show(getActivity().getFragmentManager(),"");
         } else {

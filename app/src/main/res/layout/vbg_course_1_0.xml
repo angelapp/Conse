@@ -16,7 +16,8 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical"
                     android:gravity="center_vertical|center_horizontal"
-                    android:paddingBottom="@dimen/bottom_padding_for_alert">
+                    android:paddingBottom="@dimen/bottom_padding_for_alert"
+                    android:paddingTop="@dimen/padding_top_for_courses">
                         <TextView
                             android:text="@string/vbg_course_start_tittle"
                             android:layout_width="match_parent"
