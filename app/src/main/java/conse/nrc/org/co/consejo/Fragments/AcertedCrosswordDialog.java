@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import conse.nrc.org.co.consejo.Activities.MainActivity;
 import conse.nrc.org.co.consejo.Fragments.LEADERS_COURSE_2.LeadersCourseFragment;
+import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.VbgCourse1Start;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 
@@ -24,7 +25,8 @@ public class AcertedCrosswordDialog extends android.app.DialogFragment {
 
 
     public static String mMesaggeText;
-    public static Fragment leadersCourseFragment;
+    public static LeadersCourseFragment leadersCourseFragment;
+    public static VbgCourse1Start vbgCourse1Start;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -37,7 +39,11 @@ public class AcertedCrosswordDialog extends android.app.DialogFragment {
         btBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ((LeadersCourseFragment)leadersCourseFragment).setNextPage();
+                if (leadersCourseFragment != null) {
+                    leadersCourseFragment.setNextPage();
+                } else if(vbgCourse1Start != null){
+                    vbgCourse1Start.setNextPage();
+                }
                 dismiss();
             }
         });

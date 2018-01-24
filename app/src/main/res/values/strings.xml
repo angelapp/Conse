@@ -2,10 +2,6 @@
     <string name="app_name">Conse</string>
 
     <string name="gmaps_sms">http://maps.google.com/?q=%1$s,%2$s</string>
-    <string name="title_activity_welcome">Welcome</string>
-    <string name="dummy_button">Dummy Button</string>
-    <string name="dummy_content">DUMMY\nCONTENT</string>
-    <string name="start_video">Ver video</string>
     <string name="register_tittle">Completa tu perfil:</string>
     <string name="name_et_hint">Tus nombres</string>
     <string name="name_et_last_name">Tus apellidos</string>
@@ -20,7 +16,6 @@
     <string name="password">Contraseña</string>
     <string name="email_et_hint">Correo electrónico</string>
     <string name="ethnic_group_tittle_h2">Grupo étnico</string>
-    <string name="geographic_location_tittle_h2">Localizacion geográfica</string>
     <string name="condition_tittle_h2">Condición</string>
     <string name="origin_town_tittle_h2">Municipio</string>
     <string name="user_profile_tittle_h2">Perfil del usuario</string>
@@ -29,18 +24,18 @@
     <string name="accept_terms_conditions_checkbox3">del NRC</string>
     <string name="getting_app_conf">Obteniendo configuración de aplicación</string>
     <string name="select_hint">Selecciona</string>
-    <string name="must_fill_field">Debe diligenciar este campo</string>
-    <string name="must_select_option">Debe seleccionar una opción</string>
+    <string name="must_fill_field">Debes diligenciar este campo</string>
+    <string name="must_select_option">Debes seleccionar una opción</string>
     <string name="you_must_accept_t_c">Debes aceptar términos y condiciones</string>
-    <string name="must_complete_information">Debe completar información</string>
+    <string name="must_complete_information">Debes completar información</string>
     <string name="registering_user">Registrando usuario...</string>
     <string name="add_contacts_tittle">Configura el botón de alerta</string>
-    <string name="add_contact_message">Ingrese de 1 a 3 contactos</string>
+    <string name="add_contact_message">Ingresa de 1 a 3 contactos</string>
     <string name="contact_no_has_number">El contacto no tiene número telefónico</string>
     <string name="error">Respuesta incorrecta</string>
+    <string name="correct_answer">¡Muy bien, \nrespuesta correcta!</string>
 
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="send_alert_tittle">Haz una prueba de funcionamiento</string>
     <string name="send_alert_indications">MANTÉN PULSADO EL BOTÓN PARA ENVIAR</string>
     <string name="send_alert_touch_message_example"> Ahora eres mi contacto de emergencia. Esta es una prueba. Estoy ubicado en </string>
@@ -52,10 +47,6 @@
     <string name="let_start_tittle">¡Iniciemos!</string>
     <string name="title_activity_main">MainActivity</string>
 
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-
-    <string name="action_settings">Settings</string>
     <string name="home_tittle">Selecciona un curso para comenzar</string>
     <string name="missing_avatar_selection">Falta seleccionar una parte del ávatar</string>
     <string name="confirm_password_et">Confirmar contraseña</string>
@@ -69,29 +60,21 @@
     <string name="number_4">4</string>
     <string name="number_5">5</string>
     <string name="number_6">6</string>
-    <string name="number_7">7</string>
-    <string name="number_8">8</string>
-    <string name="number_9">9</string>
-    <string name="number_10">10</string>
-    <string name="number_11">11</string>
 
-    <string name="course_1_1_a">¿Qué son las Violencias Basadas en Género</string>
-    <string name="course_1_1_b">Son aquellas \r\nformas de violencia que \r\n se ejercen contra una persona por su condición de género o sexo, y que responden a relaciones \r\ndesiguales de poder entre \r\nhombres y mujeres</string>
+    <string name="course_1_1_a">¿Qué son las Violencias Basadas en Género?</string>
     <string name="course_1_1_c">Guia divulgadora de ONU Mujeres</string>
-    <string name="course_1_1_d">La VBG puede ser ejercida conra personas que no se adecuan a lo esperado por la sociedad según su sexo, como es el caso de personas con orientación sexual diversa (gays, lebianas, y bisexuales) o con identidad de género diversa (transexuales), pero se ejerce principalmente contra mujeres, niñas y adolecentes, de alli que cuando se hable de violencia de g´nero, se asocie mayormente con violencia contra las mujeres</string>
+    <string name="course_1_1_d">La VBG puede ser ejercida contra personas que no se adecuan a lo esperado por la sociedad según su sexo, como es el caso de personas con orientación sexual diversa (gays, lebianas, y bisexuales) o con identidad de género diversa (transexuales), pero se ejerce principalmente contra mujeres, niñas y adolecentes, de alli que cuando se hable de violencia de género, se asocie mayormente con violencia contra las mujeres.</string>
     <string name="course_1_1_e">¡Ahora sí, estás lista para iniciar!</string>
     <string name="course_1_2_a">¿Cómo saber si soy víctima de violencia?</string>
-    <string name="course_1_2_b">El prmer paso para identificar si eres vícitma de violencia es tener claro ¿qué se entiende por violencia contra las mujeres?</string>
+    <string name="course_1_2_b">El prmer paso para identificar si eres víctma de violencia es tener claro ¿qué se entiende por violencia contra las mujeres?</string>
     <string name="course_1_2_c">La ley define la violencia contra las mujeres como:</string>
-    <string name="course_1_2_d">"Cualquier acción u omisión, que le cause muerte, daño o sufrimiento fisico, sexual, psicologico, economico o patrimonial por su condición de mujer, así como las amenazas de tales actos, la coacción o la privación arbitraria de la libertad, bien sea que se presente en el ámbito público o privado"</string>
-    <string name="course_1_2_e">(Ley 1257/08, art.2).</string>
+    <string name="course_1_2_d">"Cualquier acción u omisión, que le cause muerte, daño o sufrimiento fisico, sexual, psicologico, económico o patrimonial por su condición de mujer, así como las amenazas de tales actos, la coacción o la privación arbitraria de la libertad, bien sea que se presente en el ámbito público o privado"</string>
     <string name="course_1_2_f">Módulo 1</string>
-    <string name="course_1_3_a">¿Cómo saber si soy victima de violencia?</string>
+    <string name="course_1_3_a">¿Cómo saber si soy víctima de violencia?</string>
     <string name="course_1_3_b">Según la ley, la violencia contra las mujeres presenta las siguientes caracteristicas</string>
     <string name="course_1_3_1_c">Te ocurre por ser mujer. Esto significa que ser mujer es lo que te pone en riesgo</string>
     <string name="course_1_3_2_c">Te puede ocurrir a ti o a cualquier mujer, no hay excepciones.</string>
     <string name="course_1_3_3_c">Es un delito y por lo tanto merece un castigo o pena.</string>
-    <string name="course_1_3_4_c">Puede ocasionarte un daño, sufrimiento o muerte. También incluye las amenazas de cometer esos hechos.</string>
     <string name="course_1_3_5_c">Se puede presetar en cualquier tipo de espacio público o privado dónde desarolles tus actividades.</string>
     <string name="course_1_4_a">Conoce cada uno de los ámbitos donde se presenta la violencia.</string>
     <string name="course_1_4_b">Pulsa sobre el triángulo dentro del circulo para escuchar la descripción de cada uno de los ámbitos</string>
@@ -99,9 +82,9 @@
     <string name="course_1_4_2_a">En la comunidad</string>
     <string name="course_1_4_3_a">En el ámbito estatal</string>
     <string name="course_1_4_4_a">En el conflicto armado</string>
-    <string name="course_1_5_a">Si crees ser victima de violencia en el marco del conflicto armado hay varios factores adicionales que debes tener en cuenta, revisa la siguiente infografia con información sobre el tema:</string>
+    <string name="course_1_5_a">Si crees ser víctima de violencia en el marco del conflicto armado hay varios factores adicionales que debes tener en cuenta, revisa la siguiente infografía con información sobre el tema:</string>
     <string name="course_1_5_b">La corte constitucional reconoció que las mujeres, por su condición de mujeres, en el conflicto armado enfrentan riesgos diferentes a los que viven los hombres. Estos son:</string>
-    <string name="course_1_5_c">Esclavización o explotación para realizar lores considerados como femeninos y labores de la casa como cocinar, lavar o cuidar enfermos.</string>
+    <string name="course_1_5_c">Esclavización o explotación para realizar roles considerados como femeninos y labores de la casa como cocinar, lavar o cuidar enfermos.</string>
     <string name="course_1_5_d">Reclutamiento forzado de tus hijos e hijas por grupos armado ilegales</string>
     <string name="course_1_5_e">Señalamientos o venganzas por tu relación o contacto con integrantes de algún grupo armado.</string>
     <string name="course_1_5_f">Riesgos por tu labor de liderazgo o pertenencia a una organización comunitaria, social o politica</string>
@@ -112,11 +95,11 @@
     <string name="course_1_5_k">Explotación minera ilegal</string>
     <string name="course_1_5_l">Identidad y orientación de género diversa.</string>
     <string name="course_1_6_a">Otro aspecto a tener en cuentra es que, aunque no existe un listado de hechos que se consideren violentos contra las mujeres, la ley describe que las siguientes modalidades mediante las cuales se puede manifestar violencia en cualquiera de los espacios mensionados anteriormente</string>
-    <string name="course_1_6_b">Los siguientes son los tipos de violencia a los que estan expuestas las mujeres; conocerlos te puede ayudar a identificar si eres victima. Pulsa sobre el triangulo dentro del circulo para escuchar el audio con su descripción</string>
+    <string name="course_1_6_b">Los siguientes son los tipos de violencia a los que están expuestas las mujeres; conocerlos te puede ayudar a identificar si eres víctima. Pulsa sobre el triángulo dentro del circulo para escuchar el audio con su descripción</string>
     <string name="course_1_7_a">Violencia física</string>
     <string name="course_1_7_b">Violencia sexual</string>
     <string name="course_1_7_c">Violencia psicológica</string>
-    <string name="course_1_7_d">Violencia economica o patrimonial</string>
+    <string name="course_1_7_d">Violencia económica o patrimonial</string>
     <string name="course_1_7_e">Por último, pero no menos importante, adopta los siguientes consejos como leyes inquebrantables para tu vida diaria</string>
     <string name="course_1_8_a">Nunca olvides que...</string>
     <string name="course_1_9_a">¡Buenísimo! Has finalizado tu primer módulo de formación, responde al siguiente crucigrama y recibiras tu primer reconocimiento.</string>
@@ -126,7 +109,7 @@
     <string name="course_1_12_b">¡Es un honor concederte el titulo de Consejera Conocedora!</string>
     <string name="course_1_13_a">¿Qué derechos tengo?</string>
     <string name="course_1_13_b">Ahora que sabes qué es la víolencia de género, donde se puede presentar y por parte de quien, es hora de que sepas cómo puedes protegerte. Si te reconoces como una mujer víctima de cualquier tipo de ciolencia, incluidas las cometidas en el conflicto armado, y decides acudir a una entidad de tu minicipio en busca de ayuda, primero ten presente cuáles son tus derechos según la ley:</string>
-    <string name="course_1_13_c">Como mujer victima de violencia, tienes derecho a:</string>
+    <string name="course_1_13_c">Como mujer víctima de violencia, tienes derecho a:</string>
     <string name="course_1_13_d">Módulo 2</string>
     <string name="course_1_13_e">¡Muy bien! ¡Has explorado todo el contenido! Realiza la siguiente prueba y consigue el titulo de Consejera Experta</string>
     <string name="course_1_16_c">Revisa el siguiente listado y y haz clic sobre las tres opciones que consideres acertadas.</string>
@@ -138,65 +121,14 @@
     <string name="course_1_16_j">A que la comunidad se entere de lo ocurrido para que puedan identificarte a ti y a tu familia como víctimas</string>
 
 
-    <string name="clue_1">psicologica</string>
-    <string name="clue_2">fisica</string>
-    <string name="clue_3">sexual</string>
-    <string name="clue_4">economica</string>
-    <string name="clue_5">familia</string>
-    <string name="clue_6">armado</string>
     <string name="cancel">Cancelar</string>
     <string name="send_alert_message">Estoy en PELIGRO, necesito ayuda URGENTE</string>
 
-    <string name="course_1_14_a">Organizaciones de mujeres y redes comunitarias</string>
-    <string name="course_1_14_b">Despachos de oficinas municipales que intervienen en la atención a las muejeres, como: Personerías, Policia judicial, Defensores de familia (funcionarios o funcionarias del instituto colobiano de bienestar familiar, ICBF), Comisarios de familia, Fiscales o jueces</string>
-    <string name="course_1_14_c">Entidades de la gobernación o alcaldia, como: secretarias o consejerias de la mujer u oficinas de género</string>
-    <string name="course_1_14_d">Llama a la línea de orientación a las mujeres vñictimas de violencia número 155 desde tu teléfono fijo o celular, de manera gratuita, durante las 24 horas del día, todos los días de la semana.</string>
-    <string name="course_1_14_e">Si la violencia es contra niños, niñas y adolecentes, comunícate a la línea 141 del ICBF desde tu teléfono fijo o celular, de manera gratuita, durante las 24 horas del día, todos los días de la semana.</string>
-    <string name="course_1_15_a">¿Qué puedo hacer si creo ser victima de violencia?</string>
     <string name="course_1_15_b">Solicita atención en salud</string>
     <string name="course_1_15_c">Tienes el derecho de acudir o ser transladada un centro de salud, hospital o clínica, para que te brinden la atención médica y psicológica</string>
     <string name="course_1_15_d">Ten en cuenta...</string>
-    <string name="course_1_16_a">¿Qué puedo hacer si creo ser victima de violencia?</string>
-    <string name="course_1_16_b">Centros de salud, hospitales o clinicas de cualquier nivel. \r\nSi requieres atención especializada esmas probable conseguirla en hospitales o clinicas de ciudades capitales.</string>
-    <string name="course_1_17_a">Accede a la justicia</string>
+    <string name="course_1_16_a">¿Qué puedo hacer si creo ser víctima de violencia?</string>
     <string name="course_1_17_b">Tienes derecho a que los hechos sean investigados y que el agresor sea juzgado y castiado, asi tu podrás exigir la reparación de los daños que has sufrido y la no repetición de los hechos.</string>
-    <string name="course_1_18_a">Presentar tu denuncia en:</string>
-    <string name="course_1_18_b">Fiscalia General de la Nación.\r\nÉsta atiende en:</string>
-    <string name="course_1_18_c">Unidades de reacción inmediata (URI).</string>
-    <string name="course_1_18_d">Salas de Atención al Usuario</string>
-    <string name="course_1_18_e">Casas de justicia</string>
-    <string name="course_1_18_f">Centros de Atención especializada como: CAIVAS (Centro de Atención e Investigación Integral a las Victivas de Delitos Sexuales), CAVIF (Centro de Atención e Investigación Integral contra la Violencia Intrafamiliar) y el CAVIP (Centro de Atención Penal Integral a Victimas).</string>
-    <string name="course_1_18_g">Presenta tu denuncia ante Policia Judicial: CTI de la Fiscalía; SIJIN y DIJIN de la Policia</string>
-    <string name="course_1_18_h">Si en tu municipio no estan presentes las entidades mencionadas puedes ir a la Policía Nacional o Comisarías de Familia.</string>
-    <string name="course_1_19_a">Solicita medidas de protección</string>
-    <string name="course_1_19_b">Tienes derecho a proteger tu integridad y la de tus hijos e hijas y poner fin a la violencia. Para ello, existen medidas especificas e inmediatas conocidas como "medidas de protección" que pueden ser otorgadas por las autoridades competentes.</string>
-    <string name="course_1_20_a">Si los hechos violendos suceden en un contexto diferente al familiar o si son conocidos por la Fiscalia:</string>
-    <string name="course_1_20_b">Una vez has presentado la denuncia o si la Fiscalia ha iniciado la investigación, tu o la Fiscalia pueden solicitar al Juez de Control de Garanticas designado, la medida de protección</string>
-    <string name="course_1_20_c">Si se trata de hechos violentos que ocurren en el contexto familiar y son conocidos por la Fiscalia, el caso luego será enviado a la Comisaria de Familia o Juez para que continuen con el procedimiento.</string>
-    <string name="course_1_21_a">Hechos violentos que ocurren en el contexto </string>
-    <string name="course_1_21_b">Solicitala a la Comisaria de Familia</string>
-    <string name="course_1_21_c">Su en tu minicipio no hay Comisaria de Familia, puedes pedir la medida de protección al Juez Civil o Promiscuo Municipal.</string>
-    <string name="course_1_21_d">La solicitud la puedes hacer tú, un familiar, el defensor de familia (Instituto Colombia de Bienestar Familiar ICBF) o cualquier otra persona que actué en tu nombre.</string>
-    <string name="course_1_21_e">Recibiras medidas de protección de tipo provisional, de acuerdo con la gravedad de los hechos, y hasta tanto se agoten las etapas del procedimiento.</string>
-    <string name="course_1_22_a">Si los hechos violentos ocurren en el contexto familiar y forma parte de una comunidad infigena:</string>
-    <string name="course_1_22_b">Solicitala a respectiva autoridad indigena</string>
-    <string name="course_1_22_c">Si ésta no puede asegurar las medidas adeucadas o tú no quieres que tu comunidad se entere de lo ocurrido, puedes decir a las autoridades estatales mencionadas anteriormente.</string>
-    <string name="course_1_23_a">Solicita medidas de atención</string>
-    <string name="course_1_23_b">Tienes derecho, si es necesario, a acceder a servicios temporales de habitación, alimentación y/o trasnporte para ti y tus hijos e hijas. Estos servicios forman parte de tu derecho fundamental a la salud.</string>
-    <string name="course_1_24_a">Juez decontrol de garantias, si los hechos son conocidos por la Fiscalia General de la Nacion o si se trata de hechos violentos que suceden en un espacio diferente al familiar.</string>
-    <string name="course_1_24_b">Comisaria de Familia, en caso que se trate de hechos violentos que ocurren en el contexto familiar</string>
-    <string name="course_1_24_c">Si en tu municipio no hay Comisaria de Familia, puedes pediras al Juez Civil o Promiscuo Municipal</string>
-    <string name="course_1_25_a">¡Felicitaciones! Has trabajado duro y ahora estás my cerca de convertirte en Consejera Avanzada. Responde el siguiente cuestionario y consigue el titulo.</string>
-    <string name="course_1_26_a">Responde a las siguientes preguntas seleccionando una o varias respuestas según lo consideres necesario.</string>
-    <string name="course_1_26_p_1">1. Si requieres medidas de protección al ser victima de hechos violentos en el contexto familiar, debes acudir a:</string>
-    <string name="course_1_26_r_1">Comisaria de Familia</string>
-    <string name="course_1_26_r_2">Organizaciones de mujeres y redes comunitarias.</string>
-    <string name="course_1_26_r_3">Juez Civil o Prmiscuo Municipal</string>
-    <string name="course_1_26_b">¡Muy bien, respuesta correcta!</string>
-    <string name="course_1_26_c">Las organizaciones de mujeres y redes comunitarias pueden brindarte orientación si eres victima de violencia y requieres información, pero no son las entidades encargadas de brindarte medidas de protección</string>
-    <string name="course_1_27_p_1">2. Si eres victima de violencia sexual tienes derecho a:</string>
-    <string name="course_1_27_r_1">A que te practiquen examenes para detectar enfermedades de transmisión sexual</string>
-    <string name="course_1_27_r_2">A que te lleven con el agresor para que puedas enfrentarle personalmente</string>
     <string name="message_type_tittle">Tipo de mensaje</string>
     <string name="write_here">Escribe aquí tu mensaje</string>
     <string name="your_message_tittle_h2">Tu mensaje</string>
@@ -209,13 +141,12 @@
     <string name="progress_tittle">MI PROGRESO</string>
     <string name="updating_profile_data">Actualizando datos...</string>
     <string name="updated_profile_info">Información actualizada</string>
-    <string name="crossword">Crucigrama</string>
     <string name="need_avatar">need_avatar</string>
     <string name="mod_2_q1_not_acerted_message">Nunca olvides que tienes derecho a decidir voluntariamente si quieres ser confrontada con el agresor o agresores y a manifestar tu intención de conciliar. \n\r Recuerda que tienes el derecho a la reserva de tu intimidad, de tus datos personales, y los de tus familiares y personas allegadas. \n\r Aunque te equivoques sigues aprendiendo</string>
     <string name="course_1_18_consejera_experta">Ahora debo llamarte Consejera Experta. ¡Buen trabajo!</string>
     <string name="send_alert_also_call">También puedes llamar gratis, todos los días y a cualquier hora, a las siguientes líneas telefónicas:</string>
     <string name="linea_123">Línea nacional de atención de emergencias <b>123</b></string>
-    <string name="linea_155">Línea de orientación a las mujeres vícitmas de violencia <b>155</b></string>
+    <string name="linea_155">Línea de orientación a las mujeres víctmas de violencia <b>155</b></string>
     <string name="linea_141">Línea de orientación del ICBF si la violencia es contra niños, niñas y adolescentes <b>141</b></string>
     <string name="app_not_found">Aplicación no encontrada</string>
     <string name="course_1_19_mod_3">Módulo 3</string>
@@ -223,7 +154,6 @@
     <string name="course_1_19_text">Ahora que identificas las violencias contra las mujeres y conoces los derechos
         que contempla la ley para mujeres y niñas víctimas de violencia en Colombia, llegó el momento de explorar
         cuáles son las acciones y entidades disponibles para proteger tu integridad y poner fin a la violencia.</string>
-    <string name="course_1_19_dialog">Si consideras que eres una mujer víctima de cualquier tipo de violencia, incluidas las cometidas en el conflicto armado, puedes tomar alguna o todas las siguientes opciones señaladas por la ley</string>
 
     <string name="course_1_20_tittle">¿Qué puedo hacer si creo ser víctima de violencia?</string>
     <string name="course_1_20_header">Solicita información</string>
@@ -242,56 +172,13 @@
 
     <string name="course_1_24_header">Accede a la justicia</string>
 
-    <string name="course_1_24_text">Tienes derecho a que los hechos sean investigados y que el agresor sea juzgado y
-        castigado, así tú podrás exigir la reparación de los daños que has sufrido y la no repetición de los hechos.</string>
-
-    <string name="course_1_25_text"> <b>Acude y presenta tu denuncia en:</b> \n \n
-        \u25CF Fiscalía General de la Nación. Ésta atiende en: \n\n
-        <pre>&#9;</pre>\u25CB Unidades de Reacción Inmediata (URI) \n\n
-        <pre>&#9;</pre>\u25CB Salas de Atención al Usuario (SAU) \n\n
-        <pre>&#9;</pre>\u25CB Casas de Justicia \n\n
-        <pre>&#9;</pre>\u25CB Centros de Atención Especializada como: CAIVAS (Centro de Atención e Investigación Integral a las Víctimas de Delitos Sexuales), CAVIF (Centro de Atención e Investigación Integral contra la Violencia Intrafamiliar) y el CAVIP (Centro de Atención Penal Integral a Víctimas). \n\n
-        \u25CF Presenta tu denuncia ante Policía Judicial: CTI de la Fiscalía; SIJIN y DIJIN de la Policía. \n\n
-        \u25CF Si en tu municipio no están presentes las entidades mencionadas puedes ir a la Policía Nacional o Comisarías de Familia. \n\n
-</string>
-
     <string name="course_1_26_tittle">Solicita medidas de protección</string>
     <string name="course_1_26_text">Tienes derecho a proteger tu integridad y la de tus hijos e hijas y poner fin a la violencia. Para ello, existen medidas específicas e inmediatas conocidas como “medidas de protección” que pueden ser otorgadas por las autoridades competentes.</string>
 
-    <string name="course_1_27_tittle">Hechos violentos que suceden en un contexto diferente al familiar o si son conocidos por la Fiscalía:</string>
-    <string name="course_1_27_text">
-        \u25CF Una vez has presentado la denuncia o si la Fiscalía ha iniciado la investigación, tú o la Fiscalía, pueden solicitar al Juez de Control de Garantías designado, la medida de protección. \n\n
-        \u25CF Si se trata de hechos violentos que ocurren en el contexto familiar y son conocidos por la Fiscalía, el caso luego será enviado a la Comisaría de Familia o Juez para que continúen con el procedimiento.</string>
-
-
-    <string name="course_1_28_tittle">Hechos violentos que ocurren en el contexto familiar:</string>
-    <string name="course_1_28_text">
-        \u25CF Solicítala a la Comisaría de Familia. \n
-        \u25CF Si en tu municipio no hay Comisaría de Familia, puedes pedir la medida de protección al Juez Civil o Promiscuo Municipal.\n
-        \u25CF La solicitud la puedes hacer tú, un familiar, el defensor de familia (Instituto Colombiano de Bienestar Familiar ICBF) o cualquier otra persona que actué en tu nombre.\n
-        \u25CF Recibirás medidas de protección de tipo provisional, de acuerdo con la gravedad de los hechos, y hasta tanto se agoten las etapas del procedimiento.
-    </string>
-
-
-    <string name="course_1_29_tittle">Hechos violentos en el contexto familiar si formas parte de una comunidad indígena:</string>
-    <string name="course_1_29_text">
-        \u25CF La respectiva autoridad indígena. \n
-        \u25CF Si ésta no puede asegurar las medidas adecuadas o tú no quieres que tu comunidad se entere de lo ocurrido, puedes acudir a las autoridades estatales mencionadas anteriormente.
-    </string>
 
     <string name="course_1_30_tittle">Solicita medidas de atención</string>
     <string name="course_1_30_text">
         Tienes derecho, si es necesario, a acceder a servicios temporales de habitación, alimentación y/o transporte para ti y tus hijos e hijas. Estos servicios forman parte de tu derecho fundamental a la salud.
-    </string>
-
-    <string name="course_1_31_text1">
-        Juez de Control de Garantías, si los hechos son conocidos por la Fiscalía General de la Nación o si se trata de hechos violentos que suceden en un espacio diferente al familiar.
-    </string>
-    <string name="course_1_31_text2">
-        Comisaría de Familia, en caso que se trate de hechos violentos que ocurren en el contexto familiar.
-    </string>
-    <string name="course_1_31_text3">
-        Si en tu municipio no hay Comisaría de Familia, puedes pedirlas al Juez Civil o Promiscuo Municipal.
     </string>
 
     <string name="course_1_32_tittle">
@@ -318,10 +205,6 @@
     </string>
     <string name="course_1_33_opt3">
        Organizaciones de mujeres y redes comunitarias.
-    </string>
-
-    <string name="course_1_34_ok">
-       ¡Muy bien, respuesta correcta!
     </string>
 
     <string name="course_1_35_bad">
@@ -420,22 +303,6 @@
         Tienes el derecho de acceder al procedimiento especial de la Ley de Justicia y Paz (Ley 975/05), siempre que hayas sido víctima de delitos cometidos por un grupo armado ilegal (conocidos como Grupos Armados Organizados al Margen de la Ley, GAOML).
     </string>
 
-    <string name="course_1_48_text2">
-        La Fiscalía General de la Nación. Esta atiende en las Unidades de Justicia Transicional.
-    </string>
-
-    <string name="course_1_48_text3">
-        A la Policía Judicial: CTI de la Fiscalía; y SIJIN y DIJIN de la Policía.
-    </string>
-
-    <string name="course_1_48_text4">
-        Si en tu municipio no están estas entidades puedes ir a la Policía Nacional o a las Comisarías de Familia.
-    </string>
-
-    <string name="course_1_48_text5">
-        Recuerda que allí se diligencia el Formato de Registro de Hechos Atribuibles a Grupos Organizados al Margen de la Ley.
-    </string>
-
 
     <string name="course_1_48_1_tittle">
         Solicita medidas de protección especiales
@@ -443,30 +310,6 @@
 
     <string name="course_1_48_1_text1_5">
         Si eres una lideresa, una defensora de derechos humanos o una mujer víctima del conflicto armado; amenazada y en riesgo, tienes derecho a proteger tu vida, integridad, libertad y seguridad.
-    </string>
-
-    <string name="course_1_48_1_text1">
-        Si eres defensora amenazada o en situación de riesgo
-    </string>
-
-    <string name="course_1_48_1_text2">
-        La Unidad Nacional de Protección (UNP). Ten cuenta que debes diligenciar el Formato de Solicitud de Protección.
-    </string>
-
-    <string name="course_1_48_1_text3">
-        Si eres víctima de desplazamiento forzado
-    </string>
-
-    <string name="course_1_48_1_text4_5">
-        La Secretaría del Interior y/o de Gobierno de la alcaldía de tu municipio.
-    </string>
-
-    <string name="course_1_48_1_text4">
-        Si requieres medidas que no están al alcance de la alcaldía puedes acudir a la Secretaría del Interior y/o de Gobierno de la gobernación de tu departamento.
-    </string>
-
-    <string name="course_1_48_1_text5">
-        O a la Unidad Nacional de Protección (UNP) en caso que ni la alcaldía y gobernación tengan la capacidad para brindarlas.
     </string>
 
     <string name="course_1_49_tittle">
@@ -526,16 +369,8 @@
         Ten en cuenta que con la sola declaración tienes la posibilidad de acceder a medidas de ayuda humanitaria inmediata.
     </string>
 
-    <string name="course_1_52_tittle">
-        Remisión
-    </string>
-
-     <string name="course_1_52_text1">
+    <string name="course_1_52_text1">
         Consiste en el envío del formato diligenciado y el resto de documentos a la Unidad de Víctimas para que esta revise si está completa.
-    </string>
-
-    <string name="course_1_52_text2">
-        Verificación
     </string>
 
     <string name="course_1_52_text3">
@@ -550,20 +385,12 @@
         Si el formato está incompleto, es devuelto a la entidad que envió la declaración para que la complete.
     </string>
 
-    <string name="course_1_53_text1">
-        Valoración
-    </string>
-
     <string name="course_1_53_text2">
         Consiste en el estudio del formato y el resto de documentos por parte de la Unidad de Víctimas.
     </string>
 
 
-     <string name="course_1_53_text3">
-        Decisión
-    </string>
-
-    <string name="course_1_53_text4">
+     <string name="course_1_53_text4">
         Consiste en la definición acerca de tu inclusión en el registro por parte de la Unidad de Víctimas. Pueden ocurrir dos situaciones:
     </string>
 
@@ -607,10 +434,6 @@
 
     <string name="course_1_57_opt4">
        En el ámbito estatal
-    </string>
-
-    <string name="course_1_57_bad">
-       Has fallado, intenta de nuevo
     </string>
 
 
@@ -714,9 +537,6 @@
     <string name="course_1_64_opt4">
        Comisarías de Familia
     </string>
-    <string name="course_1_65_msg">
-        No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!
-    </string>
 
     <string name="course_1_66_tittle">
         ¡Buen trabajo!
@@ -725,8 +545,6 @@
     <string name="course_1_66_msg">
         Te has esforzado al máximo y has logrado cumplir la meta. Finalmente has alcanzado el último nivel ¡Felicitaciones Consejera Estrella!
     </string>
-    <string name="latitude">Latitud</string>
-    <string name="longitude">Longitud</string>
     <string name="loggin">Autenticando usuario...</string>
     <string name="credential_not_valid">Las credenciales no coinciden</string>
     <string name="tv_init_sesion">O inicia sesión</string>
@@ -1032,9 +850,6 @@
     <string name="lideres_09_10_5">a quién va dirigido, ya sea a una
     </string>
 
-
-    <string name="lideres_09_11"> o
-    </string>
 
     <string name="lideres_09_12"> de personas.
     </string>
@@ -1413,9 +1228,6 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     <string name="lideres_32_04">Y el Programa de Protección para Víctimas y Testigos de la Ley de Justicia y Paz.
     </string>
 
-    <string name="lideres_33_01">¿Sabías que?
-    </string>
-
     <string name="lideres_33_02">El Programa de Protección para Víctimas y Testigos de la Ley de Justicia y Paz (Ley 975 de 2005) es para aquellas personas que se encuentran en riesgo como consecuencia directa de su condición de víctima, dentro de un proceso de Justicia y Paz.
 
 \n\nSi eres parte de un proceso de Justicia y Paz y tu riesgo o amenazas son consecuencia de participar en este proceso, esta es tu ruta adecuada de protección. Para iniciar debes acercarte a la Policía Nacional, donde te remitirán a su enlace de Derechos Humanos para que te acompañe y active la ruta.
@@ -1449,9 +1261,6 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
 
     <string name="lideres_36_02">Lo primero que debes saber es que existe un programa de Protección Individual y un Programa de Protección Colectiva.
 \n\nPulsa sobre la flecha del Programa de Protección Individual para conocer los pasos que debes seguir.
-    </string>
-
-    <string name="lideres_36_03">Programa de Protección \nIndividual
     </string>
 
     <string name="lideres_37_01">¿Cuál es la población que puede acceder a esta ruta y bajo qué condiciones?
@@ -1510,19 +1319,7 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
      <string name="lideres_47_02">2. Camilo es nombrado representante de la mesa nacional de víctimas de desplazamiento forzado la semana pasada, desde hace cuatro meses le debe dinero a José quien le prestó para comprar un televisor, el día de hoy después de regresar de una jornada de la mesa nacional, se encuentra con José quien le dice que, si no le paga mañana, le hará daño. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para Camilo?
     </string>
 
-    <string name="lideres_47_03">SÍ
-    </string>
-
-    <string name="lideres_47_04">NO
-    </string>
-
     <string name="lideres_48_02">3. La señora Constanza es profesora de una escuela donde enseña Derechos Humanos y derechos de las víctimas del conflicto, un grupo armado al margen de la Ley le ordena no volver a hablar de estos temas o le hará daño. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para la señora Constanza?
-    </string>
-
-    <string name="lideres_48_03">SÍ
-    </string>
-
-    <string name="lideres_48_04">NO
     </string>
 
     <string name="lideres_49_01">No has acertado en todas las respuestas, pero, aunque te equivoques sigues aprendiendo \n¡Inténtalo de nuevo!
@@ -1561,10 +1358,7 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     </string>
 
 
-    <string name="lideres_54_01"> Programa de Protección \nColectiva
-    </string>
-
-    <string name="lideres_58_01">Ahora que has terminado de revisar las rutas de protección disponibles para líderes y lideresas, observa atentamente el siguiente video que te ayudará a reforzar el conocimiento adquirido. Video Rutas de Protección.
+    <string name="lideres_58_01">Ahora que has terminado de revisar las rutas de protección disponibles para líderes y lideresas, observa atentamente el siguiente video que te ayudará a reforzar el conocimiento adquirido.
     </string>
 
     <string name="lideres_60_01">Lee atentamente las siguientes situaciones y contesta sí o no a la pregunta.
@@ -1573,28 +1367,10 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     <string name="lideres_60_02">1. María es la representante de una organización que trabaja por los derechos de mujeres víctimas de violencia, ella inició su trabajo como defensora después a una agresión que sufrió y quedo en la impunidad, recientemente su agresor ha regresado y amenaza con atentar contra ella ¿Es la Ruta de Protección Colectiva la adecuada para María?
     </string>
 
-    <string name="lideres_60_03">SÍ
-    </string>
-
-    <string name="lideres_60_04">NO
-    </string>
-
     <string name="lideres_61_02">2. Juan es desde hace varios años, líder de una comunidad que trabaja por la restitución de las tierras que perdieron en el marco del conflicto, debido a esto, grupos armados al margen de la ley lo han estado siguiendo y ahora amenazan con atentar contra él y los otros miembros de la comunidad que han logrado identificar. ¿Es la Ruta de Protección Colectiva la adecuada para Juan y su comunidad?
     </string>
 
-    <string name="lideres_61_03">SÍ
-    </string>
-
-    <string name="lideres_61_04">NO
-    </string>
-
     <string name="lideres_62_02">3. Jacobo fue víctima de desplazamiento forzado, actualmente se encuentra en un proceso de restitución de tierras y lo están amenazando por seguir en el proceso, Jacobo quiere solicitar protección colectiva, para él y su familia, ya que hace parte de la gran cantidad de personas que se encuentran en esa misma situación. ¿Es la Ruta de Protección Colectiva la adecuada para Jacobo?
-    </string>
-
-    <string name="lideres_62_03">SÍ
-    </string>
-
-    <string name="lideres_62_04">NO
     </string>
 
     <string name="lideres_63_01">No has acertado en todas las respuestas ¡Inténtalo de nuevo!
@@ -1612,41 +1388,6 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
 
 
     <string name="about_community_download">Descarga o comparte la auditoría
-    </string>
-
-<string name="about_my_community_001"><b>¿Te has detenido a analizar los riesgos que corren las niñas y mujeres de tu comunidad?</b> \n\n
-    A continuación, te brindamos una herramienta para analizar los riesgos de violencia basada en género para mujeres y niñas en tu comunidad. \n
-Esta herramienta está basada en la observación. \n
-Si tu comunidad es muy insegura, no deberías completar este cuestionario caminando. En ese caso, se recomienda observar y retener información mentalmente, para posteriormente completar el formato en un lugar seguro.\n\n
-
-A través de esta herramienta puedes obtener información acerca de tu comunidad en los siguientes aspectos: características generales, acceso a servicios básicos, salud, alimentación, seguridad, presencia institucional.
-\n\n
-Una vez completes la herramienta, podrás utilizarla para trabajar con tu comunidad, así como con autoridades, organizaciones humanitarias, agencias de Naciones Unidas, ONGs en acciones de prevención y mitigación de riesgos.
-\n\n
-Así mismo, podrá serte útil para hacer incidencia ante los funcionarios públicos y gestionar recursos, proyectos y programas especiales que permitan disminuir los riesgos de protección que enfrentan mujeres y niñas.
-\n\n
-Pasos a seguir:\n\n
-1) Descarga e imprime la herramienta\n
-2) Observa y responde las preguntas\n
-3) ¡Ahora tienes un mejor panorama sobre los riesgos en tu comunidad!
-    </string>
-
-<string name="about_my_community_002"><b>¿Has analizado los riesgos de protección que corren líderes y lideresas en tu comunidad? </b> \n\n
-    A continuación, te brindamos una herramienta para analizar los riesgos de protección que enfrentan líderes y lideresas en tu comunidad.
-
-    \nEsta herramienta está basada en la observación.
-\nSi tu comunidad es muy insegura, no deberías completar este cuestionario caminando. En ese caso, se recomienda observar y retener información mentalmente, para posteriormente completar el formato en un lugar seguro.
-\n\n
-A través de esta herramienta puedes obtener información acerca de tu comunidad en los siguientes aspectos: características generales, acceso a servicios básicos, salud, alimentación, seguridad, presencia institucional.
-\n\n
-Una vez completes la herramienta, podrás utilizarla para trabajar con tu comunidad, así como con autoridades, organizaciones humanitarias, agencias de Naciones Unidas, ONGs en acciones de prevención y mitigación de riesgos.
-\n\n
-Así mismo, podrá serte útil para hacer incidencia ante los funcionarios públicos y gestionar recursos, medidas de protección individuales y colectivas, proyectos y programas especiales que permitan disminuir los riesgos de protección que enfrentan líderes y lideresas.
-\n\n
-Pasos a seguir:\n
-1) Descarga e imprime la herramienta\n
-2) Observa y responde las preguntas\n
-3) ¡Ahora tienes un mejor panorama sobre los riesgos de protección en tu comunidad!
     </string>
 
     <string-array name="about_my_community">

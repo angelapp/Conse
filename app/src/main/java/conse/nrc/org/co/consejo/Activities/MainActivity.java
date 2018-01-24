@@ -40,6 +40,7 @@ import android.widget.ExpandableListView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -75,6 +76,7 @@ import conse.nrc.org.co.consejo.Utils.Models;
 import conse.nrc.org.co.consejo.Utils.RequestTask;
 import conse.nrc.org.co.consejo.Utils.ServerRequest;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
+import io.fabric.sdk.android.Fabric;
 
 import static android.Manifest.permission.CALL_PHONE;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.TEMPLATE_LIBRARY_LIST;
@@ -103,6 +105,8 @@ public class MainActivity extends AppCompatActivity
         requestWindowFeature(Window.FEATURE_ACTION_BAR_OVERLAY);
 
         setContentView(R.layout.activity_main);
+
+        Fabric.with(this, new Crashlytics());
 
         this.setTheme(R.style.AppTheme);
 //        toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -137,12 +141,18 @@ public class MainActivity extends AppCompatActivity
 
         setCourseSelectionFragment();
         listener = new ProgressDialog(this);
+//        forceCrash();
 
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(this).build();
         ImageLoader.getInstance().init(config);
 
         //logCoursEstructure();
     }
+
+    public void forceCrash() {
+        throw new RuntimeException("This is a crash");
+    }
+
 
     private void logCoursEstructure() {
 
@@ -192,9 +202,9 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+//        if (id == R.id.action_settings) {
+//            return true;
+//        }
 
         return super.onOptionsItemSelected(item);
     }
@@ -271,7 +281,7 @@ public class MainActivity extends AppCompatActivity
                 openNews();
                 break;
             //Managing course inner buttons
-            case R.id.bt_next: case R.id.bt_previous:case R.id.bt_play:case R.id.bt_finish:case R.id.bt_return_to:
+            case R.id.bt_next: case R.id.bt_previous:case R.id.bt_play:case R.id.bt_finish:
                 switch (actualCourse){
                     case LocalConstants.VBG_COURSE_ID:
                         if(vbgCourse1Start != null){
@@ -346,6 +356,32 @@ public class MainActivity extends AppCompatActivity
         } catch (android.content.ActivityNotFoundException e){
             Toast.makeText(getApplicationContext(),R.string.app_not_found,Toast.LENGTH_LONG).show();
         }
+    }
+
+    @Override
+    public void makeCall(String number){
+        try {
+            if (ActivityCompat.checkSelfPermission(this,
+                    CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+                Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + number));
+                startActivity(intent);
+            } else {
+                Intent dialIntent = new Intent(Intent.ACTION_DIAL);
+                dialIntent.setData(Uri.parse("tel:" + number));
+                startActivity(dialIntent);
+            }
+        } catch (android.content.ActivityNotFoundException e){
+            Toast.makeText(getApplicationContext(),R.string.app_not_found,Toast.LENGTH_LONG).show();
+        }
+    }
+
+    @Override
+    public void sendEmail(String send_to) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{send_to});
+        intent.setType("vnd.android.cursor.dir/email");
+        //intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.email_from_conse));
+        startActivity(Intent.createChooser(intent, getString(R.string.sending_email)));
     }
 
     private void openEditProfileFragment() {

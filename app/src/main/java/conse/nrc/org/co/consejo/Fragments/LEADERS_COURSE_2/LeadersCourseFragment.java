@@ -288,9 +288,9 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
             case R.id.bt_play:
                playSound(v);
                 break;
-            case R.id.bt_return_to:
-                return_to_layout((Integer) v.getTag());
-                break;
+//            case R.id.bt_return_to:
+//                return_to_layout((Integer) v.getTag());
+//                break;
             default:
                 break;
         }

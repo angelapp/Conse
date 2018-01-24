@@ -14,50 +14,27 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/bottom_padding_for_alert"
-            android:paddingTop="@dimen/padding_top_for_courses">
+            android:paddingBottom="@dimen/bottom_padding_for_alert">
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/black_overlay"/>
 
-            <TextView
-                android:text="@string/lideres_32_01"
-                android:layout_width="match_parent"
+            <RelativeLayout
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/black_overlay"/>
+                android:layout_marginTop="15dp">
 
-
-            <LinearLayout
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/hoja_dest_l35"
-                android:paddingTop="35dp">
-
-                <TextView
-                    android:text="@string/lideres_35_01"
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView30"
-                    style="@style/ConseParagraphText"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp" />
+                    app:srcCompat="@drawable/ruta_corta5"
+                    android:id="@+id/imageView13"
+                    android:scaleType="center" />
+            </RelativeLayout>
 
-            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginTop="20dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal">

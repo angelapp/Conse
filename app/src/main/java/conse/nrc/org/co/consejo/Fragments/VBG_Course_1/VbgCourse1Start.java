@@ -25,11 +25,14 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import conse.nrc.org.co.consejo.Activities.MainActivity;
+import conse.nrc.org.co.consejo.Fragments.AcertedCrosswordDialog;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.DataBase;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
+
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.MOD_4_Q3_CORRECT_ANSWER;
 
 /**
  * Created by apple on 11/27/17.
@@ -327,27 +330,10 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                                     break;
                             }
                         }
-//                        if (et.getNextFocusDownId() != View.NO_ID) {
-//                            mCrossword.findViewById(et.getNextFocusDownId()).requestFocus();
-//                        } else if(et.getNextFocusRightId() != View.NO_ID) {
-//                                mCrossword.findViewById(et.getNextFocusRightId()).requestFocus();
-//                        }
+
                     }
                 });
             }
-
-//            final ClueDialog cluedialog = new ClueDialog();
-//
-//            if(et.getHint() != null && et.getHint().toString().length()>0){
-//                et.setOnClickListener(new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        cluedialog.setClueNumber(Integer.valueOf(et.getHint().toString())-1);
-//                        cluedialog.show(getActivity().getFragmentManager(),"");
-//                    }
-//                });
-//
-//            }
         }
     }
 
@@ -389,14 +375,44 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
             case R.id.bt_play:
                playSound(v);
                 break;
-            case R.id.bt_return_to:
-                return_to_layout((Integer) v.getTag());
-                break;
+//            case R.id.bt_return_to:
+//                return_to_layout((Integer) v.getTag());
+//                break;
             default:
                 break;
         }
         if (v.getTag() != null) {
             processButtonTag(v);
+        }
+    }
+
+    private void setErrorDialog(String msg){
+        final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
+        notAcerted.mMesaggeText = msg;
+        notAcerted.show(getActivity().getFragmentManager(),"");
+    }
+
+    private void setAccertedDialog(String msg){
+        final AcertedCrosswordDialog accerted = new AcertedCrosswordDialog();
+        accerted.mMesaggeText = msg;
+        accerted.vbgCourse1Start = this;
+        accerted.show(getActivity().getFragmentManager(),"");
+    }
+
+    private void validateCompleteVbg1(int activityId) {
+        boolean error = false;
+        EditText editText = (EditText)view.findViewWithTag(MOD_4_Q3_CORRECT_ANSWER);
+        if (!editText.getText().toString().toLowerCase().equals(MOD_4_Q3_CORRECT_ANSWER)){
+            editText.setError(getString(R.string.error));
+            error = true;
+        }
+
+//        if (!error || LocalConstants.DEV_VERSION){
+        if (!error){
+            markActivityAsComplete(activityId);
+            setNextPage();
+        } else {
+            setErrorDialog(getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[2]);
         }
     }
 
@@ -415,56 +431,56 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                 markActivityAsComplete(3);
                 break;
             case LocalConstants.MOD_2_Q1_VALIDATION:
-                validateQuestionary(4,getString(R.string.mod_2_q1_not_acerted_message) );
+                validateQuestionary(4,getString(R.string.mod_2_q1_not_acerted_message), null );
                 break;
             case LocalConstants.MOD_3_R:
                 markActivityAsComplete(5);
                 break;
             case LocalConstants.MOD_3_Q1:
-                validateQuestionary(6, getString(R.string.course_1_35_bad));
+                validateQuestionary(6, getString(R.string.course_1_35_bad), getString(R.string.correct_answer));
                 break;
             case LocalConstants.MOD_3_Q2:
-                validateQuestionary(7, getString(R.string.course_1_38_bad));
+                validateQuestionary(7, getString(R.string.course_1_38_bad), getString(R.string.correct_answer));
                 break;
             case LocalConstants.MOD_3_Q3:
-                validateQuestionary(8, getString(R.string.course_1_41_bad));
+                validateQuestionary(8, getString(R.string.course_1_41_bad), getString(R.string.correct_answer));
                 break;
             case LocalConstants.MOD_3_Q4:
-                validateQuestionary(9,getString(R.string.course_1_44_bad));
+                validateQuestionary(9,getString(R.string.course_1_44_bad), getString(R.string.correct_answer));
                 break;
             case LocalConstants.MOD_4_R:
                 markActivityAsComplete(10);
                 break;
             case LocalConstants.MOD_4_Q1:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[0]);
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[0], null);
                 break;
             case LocalConstants.MOD_4_Q2:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[1]);
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[1], null);
                 break;
             case LocalConstants.MOD_4_Q3:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[2]);
+                validateCompleteVbg1(11);
                 break;
             case LocalConstants.MOD_4_Q4:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[3]);
+                validateQuestionary(0, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[3], null);
                 break;
             case LocalConstants.MOD_4_Q5:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[4]);
+                validateQuestionary(0, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[4], null);
                 break;
             case LocalConstants.MOD_4_Q6:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[5]);
+                validateQuestionary(0, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[5], null);
                 break;
             case LocalConstants.MOD_4_Q7:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[6]);
+                validateQuestionary(0, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[6], null);
                 break;
             case LocalConstants.MOD_4_Q8:
-                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[7]);
+                validateQuestionary(11, getResources().getStringArray(R.array.errorResponseQuestionaryMod4)[7], null);
                 break;
             default:
                 break;
         }
     }
 
-    private void validateQuestionary(int activity, String errorString) {
+    private void validateQuestionary(int activity, String errorString, String accertedString) {
         Log.d("VBG","In validate questionary: " + (mActualQuestionaryPage != null)
                 + " " + (mActualQuestionaryPage == (LinearLayout) view.findViewWithTag(LocalConstants.HAS_QUESTIONARY)));
         if (mActualQuestionaryPage != null ){
@@ -495,17 +511,19 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                         break;
                     }
                 }
-
-
             }
             //if (isCorrect || LocalConstants.DEV_VERSION){
             if (isCorrect){
-                setNextPage();
-                markActivityAsComplete(activity);
+                if (accertedString != null){
+                    setAccertedDialog(accertedString);
+                } else {
+                    setNextPage();
+                }
+                if (activity >0) {
+                    markActivityAsComplete(activity);
+                }
             } else {
-                final NotAcertedCrosswordDialog notAcerted = new NotAcertedCrosswordDialog();
-                notAcerted.mMesaggeText = errorString;
-                notAcerted.show(getActivity().getFragmentManager(),"");
+                setErrorDialog(errorString);
             }
         }
     }

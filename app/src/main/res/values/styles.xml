@@ -133,14 +133,13 @@
 
     <style name="ConseCheckbox" parent="Base.Widget.AppCompat.CompoundButton.CheckBox">
         <item name="android:textColor">@color/grey_dark</item>
-        <item name="android:drawableLeft">@drawable/conse_checkbox</item>
-        <item name="android:drawablePadding">10dip</item>
-        <item name="android:button">@android:color/transparent</item>
-        <item name="android:layout_gravity">top</item>
+        <item name="android:button">@drawable/conse_checkbox</item>
+        <!--<item name="android:drawablePadding">10dip</item>-->
+        <!--<item name="android:button">@android:color/transparent</item>-->
         <item name="android:textSize">18sp</item>
         <item name="android:textAlignment">gravity</item>
-        <item name="android:gravity">bottom|left</item>
-        <item name="android:paddingLeft">0dp</item>
+        <item name="android:gravity">top</item>
+        <item name="android:paddingLeft">10dp</item>
         <item name="android:paddingBottom">4dp</item>
         <item name="android:layout_marginLeft">15dp</item>
         <item name="android:layout_marginRight">15dp</item>

@@ -26,17 +26,6 @@
 
             <ImageView
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/logoncr"
-                android:layout_marginTop="5dp"
-                android:id="@+id/iv_nrc_logo"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="5dp" />
-
-            <ImageView
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/bienvenidos"
                 android:id="@+id/iv_welcome_tittle"
@@ -48,8 +37,19 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/conse"
                 android:id="@+id/iv_conse_logo"
-                android:layout_marginBottom="@dimen/iv_bottom_margin"
+                android:layout_marginBottom="10dp"
                 android:layout_marginTop="5dp" />
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                app:srcCompat="@drawable/logoncr"
+                android:layout_marginTop="5dp"
+                android:id="@+id/iv_nrc_logo"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15dp" />
 
             <Button
                 android:layout_width="wrap_content"

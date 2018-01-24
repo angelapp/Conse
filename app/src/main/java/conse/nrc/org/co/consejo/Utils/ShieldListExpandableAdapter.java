@@ -14,6 +14,7 @@ import android.widget.TextView;
 import java.util.LinkedHashMap;
 import java.util.List;
 
+import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 
 /**
@@ -26,8 +27,11 @@ public class ShieldListExpandableAdapter extends BaseExpandableListAdapter {
     private List<String> expandableListTitle;
     private LinkedHashMap<String, List<Models.CorporatePhoneBook>> expandableListDetail;
 
+    private MainInterface mainInterface;
+
     public ShieldListExpandableAdapter(Context context, List<String> expandableListTitle, LinkedHashMap<String, List<Models.CorporatePhoneBook>> expandableListDetail) {
         this.context = context;
+        mainInterface = (MainInterface)context;
         this.expandableListTitle = expandableListTitle;
         this.expandableListDetail = expandableListDetail;
     }
@@ -53,10 +57,10 @@ public class ShieldListExpandableAdapter extends BaseExpandableListAdapter {
             convertView = layoutInflater.inflate(R.layout.shield_item, null);
         }
         TextView name = (TextView) convertView.findViewById(R.id.tv_name);
-        TextView phone = (TextView) convertView.findViewById(R.id.tv_phone);
+        final TextView phone = (TextView) convertView.findViewById(R.id.tv_phone);
         TextView address = (TextView) convertView.findViewById(R.id.tv_direction);
-        TextView mobile = (TextView) convertView.findViewById(R.id.tv_mobile);
-        TextView email = (TextView) convertView.findViewById(R.id.tv_email);
+        final TextView mobile = (TextView) convertView.findViewById(R.id.tv_mobile);
+        final TextView email = (TextView) convertView.findViewById(R.id.tv_email);
         TextView twitter = (TextView) convertView.findViewById(R.id.tv_twitter);
 
         if (input.name != null && input.name.length() > 1){
@@ -66,6 +70,12 @@ public class ShieldListExpandableAdapter extends BaseExpandableListAdapter {
         }
         if (input.phone != null && input.phone.length() > 1){
             phone.setText(input.phone);
+            phone.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mainInterface.makeCall(phone.getText().toString());
+                }
+            });
         } else {
             phone.setVisibility(View.GONE);
         }
@@ -76,11 +86,23 @@ public class ShieldListExpandableAdapter extends BaseExpandableListAdapter {
         }
         if (input.mobile_phone != null && input.mobile_phone.length() > 1){
             mobile.setText(input.mobile_phone);
+            mobile.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mainInterface.makeCall(mobile.getText().toString());
+                }
+            });
         } else {
             mobile.setVisibility(View.GONE);
         }
         if (input.email != null && input.email.length() > 1){
             email.setText(input.email);
+            email.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mainInterface.sendEmail(email.getText().toString());
+                }
+            });
         } else {
             email.setVisibility(View.GONE);
         }

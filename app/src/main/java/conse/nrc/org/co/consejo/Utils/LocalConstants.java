@@ -123,6 +123,8 @@ public class LocalConstants {
     public static final String MOD_4_Q7 = "MOD_4_Q7";
     public static final String MOD_4_Q8 = "MOD_4_Q8";
 
+    public static final String MOD_4_Q3_CORRECT_ANSWER = "155";
+
 
     //Tags for leaders course activities
     public static final String L_MOD_1_R = "L_MOD_1_R";
@@ -140,6 +142,8 @@ public class LocalConstants {
     public static final String L_MOD_4_Q2 = "L_MOD_4_Q2";
     public static final String L_MOD_4_Q3 = "L_MOD_4_Q3";
     public static final String L_MOD_4_CUESTIONARY = "L_MOD_4_CUESTIONARY";
+
+    public static final String sskd = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d!$%@#£€*?&]{8,}$";
 
     public static List<String> getLeadersCourseStringValidation(Context ctx){
         List<String> list = new ArrayList<>();
@@ -360,10 +364,22 @@ public class LocalConstants {
 
     public static final List<Integer> LEADERS_PROTECION_PATH_LAYOUT_LIST = new ArrayList<Integer>(){
         {
-            add(R.layout.vbg_course_1_58);
-            add(R.layout.vbg_course_1_59);
-            add(R.layout.vbg_course_1_60);
-            add(R.layout.vbg_course_1_61);
+            add(R.layout.protection_path_leaders_1_1);
+            add(R.layout.protection_path_leaders_1_2);
+            add(R.layout.protection_path_leaders_1_3);
+            add(R.layout.protection_path_leaders_1_4);
+            add(R.layout.protection_path_leaders_1_5);
+            add(R.layout.protection_path_leaders_1_6);
+            add(R.layout.protection_path_leaders_1_7);
+        }};
+
+    public static final List<Integer> LEADERS_PROTECION_PATH_LAYOUT_LIST_2 = new ArrayList<Integer>(){
+        {
+            add(R.layout.protection_path_leaders_2_8);
+            add(R.layout.protection_path_leaders_2_9);
+            add(R.layout.protection_path_leaders_2_10);
+            add(R.layout.protection_path_leaders_2_11);
+            add(R.layout.protection_path_leaders_2_12);
         }};
 
 

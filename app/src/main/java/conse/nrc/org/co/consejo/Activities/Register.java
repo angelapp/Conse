@@ -18,6 +18,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.crashlytics.android.Crashlytics;
+
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -34,6 +36,7 @@ import conse.nrc.org.co.consejo.Utils.RequestTask;
 import conse.nrc.org.co.consejo.Utils.ServerRequest;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 import conse.nrc.org.co.consejo.R;
+import io.fabric.sdk.android.Fabric;
 
 public class Register extends AppCompatActivity {
 
@@ -48,6 +51,7 @@ public class Register extends AppCompatActivity {
         DataBase dataBase = new DataBase(this);
         dataBase.getInstance(this);
         dataBase.clearTopicActivity();
+        Fabric.with(this, new Crashlytics());
     }
 
 }

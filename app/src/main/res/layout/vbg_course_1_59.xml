@@ -67,7 +67,8 @@
                     style="@style/ConseExitText"
                     android:hint="@string/course_1_59_et_hint"
                     android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp" />
+                    android:layout_marginRight="25dp"
+                    android:tag="155" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

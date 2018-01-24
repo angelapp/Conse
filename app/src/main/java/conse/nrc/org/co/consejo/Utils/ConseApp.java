@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 
+import com.crashlytics.android.Crashlytics;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
 
@@ -16,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import conse.nrc.org.co.consejo.R;
+import io.fabric.sdk.android.Fabric;
 
 /**
  * Created by apple on 11/18/17.
@@ -43,6 +45,8 @@ public class ConseApp extends Application {
                 .considerExifParams(true)
                 .bitmapConfig(Bitmap.Config.RGB_565)
                 .build();
+
+        Fabric.with(this, new Crashlytics());
 
     }
 

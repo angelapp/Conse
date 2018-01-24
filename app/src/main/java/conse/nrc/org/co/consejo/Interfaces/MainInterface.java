@@ -24,4 +24,9 @@ public interface MainInterface {
     boolean validateGpsStatus(boolean show_alert);
 
     boolean validateNetworkStatus(boolean show_alert);
+
+    void makeCall(String number);
+
+    void sendEmail(String send_to);
+
 }
