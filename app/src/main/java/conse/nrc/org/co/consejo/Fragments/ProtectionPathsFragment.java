@@ -75,6 +75,10 @@ public class ProtectionPathsFragment extends Fragment {
 
     private void goToLeadersPaths() {
 
+        flContent.removeAllViews();
+        ProtectionPathsCourseFragment pathsCourseFragment = new ProtectionPathsCourseFragment();
+        pathsCourseFragment.course_id = 2;
+        getFragmentManager().beginTransaction().replace(R.id.ly_paths_content, pathsCourseFragment).addToBackStack(null).commitAllowingStateLoss();
 
     }
 

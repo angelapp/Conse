@@ -48,26 +48,27 @@
                 android:layout_marginTop="15dp"
                 android:gravity="left"/>
 
-            <LinearLayout
+            <FrameLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content">
 
                 <FrameLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:tag="here_avatar">
+                    android:layout_height="250dp"
+                    android:tag="here_avatar"
+                    android:layout_width="250dp"
+                    android:layout_gravity="bottom|left"
+                    android:layout_marginLeft="-30dp">
 
                 </FrameLayout>
 
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/globo_avatar"
-                    android:tag="need_avatar"
-                    android:layout_weight="1" />
-            </LinearLayout>
+                    android:src="@drawable/victima_violencia"
+                    android:layout_gravity="top|right"
+                    android:scaleType="centerInside"
+                    android:layout_height="150dp"
+                    android:layout_width="150dp" />
+            </FrameLayout>
 
             <TextView
                 android:text="@string/course_1_2_b"

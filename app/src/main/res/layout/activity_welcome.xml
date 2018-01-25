@@ -25,6 +25,17 @@
             android:layout_gravity="center_vertical">
 
             <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/logo_nrc_welcome"
+                android:layout_marginTop="5dp"
+                android:id="@+id/iv_nrc_logo"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="15dp" />
+
+            <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/bienvenidos"
@@ -35,21 +46,10 @@
             <ImageView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:srcCompat="@drawable/conse"
+                app:srcCompat="@drawable/logo_conse"
                 android:id="@+id/iv_conse_logo"
-                android:layout_marginBottom="10dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginTop="5dp" />
-
-            <ImageView
-                android:layout_width="match_parent"
-                android:layout_height="100dp"
-                app:srcCompat="@drawable/logoncr"
-                android:layout_marginTop="5dp"
-                android:id="@+id/iv_nrc_logo"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginBottom="15dp" />
 
             <Button
                 android:layout_width="wrap_content"

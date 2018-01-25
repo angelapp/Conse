@@ -62,11 +62,12 @@
     <string name="number_6">6</string>
 
     <string name="course_1_1_a">¿Qué son las Violencias Basadas en Género?</string>
-    <string name="course_1_1_c">Guia divulgadora de ONU Mujeres</string>
+    <string name="course_1_1_c">Guía divulgadora de derechos. <b>Guía para el abordaje pedagógico</b> de los derechos de las mujeres y de personas con orientaciones sexuales e identidades de género no hegemónicas.
+<b>CONSEJERÍA PRESIDENCIAL PARA LA EQUIDAD DE LA MUJER, USAID, OIM</b></string>
     <string name="course_1_1_d">La VBG puede ser ejercida contra personas que no se adecuan a lo esperado por la sociedad según su sexo, como es el caso de personas con orientación sexual diversa (gays, lebianas, y bisexuales) o con identidad de género diversa (transexuales), pero se ejerce principalmente contra mujeres, niñas y adolecentes, de alli que cuando se hable de violencia de género, se asocie mayormente con violencia contra las mujeres.</string>
     <string name="course_1_1_e">¡Ahora sí, estás lista para iniciar!</string>
     <string name="course_1_2_a">¿Cómo saber si soy víctima de violencia?</string>
-    <string name="course_1_2_b">El prmer paso para identificar si eres víctma de violencia es tener claro ¿qué se entiende por violencia contra las mujeres?</string>
+    <string name="course_1_2_b">El primer paso para identificar si eres víctma de violencia es tener claro ¿qué se entiende por violencia contra las mujeres?</string>
     <string name="course_1_2_c">La ley define la violencia contra las mujeres como:</string>
     <string name="course_1_2_d">"Cualquier acción u omisión, que le cause muerte, daño o sufrimiento fisico, sexual, psicologico, económico o patrimonial por su condición de mujer, así como las amenazas de tales actos, la coacción o la privación arbitraria de la libertad, bien sea que se presente en el ámbito público o privado"</string>
     <string name="course_1_2_f">Módulo 1</string>
@@ -663,7 +664,8 @@
     </string-array>
 
     <string-array name="leaders_protection_paths_tabs_tittles">
-        <item>RUTA VBG</item>
+        <item>RUTA INDIVIDUAL</item>
+        <item>RUTA COLECTIVA</item>
         <item>VIDEO</item>
     </string-array>
 

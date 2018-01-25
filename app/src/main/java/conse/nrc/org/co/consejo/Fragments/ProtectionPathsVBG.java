@@ -36,6 +36,7 @@ import conse.nrc.org.co.consejo.Utils.DataBase;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.LEADERS_PROTECION_PATH_LAYOUT_LIST;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LEADERS_PROTECION_PATH_LAYOUT_LIST_2;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_PROTECION_PATH_LAYOUT_LIST;
 
 /**
@@ -74,6 +75,8 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
             layout_list = VBG_PROTECION_PATH_LAYOUT_LIST;
         } else if(COURSE_ID ==2){
             layout_list = LEADERS_PROTECION_PATH_LAYOUT_LIST;
+        } else if(COURSE_ID ==3){
+            layout_list = LEADERS_PROTECION_PATH_LAYOUT_LIST_2;
         }
 
         setInitialPageToShow();

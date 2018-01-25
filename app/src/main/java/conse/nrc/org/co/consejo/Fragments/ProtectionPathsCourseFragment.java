@@ -64,21 +64,30 @@ public class ProtectionPathsCourseFragment extends Fragment {
         protection_paths_course_tabs_pager = (PagerSlidingTabStrip) view.findViewById(R.id.protection_path_course_tabs_pager);
         fragmentList = new ArrayList<>();
         tab_tittle = new ArrayList<>();
-        ProtectionPathsVBG fragment = new ProtectionPathsVBG();
-        ProtectionPathVideoFragment videoFragment = new ProtectionPathVideoFragment();
-
-        fragment.COURSE_ID = course_id;
-        videoFragment.video_id = course_id;
-
-        fragmentList.add(fragment);
-        fragmentList.add(videoFragment);
 
         if (course_id == 1) {
+            ProtectionPathsVBG fragment = new ProtectionPathsVBG();
+            ProtectionPathVideoFragment videoFragment = new ProtectionPathVideoFragment();
+            fragment.COURSE_ID = course_id;
+            videoFragment.video_id = course_id;
+            fragmentList.add(fragment);
+            fragmentList.add(videoFragment);
+
             for (String tab : getResources().getStringArray(R.array.vbg_protection_paths_tabs_tittles)) {
                 tab_tittle.add(tab);
                 Log.d("PROTECTION Fragment", "Added page for tab: " + tab);
             }
         } else if (course_id == 2){
+            ProtectionPathsVBG fragment1 = new ProtectionPathsVBG();
+            ProtectionPathsVBG fragment2 = new ProtectionPathsVBG();
+            ProtectionPathVideoFragment videoFragment = new ProtectionPathVideoFragment();
+            fragment1.COURSE_ID = 2;
+            fragment2.COURSE_ID = 3;
+            videoFragment.video_id = course_id;
+            fragmentList.add(fragment1);
+            fragmentList.add(fragment2);
+            fragmentList.add(videoFragment);
+
             for (String tab : getResources().getStringArray(R.array.leaders_protection_paths_tabs_tittles)) {
                 tab_tittle.add(tab);
                 Log.d("PROTECTION Fragment", "Added page for tab: " + tab);
