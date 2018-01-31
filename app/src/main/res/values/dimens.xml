@@ -13,7 +13,7 @@
     <dimen name="square_padding_top">20dp</dimen>
     <dimen name="height_size_40">40dp</dimen>
     <dimen name="bottom_padding_for_alert">65dp</dimen>
-    <dimen name="padding_top_for_courses">55dp</dimen>
+    <dimen name="padding_top_for_courses">65dp</dimen>
 
 
 </resources>

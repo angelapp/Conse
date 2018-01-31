@@ -10,6 +10,7 @@ import android.widget.Button;
 
 import conse.nrc.org.co.consejo.Interfaces.AvatarInterfaces;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
@@ -34,6 +35,8 @@ public class SelectAvatarGenderFragment extends Fragment{
         Button btMale = (Button) mView.findViewById(R.id.bt_avatar_male);
         Button btFemale = (Button) mView.findViewById(R.id.bt_avatar_female);
 
+        ConseApp.clearAvatar(mCtx);
+
         btMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -50,6 +53,8 @@ public class SelectAvatarGenderFragment extends Fragment{
             }
         });
 
+
+
         return mView;
     }
 
@@ -63,4 +68,6 @@ public class SelectAvatarGenderFragment extends Fragment{
     private void launchAvatarSelection(int gender) {
         avatarInterfaces.genderSelected(gender);
     }
+
+
 }

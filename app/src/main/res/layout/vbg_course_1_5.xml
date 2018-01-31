@@ -59,6 +59,28 @@
 
 
                 <TextView
+                    android:text="@string/course_1_5_b"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ConseTittleTextH2"
+                    android:layout_marginBottom="15dp"
+                    android:layout_marginTop="15dp"
+                    android:textColor="@color/salmon" />
+
+                <TextView
+                    android:text="@string/course_1_5_b_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/ConseParagraphText"
+                    android:paddingRight="@dimen/fab_margin"
+                    android:paddingTop="@dimen/fab_margin"
+                    android:paddingBottom="@dimen/fab_margin"
+                    android:paddingLeft="45dp"
+                    android:background="@drawable/exclusion_0_5"
+                    android:textAlignment="viewStart"
+                    android:gravity="left|center_vertical" />
+
+                <TextView
                     android:text="@string/course_1_5_c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -167,15 +189,6 @@
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
                     android:background="@drawable/exclusion_9"/>
-
-                <TextView
-                    android:text="@string/course_1_5_b"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/ConseTittleTextH2"
-                    android:layout_marginBottom="15dp"
-                    android:layout_marginTop="15dp"
-                    android:textColor="@color/salmon" />
 
 
                 <RelativeLayout

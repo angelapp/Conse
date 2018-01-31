@@ -110,9 +110,9 @@ public class ConseApp extends Application {
 
     public static void clearAvatar(Context ctx){
 
-        for(int i = 1; i<=5; i++){
+        for(int i = 0; i<=15; i++){
             UtilsFunctions.deleteKeySharedPreferences(ctx, LocalConstants.AVATAR_SELECTED_PART_ + String.valueOf(i));
-            i++;
+            Log.d("Clear avatar", "Clear id: " + LocalConstants.AVATAR_SELECTED_PART_ + String.valueOf(i));
         }
 
     }

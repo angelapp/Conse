@@ -66,14 +66,15 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView5"
                 style="@style/ConseTittleTextH1"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:textSize="20sp" />
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="15dp" >
+                android:layout_marginTop="25dp" >
 
                 <Button
                     android:layout_width="56dp"

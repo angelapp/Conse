@@ -197,6 +197,7 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
 
     private void savePiecesSelected(List<Integer> tag) {
         UtilsFunctions.saveSharedInteger(mCtx, LocalConstants.AVATAR_SELECTED_PART_+String.valueOf(tag.get(0)), tag.get(1));
+        Log.d("Saved avatar", "Saved id: " + LocalConstants.AVATAR_SELECTED_PART_ + String.valueOf(tag.get(0)));
     }
 
     private void nextActivity() {
