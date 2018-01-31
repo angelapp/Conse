@@ -39,13 +39,6 @@
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal">
 
-                <Button
-                    android:id="@+id/bt_previous"
-                    android:layout_width="56dp"
-                    android:layout_height="56dp"
-                    android:background="@drawable/button_back"
-                    android:onClick="onClick" />
-
 
                 <Button
                     android:id="@+id/bt_next"

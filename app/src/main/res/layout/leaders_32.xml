@@ -61,18 +61,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
+                android:layout_marginLeft="15dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp">
+                android:gravity="center">
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/forma_l32"
                     style="style/ConseTittleTextH2White"
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:gravity="center_horizontal"
                     android:paddingTop="10dp"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/marcador1_l32" />
+                    android:text="@string/number_1"
+                    android:layout_gravity="top" />
 
                 <TextView
                     android:text="@string/lideres_32_03"
@@ -81,7 +83,7 @@
                     android:id="@+id/textView3"
                     style="@style/ConseParagraphText"
                     android:layout_marginTop="0dp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical" />
 
             </LinearLayout>
 
@@ -92,17 +94,19 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="15dp">
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginBottom="15dp">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@drawable/marcador2_l32"
+                    android:background="@drawable/forma_l32"
                     style="style/ConseTittleTextH2White"
                     android:textSize="30sp"
                     android:gravity="center_horizontal"
-                    android:paddingTop="10dp"/>
+                    android:paddingTop="10dp"
+                    android:text="@string/number_2" />
 
                 <TextView
                     android:text="@string/lideres_32_04"

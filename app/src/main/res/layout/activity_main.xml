@@ -98,16 +98,15 @@
         android:id="@+id/nav_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_gravity="start"
+        android:layout_gravity="center_vertical|start"
         android:fitsSystemWindows="true"
         android:background="@color/hard_gray" >
 
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="40dp"
             android:layout_gravity="center_vertical"
             android:id="@+id/ly_menu">
 
@@ -163,7 +162,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bt_about_nrc"
-                android:background="@drawable/button_menu_about_nrc"
+                android:background="@drawable/sobre_nrc"
                 android:layout_marginBottom="@dimen/menu_item_bottom_margin"
                 android:onClick="onClick"/>
 

@@ -2,7 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:tag="@string/need_avatar">
 
 
     <ScrollView
@@ -35,13 +36,54 @@
                 android:layout_height="1dp"
                 android:background="@color/black_overlay"/>
 
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/square_padding_top">
+
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/globitoparaaudio"
+                    android:id="@+id/fl_image">
+
+                    <TextView
+                        android:text="@string/lideres_34_01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView5"
+                        style="@style/ConseTittleTextH1"
+                        android:gravity="center"
+                        android:layout_marginLeft="@dimen/fab_margin"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="-15dp" />
+
+                </FrameLayout>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/fl_image"
+                    android:layout_marginTop="-60dp"
+                    android:tag="here_avatar"
+                    android:layout_height="200dp"
+                    android:foregroundGravity="left"
+                    android:paddingRight="120dp">
+
+                </FrameLayout>
+
+            </RelativeLayout>
+
+
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/hoja_dest_l34"
-                android:paddingTop="35dp">
+                android:paddingTop="35dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp">
 
                 <TextView
                     android:text="@string/lideres_34_01"

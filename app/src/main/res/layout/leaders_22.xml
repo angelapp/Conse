@@ -35,6 +35,12 @@
                 android:layout_height="1dp"
                 android:background="@color/black_overlay"/>
 
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/balanza_l22"
+                android:id="@+id/imageView2" />
+
 
             <TextView
                 android:text="@string/lideres_22_01"
@@ -60,7 +66,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/hoja_papel_l22"
-                android:paddingTop="35dp">
+                android:paddingTop="35dp"
+                android:paddingBottom="20dp">
 
                 <TextView
                     android:text="@string/lideres_22_03"
