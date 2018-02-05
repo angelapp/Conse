@@ -26,9 +26,7 @@
                 android:text="@string/lideres_12_02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
 
             <View
                 android:layout_width="match_parent"
@@ -41,20 +39,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
-                style="@style/ConseParagraphText"
-                android:gravity="center_horizontal" />
+                style="@style/CourseParagraphText"
+                android:gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:layout_marginTop="@dimen/course_first_content_margin_top" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:orientation="vertical"
-                android:layout_marginLeft="@dimen/fab_margin"
-                android:layout_marginRight="@dimen/fab_margin"
+                android:layout_marginLeft="@dimen/paper_background_margine_left"
+                android:layout_marginRight="@dimen/paper_background_margine_right"
                 android:background="@drawable/hoja_l19"
                 android:paddingTop="35dp"
                 android:tag="questionary_container"
                 android:layout_marginTop="30dp"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical">
 
 
                 <TextView
@@ -62,7 +64,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv"
-                    style="@style/ConseTittleTextH2"
+                    style="@style/CourseParagraphTextBold"
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="@dimen/check_box_margin"
                     android:layout_marginRight="@dimen/check_box_margin" />
@@ -71,52 +73,60 @@
                     android:text="@string/lideres_29_03"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter" />
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:layout_marginLeft="@dimen/paper_checkbox_margin_left" />
                 <CheckBox
                     android:text="@string/lideres_29_04"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter" />
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:layout_marginLeft="@dimen/paper_checkbox_margin_left" />
 
                 <CheckBox
                     android:text="@string/lideres_29_06"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/ConseCheckboxBlackLetter"
-                    android:tag="correct_option" />
+                    android:tag="correct_option"
+                    android:layout_marginLeft="@dimen/paper_checkbox_margin_left" />
 
                 <CheckBox
                     android:text="@string/lideres_29_07"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/ConseCheckboxBlackLetter"
-                    android:tag="correct_option" />
+                    android:tag="correct_option"
+                    android:layout_marginLeft="@dimen/paper_checkbox_margin_left" />
 
                 <CheckBox
                     android:text="@string/lideres_29_08"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter" />
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:layout_marginLeft="@dimen/paper_checkbox_margin_left" />
 
                 <CheckBox
                     android:text="@string/lideres_29_09"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/ConseCheckboxBlackLetter"
-                    android:tag="correct_option" />
+                    android:tag="correct_option"
+                    android:layout_marginLeft="@dimen/paper_checkbox_margin_left" />
 
                 <CheckBox
                     android:text="@string/lideres_29_10"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseCheckboxBlackLetter" />
+                    style="@style/ConseCheckboxBlackLetter"
+                    android:layout_marginLeft="@dimen/paper_checkbox_margin_left" />
 
                 <CheckBox
                     android:text="@string/lideres_29_11"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     style="@style/ConseCheckboxBlackLetter"
-                    android:tag="correct_option" />
+                    android:tag="correct_option"
+                    android:layout_marginLeft="@dimen/paper_checkbox_margin_left" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

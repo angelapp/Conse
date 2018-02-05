@@ -24,9 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -38,11 +36,12 @@
                 android:text="@string/course_1_32_tittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/ConseTittleTextH1"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="@dimen/square_padding_top"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp" />
+                style="@style/CourseSubTittle"
+                android:layout_marginTop="50dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:gravity="center_horizontal"
+                android:layout_marginBottom="40dp" />
 
 
 
@@ -52,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="@dimen/square_padding_top" >
+                android:layout_marginTop="@dimen/next_button_margin_top" >
 
                 <Button
                     android:layout_width="56dp"
@@ -66,7 +65,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
                     android:id="@+id/bt_next"
-                    android:background="@drawable/button_test"
+                    android:background="@drawable/button_questionary2"
                     android:layout_marginLeft="20dp"
                     android:onClick="onClick" />
 

@@ -13,8 +13,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/fab_margin"
-            android:paddingRight="@dimen/fab_margin"
             android:paddingBottom="@dimen/bottom_padding_for_alert"
             android:paddingTop="@dimen/padding_top_for_courses">
 
@@ -28,9 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -43,27 +39,32 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginTop="@dimen/square_padding_top">
+                android:layout_marginTop="@dimen/course_first_content_margin_top"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/courses_play_button_line_margin_left"
+                    android:layout_marginRight="@dimen/courses_play_button_line_margin_right" />
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/play_button_margin_bottom"
+                    android:layout_marginTop="@dimen/play_button_margin_top"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:text="@string/lideres_04_01"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ConseTittleTextH2"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginTop="30dp"
+                        style="@style/CourseSoundTittle"
                         android:textColor="@color/salmon"
-                        android:layout_marginRight="65dp" />
+                        android:layout_weight="3" />
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -74,13 +75,9 @@
                         android:onClick="onClick"
                         android:tag="violencia_fisica" />
 
-                </RelativeLayout>
+                </LinearLayout>
 
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/white"/>
             </LinearLayout>
 
 
@@ -93,27 +90,32 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/courses_play_button_line_margin_left"
+                    android:layout_marginRight="@dimen/courses_play_button_line_margin_right" />
 
-                <RelativeLayout
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/play_button_margin_bottom"
+                    android:layout_marginTop="@dimen/play_button_margin_top"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:text="@string/lideres_04_02"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ConseTittleTextH2"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginTop="30dp"
+                        style="@style/CourseSoundTittle"
                         android:textColor="@color/salmon"
-                        android:layout_marginRight="65dp" />
+                        android:layout_weight="3" />
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -124,13 +126,9 @@
                         android:onClick="onClick"
                         android:tag="violencia_sexual" />
 
-                </RelativeLayout>
+                </LinearLayout>
 
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/white"/>
             </LinearLayout>
 
 
@@ -140,27 +138,32 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/courses_play_button_line_margin_left"
+                    android:layout_marginRight="@dimen/courses_play_button_line_margin_right" />
 
-                <RelativeLayout
+                <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/play_button_margin_bottom"
+                    android:layout_marginTop="@dimen/play_button_margin_top"
+                    android:gravity="center_vertical">
 
                 <TextView
                     android:text="@string/lideres_04_03"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseTittleTextH2"
-                    android:layout_marginBottom="30dp"
-                    android:layout_marginTop="30dp"
+                    style="@style/CourseSoundTittle"
                     android:textColor="@color/salmon"
-                    android:layout_marginRight="65dp" />
+                    android:layout_weight="3" />
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
@@ -171,13 +174,9 @@
                     android:onClick="onClick"
                     android:tag="violencia_psicologica" />
 
-            </RelativeLayout>
+            </LinearLayout>
 
 
-                <View
-                    android:layout_width="match_parent"
-                    android:layout_height="1dp"
-                    android:background="@color/white"/>
             </LinearLayout>
 
 
@@ -188,29 +187,32 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical">
+                android:orientation="vertical"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/courses_play_button_line_margin_left"
+                    android:layout_marginRight="@dimen/courses_play_button_line_margin_right" />
 
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"
-                    android:gravity="center_vertical">
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="@dimen/play_button_margin_bottom"
+                    android:layout_marginTop="@dimen/play_button_margin_top">
 
                     <TextView
                         android:text="@string/lideres_04_04"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        style="@style/ConseTittleTextH2"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginTop="30dp"
+                        style="@style/CourseSoundTittle"
                         android:textColor="@color/salmon"
-                        android:layout_weight="3"
-                        android:layout_marginRight="65dp" />
+                        android:layout_weight="3" />
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -227,7 +229,9 @@
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/courses_play_button_line_margin_left"
+                    android:layout_marginRight="@dimen/courses_play_button_line_margin_right" />
             </LinearLayout>
 
 
@@ -236,7 +240,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="@dimen/next_button_margin_top"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:layout_width="56dp"

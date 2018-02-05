@@ -57,7 +57,7 @@ android {
             buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
             //buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
             buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"'//live
-            buildConfigField "boolean", "DEV_VERSION", 'false'
+            buildConfigField "boolean", "DEV_VERSION", 'true'
             applicationIdSuffix ".debugLive"
             debuggable true
         }

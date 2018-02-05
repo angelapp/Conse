@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="@dimen/bottom_padding_for_alert"
-            android:paddingTop="@dimen/bottom_padding_for_alert">
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -27,9 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -41,10 +39,11 @@
                 android:text="@string/course_1_13_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/ConseTittleTextH2"
+                style="@style/CourseSubTittle"
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"
-                android:layout_marginLeft="31dp" />
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
 
             <TextView
@@ -52,10 +51,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
-                style="@style/ConseParagraphText"
-                android:layout_marginBottom="15dp"
-                android:layout_marginLeft="31dp"
-                android:layout_marginRight="31dp" />
+                style="@style/CourseParagraphText"
+                android:layout_marginBottom="25dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
 
 
@@ -63,29 +62,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
-                android:layout_marginLeft="@dimen/fab_margin"
-                android:layout_marginRight="@dimen/fab_margin">
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/courses_play_button_line_margin_left"
+                    android:layout_marginRight="@dimen/courses_play_button_line_margin_right" />
 
-                <RelativeLayout
-                    android:layout_width="match_parent"
+                <LinearLayout
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="horizontal"
+                    android:layout_marginBottom="@dimen/play_button_margin_bottom"
+                    android:layout_marginTop="@dimen/play_button_margin_top"
+                    android:gravity="center_vertical">
 
                     <TextView
                         android:text="@string/course_1_13_c"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        style="@style/ConseTittleTextH2"
-                        android:layout_marginBottom="30dp"
-                        android:layout_marginTop="30dp"
+                        style="@style/CourseSoundTittle"
                         android:textColor="@color/salmon"
-                        android:paddingRight="@dimen/square_padding_top"
-                        android:layout_marginRight="55dp" />
+                        android:paddingRight="0dp"
+                        android:layout_marginRight="0dp"
+                        android:layout_marginTop="0dp"
+                        android:layout_weight="3" />
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
@@ -96,13 +100,15 @@
                         android:onClick="onClick"
                         android:tag="como_mujer_victima_tienes_derecho" />
 
-                </RelativeLayout>
+                </LinearLayout>
 
 
                 <View
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
-                    android:background="@color/white"/>
+                    android:background="@color/white"
+                    android:layout_marginLeft="@dimen/courses_play_button_line_margin_left"
+                    android:layout_marginRight="@dimen/courses_play_button_line_margin_right" />
             </LinearLayout>
 
 
@@ -112,7 +118,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="15dp" >
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:layout_width="56dp"
@@ -137,7 +145,6 @@
         </LinearLayout>
 
     </ScrollView>
-
 
 
 </LinearLayout>

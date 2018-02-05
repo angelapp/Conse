@@ -29,6 +29,9 @@ public class LocalConstants {
     public static final int MALE = 1;
     public static final int FEMALE = 2;
 
+    public static final float BUTTON_SEND_ALERT_MIN_ALPHA = 0.5f;
+    public static final float BUTTON_SEND_ALERT_MAX_ALPHA = 1f;
+
     public static final int opened = 1;
     public static final int closed = 2;
 

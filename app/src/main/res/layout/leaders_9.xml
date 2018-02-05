@@ -27,9 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -42,7 +40,9 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView25"
                 style="@style/ConseTittleTextH1"
-                android:layout_marginTop="25dp" />
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <TextView
                 android:text="@string/lideres_09_02"
@@ -50,8 +50,8 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView26"
                 style="@style/ConseParagraphText"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right"
                 android:layout_marginBottom="25dp" />
 
             <LinearLayout
@@ -59,7 +59,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/hoja1_l9"
-                android:paddingTop="35dp">
+                android:paddingTop="35dp"
+                android:layout_marginLeft="@dimen/paper_background_margine_left"
+                android:layout_marginRight="@dimen/paper_background_margine_right">
 
                 <TextView
                     android:text="@string/lideres_09_03"
@@ -197,7 +199,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/hoja1_l9"
                 android:paddingTop="35dp"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="@dimen/paper_background_margine_left"
+                android:layout_marginRight="@dimen/paper_background_margine_right">
 
                 <TextView
                     android:text="@string/lideres_09_08"
@@ -234,8 +238,8 @@
                         style="@style/ConseExitText"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:layout_width="70dp"
-                        android:tag="@string/lideres_09_08_01"/>
+                        android:tag="@string/lideres_09_08_01"
+                        android:layout_width="100dp" />
 
                     <TextView
                         android:text="@string/lideres_09_10"
@@ -333,7 +337,9 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/hoja1_l9"
                 android:paddingTop="35dp"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="@dimen/paper_background_margine_left"
+                android:layout_marginRight="@dimen/paper_background_margine_right">
 
                 <TextView
                     android:text="@string/lideres_09_13"
@@ -447,10 +453,12 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginTop="@dimen/next_button_margin_top"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:id="@+id/bt_previous"

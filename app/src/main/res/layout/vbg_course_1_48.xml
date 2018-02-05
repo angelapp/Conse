@@ -24,11 +24,9 @@
 
             <TextView
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
+                style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
                 android:text="@string/course_1_47_tittle" />
 
             <View
@@ -41,8 +39,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp">
+                android:layout_marginTop="@dimen/course_first_content_margin_top"
+                android:layout_marginLeft="@dimen/courses_li_margin_top"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
 
                 <ImageView
@@ -55,7 +54,7 @@
                     android:text="@string/course_1_48_tittle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseTittleTextH1"
+                    style="@style/CourseSubTittle"
                     android:layout_marginRight="10dp"
                     android:gravity="left" />
 
@@ -68,7 +67,8 @@
                 android:id="@+id/textView16"
                 style="@style/ConseParagraphText"
                 android:layout_marginLeft="80dp"
-                android:layout_marginBottom="25dp" />
+                android:layout_marginBottom="25dp"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <FrameLayout
                 android:layout_width="match_parent"

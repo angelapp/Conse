@@ -24,11 +24,9 @@
 
             <TextView
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
+                style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
                 android:text="@string/lideres_52_01" />
 
             <View
@@ -43,7 +41,7 @@
 
                 <ImageView
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="692dp"
                     app:srcCompat="@drawable/ruta_l42"
                     android:id="@+id/imageView13"
                     android:scaleType="centerCrop"
@@ -116,7 +114,7 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="-170dp"
+                android:layout_marginTop="-100dp"
                 android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_gravity="center_horizontal">

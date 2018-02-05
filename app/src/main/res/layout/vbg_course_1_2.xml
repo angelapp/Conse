@@ -15,7 +15,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center_horizontal"
-            android:paddingBottom="@dimen/bottom_padding_for_alert">
+            android:paddingBottom="@dimen/bottom_padding_for_alert"
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -27,9 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -40,12 +39,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
-                style="@style/ConseTittleTextH1"
+                style="@style/CourseHighlightText"
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="25dp"
                 android:gravity="left"
-                android:layout_marginLeft="@dimen/fab_margin"
-                android:layout_marginRight="@dimen/fab_margin" />
+                android:layout_marginLeft="@dimen/courses_margin_left_l0" />
 
             <FrameLayout
                 android:orientation="horizontal"
@@ -71,20 +69,21 @@
             <TextView
                 android:text="@string/course_1_2_b"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/textView3"
-                style="@style/ConseParagraphText"
-                android:layout_marginLeft="@dimen/fab_margin"
-                android:layout_marginRight="@dimen/fab_margin" />
+                style="@style/CourseParagraphText"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <TextView
                 android:text="@string/course_1_2_c"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:id="@+id/textView4"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginLeft="@dimen/fab_margin"
-                android:layout_marginRight="@dimen/fab_margin" />
+                style="@style/CourseParagraphText"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -92,8 +91,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/cuadro_banda"
                 android:layout_marginTop="25dp"
-                android:layout_marginLeft="@dimen/fab_margin"
-                android:layout_marginRight="@dimen/fab_margin">
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <TextView
                     android:text="@string/course_1_2_d"
@@ -126,7 +125,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:layout_width="56dp"

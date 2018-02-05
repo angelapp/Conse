@@ -24,11 +24,9 @@
 
             <TextView
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
+                style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
                 android:text="@string/course_1_47_tittle" />
 
             <View
@@ -41,8 +39,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp">
+                android:layout_marginTop="@dimen/course_first_content_margin_top"
+                android:layout_marginLeft="@dimen/courses_li_margin_top"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
 
                 <ImageView
@@ -55,7 +54,7 @@
                     android:text="@string/course_1_49_tittle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseTittleTextH1"
+                    style="@style/CourseSubTittle"
                     android:layout_marginRight="10dp"
                     android:gravity="left" />
 
@@ -67,31 +66,34 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView16"
                 style="@style/ConseParagraphText"
-                android:layout_marginLeft="80dp"
-                android:layout_marginBottom="10dp" />
+                android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
+                android:layout_marginBottom="10dp"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="@color/black_overlay"
                 android:backgroundTint="@color/white"
-                android:layout_marginRight="20dp"
-                android:layout_marginLeft="20dp" />
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:layout_marginLeft="@dimen/courses_li_margin_left_aling" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:layout_marginTop="@dimen/play_button_margin_top"
+                android:layout_marginBottom="@dimen/play_button_margin_bottom">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView17"
                     android:layout_weight="1"
-                    style="@style/ConseTittleTextH2"
+                    style="@style/CourseSoundTittle"
                     android:textColor="@color/salmon"
                     android:layout_marginTop="0dp"
                     android:text="@string/course_1_49_text2" />
@@ -102,13 +104,10 @@
                     android:id="@+id/bt_play"
                     android:background="@drawable/play"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="@dimen/fab_margin"
                     android:onClick="onClick"
                     android:tag="asistencia_en_salud"
                     android:gravity="top|right"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_gravity="right|center_vertical" />
             </LinearLayout>
 
             <View
@@ -116,23 +115,25 @@
                 android:layout_height="1dp"
                 android:background="@color/black_overlay"
                 android:backgroundTint="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:layout_marginTop="@dimen/play_button_margin_top"
+                android:layout_marginBottom="@dimen/play_button_margin_bottom">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView17"
                     android:layout_weight="1"
-                    style="@style/ConseTittleTextH2"
+                    style="@style/CourseSoundTittle"
                     android:textColor="@color/salmon"
                     android:layout_marginTop="0dp"
                     android:text="@string/course_1_49_text3" />
@@ -143,13 +144,10 @@
                     android:id="@+id/bt_play"
                     android:background="@drawable/play"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="@dimen/fab_margin"
                     android:onClick="onClick"
                     android:tag="medidas_estabilizacion_economica"
                     android:gravity="top|right"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_gravity="right|center_vertical" />
             </LinearLayout>
 
             <View
@@ -157,23 +155,25 @@
                 android:layout_height="1dp"
                 android:background="@color/black_overlay"
                 android:backgroundTint="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center_vertical"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+                android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:layout_marginTop="@dimen/play_button_margin_top"
+                android:layout_marginBottom="@dimen/play_button_margin_bottom">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView17"
                     android:layout_weight="1"
-                    style="@style/ConseTittleTextH2"
+                    style="@style/CourseSoundTittle"
                     android:textColor="@color/salmon"
                     android:layout_marginTop="0dp"
                     android:text="@string/course_1_49_text4" />
@@ -184,13 +184,10 @@
                     android:id="@+id/bt_play"
                     android:background="@drawable/play"
                     android:layout_alignParentRight="true"
-                    android:layout_marginRight="@dimen/fab_margin"
                     android:onClick="onClick"
                     android:tag="medidas_reparacion_integral"
                     android:gravity="top|right"
-                    android:layout_gravity="right|center_vertical"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginBottom="10dp" />
+                    android:layout_gravity="right|center_vertical" />
             </LinearLayout>
 
             <View
@@ -198,8 +195,8 @@
                 android:layout_height="1dp"
                 android:background="@color/black_overlay"
                 android:backgroundTint="@color/white"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp" />
+                android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <LinearLayout
                 android:layout_width="match_parent"

@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="@dimen/bottom_padding_for_alert"
-            android:paddingTop="@dimen/bottom_padding_for_alert">
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <TextView
                 android:text="@string/course_1_10_a"
@@ -27,7 +27,9 @@
                 android:id="@+id/tv_crossword_tittle"
                 style="@style/ConseTittleTextH1"
                 android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <GridLayout
                 android:layout_width="wrap_content"

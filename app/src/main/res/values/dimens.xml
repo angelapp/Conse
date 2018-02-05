@@ -13,7 +13,49 @@
     <dimen name="square_padding_top">20dp</dimen>
     <dimen name="height_size_40">40dp</dimen>
     <dimen name="bottom_padding_for_alert">65dp</dimen>
-    <dimen name="padding_top_for_courses">65dp</dimen>
+    <dimen name="padding_top_bar">65dp</dimen>
+    <dimen name="padding_top_for_courses">15dp</dimen>
+    <dimen name="courses_margin_left_l0">15dp</dimen>
+    <dimen name="courses_margin_left">30dp</dimen>
+    <dimen name="courses_margin_right">30dp</dimen>
+    <dimen name="course_tittle_margin_top">30dp</dimen>
+    <dimen name="play_button_margin_bottom">10dp</dimen>
+    <dimen name="play_button_margin_top">10dp</dimen>
+    <dimen name="next_button_margin_top">20dp</dimen>
+
+    <dimen name="check_box_margin">35dp</dimen>
+
+    <dimen name="courses_play_button_line_margin_left">5dp</dimen>
+    <dimen name="courses_play_button_line_margin_right">5dp</dimen>
+
+    <dimen name="courses_bullet_margin_left">20dp</dimen>
+    <dimen name="courses_li_margin_top">15dp</dimen>
+
+    <dimen name="bullets_margin">10dp</dimen>
+
+    <dimen name="paper_checkbox_margin_left">45dp</dimen>
+
+    <dimen name="paper_background_margine_left">10dp</dimen>
+    <dimen name="paper_background_margine_right">10dp</dimen>
+
+    <dimen name="paths_images_margin_top">20dp</dimen>
+    <dimen name="course_first_content_margin_top">20dp</dimen>
+
+    <dimen name="courses_li_margin_left">70dp</dimen>
+
+    <dimen name="courses_li_margin_left_aling">80dp</dimen>
+
+    <dimen name="courses_bullets_intern_margin_left">15dp</dimen>
+    <dimen name="courses_bullets_intern_margin_right">15dp</dimen>
+
+    <dimen name="courses_module_tittle_margin_top">10dp</dimen>
+    <dimen name="courses_module_tittle_margin_bottom">10dp</dimen>
+
+    <dimen name="course_tittle_text_size">25sp</dimen>
+    <dimen name="course_sub_tittle_text_size">22sp</dimen>
+    <dimen name="course_highlight_text_text_size">20sp</dimen>
+    <dimen name="course_paragraph_text_size">17sp</dimen>
+    <dimen name="course_module_name_text_size">15sp</dimen>
 
 
 </resources>

@@ -24,9 +24,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -38,11 +36,12 @@
                 android:text="@string/course_1_55_text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/ConseTittleTextH1"
+                style="@style/CourseSubTittle"
                 android:layout_marginBottom="15dp"
-                android:layout_marginTop="@dimen/square_padding_top"
-                android:layout_marginLeft="25dp"
-                android:layout_marginRight="25dp" />
+                android:layout_marginTop="40dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:gravity="center_horizontal" />
 
 
 
@@ -52,7 +51,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="@dimen/square_padding_top" >
+                android:layout_marginTop="@dimen/next_button_margin_top"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:layout_width="56dp"

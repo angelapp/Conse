@@ -61,75 +61,9 @@
     <string name="number_5">5</string>
     <string name="number_6">6</string>
 
-    <string name="course_1_1_a">¿Qué son las Violencias Basadas en Género?</string>
-    <string name="course_1_1_c">Guía divulgadora de derechos. <b>Guía para el abordaje pedagógico</b> de los derechos de las mujeres y de personas con orientaciones sexuales e identidades de género no hegemónicas.
-<b>CONSEJERÍA PRESIDENCIAL PARA LA EQUIDAD DE LA MUJER, USAID, OIM</b></string>
-    <string name="course_1_1_d">La VBG puede ser ejercida contra personas que no se adecúan a lo esperado por la sociedad según su sexo, como es el caso de personas con orientación sexual diversa (gays, lebianas, y bisexuales) o con identidad de género diversa (transexuales), pero se ejerce principalmente contra mujeres, niñas y adolecentes, de allí que cuando se hable de violencia de género, se asocie mayormente con violencia contra las mujeres.</string>
-    <string name="course_1_1_e">¡Ahora sí, estás lista para iniciar!</string>
-    <string name="course_1_2_a">¿Cómo saber si soy víctima de violencia?</string>
-    <string name="course_1_2_b">El primer paso para identificar si eres víctima de violencia es tener claro ¿qué se entiende por violencia contra las mujeres?</string>
-    <string name="course_1_2_c">La ley define la violencia contra las mujeres como:</string>
-    <string name="course_1_2_d">\"Cualquier acción u omisión, que le cause muerte, daño o sufrimiento fisíco, sexual, psicológico, económico o patrimonial por su condición de mujer, así como las amenazas de tales actos, la coacción o la privación arbitraria de la libertad, bien sea que se presente en el ámbito público o privado.\"</string>
-    <string name="course_1_2_f">Módulo 1</string>
-    <string name="course_1_3_a">¿Cómo saber si soy víctima de violencia?</string>
-    <string name="course_1_3_b">Según la ley, la violencia contra las mujeres presenta las siguientes características</string>
-    <string name="course_1_3_1_c">Te ocurre por ser mujer. Esto significa que ser mujer es lo que te pone en riesgo</string>
-    <string name="course_1_3_2_c">Te puede ocurrir a ti o a cualquier mujer, no hay excepciones.</string>
-    <string name="course_1_3_3_c">Es un delito y por lo tanto merece un castigo o pena.</string>
-    <string name="course_1_3_5_c">Se puede presentar en cualquier tipo de espacio público o privado dónde desarolles tus actividades.</string>
-    <string name="course_1_4_a">Conoce cada uno de los ámbitos donde se presenta la violencia.</string>
-    <string name="course_1_4_b">Pulsa sobre el triángulo dentro del circulo para escuchar la descripción de cada uno de los ámbitos</string>
-    <string name="course_1_4_1_a">En la familia</string>
-    <string name="course_1_4_2_a">En la comunidad</string>
-    <string name="course_1_4_3_a">En el ámbito estatal</string>
-    <string name="course_1_4_4_a">En el conflicto armado</string>
-    <string name="course_1_5_a">Si crees ser víctima de violencia en el marco del conflicto armado hay varios factores adicionales que debes tener en cuenta, revisa la siguiente infografía con información sobre el tema:</string>
-    <string name="course_1_5_b">La corte constitucional reconoció que las mujeres, por su condición de mujeres, en el conflicto armado enfrentan riesgos diferentes a los que viven los hombres. Estos son:</string>
-    <string name="course_1_5_c">Esclavización o explotación para realizar roles considerados como femeninos y labores de la casa como cocinar, lavar o cuidar enfermos.</string>
-    <string name="course_1_5_d">Reclutamiento forzado de tus hijos e hijas por grupos armado ilegales</string>
-    <string name="course_1_5_e">Señalamientos o venganzas por tu relación o contacto con integrantes de algún grupo armado.</string>
-    <string name="course_1_5_f">Riesgos por tu labor de liderazgo o pertenencia a una organización comunitaria, social o politica</string>
-    <string name="course_1_5_g">Persecución y asesinato por la imposición de normas de comportamiento relacionadas con el vestuario, horarios y relaciones personales</string>
-    <string name="course_1_5_h">Despojo de tierras y del patrimonio</string>
-    <string name="course_1_5_i">Pertenencia a una comunidad indigena o afrocolombiana</string>
-    <string name="course_1_5_j">Perdida y ausencia del compañero o esposo durante el desplazamiento</string>
-    <string name="course_1_5_k">Explotación minera ilegal</string>
-    <string name="course_1_5_l">Identidad y orientación de género diversa.</string>
-    <string name="course_1_6_a">Otro aspecto a tener en cuentra es que, aunque no existe un listado de hechos que se consideren violentos contra las mujeres, la ley describe que las siguientes modalidades mediante las cuales se puede manifestar violencia en cualquiera de los espacios mencionados anteriormente</string>
-    <string name="course_1_6_b">Los siguientes son los tipos de violencia a los que están expuestas las mujeres; conocerlos te puede ayudar a identificar si eres víctima. Pulsa sobre el triángulo dentro del circulo para escuchar el audio con su descripción</string>
-    <string name="course_1_7_a">Violencia física</string>
-    <string name="course_1_7_b">Violencia sexual</string>
-    <string name="course_1_7_c">Violencia psicológica</string>
-    <string name="course_1_7_d">Violencia económica o patrimonial</string>
-    <string name="course_1_7_e">Por último, pero no menos importante, adopta los siguientes consejos como leyes inquebrantables para tu vida diaria</string>
-    <string name="course_1_8_a">Nunca olvides que...</string>
-    <string name="course_1_9_a">¡Buenísimo! Has finalizado tu primer módulo de formación, responde al siguiente crucigrama y recibiras tu primer reconocimiento.</string>
-    <string name="course_1_10_a">Completa el crucigrama. Pulsa sobre el ícono para ver la pista y escribe a continuación tu respuesta</string>
-    <string name="course_1_11_a">No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!</string>
-    <string name="course_1_12_a">¡Buen trabajo!</string>
-    <string name="course_1_12_b">¡Es un honor concederte el titulo de Consejera Conocedora!</string>
-    <string name="course_1_13_a">¿Qué derechos tengo?</string>
-    <string name="course_1_13_b">Ahora que sabes qué es la víolencia de género, donde se puede presentar y por parte de quien, es hora de que sepas cómo puedes protegerte. Si te reconoces como una mujer víctima de cualquier tipo de ciolencia, incluidas las cometidas en el conflicto armado, y decides acudir a una entidad de tu minicipio en busca de ayuda, primero ten presente cuáles son tus derechos según la ley:</string>
-    <string name="course_1_13_c">Como mujer víctima de violencia, tienes derecho a:</string>
-    <string name="course_1_13_d">Módulo 2</string>
-    <string name="course_1_13_e">¡Muy bien! ¡Has explorado todo el contenido! Realiza la siguiente prueba y consigue el titulo de Consejera Experta</string>
-    <string name="course_1_16_c">Revisa el siguiente listado y y haz clic sobre las tres opciones que consideres acertadas.</string>
-    <string name="course_1_16_e">Como mujer víctima de violencia, tienes derecho a:</string>
-    <string name="course_1_16_f">A una atención integral, oportuna, especializada y de calidad.</string>
-    <string name="course_1_16_g">A pasar por el proceso de conciliación, en todos los conflictos el primer paso debe ser siempre la conciliación</string>
-    <string name="course_1_16_h">A un trato humano, respetuoso y digno</string>
-    <string name="course_1_16_i">A que se te comuniquen todas las decisiones que puedan afectar tus derechos</string>
-    <string name="course_1_16_j">A que la comunidad se entere de lo ocurrido para que puedan identificarte a ti y a tu familia como víctimas</string>
-
-
     <string name="cancel">Cancelar</string>
     <string name="send_alert_message">Estoy en PELIGRO, necesito ayuda URGENTE</string>
 
-    <string name="course_1_15_b">Solicita atención en salud</string>
-    <string name="course_1_15_c">Tienes el derecho de acudir o ser transladada un centro de salud, hospital o clínica, para que te brinden la atención médica y psicológica</string>
-    <string name="course_1_15_d">Ten en cuenta...</string>
-    <string name="course_1_16_a">¿Qué puedo hacer si creo ser víctima de violencia?</string>
-    <string name="course_1_17_b">Tienes derecho a que los hechos sean investigados y que el agresor sea juzgado y castiado, asi tu podrás exigir la reparación de los daños que has sufrido y la no repetición de los hechos.</string>
     <string name="message_type_tittle">Tipo de mensaje</string>
     <string name="write_here">Escribe aquí tu mensaje</string>
     <string name="your_message_tittle_h2">Tu mensaje</string>
@@ -143,18 +77,93 @@
     <string name="updating_profile_data">Actualizando datos...</string>
     <string name="updated_profile_info">Información actualizada</string>
     <string name="need_avatar">need_avatar</string>
-    <string name="mod_2_q1_not_acerted_message">Nunca olvides que tienes derecho a decidir voluntariamente si quieres ser confrontada con el agresor o agresores y a manifestar tu intención de conciliar. \n\r Recuerda que tienes el derecho a la reserva de tu intimidad, de tus datos personales, y los de tus familiares y personas allegadas. \n\r Aunque te equivoques sigues aprendiendo</string>
-    <string name="course_1_18_consejera_experta">Ahora debo llamarte Consejera Experta. ¡Buen trabajo!</string>
+
     <string name="send_alert_also_call">También puedes llamar gratis, todos los días y a cualquier hora, a las siguientes líneas telefónicas:</string>
     <string name="linea_123">Línea nacional de atención de emergencias <b>123</b></string>
     <string name="linea_155">Línea de orientación a las mujeres víctimas de violencia <b>155</b></string>
     <string name="linea_141">Línea de orientación del ICBF si la violencia es contra niños, niñas y adolescentes <b>141</b></string>
     <string name="app_not_found">Aplicación no encontrada</string>
+
+    <string name="course_1_1_a">¿Qué es la violencia basada en género?</string>
+    <string name="course_1_1_c">Guía divulgadora de derechos. <b>Guía para el abordaje pedagógico</b> de los derechos de las mujeres y de personas con orientaciones sexuales e identidades de género no hegemónicas.
+<b>CONSEJERÍA PRESIDENCIAL PARA LA EQUIDAD DE LA MUJER, USAID, OIM</b></string>
+    <string name="course_1_1_d">La VBG puede ser ejercida contra personas que no se adecúan a lo esperado por la sociedad según su sexo, como es el caso de personas con orientación sexual diversa (gays, lesbianas y bisexuales) o con identidad de género diversa (transexuales), pero se ejerce principalmente contra mujeres, niñas y adolescentes, de allí que cuando se hable de violencia de género, se asocie mayormente con violencia contra las mujeres.</string>
+    <string name="course_1_1_e">¡Ahora sí! Estás lista para iniciar ¡Adelante!</string>
+    <string name="course_1_2_a">¿Cómo saber si soy víctima de violencia?</string>
+    <string name="course_1_2_b">El primer paso para identificar si eres víctima de violencia es tener claro ¿qué se entiende por violencia contra las mujeres?</string>
+    <string name="course_1_2_c">La ley define la violencia contra las mujeres como:</string>
+    <string name="course_1_2_d">\"Cualquier acción u omisión, que le cause muerte, daño o sufrimiento físico, sexual, psicológico, económico o patrimonial por su condición de mujer, así como las amenazas de tales actos, la coacción o la privación arbitraria de la libertad, bien sea que se presente en el ámbito público o privado\".</string>
+    <string name="course_1_2_f">Módulo 1</string>
+    <string name="course_1_3_a">¿Cómo saber si soy víctima de violencia?</string>
+    <string name="course_1_3_b">Según la ley, la violencia contra las mujeres presenta las siguientes características:</string>
+    <string name="course_1_3_1_c">Te ocurre por ser mujer. Esto significa que ser mujer es lo que te pone en riesgo.</string>
+    <string name="course_1_3_2_c">Te puede ocurrir a ti o a cualquier mujer, no hay excepciones.</string>
+    <string name="course_1_3_3_c">Es un delito y por lo tanto merece un castigo o pena.</string>
+    <string name="course_1_3_4_c">Puede ocasionarte un daño, sufrimiento o muerte. También incluye las amenazas de cometer esos hechos.</string>
+    <string name="course_1_3_5_c">Se puede presentar en cualquier tipo de espacio público o privado dónde desarrolles tus actividades.</string>
+    <string name="course_1_4_a">Conoce cada uno de los ámbitos donde se presenta la violencia.</string>
+    <string name="course_1_4_b">Pulsa sobre cada nombre para escuchar el audio con su descripción:</string>
+    <string name="course_1_4_1_a">En la familia</string>
+    <string name="course_1_4_2_a">En la comunidad</string>
+    <string name="course_1_4_3_a">En el ámbito estatal</string>
+    <string name="course_1_4_4_a">En el conflicto armado</string>
+    <string name="course_1_5_a">Si crees ser víctima de violencia en el marco del conflicto armado hay varios factores adicionales que debes tener en cuenta, revisa la siguiente infografía con información sobre el tema:</string>
+    <string name="course_1_5_b">La corte constitucional reconoció que las mujeres, por su condición de mujeres, en el conflicto armado enfrentan riesgos diferentes a los que viven los hombres. Estos son:</string>
+    <string name="course_1_5_c">Esclavización o explotación para realizar roles considerados como femeninos y labores de la casa como cocinar, lavar o cuidar enfermos.</string>
+    <string name="course_1_5_d">Reclutamiento forzado de tus hijos e hijas por grupos armados ilegales.</string>
+    <string name="course_1_5_e">Señalamientos o venganzas por tu relación o contacto con integrantes de algún grupo armado.</string>
+    <string name="course_1_5_f">Riesgos por tu labor de liderazgo o pertenencia a una organización comunitaria, social o política.</string>
+    <string name="course_1_5_g">Persecución y asesinato por la imposición de normas de comportamiento relacionadas con el vestuario, horarios y relaciones personales.</string>
+    <string name="course_1_5_h">Despojo de tierras y del patrimonio.</string>
+    <string name="course_1_5_i">Pertenencia a una comunidad indígena o afrocolombiana.</string>
+    <string name="course_1_5_j">Pérdida y ausencia del compañero o esposo durante el desplazamiento.</string>
+    <string name="course_1_5_k">Explotación minera ilegal.</string>
+    <string name="course_1_5_l">Identidad u orientación de género diversa.</string>
+    <string name="course_1_6_a">Otro aspecto a tener en cuenta es que, aunque no existe un listado de hechos que se consideren violentos contra las mujeres, la ley describe las siguientes modalidades mediante las cuales se puede manifestar la violencia en cualquiera de los espacios mencionados anteriormente.</string>
+    <string name="course_1_6_b">Los siguientes son los tipos de violencia a los que están expuestas las mujeres; conocerlos te puede ayudar a identificar si eres víctima. Pulsa sobre cada nombre para escuchar el audio con su descripción:</string>
+    <string name="course_1_7_a">Violencia física</string>
+    <string name="course_1_7_b">Violencia sexual</string>
+    <string name="course_1_7_c">Violencia psicológica</string>
+    <string name="course_1_7_d">Violencia económica o patrimonial</string>
+    <string name="course_1_7_e">Por último, pero no menos importante, adopta los siguientes consejos como leyes inquebrantables para tu vida diaria.</string>
+    <string name="course_1_8_a">Nunca olvides que...</string>
+    <string name="course_1_9_a">¡Buenísimo! Has finalizado tu primer módulo de formación, responde al siguiente crucigrama y recibirás tu primer reconocimiento.</string>
+    <string name="course_1_10_a">Completa el crucigrama. Pulsa sobre el ícono para ver la pista y escribe a continuación tu respuesta</string>
+    <string name="course_1_11_a">No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!</string>
+    <string name="course_1_12_a">¡Buen trabajo!</string>
+    <string name="course_1_12_b">¡Es un honor concederte el título de Consejera Conocedora!</string>
+    <string name="course_1_13_a">¿Qué derechos tengo?</string>
+    <string name="course_1_13_b">Ahora que sabes qué es la violencia de género, dónde se puede presentar y por parte de quien, es hora de que sepas cómo puedes protegerte. Si te reconoces como una mujer víctima de cualquier tipo de violencia, incluidas las cometidas en el conflicto armado, y decides acudir a una entidad de tu municipio en busca de ayuda, primero ten presente cuáles son tus derechos según la ley:</string>
+    <string name="course_1_13_c">Como mujer víctima de violencia, tienes derecho a:</string>
+    <string name="course_1_13_d">Módulo 2</string>
+    <string name="course_1_13_e">¡Muy bien! ¡Has explorado todo el contenido! Realiza la siguiente prueba y consigue el título de Consejera Experta</string>
+    <string name="course_1_16_c">Revisa el siguiente listado y haz clic sobre las tres opciones que consideres acertadas.</string>
+    <string name="course_1_16_e">Como mujer víctima de violencia, tienes derecho a:</string>
+    <string name="course_1_16_f">A una atención integral, oportuna, especializada y de calidad.</string>
+    <string name="course_1_16_g">A pasar por el proceso de conciliación, en todos los conflictos el primer paso debe ser siempre la conciliación.</string>
+    <string name="course_1_16_h">A un trato humano, respetuoso y digno.</string>
+    <string name="course_1_16_i">A que se te comuniquen todas las decisiones que puedan afectar tus derechos.</string>
+    <string name="course_1_16_j">A que la comunidad se entere de lo ocurrido para que puedan identificarte a ti y a tu familia como víctimas.</string>
+
+
+
+
+    <string name="course_1_15_b">Solicita atención en salud</string>
+    <string name="course_1_15_c">Tienes el derecho de acudir o ser transladada un centro de salud, hospital o clínica, para que te brinden la atención médica y psicológica</string>
+    <string name="course_1_15_d">Ten en cuenta:</string>
+    <string name="course_1_16_a">¿Qué puedo hacer si creo ser víctima de violencia?</string>
+    <string name="course_1_17_b">Tienes derecho a que los hechos sean investigados y que el agresor sea juzgado y castigado, asi tu podrás exigir la reparación de los daños que has sufrido y la no repetición de los hechos.</string>
+
+    <string name="mod_2_q1_not_acerted_message">Nunca olvides que tienes derecho a decidir voluntariamente si quieres ser confrontada con el agresor o agresores y a manifestar tu intención de conciliar. \n\r Recuerda que tienes el derecho a la reserva de tu intimidad, de tus datos personales, y los de tus familiares y personas allegadas. \n\r Aunque te equivoques sigues aprendiendo ¡Inténtalo de nuevo!</string>
+    <string name="course_1_18_consejera_experta">Ahora debo llamarte Consejera Experta. ¡Buen trabajo!</string>
+
     <string name="course_1_19_mod_3">Módulo 3</string>
     <string name="course_1_19_question">Qué puedo hacer si creo ser víctima de violencia?</string>
     <string name="course_1_19_text">Ahora que identificas las violencias contra las mujeres y conoces los derechos
         que contempla la ley para mujeres y niñas víctimas de violencia en Colombia, llegó el momento de explorar
         cuáles son las acciones y entidades disponibles para proteger tu integridad y poner fin a la violencia.</string>
+
+    <string name="course_1_19_text_2">Si consideras que eres una mujer víctima de cualquier tipo de violencia, incluidas las cometidas en el conflicto armado, puedes tomar alguna o todas las siguientes opciones señaladas por la ley:</string>
 
     <string name="course_1_20_tittle">¿Qué puedo hacer si creo ser víctima de violencia?</string>
     <string name="course_1_20_header">Solicita información</string>
@@ -169,7 +178,7 @@
     <string name="course_1_20_text_1_3">Servicios y medidas disponibles para atender las necesidades que hayan generado los hechos
                                     </string>
 
-    <string name="course_1_20_text_2">Ten en cuenta que: </string>
+    <string name="course_1_20_text_2">Ten en cuenta:</string>
 
     <string name="course_1_24_header">Accede a la justicia</string>
 
@@ -290,7 +299,7 @@
 
     <string name="course_1_47_text">
         Si consideras que eres una mujer víctima de cualquier tipo de violencia cometida en el conflicto armado, además de todas las medidas señaladas en el punto anterior, puedes tomar alguna o todas las siguientes opciones especiales dispuestas por la ley, teniendo siempre en cuenta tus intereses y situación particular.\n\n
-        Recuerda que en casos de violencia cometidos por actores armados, las mujeres tienen derecho de acceder tanto a las medidas generales desarrolladas para las mujeres víctimas de violencia fuera del conflicto, como a medidas especiales aplicables a las víctimas del conflicto armado.
+Recuerda que en casos de violencia cometidos por actores armados, las mujeres tienen derecho de acceder tanto a las medidas generales desarrolladas para las mujeres víctimas de violencia fuera del conflicto, como a medidas especiales aplicables a las víctimas del conflicto armado.
     </string>
 
 
@@ -405,7 +414,7 @@
 
 
      <string name="course_1_54_tittle">
-        ¿Qué puedo hacer en caso que las entidades no cumpla sus funciones o no garanticen mis derechos?
+        ¿Qué puedo hacer en caso que las entidades no cumplan sus funciones o no garanticen mis derechos?
     </string>
 
      <string name="course_1_54_text1">
@@ -627,12 +636,12 @@
 
 
     <string-array name="clueTexts">
-        <item>Cuando la violencia se manifiesta mediante insultos, ataques verbales, chantajes o celos extremos, es:</item>
-        <item>Cuando la violencia se manifiesta a través del uso de la fuerza, como golpes, ahogamientos o empujones, es violencia:  </item>
-        <item>Que te obliguen a tener algún tipo de comportamiento sexual no deseado, es violencia: </item>
-        <item>La violencia que se manifiesta a través del control del dinero e inasistencia alimentaria, es: </item>
-        <item>Cuando la violencia proviene del esposo, compañero permanente, padre, madre, abuelos o nietos; se le llama violencia en la: </item>
-        <item>Cuando la violencia la realiza algún integrante de un grupo armado, se denomina violencia en el Conflicto:</item>
+        <item>Se manifiesta mediante insultos, ataques verbales, chantajes, celos extremos:</item>
+        <item>Se manifiesta a través del uso de la fuerza, como golpes, ahogamientos, empujones:</item>
+        <item>Cuando te obligan a tener algún tipo de comportamiento sexual no deseado, es:</item>
+        <item>Se manifiesta a través del control del dinero e inasistencia alimentaria:</item>
+        <item>Cuando la violencia proviene del esposo, compañero permanente, padre, madre, abuelos o nietos; se le llama violencia en la:</item>
+        <item>Cuando la violencia la realiza algún integrante de un grupo armado, se denomina violencia en el:</item>
     </string-array>
 
     <string-array name="errorResponseQuestionaryMod4">
@@ -736,9 +745,7 @@
 
     <string name="lideres_05_01"> <b>Ejemplo:</b> Una mujer lideresa, trabaja
         defendiendo la restitución de tierras para las víctimas del conflicto,
-        debido a esto su vida ha sido amenazada por grupos armados. \n\n
-
-        Ella no está obligada a dejar su actividad,
+        debido a esto su vida ha sido amenazada por grupos armados. \n\nElla no está obligada a dejar su actividad,
         pero, al seguir ejerciéndola está en riesgo
         su vida, y <b>es víctima de una amenaza a su seguridad personal.</b>
     </string>
@@ -748,11 +755,8 @@
 
     <string name="lideres_06_01"><b>Ejemplo 1: </b> Todas las personas que conducen automóviles
         deben saber que siempre existe un riesgo de accidentalidad,
-        que puede afectar su integridad personal o la de otros.\n\n
-
-        Es un riesgo que está presente, pero es de carácter ordinario.\n\n
-
-        <b>Ejemplo 2:</b> María es representante de víctimas de su municipio,
+        que puede afectar su integridad personal o la de otros.\n\nEs un riesgo que está presente, pero es de carácter ordinario.\n\n
+<b>Ejemplo 2:</b> María es representante de víctimas de su municipio,
         debido a esto, los grupos armados al margen de la ley
         la están amenazando enviándole panfletos con gente que no es
         de su municipio para que deje de ejercer su actividad o atentarán contra su vida.
@@ -762,9 +766,7 @@
     </string>
 
     <string name="lideres_06_03">
-        Una amenaza son las situaciones o hechos externos,
-        con la potencialidad de causar daño a una persona,
-        grupo o comunidad.
+        A diferencia del riesgo ordinario, María no está obligada a soportar la amenaza y mucho menos a dejar de ejercer su liderazgo, este se considera un riesgo extraordinario.
     </string>
 
     <string name="lideres_07_01">¿Cómo identificas qué es un riesgo extraordinario?
@@ -882,8 +884,7 @@
     </string>
 
     <string name="lideres_10_01">
-        No has acertado en todas las respuestas ¡Inténtalo de nuevo! \n\n
-        Recuerda: el riesgo extraordinario es específico y se puede
+        No has acertado en todas las respuestas ¡Inténtalo de nuevo! \n\nRecuerda: el riesgo extraordinario es específico y se puede
         determinar a quién va dirigido, ya sea a una persona o grupo de personas.
         Es concreto, fundado en acciones o hechos particulares y no en supuestos.
         Amenaza derechos, como: la vida y la libertad
@@ -1168,8 +1169,7 @@ Fiscalía General de la Nación.
     <string name="lideres_27_05">Los municipios que no puedan implementar medidas de protección deberán solicitar el apoyo del departamento.
     </string>
 
-    <string name="lideres_28_01">¡Muy bien!\n
-¡Has explorado la estrategia de prevención! Ahora pon a prueba tu mente realizando la siguiente actividad.
+    <string name="lideres_28_01">¡Buen trabajo!\n ¡Has llegado al final del módulo! Ahora, pon a prueba tu mente realizando la siguiente actividad.
     </string>
 
     <string name="lideres_29_01">Selecciona una o varias respuestas según lo consideres necesario
@@ -1395,8 +1395,8 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
 
     <string-array name="about_my_community">
         <item><b>¿Te has detenido a analizar los riesgos que corren las niñas y mujeres de tu comunidad?</b> \n\n
-    A continuación, te brindamos una herramienta para analizar los riesgos de violencia basada en género para mujeres y niñas en tu comunidad. \n
-Esta herramienta está basada en la observación. \n
+    A continuación, te brindamos una herramienta para analizar los riesgos de violencia basada en género para mujeres y niñas en tu comunidad. \n\n
+Esta herramienta está basada en la observación. \n\n
 Si tu comunidad es muy insegura, no deberías completar este cuestionario caminando. En ese caso, se recomienda observar y retener información mentalmente, para posteriormente completar el formato en un lugar seguro.\n\n
 
 A través de esta herramienta puedes obtener información acerca de tu comunidad en los siguientes aspectos: características generales, acceso a servicios básicos, salud, alimentación, seguridad, presencia institucional.
@@ -1410,9 +1410,9 @@ Pasos a seguir:\n\n
 2) Observa y responde las preguntas\n
 3) ¡Ahora tienes un mejor panorama sobre los riesgos en tu comunidad!</item>
         <item><b>¿Has analizado los riesgos de protección que corren líderes y lideresas en tu comunidad? </b> \n\n
-    A continuación, te brindamos una herramienta para analizar los riesgos de protección que enfrentan líderes y lideresas en tu comunidad.
+    A continuación, te brindamos una herramienta para analizar los riesgos de protección que enfrentan líderes y lideresas en tu comunidad.\n
 
-    \nEsta herramienta está basada en la observación.
+    \nEsta herramienta está basada en la observación.\n
 \nSi tu comunidad es muy insegura, no deberías completar este cuestionario caminando. En ese caso, se recomienda observar y retener información mentalmente, para posteriormente completar el formato en un lugar seguro.
 \n\n
 A través de esta herramienta puedes obtener información acerca de tu comunidad en los siguientes aspectos: características generales, acceso a servicios básicos, salud, alimentación, seguridad, presencia institucional.

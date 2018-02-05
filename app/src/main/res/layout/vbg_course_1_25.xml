@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="@dimen/bottom_padding_for_alert"
-            android:paddingTop="@dimen/bottom_padding_for_alert">
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -23,11 +23,9 @@
 
             <TextView
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
+                style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
                 android:text="@string/course_1_16_a" />
 
             <View
@@ -45,7 +43,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:src="@drawable/ruta25"
-                    android:id="@+id/iv_sign" />
+                    android:id="@+id/iv_sign"
+                    android:layout_marginTop="-3dp" />
 
 
             </RelativeLayout>

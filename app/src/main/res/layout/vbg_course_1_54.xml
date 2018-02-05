@@ -24,11 +24,9 @@
 
             <TextView
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
+                style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
                 android:text="@string/course_1_47_tittle" />
 
             <View
@@ -37,24 +35,15 @@
                 android:background="@color/black_overlay" />
 
 
-            <LinearLayout
+            <TextView
+                android:text="@string/course_1_54_tittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp">
-
-
-                <TextView
-                    android:text="@string/course_1_54_tittle"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/ConseTittleTextH1"
-                    android:gravity="left|center_vertical"
-                    android:paddingLeft="16dp"
-                    android:layout_marginRight="25dp" />
-
-            </LinearLayout>
+                style="@style/CourseSubTittle"
+                android:gravity="left|center_vertical"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:layout_marginTop="@dimen/course_first_content_margin_top" />
 
 
             <TextView
@@ -62,17 +51,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
-                style="@style/ConseParagraphText"
-                android:padding="@dimen/fab_margin"/>
+                style="@style/CourseParagraphText"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/square_padding_top"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"
-                android:orientation="horizontal">
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:orientation="horizontal"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
 
                 <FrameLayout
@@ -111,10 +101,12 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginTop="@dimen/next_button_margin_top"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:id="@+id/bt_previous"

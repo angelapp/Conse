@@ -14,11 +14,9 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingLeft="@dimen/fab_margin"
-            android:paddingRight="@dimen/fab_margin"
             android:gravity="center_horizontal"
             android:paddingBottom="@dimen/bottom_padding_for_alert"
-            android:paddingTop="@dimen/bottom_padding_for_alert">
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -30,9 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -43,28 +39,34 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
-                style="@style/ConseTittleTextH1"
+                style="@style/CourseSubTittle"
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"
-                android:gravity="left"/>
+                android:gravity="left"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <TextView
                 android:text="@string/course_1_19_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView3"
-                style="@style/ConseParagraphText"/>
+                style="@style/ConseParagraphText"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <TextView
-                    android:text="@string/course_1_2_d"
+                    android:text="@string/course_1_19_text_2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/tv_dialog"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingLeft="@dimen/fab_margin"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingBottom="55dp"
@@ -89,7 +91,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="@dimen/next_button_margin_top">
 
                 <Button
                     android:layout_width="56dp"

@@ -13,7 +13,7 @@
         android:id="@+id/course_container"
         android:gravity="center_horizontal"
         android:paddingBottom="0dp"
-        android:layout_marginTop="@dimen/padding_top_for_courses">
+        android:layout_marginTop="@dimen/padding_top_bar">
 
     </LinearLayout>
 

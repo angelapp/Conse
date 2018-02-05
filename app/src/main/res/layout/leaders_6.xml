@@ -28,9 +28,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -43,25 +41,30 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/hoja_papel_l6"
                 android:paddingTop="35dp"
-                android:layout_marginTop="25dp">
+                android:layout_marginTop="25dp"
+                android:layout_marginLeft="@dimen/paper_background_margine_left"
+                android:layout_marginRight="@dimen/paper_background_margine_right"
+                android:gravity="center_vertical">
 
                 <TextView
                     android:text="@string/lideres_06_01"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView23"
-                    style="@style/ConseParagraphText"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginTop="15dp"
-                    android:gravity="left" />
+                    style="@style/CourseParagraphText"
+                    android:layout_marginLeft="@dimen/courses_margin_left"
+                    android:layout_marginRight="@dimen/courses_margin_right"
+                    android:gravity="left"
+                    android:layout_marginTop="0dp" />
 
             </LinearLayout>
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top">
+                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
 
                 <FrameLayout
@@ -73,18 +76,19 @@
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="@drawable/globo_l6">
+                        android:background="@drawable/globo_l6"
+                        android:paddingBottom="70dp">
 
                         <TextView
                             android:text="@string/lideres_06_02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView5"
-                            style="@style/ConseTittleTextH1"
+                            style="@style/CourseSubTittle"
                             android:gravity="left"
                             android:layout_marginLeft="25dp"
                             android:layout_gravity="center_vertical"
-                            android:layout_marginTop="25dp"
+                            android:layout_marginTop="15dp"
                             android:layout_marginRight="25dp" />
 
                         <TextView
@@ -92,7 +96,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:id="@+id/textView24"
-                            style="@style/ConseParagraphText"
+                            style="@style/CourseParagraphText"
                             android:layout_marginLeft="25dp"
                             android:layout_marginRight="25dp" />
                     </LinearLayout>
@@ -118,7 +122,8 @@
                 android:layout_marginTop="@dimen/square_padding_top"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginBottom="@dimen/next_button_margin_top">
 
                 <Button
                     android:id="@+id/bt_previous"

@@ -136,7 +136,7 @@
         <item name="android:button">@drawable/conse_checkbox</item>
         <!--<item name="android:drawablePadding">10dip</item>-->
         <!--<item name="android:button">@android:color/transparent</item>-->
-        <item name="android:textSize">18sp</item>
+        <item name="android:textSize">@dimen/course_paragraph_text_size</item>
         <item name="android:textAlignment">gravity</item>
         <item name="android:gravity">top</item>
         <item name="android:paddingLeft">10dp</item>
@@ -171,5 +171,58 @@
     </style>
 
 
-    <dimen name="check_box_margin">35dp</dimen>
+    <style name="CourseTittle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/course_tittle_text_size</item>
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_marginTop">@dimen/course_tittle_margin_top</item>
+        <item name="android:paddingLeft">0dp</item>
+    </style>
+
+    <style name="CourseSubTittle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/course_sub_tittle_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">0dp</item>
+    </style>
+
+    <style name="CourseHighlightText" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/course_highlight_text_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+    </style>
+
+    <style name="CourseParagraphText" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/course_paragraph_text_size</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="CourseParagraphTextBold" parent="CourseParagraphText">
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="CourseSoundTittle" parent="CourseParagraphTextBold">
+        <item name="android:textColor">@color/salmon</item>
+        <item name="android:layout_marginTop">0dp</item>
+        <item name="android:layout_marginBottom">0dp</item>
+    </style>
+
+    <style name="CourseModuleTittle" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/course_module_name_text_size</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingLeft">0dp</item>
+        <item name="android:layout_marginLeft">@dimen/courses_margin_left_l0</item>
+        <item name="android:layout_marginRight">@dimen/courses_margin_left_l0</item>
+        <item name="android:layout_marginTop">@dimen/courses_module_tittle_margin_top</item>
+        <item name="android:layout_marginBottom">@dimen/courses_module_tittle_margin_bottom</item>
+    </style>
+
 </resources>

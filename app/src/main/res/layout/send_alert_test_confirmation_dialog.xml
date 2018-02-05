@@ -35,7 +35,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/bt_yes_sure"
-        android:background="@drawable/button_send_alert_press"
+        android:background="@drawable/siestoysegurohover"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="30dp" />

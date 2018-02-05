@@ -2,7 +2,13 @@ package conse.nrc.org.co.consejo.Utils;
 
 import android.app.Application;
 import android.content.Context;
+import android.content.DialogInterface;
+import android.content.Intent;
 import android.graphics.Bitmap;
+import android.location.LocationManager;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -119,6 +125,78 @@ public class ConseApp extends Application {
 
     public static int getAvatarGender(Context ctx){
         return UtilsFunctions.getSharedInteger(ctx, LocalConstants.AVATAR_GENDER_ID_);
+    }
+
+    public boolean isNetworkAvailable() {
+        ConnectivityManager connectivityManager
+                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
+        return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
+    }
+
+    public boolean isLocationEnabled() {
+        return ((LocationManager)
+                this.getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.GPS_PROVIDER) ||
+                ((LocationManager)
+                        this.getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+    }
+
+    public boolean validateGpsStatus(boolean show_alert) {
+        if (isLocationEnabled()){
+            return true;
+        } else if (show_alert){
+            showGpsAlert();
+        }
+        return false;
+    }
+
+
+    public boolean validateNetworkStatus(boolean show_alert) {
+        if (isNetworkAvailable()){
+            return true;
+        } else if (show_alert){
+            showNetworkConnectionAlert();
+        }
+        return false;
+    }
+
+
+    private void showGpsAlert() {
+        final android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(this);
+        dialog.setTitle(getString(R.string.inactive_geolocation))
+                .setMessage(getString(R.string.conse_need_gps))
+                .setPositiveButton(getString(R.string.config), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                        Intent myIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
+                        startActivity(myIntent);
+                    }
+                })
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                    }
+                });
+        dialog.show();
+    }
+
+    private void showNetworkConnectionAlert() {
+        final android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(this);
+        dialog.setTitle(getString(R.string.not_network_conection))
+                .setMessage(getString(R.string.conse_need_network))
+                .setPositiveButton(getString(R.string.config), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                        Intent myIntent = new Intent(Settings.ACTION_SETTINGS);
+                        startActivity(myIntent);
+                    }
+                })
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface paramDialogInterface, int paramInt) {
+                    }
+                });
+        dialog.show();
     }
 
 }

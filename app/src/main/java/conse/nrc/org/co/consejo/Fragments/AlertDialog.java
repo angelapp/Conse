@@ -45,19 +45,28 @@ public class AlertDialog extends DialogFragment {
     public static boolean isTest = true;
     LocationManager mLocManager;
 
+    private float alpha_accumulate = LocalConstants.BUTTON_SEND_ALERT_MIN_ALPHA;
+
+
+
 
     long MILISECONDS_TO_PRESS = 3000;
+    long MILISECONDS_FOR_TICK = 200;
     long TIME_TO_VIBRATE = 500;
 
-    CountDownTimer timer = new CountDownTimer(MILISECONDS_TO_PRESS, MILISECONDS_TO_PRESS) {
+    private float alpha_delta = (LocalConstants.BUTTON_SEND_ALERT_MAX_ALPHA - LocalConstants.BUTTON_SEND_ALERT_MIN_ALPHA)/(MILISECONDS_TO_PRESS/MILISECONDS_FOR_TICK);
+
+    CountDownTimer timer = new CountDownTimer(MILISECONDS_TO_PRESS, MILISECONDS_FOR_TICK) {
         @Override
         public void onTick(long millisUntilFinished) {
+            buttonUpgradeAlpha();
 
         }
 
         @Override
         public void onFinish() {
 
+            buttonResetAlpha();
             sendAlert();
 
         }
@@ -95,11 +104,14 @@ public class AlertDialog extends DialogFragment {
                         break;
                     case MotionEvent.ACTION_UP :
                         timer.cancel();
+                        buttonResetAlpha();
                         return true;
                 }
                 return false;
             }
         });
+
+        buttonResetAlpha();
         Log.d("Alert", getEmegencyContactsString());
 
         if (LocalConstants.DEV_VERSION) {
@@ -246,6 +258,17 @@ public class AlertDialog extends DialogFragment {
         }
         startActivityForResult(smsIntent, 1);
         Log.d("SMS", "Started for result" );
+    }
+
+
+    private void buttonUpgradeAlpha(){
+        alpha_accumulate += alpha_delta;
+        mBtSendAlert.setAlpha(alpha_accumulate);
+    }
+
+    private void buttonResetAlpha(){
+        alpha_accumulate = LocalConstants.BUTTON_SEND_ALERT_MIN_ALPHA;
+        mBtSendAlert.setAlpha(alpha_accumulate);
     }
 
 }

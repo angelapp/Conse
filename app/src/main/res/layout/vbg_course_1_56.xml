@@ -25,9 +25,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -36,8 +34,8 @@
             <FrameLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/iv_bottom_margin"
-                android:layout_marginTop="@dimen/iv_top_margin">
+                android:layout_marginBottom="@dimen/bottom_padding_for_alert"
+                android:layout_marginTop="@dimen/course_first_content_margin_top">
 
                 <LinearLayout
                     android:orientation="vertical"

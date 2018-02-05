@@ -24,11 +24,9 @@
 
             <TextView
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
+                style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
                 android:text="@string/course_1_47_tittle" />
 
             <View
@@ -42,20 +40,22 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
-                style="@style/ConseParagraphText"
-                android:padding="@dimen/fab_margin"/>
+                style="@style/CourseParagraphText"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
 
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <ImageView
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/paso51_1"
                     android:id="@+id/imageView8"
-                    android:layout_marginLeft="30dp"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="55"
                     android:layout_width="0dp"
@@ -66,7 +66,7 @@
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView19"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
                     android:layout_weight="45" />
@@ -77,8 +77,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:background="@drawable/rectangulo_51"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
                 android:layout_marginTop="15dp"
                 android:gravity="center_vertical">
 
@@ -86,17 +84,19 @@
                     android:text="@string/course_1_51_text2"
                     android:layout_width="match_parent"
                     android:id="@+id/textView19"
-                    style="@style/ConseParagraphText"
-                    android:padding="5dp"
+                    style="@style/CourseParagraphTextBold"
                     android:layout_height="wrap_content"
-                    android:textStyle="normal|bold" />
+                    android:textStyle="normal|bold"
+                    android:layout_marginLeft="@dimen/courses_margin_left"
+                    android:layout_marginRight="@dimen/courses_margin_right"
+                    android:layout_marginBottom="20dp" />
 
                 <LinearLayout
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/courses_margin_left"
+                    android:layout_marginRight="@dimen/courses_margin_right"
                     android:gravity="top"
                     android:layout_marginTop="10dp">
 
@@ -121,8 +121,8 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/courses_margin_left"
+                    android:layout_marginRight="@dimen/courses_margin_right"
                     android:gravity="top"
                     android:layout_marginTop="10dp">
 
@@ -147,8 +147,8 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/courses_margin_left"
+                    android:layout_marginRight="@dimen/courses_margin_right"
                     android:gravity="top"
                     android:layout_marginTop="10dp">
 
@@ -173,8 +173,8 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/courses_margin_left"
+                    android:layout_marginRight="@dimen/courses_margin_right"
                     android:gravity="top"
                     android:layout_marginTop="10dp">
 
@@ -199,8 +199,8 @@
                     android:orientation="horizontal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="@dimen/courses_margin_left"
+                    android:layout_marginRight="@dimen/courses_margin_right"
                     android:gravity="top"
                     android:layout_marginTop="10dp">
 
@@ -230,7 +230,9 @@
                 android:layout_marginTop="@dimen/square_padding_top"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:id="@+id/bt_previous"

@@ -15,7 +15,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="@dimen/bottom_padding_for_alert"
-            android:paddingTop="@dimen/bottom_padding_for_alert">
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -37,24 +37,17 @@
                 android:background="@color/black_overlay" />
 
 
-            <LinearLayout
+            <TextView
+                android:text="@string/course_1_24_header"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="20dp"
-                android:layout_marginLeft="15dp">
-
-
-                <TextView
-                    android:text="@string/course_1_24_header"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    style="@style/ConseTittleTextH1"
-                    android:drawableLeft="@drawable/tres"
-                    android:gravity="left|center_vertical"
-                    android:drawablePadding="15dp" />
-
-            </LinearLayout>
+                style="@style/CourseSubTittle"
+                android:drawableLeft="@drawable/tres"
+                android:gravity="left|center_vertical"
+                android:drawablePadding="15dp"
+                android:layout_marginTop="@dimen/course_first_content_margin_top"
+                android:layout_marginLeft="@dimen/courses_li_margin_top"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
 
             <TextView
@@ -63,15 +56,16 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
                 style="@style/ConseParagraphText"
-                android:padding="@dimen/fab_margin"/>
+                android:layout_marginLeft="@dimen/courses_li_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/square_padding_top"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginLeft="@dimen/courses_li_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
 
                 <FrameLayout
@@ -120,10 +114,12 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/square_padding_top"
+                android:layout_marginTop="@dimen/next_button_margin_top"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:id="@+id/bt_previous"

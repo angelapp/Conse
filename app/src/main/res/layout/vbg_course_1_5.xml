@@ -14,7 +14,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="@dimen/bottom_padding_for_alert"
-            android:paddingTop="@dimen/bottom_padding_for_alert">
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -26,9 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -41,7 +39,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
-                style="@style/ConseParagraphText"/>
+                style="@style/CourseParagraphText"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
 
             <LinearLayout
@@ -62,133 +62,159 @@
                     android:text="@string/course_1_5_b"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseTittleTextH2"
+                    style="@style/CourseParagraphTextBold"
                     android:layout_marginBottom="15dp"
                     android:layout_marginTop="15dp"
-                    android:textColor="@color/salmon" />
+                    android:textColor="@color/salmon"
+                    android:textStyle="bold"
+                    android:layout_marginLeft="@dimen/courses_margin_left"
+                    android:layout_marginRight="@dimen/courses_margin_right"
+                    android:gravity="center_horizontal" />
 
                 <TextView
                     android:text="@string/course_1_5_b_5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
                     android:background="@drawable/exclusion_0_5"
                     android:textAlignment="viewStart"
-                    android:gravity="left|center_vertical" />
+                    android:gravity="left|center_vertical"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_c"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_1"/>
+                    android:background="@drawable/exclusion_1"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_2"/>
+                    android:background="@drawable/exclusion_2"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_e"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_3"/>
+                    android:background="@drawable/exclusion_3"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_f"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_4"/>
+                    android:background="@drawable/exclusion_4"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_g"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_5"/>
+                    android:background="@drawable/exclusion_5"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_h"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_5"/>
+                    android:background="@drawable/exclusion_6"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_i"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_6"/>
+                    android:background="@drawable/exclusion_6"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_j"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_7"/>
+                    android:background="@drawable/exclusion_7"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_k"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_8"/>
+                    android:background="@drawable/exclusion_8"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
                 <TextView
                     android:text="@string/course_1_5_l"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:paddingRight="@dimen/fab_margin"
                     android:paddingTop="@dimen/fab_margin"
                     android:paddingBottom="@dimen/fab_margin"
                     android:paddingLeft="45dp"
-                    android:background="@drawable/exclusion_9"/>
+                    android:background="@drawable/exclusion_9"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp" />
 
 
                 <RelativeLayout
@@ -209,7 +235,9 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="15dp" >
+                android:layout_marginTop="15dp"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
                 <Button
                     android:layout_width="56dp"

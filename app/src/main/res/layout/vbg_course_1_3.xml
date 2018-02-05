@@ -13,7 +13,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingBottom="@dimen/bottom_padding_for_alert">
+            android:paddingBottom="@dimen/bottom_padding_for_alert"
+            android:paddingTop="@dimen/padding_top_for_courses">
 
             <View
                 android:layout_width="match_parent"
@@ -25,9 +26,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="10dp"/>
+                style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
@@ -40,10 +39,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView2"
-                style="@style/ConseParagraphText"
-                android:layout_marginLeft="@dimen/fab_margin"
-                android:layout_marginRight="@dimen/fab_margin"
-                android:layout_marginTop="25dp" />
+                style="@style/CourseParagraphText"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:layout_marginTop="25dp"
+                android:layout_marginBottom="20dp" />
 
 
 
@@ -53,14 +53,14 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginLeft="18dp"
                 android:layout_marginRight="@dimen/fab_margin">
 
                 <TextView
                     android:layout_width="wrap_content"
                     style="style/ConseTittleTextH2White"
                     android:text="@string/number_1"
-                    android:textSize="35sp"
+                    android:textSize="30sp"
                     android:gravity="center_horizontal"
                     android:paddingTop="10dp"
                     android:layout_height="match_parent"
@@ -71,9 +71,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView3"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:layout_marginTop="0dp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/courses_bullet_margin_left"
+                    android:paddingTop="@dimen/courses_li_margin_top"
+                    android:paddingBottom="@dimen/courses_li_margin_top" />
 
             </LinearLayout>
 
@@ -85,7 +88,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginLeft="18dp"
                 android:layout_marginRight="@dimen/fab_margin">
 
                 <TextView
@@ -103,9 +106,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView4"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:layout_marginTop="0dp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/courses_bullet_margin_left"
+                    android:paddingTop="@dimen/courses_li_margin_top"
+                    android:paddingBottom="@dimen/courses_li_margin_top" />
 
             </LinearLayout>
 
@@ -116,7 +122,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginLeft="18dp"
                 android:layout_marginRight="@dimen/fab_margin">
 
                 <TextView
@@ -134,9 +140,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView5"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:layout_marginTop="0dp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/courses_bullet_margin_left"
+                    android:paddingTop="@dimen/courses_li_margin_top"
+                    android:paddingBottom="@dimen/courses_li_margin_top" />
 
             </LinearLayout>
 
@@ -147,7 +156,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginLeft="18dp"
                 android:layout_marginRight="@dimen/fab_margin">
 
                 <TextView
@@ -161,13 +170,16 @@
                     android:paddingTop="10dp"/>
 
                 <TextView
-                    android:text="@string/course_1_3_1_c"
+                    android:text="@string/course_1_3_4_c"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView6"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:layout_marginTop="0dp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/courses_bullet_margin_left"
+                    android:paddingTop="@dimen/courses_li_margin_top"
+                    android:paddingBottom="@dimen/courses_li_margin_top" />
 
             </LinearLayout>
 
@@ -178,7 +190,7 @@
                 android:orientation="horizontal"
                 android:gravity="center"
                 android:layout_marginTop="10dp"
-                android:layout_marginLeft="@dimen/fab_margin"
+                android:layout_marginLeft="18dp"
                 android:layout_marginRight="@dimen/fab_margin">
 
                 <TextView
@@ -196,9 +208,12 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/textView7"
-                    style="@style/ConseParagraphText"
+                    style="@style/CourseParagraphText"
                     android:layout_marginTop="0dp"
-                    android:gravity="center_vertical"/>
+                    android:gravity="center_vertical"
+                    android:layout_marginLeft="@dimen/courses_bullet_margin_left"
+                    android:paddingTop="@dimen/courses_li_margin_top"
+                    android:paddingBottom="@dimen/courses_li_margin_top" />
 
             </LinearLayout>
 
@@ -208,7 +223,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:gravity="center"
-                android:layout_marginTop="15dp">
+                android:layout_marginTop="@dimen/next_button_margin_top">
 
                 <Button
                     android:layout_width="56dp"

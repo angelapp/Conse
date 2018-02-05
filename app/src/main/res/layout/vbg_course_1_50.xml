@@ -24,11 +24,9 @@
 
             <TextView
                 android:id="@+id/textView1"
-                style="@style/ConseTittleTextH2"
+                style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="15dp"
-                android:layout_marginTop="15dp"
                 android:text="@string/course_1_47_tittle" />
 
             <View
@@ -42,30 +40,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView4"
-                style="@style/ConseParagraphText"
-                android:padding="@dimen/fab_margin"/>
+                style="@style/CourseParagraphText"
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right" />
 
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/square_padding_top"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp">
+                android:layout_marginLeft="@dimen/courses_margin_left"
+                android:layout_marginRight="@dimen/courses_margin_right">
 
 
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:background="@drawable/globitoparaaudio"
-                    android:id="@+id/fl_image">
+                    android:id="@+id/fl_image"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp">
 
                     <TextView
                         android:text="@string/course_1_20_text_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView5"
-                        style="@style/ConseTittleTextH1"
+                        style="@style/CourseTittle"
                         android:gravity="center"
                         android:layout_marginLeft="@dimen/fab_margin"
                         android:layout_gravity="center_vertical"
@@ -103,7 +104,9 @@
                 android:layout_marginTop="@dimen/square_padding_top"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:layout_gravity="center_horizontal">
+                android:layout_gravity="center_horizontal"
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:layout_marginLeft="@dimen/courses_margin_left">
 
                 <Button
                     android:id="@+id/bt_previous"
