@@ -78,7 +78,7 @@
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
                             android:id="@+id/imageView11"
-                            android:layout_marginTop="10dp" />
+                            android:layout_marginTop="@dimen/bullets_top_margin" />
 
                         <TextView
                             android:text="@string/lideres_17_02"
@@ -104,7 +104,7 @@
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
                             android:id="@+id/imageView11"
-                            android:layout_marginTop="10dp" />
+                            android:layout_marginTop="@dimen/bullets_top_margin" />
 
                         <TextView
                             android:text="@string/lideres_17_03"
@@ -130,7 +130,7 @@
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
                             android:id="@+id/imageView11"
-                            android:layout_marginTop="10dp" />
+                            android:layout_marginTop="@dimen/bullets_top_margin" />
 
                         <TextView
                             android:text="@string/lideres_17_04"

@@ -35,6 +35,9 @@
     <string name="error">Respuesta incorrecta</string>
     <string name="correct_answer">¡Muy bien, \nrespuesta correcta!</string>
 
+
+    <string name="review_contents_again">¿Quieres revisar nuevamente los contenidos de este módulo?</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="send_alert_tittle">Haz una prueba de funcionamiento</string>
     <string name="send_alert_indications">MANTÉN PULSADO EL BOTÓN PARA ENVIAR</string>
@@ -131,7 +134,7 @@
     <string name="course_1_10_a">Completa el crucigrama. Pulsa sobre el número para ver la pista.</string>
     <string name="course_1_11_a">No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!</string>
     <string name="course_1_12_a">¡Buen trabajo!</string>
-    <string name="course_1_12_b">¡Es un honor concederte el título de Consejera Conocedora!</string>
+    <string name="course_1_12_b">¡Es un honor concederte el título de %1$s!</string>
     <string name="course_1_13_a">¿Qué derechos tengo?</string>
     <string name="course_1_13_b">Ahora que sabes qué es la violencia de género, dónde se puede presentar y por parte de quien, es hora de que sepas cómo puedes protegerte. Si te reconoces como una mujer víctima de cualquier tipo de violencia, incluidas las cometidas en el conflicto armado, y decides acudir a una entidad de tu municipio en busca de ayuda, primero ten presente cuáles son tus derechos según la ley:</string>
     <string name="course_1_13_c">Como mujer víctima de violencia, tienes derecho a:</string>
@@ -148,6 +151,7 @@
 
 
 
+
     <string name="course_1_15_b">Solicita atención en salud</string>
     <string name="course_1_15_c">Tienes el derecho de acudir o ser transladada un centro de salud, hospital o clínica, para que te brinden la atención médica y psicológica</string>
     <string name="course_1_15_d">Ten en cuenta:</string>
@@ -155,7 +159,7 @@
     <string name="course_1_17_b">Tienes derecho a que los hechos sean investigados y que el agresor sea juzgado y castigado, asi tu podrás exigir la reparación de los daños que has sufrido y la no repetición de los hechos.</string>
 
     <string name="mod_2_q1_not_acerted_message">Nunca olvides que tienes derecho a decidir voluntariamente si quieres ser confrontada con el agresor o agresores y a manifestar tu intención de conciliar. \n\r Recuerda que tienes el derecho a la reserva de tu intimidad, de tus datos personales, y los de tus familiares y personas allegadas. \n\r Aunque te equivoques sigues aprendiendo ¡Inténtalo de nuevo!</string>
-    <string name="course_1_18_consejera_experta">Ahora debo llamarte Consejera Experta. ¡Buen trabajo!</string>
+    <string name="course_1_18_consejera_experta">Ahora debo llamarte %1$s. ¡Buen trabajo!</string>
 
     <string name="course_1_19_mod_3">Módulo 3</string>
     <string name="course_1_19_question">Qué puedo hacer si creo ser víctima de violencia?</string>
@@ -285,7 +289,7 @@
        ¡Excelente!
     </string>
     <string name="course_1_45_text">
-        ¡Mira que lejos estás del inicio! ¡Felicitaciones ya eres una Consejera Avanzada! ¡Ve por más!
+        ¡Mira que lejos estás del inicio! ¡Felicitaciones ya eres %1$s! ¡Ve por más!
     </string>
 
 
@@ -553,7 +557,7 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
     </string>
 
     <string name="course_1_66_msg">
-        Te has esforzado al máximo y has logrado cumplir la meta. Finalmente has alcanzado el último nivel ¡Felicitaciones Consejera Estrella!
+        Te has esforzado al máximo y has logrado cumplir la meta. Finalmente has alcanzado el último nivel ¡Felicitaciones %1$s!
     </string>
     <string name="loggin">Autenticando usuario...</string>
     <string name="credential_not_valid">Las credenciales no coinciden</string>
@@ -1209,7 +1213,7 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
 
     </string>
 
-    <string name="lideres_31_01">¡Muy bien, encontraste las respuestas correctas! \n\n
+    <string name="lideres_31_01">
         ¡Felicitaciones! Ya puedes ver como tus esfuerzos están dando resultados. Sigue coleccionando insignias, ahora eres: \n
         Conse Avanzado.
     </string>
@@ -1434,5 +1438,53 @@ Pasos a seguir:\n
 3) ¡Ahora tienes un mejor panorama sobre los riesgos de protección en tu comunidad!</item>
     </string-array>
 
+
+    <string name="tag_end_mod_1">end_mod_1
+    </string>
+
+    <string name="tag_end_mod_2">end_mod_2
+    </string>
+
+    <string name="tag_end_mod_3">end_mod_3
+    </string>
+
+    <string name="tag_end_mod_4">end_mod_4
+    </string>
+
+
+    <string-array name="conse_end_mod_tittles_male">
+        <item>Consejero Conocedor</item>
+        <item>Consejero Experto</item>
+        <item>Consejero Avanzado</item>
+        <item>Consejero Estrella</item>
+    </string-array>
+
+    <string-array name="conse_end_mod_tittles_female">
+        <item>Consejera Conocedora</item>
+        <item>Consejera Experta</item>
+        <item>Consejera Avanzada</item>
+        <item>Consejera Estrella</item>
+    </string-array>
+
+
+    <string-array name="conse_end_mod_text_vbg">
+        <item>¡Es un honor concederte el título de %1$s!</item>
+        <item>Ahora debo llamarte %1$s. ¡Buen trabajo!</item>
+        <item>¡Mira que lejos estás del inicio! ¡Felicitaciones ya eres %1$s! ¡Ve por más!</item>
+        <item>Te has esforzado al máximo y has logrado cumplir la meta. Finalmente has alcanzado el último nivel ¡Felicitaciones %1$s!</item>
+    </string-array>
+
+    <string-array name="conse_end_mod_text_leaders">
+        <item>Has finalizado el primer módulo de formación,
+        ya puedes ver como tus esfuerzos están dando resultados.
+        Recibe con gusto tu primera insignia, ahora eres: %1$s!.</item>
+        <item>¡Felicitaciones! Ya puedes ver como tus esfuerzos están dando resultados. Sigue coleccionando insignias, ahora eres: \n
+        %1$s!.</item>
+        <item>¡Excelente!\n
+        Te has esforzado y ahora te has ganado la insignia de %1$s!
+        \n¡Buen trabajo!</item>
+        <item>¡Muy bien! ¡Sembraste esfuerzo y ahora cosechas logros! Como premio a tu constancia recibe la insignia de \n%1$s.
+\n\n<b>¡Felicitaciones, has terminado todos los módulos del curso!</b></item>
+    </string-array>
 
 </resources>

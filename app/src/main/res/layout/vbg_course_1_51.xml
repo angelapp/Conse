@@ -105,14 +105,15 @@
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
                         android:id="@+id/imageView11"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="@dimen/bullets_top_margin"
+                        android:layout_marginRight="@dimen/bullets_margin" />
 
                     <TextView
                         android:text="@string/course_1_51_text2_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView10"
-                        style="@style/ConseParagraphText"
+                        style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
                         android:layout_marginTop="0dp" />
@@ -131,19 +132,18 @@
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
                         android:id="@+id/imageView11"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="@dimen/bullets_top_margin"
+                        android:layout_marginRight="@dimen/bullets_margin" />
 
                     <TextView
                         android:text="@string/course_1_51_text2_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView10"
-                        style="@style/ConseParagraphText"
+                        style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
-                        android:layout_marginTop="0dp"
-                        android:layout_marginRight="3dp"
-                        android:layout_marginLeft="3dp" />
+                        android:layout_marginTop="0dp" />
                 </LinearLayout>
                 <LinearLayout
                     android:orientation="horizontal"
@@ -159,14 +159,15 @@
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
                         android:id="@+id/imageView11"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="@dimen/bullets_top_margin"
+                        android:layout_marginRight="@dimen/bullets_margin" />
 
                     <TextView
                         android:text="@string/course_1_51_text2_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView10"
-                        style="@style/ConseParagraphText"
+                        style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
                         android:layout_marginTop="0dp" />
@@ -185,14 +186,15 @@
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
                         android:id="@+id/imageView11"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="@dimen/bullets_top_margin"
+                        android:layout_marginRight="@dimen/bullets_margin" />
 
                     <TextView
                         android:text="@string/course_1_51_text2_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView10"
-                        style="@style/ConseParagraphText"
+                        style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
                         android:layout_marginTop="0dp" />
@@ -211,14 +213,15 @@
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
                         android:id="@+id/imageView11"
-                        android:layout_marginTop="10dp" />
+                        android:layout_marginTop="@dimen/bullets_top_margin"
+                        android:layout_marginRight="@dimen/bullets_margin" />
 
                     <TextView
                         android:text="@string/course_1_51_text2_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView10"
-                        style="@style/ConseParagraphText"
+                        style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
                         android:layout_marginTop="0dp" />

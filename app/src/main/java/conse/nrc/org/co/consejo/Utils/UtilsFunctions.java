@@ -200,5 +200,20 @@ public abstract class UtilsFunctions {
         return list;
     }
 
+    public static String getConseGenderTittle(Context ctx, int mod){
+        if(ConseApp.getActualUser(ctx).profile != null){
+            if (ConseApp.getActualUser(ctx).profile.gender.id == LocalConstants.MALE){
+                return ctx.getResources().getStringArray(R.array.conse_end_mod_tittles_male)[mod-1];
+            }
+            else if (ConseApp.getActualUser(ctx).profile.gender.id == LocalConstants.FEMALE){
+                return ctx.getResources().getStringArray(R.array.conse_end_mod_tittles_female)[mod-1];
+            }
+            else if (ConseApp.getActualUser(ctx).profile.gender.id == LocalConstants.FEMALE){
+                return ctx.getResources().getStringArray(R.array.conse_end_mod_tittles_female)[mod-1];
+            }
+        }
+        return ctx.getResources().getStringArray(R.array.conse_end_mod_tittles_female)[mod-1];
+    }
+
 
 }

@@ -232,7 +232,8 @@
                         style="@style/ConseParagraphText"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="2dp"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:textSize="17sp" />
 
                     <EditText
                         android:layout_height="wrap_content"
@@ -243,7 +244,8 @@
                         android:layout_marginLeft="2dp"
                         android:layout_marginRight="2dp"
                         android:tag="@string/lideres_09_08_01"
-                        android:layout_width="80dp" />
+                        android:layout_width="90dp"
+                        android:textSize="17sp" />
 
                     <TextView
                         android:text="@string/lideres_09_10"
@@ -254,7 +256,8 @@
                         android:layout_marginLeft="0dp"
                         android:layout_marginRight="3dp"
                         android:layout_marginTop="5dp"
-                        android:lines="1" />
+                        android:lines="1"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -271,7 +274,8 @@
                         style="@style/ConseParagraphText"
                         android:layout_marginLeft="20dp"
                         android:layout_marginRight="5dp"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -290,7 +294,8 @@
                         android:layout_height="30dp"
                         android:layout_width="100dp"
                         android:tag="@string/lideres_09_08_02"
-                        android:layout_marginLeft="0dp" />
+                        android:layout_marginLeft="0dp"
+                        android:textSize="17sp" />
 
                     <TextView
                         android:text="@string/lideres_09_06"
@@ -300,7 +305,8 @@
                         style="@style/ConseParagraphText"
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:textSize="17sp" />
 
                     <EditText
                         android:layout_height="30dp"
@@ -311,7 +317,8 @@
                         android:layout_marginLeft="5dp"
                         android:layout_marginRight="5dp"
                         android:layout_width="130dp"
-                        android:tag="@string/lideres_09_08_03"/>
+                        android:tag="@string/lideres_09_08_03"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 
@@ -330,7 +337,8 @@
                         style="@style/ConseParagraphText"
                         android:layout_marginLeft="0dp"
                         android:layout_marginRight="5dp"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginTop="5dp"
+                        android:textSize="17sp" />
 
                 </LinearLayout>
 

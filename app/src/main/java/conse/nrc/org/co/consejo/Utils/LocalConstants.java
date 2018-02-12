@@ -28,6 +28,7 @@ public class LocalConstants {
 
     public static final int MALE = 1;
     public static final int FEMALE = 2;
+    public static final int TRANSGEN = 3;
 
     public static final float BUTTON_SEND_ALERT_MIN_ALPHA = 0.5f;
     public static final float BUTTON_SEND_ALERT_MAX_ALPHA = 1f;
@@ -145,6 +146,11 @@ public class LocalConstants {
     public static final String L_MOD_4_Q2 = "L_MOD_4_Q2";
     public static final String L_MOD_4_Q3 = "L_MOD_4_Q3";
     public static final String L_MOD_4_CUESTIONARY = "L_MOD_4_CUESTIONARY";
+
+    public static final String TAG_END_MOD_1 = "end_mod_1";
+    public static final String TAG_END_MOD_2 = "end_mod_2";
+    public static final String TAG_END_MOD_3 = "end_mod_3";
+    public static final String TAG_END_MOD_4 = "end_mod_4";
 
     public static final String sskd = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d!$%@#£€*?&]{8,}$";
 

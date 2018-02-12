@@ -59,4 +59,7 @@
     <dimen name="course_module_name_text_size">15sp</dimen>
 
 
+    <dimen name="end_course_bottom_button_padding">15dp</dimen>
+
+
 </resources>

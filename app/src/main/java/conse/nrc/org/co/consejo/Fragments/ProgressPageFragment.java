@@ -30,6 +30,7 @@ import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.Models;
+import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 /**
  * Created by apple on 12/9/17.
@@ -79,13 +80,13 @@ public class ProgressPageFragment extends Fragment {
 
 
         if (ConseApp.getAppConfiguration(mCtx).getCourseById(mCourseId).course_topics != null) {
+            int i = 1;
             for (Models.Topic topic : ConseApp.getAppConfiguration(mCtx).getCourseById(mCourseId).course_topics) {
                 final LayoutInflater inflater = (LayoutInflater) this.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 final View progressItem = inflater.inflate(R.layout.progres_bar_item, null, false);
 
-                ((TextView) progressItem.findViewById(R.id.tv_module_tittle)).setText(topic.description);
+                ((TextView) progressItem.findViewById(R.id.tv_module_tittle)).setText(UtilsFunctions.getConseGenderTittle(mCtx, i));
                 ((ProgressBar) progressItem.findViewById(R.id.pb_progress)).setProgress(topic.getUserProgressByTopic());
-
                 imageLoader = imageLoader.getInstance();
                 ImageView im = (ImageView) progressItem.findViewById(R.id.iv_module_icon);
                 imageLoader.displayImage(topic.icon, im, options);
@@ -96,7 +97,7 @@ public class ProgressPageFragment extends Fragment {
                 } else {
                     im.setAlpha(1f);
                 }
-
+                i++;
                 mLyContent.addView(progressItem);
             }
         }

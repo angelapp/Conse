@@ -107,7 +107,7 @@
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
                             android:id="@+id/imageView11"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
                         <TextView
@@ -134,7 +134,7 @@
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
                             android:id="@+id/imageView11"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
                         <TextView
@@ -161,7 +161,7 @@
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
                             android:id="@+id/imageView11"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
                         <TextView
@@ -188,7 +188,7 @@
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
                             android:id="@+id/imageView11"
-                            android:layout_marginTop="5dp"
+                            android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
                         <TextView

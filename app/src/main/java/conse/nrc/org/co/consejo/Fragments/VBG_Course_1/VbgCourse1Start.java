@@ -19,6 +19,7 @@ import android.widget.FrameLayout;
 import android.widget.GridLayout;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
@@ -31,6 +32,7 @@ import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.DataBase;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
+import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MOD_4_Q3_CORRECT_ANSWER;
 
@@ -200,14 +202,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
             switch ((String) view.getTag()) {
                 case LocalConstants.NEED_AVATAR_TAG:
-                    try {
-                        FrameLayout avatar = (FrameLayout) view.findViewWithTag(LocalConstants.HERE_AVATAR_TAG);
-                        avatar.removeAllViews();
-                        avatar.addView(ConseApp.getAvatarFrame(mCtx, imageLoader, optionsPreview));
-                    } catch (Exception ea) {
-                        ea.printStackTrace();
-                    }
-
+                    setAvatar(view);
                     break;
                 case LocalConstants.MOD_1_CW1_SCREEN:
                     setCrossWordMod1();
@@ -219,6 +214,18 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                 case LocalConstants.NEED_YOUTUBE_VIDEO_TAG:
                     setYoutubeVideo(view);
                     break;
+                case LocalConstants.TAG_END_MOD_1:
+                    setConseTittle(view, 1);
+                    break;
+                case LocalConstants.TAG_END_MOD_2:
+                    setConseTittle(view, 2);
+                    break;
+                case LocalConstants.TAG_END_MOD_3:
+                    setConseTittle(view, 3);
+                    break;
+                case LocalConstants.TAG_END_MOD_4:
+                    setConseTittle(view, 4);
+                    break;
                 default:
                     break;
             }
@@ -226,6 +233,25 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
             Log.d("VBg Mod", "The view tag is: null");
         }
 
+    }
+
+    private void setConseTittle(View view, int i) {
+        setAvatar(view);
+        TextView tv = (TextView) view.findViewById(R.id.tv_conse_tittle);
+        String tittle = UtilsFunctions.getConseGenderTittle(mCtx, i);
+        String complement = getResources().getStringArray(R.array.conse_end_mod_text_vbg)[i-1];
+        String message = String.format(complement,tittle);
+        tv.setText(message);
+    }
+
+    private void setAvatar(View view) {
+        try {
+            FrameLayout avatar = (FrameLayout) view.findViewWithTag(LocalConstants.HERE_AVATAR_TAG);
+            avatar.removeAllViews();
+            avatar.addView(ConseApp.getAvatarFrame(mCtx, imageLoader, optionsPreview));
+        } catch (Exception ea) {
+            ea.printStackTrace();
+        }
     }
 
     private void setYoutubeVideo(View mView) {
@@ -512,8 +538,8 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                     }
                 }
             }
-            //if (isCorrect || LocalConstants.DEV_VERSION){
-            if (isCorrect){
+            if (isCorrect || LocalConstants.DEV_VERSION){
+//            if (isCorrect){
                 if (accertedString != null){
                     setAccertedDialog(accertedString);
                 } else {
