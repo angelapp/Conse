@@ -154,7 +154,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bt_contact"
-                android:background="@drawable/button_menu_contact_us"
+                android:background="@drawable/contactanos"
                 android:layout_marginBottom="@dimen/menu_item_bottom_margin"
                 android:onClick="onClick"/>
 

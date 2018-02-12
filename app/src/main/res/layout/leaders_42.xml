@@ -144,7 +144,7 @@
                     <ImageView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        app:srcCompat="@drawable/globo_l42_"
+                        app:srcCompat="@drawable/globol42"
                         android:id="@+id/imageView17"
                         android:layout_marginTop="25dp" />
 

@@ -51,21 +51,24 @@
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:gravity="center_horizontal">
+                    android:gravity="right"
+                    android:layout_gravity="right">
 
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/globo_l40_1"
                         android:id="@+id/imageView17"
-                        android:layout_marginTop="25dp" />
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="@dimen/courses_margin_right" />
 
                     <ImageView
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/globo_l40_2"
                         android:id="@+id/imageView17"
-                        android:layout_marginTop="25dp" />
+                        android:layout_marginTop="25dp"
+                        android:layout_marginRight="@dimen/courses_margin_right" />
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -73,7 +76,8 @@
                         android:layout_height="match_parent"
                         android:background="@drawable/globo_l40_3"
                         android:layout_marginTop="20dp"
-                        android:gravity="right">
+                        android:gravity="right"
+                        android:layout_marginRight="@dimen/courses_margin_right">
 
                         <Button
                             android:layout_width="56dp"

@@ -73,7 +73,9 @@
                     android:layout_marginRight="25dp"
                     android:layout_marginTop="15dp"
                     android:gravity="center"
-                    android:background="@drawable/opciones_l9" />
+                    android:background="@drawable/opciones_l9"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -213,7 +215,9 @@
                     android:layout_marginRight="25dp"
                     android:layout_marginTop="15dp"
                     android:gravity="center"
-                    android:background="@drawable/opciones_l9" />
+                    android:background="@drawable/opciones_l9"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <LinearLayout
                     android:orientation="horizontal"
@@ -226,8 +230,8 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/textView19"
                         style="@style/ConseParagraphText"
-                        android:layout_marginLeft="25dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="20dp"
+                        android:layout_marginRight="2dp"
                         android:layout_marginTop="5dp" />
 
                     <EditText
@@ -236,10 +240,10 @@
                         android:ems="10"
                         android:id="@+id/editText2"
                         style="@style/ConseExitText"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
+                        android:layout_marginLeft="2dp"
+                        android:layout_marginRight="2dp"
                         android:tag="@string/lideres_09_08_01"
-                        android:layout_width="100dp" />
+                        android:layout_width="80dp" />
 
                     <TextView
                         android:text="@string/lideres_09_10"
@@ -247,9 +251,10 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/textView19"
                         style="@style/ConseParagraphText"
-                        android:layout_marginLeft="5dp"
-                        android:layout_marginRight="5dp"
-                        android:layout_marginTop="5dp" />
+                        android:layout_marginLeft="0dp"
+                        android:layout_marginRight="3dp"
+                        android:layout_marginTop="5dp"
+                        android:lines="1" />
 
                 </LinearLayout>
 
@@ -264,7 +269,7 @@
                         android:layout_height="wrap_content"
                         android:id="@+id/textView19"
                         style="@style/ConseParagraphText"
-                        android:layout_marginLeft="25dp"
+                        android:layout_marginLeft="20dp"
                         android:layout_marginRight="5dp"
                         android:layout_marginTop="5dp" />
 
@@ -274,18 +279,18 @@
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp">
+                    android:layout_marginLeft="20dp">
 
                     <EditText
                         android:inputType="textPersonName"
                         android:ems="10"
                         android:id="@+id/editText2"
                         style="@style/ConseExitText"
-                        android:layout_marginLeft="0dp"
                         android:layout_marginRight="5dp"
                         android:layout_height="30dp"
                         android:layout_width="100dp"
-                        android:tag="@string/lideres_09_08_02"/>
+                        android:tag="@string/lideres_09_08_02"
+                        android:layout_marginLeft="0dp" />
 
                     <TextView
                         android:text="@string/lideres_09_06"
@@ -314,7 +319,7 @@
                     android:orientation="horizontal"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="25dp"
+                    android:layout_marginLeft="20dp"
                     android:layout_marginBottom="25dp">
 
                     <TextView
@@ -351,7 +356,9 @@
                     android:layout_marginRight="25dp"
                     android:layout_marginTop="15dp"
                     android:gravity="center"
-                    android:background="@drawable/opciones_l9" />
+                    android:background="@drawable/opciones_l9"
+                    android:textColor="@color/white"
+                    android:textSize="20sp" />
 
                 <LinearLayout
                     android:orientation="horizontal"

@@ -52,8 +52,8 @@
                     <LinearLayout
                         android:orientation="vertical"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:background="@drawable/globo_l33">
+                        android:background="@drawable/globo_l33"
+                        android:layout_height="480dp">
 
                         <TextView
                             android:text="@string/lideres_06_02"
@@ -82,7 +82,7 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_below="@+id/fl_image"
-                    android:layout_marginTop="-60dp"
+                    android:layout_marginTop="-40dp"
                     android:tag="here_avatar"
                     android:layout_height="200dp"
                     android:foregroundGravity="left"

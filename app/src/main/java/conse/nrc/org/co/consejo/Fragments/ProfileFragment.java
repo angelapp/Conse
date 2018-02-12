@@ -162,6 +162,8 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         mEtPassword.setVisibility(View.GONE);
         mEtPasswordConfirm.setVisibility(View.GONE);
 
+        mBtNext.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_update));
+
         ((TextView)mView.findViewById(R.id.tv_profile_tittle)).setText(R.string.edit_profile_tittle);
 
         mEtEmail.setText(user.user.email);

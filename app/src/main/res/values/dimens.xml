@@ -32,6 +32,7 @@
     <dimen name="courses_li_margin_top">15dp</dimen>
 
     <dimen name="bullets_margin">10dp</dimen>
+    <dimen name="bullets_top_margin">10dp</dimen>
 
     <dimen name="paper_checkbox_margin_left">45dp</dimen>
 
@@ -52,8 +53,8 @@
     <dimen name="courses_module_tittle_margin_bottom">10dp</dimen>
 
     <dimen name="course_tittle_text_size">25sp</dimen>
-    <dimen name="course_sub_tittle_text_size">22sp</dimen>
-    <dimen name="course_highlight_text_text_size">20sp</dimen>
+    <dimen name="course_sub_tittle_text_size">20sp</dimen>
+    <dimen name="course_highlight_text_text_size">18sp</dimen>
     <dimen name="course_paragraph_text_size">17sp</dimen>
     <dimen name="course_module_name_text_size">15sp</dimen>
 

@@ -23,5 +23,6 @@
         style="@style/ConseParagraphText"
         android:textColor="@color/white"
         android:layout_marginLeft="@dimen/square_padding_top"
-        android:layout_marginRight="@dimen/square_padding_top"/>
+        android:layout_marginRight="@dimen/square_padding_top"
+        android:textAlignment="center" />
 </LinearLayout>

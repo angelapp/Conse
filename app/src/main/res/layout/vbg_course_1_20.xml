@@ -65,15 +65,16 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/courses_margin_right"
-                android:gravity="center_vertical"
-                android:layout_marginLeft="@dimen/courses_li_margin_left">
+                android:layout_marginLeft="@dimen/courses_li_margin_left"
+                android:layout_marginTop="20dp">
 
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/bullet"
                     android:id="@+id/imageView11"
-                    android:layout_margin="@dimen/bullets_margin" />
+                    android:layout_marginTop="5dp"
+                    android:layout_marginRight="@dimen/bullets_margin" />
 
                 <TextView
                     android:text="@string/course_1_20_text_1_1"
@@ -82,7 +83,8 @@
                     android:id="@+id/textView10"
                     style="@style/CourseParagraphText"
                     android:layout_weight="1"
-                    android:paddingBottom="10dp" />
+                    android:paddingBottom="10dp"
+                    android:layout_marginTop="0dp" />
             </LinearLayout>
 
             <LinearLayout
@@ -90,7 +92,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="@dimen/courses_margin_right"
-                android:gravity="center_vertical"
+                android:gravity="top"
                 android:layout_marginLeft="@dimen/courses_li_margin_left">
 
                 <ImageView
@@ -98,7 +100,8 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/bullet"
                     android:id="@+id/imageView11"
-                    android:layout_margin="@dimen/bullets_margin" />
+                    android:layout_marginRight="@dimen/bullets_margin"
+                    android:layout_marginTop="5dp" />
 
                 <TextView
                     android:text="@string/course_1_20_text_1_2"
@@ -106,7 +109,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/textView11"
                     style="@style/CourseParagraphText"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:gravity="center_vertical"
                     android:paddingBottom="10dp" />
             </LinearLayout>
@@ -126,7 +129,7 @@
                     app:srcCompat="@drawable/bullet"
                     android:id="@+id/imageView11"
                     android:layout_marginTop="5dp"
-                    android:layout_margin="@dimen/bullets_margin" />
+                    android:layout_marginRight="@dimen/bullets_margin" />
 
                 <TextView
                     android:text="@string/course_1_20_text_1_3"

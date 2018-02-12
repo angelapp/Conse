@@ -538,6 +538,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                 if (tag !=null && tag.length() == 1 && !tag.equals(et.getText().toString().toLowerCase())){
                     Log.d("Crossword error", "Tag: " + tag + " Word: " + et.getText().toString().toLowerCase());
                     error = true;
+                    et.setText("");
                     continue;
                 }
             } catch (Exception ea){

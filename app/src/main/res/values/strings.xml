@@ -108,7 +108,7 @@
     <string name="course_1_4_3_a">En el ámbito estatal</string>
     <string name="course_1_4_4_a">En el conflicto armado</string>
     <string name="course_1_5_a">Si crees ser víctima de violencia en el marco del conflicto armado hay varios factores adicionales que debes tener en cuenta, revisa la siguiente infografía con información sobre el tema:</string>
-    <string name="course_1_5_b">La corte constitucional reconoció que las mujeres, por su condición de mujeres, en el conflicto armado enfrentan riesgos diferentes a los que viven los hombres. Estos son:</string>
+    <string name="course_1_5_b">La Corte Constitucional reconoció que las mujeres, por su condición de mujeres, en el conflicto armado enfrentan riesgos diferentes a los que viven los hombres. Estos son:</string>
     <string name="course_1_5_c">Esclavización o explotación para realizar roles considerados como femeninos y labores de la casa como cocinar, lavar o cuidar enfermos.</string>
     <string name="course_1_5_d">Reclutamiento forzado de tus hijos e hijas por grupos armados ilegales.</string>
     <string name="course_1_5_e">Señalamientos o venganzas por tu relación o contacto con integrantes de algún grupo armado.</string>
@@ -128,7 +128,7 @@
     <string name="course_1_7_e">Por último, pero no menos importante, adopta los siguientes consejos como leyes inquebrantables para tu vida diaria.</string>
     <string name="course_1_8_a">Nunca olvides que...</string>
     <string name="course_1_9_a">¡Buenísimo! Has finalizado tu primer módulo de formación, responde al siguiente crucigrama y recibirás tu primer reconocimiento.</string>
-    <string name="course_1_10_a">Completa el crucigrama. Pulsa sobre el ícono para ver la pista y escribe a continuación tu respuesta</string>
+    <string name="course_1_10_a">Completa el crucigrama. Pulsa sobre el número para ver la pista.</string>
     <string name="course_1_11_a">No has acertado en todas las respuestas, pero no te desanimes ¡Que sea un motivo para lograrlo en tu próximo intento!</string>
     <string name="course_1_12_a">¡Buen trabajo!</string>
     <string name="course_1_12_b">¡Es un honor concederte el título de Consejera Conocedora!</string>
@@ -692,7 +692,7 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
     <string name="lideres_02_01">Módulo 1
     </string>
 
-    <string name="lideres_02_02">Derechos de lideresas y líderes de la comunidad y de defensoras y defensores de los derechos humanos tipo oración
+    <string name="lideres_02_02">Derechos de lideresas y líderes de la comunidad y de defensoras y defensores de los derechos humanos
     </string>
 
 
@@ -908,7 +908,7 @@ Módulo 2
 Responsabilidades de las instituciones en la prevención y protección
     </string>
     <string name="lideres_12_03">
-Ya conoces tus derechos como líder o lideresa, ahora, entérate de cuáles son algunas de las responsabilidades de las instituciones en temas de prevención y protección. Ten presente que la implementación de estas medidas se realiza a través de dos estrategias diferentes: una Estrategia de Prevención y otra de Estrategia de Protección.
+Ya conoces tus derechos como líder o lideresa, ahora, entérate de cuáles son algunas de las responsabilidades de las instituciones en temas de prevención y protección. Ten presente que la implementación de estas medidas se realiza a través de dos estrategias diferentes: una Estrategia de Prevención y otra de Protección.
     </string>
 
 
@@ -1265,6 +1265,13 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
 \n\nPulsa sobre la flecha del Programa de Protección Individual para conocer los pasos que debes seguir.
     </string>
 
+
+    <string name="lideres_36_03">Programa de Protección Individual
+    </string>
+
+    <string name="lideres_36_04">Programa de Protección Colectiva
+    </string>
+
     <string name="lideres_37_01">¿Cuál es la población que puede acceder a esta ruta y bajo qué condiciones?
     </string>
 
@@ -1309,7 +1316,7 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     <string name="lideres_46_01">Lee atentamente las siguientes situaciones y contesta sí o no a la pregunta.
     </string>
 
-    <string name="lideres_46_02">1. Juan es un joven estudiante que le gusta hacer fiestas en su casa a altas horas de la noche y con mucho volumen, su vecino lo amenaza con hacerle daño si no deja de hacer estas actividades. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para Juan?
+    <string name="lideres_46_02">1. Juan es un joven estudiante al que le gusta hacer fiestas en su casa hasta altas horas de la noche y con mucho volumen. Su vecino lo amenaza con hacerle daño si no deja de hacer estas actividades. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para Juan?
     </string>
 
     <string name="lideres_46_03">SÍ
@@ -1318,10 +1325,10 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     <string name="lideres_46_04">NO
     </string>
 
-     <string name="lideres_47_02">2. Camilo es nombrado representante de la mesa nacional de víctimas de desplazamiento forzado la semana pasada, desde hace cuatro meses le debe dinero a José quien le prestó para comprar un televisor, el día de hoy después de regresar de una jornada de la mesa nacional, se encuentra con José quien le dice que, si no le paga mañana, le hará daño. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para Camilo?
+     <string name="lideres_47_02">2. Camilo fue nombrado representante de la Mesa Nacional de Víctimas de Desplazamiento Forzado la semana pasada. Desde hace cuatro meses le debe dinero a José, quien le prestó para comprar un televisor. El día de hoy después de regresar de una jornada de la Mesa, se encuentra con José quien le dice que si no le paga mañana, le hará daño. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para Camilo?
     </string>
 
-    <string name="lideres_48_02">3. La señora Constanza es profesora de una escuela donde enseña Derechos Humanos y derechos de las víctimas del conflicto, un grupo armado al margen de la Ley le ordena no volver a hablar de estos temas o le hará daño. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para la señora Constanza?
+    <string name="lideres_48_02">3. La señora Constanza es profesora de una escuela donde enseña derechos humanos y derechos de las víctimas del conflicto. Un grupo armado al margen de la Ley le ordena no volver a hablar de estos temas o le hará daño. ¿Es el programa del Ministerio del Interior y de la Unidad Nacional de Protección el adecuado para la señora Constanza?
     </string>
 
     <string name="lideres_49_01">No has acertado en todas las respuestas, pero, aunque te equivoques sigues aprendiendo \n¡Inténtalo de nuevo!
@@ -1366,13 +1373,13 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     <string name="lideres_60_01">Lee atentamente las siguientes situaciones y contesta sí o no a la pregunta.
     </string>
 
-    <string name="lideres_60_02">1. María es la representante de una organización que trabaja por los derechos de mujeres víctimas de violencia, ella inició su trabajo como defensora después a una agresión que sufrió y quedo en la impunidad, recientemente su agresor ha regresado y amenaza con atentar contra ella ¿Es la Ruta de Protección Colectiva la adecuada para María?
+    <string name="lideres_60_02">1. María es la representante de una organización que trabaja por los derechos de mujeres víctimas de violencia. Ella inició su trabajo como defensora después de una agresión que sufrió y que quedo en la impunidad; recientemente su agresor ha regresado y amenaza con atentar contra ella ¿Es la Ruta de Protección Colectiva la adecuada para María?
     </string>
 
-    <string name="lideres_61_02">2. Juan es desde hace varios años, líder de una comunidad que trabaja por la restitución de las tierras que perdieron en el marco del conflicto, debido a esto, grupos armados al margen de la ley lo han estado siguiendo y ahora amenazan con atentar contra él y los otros miembros de la comunidad que han logrado identificar. ¿Es la Ruta de Protección Colectiva la adecuada para Juan y su comunidad?
+    <string name="lideres_61_02">2. Juan es desde hace varios años, líder de una comunidad que trabaja por la restitución de las tierras que perdieron en el marco del conflicto. Debido a esto, grupos armados al margen de la ley lo han estado siguiendo y ahora amenazan con atentar contra él y los otros miembros de la comunidad que han logrado identificar. ¿Es la Ruta de Protección Colectiva la adecuada para Juan y su comunidad?
     </string>
 
-    <string name="lideres_62_02">3. Jacobo fue víctima de desplazamiento forzado, actualmente se encuentra en un proceso de restitución de tierras y lo están amenazando por seguir en el proceso, Jacobo quiere solicitar protección colectiva, para él y su familia, ya que hace parte de la gran cantidad de personas que se encuentran en esa misma situación. ¿Es la Ruta de Protección Colectiva la adecuada para Jacobo?
+    <string name="lideres_62_02">3. Jacobo fue víctima de desplazamiento forzado. Actualmente se encuentra en un proceso de restitución de tierras y lo están amenazando por seguir en el proceso. Quiere solicitar protección colectiva, para él y su familia, ya que hace parte de la gran cantidad de personas que se encuentran en esa misma situación. ¿Es la Ruta de Protección Colectiva la adecuada para Jacobo?
     </string>
 
     <string name="lideres_63_01">No has acertado en todas las respuestas ¡Inténtalo de nuevo!
