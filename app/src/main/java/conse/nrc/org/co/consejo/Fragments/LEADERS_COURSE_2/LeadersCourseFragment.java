@@ -198,6 +198,8 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
 
     private void prepareFragmentForView(View view) {
 
+        setFullBackground(0);
+
         if (view.getTag() !=  null) {
             Log.d("Leaders", "The view tag is: " + view.getTag().toString());
 
@@ -237,6 +239,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
         String complement = getResources().getStringArray(R.array.conse_end_mod_text_leaders)[i-1];
         String message = String.format(complement,tittle);
         tv.setText(message);
+        setFullBackground(i);
     }
 
     private void setAvatar(View view) {
@@ -246,6 +249,14 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
             avatar.addView(ConseApp.getAvatarFrame(mCtx, imageLoader, optionsPreview));
         } catch (Exception ea) {
             ea.printStackTrace();
+        }
+    }
+
+    private void setFullBackground(int i) {
+        if (i==0){ //Si se requiere quitar el backgroun image
+            view.setBackgroundColor(getResources().getColor(R.color.grey_light));
+        } else{
+            view.setBackground(getResources().getDrawable(LocalConstants.COURSES_END_MODULE_BACKGROUNDS.get(i-1)));
         }
     }
 
@@ -383,10 +394,22 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
         boolean error = false;
         for (String tag : LocalConstants.getLeadersCourseStringValidation(mCtx)){
             EditText editText = (EditText)view.findViewWithTag(tag);
-            if (!editText.getText().toString().toLowerCase().equals(tag)){
-                editText.setError(getString(R.string.error));
-                error = true;
+            String[] separated = tag.split("-");
+            boolean local_contains = false;
+            for (String sep : separated){
+                if (editText.getText() != null && editText.getText().toString().toLowerCase().trim().equals(sep)){
+                    local_contains = true;
+                }
             }
+            if (!local_contains){
+                error = true;
+                editText.setError(getString(R.string.error));
+            }
+//            if (!editText.getText().toString().toLowerCase().equals(tag)){
+//                editText.setError(getString(R.string.error));
+//                error = true;
+//            }
+
         }
         if (!error || LocalConstants.DEV_VERSION){
 //        if (!error){

@@ -44,6 +44,7 @@ public class ClueDialog extends android.app.DialogFragment {
         dialog.onBackPressed();
         dialog.cancel();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black_dialog_overlay)));
+//        dialog.getWindow().getAttributes().alpha = 0.9f;
         return dialog;
     }
 

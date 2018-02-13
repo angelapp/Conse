@@ -4,10 +4,14 @@ import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.view.ViewPager;
+import android.text.Html;
+import android.text.Spanned;
+import android.text.method.LinkMovementMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.astuetz.PagerSlidingTabStrip;
 
@@ -17,6 +21,8 @@ import java.util.List;
 import conse.nrc.org.co.consejo.Adapters.PagerAdapterFragment;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.ConseApp;
+import conse.nrc.org.co.consejo.Utils.LocalConstants;
 
 /**
  * Created by apple on 12/4/17.
@@ -72,12 +78,71 @@ public class aboutNrcFragment extends Fragment {
     public static class AboutSubfragment extends Fragment {
 
         public int layout;
+        Context mCtx;
 
         @Override
         public View onCreateView(LayoutInflater inflater, ViewGroup container,
                                  Bundle savedInstanceState) {
             View view =  inflater.inflate(layout, container, false);
+
+
+            try {
+                TextView office = (TextView) view.findViewById(R.id.tv_office_link);
+                Spanned tittleString;
+                tittleString = Html.fromHtml("<FONT COLOR=#eb5c3f><a href=\"" + LocalConstants.office_url + "\">"
+                        + getString(R.string.about_nrc_page3_2) + " </a></font>"
+                );
+                office.setText(tittleString);
+                office.setMovementMethod(LinkMovementMethod.getInstance());
+            } catch (Exception ea){
+                ea.printStackTrace();
+            }
+
+            try {
+                TextView facebook = (TextView) view.findViewById(R.id.tv_facebook_link);
+                Spanned tittleString;
+                tittleString = Html.fromHtml("<FONT COLOR=#eb5c3f><a href=\"" + LocalConstants.facebook_url + "\">"
+                        + getString(R.string.about_nrc_page3_3) + " </a></font>"
+                );
+                facebook.setText(tittleString);
+                facebook.setMovementMethod(LinkMovementMethod.getInstance());
+            } catch (Exception ea){
+                ea.printStackTrace();
+            }
+
+            try {
+                TextView twitter = (TextView) view.findViewById(R.id.tv_twitter_link);
+                Spanned tittleString;
+                tittleString = Html.fromHtml("<FONT COLOR=#eb5c3f><a href=\"" + LocalConstants.twitter_url + "\">"
+                        + getString(R.string.about_nrc_page3_4) + " </a></font>"
+                );
+                twitter.setText(tittleString);
+                twitter.setMovementMethod(LinkMovementMethod.getInstance());
+            } catch (Exception ea){
+                ea.printStackTrace();
+            }
+
+            try {
+                TextView site = (TextView) view.findViewById(R.id.tv_nrc_site_link);
+                Spanned tittleString;
+                tittleString = Html.fromHtml("<FONT COLOR=#eb5c3f><a href=\"" + LocalConstants.nrc_url + "\">"
+                        + getString(R.string.about_nrc_page3_5) + " </a></font>"
+                );
+                site.setText(tittleString);
+                site.setMovementMethod(LinkMovementMethod.getInstance());
+            } catch (Exception ea){
+                ea.printStackTrace();
+            }
+
             return view;
+        }
+
+
+        @Override
+        public void onAttach(Context context) {
+            super.onAttach(context);
+            mCtx = context;
+            //alertTestInterfaces = (AlertTestInterfaces) mCtx;
         }
     }
 }

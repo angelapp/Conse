@@ -145,7 +145,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cb_is_nrc_beneficiary"
-                style="@style/ConseCheckbox" />
+                style="@style/ConseCheckboxGrayBackgroun" />
 
             <LinearLayout
                 android:orientation="vertical"
@@ -255,7 +255,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/cb_accept_terms_conditions"
-                    style="@style/ConseCheckbox"
+                    style="@style/ConseCheckboxGrayBackgroun"
                     android:layout_marginBottom="0dp"
                     android:paddingBottom="0dp"
                     android:layout_marginTop="0dp"

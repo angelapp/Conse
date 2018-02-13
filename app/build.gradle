@@ -45,7 +45,8 @@ android {
         debug {
             //signingConfig signingConfigs.key
 //            buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
-            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+//            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+            buildConfigField "String", "SERVER_URL", '"https://consejo.nrc.org.co/"'
 //            buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
             buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"' //live
             buildConfigField "boolean", "DEV_VERSION", 'true'
@@ -54,10 +55,22 @@ android {
         debugLive {
             //signingConfig signingConfigs.key
             //buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
-            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+//            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+            buildConfigField "String", "SERVER_URL", '"https://consejo.nrc.org.co/"'
             //buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
             buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"'//live
             buildConfigField "boolean", "DEV_VERSION", 'true'
+            applicationIdSuffix ".debugLive"
+            debuggable true
+        }
+        notDebug {
+            //signingConfig signingConfigs.key
+            //buildConfigField "String", "SERVER_URL", '"http://192.168.0.17:8000/"'
+//            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+            buildConfigField "String", "SERVER_URL", '"https://consejo.nrc.org.co/"'
+            //buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
+            buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"'//live
+            buildConfigField "boolean", "DEV_VERSION", 'false'
             applicationIdSuffix ".debugLive"
             debuggable true
         }
@@ -65,9 +78,10 @@ android {
             minifyEnabled false
             buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"'
             //live
-            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+//            buildConfigField "String", "SERVER_URL", '"http://consejo.nrc.org.co:9000/"'
+            buildConfigField "String", "SERVER_URL", '"https://consejo.nrc.org.co/"'
             buildConfigField "boolean", "DEV_VERSION", 'false'
-            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.key
         }
     }

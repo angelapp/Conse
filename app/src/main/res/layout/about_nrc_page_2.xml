@@ -35,7 +35,7 @@
                 android:text="@string/about_nrc_page2_2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView14"
+                android:id="@+id/textView111"
                 style="@style/ConseParagraphText"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp" />
@@ -44,7 +44,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/foto_asistencia"
-                android:id="@+id/imageView7"
+                android:id="@+id/imageView712"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal" />
 
@@ -52,7 +52,7 @@
                 android:text="@string/about_nrc_page2_3"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView14"
+                android:id="@+id/textView15"
                 style="@style/ConseParagraphText"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp" />
@@ -61,7 +61,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/foto_alojamiento"
-                android:id="@+id/imageView7"
+                android:id="@+id/imageView8"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal" />
 
@@ -69,23 +69,88 @@
                 android:text="@string/about_nrc_page2_4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView14"
+                android:id="@+id/textView16"
                 style="@style/ConseParagraphText"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp" />
 
-            <TextView
-                android:text="@string/about_nrc_page2_5"
+            <LinearLayout
+                android:orientation="horizontal"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView14"
-                style="@style/ConseParagraphText"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
-                android:gravity="center"
-                android:clickable="true"
-                android:linksClickable="true"
-                android:enabled="true" />
+                android:gravity="center_vertical"
+                android:layout_marginTop="25dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icobf"
+                    android:id="@+id/imageView11" />
+
+                <TextView
+                    android:text="@string/about_nrc_page3_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_facebook_link"
+                    style="@style/ConseParagraphText"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="0dp"
+                    android:clickable="true"
+                    android:linksClickable="false"
+                    android:enabled="true"
+                    android:textColor="@color/salmon"
+                    android:textColorLink="@color/salmon"
+                    android:textSize="14sp"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginTop="0dp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="25dp"
+                android:layout_marginRight="25dp"
+                android:gravity="center_vertical"
+                android:layout_marginTop="15dp">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@drawable/icotwitter"
+                    android:id="@+id/imageView12" />
+
+                <TextView
+                    android:text="@string/about_nrc_page3_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_twitter_link"
+                    style="@style/ConseParagraphText"
+                    android:layout_marginTop="0dp"
+                    android:gravity="center_vertical"
+                    android:paddingBottom="0dp"
+                    android:clickable="true"
+                    android:linksClickable="false"
+                    android:enabled="true"
+                    android:textColor="@color/salmon"
+                    android:textColorLink="@color/salmon"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <TextView
+                android:text="@string/about_nrc_page3_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_nrc_site_link"
+                style="@style/ConseParagraphText"
+                android:gravity="center_horizontal"
+                android:textColor="@color/salmon"
+                android:textColorLink="@color/salmon"
+                android:textStyle="normal|bold"
+                android:enabled="true"
+                android:textSize="16sp" />
 
         </LinearLayout>
     </ScrollView>

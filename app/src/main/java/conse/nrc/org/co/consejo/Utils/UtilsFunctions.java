@@ -208,7 +208,7 @@ public abstract class UtilsFunctions {
             else if (ConseApp.getActualUser(ctx).profile.gender.id == LocalConstants.FEMALE){
                 return ctx.getResources().getStringArray(R.array.conse_end_mod_tittles_female)[mod-1];
             }
-            else if (ConseApp.getActualUser(ctx).profile.gender.id == LocalConstants.FEMALE){
+            else if (ConseApp.getActualUser(ctx).profile.gender.id == LocalConstants.TRANSGEN){
                 return ctx.getResources().getStringArray(R.array.conse_end_mod_tittles_female)[mod-1];
             }
         }

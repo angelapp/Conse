@@ -95,8 +95,17 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
     }
 
     private void goToRegister() {
-        Intent register = new Intent(this, Register.class);
-        startActivity(register);
+        if (ConseApp.validateGpsStatus(true, this)) {
+            if (ConseApp.validateNetworkStatus(true, this)) {
+                Intent register = new Intent(this, Register.class);
+                startActivity(register);
+            }
+            else {
+                Toast.makeText(this,getString(R.string.conse_need_gps), Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this,getString(R.string.not_network_conection), Toast.LENGTH_SHORT).show();
+        }
     }
 
     @Override

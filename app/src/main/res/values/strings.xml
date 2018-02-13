@@ -582,10 +582,7 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
     <string name="about_nrc_tittle">SOBRE EL CONSEJO \n NORUEGO PARA REFUGIADOS</string>
 
     <string name="about_nrc_page1_1">Somos una organización no gubernamental internacional, independiente, humanitaria, sin ánimo de lucro, establecida en 1946. Respondemos durante situaciones de conflicto armado y nos comprometemos en otros contextos donde nuestras competencias provean un valor añadido. Estamos presentes en 30 países alrededor del mundo. \n \n
-        Promovemos la resiliencia y la participación de las personas desplazadas y refugiadas en el diseño y ejecución de programas. Proveemos asistencia alimentaria, agua potable, albergue, asistencia legal y educación. En situaciones de emergenica nuestra <b>Unidad de Respuesta Rápida</b> está preparada para complementar la respuesta del Estado. \n\n
-        <b>Valores NRC</b>\n
-        Estamos comprometidos con nuestros valores centrales:</string>
-
+        Promovemos la resiliencia y la participación de las personas desplazadas y refugiadas en el diseño y ejecución de programas. Proveemos asistencia alimentaria, agua potable, albergue, asistencia legal y educación. En situaciones de emergenica nuestra <b>Unidad de Respuesta Rápida</b> está preparada para complementar la respuesta del Estado.\n\n<b>Valores NRC</b>\nEstamos comprometidos con nuestros valores centrales:</string>
     <string name="about_nrc_page1_2">Dedicación</string>
     <string name="about_nrc_page1_3">Inclusión</string>
     <string name="about_nrc_page1_4">Innovación</string>
@@ -614,13 +611,28 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
         Brindamos respuesta humanitaria a través de 12 oficinas en Colombia y 9 oficinas en América Latina: Panamá, Venezuela, Ecuador y Honduras.
     </string>
 
-    <string name="about_nrc_page3_2"><a href="http://www.nrc.org.co/directorio-oficinas-nrc/">Conoce nuestras oficinas</a>
+    <!--<string name="about_nrc_page3_2"><a href="http://www.nrc.org.co/directorio-oficinas-nrc/">Conoce nuestras oficinas</a>-->
+    <!--</string>-->
+
+    <!--<string name="about_nrc_page3_3"><a href="https://www.facebook.com/consejonoruegopararefugiados/">Consejo Noruego para Refugiados</a>-->
+    <!--</string>-->
+
+    <!--<string name="about_nrc_page3_4"><a href="https://twitter.com/nrc_lac?lang=es">@NRC_LAC</a>-->
+    <!--</string>-->
+
+    <!--<string name="about_nrc_page3_5"><a href="http://www.nrc.org.co/"><u>Más información en nuestro sitio web</u></a>-->
+    <!--</string>-->
+
+    <string name="about_nrc_page3_2">Conoce nuestras oficinas
     </string>
 
-    <string name="about_nrc_page3_3"><a href="https://www.facebook.com/consejonoruegopararefugiados/">Consejo Noruego para Refugiados</a>
+    <string name="about_nrc_page3_3">fb.com/consejonoruegopararefugiados/
     </string>
 
-    <string name="about_nrc_page3_4"><a href="https://twitter.com/nrc_lac?lang=es">@NRC_LAC</a>
+    <string name="about_nrc_page3_4">\@NRC_LAC
+    </string>
+
+    <string name="about_nrc_page3_5">Más información en nuestro sitio web
     </string>
 
 
@@ -801,24 +813,24 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
 
     <string-array name="leaders_validation_chain">
         <item>concreto</item>
-        <item>acciones</item>
-        <item>hechos</item>
+        <item>acciones-hechos</item>
+        <item>hechos-acciones</item>
         <item>supuestos</item>
         <item>específico</item>
         <item>persona</item>
         <item>grupo</item>
         <item>amenaza</item>
-        <item>vida</item>
-        <item>libertad</item>
+        <item>vida-libertad</item>
+        <item>libertad-vida</item>
     </string-array>
 
     <string name="lideres_09_03_01">concreto
     </string>
 
-    <string name="lideres_09_03_02">acciones
+    <string name="lideres_09_03_02">acciones-hechos
     </string>
 
-    <string name="lideres_09_03_03">hechos
+    <string name="lideres_09_03_03">hechos-acciones
     </string>
 
     <string name="lideres_09_03_04">supuestos
@@ -869,10 +881,10 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
     <string name="lideres_09_13_01">amenaza
     </string>
 
-    <string name="lideres_09_13_02">vida
+    <string name="lideres_09_13_02">vida-libertad
     </string>
 
-    <string name="lideres_09_13_03">libertad
+    <string name="lideres_09_13_03">libertad-vida
     </string>
 
     <string name="lideres_09_14">3.

@@ -46,6 +46,12 @@ public class LocalConstants {
     public static final int MIN_CONTACT_NUMBER = 1;
 
 
+    public static final String office_url = "http://www.nrc.org.co/directorio-oficinas-nrc/";
+    public static final String facebook_url = "https://www.facebook.com/consejonoruegopararefugiados/";
+    public static final String twitter_url = "https://twitter.com/NRC_LAC";
+    public static final String nrc_url = "http://www.nrc.org.co/";
+
+
     //Shared Preferences Keys
     public static final String USER_DATA = "USER_DATA";
     public static final String USER_PSW = "USER_PSW";
@@ -240,7 +246,16 @@ public class LocalConstants {
 
     }};
 
-    public static final List<Integer> VBG_LAYOUT_LIST = new ArrayList<Integer>(){{
+
+    public static final List<Integer> COURSES_END_MODULE_BACKGROUNDS = new ArrayList<Integer>(){
+        {
+            add(R.drawable.bg_modulo_1);
+            add(R.drawable.fondo_ros);
+            add(R.drawable.fondo_45);
+            add(R.drawable.fondo_66);
+        }};
+
+        public static final List<Integer> VBG_LAYOUT_LIST = new ArrayList<Integer>(){{
         add(R.layout.vbg_course_1_0);
         add(R.layout.vbg_course_1_1);
         add(R.layout.vbg_course_1_2);

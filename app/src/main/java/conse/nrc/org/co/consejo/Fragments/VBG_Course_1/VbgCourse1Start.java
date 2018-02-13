@@ -197,6 +197,8 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
     private void prepareFragmentForView(View view) {
 
+        setFullBackground(0);
+
         if (view.getTag() !=  null) {
             Log.d("VBg Mod", "The view tag is: " + view.getTag().toString());
 
@@ -242,6 +244,15 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
         String complement = getResources().getStringArray(R.array.conse_end_mod_text_vbg)[i-1];
         String message = String.format(complement,tittle);
         tv.setText(message);
+        setFullBackground(i);
+    }
+
+    private void setFullBackground(int i) {
+        if (i==0){ //Si se requiere quitar el backgroun image
+            view.setBackgroundColor(getResources().getColor(R.color.grey_light));
+        } else{
+            view.setBackground(getResources().getDrawable(LocalConstants.COURSES_END_MODULE_BACKGROUNDS.get(i-1)));
+        }
     }
 
     private void setAvatar(View view) {

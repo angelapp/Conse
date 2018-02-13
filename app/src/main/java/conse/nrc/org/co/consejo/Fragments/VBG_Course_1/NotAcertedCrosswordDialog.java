@@ -51,6 +51,7 @@ public class NotAcertedCrosswordDialog extends android.app.DialogFragment {
         dialog.onBackPressed();
         dialog.cancel();
         dialog.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black_dialog_overlay)));
+        //dialog.getWindow().getAttributes().alpha = 0.7f;
         return dialog;
     }
 

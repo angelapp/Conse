@@ -127,52 +127,53 @@ public class ConseApp extends Application {
         return UtilsFunctions.getSharedInteger(ctx, LocalConstants.AVATAR_GENDER_ID_);
     }
 
-    public boolean isNetworkAvailable() {
+    public static boolean isNetworkAvailable(Context ctx) {
         ConnectivityManager connectivityManager
-                = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                = (ConnectivityManager) ctx.getSystemService(Context.CONNECTIVITY_SERVICE);
         NetworkInfo activeNetworkInfo = connectivityManager.getActiveNetworkInfo();
         return activeNetworkInfo != null && activeNetworkInfo.isConnectedOrConnecting();
     }
 
-    public boolean isLocationEnabled() {
+    public static boolean isLocationEnabled(Context ctx) {
         return ((LocationManager)
-                this.getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.GPS_PROVIDER) ||
+                ctx.getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.GPS_PROVIDER) ||
                 ((LocationManager)
-                        this.getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.NETWORK_PROVIDER);
+                        ctx.getSystemService(Context.LOCATION_SERVICE)).isProviderEnabled(LocationManager.NETWORK_PROVIDER);
     }
 
-    public boolean validateGpsStatus(boolean show_alert) {
-        if (isLocationEnabled()){
+    public static boolean validateGpsStatus(boolean show_alert, Context ctx) {
+        if (isLocationEnabled(ctx)){
             return true;
         } else if (show_alert){
-            showGpsAlert();
+            showGpsAlert(ctx);
         }
         return false;
     }
 
 
-    public boolean validateNetworkStatus(boolean show_alert) {
-        if (isNetworkAvailable()){
+    public static boolean validateNetworkStatus(boolean show_alert, Context ctx) {
+        if (isNetworkAvailable(ctx)){
             return true;
         } else if (show_alert){
-            showNetworkConnectionAlert();
+            showNetworkConnectionAlert(ctx);
         }
         return false;
     }
 
 
-    private void showGpsAlert() {
-        final android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(this);
-        dialog.setTitle(getString(R.string.inactive_geolocation))
-                .setMessage(getString(R.string.conse_need_gps))
-                .setPositiveButton(getString(R.string.config), new DialogInterface.OnClickListener() {
+    public static void showGpsAlert(Context ctx) {
+        final Context mctx = ctx;
+        final android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(mctx);
+        dialog.setTitle(ctx.getString(R.string.inactive_geolocation))
+                .setMessage(ctx.getString(R.string.conse_need_gps))
+                .setPositiveButton(ctx.getString(R.string.config), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface paramDialogInterface, int paramInt) {
                         Intent myIntent = new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS);
-                        startActivity(myIntent);
+                        mctx.startActivity(myIntent);
                     }
                 })
-                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                .setNegativeButton(ctx.getString(R.string.cancel), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface paramDialogInterface, int paramInt) {
                     }
@@ -180,18 +181,19 @@ public class ConseApp extends Application {
         dialog.show();
     }
 
-    private void showNetworkConnectionAlert() {
-        final android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(this);
-        dialog.setTitle(getString(R.string.not_network_conection))
-                .setMessage(getString(R.string.conse_need_network))
-                .setPositiveButton(getString(R.string.config), new DialogInterface.OnClickListener() {
+    public static void showNetworkConnectionAlert(Context ctx) {
+        final Context mctx = ctx;
+        final android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(mctx);
+        dialog.setTitle(ctx.getString(R.string.not_network_conection))
+                .setMessage(ctx.getString(R.string.conse_need_network))
+                .setPositiveButton(ctx.getString(R.string.config), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface paramDialogInterface, int paramInt) {
                         Intent myIntent = new Intent(Settings.ACTION_SETTINGS);
-                        startActivity(myIntent);
+                        mctx.startActivity(myIntent);
                     }
                 })
-                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                .setNegativeButton(ctx.getString(R.string.cancel), new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface paramDialogInterface, int paramInt) {
                     }

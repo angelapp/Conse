@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.google.android.youtube.player.YouTubeBaseActivity;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
 
+import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
@@ -70,8 +72,17 @@ public class VideoTutorial extends YouTubeBaseActivity implements View.OnClickLi
     }
 
     private void goToRegister() {
-        Intent register = new Intent(this, Register.class);
-        startActivity(register);
+        if (ConseApp.validateGpsStatus(true, this)) {
+            if (ConseApp.validateNetworkStatus(true, this)) {
+                Intent register = new Intent(this, Register.class);
+                startActivity(register);
+            }
+            else {
+                Toast.makeText(this,getString(R.string.conse_need_gps), Toast.LENGTH_SHORT).show();
+            }
+        } else {
+            Toast.makeText(this,getString(R.string.not_network_conection), Toast.LENGTH_SHORT).show();
+        }
     }
 
     private void goToNextactivity(){

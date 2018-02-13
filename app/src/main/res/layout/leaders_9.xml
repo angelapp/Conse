@@ -39,10 +39,11 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView25"
-                style="@style/ConseTittleTextH1"
+                style="@style/CourseSubTittle"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="@dimen/courses_margin_left"
-                android:layout_marginRight="@dimen/courses_margin_right" />
+                android:layout_marginRight="@dimen/courses_margin_right"
+                android:gravity="center_horizontal" />
 
             <TextView
                 android:text="@string/lideres_09_02"
