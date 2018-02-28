@@ -68,7 +68,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="puedes_diligenciar_formulario"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />
@@ -90,7 +90,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="una_vez_radicado_formulario"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />
@@ -112,7 +112,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="una_vez_radicada_solicitud"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />
@@ -134,7 +134,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="cuando_sea_el_caso"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />

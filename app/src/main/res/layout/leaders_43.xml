@@ -75,7 +75,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="las_medidas_de_proteccion"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />
@@ -97,7 +97,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="el_director_de_unidad"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />

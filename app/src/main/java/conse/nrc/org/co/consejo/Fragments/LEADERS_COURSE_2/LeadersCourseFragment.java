@@ -451,12 +451,14 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
                             Log.d("Leaders", "Is instance of checkbox");
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((CheckBox) v).isChecked())) {
                                 isCorrect = false;
+                                ((CheckBox) v).setChecked(false);
                                 break;
                             }
                         } else if (v instanceof RadioButton) {
                             Log.d("Leaders", "Is instance of radiobutton");
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((RadioButton) v).isChecked())) {
                                 isCorrect = false;
+                                ((RadioButton) v).setChecked(false);
                                 break;
                             }
                         } else {
@@ -464,6 +466,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
                         }
                     } else if (((CheckBox) v).isChecked()) {
                         isCorrect = false;
+                        ((CheckBox) v).setChecked(false);
                         break;
                     }
                 }

@@ -69,7 +69,7 @@
                         android:layout_alignParentRight="true"
                         android:layout_marginRight="@dimen/fab_margin"
                         android:onClick="onClick"
-                        android:tag="nunca_olvides_que"
+                        android:tag="la_resolucion_805"
                         android:gravity="top|right"
                         android:layout_gravity="right|center_vertical"
                         android:layout_marginTop="-15dp" />

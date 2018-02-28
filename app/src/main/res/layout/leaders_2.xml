@@ -95,7 +95,7 @@
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:onClick="onClick"
-                        android:tag="en_la_familia" />
+                        android:tag="si_te_preocupas" />
 
                 </LinearLayout>
 
@@ -145,7 +145,7 @@
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
-                        android:tag="en_la_comunidad"
+                        android:tag="si_son_defensoras"
                         android:onClick="onClick" />
 
                 </LinearLayout>

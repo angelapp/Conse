@@ -74,7 +74,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="una_vez_radicada_proteccion_colectiva"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />
@@ -98,7 +98,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="cuando_el_caso_sea_grupo_solicitudes"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />

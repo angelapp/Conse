@@ -90,7 +90,7 @@
                             android:layout_centerVertical="true"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="violencia_psicologica" />
+                            android:tag="como_persona_estas_expuesta" />
 
                     </LinearLayout>
 

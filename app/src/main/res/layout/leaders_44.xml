@@ -74,7 +74,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="estudio_nivel_riesgo"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />
@@ -96,7 +96,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="en_caso_existir_riesgo"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />
@@ -125,7 +125,7 @@
                             android:background="@drawable/play"
                             android:layout_alignParentRight="true"
                             android:onClick="onClick"
-                            android:tag="nunca_olvides_que"
+                            android:tag="el_cerrem_podra"
                             android:gravity="top|right"
                             android:layout_gravity="right|center_vertical"
                             android:layout_marginRight="15dp" />

@@ -532,12 +532,14 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                             Log.d("VBG", "Is instance of checkbox");
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((CheckBox) v).isChecked())) {
                                 isCorrect = false;
+                                ((CheckBox) v).setChecked(false);
                                 break;
                             }
                         } else if (v instanceof RadioButton) {
                             Log.d("VBG", "Is instance of radiobutton");
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((RadioButton) v).isChecked())) {
                                 isCorrect = false;
+                                ((RadioButton) v).setChecked(false);
                                 break;
                             }
                         } else {
@@ -545,6 +547,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                         }
                     } else if (((CheckBox) v).isChecked()) {
                         isCorrect = false;
+                        ((CheckBox) v).setChecked(false);
                         break;
                     }
                 }

@@ -218,7 +218,39 @@ public class LocalConstants {
         add(new int[]{R.raw.audio_18_m, R.raw.audio_18});
         add(new int[]{R.raw.audio_19_m, R.raw.audio_19});
         add(new int[]{R.raw.audio_20_m, R.raw.audio_20});
-        add(new int[]{R.raw.audio_21_m, R.raw.audio_21});
+        add(new int[]{R.raw.audio_21_m, R.raw.audio_21}); //20
+
+
+        add(new int[]{R.raw.audio_1_m_leaders, R.raw.audio_1_leaders}); //21
+        add(new int[]{R.raw.audio_2_m_leaders, R.raw.audio_2_leaders}); //22
+        add(new int[]{R.raw.audio_3_m_leaders, R.raw.audio_3_leaders}); //23
+        add(new int[]{R.raw.audio_4_m_leaders, R.raw.audio_4_leaders});//24
+        add(new int[]{R.raw.audio_5_m_leaders, R.raw.audio_5_leaders});//25
+        add(new int[]{R.raw.audio_6_m_leaders, R.raw.audio_6_leaders});//26
+        add(new int[]{R.raw.audio_7_m_leaders, R.raw.audio_7_leaders});//27
+        add(new int[]{R.raw.audio_8_m_leaders, R.raw.audio_8_leaders});//28
+        add(new int[]{R.raw.audio_9_m_leaders, R.raw.audio_9_leaders});//29
+        add(new int[]{R.raw.audio_10_m_leaders, R.raw.audio_10_leaders});//30 cuando_se_trata_mujeres
+        add(new int[]{R.raw.audio_11_m_leaders, R.raw.audio_11_leaders});//31 ??????????????????
+        add(new int[]{R.raw.audio_12_m_leaders, R.raw.audio_12_leaders});//32 la_secretaria_tecnica
+        add(new int[]{R.raw.audio_13_m_leaders, R.raw.audio_13_leaders});//33 liderar_la_politica
+        add(new int[]{R.raw.audio_14_m_leaders, R.raw.audio_14_leaders});//34 la_resolucion_805
+        add(new int[]{R.raw.audio_15_m_leaders, R.raw.audio_15_leaders});//35 sea_cual_sea_tu_caso
+        add(new int[]{R.raw.audio_16_m_leaders, R.raw.audio_16_leaders});//36
+        add(new int[]{R.raw.audio_17_m_leaders, R.raw.audio_17_leaders});//37 una_vez_radicado_formulario
+        add(new int[]{R.raw.audio_18_m_leaders, R.raw.audio_18_leaders});//38 una_vez_radicada_solicitud
+        add(new int[]{R.raw.audio_19_m_leaders, R.raw.audio_19_leaders});//39
+        add(new int[]{R.raw.audio_20_m_leaders, R.raw.audio_20_leaders});//40 las_medidas_de_proteccion
+        add(new int[]{R.raw.audio_21_m_leaders, R.raw.audio_21_leaders});//41
+        add(new int[]{R.raw.audio_22_m_leaders, R.raw.audio_22_leaders});//42
+        add(new int[]{R.raw.audio_23_m_leaders, R.raw.audio_23_leaders});//43
+        add(new int[]{R.raw.audio_24_m_leaders, R.raw.audio_24_leaders});//44 el_cerrem_podra
+        add(new int[]{R.raw.audio_25_m_leaders, R.raw.audio_25_leaders});//45 ???????????????????
+        add(new int[]{R.raw.audio_26_m_leaders, R.raw.audio_26_leaders});//46 una_vez_radicada_proteccion_colectiva
+        add(new int[]{R.raw.audio_27_m_leaders, R.raw.audio_27_leaders});//47 cuando_el_caso_sea_grupo_solicitudes
+        add(new int[]{R.raw.audio_28_m_leaders, R.raw.audio_28_leaders});//48 el_caso_sera_presentado_cerrem
+        add(new int[]{R.raw.audio_29_m_leaders, R.raw.audio_29_leaders});//49 estara_a_cargo_direccion
+
     }};
 
     public static HashMap<String, Integer> AUDIO_TAG_INDEX = new HashMap<String, Integer>(){{
@@ -243,6 +275,38 @@ public class LocalConstants {
         put("medidas_reparacion_integral", 18);
         put("para_solicitar_la_inscripcion", 19);
         put("ten_presente_que_si_una_entidad", 20);
+
+        put("si_te_preocupas", 21);//1
+        put("si_son_defensoras", 22);//2
+        put("en_el_contexto", 23);//3
+        put("es_el_derecho", 24);//4
+        put("si_la_corte_constitucional", 25);//5
+        put("cuando_estas_sometido", 26);//6
+        put("como_persona_estas_expuesta", 27);//7
+        put("es_especifico_y_se_puede", 28);//8
+        put("camilo_es_lider", 29);//9
+        put("cuando_se_trata_mujeres", 30);//10
+        ///////////////////////////////31  - 11
+        put("la_secretaria_tecnica", 32);//12
+        put("liderar_la_politica", 33);//13
+        put("la_resolucion_805", 34);//14
+        put("sea_cual_sea_tu_caso", 35);//15
+        put("puedes_diligenciar_formulario", 36);//16
+        put("una_vez_radicado_formulario", 37);//17
+        put("una_vez_radicada_solicitud", 38);//18
+        put("cuando_sea_el_caso", 39);//19
+        put("las_medidas_de_proteccion", 40);//20
+        put("el_director_de_unidad", 41);//21
+        put("estudio_nivel_riesgo", 42);//22
+        put("en_caso_existir_riesgo", 43);//23
+        put("el_cerrem_podra", 44);//24
+        ///////////////////////////// 45 - 25
+        put("una_vez_radicada_proteccion_colectiva", 46);//26
+        put("cuando_el_caso_sea_grupo_solicitudes", 47);//27
+        put("el_caso_sera_presentado_cerrem", 48);//28
+        put("estara_a_cargo_direccion", 49);//29
+//        put("", 48);//28
+//        put("", 49);//29
 
     }};
 

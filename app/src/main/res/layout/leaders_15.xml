@@ -73,7 +73,7 @@
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:onClick="onClick"
-                        android:tag="violencia_fisica" />
+                        android:tag="la_secretaria_tecnica" />
 
                 </LinearLayout>
 
@@ -124,7 +124,7 @@
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
                         android:onClick="onClick"
-                        android:tag="violencia_sexual" />
+                        android:tag="liderar_la_politica" />
 
                 </LinearLayout>
 
