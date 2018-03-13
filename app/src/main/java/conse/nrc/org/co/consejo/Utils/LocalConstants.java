@@ -1,6 +1,7 @@
 package conse.nrc.org.co.consejo.Utils;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v4.util.ArrayMap;
 import android.support.v4.util.Pair;
@@ -32,6 +33,8 @@ public class LocalConstants {
 
     public static final float BUTTON_SEND_ALERT_MIN_ALPHA = 0.5f;
     public static final float BUTTON_SEND_ALERT_MAX_ALPHA = 1f;
+
+    public static final float DIALOG_DIM_ALPHA = 0.9f;
 
     public static final int opened = 1;
     public static final int closed = 2;
@@ -159,6 +162,8 @@ public class LocalConstants {
     public static final String TAG_END_MOD_4 = "end_mod_4";
 
     public static final String sskd = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d!$%@#£€*?&]{8,}$";
+    public static final int PROGRESS_PAGE_RESULTS = 45;
+    public static final String EDITING_CONTACTS = "editing_contacts";
 
     public static List<String> getLeadersCourseStringValidation(Context ctx){
         List<String> list = new ArrayList<>();
@@ -180,6 +185,19 @@ public class LocalConstants {
 //        add(get(R.string.lideres_09_13_02));
 //        add(get(R.string.lideres_09_13_03));
 //    }};
+
+    public static final HashMap<Integer, Integer> MODULES_INDEX = new HashMap<Integer, Integer>(){{
+        //put(id_topic_en_server, indice de pagina en VBG_LAYOUT_LIST o en LEADERS_LAYOUT_LIST)
+        put(1, 0); //vbg_course_1_0
+        put(2, 12); //vbg_course_1_12
+        put(3, 16); //vbg_course_1_19
+        put(4, 35); //vbg_course_1_47
+        put(5, 0); //leaders_1
+        put(6, 10); //leaders_12
+        put(7, 27); //leaders_32
+        put(8, 45); //leaders_51
+    }};
+
 
 
 
@@ -332,15 +350,15 @@ public class LocalConstants {
         add(R.layout.vbg_course_1_8);
         add(R.layout.vbg_course_1_9);
         add(R.layout.vbg_course_1_11);
-        add(R.layout.vbg_course_1_12);
+        add(R.layout.vbg_course_1_12); //12
         add(R.layout.vbg_course_1_13);
         add(R.layout.vbg_course_1_16);
         add(R.layout.vbg_course_1_18);
-        add(R.layout.vbg_course_1_19);
+        add(R.layout.vbg_course_1_19); //16
         add(R.layout.vbg_course_1_20);
         add(R.layout.vbg_course_1_21);
         add(R.layout.vbg_course_1_22);
-        add(R.layout.vbg_course_1_23);
+        add(R.layout.vbg_course_1_23);//20
         add(R.layout.vbg_course_1_24);
         add(R.layout.vbg_course_1_25);
         add(R.layout.vbg_course_1_26);
@@ -355,7 +373,7 @@ public class LocalConstants {
         add(R.layout.vbg_course_1_39);
         add(R.layout.vbg_course_1_42);
         add(R.layout.vbg_course_1_45);
-        add(R.layout.vbg_course_1_47);
+        add(R.layout.vbg_course_1_47);//35
         add(R.layout.vbg_course_1_48);
         add(R.layout.vbg_course_1_48_1);
         add(R.layout.vbg_course_1_49);
@@ -380,7 +398,7 @@ public class LocalConstants {
 
     public static final List<Integer> LEADERS_LAYOUT_LIST = new ArrayList<Integer>(){
         {
-            add(R.layout.leaders_1);
+            add(R.layout.leaders_1); //0
             add(R.layout.leaders_2);
             add(R.layout.leaders_3);
             add(R.layout.leaders_4);
@@ -390,7 +408,7 @@ public class LocalConstants {
             add(R.layout.leaders_8);
             add(R.layout.leaders_9);
             add(R.layout.leaders_11);
-            add(R.layout.leaders_12);
+            add(R.layout.leaders_12);//10
             add(R.layout.leaders_13);
             add(R.layout.leaders_14);
             add(R.layout.leaders_15);
@@ -400,17 +418,17 @@ public class LocalConstants {
             add(R.layout.leaders_19);
             add(R.layout.leaders_22);
             add(R.layout.leaders_23);
-            add(R.layout.leaders_24);
+            add(R.layout.leaders_24);//20
             add(R.layout.leaders_25);
             add(R.layout.leaders_26);
             add(R.layout.leaders_27);
             add(R.layout.leaders_28);
             add(R.layout.leaders_29);
             add(R.layout.leaders_31);
-            add(R.layout.leaders_32);
+            add(R.layout.leaders_32);//27
             add(R.layout.leaders_33);
             add(R.layout.leaders_34);
-            add(R.layout.leaders_35);
+            add(R.layout.leaders_35);//30
             add(R.layout.leaders_36);
             add(R.layout.leaders_37);
             add(R.layout.leaders_38);
@@ -420,12 +438,12 @@ public class LocalConstants {
             add(R.layout.leaders_42);
             add(R.layout.leaders_43);
             add(R.layout.leaders_44);
-            add(R.layout.leaders_45);
+            add(R.layout.leaders_45);//40
             add(R.layout.leaders_46);
             add(R.layout.leaders_47);
             add(R.layout.leaders_48);
             add(R.layout.leaders_50);
-            add(R.layout.leaders_51);
+            add(R.layout.leaders_51);//45
             add(R.layout.leaders_52);
             add(R.layout.leaders_53);
             add(R.layout.leaders_54);

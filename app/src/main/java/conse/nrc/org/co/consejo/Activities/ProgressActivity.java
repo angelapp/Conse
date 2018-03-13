@@ -12,6 +12,8 @@ import conse.nrc.org.co.consejo.R;
 
 public class ProgressActivity extends AppCompatActivity {
 
+    public static MainActivity mainActivity;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

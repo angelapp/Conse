@@ -4,6 +4,7 @@ import android.app.DatePickerDialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.text.Html;
@@ -20,10 +21,14 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -31,6 +36,7 @@ import java.util.List;
 import java.util.TimeZone;
 import java.util.regex.Pattern;
 
+import conse.nrc.org.co.consejo.Activities.Avatar;
 import conse.nrc.org.co.consejo.Activities.SelectContact;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
@@ -53,11 +59,32 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
     EditText mEtBirthdate, mEtName, mEtLastname, mEtDocumentNumber, mEtEmail, mEtPassword, mEtPasswordConfirm;
     Spinner mSpGender, mSpDocumentType, mSpEthnicGroup, mSpState, mSpCondition, mSpCity, mSpRole;
     CheckBox mCbIsNrcBeneficiary, mCbAcceptTermsConditions;
-    Button mBtNext;
+    Button mBtNext, mBtContactEdit, mBtAvatarEdit;
+    FrameLayout mFlAvatar;
     ProgressDialog listener;
     String birthDateTosave;
     List<String> gender_list, document_type_list, ethnic_group_list, state_list, condition_list, city_list, role_list;
+    DisplayImageOptions optionsPreview;
+    private com.nostra13.universalimageloader.core.ImageLoader imageLdr;
 
+
+    @Override
+    public void onStart() {
+        super.onStart();
+
+        optionsPreview = new DisplayImageOptions.Builder()
+                .showImageOnLoading(null)
+                .showImageForEmptyUri(null)
+                .showImageOnFail(null)
+                .cacheInMemory(true)
+                .cacheOnDisk(true)
+                .considerExifParams(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .build();
+
+        imageLdr = ImageLoader.getInstance();
+
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -98,11 +125,33 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         mCbIsNrcBeneficiary = (CheckBox)mView.findViewById(R.id.cb_is_nrc_beneficiary);
 
         mBtNext = (Button)mView.findViewById(R.id.bt_register);
+        mBtAvatarEdit = (Button)mView.findViewById(R.id.bt_avatar_edit);
+        mBtContactEdit = (Button)mView.findViewById(R.id.bt_contact_edit);
+
+        mFlAvatar = (FrameLayout)mView.findViewById(R.id.fl_avatar);
 
         mBtNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 validateData();
+            }
+        });
+
+        mBtAvatarEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mCtx, Avatar.class);
+                startActivity(intent);
+                getActivity().finish();
+            }
+        });
+
+        mBtContactEdit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mCtx, SelectContact.class);
+                intent.putExtra(LocalConstants.EDITING_CONTACTS, true);
+                startActivity(intent);
             }
         });
 
@@ -129,8 +178,9 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             loadValues();
         } else {
             mView.findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
+            mBtAvatarEdit.setVisibility(View.GONE);
+            mBtContactEdit.setVisibility(View.GONE);
             TextView term = (TextView)mView.findViewById(R.id.tv_terms_text);
-
             Spanned tittleString;
             tittleString = Html.fromHtml(getString(R.string.accept_terms_conditions_checkbox1)
                     + " <FONT COLOR=#eb5c3f><a href=\""+ ConseApp.getAppConfiguration(mCtx).terms_condition_url +"\">"
@@ -156,6 +206,19 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
     }
 
     private void loadValues() {
+
+        try {
+            imageLdr = ImageLoader.getInstance();
+            mFlAvatar.removeAllViews();
+//            FrameLayout avatar = ConseApp.getAvatarFrame(mCtx, imageLdr, optionsPreview);
+//            avatar.set
+            mFlAvatar.addView(ConseApp.getAvatarFrame(mCtx, imageLdr, optionsPreview));
+        } catch (Exception ea) {
+            ea.printStackTrace();
+        }
+
+
+
         Models.RegisterUserResponse user = ConseApp.getActualUser(mCtx);
         ((LinearLayout)mView.findViewById(R.id.ly_term_cond)).setVisibility(View.GONE);
 //        mCbAcceptTermsConditions.setVisibility(View.GONE);

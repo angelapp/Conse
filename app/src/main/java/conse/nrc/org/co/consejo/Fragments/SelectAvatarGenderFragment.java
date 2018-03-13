@@ -35,11 +35,12 @@ public class SelectAvatarGenderFragment extends Fragment{
         Button btMale = (Button) mView.findViewById(R.id.bt_avatar_male);
         Button btFemale = (Button) mView.findViewById(R.id.bt_avatar_female);
 
-        ConseApp.clearAvatar(mCtx);
+
 
         btMale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ConseApp.clearAvatar(mCtx);
                 launchAvatarSelection(MALE);
                 UtilsFunctions.saveSharedInteger(mCtx, LocalConstants.AVATAR_GENDER_ID_, MALE);
             }
@@ -48,8 +49,10 @@ public class SelectAvatarGenderFragment extends Fragment{
         btFemale.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                ConseApp.clearAvatar(mCtx);
                 launchAvatarSelection(FEMALE);
                 UtilsFunctions.saveSharedInteger(mCtx, LocalConstants.AVATAR_GENDER_ID_, FEMALE);
+
             }
         });
 

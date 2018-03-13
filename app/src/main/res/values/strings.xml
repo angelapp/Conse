@@ -30,6 +30,7 @@
     <string name="must_complete_information">Debes completar información</string>
     <string name="registering_user">Registrando usuario...</string>
     <string name="add_contacts_tittle">Configura el botón de alerta</string>
+    <string name="edit_contacts_tittle">Editar el botón de alerta</string>
     <string name="add_contact_message">Ingresa de 1 a 3 contactos</string>
     <string name="contact_no_has_number">El contacto no tiene número telefónico</string>
     <string name="error">Respuesta incorrecta</string>
@@ -68,8 +69,8 @@
     <string name="send_alert_message">Estoy en PELIGRO, necesito ayuda URGENTE</string>
 
     <string name="message_type_tittle">Tipo de mensaje</string>
-    <string name="write_here">Escribe aquí tu mensaje</string>
-    <string name="your_message_tittle_h2">Tu mensaje</string>
+    <string name="write_here">Escribe aquí tu mensaje y teléfono de contacto para poder responderte</string>
+    <string name="your_message_tittle_h2">Tu mensaje y teléfono</string>
     <string name="contact_form_tittle">CONTÁCTANOS</string>
     <string name="sending_contact_form">Enviando formulario...</string>
     <string name="send_contact_success">Se ha enviado tu mensaje</string>
@@ -91,7 +92,7 @@
     <string name="course_1_1_c">Guía divulgadora de derechos. <b>Guía para el abordaje pedagógico</b> de los derechos de las mujeres y de personas con orientaciones sexuales e identidades de género no hegemónicas.
 <b>CONSEJERÍA PRESIDENCIAL PARA LA EQUIDAD DE LA MUJER, USAID, OIM</b></string>
     <string name="course_1_1_d">La VBG puede ser ejercida contra personas que no se adecúan a lo esperado por la sociedad según su sexo, como es el caso de personas con orientación sexual diversa (gays, lesbianas y bisexuales) o con identidad de género diversa (transexuales), pero se ejerce principalmente contra mujeres, niñas y adolescentes, de allí que cuando se hable de violencia de género, se asocie mayormente con violencia contra las mujeres.</string>
-    <string name="course_1_1_e">¡Ahora sí! Estás lista para iniciar ¡Adelante!</string>
+    <string name="course_1_1_e">¡Ahora sí! Estamos listos para iniciar ¡Adelante!</string>
     <string name="course_1_2_a">¿Cómo saber si soy víctima de violencia?</string>
     <string name="course_1_2_b">El primer paso para identificar si eres víctima de violencia es tener claro ¿qué se entiende por violencia contra las mujeres?</string>
     <string name="course_1_2_c">La ley define la violencia contra las mujeres como:</string>
@@ -380,7 +381,11 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
     </string>
 
     <string name="course_1_51_text2_5">
-        Ten en cuenta que con la sola declaración tienes la posibilidad de acceder a medidas de ayuda humanitaria inmediata.
+        Ten en cuenta que con la sola declaración tienes la posibilidad de acceder a medidas de ayuda humanitaria inmediata por parte de la Alcaldía.
+    </string>
+
+    <string name="course_1_51_text2_6">
+        Una vez estés inscrita en el RUV, tienes derecho a recibir ayudas humanitarias de emergencia y transición por parte de la Unidad para las Víctimas.
     </string>
 
     <string name="course_1_52_text1">
@@ -652,12 +657,12 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
 
 
     <string-array name="clueTexts">
-        <item>Se manifiesta mediante insultos, ataques verbales, chantajes, celos extremos:</item>
-        <item>Se manifiesta a través del uso de la fuerza, como golpes, ahogamientos, empujones:</item>
-        <item>Cuando te obligan a tener algún tipo de comportamiento sexual no deseado, es:</item>
-        <item>Se manifiesta a través del control del dinero e inasistencia alimentaria:</item>
+        <item>Cuando la violencia se manifiesta mediante insultos, ataques verbales, chantajes o celos extremos, es:</item>
+        <item>Cuando la violencia se manifiesta a través del uso de la fuerza, como golpes, ahogamientos o empujones, es violencia:</item>
+        <item>Que te obliguen a tener algún tipo de comportamiento sexual no deseado, es violencia:</item>
+        <item>La violencia que se manifiesta a través del control del dinero e inasistencia alimentaria, es:</item>
         <item>Cuando la violencia proviene del esposo, compañero permanente, padre, madre, abuelos o nietos; se le llama violencia en la:</item>
-        <item>Cuando la violencia la realiza algún integrante de un grupo armado, se denomina violencia en el:</item>
+        <item>Cuando la violencia la realiza algún integrante de un grupo armado, se denomina violencia en el Conflicto:</item>
     </string-array>
 
     <string-array name="errorResponseQuestionaryMod4">

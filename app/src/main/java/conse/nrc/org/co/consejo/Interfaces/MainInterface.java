@@ -9,6 +9,9 @@ public interface MainInterface {
     void startVbgCourse();
     void startLeadersCourse();
 
+    void startVbgCourseInAskedPage(int pageAsked);
+    void startLeadersCourseInAskedPage(int pageAsked);
+
     void setPreviousFragment();
 
     void saveActivityCompleted(int activity_code);

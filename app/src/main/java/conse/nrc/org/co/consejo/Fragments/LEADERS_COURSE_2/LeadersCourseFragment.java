@@ -47,6 +47,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
 
 
     public final static int COURSE_ID = LEADERS_COURSE_ID;
+    public static int mPageAsked = 0;
     private View view;
     private Context mCtx;
     private LayoutInflater inflater;
@@ -104,7 +105,12 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
         view = inflater.inflate(R.layout.vbg_course_1_start, container, false);
         courseContainer = (LinearLayout) view.findViewById(R.id.course_container);
         dataBase = MainActivity.dataBase;
-        setInitialPageToShow();
+        //Si se solicita una pagina en especifico, no se va a la ultima.
+        if (mPageAsked == 0) {
+            setInitialPageToShow();
+        } else{
+            showAskedPage();
+        }
         mAvatarGender = ConseApp.getAvatarGender(mCtx);
 
         if (LocalConstants.DEV_VERSION){
@@ -122,10 +128,23 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
         return view;
     }
 
+    private void showAskedPage() {
+        index = mPageAsked;
+        inflateLayout();
+    }
+
+    public static void setAskedPage(int asked){
+        mPageAsked = asked;
+    }
+
     @Override
     public void onResume(){
         super.onResume();
-        setInitialPageToShow();
+        if (mPageAsked == 0) {
+            setInitialPageToShow();
+        } else{
+            showAskedPage();
+        }
     }
 
     private void setInitialPageToShow() {

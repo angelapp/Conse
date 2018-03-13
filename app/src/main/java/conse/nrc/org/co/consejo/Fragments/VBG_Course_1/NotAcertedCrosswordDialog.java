@@ -12,6 +12,8 @@ import android.widget.TextView;
 
 import conse.nrc.org.co.consejo.R;
 
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.DIALOG_DIM_ALPHA;
+
 /**
  * Created by Daniel Trujillo on 01/12/2017.
  */
@@ -50,7 +52,8 @@ public class NotAcertedCrosswordDialog extends android.app.DialogFragment {
         dialog.getWindow().requestFeature(Window.FEATURE_NO_TITLE);
         dialog.onBackPressed();
         dialog.cancel();
-        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.black_dialog_overlay)));
+        dialog.getWindow().setDimAmount(DIALOG_DIM_ALPHA);
+        dialog.getWindow().setBackgroundDrawable(new ColorDrawable(getResources().getColor(R.color.transparent)));
         //dialog.getWindow().getAttributes().alpha = 0.7f;
         return dialog;
     }

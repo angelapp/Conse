@@ -15,6 +15,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 import conse.nrc.org.co.consejo.R;
 
@@ -27,9 +28,10 @@ import static conse.nrc.org.co.consejo.Utils.LocalConstants.MIN_CONTACT_NUMBER;
 
 public class SelectContact extends AppCompatActivity {
 
+    public static boolean editingContacts = false;
     Button mBtAddContact, mBtNext;
     LinearLayout mLyContactList;
-    TextView mTvPreviewMessage;
+    TextView mTvPreviewMessage, mTvTittle;
     int mContactInEdition;
     boolean inEditionMode;
     View editingView;
@@ -37,14 +39,22 @@ public class SelectContact extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_select_contact);
 
+        setContentView(R.layout.activity_select_contact);
         mBtAddContact = (Button) findViewById(R.id.bt_add_contact);
         mBtNext = (Button)findViewById(R.id.bt_next);
         mLyContactList = (LinearLayout) findViewById(R.id.ly_contact_list);
         mTvPreviewMessage = (TextView) findViewById(R.id.tv_add_contact_message);
-        inEditionMode = false;
+        mTvTittle = (TextView)findViewById(R.id.tv_add_contacts_tittle);
 
+        editingContacts = getIntent().getBooleanExtra(LocalConstants.EDITING_CONTACTS, false);
+
+        if (editingContacts){
+            mTvTittle.setText(getString(R.string.edit_contacts_tittle));
+            loadValues();
+        }
+
+        inEditionMode = false;
         mBtNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -60,17 +70,38 @@ public class SelectContact extends AppCompatActivity {
                 if(mLyContactList.getChildCount()<= MAX_CONTACT_NUMBER - 1 ) {
                     addContact();
                 }
-//                } else {
-//                    goToNext();
-//                }
             }
         });
     }
 
-    private void goToNext() {
+    @Override
+    public void onBackPressed(){
+        if(mLyContactList.getChildCount()>=MIN_CONTACT_NUMBER){
+            super.onBackPressed();
+        } else {
+            Toast.makeText(this, getString(R.string.add_contact_message), Toast.LENGTH_LONG).show();
+        }
+    }
 
-        Intent intent= new Intent(this, SendAlert.class);
-        startActivity(intent);
+    private void loadValues() {
+        for (int i = 1; i<=MAX_CONTACT_NUMBER;i++){
+            if (UtilsFunctions.getSharedString(this, CONTACT_NUMBER_ + String.valueOf(i)) != null){
+                drawContact(UtilsFunctions.getSharedString(this, CONTACT_NAME_ + String.valueOf(i)),
+                        UtilsFunctions.getSharedString(this, CONTACT_NUMBER_ + String.valueOf(i)),
+                        UtilsFunctions.getSharedString(this, CONTACT_ID_ + String.valueOf(i))
+                );
+            }
+        }
+    }
+
+    private void goToNext() {
+        if (editingContacts){
+            onBackPressed();
+        } else {
+            Intent intent= new Intent(this, SendAlert.class);
+            startActivity(intent);
+            this.finish();
+        }
     }
 
     private void addContact() {
@@ -92,8 +123,6 @@ public class SelectContact extends AppCompatActivity {
                 String hasPhone = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.Contacts.HAS_PHONE_NUMBER));
                 String contactId = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.Contacts._ID));
                 String contactName = cursor.getString(cursor.getColumnIndexOrThrow(ContactsContract.Contacts.DISPLAY_NAME));
-
-
                 if (hasPhone.equals("1")) {
                     int index = cursor.getColumnIndex(ContactsContract.CommonDataKinds.Phone.NUMBER);
                     number = cursor.getString(index);
@@ -126,6 +155,14 @@ public class SelectContact extends AppCompatActivity {
                     addContact();
                 }
             });
+
+            ((Button)contactView.findViewById(R.id.bt_delete_contact)).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    mLyContactList.removeView(contactView);
+                    deleteContact(mContactInEdition);
+                }
+            });
         } else{
             ((TextView)(((View)editingView.getParent()).findViewById(R.id.tv_contact_name))).setText(contactName);
             ((TextView)(((View)editingView.getParent()).findViewById(R.id.tv_contact_number))).setText(number);
@@ -133,11 +170,28 @@ public class SelectContact extends AppCompatActivity {
         }
         saveContact(contactName,number,contactId);
 
+
+    }
+
+    private void deleteContact(int mContactInEdition) {
+        UtilsFunctions.deleteKeySharedPreferences(this, CONTACT_NUMBER_+String.valueOf(mContactInEdition));
+        UtilsFunctions.deleteKeySharedPreferences(this, CONTACT_NAME_+String.valueOf(mContactInEdition));
+        UtilsFunctions.deleteKeySharedPreferences(this, CONTACT_ID_+String.valueOf(mContactInEdition));
+        updateButtons();
+    }
+
+    private void updateButtons() {
+        //Controla el boton de siguiente, si no hay contactos no lo muestra, si hay el mínimo lo muestra
         if(mLyContactList.getChildCount() >= MIN_CONTACT_NUMBER){
             mBtNext.setVisibility(View.VISIBLE);
+        } else {
+            mBtNext.setVisibility(View.GONE);
         }
+        //Controla el botón de adicionar contacto, si ya están los permitidos, lo quita
         if (mLyContactList.getChildCount()>= MAX_CONTACT_NUMBER){
             mBtAddContact.setVisibility(View.GONE);
+        } else {
+            mBtAddContact.setVisibility(View.VISIBLE);
         }
     }
 
@@ -154,5 +208,6 @@ public class SelectContact extends AppCompatActivity {
             UtilsFunctions.saveSharedString(this, CONTACT_NAME_ + String.valueOf(mLyContactList.getChildCount()), contactName);
             UtilsFunctions.saveSharedString(this, CONTACT_ID_ + String.valueOf(mLyContactList.getChildCount()), contactId);
         }
+        updateButtons();
     }
 }

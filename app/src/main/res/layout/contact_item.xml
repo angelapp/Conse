@@ -9,7 +9,7 @@
         android:orientation="vertical"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_weight="6">
+        android:layout_weight="5">
 
         <TextView
             android:text="Contact"
@@ -35,4 +35,14 @@
         android:background="@drawable/editar"
         android:layout_gravity="center_vertical"
         android:layout_marginRight="20dp" />
+
+    <Button
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_delete_contact"
+        android:layout_weight="1"
+        android:background="@drawable/editar"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="20dp" />
+
 </LinearLayout>

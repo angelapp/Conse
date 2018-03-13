@@ -35,6 +35,7 @@ import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MOD_4_Q3_CORRECT_ANSWER;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_COURSE_ID;
 
 /**
  * Created by apple on 11/27/17.
@@ -44,7 +45,8 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
 
 
-    public final static int COURSE_ID = 1;
+    public final static int COURSE_ID = VBG_COURSE_ID;
+    public static int mPageAsked = 0;
     private View view;
     private Context mCtx;
     private LayoutInflater inflater;
@@ -102,7 +104,12 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
         view = inflater.inflate(R.layout.vbg_course_1_start, container, false);
         courseContainer = (LinearLayout) view.findViewById(R.id.course_container);
         dataBase = MainActivity.dataBase;
-        setInitialPageToShow();
+        //Si se solicita una pagina en especifico, no se va a la ultima.
+        if (mPageAsked == 0) {
+            setInitialPageToShow();
+        } else{
+            showAskedPage();
+        }
         mAvatarGender = ConseApp.getAvatarGender(mCtx);
 
 //        if(false){
@@ -121,10 +128,23 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
         return view;
     }
 
+    private void showAskedPage() {
+        index = mPageAsked;
+        inflateLayout();
+    }
+
+    public static void setAskedPage(int asked){
+        mPageAsked = asked;
+    }
+
     @Override
     public void onResume(){
         super.onResume();
-        setInitialPageToShow();
+        if (mPageAsked == 0) {
+            setInitialPageToShow();
+        } else{
+            showAskedPage();
+        }
     }
 
     private void setInitialPageToShow() {

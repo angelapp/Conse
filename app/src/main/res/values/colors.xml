@@ -9,6 +9,8 @@
     <color name="black_dialog_overlay">#b3000000</color>
     <color name="black">#000000</color>
 
+    <color name="transparent">#00000000</color>
+
     <color name="yellow">#fcc41d</color>
     <color name="orange">#f29100</color>
     <color name="salmon">#eb5c3f</color>

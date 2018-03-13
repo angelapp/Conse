@@ -32,6 +32,42 @@
                 style="@style/ConseTittleTextH1"
                 android:layout_marginBottom="20dp" />
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_gravity="center_vertical"
+                android:layout_marginBottom="@dimen/iv_bottom_margin">
+
+                <FrameLayout
+                    android:id="@+id/fl_avatar"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="40dp"
+                    android:translationZ="5dp">
+
+                </FrameLayout>
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/bt_avatar_edit"
+                    android:background="@drawable/button_go_to_register"
+                    android:gravity="center_horizontal"
+                    android:layout_gravity="center_vertical|center_horizontal" />
+
+            </FrameLayout>
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/bt_contact_edit"
+                android:background="@drawable/button_go_to_register"
+                android:layout_marginBottom="@dimen/iv_bottom_margin"
+                android:layout_marginTop="@dimen/iv_top_margin"
+                android:gravity="center_horizontal"
+                android:layout_gravity="center_horizontal" />
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"

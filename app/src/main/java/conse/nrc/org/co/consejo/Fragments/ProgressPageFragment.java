@@ -25,10 +25,12 @@ import java.util.ArrayList;
 import java.util.IllegalFormatCodePointException;
 import java.util.List;
 
+import conse.nrc.org.co.consejo.Activities.MainActivity;
 import conse.nrc.org.co.consejo.Adapters.PagerAdapterFragment;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
+import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.Models;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
@@ -44,6 +46,7 @@ public class ProgressPageFragment extends Fragment {
     public int mCourseId;
     private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
     DisplayImageOptions options;
+    MainInterface mainInterface;
 
 
     @Override
@@ -81,7 +84,7 @@ public class ProgressPageFragment extends Fragment {
 
         if (ConseApp.getAppConfiguration(mCtx).getCourseById(mCourseId).course_topics != null) {
             int i = 1;
-            for (Models.Topic topic : ConseApp.getAppConfiguration(mCtx).getCourseById(mCourseId).course_topics) {
+            for (final Models.Topic topic : ConseApp.getAppConfiguration(mCtx).getCourseById(mCourseId).course_topics) {
                 final LayoutInflater inflater = (LayoutInflater) this.getActivity().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
                 final View progressItem = inflater.inflate(R.layout.progres_bar_item, null, false);
 
@@ -90,6 +93,21 @@ public class ProgressPageFragment extends Fragment {
                 imageLoader = imageLoader.getInstance();
                 ImageView im = (ImageView) progressItem.findViewById(R.id.iv_module_icon);
                 imageLoader.displayImage(topic.icon, im, options);
+
+                im.setClickable(true);
+                im.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        if (mCourseId == LocalConstants.VBG_COURSE_ID) {
+                            mainInterface.startVbgCourseInAskedPage(LocalConstants.MODULES_INDEX.get(topic.id));
+                        } else if (mCourseId == LocalConstants.LEADERS_COURSE_ID){
+                            mainInterface.startLeadersCourseInAskedPage(LocalConstants.MODULES_INDEX.get(topic.id));
+                        }
+                        getActivity().onBackPressed();
+                        Log.d("Progress Page", "Clicked in: " + topic.id + " - " + topic.description);
+                    }
+                });
+
                 Log.d("Progress Page", "Filling progress bar with topic: " + topic.description);
 
                 if (topic.getUserProgressByTopic() < 100) {
@@ -107,6 +125,7 @@ public class ProgressPageFragment extends Fragment {
     @Override
     public void onAttach(Context context) {
         super.onAttach(context);
-        mCtx = context;
+        mCtx = (MainActivity)ConseApp.getMainActivity();
+        mainInterface = (MainInterface)mCtx;
     }
 }

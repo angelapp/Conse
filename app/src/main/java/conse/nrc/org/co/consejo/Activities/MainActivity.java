@@ -272,10 +272,10 @@ public class MainActivity extends AppCompatActivity
                 openAboutNrc();
                 break;
             case R.id.bt_vbg:
-                initVbgCourse();
+                startVbgCourse();
                 break;
             case R.id.bt_leaders:
-                initLeadersCourse();
+                startLeadersCourse();
                 break;
             case R.id.bt_news:
                 openNews();
@@ -313,10 +313,7 @@ public class MainActivity extends AppCompatActivity
 
     }
 
-    private void initLeadersCourse() {
-        actualCourse = LocalConstants.LEADERS_COURSE_ID;
-        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, leadersCourseFragment).addToBackStack(null).commitAllowingStateLoss();
-    }
+
 
     private void openProtectionPaths() {
         getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, new ProtectionPathsFragment()).addToBackStack(null).commitAllowingStateLoss();
@@ -394,9 +391,9 @@ public class MainActivity extends AppCompatActivity
 
 //        getSupportFragmentManager().beginTransaction().replace(R.id.rl_total_home_content, new ProgressFragment()).addToBackStack(null).commitAllowingStateLoss();
 //        hideToolBar(true);
-
-        startActivity(new Intent(this, ProgressActivity.class));
-
+        Intent progress = new Intent(this, ProgressActivity.class);
+        ConseApp.setMainActivity(this);
+        startActivity(progress);
     }
 
     private void setContactForm() {
@@ -420,26 +417,44 @@ public class MainActivity extends AppCompatActivity
         this.finish();
     }
 
-    private void initVbgCourse() {
+
+    private void initVbgCourseInPage(int pageAsked){
         actualCourse = LocalConstants.VBG_COURSE_ID;
+        vbgCourse1Start.setAskedPage(pageAsked);
         getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, vbgCourse1Start).addToBackStack(null).commitAllowingStateLoss();
+    }
+
+    private void initLeadersCourseInPage(int askedPage) {
+        actualCourse = LocalConstants.LEADERS_COURSE_ID;
+        leadersCourseFragment.setAskedPage(askedPage);
+        getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, leadersCourseFragment).addToBackStack(null).commitAllowingStateLoss();
     }
 
     @Override
     public void startVbgCourse() {
-        initVbgCourse();
+        initVbgCourseInPage(0);
     }
 
     @Override
     public void startLeadersCourse() {
-        initLeadersCourse();
+        initLeadersCourseInPage(0);
+    }
+
+    @Override
+    public void startVbgCourseInAskedPage(int pageAsked) {
+        initVbgCourseInPage(pageAsked);
+    }
+
+    @Override
+    public void startLeadersCourseInAskedPage(int pageAsked) {
+
+        initLeadersCourseInPage(pageAsked);
     }
 
     @Override
     public void setPreviousFragment() {
         super.onBackPressed();
     }
-
 
 
     @Override

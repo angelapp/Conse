@@ -22,6 +22,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import conse.nrc.org.co.consejo.Activities.MainActivity;
 import conse.nrc.org.co.consejo.R;
 import io.fabric.sdk.android.Fabric;
 
@@ -33,6 +34,8 @@ public class ConseApp extends Application {
 
     public static Models.ApplicationConfiguration appConfiguration;
     public static Models.RegisterUserResponse user;
+
+    public static MainActivity mainActivity;
 
     private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
     DisplayImageOptions options;
@@ -66,6 +69,14 @@ public class ConseApp extends Application {
         user = userResponse;
     }
 
+    public static void setMainActivity(MainActivity mainActivityToSet){
+        mainActivity = mainActivityToSet;
+    }
+
+    public static MainActivity getMainActivity(){
+        return mainActivity;
+    }
+
     public static Models.RegisterUserResponse getActualUser(Context ctx){
         user = UtilsFunctions.getSavedObjectFromPreference(ctx, LocalConstants.USER_DATA, Models.RegisterUserResponse.class);
         return user;
@@ -93,7 +104,7 @@ public class ConseApp extends Application {
 
     }
 
-    public static FrameLayout getAvatarFrame(Context ctx, ImageLoader imageLoader, DisplayImageOptions options){
+    public static FrameLayout getAvatarFrame(Context ctx, ImageLoader imgLdr, DisplayImageOptions options){
 
 
         List<Models.UserAvatar> userAvatars = getUserAvatarList(ctx);
@@ -105,7 +116,7 @@ public class ConseApp extends Application {
             if (avatar != null && avatar.avatar_piece != 0) {
                 Models.AvatarPiece avatarPiece = ConseApp.appConfiguration.getAvatarPieceById(avatar.avatar_piece);
                 Log.d("Avatar", "Avatar id: " + avatar.avatar_piece);
-                imageLoader.displayImage(ConseApp.appConfiguration.getAvatarPieceById(avatar.avatar_piece).icon,
+                imgLdr.displayImage(ConseApp.appConfiguration.getAvatarPieceById(avatar.avatar_piece).icon,
                         (ImageView) frameLayout.findViewWithTag(String.valueOf(avatarPiece.body_part)), options);
             }
             i++;
