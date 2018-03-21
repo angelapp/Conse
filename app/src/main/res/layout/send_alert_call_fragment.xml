@@ -22,7 +22,8 @@
                 android:background="@drawable/enviaralerta"
                 android:layout_gravity="center_horizontal"
                 android:layout_width="150dp"
-                android:layout_height="150dp" />
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp" />
 
             <TextView
                 android:text="@string/send_alert_also_call"
@@ -60,7 +61,8 @@
                         style="@style/ConseParagraphText"
                         android:layout_gravity="center_vertical"
                         android:gravity="left|center_vertical"
-                        android:layout_marginTop="0dp" />
+                        android:layout_marginTop="0dp"
+                        android:textSize="16sp" />
 
                     <Button
                         android:layout_width="0dp"
@@ -91,7 +93,8 @@
                         style="@style/ConseParagraphText"
                         android:layout_gravity="center_vertical"
                         android:gravity="left|center_vertical"
-                        android:layout_marginTop="0dp" />
+                        android:layout_marginTop="0dp"
+                        android:textSize="16sp" />
 
                     <Button
                         android:layout_width="0dp"
@@ -122,7 +125,8 @@
                         style="@style/ConseParagraphText"
                         android:layout_gravity="center_vertical"
                         android:gravity="left|center_vertical"
-                        android:layout_marginTop="0dp" />
+                        android:layout_marginTop="0dp"
+                        android:textSize="16sp" />
 
                     <Button
                         android:layout_width="0dp"
@@ -132,6 +136,50 @@
                         android:layout_weight="1"
                         android:background="@drawable/telefono"
                         android:tag="141" />
+                </LinearLayout>
+
+                <TextView
+                    android:text="@string/send_alert_schedule"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_send_alert_tittle"
+                    style="@style/ConseTittleTextH2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center_horizontal" />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_gravity="center_vertical"
+                    android:gravity="center_vertical"
+                    android:layout_marginBottom="5dp">
+
+                    <TextView
+                        android:text="@string/linea_01800"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/textView13"
+                        android:layout_weight="5"
+                        style="@style/ConseParagraphText"
+                        android:layout_gravity="center_vertical"
+                        android:gravity="left|center_vertical"
+                        android:layout_marginTop="0dp"
+                        android:textSize="16sp" />
+
+                    <Button
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/bt_call_01800"
+                        android:onClick="onClick"
+                        android:layout_weight="1"
+                        android:background="@drawable/telefono"
+                        android:tag="018000118228" />
                 </LinearLayout>
 
                 <LinearLayout
@@ -145,7 +193,7 @@
                     android:layout_marginBottom="5dp">
 
                     <TextView
-                        android:text="@string/linea_123"
+                        android:text="@string/linea_4269800"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
                         android:id="@+id/textView13"
@@ -153,47 +201,17 @@
                         style="@style/ConseParagraphText"
                         android:layout_gravity="center_vertical"
                         android:gravity="left|center_vertical"
-                        android:layout_marginTop="0dp" />
+                        android:layout_marginTop="0dp"
+                        android:textSize="16sp" />
 
                     <Button
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:id="@+id/bt_call_141"
+                        android:id="@+id/bt_call_0314"
                         android:onClick="onClick"
                         android:layout_weight="1"
                         android:background="@drawable/telefono"
-                        android:tag="141" />
-                </LinearLayout>
-
-                <LinearLayout
-                    android:orientation="horizontal"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_gravity="center_vertical"
-                    android:gravity="center_vertical"
-                    android:layout_marginBottom="5dp">
-
-                    <TextView
-                        android:text="@string/linea_123"
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/textView13"
-                        android:layout_weight="5"
-                        style="@style/ConseParagraphText"
-                        android:layout_gravity="center_vertical"
-                        android:gravity="left|center_vertical"
-                        android:layout_marginTop="0dp" />
-
-                    <Button
-                        android:layout_width="0dp"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/bt_call_141"
-                        android:onClick="onClick"
-                        android:layout_weight="1"
-                        android:background="@drawable/telefono"
-                        android:tag="141" />
+                        android:tag="0314269800" />
                 </LinearLayout>
 
             </LinearLayout>

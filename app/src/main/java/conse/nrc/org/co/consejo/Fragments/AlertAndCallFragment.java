@@ -69,6 +69,8 @@ public class AlertAndCallFragment extends DialogFragment implements View.OnClick
         ((Button)mView.findViewById(R.id.bt_call_123)).setOnClickListener(this);
         ((Button)mView.findViewById(R.id.bt_call_155)).setOnClickListener(this);
         ((Button)mView.findViewById(R.id.bt_call_141)).setOnClickListener(this);
+        ((Button)mView.findViewById(R.id.bt_call_0314)).setOnClickListener(this);
+        ((Button)mView.findViewById(R.id.bt_call_01800)).setOnClickListener(this);
 
         return mView;
     }
@@ -84,8 +86,11 @@ public class AlertAndCallFragment extends DialogFragment implements View.OnClick
     @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.bt_call_123:case R.id.bt_call_141: case R.id.bt_call_155:
+            case R.id.bt_call_123:case R.id.bt_call_141:
+            case R.id.bt_call_155:case R.id.bt_call_01800:
+            case R.id.bt_call_0314:
                 makeCall(v);
+                break;
         }
     }
 

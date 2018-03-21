@@ -43,7 +43,7 @@
                     android:layout_width="60dp"
                     android:layout_height="60dp"
                     android:layout_gravity="center_vertical"
-                    android:layout_marginLeft="40dp"
+                    android:layout_marginLeft="20dp"
                     android:translationZ="5dp">
 
                 </FrameLayout>
@@ -52,7 +52,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/bt_avatar_edit"
-                    android:background="@drawable/button_go_to_register"
+                    android:background="@drawable/button_edit_avatar"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_vertical|center_horizontal" />
 
@@ -62,7 +62,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/bt_contact_edit"
-                android:background="@drawable/button_go_to_register"
+                android:background="@drawable/button_edit_contact_list"
                 android:layout_marginBottom="@dimen/iv_bottom_margin"
                 android:layout_marginTop="@dimen/iv_top_margin"
                 android:gravity="center_horizontal"

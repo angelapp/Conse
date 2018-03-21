@@ -51,6 +51,7 @@ public class SelectContact extends AppCompatActivity {
 
         if (editingContacts){
             mTvTittle.setText(getString(R.string.edit_contacts_tittle));
+            mBtNext.setBackgroundDrawable(getResources().getDrawable(R.drawable.button_end_contact_list_edition));
             loadValues();
         }
 

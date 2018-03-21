@@ -28,21 +28,19 @@
     </LinearLayout>
 
     <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="30dp"
         android:id="@+id/bt_edit_contact"
-        android:layout_weight="1"
         android:background="@drawable/editar"
         android:layout_gravity="center_vertical"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"
+        android:layout_width="30dp" />
 
     <Button
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
         android:id="@+id/bt_delete_contact"
-        android:layout_weight="1"
-        android:background="@drawable/editar"
+        android:background="@drawable/papelera"
         android:layout_gravity="center_vertical"
-        android:layout_marginRight="20dp" />
+        android:layout_marginRight="20dp"
+        android:layout_width="30dp"
+        android:layout_height="30dp" />
 
 </LinearLayout>

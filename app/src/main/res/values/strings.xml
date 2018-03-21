@@ -82,7 +82,7 @@
     <string name="updated_profile_info">Información actualizada</string>
     <string name="need_avatar">need_avatar</string>
 
-    <string name="send_alert_also_call">También puedes llamar gratis, todos los días y a cualquier hora, a las siguientes líneas telefónicas:</string>
+    <string name="send_alert_also_call">Puedes llamar gratis, todos los días y a cualquier hora, a las siguientes líneas telefónicas:</string>
     <string name="linea_123">Línea nacional de atención de emergencias <b>123</b></string>
     <string name="linea_155">Línea de orientación a las mujeres víctimas de violencia <b>155</b></string>
     <string name="linea_141">Línea de orientación del ICBF si la violencia es contra niños, niñas y adolescentes <b>141</b></string>
@@ -1467,6 +1467,10 @@ Pasos a seguir:\n
 
     <string name="tag_end_mod_4">end_mod_4
     </string>
+    <string name="send_alert_schedule">De lunes a viernes de 8:00 am a 4:30 pm</string>
+    <string name="linea_01800">Unidad Nacional de Proteccion línea nacional <b>018000118228</b></string>
+    <string name="linea_4269800">Unidad Nacional de Protección en Bogotá <b>(1) 4269800</b></string>
+    <string name="progress_link_indication">Puedes volver al incio de cada módulo pulsando sobre el ícono correspondiente</string>
 
 
     <string-array name="conse_end_mod_tittles_male">
