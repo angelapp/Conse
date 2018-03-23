@@ -39,23 +39,12 @@
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/hoja_papel_l6"
+                android:background="@drawable/ejemplos_lideres06"
                 android:paddingTop="35dp"
                 android:layout_marginTop="25dp"
                 android:layout_marginLeft="@dimen/paper_background_margine_left"
                 android:layout_marginRight="@dimen/paper_background_margine_right"
                 android:gravity="center_vertical">
-
-                <TextView
-                    android:text="@string/lideres_06_01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView23"
-                    style="@style/CourseParagraphText"
-                    android:layout_marginLeft="@dimen/courses_margin_left"
-                    android:layout_marginRight="@dimen/courses_margin_right"
-                    android:gravity="left"
-                    android:layout_marginTop="0dp" />
 
             </LinearLayout>
 

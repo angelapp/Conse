@@ -56,7 +56,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
     View mView;
     Context mCtx;
     public boolean editionMode = false;
-    EditText mEtBirthdate, mEtName, mEtLastname, mEtDocumentNumber, mEtEmail, mEtPassword, mEtPasswordConfirm;
+    EditText mEtBirthdate, mEtName, mEtContactPhone, mEtLastname, mEtDocumentNumber, mEtEmail, mEtPassword, mEtPasswordConfirm;
     Spinner mSpGender, mSpDocumentType, mSpEthnicGroup, mSpState, mSpCondition, mSpCity, mSpRole;
     CheckBox mCbIsNrcBeneficiary, mCbAcceptTermsConditions;
     Button mBtNext, mBtContactEdit, mBtAvatarEdit;
@@ -95,6 +95,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         mEtBirthdate = (EditText)mView.findViewById(R.id.et_birthdate);
         mEtName = (EditText)mView.findViewById(R.id.et_name);
         mEtLastname = (EditText)mView.findViewById(R.id.et_last_name);
+        mEtContactPhone = (EditText)mView.findViewById(R.id.et_contact_phone);
         mEtDocumentNumber = (EditText)mView.findViewById(R.id.et_document_number);
         mEtEmail = (EditText)mView.findViewById(R.id.et_email);
         mEtPassword = (EditText)mView.findViewById(R.id.et_password);
@@ -235,6 +236,11 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         mEtBirthdate.setText(user.profile.birthdate);
         mEtName.setText(user.user.first_name);
         mEtLastname.setText(user.user.last_name);
+
+        if (user.profile.contact_phone != null){
+            mEtContactPhone.setText(user.profile.contact_phone);
+        }
+
         mSpGender.setSelection(user.profile.gender.id);
 
 
@@ -306,6 +312,11 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         }
         if(mEtLastname.getText().length() == 0){
             mEtLastname.setError(getString(R.string.must_fill_field));
+            error = true;
+        }
+
+        if(mEtContactPhone.getText().length() == 0){
+            mEtContactPhone.setError(getString(R.string.must_fill_field));
             error = true;
         }
 
@@ -417,6 +428,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         user.first_name = mEtName.getText().toString();
         user.last_name = mEtLastname.getText().toString();
         user.email = mEtEmail.getText().toString();
+        user.contact_phone = mEtContactPhone.getText().toString();
         user.birthdate = birthDateTosave;
 
         user.gender = gender;

@@ -15,7 +15,8 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingBottom="@dimen/bottom_padding_for_alert"
-            android:paddingTop="@dimen/padding_top_for_courses">
+            android:paddingTop="@dimen/padding_top_for_courses"
+            android:weightSum="1">
 
             <View
                 android:layout_width="match_parent"
@@ -34,37 +35,41 @@
                 android:background="@color/black_overlay"/>
 
 
-            <LinearLayout
-                android:orientation="vertical"
+            <TextView
+                android:text="@string/lideres_16_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/hoja_papel_l16_1"
-                android:paddingTop="20dp"
+                android:id="@+id/textView23"
+                style="@style/CourseSubTittle"
+                android:gravity="left"
+                android:textAlignment="gravity"
+                android:background="@drawable/bg_tit_lideres16_azul"
+                android:paddingLeft="40dp"
+                android:paddingRight="10dp"
                 android:layout_marginTop="@dimen/course_first_content_margin_top"
                 android:layout_marginLeft="@dimen/paper_background_margine_left"
                 android:layout_marginRight="@dimen/paper_background_margine_right"
-                android:gravity="center_vertical">
+                android:translationZ="1dp"
+                android:paddingTop="15dp" />
 
-                <TextView
-                    android:text="@string/lideres_16_01"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView23"
-                    style="@style/CourseSubTittle"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginTop="15dp"
-                    android:gravity="left"
-                    android:textAlignment="center" />
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="222dp"
+                android:background="@drawable/hoja_papel_16azul"
+                android:layout_marginLeft="@dimen/paper_background_margine_left"
+                android:layout_marginRight="@dimen/paper_background_margine_right"
+                android:gravity="top"
+                android:layout_marginTop="-25dp">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_marginTop="15dp"
                     android:layout_marginLeft="@dimen/bullets_margin"
-                    android:layout_marginRight="@dimen/bullets_margin">
+                    android:layout_marginRight="@dimen/bullets_margin"
+                    android:layout_marginTop="20dp">
 
                     <LinearLayout
                         android:orientation="horizontal"
@@ -125,34 +130,40 @@
                 </LinearLayout>
             </LinearLayout>
 
+            <TextView
+                android:text="@string/lideres_16_04"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView23"
+                style="@style/CourseSubTittle"
+                android:gravity="left"
+                android:textAlignment="gravity"
+                android:background="@drawable/bg_tit_lideres16_amarillo"
+                android:paddingLeft="40dp"
+                android:paddingRight="10dp"
+                android:layout_marginTop="@dimen/course_first_content_margin_top"
+                android:layout_marginLeft="@dimen/paper_background_margine_left"
+                android:layout_marginRight="@dimen/paper_background_margine_right"
+                android:translationZ="1dp"
+                android:paddingTop="15dp" />
+
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@drawable/hoja_papel_l16_2"
-                android:paddingTop="20dp"
+                android:background="@drawable/hoja_papel_16naranja"
                 android:layout_marginLeft="@dimen/paper_background_margine_left"
                 android:layout_marginRight="@dimen/paper_background_margine_right"
-                android:gravity="center_vertical">
-
-                <TextView
-                    android:text="@string/lideres_16_04"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/textView23"
-                    style="@style/ConseTittleTextH1"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_marginTop="15dp"
-                    android:gravity="left"
-                    android:textAlignment="center" />
+                android:gravity="top"
+                android:layout_marginTop="-25dp"
+                android:layout_weight="0.41"
+                android:layout_height="wrap_content">
 
                 <LinearLayout
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center_vertical"
-                    android:layout_marginTop="15dp"
+                    android:layout_marginTop="35dp"
                     android:layout_marginLeft="@dimen/bullets_margin"
                     android:layout_marginRight="@dimen/bullets_margin">
 

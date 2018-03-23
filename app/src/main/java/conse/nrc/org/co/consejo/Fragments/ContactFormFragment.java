@@ -38,7 +38,7 @@ public class ContactFormFragment extends Fragment implements RequestTask.OnReque
     ProgressDialog listener;
     List<String> contactFormTypeList = new ArrayList<>();
     Spinner mSpContactFormType;
-    EditText mEtMessage;
+    EditText mEtMessage, mEtPhone;
     int contactType;
     MainInterface mainInterface;
 
@@ -48,6 +48,7 @@ public class ContactFormFragment extends Fragment implements RequestTask.OnReque
         mView = inflater.inflate(R.layout.contact_form_fragment, container, false);
         mSpContactFormType = (Spinner) mView.findViewById(R.id.sp_contact_form_type);
         mEtMessage = (EditText) mView.findViewById(R.id.et_contact_message);
+        mEtPhone = (EditText) mView.findViewById(R.id.et_contact_phone);
         fillSpinnersData();
         fillSpinner();
 
@@ -67,6 +68,10 @@ public class ContactFormFragment extends Fragment implements RequestTask.OnReque
 
         if(mEtMessage.getText().length() == 0){
             mEtMessage.setError(getString(R.string.must_fill_field));
+            error = true;
+        }
+        if(mEtPhone.getText().length() == 0){
+            mEtPhone.setError(getString(R.string.must_fill_field));
             error = true;
         }
 
@@ -91,7 +96,7 @@ public class ContactFormFragment extends Fragment implements RequestTask.OnReque
         Models.ContactForm form = new Models.ContactForm();
         form.user = ConseApp.user.user.id;
         form.message_type = contactType;
-        form.detail = mEtMessage.getText().toString();
+        form.detail = String.format(getString(R.string.message_template), mEtPhone.getText().toString(), mEtMessage.getText().toString());
 
         listener = new ProgressDialog(mCtx);
         listener.setMessage(getString(R.string.sending_contact_form));

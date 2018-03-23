@@ -103,8 +103,10 @@ public class ProgressPageFragment extends Fragment {
                         } else if (mCourseId == LocalConstants.LEADERS_COURSE_ID){
                             mainInterface.startLeadersCourseInAskedPage(LocalConstants.MODULES_INDEX.get(topic.id));
                         }
-                        getActivity().onBackPressed();
+                        Log.d("Progress Page", "Course ID: " + mCourseId + " topic id: " + topic.id
+                                + " Page to: " + LocalConstants.MODULES_INDEX.get(topic.id));
                         Log.d("Progress Page", "Clicked in: " + topic.id + " - " + topic.description);
+                        getActivity().onBackPressed();
                     }
                 });
 

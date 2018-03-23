@@ -46,7 +46,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
 
     public final static int COURSE_ID = VBG_COURSE_ID;
-    public static int mPageAsked = 0;
+    public static int mPageAsked = -1;
     private View view;
     private Context mCtx;
     private LayoutInflater inflater;
@@ -105,10 +105,13 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
         courseContainer = (LinearLayout) view.findViewById(R.id.course_container);
         dataBase = MainActivity.dataBase;
         //Si se solicita una pagina en especifico, no se va a la ultima.
-        if (mPageAsked == 0) {
+        if (mPageAsked < 0) {
             setInitialPageToShow();
+            Log.d("VBG Mod", "OnCreate - setInitialPageToShow()");
+
         } else{
             showAskedPage();
+            Log.d("VBG Mod", "OnCreate - showAskedPage(): " + mPageAsked);
         }
         mAvatarGender = ConseApp.getAvatarGender(mCtx);
 
@@ -135,15 +138,18 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
     public static void setAskedPage(int asked){
         mPageAsked = asked;
+        Log.d("VBG Mod", "mPageAsked: " + mPageAsked);
     }
 
     @Override
     public void onResume(){
         super.onResume();
-        if (mPageAsked == 0) {
+        if (mPageAsked < 0) {
             setInitialPageToShow();
+            Log.d("VBG Mod", "OnResume - setInitialPageToShow()");
         } else{
             showAskedPage();
+            Log.d("VBG Mod", "OnResume - showAskedPage(): " + mPageAsked);
         }
     }
 
@@ -553,14 +559,14 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((CheckBox) v).isChecked())) {
                                 isCorrect = false;
                                 ((CheckBox) v).setChecked(false);
-                                break;
+                                //break;
                             }
                         } else if (v instanceof RadioButton) {
                             Log.d("VBG", "Is instance of radiobutton");
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((RadioButton) v).isChecked())) {
                                 isCorrect = false;
                                 ((RadioButton) v).setChecked(false);
-                                break;
+                                //break;
                             }
                         } else {
                             Log.d("VBG", "Is instance of nothing");
@@ -568,7 +574,7 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
                     } else if (((CheckBox) v).isChecked()) {
                         isCorrect = false;
                         ((CheckBox) v).setChecked(false);
-                        break;
+                        //break;
                     }
                 }
             }

@@ -91,6 +91,14 @@
                     android:id="@+id/et_last_name"
                     style="@style/ConseExitText" />
 
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="phone"
+                    android:hint="@string/et_contact_phone"
+                    android:ems="10"
+                    android:id="@+id/et_contact_phone"
+                    style="@style/ConseExitText" />
             </LinearLayout>
 
             <LinearLayout

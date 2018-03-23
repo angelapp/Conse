@@ -421,6 +421,7 @@ public class MainActivity extends AppCompatActivity
     private void initVbgCourseInPage(int pageAsked){
         actualCourse = LocalConstants.VBG_COURSE_ID;
         vbgCourse1Start.setAskedPage(pageAsked);
+        Log.d("Main Activity", "Actual Asked Page:" + vbgCourse1Start.mPageAsked);
         getSupportFragmentManager().beginTransaction().replace(R.id.ly_home_content, vbgCourse1Start).addToBackStack(null).commitAllowingStateLoss();
     }
 
@@ -432,12 +433,12 @@ public class MainActivity extends AppCompatActivity
 
     @Override
     public void startVbgCourse() {
-        initVbgCourseInPage(0);
+        initVbgCourseInPage(-1);
     }
 
     @Override
     public void startLeadersCourse() {
-        initLeadersCourseInPage(0);
+        initLeadersCourseInPage(-1);
     }
 
     @Override

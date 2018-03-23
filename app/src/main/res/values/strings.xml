@@ -69,8 +69,8 @@
     <string name="send_alert_message">Estoy en PELIGRO, necesito ayuda URGENTE</string>
 
     <string name="message_type_tittle">Tipo de mensaje</string>
-    <string name="write_here">Escribe aquí tu mensaje y teléfono de contacto para poder responderte</string>
-    <string name="your_message_tittle_h2">Tu mensaje y teléfono</string>
+    <string name="write_here">Escribe aquí tu mensaje</string>
+    <string name="your_message_tittle_h2">Tu mensaje</string>
     <string name="contact_form_tittle">CONTÁCTANOS</string>
     <string name="sending_contact_form">Enviando formulario...</string>
     <string name="send_contact_success">Se ha enviado tu mensaje</string>
@@ -821,7 +821,7 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
         <item>acciones-hechos</item>
         <item>hechos-acciones</item>
         <item>supuestos</item>
-        <item>específico</item>
+        <item>específico-especifico</item>
         <item>persona</item>
         <item>grupo</item>
         <item>amenaza</item>
@@ -856,7 +856,7 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
     <string name="lideres_09_08"> específico - persona \ngrupo
     </string>
 
-    <string name="lideres_09_08_01">específico
+    <string name="lideres_09_08_01">específico-especifico
     </string>
 
     <string name="lideres_09_08_02">persona
@@ -1378,10 +1378,29 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     </string>
 
 
-    <string name="lideres_52_03">Grupos, comunidades, organizaciones sociales o políticas de las poblaciones objeto para el Programa del Ministerio del Interior y de la Unidad Nacional de Protección, es decir:
-\n\nGrupos políticos; grupos que suscribieron acuerdos de paz con el Gobierno Nacional; organizaciones de Derechos Humanos, de víctimas, sindicales, sociales, cívicas, gremiales, comunales o campesinas; comunidades étnicas; misión médica, periodistas, comunicadores sociales, docentes; testigos y víctimas de violaciones a los Derechos Humanos y al Derecho Humanitario; población desplazada, reclamantes de tierras; servidores o ex servidores públicos con responsabilidad en Derechos Humanos; apoderados de procesos judiciales por violaciones a los Derechos Humanos y al Derecho Humanitario.
+    <string name="lideres_52_03">Grupos, comunidades, organizaciones sociales o políticas de las poblaciones objeto para el Programa del Ministerio del Interior y de la Unidad Nacional de Protección. Continúa leyendo, en la siguiente pantalla encontrarás información detallada.
     </string>
 
+    <string name="lideres_52_01_01">Esta es la población que se beneficia con el programa de protección colectiva:
+    </string>
+    <string name="lideres_52_01_02">Grupos políticos
+    </string>
+    <string name="lideres_52_01_03">Grupos que suscribieron acuerdos de paz con el Gobierno Nacional
+    </string>
+    <string name="lideres_52_01_04">Organizaciones de Derechos Humanos, de víctimas, sindicales, sociales, cívicas, gremiales, comunales o campesinas
+    </string>
+    <string name="lideres_52_01_05">Comunidades étnicas
+    </string>
+    <string name="lideres_52_01_06">Misión médica, periodistas, comunicadores sociales, docentes
+    </string>
+    <string name="lideres_52_01_07">Testigos y víctimas de violaciones a los Derechos Humanos y al Derecho Humanitario
+    </string>
+    <string name="lideres_52_01_08">Población desplazada, reclamantes de tierras
+    </string>
+    <string name="lideres_52_01_09">Servidores o ex servidores públicos con responsabilidad en Derechos Humanos
+    </string>
+    <string name="lideres_52_01_10">Apoderados de procesos judiciales por violaciones a los Derechos Humanos y al Derecho Humanitario.
+    </string>
 
     <string name="lideres_53_01">Estos grupos, comunidades u organizaciones deberán contar con un reconocimiento jurídico o social.
 \n\nPuedes activar la Ruta Colectiva de Protección, por iniciativa propia, sin embargo, es mejor si eres el representante de un colectivo o presentas la solicitud en acuerdo con tu comunidad u organización. Inicia dirigiéndote a la Unidad Nacional de Protección.
@@ -1471,6 +1490,9 @@ Pasos a seguir:\n
     <string name="linea_01800">Unidad Nacional de Proteccion línea nacional <b>018000118228</b></string>
     <string name="linea_4269800">Unidad Nacional de Protección en Bogotá <b>(1) 4269800</b></string>
     <string name="progress_link_indication">Puedes volver al incio de cada módulo pulsando sobre el ícono correspondiente</string>
+    <string name="your_phone_tittle_h2">Tu teléfono</string>
+    <string name="message_template">Teléfono: \n %1$s \n\n\n Mensaje:\n %2$s</string>
+    <string name="et_contact_phone">Teléfono de contacto</string>
 
 
     <string-array name="conse_end_mod_tittles_male">

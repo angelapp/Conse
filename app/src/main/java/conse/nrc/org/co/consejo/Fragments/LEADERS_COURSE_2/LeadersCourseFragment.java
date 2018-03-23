@@ -47,7 +47,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
 
 
     public final static int COURSE_ID = LEADERS_COURSE_ID;
-    public static int mPageAsked = 0;
+    public static int mPageAsked = -1;
     private View view;
     private Context mCtx;
     private LayoutInflater inflater;
@@ -106,7 +106,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
         courseContainer = (LinearLayout) view.findViewById(R.id.course_container);
         dataBase = MainActivity.dataBase;
         //Si se solicita una pagina en especifico, no se va a la ultima.
-        if (mPageAsked == 0) {
+        if (mPageAsked < 0) {
             setInitialPageToShow();
         } else{
             showAskedPage();
@@ -140,7 +140,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onResume(){
         super.onResume();
-        if (mPageAsked == 0) {
+        if (mPageAsked < 0) {
             setInitialPageToShow();
         } else{
             showAskedPage();
@@ -471,14 +471,14 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((CheckBox) v).isChecked())) {
                                 isCorrect = false;
                                 ((CheckBox) v).setChecked(false);
-                                break;
+                                //break;
                             }
                         } else if (v instanceof RadioButton) {
                             Log.d("Leaders", "Is instance of radiobutton");
                             if (!(v.getTag().equals(LocalConstants.CORRECT_OPTION) && ((RadioButton) v).isChecked())) {
                                 isCorrect = false;
                                 ((RadioButton) v).setChecked(false);
-                                break;
+                                //break;
                             }
                         } else {
                             Log.d("Leaders", "Is instance of nothing");
@@ -486,7 +486,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
                     } else if (((CheckBox) v).isChecked()) {
                         isCorrect = false;
                         ((CheckBox) v).setChecked(false);
-                        break;
+                        //break;
                     }
                 }
             }

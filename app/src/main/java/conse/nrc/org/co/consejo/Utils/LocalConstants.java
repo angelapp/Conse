@@ -1,16 +1,11 @@
 package conse.nrc.org.co.consejo.Utils;
 
 import android.content.Context;
-import android.content.Intent;
-import android.content.res.Resources;
-import android.support.v4.util.ArrayMap;
 import android.support.v4.util.Pair;
 
-import java.io.ObjectStreamException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import conse.nrc.org.co.consejo.BuildConfig;
 import conse.nrc.org.co.consejo.R;
@@ -194,8 +189,8 @@ public class LocalConstants {
         put(4, 35); //vbg_course_1_47
         put(5, 0); //leaders_1
         put(6, 10); //leaders_12
-        put(7, 27); //leaders_32
-        put(8, 45); //leaders_51
+        put(7, 28); //leaders_32
+        put(8, 46); //leaders_51
     }};
 
 
@@ -419,16 +414,17 @@ public class LocalConstants {
             add(R.layout.leaders_22);
             add(R.layout.leaders_23);
             add(R.layout.leaders_24);//20
+            add(R.layout.leaders_24_1);//21
             add(R.layout.leaders_25);
             add(R.layout.leaders_26);
             add(R.layout.leaders_27);
             add(R.layout.leaders_28);
             add(R.layout.leaders_29);
             add(R.layout.leaders_31);
-            add(R.layout.leaders_32);//27
+            add(R.layout.leaders_32);//28
             add(R.layout.leaders_33);
             add(R.layout.leaders_34);
-            add(R.layout.leaders_35);//30
+            add(R.layout.leaders_35);//31
             add(R.layout.leaders_36);
             add(R.layout.leaders_37);
             add(R.layout.leaders_38);
@@ -438,13 +434,14 @@ public class LocalConstants {
             add(R.layout.leaders_42);
             add(R.layout.leaders_43);
             add(R.layout.leaders_44);
-            add(R.layout.leaders_45);//40
+            add(R.layout.leaders_45);//41
             add(R.layout.leaders_46);
             add(R.layout.leaders_47);
             add(R.layout.leaders_48);
             add(R.layout.leaders_50);
-            add(R.layout.leaders_51);//45
+            add(R.layout.leaders_51);//46
             add(R.layout.leaders_52);
+            add(R.layout.leaders_52_1);
             add(R.layout.leaders_53);
             add(R.layout.leaders_54);
             add(R.layout.leaders_55);

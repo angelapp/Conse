@@ -71,11 +71,11 @@
                 <FrameLayout
                     android:layout_width="match_parent"
                     android:layout_below="@+id/fl_image"
-                    android:layout_marginTop="-60dp"
+                    android:layout_marginTop="-40dp"
                     android:tag="here_avatar"
                     android:layout_height="200dp"
                     android:foregroundGravity="left"
-                    android:paddingRight="120dp">
+                    android:paddingRight="140dp">
 
                 </FrameLayout>
 
