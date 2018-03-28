@@ -96,7 +96,9 @@ public class ContactFormFragment extends Fragment implements RequestTask.OnReque
         Models.ContactForm form = new Models.ContactForm();
         form.user = ConseApp.user.user.id;
         form.message_type = contactType;
-        form.detail = String.format(getString(R.string.message_template), mEtPhone.getText().toString(), mEtMessage.getText().toString());
+        form.detail = String.format(getString(R.string.message_template), ConseApp.getActualUser(mCtx).user.first_name,
+                ConseApp.getActualUser(mCtx).user.last_name, ConseApp.getActualUser(mCtx).user.email,
+                mEtPhone.getText().toString(), mEtMessage.getText().toString());
 
         listener = new ProgressDialog(mCtx);
         listener.setMessage(getString(R.string.sending_contact_form));

@@ -25,6 +25,7 @@ import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_NUMBER_;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_SIZE;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MAX_CONTACT_NUMBER;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MIN_CONTACT_NUMBER;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.facebook_url;
 
 public class SelectContact extends AppCompatActivity {
 
@@ -96,13 +97,15 @@ public class SelectContact extends AppCompatActivity {
     }
 
     private void goToNext() {
+        Intent intent= new Intent(this, SendAlert.class);
         if (editingContacts){
-            onBackPressed();
+            intent.putExtra(LocalConstants.EDITING_CONTACTS, true);
+            //onBackPressed();
         } else {
-            Intent intent= new Intent(this, SendAlert.class);
-            startActivity(intent);
-            this.finish();
+            intent.putExtra(LocalConstants.EDITING_CONTACTS, false);
         }
+        startActivity(intent);
+        this.finish();
     }
 
     private void addContact() {

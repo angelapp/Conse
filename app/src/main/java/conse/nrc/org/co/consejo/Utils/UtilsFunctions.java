@@ -215,5 +215,4 @@ public abstract class UtilsFunctions {
         return ctx.getResources().getStringArray(R.array.conse_end_mod_tittles_female)[mod-1];
     }
 
-
 }

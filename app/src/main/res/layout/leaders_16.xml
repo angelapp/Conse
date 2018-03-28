@@ -138,7 +138,7 @@
                 style="@style/CourseSubTittle"
                 android:gravity="left"
                 android:textAlignment="gravity"
-                android:background="@drawable/bg_tit_lideres16_amarillo"
+                android:background="@drawable/bg_tit_lideres25_amarillo"
                 android:paddingLeft="40dp"
                 android:paddingRight="10dp"
                 android:layout_marginTop="@dimen/course_first_content_margin_top"

@@ -71,7 +71,7 @@
     <string name="message_type_tittle">Tipo de mensaje</string>
     <string name="write_here">Escribe aquí tu mensaje</string>
     <string name="your_message_tittle_h2">Tu mensaje</string>
-    <string name="contact_form_tittle">CONTÁCTANOS</string>
+    <string name="contact_form_tittle">DÉJANOS TU MENSAJE</string>
     <string name="sending_contact_form">Enviando formulario...</string>
     <string name="send_contact_success">Se ha enviado tu mensaje</string>
     <string name="registering_avatar_list">Guardando avatar...</string>
@@ -1331,7 +1331,7 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     </string>
 
     <string name="lideres_45_01">
-        Llego el momento de practicar lo aprendido, realizar la siguiente actividad y... ¡Felicitaciones! \nHabrás finalizado el tercer módulo del curso.
+        Llegó el momento de practicar lo aprendido, realizar la siguiente actividad y... ¡Felicitaciones! \nHabrás finalizado el tercer módulo del curso.
     </string>
 
     <string name="lideres_46_01">Lee atentamente las siguientes situaciones y contesta sí o no a la pregunta.
@@ -1491,8 +1491,12 @@ Pasos a seguir:\n
     <string name="linea_4269800">Unidad Nacional de Protección en Bogotá <b>(1) 4269800</b></string>
     <string name="progress_link_indication">Puedes volver al incio de cada módulo pulsando sobre el ícono correspondiente</string>
     <string name="your_phone_tittle_h2">Tu teléfono</string>
-    <string name="message_template">Teléfono: \n %1$s \n\n\n Mensaje:\n %2$s</string>
+    <string name="message_template">Nombre: \n %1$s
+        Apellido: \n %2$s \n\n
+        Email: \n %3$s \n\n
+        Teléfono: \n %4$s \n\n Mensaje:\n %5$s</string>
     <string name="et_contact_phone">Teléfono de contacto</string>
+    <string name="set_horizontal_screen">Pon la pantalla horizontal para disfrutar del video</string>
 
 
     <string-array name="conse_end_mod_tittles_male">

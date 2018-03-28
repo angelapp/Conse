@@ -75,8 +75,8 @@
                 android:layout_marginRight="@dimen/paper_background_margine_right"
                 android:gravity="top"
                 android:layout_weight="0.89"
-                android:layout_height="600dp"
-                android:background="@drawable/hoja_lideres23">
+                android:background="@drawable/hoja_lideres23"
+                android:layout_height="650dp">
 
                 <LinearLayout
                     android:orientation="vertical"

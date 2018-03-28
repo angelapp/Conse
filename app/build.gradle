@@ -1,6 +1,7 @@
 buildscript {
     repositories {
         maven { url 'https://maven.fabric.io/public' }
+        mavenCentral()
     }
 
     dependencies {
@@ -103,6 +104,7 @@ dependencies {
     compile 'com.nostra13.universalimageloader:universal-image-loader:1.9.5'
     compile 'com.android.support:design:25.0.1'
     compile 'com.jpardogo.materialtabstrip:library:1.1.1'
+    compile 'com.github.rtoshiro.fullscreenvideoview:fullscreenvideoview:1.1.2'
     testCompile 'junit:junit:4.12'
     compile('com.crashlytics.sdk.android:crashlytics:2.8.0@aar') {
         transitive = true;

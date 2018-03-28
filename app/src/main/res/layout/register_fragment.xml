@@ -36,7 +36,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_gravity="center_vertical"
-                android:layout_marginBottom="@dimen/iv_bottom_margin">
+                android:layout_marginBottom="@dimen/iv_bottom_margin"
+                android:id="@+id/fl_edit_avatar_frame">
 
                 <FrameLayout
                     android:id="@+id/fl_avatar"

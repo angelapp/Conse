@@ -179,8 +179,10 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             loadValues();
         } else {
             mView.findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
-            mBtAvatarEdit.setVisibility(View.GONE);
+            mView.findViewById(R.id.fl_edit_avatar_frame).setVisibility(View.GONE);
+//            mBtAvatarEdit.setVisibility(View.GONE);
             mBtContactEdit.setVisibility(View.GONE);
+
             TextView term = (TextView)mView.findViewById(R.id.tv_terms_text);
             Spanned tittleString;
             tittleString = Html.fromHtml(getString(R.string.accept_terms_conditions_checkbox1)

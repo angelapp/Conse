@@ -18,46 +18,38 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/iv_logo_ncr"
-        android:layout_marginBottom="@dimen/iv_bottom_margin"
-        android:layout_marginTop="@dimen/iv_top_margin"
         android:background="@drawable/logoncr"
-        android:layout_gravity="center_horizontal" />
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="7dp" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_go_to_register"
+        android:background="@drawable/button_go_to_register"
+        android:layout_marginBottom="15dp"
+        android:layout_marginTop="15dp"
+        android:gravity="bottom|center_horizontal"
+        android:layout_gravity="bottom|center_horizontal" />
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/iv_bottom_margin"
-        android:layout_marginTop="@dimen/iv_top_margin">
+        android:layout_height="match_parent"
+        android:id="@+id/fl_video_content"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/iv_logo_ncr"
+        android:layout_marginTop="20dp">
 
-        <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/ly_youtube_video"></LinearLayout>
-
-        <Button
-            android:layout_height="70dp"
-            android:id="@+id/bt_start_video"
-            android:layout_gravity="center"
-            android:background="@drawable/button_play_video"
-            android:layout_width="70dp" />
+        <view
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            class="conse.nrc.org.co.consejo.Utils.FullscreenVideoLayout"
+            android:id="@+id/vfull" />
 
     </FrameLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="bottom|center_horizontal">
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/bt_go_to_register"
-            android:background="@drawable/button_go_to_register"
-            android:layout_marginBottom="@dimen/iv_bottom_margin"
-            android:layout_marginTop="@dimen/iv_top_margin"
-            android:gravity="center_horizontal" />
-    </RelativeLayout>
 
 
 </LinearLayout>
