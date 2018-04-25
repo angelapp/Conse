@@ -339,10 +339,10 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
             case R.id.bt_previous:
                 setPreviousPage();
                 break;
-            case R.id.bt_next:
+            case R.id.bt_next:case R.id.bt_next_2:case R.id.bt_next_3:
                 setNextPage();
                 break;
-            case R.id.bt_play:
+            case R.id.bt_play:case R.id.bt_play_2:case R.id.bt_play_3:case R.id.bt_play_4:
                playSound(v);
                 break;
 //            case R.id.bt_return_to:

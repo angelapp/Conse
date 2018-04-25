@@ -27,7 +27,6 @@
                 android:text="@string/course_1_2_f"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -38,7 +37,6 @@
                 android:text="@string/course_1_2_a"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2"
                 style="@style/CourseHighlightText"
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="25dp"
@@ -70,7 +68,6 @@
                 android:text="@string/course_1_2_b"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/textView3"
                 style="@style/CourseParagraphText"
                 android:layout_marginLeft="@dimen/courses_margin_left"
                 android:layout_marginRight="@dimen/courses_margin_right" />
@@ -79,7 +76,6 @@
                 android:text="@string/course_1_2_c"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/textView4"
                 style="@style/CourseParagraphText"
                 android:layout_marginLeft="@dimen/courses_margin_left"
                 android:layout_marginRight="@dimen/courses_margin_right"
@@ -98,7 +94,6 @@
                     android:text="@string/course_1_2_d"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView5"
                     style="@style/ConseParagraphText"
                     android:paddingLeft="@dimen/fab_margin"
                     android:paddingRight="@dimen/fab_margin"
@@ -110,7 +105,6 @@
                     android:text="@string/course_1_2_y"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView22"
                     style="@style/ConseParagraphText"
                     android:textSize="14sp"
                     android:gravity="right"

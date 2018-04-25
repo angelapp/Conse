@@ -23,7 +23,6 @@
                 android:background="@color/black_overlay" />
 
             <TextView
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -42,7 +41,6 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     app:srcCompat="@drawable/ruta31_1"
-                    android:id="@+id/imageView5"
                     android:layout_height="wrap_content" />
 
             </FrameLayout>

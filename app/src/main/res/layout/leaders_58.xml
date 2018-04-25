@@ -23,7 +23,6 @@
                 android:text="@string/lideres_52_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"

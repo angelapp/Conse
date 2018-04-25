@@ -23,7 +23,6 @@
                 android:background="@color/black_overlay" />
 
             <TextView
-                android:id="@+id/textView1"
                 style="@style/ConseTittleTextH2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -54,7 +53,6 @@
                 android:text="@string/course_1_17_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4"
                 style="@style/ConseParagraphText"
                 android:layout_marginLeft="@dimen/courses_li_margin_left"
                 android:layout_marginRight="@dimen/courses_margin_right" />
@@ -78,7 +76,6 @@
                         android:text="@string/course_1_20_text_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView5"
                         style="@style/ConseTittleTextH1"
                         android:gravity="center"
                         android:layout_marginLeft="@dimen/fab_margin"

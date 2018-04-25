@@ -54,7 +54,6 @@
                     android:text="@string/course_1_45_tittle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView9"
                     style="@style/ConseTittleTextH1"
                     android:layout_marginTop="15dp"/>
 
@@ -102,7 +101,6 @@
                             android:text="@string/review_contents_again"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView32"
                             style="@style/CourseParagraphText"
                             android:textSize="14sp"
                             android:gravity="center_horizontal" />

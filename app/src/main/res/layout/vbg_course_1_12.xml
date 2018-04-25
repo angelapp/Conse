@@ -26,7 +26,6 @@
                 android:text="@string/course_1_13_d"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -50,7 +49,6 @@
                 android:text="@string/course_1_13_b"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4"
                 style="@style/CourseParagraphText"
                 android:layout_marginBottom="25dp"
                 android:layout_marginLeft="@dimen/courses_margin_left"

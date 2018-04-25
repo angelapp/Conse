@@ -25,7 +25,6 @@
                 android:text="@string/lideres_03_00"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -119,7 +118,7 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play"
+                        android:id="@+id/bt_play_2"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"
@@ -167,7 +166,7 @@
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_play"
+                    android:id="@+id/bt_play_3"
                     android:background="@drawable/play"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
@@ -216,7 +215,7 @@
                     <Button
                         android:layout_width="56dp"
                         android:layout_height="56dp"
-                        android:id="@+id/bt_play"
+                        android:id="@+id/bt_play_4"
                         android:background="@drawable/play"
                         android:layout_centerVertical="true"
                         android:layout_alignParentRight="true"

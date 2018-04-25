@@ -16,8 +16,7 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:srcCompat="@drawable/pin"
-            android:id="@+id/imageView14" />
+            app:srcCompat="@drawable/pin" />
 
         <LinearLayout
             android:orientation="vertical"
@@ -30,7 +29,6 @@
                 android:text="@string/near_of"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView20"
                 android:textColor="@color/black" />
 
             <TextView

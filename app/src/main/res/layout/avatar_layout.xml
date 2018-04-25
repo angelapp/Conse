@@ -10,7 +10,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@null"
-        android:id="@+id/iv_face"
         android:layout_gravity="center_horizontal"
         android:tag="3" />
 
@@ -18,7 +17,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@null"
-        android:id="@+id/iv_eyes"
         android:layout_gravity="center_horizontal"
         android:tag="5" />
 
@@ -26,7 +24,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@null"
-        android:id="@+id/iv_nose"
         android:layout_gravity="center_horizontal"
         android:tag="4" />
 
@@ -34,7 +31,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@null"
-        android:id="@+id/iv_hair"
         android:layout_gravity="center_horizontal"
         android:tag="2" />
 
@@ -42,7 +38,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@null"
-        android:id="@+id/iv_accessory"
         android:layout_gravity="center_horizontal"
         android:tag="1" />
 

@@ -23,7 +23,6 @@
                 android:background="@color/black_overlay" />
 
             <TextView
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -50,7 +49,6 @@
                 android:text="@string/course_1_54_text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4"
                 style="@style/CourseParagraphText"
                 android:layout_marginLeft="@dimen/courses_margin_left"
                 android:layout_marginRight="@dimen/courses_margin_right" />

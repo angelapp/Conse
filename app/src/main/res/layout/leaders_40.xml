@@ -23,7 +23,6 @@
                 android:background="@color/black_overlay" />
 
             <TextView
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -43,7 +42,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="830dp"
                     app:srcCompat="@drawable/camino_l40"
-                    android:id="@+id/imageView13"
                     android:scaleType="centerCrop"
                     android:scrollY="100dp" />
 
@@ -58,7 +56,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/globo_l40_1"
-                        android:id="@+id/imageView17"
                         android:layout_marginTop="25dp"
                         android:layout_marginRight="@dimen/courses_margin_right" />
 
@@ -66,7 +63,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/globo_l40_2"
-                        android:id="@+id/imageView17"
                         android:layout_marginTop="25dp"
                         android:layout_marginRight="@dimen/courses_margin_right" />
 

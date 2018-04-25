@@ -11,14 +11,12 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/campana"
-        android:id="@+id/imageView"
         android:layout_marginTop="20dp" />
 
     <TextView
         android:text="@string/send_alert_touch_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView"
         android:textStyle="normal|italic"
         style="@style/ConseTittleTextH2"
         android:gravity="center_horizontal" />
@@ -44,7 +42,6 @@
         android:text="@string/send_alert_indications"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3"
         style="@style/ConseParagraphText"
         android:textStyle="normal|bold"
         android:gravity="center_horizontal"

@@ -26,7 +26,6 @@
                 android:text="@string/lideres_52_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -42,7 +41,6 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     app:srcCompat="@drawable/camino_29"
-                    android:id="@+id/imageView15"
                     android:scaleType="matrix"
                     android:scrollY="-120dp"
                     android:scrollX="200dp"
@@ -70,7 +68,7 @@
                 <Button
                     android:text="@string/lideres_36_04"
                     android:layout_height="wrap_content"
-                    android:id="@+id/bt_next"
+                    android:id="@+id/bt_next_2"
                     android:background="@drawable/rect_amarillo"
                     android:drawableBottom="@drawable/flecha_der"
                     android:drawablePadding="10dp"
@@ -106,7 +104,7 @@
 
 
                 <Button
-                    android:id="@+id/bt_next"
+                    android:id="@+id/bt_next_3"
                     android:layout_width="wrap_content"
                     android:layout_height="56dp"
                     android:layout_marginLeft="20dp"

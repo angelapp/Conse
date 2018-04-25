@@ -18,7 +18,6 @@
                 android:text="@string/about_nrc_page3_1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView14"
                 style="@style/ConseParagraphText"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp" />
@@ -38,7 +37,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/mapa"
-                android:id="@+id/imageView7"
                 android:layout_marginTop="25dp"
                 android:layout_gravity="center_horizontal" />
 
@@ -54,8 +52,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/icobf"
-                    android:id="@+id/imageView11" />
+                    app:srcCompat="@drawable/icobf" />
 
                 <TextView
                     android:text="@string/about_nrc_page3_3"
@@ -87,8 +84,7 @@
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@drawable/icotwitter"
-                    android:id="@+id/imageView12" />
+                    app:srcCompat="@drawable/icotwitter" />
 
                 <TextView
                     android:text="@string/about_nrc_page3_4"

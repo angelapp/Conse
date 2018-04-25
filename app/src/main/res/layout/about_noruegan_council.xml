@@ -24,7 +24,6 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:srcCompat="@drawable/logoncr"
-            android:id="@+id/imageView3"
             android:layout_gravity="center_vertical"
             android:layout_weight="0.8" />
 
@@ -33,7 +32,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             style="@style/ConseTittleTextH1"
-            android:id="@+id/textView12"
             android:layout_marginLeft="5dp"
             android:lines="2"
             android:gravity="left"

@@ -10,7 +10,6 @@
         android:text="@string/send_alert_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_send_alert_tittle"
         style="@style/ConseTittleTextH1"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"

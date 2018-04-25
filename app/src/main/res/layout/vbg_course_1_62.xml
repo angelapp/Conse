@@ -50,7 +50,6 @@
                     android:text="@string/course_1_62_question"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/tv"
                     style="@style/CourseParagraphTextBold"
                     android:layout_marginBottom="15dp"
                     android:layout_marginLeft="@dimen/check_box_margin"

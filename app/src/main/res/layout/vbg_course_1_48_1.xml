@@ -23,7 +23,6 @@
                 android:background="@color/black_overlay" />
 
             <TextView
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -63,7 +62,6 @@
                 android:text="@string/course_1_48_1_text1_5"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView16"
                 style="@style/ConseParagraphText"
                 android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
                 android:layout_marginBottom="10dp"
@@ -88,7 +86,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView17"
                     android:layout_weight="1"
                     style="@style/CourseSoundTittle"
                     android:textColor="@color/salmon"
@@ -125,7 +122,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/ruta48"
-                    android:id="@+id/imageView6"
                     android:scaleType="centerCrop" />
 
             </FrameLayout>

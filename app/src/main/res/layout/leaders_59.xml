@@ -24,7 +24,6 @@
                 android:text="@string/lideres_52_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -43,12 +42,10 @@
                     android:orientation="vertical"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/ly_youtube_video"
                     android:tag="here_video"></LinearLayout>
 
                 <Button
                     android:layout_height="70dp"
-                    android:id="@+id/bt_start_video"
                     android:layout_gravity="center"
                     android:background="@drawable/button_play_video"
                     android:layout_width="70dp" />

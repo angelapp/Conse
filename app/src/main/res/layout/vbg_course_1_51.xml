@@ -23,7 +23,6 @@
                 android:background="@color/black_overlay" />
 
             <TextView
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -39,7 +38,6 @@
                 android:text="@string/course_1_51_tittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView4"
                 style="@style/CourseParagraphText"
                 android:layout_marginLeft="@dimen/courses_margin_left"
                 android:layout_marginRight="@dimen/courses_margin_right" />
@@ -55,7 +53,6 @@
                 <ImageView
                     android:layout_height="wrap_content"
                     app:srcCompat="@drawable/paso51_1"
-                    android:id="@+id/imageView8"
                     android:layout_gravity="center_vertical"
                     android:layout_weight="55"
                     android:layout_width="0dp"
@@ -65,7 +62,6 @@
                     android:text="@string/course_1_51_text1"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView19"
                     style="@style/CourseParagraphText"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
@@ -83,7 +79,6 @@
                 <TextView
                     android:text="@string/course_1_51_text2"
                     android:layout_width="match_parent"
-                    android:id="@+id/textView19"
                     style="@style/CourseParagraphTextBold"
                     android:layout_height="wrap_content"
                     android:textStyle="normal|bold"
@@ -104,7 +99,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
-                        android:id="@+id/imageView11"
                         android:layout_marginTop="@dimen/bullets_top_margin"
                         android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -112,7 +106,6 @@
                         android:text="@string/course_1_51_text2_1"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView10"
                         style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
@@ -131,7 +124,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
-                        android:id="@+id/imageView11"
                         android:layout_marginTop="@dimen/bullets_top_margin"
                         android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -139,7 +131,6 @@
                         android:text="@string/course_1_51_text2_2"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView10"
                         style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
@@ -158,7 +149,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
-                        android:id="@+id/imageView11"
                         android:layout_marginTop="@dimen/bullets_top_margin"
                         android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -166,7 +156,6 @@
                         android:text="@string/course_1_51_text2_3"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView10"
                         style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
@@ -185,7 +174,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
-                        android:id="@+id/imageView11"
                         android:layout_marginTop="@dimen/bullets_top_margin"
                         android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -193,7 +181,6 @@
                         android:text="@string/course_1_51_text2_4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView10"
                         style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
@@ -212,7 +199,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
-                        android:id="@+id/imageView11"
                         android:layout_marginTop="@dimen/bullets_top_margin"
                         android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -220,7 +206,6 @@
                         android:text="@string/course_1_51_text2_5"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView10"
                         style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"
@@ -240,7 +225,6 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         app:srcCompat="@drawable/bullet"
-                        android:id="@+id/imageView11"
                         android:layout_marginTop="@dimen/bullets_top_margin"
                         android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -248,7 +232,6 @@
                         android:text="@string/course_1_51_text2_6"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:id="@+id/textView10"
                         style="@style/CourseParagraphText"
                         android:layout_weight="1"
                         android:paddingBottom="10dp"

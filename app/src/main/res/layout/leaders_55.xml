@@ -26,7 +26,6 @@
                 android:text="@string/lideres_52_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -38,7 +37,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/ruta_lideres55"
-                android:id="@+id/imageView11"
                 android:layout_marginTop="10dp" />
 
             <LinearLayout

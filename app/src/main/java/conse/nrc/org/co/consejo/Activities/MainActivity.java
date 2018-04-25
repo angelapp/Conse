@@ -281,7 +281,10 @@ public class MainActivity extends AppCompatActivity
                 openNews();
                 break;
             //Managing course inner buttons
-            case R.id.bt_next: case R.id.bt_previous:case R.id.bt_play:case R.id.bt_finish:
+            case R.id.bt_next:case R.id.bt_next_2:case R.id.bt_next_3:
+            case R.id.bt_previous:
+            case R.id.bt_play:case R.id.bt_play_2:case R.id.bt_play_3:case R.id.bt_play_4:
+            case R.id.bt_finish:
                 switch (actualCourse){
                     case LocalConstants.VBG_COURSE_ID:
                         if(vbgCourse1Start != null){

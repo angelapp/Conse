@@ -26,7 +26,6 @@
                 android:text="@string/lideres_12_02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
 
 
@@ -50,7 +49,6 @@
                     android:text="@string/lideres_13_01"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView23"
                     style="@style/CourseSubTittle"
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp"
@@ -80,7 +78,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView26"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -88,7 +85,6 @@
                             android:text="@string/lideres_13_02"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView27"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -107,7 +103,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView11"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -115,7 +110,6 @@
                             android:text="@string/lideres_13_03"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView10"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -134,7 +128,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView12"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -142,7 +135,6 @@
                             android:text="@string/lideres_13_04"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView11"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -161,7 +153,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView13"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -169,7 +160,6 @@
                             android:text="@string/lideres_13_05"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView12"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -188,7 +178,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView14"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -196,7 +185,6 @@
                             android:text="@string/lideres_13_06"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView13"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -216,7 +204,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView15"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -224,7 +211,6 @@
                             android:text="@string/lideres_13_07"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView14"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -244,7 +230,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView18"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -252,7 +237,6 @@
                             android:text="@string/lideres_13_08"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView19"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -272,7 +256,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView20"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -280,7 +263,6 @@
                             android:text="@string/lideres_13_09"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView21"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -300,7 +282,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView22"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -308,7 +289,6 @@
                             android:text="@string/lideres_13_10"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView234"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -328,7 +308,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView24"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -336,7 +315,6 @@
                             android:text="@string/lideres_13_11"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView25"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"

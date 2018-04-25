@@ -26,7 +26,6 @@
                 android:text="@string/lideres_32_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -48,7 +47,6 @@
                     android:text="@string/lideres_35_01"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView30"
                     style="@style/CourseParagraphText"
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp" />

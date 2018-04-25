@@ -98,7 +98,6 @@
                             android:text="@string/review_contents_again"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView32"
                             style="@style/CourseParagraphText"
                             android:textSize="14sp"
                             android:gravity="center_horizontal" />
@@ -145,7 +144,6 @@
             android:text="@string/lideres_50_01"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/textView4"
             style="@style/ConseParagraphText"
             android:lines="5"
             android:layout_marginBottom="15dp"
@@ -155,7 +153,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="56dp"
-            android:id="@+id/bt_next"
+            android:id="@+id/bt_next_2"
             android:background="@drawable/button_finish"
             android:onClick="onClick"
             android:layout_marginBottom="70dp" />

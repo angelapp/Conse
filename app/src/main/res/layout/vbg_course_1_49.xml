@@ -23,7 +23,6 @@
                 android:background="@color/black_overlay" />
 
             <TextView
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -64,7 +63,6 @@
                 android:text="@string/course_1_49_text1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView16"
                 style="@style/ConseParagraphText"
                 android:layout_marginLeft="@dimen/courses_li_margin_left_aling"
                 android:layout_marginBottom="10dp"
@@ -91,7 +89,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView17"
                     android:layout_weight="1"
                     style="@style/CourseSoundTittle"
                     android:textColor="@color/salmon"
@@ -131,7 +128,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView17"
                     android:layout_weight="1"
                     style="@style/CourseSoundTittle"
                     android:textColor="@color/salmon"
@@ -141,7 +137,7 @@
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_play"
+                    android:id="@+id/bt_play_2"
                     android:background="@drawable/play"
                     android:layout_alignParentRight="true"
                     android:onClick="onClick"
@@ -171,7 +167,6 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:id="@+id/textView17"
                     android:layout_weight="1"
                     style="@style/CourseSoundTittle"
                     android:textColor="@color/salmon"
@@ -181,7 +176,7 @@
                 <Button
                     android:layout_width="56dp"
                     android:layout_height="56dp"
-                    android:id="@+id/bt_play"
+                    android:id="@+id/bt_play_3"
                     android:background="@drawable/play"
                     android:layout_alignParentRight="true"
                     android:onClick="onClick"

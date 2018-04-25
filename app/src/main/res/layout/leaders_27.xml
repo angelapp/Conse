@@ -26,7 +26,6 @@
                 android:text="@string/lideres_12_02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -37,7 +36,6 @@
                 android:text="@string/lideres_27_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView23"
                 style="@style/CourseSubTittle"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -83,7 +81,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView11"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -91,7 +88,6 @@
                             android:text="@string/lideres_27_02"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView10"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -110,7 +106,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView11"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -118,7 +113,6 @@
                             android:text="@string/lideres_27_03"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView10"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -137,7 +131,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView11"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -145,7 +138,6 @@
                             android:text="@string/lideres_27_04"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView10"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"
@@ -164,7 +156,6 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             app:srcCompat="@drawable/bullet"
-                            android:id="@+id/imageView11"
                             android:layout_marginTop="@dimen/bullets_top_margin"
                             android:layout_marginRight="@dimen/bullets_margin" />
 
@@ -172,7 +163,6 @@
                             android:text="@string/lideres_27_05"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView10"
                             style="@style/CourseParagraphText"
                             android:layout_weight="1"
                             android:paddingBottom="10dp"

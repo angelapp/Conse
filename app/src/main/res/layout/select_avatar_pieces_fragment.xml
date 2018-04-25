@@ -19,35 +19,30 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@null"
-            android:id="@+id/iv_head"
             android:layout_gravity="center_horizontal" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@null"
-            android:id="@+id/iv_eyes"
             android:layout_gravity="center_horizontal" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@null"
-            android:id="@+id/iv_nose"
             android:layout_gravity="center_horizontal" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@null"
-            android:id="@+id/iv_hair"
             android:layout_gravity="center_horizontal" />
 
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:srcCompat="@null"
-            android:id="@+id/iv_accesory"
             android:layout_gravity="center_horizontal" />
 
     </FrameLayout>
@@ -64,7 +59,6 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_weight="1"
-            android:id="@+id/ly_head"
             android:gravity="center_horizontal"
             android:layout_height="0dp"
             android:layout_gravity="center_horizontal">
@@ -85,7 +79,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/ly_nose"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal">
 
@@ -103,7 +96,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/ly_eyes"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal">
 
@@ -121,7 +113,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/ly_hair"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal">
 
@@ -139,7 +130,6 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1"
-            android:id="@+id/ly_accesory"
             android:gravity="center_horizontal"
             android:layout_gravity="center_horizontal">
 

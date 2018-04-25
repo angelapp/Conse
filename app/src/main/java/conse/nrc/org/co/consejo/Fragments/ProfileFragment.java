@@ -484,39 +484,42 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         city_list.add(getString(R.string.select_hint));
         role_list.add(getString(R.string.select_hint));
 
-        if(ConseApp.appConfiguration.gender_list != null){
-            for (Models.Gender gender : ConseApp.appConfiguration.gender_list){
-                gender_list.add(gender.name);
+        if (ConseApp.appConfiguration != null) {
+
+            if (ConseApp.appConfiguration.gender_list != null) {
+                for (Models.Gender gender : ConseApp.appConfiguration.gender_list) {
+                    gender_list.add(gender.name);
+                }
             }
-        }
-        if(ConseApp.appConfiguration.document_type_list != null){
-            for (Models.DocumentType documentType : ConseApp.appConfiguration.document_type_list){
-                document_type_list.add(documentType.name);
+            if (ConseApp.appConfiguration.document_type_list != null) {
+                for (Models.DocumentType documentType : ConseApp.appConfiguration.document_type_list) {
+                    document_type_list.add(documentType.name);
+                }
             }
-        }
-        if(ConseApp.appConfiguration.ethnic_group_list != null){
-            for (Models.EthnicGroup ethnicGroup : ConseApp.appConfiguration.ethnic_group_list){
-                ethnic_group_list.add(ethnicGroup.name);
+            if (ConseApp.appConfiguration.ethnic_group_list != null) {
+                for (Models.EthnicGroup ethnicGroup : ConseApp.appConfiguration.ethnic_group_list) {
+                    ethnic_group_list.add(ethnicGroup.name);
+                }
             }
-        }
-        if(ConseApp.appConfiguration.state_list != null){
-            for (Models.State state: ConseApp.appConfiguration.state_list){
-                state_list.add(state.name);
+            if (ConseApp.appConfiguration.state_list != null) {
+                for (Models.State state : ConseApp.appConfiguration.state_list) {
+                    state_list.add(state.name);
+                }
             }
-        }
-        if(ConseApp.appConfiguration.condition_list != null){
-            for (Models.Condition condition: ConseApp.appConfiguration.condition_list){
-                condition_list.add(condition.name);
+            if (ConseApp.appConfiguration.condition_list != null) {
+                for (Models.Condition condition : ConseApp.appConfiguration.condition_list) {
+                    condition_list.add(condition.name);
+                }
             }
-        }
 //        if(ConseApp.appConfiguration.city_list != null){
 //            for (Models.City city: ConseApp.appConfiguration.city_list){
 //                city_list.add(city.name);
 //            }
 //        }
-        if(ConseApp.appConfiguration.role_list!= null){
-            for (Models.Role role: ConseApp.appConfiguration.role_list){
-                role_list.add(role.name);
+            if (ConseApp.appConfiguration.role_list != null) {
+                for (Models.Role role : ConseApp.appConfiguration.role_list) {
+                    role_list.add(role.name);
+                }
             }
         }
 

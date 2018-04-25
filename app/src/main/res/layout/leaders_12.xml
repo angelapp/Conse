@@ -25,7 +25,6 @@
                 android:text="@string/lideres_12_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle"
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"/>
@@ -40,7 +39,6 @@
                 android:text="@string/lideres_12_02"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView2"
                 style="@style/CourseSubTittle"
                 android:layout_marginBottom="15dp"
                 android:layout_marginTop="15dp"
@@ -52,7 +50,6 @@
                 android:text="@string/lideres_12_03"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView3"
                 style="@style/CourseParagraphText"
                 android:background="@drawable/globo_l12"
                 android:paddingLeft="15dp"

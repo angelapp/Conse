@@ -23,7 +23,6 @@
                             android:text="@string/lideres_01_01"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView9"
                             style="@style/CourseTittle"
                             android:layout_marginBottom="15dp"
                             android:layout_marginLeft="@dimen/courses_margin_left"
@@ -34,7 +33,6 @@
                             android:text="@string/lideres_01_02"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView10"
                             style="@style/CourseParagraphText"
                             android:layout_marginLeft="@dimen/courses_margin_left"
                             android:layout_marginRight="@dimen/courses_margin_right" />

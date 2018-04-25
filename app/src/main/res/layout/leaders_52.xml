@@ -27,7 +27,6 @@
                 android:text="@string/lideres_52_01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView1"
                 style="@style/CourseModuleTittle" />
             <View
                 android:layout_width="match_parent"
@@ -38,7 +37,6 @@
                 android:text="@string/lideres_52_02"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/textView23"
                 style="@style/CourseSubTittle"
                 android:layout_marginLeft="25dp"
                 android:layout_marginRight="25dp"
@@ -73,7 +71,6 @@
                             android:text="@string/lideres_52_03"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:id="@+id/textView24"
                             style="@style/ConseParagraphText"
                             android:layout_marginLeft="25dp"
                             android:layout_marginRight="25dp" />

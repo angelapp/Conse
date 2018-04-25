@@ -10,7 +10,6 @@
         android:text="@string/contact_form_tittle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/textView11"
         style="@style/ConseTittleTextH1"
         android:drawableStart="@drawable/sobre"
         android:layout_marginBottom="20dp"
@@ -21,7 +20,6 @@
         android:text="@string/message_type_tittle"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_message_type_tittle_h2"
         style="@style/ConseTittleTextH2" />
 
     <Spinner
@@ -34,7 +32,6 @@
         android:text="@string/your_phone_tittle_h2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_your_phone_tittle_h2"
         style="@style/ConseTittleTextH2"
         android:layout_marginBottom="10dp" />
 
@@ -55,7 +52,6 @@
         android:text="@string/your_message_tittle_h2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tv_your_message_tittle_h2"
         style="@style/ConseTittleTextH2"
         android:layout_marginBottom="10dp" />
 

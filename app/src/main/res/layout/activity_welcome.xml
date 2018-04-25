@@ -2,7 +2,6 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_welcome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -29,7 +28,6 @@
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/logo_nrc_welcome"
                 android:layout_marginTop="5dp"
-                android:id="@+id/iv_nrc_logo"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
                 android:layout_gravity="center_horizontal"
@@ -39,7 +37,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/bienvenidos"
-                android:id="@+id/iv_welcome_tittle"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="@dimen/iv_top_margin" />
 
@@ -47,7 +44,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/logo_conse"
-                android:id="@+id/iv_conse_logo"
                 android:layout_marginBottom="20dp"
                 android:layout_marginTop="5dp" />
 

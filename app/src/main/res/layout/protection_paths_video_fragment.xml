@@ -9,7 +9,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:srcCompat="@drawable/button_play_video"
-        android:id="@+id/imageView16"
         android:layout_marginTop="45dp"
         android:scaleType="center" />
 
