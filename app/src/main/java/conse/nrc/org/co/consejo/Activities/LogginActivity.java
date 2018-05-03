@@ -130,7 +130,8 @@ public class LogginActivity extends AppCompatActivity implements RequestTask.OnR
                 ConseApp.setActualUser(this, res);
                 UtilsFunctions.saveSharedString(this, LocalConstants.USER_PSW, mEtPassword.getText().toString());
                 UtilsFunctions.saveSharedBoolean(this, LocalConstants.USER_IS_IN_DEVICE, true);
-                sendToHome();
+//                sendToHome();
+                goToNextactivity();
                 break;
             default:
                 break;
@@ -147,5 +148,28 @@ public class LogginActivity extends AppCompatActivity implements RequestTask.OnR
             default:
                 break;
         }
+    }
+
+
+    private void goToNextactivity(){
+        if (UtilsFunctions.getEmegencyContactsString(this).length() < 2){
+            goToContact();
+        } else if (UtilsFunctions.getSharedInteger(this, LocalConstants.AVATAR_SELECTED_PART_ + String.valueOf(1)) == 0){
+            goToAvatar();
+        } else{
+            sendToHome();
+        }
+    }
+
+    private void goToAvatar() {
+        Intent avatar = new Intent(this, Avatar.class);
+        startActivity(avatar);
+        this.finish();
+    }
+
+    private void goToContact() {
+        Intent contact = new Intent(this, SelectContact.class);
+        startActivity(contact);
+        this.finish();
     }
 }
