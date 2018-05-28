@@ -28,8 +28,8 @@ android {
         applicationId "conse.nrc.org.co.conse"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 2
-        versionName "1.0"
+        versionCode 3
+        versionName "1.0.1"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 
@@ -57,7 +57,7 @@ android {
             buildConfigField "String", "SERVER_URL", '"https://consejo.nrc.org.co/"'
 //            buildConfigField "String", "API_KEY", '"97d2a5f811e22f674c79b5d353aa3b6a6b1d6ad7"'//test mac
             buildConfigField "String", "API_KEY", '"3036c87d7f906cc2b8155b7a70428eb008de81aa"' //live
-            buildConfigField "boolean", "DEV_VERSION", 'false'
+            buildConfigField "boolean", "DEV_VERSION", 'true'
             applicationIdSuffix ".debug"
         }
         debugLive {

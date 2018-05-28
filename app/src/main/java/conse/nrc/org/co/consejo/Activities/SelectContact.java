@@ -164,6 +164,7 @@ public class SelectContact extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     mLyContactList.removeView(contactView);
+                    mContactInEdition = inEdition;
                     deleteContact(mContactInEdition);
                 }
             });
@@ -178,6 +179,7 @@ public class SelectContact extends AppCompatActivity {
     }
 
     private void deleteContact(int mContactInEdition) {
+        Log.d("Contact", "Deleting contact: " + mContactInEdition);
         UtilsFunctions.deleteKeySharedPreferences(this, CONTACT_NUMBER_+String.valueOf(mContactInEdition));
         UtilsFunctions.deleteKeySharedPreferences(this, CONTACT_NAME_+String.valueOf(mContactInEdition));
         UtilsFunctions.deleteKeySharedPreferences(this, CONTACT_ID_+String.valueOf(mContactInEdition));
@@ -202,6 +204,7 @@ public class SelectContact extends AppCompatActivity {
     private void saveContact(String contactName, String number, String contactId) {
         Log.d("Contact", "Saving contact: " + mContactInEdition);
         UtilsFunctions.saveSharedInteger(this, CONTACT_SIZE, mLyContactList.getChildCount());
+        Log.d("Contact", "Contact Size: " + UtilsFunctions.getSharedInteger(this, CONTACT_SIZE));
         if (inEditionMode) {
             UtilsFunctions.saveSharedString(this, CONTACT_NUMBER_ + String.valueOf(mContactInEdition), number);
             UtilsFunctions.saveSharedString(this, CONTACT_NAME_ + String.valueOf(mContactInEdition), contactName);
