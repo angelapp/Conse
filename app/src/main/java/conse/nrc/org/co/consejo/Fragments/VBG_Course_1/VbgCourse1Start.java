@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -27,6 +28,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import conse.nrc.org.co.consejo.Activities.MainActivity;
 import conse.nrc.org.co.consejo.Fragments.AcertedCrosswordDialog;
+import conse.nrc.org.co.consejo.Fragments.ConseYouTubeFragment;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
@@ -293,8 +295,14 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 
     private void setYoutubeVideo(View mView) {
 
+        FragmentManager fragmentManager = getChildFragmentManager();
+        LinearLayout lyYoutube = (LinearLayout)mView.findViewWithTag(LocalConstants.HERE_VIDEO_TAG);
+        Log.d("VBG", "Container id: " + R.id.ly_video);
+        final ConseYouTubeFragment conseYouTubeFragment = ConseYouTubeFragment.newInstance(LocalConstants.VBG_VIDEO_ID);
+        fragmentManager.beginTransaction().replace(R.id.ly_video, conseYouTubeFragment).addToBackStack(null).commitAllowingStateLoss();
+//
 //        youTubePlayerView = new YouTubePlayerView(mCtx);
-//        LinearLayout lyYoutube = (LinearLayout)mView.findViewWithTag(LocalConstants.HERE_VIDEO_TAG);
+//
 //        lyYoutube.addView(youTubePlayerView);
 //        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
 //            @Override
@@ -309,14 +317,15 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
 //            }
 //        };
 
-//        final Button mPlayButton = (Button) mView.findViewById(R.id.bt_start_video);
-//        mPlayButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
+        final Button mPlayButton = (Button) mView.findViewById(R.id.bt_start_video);
+        mPlayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 //                youTubePlayerView.initialize(LocalConstants.YOUTUBE_API_KEY, onInitializedListener);
-//                mPlayButton.setVisibility(View.GONE);
-//            }
-//        });
+                conseYouTubeFragment.init();
+                mPlayButton.setVisibility(View.GONE);
+            }
+        });
     }
 
     private void setCrossWordMod1() {

@@ -38,6 +38,9 @@ public class LocalConstants {
     public static final int crowd_vertical = 2;
 
     public final static String YOUTUBE_VIDEO_ID = "KuUWKzD8e00";
+    public final static String VBG_VIDEO_ID = "Moz4tszhujU";
+    public final static String LEADERS_VIDEO_ID = "7t0rIdNhayM";
+    public final static String MEDIA_VIDEO_ID = "trNPQr6VIsQ";
     public static final String YOUTUBE_API_KEY = "AIzaSyAcvZs2JqEhMsKEYU5lkoRTCkbcbSFQMkM";
 
     public static final int MAX_CONTACT_NUMBER = 3;
@@ -333,61 +336,63 @@ public class LocalConstants {
         }};
 
         public static final List<Integer> VBG_LAYOUT_LIST = new ArrayList<Integer>(){{
-        add(R.layout.vbg_course_1_0);
-        add(R.layout.vbg_course_1_1);
-        add(R.layout.vbg_course_1_2);
-        add(R.layout.vbg_course_1_3);
-        add(R.layout.vbg_course_1_4);
-        add(R.layout.vbg_course_1_5);
-        add(R.layout.vbg_course_1_6_5);
-        add(R.layout.vbg_course_1_6);
-        add(R.layout.vbg_course_1_7);
-        add(R.layout.vbg_course_1_8);
-        add(R.layout.vbg_course_1_9);
-        add(R.layout.vbg_course_1_11);
-        add(R.layout.vbg_course_1_12); //12
-        add(R.layout.vbg_course_1_13);
-        add(R.layout.vbg_course_1_16);
-        add(R.layout.vbg_course_1_18);
-        add(R.layout.vbg_course_1_19); //16
-        add(R.layout.vbg_course_1_20);
-        add(R.layout.vbg_course_1_21);
-        add(R.layout.vbg_course_1_22);
-        add(R.layout.vbg_course_1_23);//20
-        add(R.layout.vbg_course_1_24);
-        add(R.layout.vbg_course_1_25);
-        add(R.layout.vbg_course_1_26);
-        add(R.layout.vbg_course_1_27);
-        add(R.layout.vbg_course_1_28);
-        add(R.layout.vbg_course_1_29);
-        add(R.layout.vbg_course_1_30);
-        add(R.layout.vbg_course_1_31);
-        add(R.layout.vbg_course_1_32);
-        add(R.layout.vbg_course_1_33);
-        add(R.layout.vbg_course_1_36);
-        add(R.layout.vbg_course_1_39);
-        add(R.layout.vbg_course_1_42);
-        add(R.layout.vbg_course_1_45);
-        add(R.layout.vbg_course_1_47);//35
-        add(R.layout.vbg_course_1_48);
-        add(R.layout.vbg_course_1_48_1);
-        add(R.layout.vbg_course_1_49);
-        add(R.layout.vbg_course_1_50);
-        add(R.layout.vbg_course_1_51);
-        add(R.layout.vbg_course_1_52);
-        add(R.layout.vbg_course_1_53);
-        add(R.layout.vbg_course_1_54);
-        add(R.layout.vbg_course_1_55);
-        add(R.layout.vbg_course_1_56);
-        add(R.layout.vbg_course_1_57);
-        add(R.layout.vbg_course_1_58);
-        add(R.layout.vbg_course_1_59);
-        add(R.layout.vbg_course_1_60);
-        add(R.layout.vbg_course_1_61);
-        add(R.layout.vbg_course_1_62);
-        add(R.layout.vbg_course_1_63);
-        add(R.layout.vbg_course_1_64);
-        add(R.layout.vbg_course_1_66);
+
+            add(R.layout.vbg_course_1_56);
+            add(R.layout.vbg_course_1_0);
+            add(R.layout.vbg_course_1_1);
+            add(R.layout.vbg_course_1_2);
+            add(R.layout.vbg_course_1_3);
+            add(R.layout.vbg_course_1_4);
+            add(R.layout.vbg_course_1_5);
+            add(R.layout.vbg_course_1_6_5);
+            add(R.layout.vbg_course_1_6);
+            add(R.layout.vbg_course_1_7);
+            add(R.layout.vbg_course_1_8);
+            add(R.layout.vbg_course_1_9);
+            add(R.layout.vbg_course_1_11);
+            add(R.layout.vbg_course_1_12); //12
+            add(R.layout.vbg_course_1_13);
+            add(R.layout.vbg_course_1_16);
+            add(R.layout.vbg_course_1_18);
+            add(R.layout.vbg_course_1_19); //16
+            add(R.layout.vbg_course_1_20);
+            add(R.layout.vbg_course_1_21);
+            add(R.layout.vbg_course_1_22);
+            add(R.layout.vbg_course_1_23);//20
+            add(R.layout.vbg_course_1_24);
+            add(R.layout.vbg_course_1_25);
+            add(R.layout.vbg_course_1_26);
+            add(R.layout.vbg_course_1_27);
+            add(R.layout.vbg_course_1_28);
+            add(R.layout.vbg_course_1_29);
+            add(R.layout.vbg_course_1_30);
+            add(R.layout.vbg_course_1_31);
+            add(R.layout.vbg_course_1_32);
+            add(R.layout.vbg_course_1_33);
+            add(R.layout.vbg_course_1_36);
+            add(R.layout.vbg_course_1_39);
+            add(R.layout.vbg_course_1_42);
+            add(R.layout.vbg_course_1_45);
+            add(R.layout.vbg_course_1_47);//35
+            add(R.layout.vbg_course_1_48);
+            add(R.layout.vbg_course_1_48_1);
+            add(R.layout.vbg_course_1_49);
+            add(R.layout.vbg_course_1_50);
+            add(R.layout.vbg_course_1_51);
+            add(R.layout.vbg_course_1_52);
+            add(R.layout.vbg_course_1_53);
+            add(R.layout.vbg_course_1_54);
+            add(R.layout.vbg_course_1_55);
+            add(R.layout.vbg_course_1_56);
+            add(R.layout.vbg_course_1_57);
+            add(R.layout.vbg_course_1_58);
+            add(R.layout.vbg_course_1_59);
+            add(R.layout.vbg_course_1_60);
+            add(R.layout.vbg_course_1_61);
+            add(R.layout.vbg_course_1_62);
+            add(R.layout.vbg_course_1_63);
+            add(R.layout.vbg_course_1_64);
+            add(R.layout.vbg_course_1_66);
 
     }};
 
