@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -116,9 +117,13 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
                 Models.ApplicationConfiguration appConf = (Models.ApplicationConfiguration) response;
                 ConseApp.setAppConfiguration(this, appConf);
                 if (UtilsFunctions.getSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN)){
+                    Log.d("Welcome", "User is logged in");
                     if(ConseApp.getActualUser(this) != null){
                         goToNextactivity();
+                        Log.d("Welcome", "Going to next activity");
                     }
+                } else {
+                    Log.d("Welcome", "User is not logged in");
                 }
                 break;
             default:
@@ -129,10 +134,13 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
     private void goToNextactivity(){
         if (UtilsFunctions.getEmegencyContactsString(this).length() < 2){
             goToContact();
+            Log.d("Welcome", "Contacts");
         } else if (UtilsFunctions.getSharedInteger(this, LocalConstants.AVATAR_SELECTED_PART_ + String.valueOf(1)) == 0){
             goToAvatar();
+            Log.d("Welcome", "Avatar");
         } else{
             goToHome();
+            Log.d("Welcome", "Home");
         }
     }
 

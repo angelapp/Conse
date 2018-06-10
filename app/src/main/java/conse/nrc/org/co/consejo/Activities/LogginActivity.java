@@ -111,7 +111,6 @@ public class LogginActivity extends AppCompatActivity implements RequestTask.OnR
     }
 
     private void sendToHome() {
-        UtilsFunctions.saveSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN, true);
         Intent tutorial = new Intent(this, MainActivity.class);
         startActivity(tutorial);
         this.finish();
@@ -130,6 +129,7 @@ public class LogginActivity extends AppCompatActivity implements RequestTask.OnR
                 ConseApp.setActualUser(this, res);
                 UtilsFunctions.saveSharedString(this, LocalConstants.USER_PSW, mEtPassword.getText().toString());
                 UtilsFunctions.saveSharedBoolean(this, LocalConstants.USER_IS_IN_DEVICE, true);
+                UtilsFunctions.saveSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN, true);
 //                sendToHome();
                 goToNextactivity();
                 break;

@@ -1,6 +1,8 @@
 package conse.nrc.org.co.consejo.Fragments;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.util.Log;
@@ -19,56 +21,34 @@ import com.google.android.youtube.player.YouTubePlayerView;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import conse.nrc.org.co.consejo.Activities.MainActivity;
+import conse.nrc.org.co.consejo.Activities.YouTubeActivity;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 
+import static com.google.android.youtube.player.YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE;
+import static com.google.android.youtube.player.YouTubePlayer.FULLSCREEN_FLAG_CONTROL_ORIENTATION;
+import static com.google.android.youtube.player.YouTubePlayer.FULLSCREEN_FLAG_CONTROL_SYSTEM_UI;
 import static conse.nrc.org.co.consejo.Utils.ConseApp.getMainActivity;
 
 /**
  * Created by apple on 5/29/18.
  */
 
-public class ConseYouTubeFragment extends YouTubePlayerSupportFragment implements YouTubePlayer.PlayerStateChangeListener {
+public class ConseYouTubeFragment extends YouTubePlayerSupportFragment {
 
     Context mCtx;
     YouTubePlayerView youTubePlayerView;
-    static String mVideoId;
+    YouTubePlayer youTubePlayer;
+    public String mVideoId;
+    MainActivity mainActivity;
 
     public static ConseYouTubeFragment newInstance(String url) {
         ConseYouTubeFragment playerYouTubeFrag = new ConseYouTubeFragment();
-        mVideoId = url;
         return playerYouTubeFrag;
     }
 
-//    public void setVideoId(String id){
-//        mVideoId = id;
-//    }
-//
-//    @Override
-//    public void onStart() {
-//        super.onStart();
-//    }
-//
-//    @Override
-//    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-//                             Bundle savedInstanceState) {
-//        View view = inflater.inflate(R.layout.conse_youtube_player_fragment, container, false);
-//        RelativeLayout rlYoutube = (RelativeLayout)view.findViewById(R.id.you_tube_video);
-////        youTubePlayerView = (YouTubePlayerView)view.findViewById(R.id.view2);
-////        this.youTubePlayerView
-////        youTubePlayerView = new YouTubePlayerView(mCtx);
-////        rlYoutube.addView(youTubePlayerView);
-//        initYouTube();
-//        return view;
-//    }
-//
-//    @Override
-//    public void onAttach(Context context) {
-//        super.onAttach(context);
-//        mCtx = context;
-//    }
 
     public void init(){
         initYouTube();
@@ -76,17 +56,37 @@ public class ConseYouTubeFragment extends YouTubePlayerSupportFragment implement
 
     private void initYouTube() {
 
-//        if (youTubePlayerView == null && mVideoId != null) {
-//
-//            youTubePlayerView = (YouTubePlayerFragment)(R.id.youtube_frag);
+        mainActivity = (MainActivity) getActivity();
+        mainActivity.conseYouTubeFragment = this;
+
             this.initialize(LocalConstants.YOUTUBE_API_KEY, new YouTubePlayer.OnInitializedListener() {
                 @Override
-                public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer player, boolean wasRestored) {
+                public void onInitializationSuccess(YouTubePlayer.Provider provider, final YouTubePlayer player, boolean wasRestored) {
                     Log.i("Detail","YouTube Player onInitializationSuccess");
+                    youTubePlayer = player;
                     player.setPlayerStyle(YouTubePlayer.PlayerStyle.DEFAULT);
                     player.loadVideo(mVideoId);
-                    player.play();
-//                    player.setPlayerStateChangeListener(ConseYouTubeFragment.this);
+//                    player.play();
+                    mainActivity.youTubePlayer = player;
+                    player.setFullscreenControlFlags(
+                            FULLSCREEN_FLAG_CONTROL_SYSTEM_UI
+                            );
+//                    player.setOnFullscreenListener(mainActivity);
+                    player.setOnFullscreenListener(new YouTubePlayer.OnFullscreenListener() {
+                        @Override
+                        public void onFullscreen(boolean b) {
+                            if (b) {
+                                player.setFullscreen(false);
+                                Intent intent = new Intent(mainActivity, YouTubeActivity.class);
+                                intent.putExtra(LocalConstants.VIDEO_ID, mVideoId);
+                                Log.i("ConseYoutubeFragment","Currenttimeinmillis: " + player.getCurrentTimeMillis());
+                                intent.putExtra(LocalConstants.ACTUAL_VIDEO_TIME, player.getCurrentTimeMillis());
+                                mainActivity.startActivityForResult(intent,0);
+//                                player.pause();
+//                                player.release();
+                            }
+                        }
+                    });
                 }
 
                 @Override
@@ -102,33 +102,16 @@ public class ConseYouTubeFragment extends YouTubePlayerSupportFragment implement
 //        }
     }
 
-    @Override
-    public void onLoading() {
-
-    }
 
     @Override
-    public void onLoaded(String s) {
-
+    public void onResume(){
+        super.onResume();
+//        if (this.isVisible()){
+//            init();
+//        }
+//        if (youTubePlayer == null) {
+//            init();
+//        }
     }
 
-    @Override
-    public void onAdStarted() {
-
-    }
-
-    @Override
-    public void onVideoStarted() {
-
-    }
-
-    @Override
-    public void onVideoEnded() {
-
-    }
-
-    @Override
-    public void onError(YouTubePlayer.ErrorReason errorReason) {
-
-    }
 }

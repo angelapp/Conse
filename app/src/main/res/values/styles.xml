@@ -168,7 +168,7 @@
         <item name="android:textSize">18dp</item>
     </style>
 
-    <style name = "ConseProgressBar" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
+    <style name="ConseProgressBar" parent="Base.Widget.AppCompat.ProgressBar.Horizontal">
         <item name="android:progressDrawable">@drawable/progress_bar_drawable</item>
         <!--<item name="minHeight">20dp</item>-->
         <!--<item name="maxHeight">50dp</item>-->

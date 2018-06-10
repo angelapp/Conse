@@ -18,6 +18,7 @@ import java.util.List;
 import conse.nrc.org.co.consejo.Adapters.PagerAdapterFragment;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.LocalConstants;
 
 /**
  * Created by apple on 12/9/17.
@@ -67,12 +68,13 @@ public class ProtectionPathsCourseFragment extends Fragment {
 
         if (course_id == 1) {
             ProtectionPathsVBG fragment = new ProtectionPathsVBG();
-            ProtectionPathVideoFragment videoFragment = new ProtectionPathVideoFragment();
+            ProtectionPathVideoFragment videoFragment = ProtectionPathVideoFragment.newInstance(LocalConstants.VBG_VIDEO_ID,
+                    getResources().getStringArray(R.array.protection_paths_video_tittles)[0]);
+            videoFragment.mTittle = getResources().getStringArray(R.array.protection_paths_video_tittles)[0];
+            videoFragment.mVideoId = LocalConstants.VBG_VIDEO_ID;
             fragment.COURSE_ID = course_id;
-            videoFragment.video_id = course_id;
             fragmentList.add(fragment);
             fragmentList.add(videoFragment);
-
             for (String tab : getResources().getStringArray(R.array.vbg_protection_paths_tabs_tittles)) {
                 tab_tittle.add(tab);
                 Log.d("PROTECTION Fragment", "Added page for tab: " + tab);
@@ -81,12 +83,21 @@ public class ProtectionPathsCourseFragment extends Fragment {
             ProtectionPathsVBG fragment1 = new ProtectionPathsVBG();
             ProtectionPathsVBG fragment2 = new ProtectionPathsVBG();
             ProtectionPathVideoFragment videoFragment = new ProtectionPathVideoFragment();
+            ProtectionPathVideoFragment videoFragment2 = new ProtectionPathVideoFragment();
+            videoFragment.mTittle = getResources().getStringArray(R.array.protection_paths_video_tittles)[1];
+            videoFragment.mVideoId = LocalConstants.LEADERS_VIDEO_ID;
+            videoFragment2.mTittle = getResources().getStringArray(R.array.protection_paths_video_tittles)[2];
+            videoFragment2.mVideoId = LocalConstants.MEDIA_VIDEO_ID;
+//            ProtectionPathVideoFragment videoFragment = ProtectionPathVideoFragment.newInstance(LocalConstants.LEADERS_VIDEO_ID,
+//                    getResources().getStringArray(R.array.protection_paths_video_tittles)[1]);
+//            ProtectionPathVideoFragment videoFragment2 = ProtectionPathVideoFragment.newInstance(LocalConstants.MEDIA_VIDEO_ID,
+//                    getResources().getStringArray(R.array.protection_paths_video_tittles)[2]);
             fragment1.COURSE_ID = 2;
             fragment2.COURSE_ID = 3;
-            videoFragment.video_id = course_id;
             fragmentList.add(fragment1);
             fragmentList.add(fragment2);
             fragmentList.add(videoFragment);
+            fragmentList.add(videoFragment2);
 
             for (String tab : getResources().getStringArray(R.array.leaders_protection_paths_tabs_tittles)) {
                 tab_tittle.add(tab);

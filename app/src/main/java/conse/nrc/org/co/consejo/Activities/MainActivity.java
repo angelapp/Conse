@@ -5,8 +5,10 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.content.res.Configuration;
 import android.location.LocationManager;
 import android.net.ConnectivityManager;
 import android.net.MailTo;
@@ -19,6 +21,7 @@ import android.provider.SyncStateContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.ActivityCompat;
+import android.support.v4.app.FragmentManager;
 import android.support.v4.util.Pair;
 import android.util.Log;
 import android.view.Gravity;
@@ -41,6 +44,7 @@ import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.crashlytics.android.Crashlytics;
+import com.google.android.youtube.player.YouTubePlayer;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -56,6 +60,7 @@ import java.util.jar.Manifest;
 
 import conse.nrc.org.co.consejo.Fragments.AlertAndCallFragment;
 import conse.nrc.org.co.consejo.Fragments.AlertDialog;
+import conse.nrc.org.co.consejo.Fragments.ConseYouTubeFragment;
 import conse.nrc.org.co.consejo.Fragments.ContactFormFragment;
 import conse.nrc.org.co.consejo.Fragments.CourseSelectionFragment;
 import conse.nrc.org.co.consejo.Fragments.DocsBankFragment;
@@ -79,10 +84,13 @@ import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 import io.fabric.sdk.android.Fabric;
 
 import static android.Manifest.permission.CALL_PHONE;
+import static com.google.android.youtube.player.YouTubePlayer.FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE;
+import static com.google.android.youtube.player.YouTubePlayer.FULLSCREEN_FLAG_CONTROL_ORIENTATION;
+import static com.google.android.youtube.player.YouTubePlayer.FULLSCREEN_FLAG_CONTROL_SYSTEM_UI;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.TEMPLATE_LIBRARY_LIST;
 
 public class MainActivity extends AppCompatActivity
-        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, MainInterface, RequestTask.OnRequestCompleted {
+        implements NavigationView.OnNavigationItemSelectedListener, View.OnClickListener, MainInterface, RequestTask.OnRequestCompleted, YouTubePlayer.OnFullscreenListener {
 
     Button mBtMenu, mBtSendAlert;
     LinearLayout mLyMenu;
@@ -93,6 +101,11 @@ public class MainActivity extends AppCompatActivity
     private static VbgCourse1Start vbgCourse1Start = new VbgCourse1Start();
     private static LeadersCourseFragment leadersCourseFragment= new LeadersCourseFragment();
     private int actualCourse;
+
+    public YouTubePlayer youTubePlayer;
+    public ConseYouTubeFragment conseYouTubeFragment;
+    public boolean isYoutubePlayerFullScreen;
+    Configuration actualConfiguration;
 
     Toolbar toolbar;
 
@@ -182,9 +195,21 @@ public class MainActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (drawer.isDrawerOpen(GravityCompat.START)) {
             drawer.closeDrawer(GravityCompat.START);
+//        }else if(youTubePlayer != null){
+//            try{
+//                if (youTubePlayer != null && isYoutubePlayerFullScreen){
+//                    youTubePlayer.setFullscreen(false);
+//                } else {
+//                    super.onBackPressed();
+//                }
+//            } catch (Exception ea){
+//                ea.printStackTrace();
+//                super.onBackPressed();
+//            }
         } else {
             super.onBackPressed();
         }
+
     }
 
     @Override
@@ -422,6 +447,7 @@ public class MainActivity extends AppCompatActivity
 
 
     private void initVbgCourseInPage(int pageAsked){
+//        setVideo();
         actualCourse = LocalConstants.VBG_COURSE_ID;
         vbgCourse1Start.setAskedPage(pageAsked);
         Log.d("Main Activity", "Actual Asked Page:" + vbgCourse1Start.mPageAsked);
@@ -702,5 +728,17 @@ public class MainActivity extends AppCompatActivity
         while((read = in.read(buffer)) != -1){
             out.write(buffer, 0, read);
         }
+    }
+
+    @Override
+    public void onFullscreen(boolean b) {
+//        if (b) {
+//            Log.d("Main activity", "Changing to full screen mode");
+//            youTubePlayer.setFullscreenControlFlags(FULLSCREEN_FLAG_CONTROL_ORIENTATION + FULLSCREEN_FLAG_ALWAYS_FULLSCREEN_IN_LANDSCAPE);
+//        } else {
+//            Log.d("Main activity", "Exiting from full screen mode");
+//            youTubePlayer.setFullscreenControlFlags(FULLSCREEN_FLAG_CONTROL_SYSTEM_UI);
+//        }
+//        isYoutubePlayerFullScreen = b;
     }
 }

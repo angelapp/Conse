@@ -68,6 +68,9 @@ public class LocalConstants {
 
     public static final String AVATAR_SELECTED_PART_ = "AVATAR_SELECTED_PART_";
 
+    public static final String VIDEO_ID = "VIDEO_ID";
+    public static final String ACTUAL_VIDEO_TIME = "ACTUAL_VIDEO_TIME";
+
 
 
     //Endpoints
@@ -336,8 +339,7 @@ public class LocalConstants {
         }};
 
         public static final List<Integer> VBG_LAYOUT_LIST = new ArrayList<Integer>(){{
-
-            add(R.layout.vbg_course_1_56);
+            
             add(R.layout.vbg_course_1_0);
             add(R.layout.vbg_course_1_1);
             add(R.layout.vbg_course_1_2);

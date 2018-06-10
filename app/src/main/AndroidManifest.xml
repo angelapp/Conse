@@ -18,7 +18,8 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activities.Welcome"
+        <activity
+            android:name=".Activities.Welcome"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,34 +27,49 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Activities.VideoTutorial"
-            android:configChanges="orientation|screenSize"/>
-            <!--android:screenOrientation="portrait"/>-->
-        <activity android:name=".Activities.Register"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.SelectContact"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.SendAlert"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.Avatar"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.LetStart"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.ProgressActivity"
-            android:screenOrientation="portrait"/>
+        <activity
+            android:name=".Activities.VideoTutorial"
+            android:configChanges="orientation|screenSize" />
+        <!-- android:screenOrientation="portrait"/> -->
+        <activity
+            android:name=".Activities.Register"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SelectContact"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.SendAlert"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.Avatar"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.LetStart"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.ProgressActivity"
+            android:screenOrientation="portrait" />
         <activity
             android:name=".Activities.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme"
             android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.LogginActivity"
-            android:screenOrientation="portrait"/>
-        <activity android:name=".Activities.PasswordRecovery"
-            android:screenOrientation="portrait"></activity>
+        <activity
+            android:name=".Activities.LogginActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".Activities.PasswordRecovery"
+            android:screenOrientation="portrait" />
+
         <meta-data
             android:name="io.fabric.ApiKey"
-            android:value="9dfca2a3c511dbb0e808c88a7c61c538006cdee4"
-            />
+            android:value="9dfca2a3c511dbb0e808c88a7c61c538006cdee4" />
+
+        <activity
+            android:name=".Activities.YouTubeActivity"
+            android:configChanges="orientation|screenSize"
+            android:label="@string/title_activity_you_tube"
+            android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"></activity>
     </application>
 
 </manifest>

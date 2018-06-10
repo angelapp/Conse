@@ -17,9 +17,9 @@
             android:layout_height="@dimen/height_size_40"
             style="@style/PagerTabStrip"
             app:pstsIndicatorColor="@color/grey_dark"
-
             app:pstsTabTextAllCaps="false"
             app:pstsTabTextColor="@color/black"
+            app:pstsShouldExpand="true"
             android:backgroundTint="@color/grey_dark" />
     </FrameLayout>
 

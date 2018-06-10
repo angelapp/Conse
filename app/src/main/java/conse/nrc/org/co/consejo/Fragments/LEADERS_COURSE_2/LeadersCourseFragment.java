@@ -5,6 +5,7 @@ import android.graphics.Bitmap;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentManager;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -27,6 +28,7 @@ import com.nostra13.universalimageloader.core.DisplayImageOptions;
 
 import conse.nrc.org.co.consejo.Activities.MainActivity;
 import conse.nrc.org.co.consejo.Fragments.AcertedCrosswordDialog;
+import conse.nrc.org.co.consejo.Fragments.ConseYouTubeFragment;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.ClueDialog;
 import conse.nrc.org.co.consejo.Fragments.VBG_Course_1.NotAcertedCrosswordDialog;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
@@ -230,6 +232,9 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
                     mActualQuestionaryPage = (LinearLayout)view.findViewWithTag(LocalConstants.QUESTIONARY_CONTAINER);
                     Log.d("Leaders Mod", "Find questionary container " + mActualQuestionaryPage.getTag().toString());
                     break;
+                case LocalConstants.NEED_YOUTUBE_VIDEO_TAG:
+                    setYoutubeVideo(view);
+                    break;
                 case LocalConstants.TAG_END_MOD_1:
                     setConseTittle(view, 1);
                     break;
@@ -281,30 +286,26 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
 
     private void setYoutubeVideo(View mView) {
 
-//        youTubePlayerView = new YouTubePlayerView(mCtx);
-//        LinearLayout lyYoutube = (LinearLayout)mView.findViewWithTag(LocalConstants.HERE_VIDEO_TAG);
-//        lyYoutube.addView(youTubePlayerView);
-//        onInitializedListener = new YouTubePlayer.OnInitializedListener() {
-//            @Override
-//            public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
-//                youTubePlayer.loadVideo(LocalConstants.YOUTUBE_VIDEO_ID);
-//                //youTubePlayer.setPlayerStateChangeListener();
-//            }
-//
-//            @Override
-//            public void onInitializationFailure(YouTubePlayer.Provider provider, YouTubeInitializationResult youTubeInitializationResult) {
-//
-//            }
-//        };
+        try{
+            FragmentManager fragmentManager = getChildFragmentManager();
+            LinearLayout lyYoutube = (LinearLayout)mView.findViewWithTag(LocalConstants.HERE_VIDEO_TAG);
+            Log.d("VBG", "Container id: " + R.id.ly_video);
+            final ConseYouTubeFragment conseYouTubeFragment = ConseYouTubeFragment.newInstance(LocalConstants.LEADERS_VIDEO_ID);
+            conseYouTubeFragment.mVideoId = LocalConstants.LEADERS_VIDEO_ID;
+            fragmentManager.beginTransaction().replace(R.id.ly_video, conseYouTubeFragment).addToBackStack(null).commit();
 
-//        final Button mPlayButton = (Button) mView.findViewById(R.id.bt_start_video);
-//        mPlayButton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                youTubePlayerView.initialize(LocalConstants.YOUTUBE_API_KEY, onInitializedListener);
-//                mPlayButton.setVisibility(View.GONE);
-//            }
-//        });
+            final Button mPlayButton = (Button) mView.findViewById(R.id.bt_start_video);
+    //        mPlayButton.setVisibility(View.GONE);
+            mPlayButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    conseYouTubeFragment.init();
+                    mPlayButton.setVisibility(View.GONE);
+                }
+            });
+        } catch (Exception ea){
+            ea.printStackTrace();
+        }
     }
 
     @Override

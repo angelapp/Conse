@@ -104,7 +104,7 @@
     <string name="course_1_3_2_c">Te puede ocurrir a ti o a cualquier mujer, no hay excepciones.</string>
     <string name="course_1_3_3_c">Es un delito y por lo tanto merece un castigo o pena.</string>
     <string name="course_1_3_4_c">Puede ocasionarte un daño, sufrimiento o muerte. También incluye las amenazas de cometer esos hechos.</string>
-    <string name="course_1_3_5_c">Se puede presentar en cualquier tipo de espacio público o privado dónde desarrolles tus actividades.</string>
+    <string name="course_1_3_5_c">Se puede presentar en cualquier tipo de espacio público o privado donde desarrolles tus actividades.</string>
     <string name="course_1_4_a">Conoce cada uno de los ámbitos donde se presenta la violencia.</string>
     <string name="course_1_4_b">Pulsa sobre cada nombre para escuchar el audio con su descripción:</string>
     <string name="course_1_4_1_a">En la familia</string>
@@ -148,9 +148,6 @@
     <string name="course_1_16_h">A un trato humano, respetuoso y digno.</string>
     <string name="course_1_16_i">A que se te comuniquen todas las decisiones que puedan afectar tus derechos.</string>
     <string name="course_1_16_j">A que la comunidad se entere de lo ocurrido para que puedan identificarte a ti y a tu familia como víctimas.</string>
-
-
-
 
 
     <string name="course_1_15_b">Solicita atención en salud</string>
@@ -693,9 +690,15 @@ Recuerda que en casos de violencia cometidos por actores armados, las mujeres ti
     <string-array name="leaders_protection_paths_tabs_tittles">
         <item>RUTA INDIVIDUAL</item>
         <item>RUTA COLECTIVA</item>
-        <item>VIDEO</item>
+        <item>VIDEO 1</item>
+        <item>VIDEO 2</item>
     </string-array>
 
+    <string-array name="protection_paths_video_tittles">
+        <item>Prevención de Violencia Basada en Género</item>
+        <item>Protección para lideresas y líderes comunitarios</item>
+        <item>Medios comunitarios de protección</item>
+    </string-array>
 
 
     <string name="lideres_01_01">Lideresas y líderes de la comunidad: tus derechos, tu cuidado, tu protección
@@ -1401,7 +1404,7 @@ Recuerda que entre las entidades que tienen responsabilidades directas en la est
     <string name="lideres_60_01">Lee atentamente las siguientes situaciones y contesta sí o no a la pregunta.
     </string>
 
-    <string name="lideres_60_02">1. María es la representante de una organización que trabaja por los derechos de mujeres víctimas de violencia. Ella inició su trabajo como defensora después de una agresión que sufrió y que quedo en la impunidad; recientemente su agresor ha regresado y amenaza con atentar contra ella ¿Es la Ruta de Protección Colectiva la adecuada para María?
+    <string name="lideres_60_02">1. María es la representante de una organización que trabaja por los derechos de mujeres víctimas de violencia. Ella inició su trabajo como defensora después de una agresión que sufrió y que quedó en la impunidad; recientemente su agresor ha regresado y amenaza con atentar contra ella ¿Es la Ruta de Protección Colectiva la adecuada para María?
     </string>
 
     <string name="lideres_61_02">2. Juan es desde hace varios años, líder de una comunidad que trabaja por la restitución de las tierras que perdieron en el marco del conflicto. Debido a esto, grupos armados al margen de la ley lo han estado siguiendo y ahora amenazan con atentar contra él y los otros miembros de la comunidad que han logrado identificar. ¿Es la Ruta de Protección Colectiva la adecuada para Juan y su comunidad?
@@ -1521,5 +1524,9 @@ Pasos a seguir:\n
         <item>¡Muy bien! ¡Sembraste esfuerzo y ahora cosechas logros! Como premio a tu constancia recibe la insignia de \n%1$s.
 \n\n<b>¡Felicitaciones, has terminado todos los módulos del curso!</b></item>
     </string-array>
+
+    <string name="title_activity_you_tube">YouTubeActivity</string>
+    <string name="dummy_button">Dummy Button</string>
+    <string name="dummy_content">DUMMY\nCONTENT</string>
 
 </resources>
