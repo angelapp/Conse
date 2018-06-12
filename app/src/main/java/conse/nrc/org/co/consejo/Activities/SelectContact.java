@@ -16,13 +16,18 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
+import conse.nrc.org.co.consejo.Utils.PermissionClass;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 import conse.nrc.org.co.consejo.R;
 
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.READ_CONTACTS;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACTS_PERMISSION_CODE;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_ID_;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_NAME_;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_NUMBER_;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACT_SIZE;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LOCATION_PERMISSION_CODE;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MAX_CONTACT_NUMBER;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MIN_CONTACT_NUMBER;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.facebook_url;
@@ -74,6 +79,7 @@ public class SelectContact extends AppCompatActivity {
                 }
             }
         });
+
     }
 
     @Override
@@ -109,9 +115,16 @@ public class SelectContact extends AppCompatActivity {
     }
 
     private void addContact() {
-        Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
-        intent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
-        startActivityForResult(intent, 1);
+        if (!PermissionClass.isPermissionRequestRequired(this, new String[]{READ_CONTACTS},
+                CONTACTS_PERMISSION_CODE)) {
+            Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
+            intent.setType(ContactsContract.CommonDataKinds.Phone.CONTENT_ITEM_TYPE);
+            startActivityForResult(intent, 1);
+            // Your code if permission available
+        } else{
+            Toast.makeText(this,R.string.needs_contacts_permission, Toast.LENGTH_LONG).show();
+        }
+
     }
 
 

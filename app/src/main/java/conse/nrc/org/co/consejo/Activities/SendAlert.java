@@ -1,14 +1,19 @@
 package conse.nrc.org.co.consejo.Activities;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
 import conse.nrc.org.co.consejo.Fragments.*;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Interfaces.*;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
+
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LOCATION_PERMISSION_CODE;
 
 public class SendAlert extends AppCompatActivity implements AlertTestInterfaces {
 
@@ -46,5 +51,25 @@ public class SendAlert extends AppCompatActivity implements AlertTestInterfaces 
             startActivity(intent);
         }
         this.finish();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        switch (requestCode) {
+            case LOCATION_PERMISSION_CODE:
+                for (int i = 0; i < permissions.length; i++) {
+                    String permission = permissions[i];
+                    int grantResult = grantResults[i];
+                    switch (permission) {
+                        case ACCESS_COARSE_LOCATION:
+                            if (PackageManager.PERMISSION_GRANTED != grantResult) {
+                                Toast.makeText(this,R.string.needs_location_permission, Toast.LENGTH_LONG).show();
+                            }
+                            break;
+                    }
+                }
+                break;
+        }
     }
 }

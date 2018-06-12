@@ -70,6 +70,17 @@
             android:configChanges="orientation|screenSize"
             android:label="@string/title_activity_you_tube"
             android:theme="@android:style/Theme.Holo.NoActionBar.Fullscreen"></activity>
+
+        <provider
+            android:name=".Utils.GenericFileProvider"
+            android:authorities="${applicationId}.conse"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/provider_paths"/>
+        </provider>
+
     </application>
 
 </manifest>

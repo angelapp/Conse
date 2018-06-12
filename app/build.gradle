@@ -28,8 +28,8 @@ android {
         applicationId "conse.nrc.org.co.conse"
         minSdkVersion 17
         targetSdkVersion 25
-        versionCode 5
-        versionName "1.0.4"
+        versionCode 6
+        versionName "1.0.6"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
 

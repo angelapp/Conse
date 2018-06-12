@@ -1528,5 +1528,8 @@ Pasos a seguir:\n
     <string name="title_activity_you_tube">YouTubeActivity</string>
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
+    <string name="needs_location_permission">Conse necesita permisos de Ubicación</string>
+    <string name="needs_contacts_permission">Conse necesita acceso a contactos</string>
+    <string name="needs_storage_permission">Conse necesita acceder al almacenamiento del teléfono</string>
 
 </resources>

@@ -15,6 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.astuetz.PagerSlidingTabStrip;
 
@@ -28,6 +29,13 @@ import conse.nrc.org.co.consejo.Adapters.PagerAdapterFragment;
 import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
+import conse.nrc.org.co.consejo.Utils.PermissionClass;
+
+import static android.Manifest.permission.ACCESS_COARSE_LOCATION;
+import static android.Manifest.permission.READ_EXTERNAL_STORAGE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LOCATION_PERMISSION_CODE;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.STORAGE_PERMISSION_CODE;
 
 /**
  * Created by apple on 12/26/17.
@@ -67,7 +75,6 @@ public class TemplateLibrary extends Fragment {
         for (Pair doc : LocalConstants.TEMPLATE_LIBRARY_LIST){
             drawItem(doc);
         }
-
     }
 
     private void drawItem(Pair doc) {
@@ -96,15 +103,33 @@ public class TemplateLibrary extends Fragment {
 
     private void share(String tag) {
 
-        mainInterface.shareDoc(tag);
+        if (!PermissionClass.isPermissionRequestRequired(getActivity(), new String[]{READ_EXTERNAL_STORAGE},
+                STORAGE_PERMISSION_CODE)) {
+            if (!PermissionClass.isPermissionRequestRequired(getActivity(), new String[]{WRITE_EXTERNAL_STORAGE},
+                    STORAGE_PERMISSION_CODE)) {
+                mainInterface.shareDoc(tag);
+            }else {
+                Toast.makeText(getActivity(), R.string.needs_storage_permission, Toast.LENGTH_LONG).show();
+            }
+        }else {
+            Toast.makeText(getActivity(), R.string.needs_storage_permission, Toast.LENGTH_LONG).show();
+        }
 
 
     }
 
     private void openFile(String tag) {
-
-        mainInterface.openDoc(tag);
-
+        if (!PermissionClass.isPermissionRequestRequired(getActivity(), new String[]{READ_EXTERNAL_STORAGE},
+                STORAGE_PERMISSION_CODE)) {
+            if (!PermissionClass.isPermissionRequestRequired(getActivity(), new String[]{WRITE_EXTERNAL_STORAGE},
+                    STORAGE_PERMISSION_CODE)) {
+                mainInterface.openDoc(tag);
+            }else {
+                Toast.makeText(getActivity(), R.string.needs_storage_permission, Toast.LENGTH_LONG).show();
+            }
+        }else {
+            Toast.makeText(getActivity(), R.string.needs_storage_permission, Toast.LENGTH_LONG).show();
+        }
     }
 
 }

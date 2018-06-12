@@ -14,6 +14,7 @@ import android.net.ConnectivityManager;
 import android.net.MailTo;
 import android.net.NetworkInfo;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.Settings;
@@ -76,6 +77,7 @@ import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.DataBase;
+import conse.nrc.org.co.consejo.Utils.GenericFileProvider;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.Models;
 import conse.nrc.org.co.consejo.Utils.RequestTask;
@@ -620,30 +622,49 @@ public class MainActivity extends AppCompatActivity
         /** PDF reader code */
         File file = new File(Environment.getExternalStorageDirectory() + "/" + doc);
 
-        MimeTypeMap myMime = MimeTypeMap.getSingleton();
-        String mimeType = myMime.getMimeTypeFromExtension(file.getName().substring(1));
-
-        Log.d("Open doc", "Extension: " + mimeType);
+//        MimeTypeMap myMime = MimeTypeMap.getSingleton();
+//        String mimeType = myMime.getMimeTypeFromExtension(doc.substring(doc.indexOf("."),doc.length()-1));
+//
+//        Log.d("Open doc", "Extension: " + mimeType);
 
         Intent intent = new Intent(Intent.ACTION_VIEW);
 //        intent.setDataAndType(Uri.fromFile(file), mimeType);
 
         String extension = android.webkit.MimeTypeMap.getFileExtensionFromUrl(Uri.fromFile(file).toString());
         String mimetype = android.webkit.MimeTypeMap.getSingleton().getMimeTypeFromExtension(extension);
+
+        Log.d("Open doc", "Extension2: " + extension + "......." + mimetype + "File path: " + file.getPath()
+                + "docFilePath: " + docFile.getPath());
+
         if (extension.equalsIgnoreCase("") || mimetype == null) {
-            // if there is no extension or there is no definite mimetype, still try to open the file
-            intent.setData(Uri.fromFile(file));
+//             if there is no extension or there is no definite mimetype, still try to open the file
+            if (Build.VERSION.SDK_INT >=  Build.VERSION_CODES.N) {
+//                intent.setData(Uri.parse(Environment.getExternalStorageDirectory() + "/" + doc));
+                intent.setData(Uri.parse(file.getPath()));
+            } else{
+            Log.d("Open doc", "SetData only");
+                intent.setData(Uri.fromFile(file));
+            }
         } else {
-            intent.setDataAndType(Uri.fromFile(file), mimetype);
+            if (Build.VERSION.SDK_INT >=  Build.VERSION_CODES.N) {
+//                intent.setDataAndType(Uri.parse(Environment.getExternalStorageDirectory() + "/" + doc), mimetype);
+                intent.setDataAndType(GenericFileProvider.getUriForFile(this, this.getApplicationContext().getPackageName()+ LocalConstants.PROVIDER_NAME,file), mimetype);
+            } else{
+            Log.d("Open doc", "SetDataandType:  " + Uri.fromFile(file).toString());
+                intent.setDataAndType(Uri.fromFile(file), mimetype);
+            }
         }
-        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         try
         {
+            intent.toString();
             getApplicationContext().startActivity(intent);
         }
         catch (ActivityNotFoundException e)
         {
+            e.printStackTrace();
             Toast.makeText(this, getString(R.string.not_activity_found), Toast.LENGTH_SHORT).show();
         }
     }
@@ -665,10 +686,17 @@ public class MainActivity extends AppCompatActivity
         String doc_name = getTemplatyLibraryDocName(doc);
 
         Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+
+        if (Build.VERSION.SDK_INT >=  Build.VERSION_CODES.N) {
+            intent.putExtra(Intent.EXTRA_STREAM, GenericFileProvider.getUriForFile(this, this.getApplicationContext().getPackageName()+ LocalConstants.PROVIDER_NAME,file));
+        } else{
+            intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
+        }
+        //intent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(file));
         intent.setType("vnd.android.cursor.dir/email");
         intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_mail_text) + " " + doc_name);
         intent.putExtra(Intent.EXTRA_SUBJECT, getString(R.string.share_email_subject));
+        intent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
         startActivity(Intent.createChooser(intent, getString(R.string.sending_email)));
     }
 

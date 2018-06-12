@@ -20,8 +20,12 @@ import android.widget.Toast;
 
 import conse.nrc.org.co.consejo.Interfaces.AlertTestInterfaces;
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.PermissionClass;
 
 import static android.Manifest.permission.CALL_PHONE;
+import static android.Manifest.permission.READ_CONTACTS;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.CONTACTS_PERMISSION_CODE;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.PHONE_PERMISSION_CODE;
 
 /**
  * Created by apple on 12/13/17.
@@ -96,8 +100,8 @@ public class AlertAndCallFragment extends DialogFragment implements View.OnClick
 
     private void makeCall(View v) {
         try {
-            if (ActivityCompat.checkSelfPermission(mCtx,
-                    CALL_PHONE) == PackageManager.PERMISSION_GRANTED) {
+            if (!PermissionClass.isPermissionRequestRequired(getActivity(), new String[]{CALL_PHONE},
+                    PHONE_PERMISSION_CODE)) {
                 Intent intent = new Intent(Intent.ACTION_CALL, Uri.parse("tel:" + (String) v.getTag()));
                 startActivity(intent);
             } else {

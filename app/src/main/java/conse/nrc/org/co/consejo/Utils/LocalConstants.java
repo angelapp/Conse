@@ -109,6 +109,9 @@ public class LocalConstants {
     public static final String LONGITUDE = "longitude=";
 
 
+    public static final String PROVIDER_NAME = ".conse";
+
+
     //LAYOUTS TAGS
     public static final String NEED_AVATAR_TAG = "need_avatar"; //Indica que el layout necesita avatar
     public static final String HERE_AVATAR_TAG = "here_avatar"; // Indica el framelayout donde va el avatar
@@ -165,6 +168,12 @@ public class LocalConstants {
     public static final String sskd = "^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d!$%@#£€*?&]{8,}$";
     public static final int PROGRESS_PAGE_RESULTS = 45;
     public static final String EDITING_CONTACTS = "editing_contacts";
+
+
+    public static final int LOCATION_PERMISSION_CODE = 1;
+    public static final int CONTACTS_PERMISSION_CODE = 2;
+    public static final int PHONE_PERMISSION_CODE = 3;
+    public static final int STORAGE_PERMISSION_CODE = 4;
 
     public static List<String> getLeadersCourseStringValidation(Context ctx){
         List<String> list = new ArrayList<>();
