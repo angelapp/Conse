@@ -19,5 +19,7 @@
         android:layout_height="wrap_content"
         class="com.google.android.youtube.player.YouTubePlayerView"
         android:id="@+id/youtube_view"
-        android:gravity="center_vertical" />
+        android:gravity="center_vertical"
+        android:foregroundGravity="center_vertical"
+        android:layout_gravity="center_vertical|center_horizontal" />
 </FrameLayout>
