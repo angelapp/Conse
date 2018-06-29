@@ -86,7 +86,7 @@ public class Models {
         public List<DocumentType> document_type_list;
         public List<Gender> gender_list;
         public List<State> state_list;
-        public List<City> city_list;
+        public List<CityConf> city_list;
         public List<Condition> condition_list;
         public List<EthnicGroup> ethnic_group_list;
         public List<Role> role_list;
@@ -101,6 +101,7 @@ public class Models {
                 if (rol.id == id){
                     return i;
                 }
+                i++;
             }
             return i;
         }
@@ -158,11 +159,34 @@ public class Models {
             return i;
         }
 
+        public String getStateNameById(int id){
+            String state = null;
+            for (State st: state_list){
+                if (st.id == id){
+                    return st.name;
+                }
+            }
+            return state;
+        }
 
-        public City getCityByName(String city_name, String state_name){
+
+        public int getStateIndexById(int code){
+            State state = null;
+            int i = 0;
+            for (State st: state_list){
+                if (st.id == code){
+                    return i;
+                }
+                i++;
+            }
+            return i;
+        }
+
+
+        public CityConf getCityByName(String city_name, String state_name){
             for (State st:state_list){
                 if (st.name.equals(state_name)){
-                    for (City ci:getCityForStateName(st.name)){
+                    for (CityConf ci:getCityForStateName(st.name)){
                         if (ci.name.equals(city_name)){
                             return ci;
                         }
@@ -173,10 +197,21 @@ public class Models {
         }
 
 
-        public List<City> getCityForStateName(String name){
-            List<City> cities = new ArrayList<>();
-            for (City st: city_list){
+        public List<CityConf> getCityForStateName(String name){
+            List<CityConf> cities = new ArrayList<>();
+            for (CityConf st: city_list){
+//                if(getStateIdByName(name) == st.state){
                 if (st.state.equals(name)){
+                    cities.add(st);
+                }
+            }
+            return cities;
+        }
+
+        public List<CityConf> getCityForStateId(int id){
+            List<CityConf> cities = new ArrayList<>();
+            for (CityConf st: city_list){
+                if (st.state.equals(getStateNameById(id))){
                     cities.add(st);
                 }
             }
@@ -185,13 +220,34 @@ public class Models {
 
         public int getCityIndexByName(String state_name, String city_name){
             int i = 0;
-            for(City cit : getCityForStateName(state_name)){
+            for(CityConf cit : getCityForStateName(state_name)){
                 if (cit.name.equals(city_name)){
                     return i;
                 }
                 i++;
             }
             return i;
+        }
+
+        public int getCityIndexById(int state_id, int city_id){
+            int i = 0;
+            for(CityConf cit : getCityForStateId(state_id)){
+                if (cit.id == city_id){
+                    return i;
+                }
+                i++;
+            }
+            return i;
+        }
+
+        public int getStateIdByName(String state_name){
+            int i = 0;
+            for(State state: state_list){
+                if (state.name.equals(state_name)){
+                    return state.id;
+                }
+            }
+            return 0;
         }
 
         public List<AvatarPiece> getAvatarPiecesByGenderAndPart(int gender, int body_part){
@@ -281,6 +337,18 @@ public class Models {
     }
 
     public static class City{
+
+        public int id;
+        public String name;
+        public String code;
+        public String abreviature;
+        public int state;
+        public String description;
+        public String icon;
+
+    }
+
+    public static class CityConf{
 
         public int id;
         public String name;

@@ -244,10 +244,11 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         }
 
         mSpGender.setSelection(user.profile.gender.id);
-
+        Log.d("ProfileFragment", "Is NRC Beneficiary?"+user.profile.isNRCBeneficiary);
 
         if (user.profile.isNRCBeneficiary){
             mCbIsNrcBeneficiary.setChecked(true);
+            Log.d("ProfileFragment", "Is NRC Beneficiary");
 
             try{
                 mEtDocumentNumber.setText(user.profile.document_number);
@@ -267,8 +268,10 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 ea.printStackTrace();
             }
             try{
-                mSpState.setSelection(ConseApp.getAppConfiguration(mCtx).getStateIndexByName(user.profile.origin_city.state));
-                setCityAdapter(ConseApp.getAppConfiguration(mCtx).getCityForStateName(user.profile.origin_city.state));
+                Log.d("ProfileFragment", "Lookin for state id: "
+                        + ConseApp.getAppConfiguration(mCtx).getStateIndexById(user.profile.origin_city.state));
+                mSpState.setSelection(ConseApp.getAppConfiguration(mCtx).getStateIndexById(user.profile.origin_city.state)+1);
+                setCityAdapter(ConseApp.getAppConfiguration(mCtx).getCityForStateId(user.profile.origin_city.state));
 
             } catch (Exception ea){
                 ea.printStackTrace();
@@ -276,12 +279,6 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             try{
                 mSpCondition.setSelection(ConseApp.getAppConfiguration(mCtx).getRoleIndexById(user.profile.condition.id)+1);
 
-            } catch (Exception ea){
-                ea.printStackTrace();
-            }
-            try{
-                mSpCity.setSelection(ConseApp.getAppConfiguration(mCtx).getCityIndexByName(user.profile.origin_city.state,
-                        user.profile.origin_city.name));
             } catch (Exception ea){
                 ea.printStackTrace();
             }
@@ -294,6 +291,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             }
         } else {
             mView.findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
+            Log.d("ProfileFragment", "Is not NRC Beneficiary");
         }
     }
 
@@ -604,7 +602,14 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position > 0){
-                    List<Models.City> citites = ConseApp.getAppConfiguration(mCtx).getCityForStateName(state_list.get(position));
+                    int state_id = ConseApp.getAppConfiguration(mCtx).getStateIdByName(state_list.get(position));
+                    List<Models.CityConf> citites = ConseApp.getAppConfiguration(mCtx).getCityForStateId(state_id);
+                    //List<Models.City> citites = ConseApp.getAppConfiguration(mCtx).getCityForStateName(state_list.get(position));
+                    Log.d("ProfileFragment",
+                            "Position selected: " + position
+                                    +"State Id: " + state_id
+                                    + "State name selected: " + state_list.get(position)
+                                    + "Cities Size: " + citites.size());
                     setCityAdapter(citites);
                 }
             }
@@ -653,12 +658,15 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
 
     }
 
-    private void setCityAdapter(List<Models.City> citites){
+    private void setCityAdapter(List<Models.CityConf> citites){
 
         city_list = new ArrayList<String>();
-        for (Models.City ci : citites){
+        for (Models.CityConf ci : citites){
             city_list.add(ci.name);
+            Log.d("ProfileFragment", "City Added" + ci.name);
         }
+        Log.d("ProfileFragment", "City List Size" + city_list.size());
+
         ArrayAdapter<String> spinerOriginTownArrayAdapter =
             new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, city_list){
 
@@ -676,6 +684,19 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             };
         spinerOriginTownArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
         mSpCity.setAdapter(spinerOriginTownArrayAdapter);
+        Models.RegisterUserResponse user  = ConseApp.getActualUser(mCtx);
+        if (editionMode && ConseApp.getActualUser(mCtx).profile.isNRCBeneficiary){
+            try{
+                Log.d("ProfileFragment", "Looking for city position: "
+                        + ConseApp.getAppConfiguration(mCtx).getCityIndexById(user.profile.origin_city.state,
+                        user.profile.origin_city.id)+1);
+
+                mSpCity.setSelection(ConseApp.getAppConfiguration(mCtx).getCityIndexById(user.profile.origin_city.state,
+                        user.profile.origin_city.id));
+            } catch (Exception ea){
+                ea.printStackTrace();
+            }
+        }
     }
 
     private void setBirthdatePicker(){

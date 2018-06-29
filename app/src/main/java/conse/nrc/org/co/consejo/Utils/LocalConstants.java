@@ -37,10 +37,17 @@ public class LocalConstants {
     public static final int crowd_horizontal = 1;
     public static final int crowd_vertical = 2;
 
+    public final static String DOWNLOAD_VIDEOS_DIRECTORY = "VideosConse";
+
+    public final static String DOWNLOAD_VIDEOS_ROOT_DIRECTORY = "http://nrc.org.co/conce/";
+
     public final static String YOUTUBE_VIDEO_ID = "KuUWKzD8e00";
     public final static String VBG_VIDEO_ID = "Moz4tszhujU";
+    public final static String VBG_VIDEO_DOWNLOAD_URL = "http://nrc.org.co/conce/Violecia_Basada_genero.mp4";
     public final static String LEADERS_VIDEO_ID = "7t0rIdNhayM";
+    public final static String LEADERS_VIDEO_DOWNLOAD_URL = "http://nrc.org.co/conce/Lideres_Lideresas.mp4";
     public final static String MEDIA_VIDEO_ID = "trNPQr6VIsQ";
+    public final static String MEDIA_VIDEO_DOWNLOAD_URL = "http://nrc.org.co/conce/Medios_Comunitarios.mp4";
     public static final String YOUTUBE_API_KEY = "AIzaSyAcvZs2JqEhMsKEYU5lkoRTCkbcbSFQMkM";
 
     public static final int MAX_CONTACT_NUMBER = 3;

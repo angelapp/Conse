@@ -35,6 +35,7 @@
     <string name="contact_no_has_number">El contacto no tiene número telefónico</string>
     <string name="error">Respuesta incorrecta</string>
     <string name="correct_answer">¡Muy bien, \nrespuesta correcta!</string>
+    <string name="download_video">Descarga este video a tu celular</string>
 
 
     <string name="review_contents_again">¿Quieres revisar nuevamente los contenidos de este módulo?</string>
@@ -1531,5 +1532,9 @@ Pasos a seguir:\n
     <string name="needs_location_permission">Conse necesita permisos de Ubicación</string>
     <string name="needs_contacts_permission">Conse necesita acceso a contactos</string>
     <string name="needs_storage_permission">Conse necesita acceder al almacenamiento del teléfono</string>
+    <string name="downloadStarted">Ha iniciado la descarga...</string>
+    <string name="downloadCompleted">Descarga completada</string>
+    <string name="downloadFailed">Descarga ha fallado. Vuelva a intentarlo.</string>
+    <string name="downloadAgain">Descargar nuevamente</string>
 
 </resources>

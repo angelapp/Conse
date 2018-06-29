@@ -14,7 +14,10 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import conse.nrc.org.co.consejo.R;
+import conse.nrc.org.co.consejo.Utils.DownloadTask;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
+
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_VIDEO_DOWNLOAD_URL;
 
 /**
  * Created by apple on 12/9/17.
@@ -27,6 +30,7 @@ public class ProtectionPathVideoFragment extends Fragment {
     FrameLayout flContent;
     public String mVideoId;
     public String mTittle;
+    public String mVideoDownloadURL;
     ConseYouTubeFragment conseYouTubeFragment;
 
 
@@ -81,6 +85,14 @@ public class ProtectionPathVideoFragment extends Fragment {
                 public void onClick(View view) {
                     conseYouTubeFragment.init();
                     mPlayButton.setVisibility(View.GONE);
+                }
+            });
+
+            final Button mDownloadButton = (Button) mView.findViewById(R.id.bt_download_video);
+            mDownloadButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new DownloadTask(mCtx, mDownloadButton, mVideoDownloadURL);
                 }
             });
         } catch (Exception ea){

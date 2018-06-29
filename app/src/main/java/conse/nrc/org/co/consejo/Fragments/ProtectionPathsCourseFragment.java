@@ -72,6 +72,7 @@ public class ProtectionPathsCourseFragment extends Fragment {
                     getResources().getStringArray(R.array.protection_paths_video_tittles)[0]);
             videoFragment.mTittle = getResources().getStringArray(R.array.protection_paths_video_tittles)[0];
             videoFragment.mVideoId = LocalConstants.VBG_VIDEO_ID;
+            videoFragment.mVideoDownloadURL = LocalConstants.VBG_VIDEO_DOWNLOAD_URL;
             fragment.COURSE_ID = course_id;
             fragmentList.add(fragment);
             fragmentList.add(videoFragment);
@@ -86,12 +87,10 @@ public class ProtectionPathsCourseFragment extends Fragment {
             ProtectionPathVideoFragment videoFragment2 = new ProtectionPathVideoFragment();
             videoFragment.mTittle = getResources().getStringArray(R.array.protection_paths_video_tittles)[1];
             videoFragment.mVideoId = LocalConstants.LEADERS_VIDEO_ID;
+            videoFragment.mVideoDownloadURL = LocalConstants.LEADERS_VIDEO_DOWNLOAD_URL;
             videoFragment2.mTittle = getResources().getStringArray(R.array.protection_paths_video_tittles)[2];
             videoFragment2.mVideoId = LocalConstants.MEDIA_VIDEO_ID;
-//            ProtectionPathVideoFragment videoFragment = ProtectionPathVideoFragment.newInstance(LocalConstants.LEADERS_VIDEO_ID,
-//                    getResources().getStringArray(R.array.protection_paths_video_tittles)[1]);
-//            ProtectionPathVideoFragment videoFragment2 = ProtectionPathVideoFragment.newInstance(LocalConstants.MEDIA_VIDEO_ID,
-//                    getResources().getStringArray(R.array.protection_paths_video_tittles)[2]);
+            videoFragment2.mVideoDownloadURL = LocalConstants.MEDIA_VIDEO_DOWNLOAD_URL;
             fragment1.COURSE_ID = 2;
             fragment2.COURSE_ID = 3;
             fragmentList.add(fragment1);

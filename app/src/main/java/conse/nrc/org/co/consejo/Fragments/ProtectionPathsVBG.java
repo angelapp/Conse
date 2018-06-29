@@ -71,13 +71,7 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
         courseContainer = (FrameLayout) view.findViewById(R.id.course_container);
         dataBase = MainActivity.dataBase;
 
-        if (COURSE_ID == 1){
-            layout_list = VBG_PROTECION_PATH_LAYOUT_LIST;
-        } else if(COURSE_ID ==2){
-            layout_list = LEADERS_PROTECION_PATH_LAYOUT_LIST;
-        } else if(COURSE_ID ==3){
-            layout_list = LEADERS_PROTECION_PATH_LAYOUT_LIST_2;
-        }
+        setLayoutList();
 
         setInitialPageToShow();
 
@@ -106,15 +100,30 @@ public class ProtectionPathsVBG extends Fragment implements View.OnClickListener
     }
 
     private void updateReadPage(){
-        if (index <= layout_list.size()){
-            dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, index);
-        } else if(index < 0){
-            dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, 0);
-        } else{
-            dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, layout_list.size());
+        try {
+            if (index <= layout_list.size()) {
+                dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, index);
+            } else if (index < 0) {
+                dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, 0);
+            } else {
+                dataBase.insertUpdateLastPageProtectionPath(COURSE_ID, layout_list.size());
+            }
+        } catch (Exception ea){
+            ea.printStackTrace();
+            setLayoutList();
+            setInitialPageToShow();
         }
     }
 
+    public void setLayoutList(){
+        if (COURSE_ID == 1){
+            layout_list = VBG_PROTECION_PATH_LAYOUT_LIST;
+        } else if(COURSE_ID ==2){
+            layout_list = LEADERS_PROTECION_PATH_LAYOUT_LIST;
+        } else if(COURSE_ID ==3){
+            layout_list = LEADERS_PROTECION_PATH_LAYOUT_LIST_2;
+        }
+    }
     public void setNextPage(){
             index++;
         if (index < layout_list.size()){

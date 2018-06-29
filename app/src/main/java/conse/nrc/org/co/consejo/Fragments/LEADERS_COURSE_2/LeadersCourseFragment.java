@@ -35,10 +35,13 @@ import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.DataBase;
+import conse.nrc.org.co.consejo.Utils.DownloadTask;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.LEADERS_COURSE_ID;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LEADERS_VIDEO_DOWNLOAD_URL;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_VIDEO_DOWNLOAD_URL;
 
 /**
  * Created by apple on 11/27/17.
@@ -295,6 +298,7 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
             fragmentManager.beginTransaction().replace(R.id.ly_video, conseYouTubeFragment).addToBackStack(null).commit();
 
             final Button mPlayButton = (Button) mView.findViewById(R.id.bt_start_video);
+            final Button mDownloadButton = (Button) mView.findViewById(R.id.bt_download_video);
     //        mPlayButton.setVisibility(View.GONE);
             mPlayButton.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -303,6 +307,15 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
                     mPlayButton.setVisibility(View.GONE);
                 }
             });
+
+            mDownloadButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new DownloadTask(mCtx, mDownloadButton, LEADERS_VIDEO_DOWNLOAD_URL);
+//                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(VBG_VIDEO_DOWNLOAD_URL)));
+                }
+            });
+
         } catch (Exception ea){
             ea.printStackTrace();
         }

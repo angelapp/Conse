@@ -89,10 +89,15 @@ public class JurisprudenceDocs extends Fragment implements RequestTask.OnRequest
     }
 
     public void reload(){
-        if (documentLists.size()==0) {
-            listener = new ProgressDialog(mCtx);
-            listener.setMessage(getString(R.string.getting_library_docs));
-            new ServerRequest.GetLibraryDocs(mCtx, this, listener, LocalConstants.GET_LIBRARY_DOCS_TASK_ID).executeGetList();
+        try {
+            if (documentLists.size() == 0) {
+                listener = new ProgressDialog(mCtx);
+                listener.setMessage(getString(R.string.getting_library_docs));
+                new ServerRequest.GetLibraryDocs(mCtx, this, listener, LocalConstants.GET_LIBRARY_DOCS_TASK_ID).executeGetList();
+            }
+        }catch (Exception ea){
+            ea.printStackTrace();
+            mCtx = getContext();
         }
     }
 

@@ -17,7 +17,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/bottom_padding_for_alert"
+        android:layout_marginBottom="@dimen/courses_margin_right"
         android:layout_marginTop="@dimen/course_first_content_margin_top"
         android:id="@+id/ly_video"
         android:layout_marginLeft="@dimen/courses_margin_left"
@@ -38,6 +38,21 @@
             android:translationZ="5dp" />
 
     </FrameLayout>
+
+    <Button
+        android:text="@string/download_video"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/bt_download_video"
+        android:layout_gravity="center_horizontal"
+        android:background="@color/transparent"
+        style="@android:style/Widget.Button.Small"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:layout_marginBottom="15dp"
+        android:textColor="@color/salmon"
+        android:textStyle="normal|bold|italic"
+        android:textSize="18sp" />
 
 
 </LinearLayout>

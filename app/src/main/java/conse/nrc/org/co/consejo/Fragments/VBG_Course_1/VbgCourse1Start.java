@@ -1,8 +1,10 @@
 package conse.nrc.org.co.consejo.Fragments.VBG_Course_1;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -33,11 +35,13 @@ import conse.nrc.org.co.consejo.Interfaces.MainInterface;
 import conse.nrc.org.co.consejo.R;
 import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.DataBase;
+import conse.nrc.org.co.consejo.Utils.DownloadTask;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MOD_4_Q3_CORRECT_ANSWER;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_COURSE_ID;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_VIDEO_DOWNLOAD_URL;
 
 /**
  * Created by apple on 11/27/17.
@@ -304,12 +308,21 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
             fragmentManager.beginTransaction().replace(R.id.ly_video, conseYouTubeFragment).addToBackStack(null).commit();
 
             final Button mPlayButton = (Button) mView.findViewById(R.id.bt_start_video);
-//        mPlayButton.setVisibility(View.GONE);
+            final Button mDownloadButton = (Button) mView.findViewById(R.id.bt_download_video);
+
             mPlayButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     conseYouTubeFragment.init();
                     mPlayButton.setVisibility(View.GONE);
+                }
+            });
+
+            mDownloadButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    new DownloadTask(mCtx, mDownloadButton, VBG_VIDEO_DOWNLOAD_URL);
+//                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(VBG_VIDEO_DOWNLOAD_URL)));
                 }
             });
         } catch (Exception ea){
