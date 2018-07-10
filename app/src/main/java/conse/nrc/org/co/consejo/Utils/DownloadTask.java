@@ -1,6 +1,9 @@
 package conse.nrc.org.co.consejo.Utils;
 
+import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Environment;
 import android.os.Handler;
@@ -16,8 +19,12 @@ import java.net.URL;
 
 import conse.nrc.org.co.consejo.R;
 
+import static android.Manifest.permission.CALL_PHONE;
+import static android.Manifest.permission.WRITE_EXTERNAL_STORAGE;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.DOWNLOAD_VIDEOS_DIRECTORY;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.DOWNLOAD_VIDEOS_ROOT_DIRECTORY;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.PHONE_PERMISSION_CODE;
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.STORAGE_PERMISSION_CODE;
 
 /**
  * Created by SONU on 29/10/15.
@@ -30,15 +37,23 @@ public class DownloadTask {
     private String downloadUrl = "", downloadFileName = "";
 
     public DownloadTask(Context context, Button buttonText, String downloadUrl) {
-        this.context = context;
-        this.buttonText = buttonText;
-        this.downloadUrl = downloadUrl;
+        try {
+            if (!PermissionClass.isPermissionRequestRequired((Activity) context, new String[]{WRITE_EXTERNAL_STORAGE},
+                    STORAGE_PERMISSION_CODE)) {
+                this.context = context;
+                this.buttonText = buttonText;
+                this.downloadUrl = downloadUrl;
+                downloadFileName = downloadUrl.replace(DOWNLOAD_VIDEOS_ROOT_DIRECTORY, "");//Create file name by picking download file name from URL
+                Log.e(TAG, downloadFileName);
+                //Start Downloading Task
+                new DownloadingTask().execute();
+            }else {
+                Toast.makeText((Activity)context, R.string.needs_storage_permission, Toast.LENGTH_LONG).show();
+            }
+        } catch (android.content.ActivityNotFoundException e){
+            Toast.makeText(context,R.string.app_not_found,Toast.LENGTH_LONG).show();
+        }
 
-        downloadFileName = downloadUrl.replace(DOWNLOAD_VIDEOS_ROOT_DIRECTORY, "");//Create file name by picking download file name from URL
-        Log.e(TAG, downloadFileName);
-
-        //Start Downloading Task
-        new DownloadingTask().execute();
     }
 
     private class DownloadingTask extends AsyncTask<Void, Void, Void> {
@@ -120,13 +135,14 @@ public class DownloadTask {
                 //If File is not present create directory
                 if (!apkStorage.exists()) {
                     apkStorage.mkdir();
-                    Log.e(TAG, "Directory Created.");
+                    Log.e(TAG, "Directory Created in " + apkStorage.getPath());
                 }
 
                 outputFile = new File(apkStorage, downloadFileName);//Create Output file in Main File
 
                 //Create New File if not present
                 if (!outputFile.exists()) {
+                    Log.e(TAG, "File doesn-t exists in path " + outputFile.getPath());
                     outputFile.createNewFile();
                     Log.e(TAG, "File Created");
                 }

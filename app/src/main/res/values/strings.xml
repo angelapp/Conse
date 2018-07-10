@@ -1532,9 +1532,9 @@ Pasos a seguir:\n
     <string name="needs_location_permission">Conse necesita permisos de Ubicación</string>
     <string name="needs_contacts_permission">Conse necesita acceso a contactos</string>
     <string name="needs_storage_permission">Conse necesita acceder al almacenamiento del teléfono</string>
-    <string name="downloadStarted">Ha iniciado la descarga...</string>
+    <string name="downloadStarted">Ha iniciado la descarga... \n Por favor espera hasta que se complete</string>
     <string name="downloadCompleted">Descarga completada</string>
-    <string name="downloadFailed">Descarga ha fallado. Vuelva a intentarlo.</string>
+    <string name="downloadFailed">Descarga ha fallado. Vuelve a intentarlo.</string>
     <string name="downloadAgain">Descargar nuevamente</string>
 
 </resources>

@@ -39,6 +39,7 @@ import conse.nrc.org.co.consejo.Utils.DownloadTask;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
+import static conse.nrc.org.co.consejo.Utils.LocalConstants.LEADERS_VIDEO_DOWNLOAD_URL;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.MOD_4_Q3_CORRECT_ANSWER;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_COURSE_ID;
 import static conse.nrc.org.co.consejo.Utils.LocalConstants.VBG_VIDEO_DOWNLOAD_URL;
@@ -321,7 +322,8 @@ public class VbgCourse1Start extends Fragment implements View.OnClickListener{
             mDownloadButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new DownloadTask(mCtx, mDownloadButton, VBG_VIDEO_DOWNLOAD_URL);
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(VBG_VIDEO_DOWNLOAD_URL)));
+//                    new DownloadTask(mCtx, mDownloadButton, VBG_VIDEO_DOWNLOAD_URL);
 //                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(VBG_VIDEO_DOWNLOAD_URL)));
                 }
             });

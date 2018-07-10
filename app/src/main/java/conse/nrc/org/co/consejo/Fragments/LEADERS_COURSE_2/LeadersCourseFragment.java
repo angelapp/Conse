@@ -1,8 +1,10 @@
 package conse.nrc.org.co.consejo.Fragments.LEADERS_COURSE_2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -311,7 +313,8 @@ public class LeadersCourseFragment extends Fragment implements View.OnClickListe
             mDownloadButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    new DownloadTask(mCtx, mDownloadButton, LEADERS_VIDEO_DOWNLOAD_URL);
+                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(LEADERS_VIDEO_DOWNLOAD_URL)));
+//                    new DownloadTask(mCtx, mDownloadButton, LEADERS_VIDEO_DOWNLOAD_URL);
 //                    startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(VBG_VIDEO_DOWNLOAD_URL)));
                 }
             });
