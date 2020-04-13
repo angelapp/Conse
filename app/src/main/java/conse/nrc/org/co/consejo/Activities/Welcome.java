@@ -1,7 +1,12 @@
 package conse.nrc.org.co.consejo.Activities;
 
+import android.Manifest;
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.os.Build;
+import android.support.annotation.NonNull;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -31,6 +36,14 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
     TextView mTvToLoggin;
     ProgressDialog listener;
 
+    private boolean canAccessLocation;
+
+    private static final int INITIAL_REQUEST=103;
+    private static final String[] INITIAL_PERMS={
+            Manifest.permission.ACCESS_FINE_LOCATION
+    };
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -56,6 +69,23 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
         }
 
         new ServerRequest.GetAppConfiguration(this,listener, LocalConstants.GET_APP_CONF_TASK_ID).executeGet();
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    public void getAccessPermissions(){
+            requestPermissions(INITIAL_PERMS, INITIAL_REQUEST);
+
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private boolean canAccessLocation() {
+        return(hasPermission(Manifest.permission.ACCESS_FINE_LOCATION));
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    private boolean hasPermission(String perm) {
+            return(PackageManager.PERMISSION_GRANTED==checkSelfPermission(perm));
 
     }
 
@@ -109,11 +139,29 @@ public class Welcome extends AppCompatActivity implements View.OnClickListener, 
         }
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.M)
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case INITIAL_REQUEST:
+                if (canAccessLocation()) {
+                    canAccessLocation = true;
+                }
+                else {
+                    getAccessPermissions();
+                }
+                break;
+        }
+    }
+
+
+    @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
     public void onRequestResponse(Object response, int taskId) {
 
         switch (taskId){
             case LocalConstants.GET_APP_CONF_TASK_ID:
+                getAccessPermissions();
                 Models.ApplicationConfiguration appConf = (Models.ApplicationConfiguration) response;
                 ConseApp.setAppConfiguration(this, appConf);
                 if (UtilsFunctions.getSharedBoolean(this, LocalConstants.IS_USER_LOGGED_IN)){

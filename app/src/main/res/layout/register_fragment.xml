@@ -71,7 +71,8 @@
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:visibility="gone">
 
                 <EditText
                     android:layout_width="match_parent"
@@ -80,7 +81,8 @@
                     android:hint="@string/name_et_hint"
                     android:ems="10"
                     android:id="@+id/et_name"
-                    style="@style/ConseExitText" />
+                    style="@style/ConseExitText"
+                    />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -89,7 +91,8 @@
                     android:hint="@string/name_et_last_name"
                     android:ems="10"
                     android:id="@+id/et_last_name"
-                    style="@style/ConseExitText" />
+                    style="@style/ConseExitText"
+                    />
 
                 <EditText
                     android:layout_width="match_parent"
@@ -98,13 +101,15 @@
                     android:hint="@string/et_contact_phone"
                     android:ems="10"
                     android:id="@+id/et_contact_phone"
-                    style="@style/ConseExitText" />
+                    style="@style/ConseExitText"
+                    />
             </LinearLayout>
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:visibility="gone">
 
                 <TextView
                     android:text="@string/birth_date_tittle_h2"
@@ -132,13 +137,15 @@
                 android:text="@string/gender_tittle_h2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/ConseTittleTextH2" />
+                style="@style/ConseTittleTextH2"
+                android:visibility="gone"/>
 
             <Spinner
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/sp_gender"
-                android:background="@null" />
+                android:background="@null"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:orientation="vertical"
@@ -186,13 +193,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/cb_is_nrc_beneficiary"
-                style="@style/ConseCheckboxGrayBackgroun" />
+                style="@style/ConseCheckboxGrayBackgroun"
+                android:visibility="gone"/>
 
             <LinearLayout
                 android:orientation="vertical"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/ly_nrc_data">
+                android:id="@+id/ly_nrc_data"
+                android:visibility="gone">
 
                 <TextView
                     android:text="@string/document_tittle_h2"

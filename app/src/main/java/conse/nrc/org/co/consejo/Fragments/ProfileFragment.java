@@ -56,9 +56,26 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
     View mView;
     Context mCtx;
     public boolean editionMode = false;
-    EditText mEtBirthdate, mEtName, mEtContactPhone, mEtLastname, mEtDocumentNumber, mEtEmail, mEtPassword, mEtPasswordConfirm;
-    Spinner mSpGender, mSpDocumentType, mSpEthnicGroup, mSpState, mSpCondition, mSpCity, mSpRole;
-    CheckBox mCbIsNrcBeneficiary, mCbAcceptTermsConditions;
+    //EditText mEtBirthdate;
+    //EditText mEtName;
+    //EditText mEtContactPhone;
+    //EditText mEtLastname;
+    //EditText mEtDocumentNumber;
+    EditText mEtEmail;
+    EditText mEtPassword;
+    EditText mEtPasswordConfirm;
+
+    //Spinner mSpGender;
+    //Spinner mSpDocumentType;
+    //Spinner mSpEthnicGroup;
+    //Spinner mSpState;
+    //Spinner mSpCondition;
+    //Spinner mSpCity;
+    //Spinner mSpRole;
+
+
+    //CheckBox mCbIsNrcBeneficiary;
+    CheckBox mCbAcceptTermsConditions;
     Button mBtNext, mBtContactEdit, mBtAvatarEdit;
     FrameLayout mFlAvatar;
     ProgressDialog listener;
@@ -92,22 +109,22 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
 
         mView = inflater.inflate(R.layout.register_fragment, container, false);
 
-        mEtBirthdate = (EditText)mView.findViewById(R.id.et_birthdate);
-        mEtName = (EditText)mView.findViewById(R.id.et_name);
-        mEtLastname = (EditText)mView.findViewById(R.id.et_last_name);
-        mEtContactPhone = (EditText)mView.findViewById(R.id.et_contact_phone);
-        mEtDocumentNumber = (EditText)mView.findViewById(R.id.et_document_number);
+        //mEtBirthdate = (EditText)mView.findViewById(R.id.et_birthdate);
+        //mEtName = (EditText)mView.findViewById(R.id.et_name);
+        //mEtLastname = (EditText)mView.findViewById(R.id.et_last_name);
+        //mEtContactPhone = (EditText)mView.findViewById(R.id.et_contact_phone);
+        //mEtDocumentNumber = (EditText)mView.findViewById(R.id.et_document_number);
         mEtEmail = (EditText)mView.findViewById(R.id.et_email);
         mEtPassword = (EditText)mView.findViewById(R.id.et_password);
         mEtPasswordConfirm = (EditText)mView.findViewById(R.id.et_confirm_password);
 
-        mSpGender = (Spinner)mView.findViewById(R.id.sp_gender);
-        mSpDocumentType = (Spinner)mView.findViewById(R.id.sp_document_type);
-        mSpEthnicGroup = (Spinner)mView.findViewById(R.id.sp_ethnic_group);
-        mSpState = (Spinner)mView.findViewById(R.id.sp_state);
-        mSpCondition = (Spinner)mView.findViewById(R.id.sp_condition_type);
-        mSpCity = (Spinner)mView.findViewById(R.id.sp_origin_town);
-        mSpRole = (Spinner)mView.findViewById(R.id.sp_user_profile);
+        //mSpGender = (Spinner)mView.findViewById(R.id.sp_gender);
+        //mSpDocumentType = (Spinner)mView.findViewById(R.id.sp_document_type);
+        //mSpEthnicGroup = (Spinner)mView.findViewById(R.id.sp_ethnic_group);
+        //mSpState = (Spinner)mView.findViewById(R.id.sp_state);
+        //mSpCondition = (Spinner)mView.findViewById(R.id.sp_condition_type);
+        //mSpCity = (Spinner)mView.findViewById(R.id.sp_origin_town);
+        //mSpRole = (Spinner)mView.findViewById(R.id.sp_user_profile);
 
         fillSpinnersData();
 
@@ -123,7 +140,8 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         });
 
         mCbAcceptTermsConditions = (CheckBox)mView.findViewById(R.id.cb_accept_terms_conditions);
-        mCbIsNrcBeneficiary = (CheckBox)mView.findViewById(R.id.cb_is_nrc_beneficiary);
+
+        //mCbIsNrcBeneficiary = (CheckBox)mView.findViewById(R.id.cb_is_nrc_beneficiary);
 
         mBtNext = (Button)mView.findViewById(R.id.bt_register);
         mBtAvatarEdit = (Button)mView.findViewById(R.id.bt_avatar_edit);
@@ -157,7 +175,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         });
 
 
-        mCbIsNrcBeneficiary.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        /*mCbIsNrcBeneficiary.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if(isChecked){
@@ -166,7 +184,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     mView.findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
                 }
             }
-        });
+        });*/
 
         listener = new ProgressDialog(mCtx);
 
@@ -235,7 +253,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         mEtEmail.setText(user.user.email);
         mEtEmail.setEnabled(false);
 
-        mEtBirthdate.setText(user.profile.birthdate);
+        /*mEtBirthdate.setText(user.profile.birthdate);
         mEtName.setText(user.user.first_name);
         mEtLastname.setText(user.user.last_name);
 
@@ -292,7 +310,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         } else {
             mView.findViewById(R.id.ly_nrc_data).setVisibility(View.GONE);
             Log.d("ProfileFragment", "Is not NRC Beneficiary");
-        }
+        }*/
     }
 
 
@@ -302,7 +320,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         boolean password_confirm = false;
         int gender=0, documentType=0, ethnicGroup=0, geographicLocation=0, condition=0, originTown=0, role=0;
 
-        if(mEtBirthdate.getText().length() == 0){
+        /*if(mEtBirthdate.getText().length() == 0){
             mEtBirthdate.setError(getString(R.string.must_fill_field));
             error = true;
         }
@@ -318,7 +336,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         if(mEtContactPhone.getText().length() == 0){
             mEtContactPhone.setError(getString(R.string.must_fill_field));
             error = true;
-        }
+        }*/
 
         if(mEtEmail.getText().length() == 0){
             mEtEmail.setError(getString(R.string.must_fill_field));
@@ -345,6 +363,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             password_confirm = true;
         }
 
+        /*
         if (mSpGender.getSelectedItemPosition() > 0){
             gender = ConseApp.appConfiguration.gender_list.get(mSpGender.getSelectedItemPosition()-1).id;
         } else {
@@ -403,7 +422,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 ((TextView) ((LinearLayout) (mSpRole.getChildAt(0))).getChildAt(0)).setError(getString(R.string.must_select_option));
                 error = true;
             }
-        }
+        }*/
 
         if(!mCbAcceptTermsConditions.isChecked() && !editionMode){
             mCbAcceptTermsConditions.setError(getString(R.string.you_must_accept_t_c));
@@ -425,18 +444,18 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                               int condition, int role, int geographicLocation, int originTown) {
 
         Models.RegisterUserProfileModel user = new Models.RegisterUserProfileModel();
-        user.first_name = mEtName.getText().toString();
-        user.last_name = mEtLastname.getText().toString();
+        //user.first_name = mEtName.getText().toString();
+        //user.last_name = mEtLastname.getText().toString();
         user.email = mEtEmail.getText().toString();
-        user.contact_phone = mEtContactPhone.getText().toString();
+        //user.contact_phone = mEtContactPhone.getText().toString();
         user.birthdate = birthDateTosave;
 
         user.gender = gender;
 
-        user.isNRCBeneficiary = mCbIsNrcBeneficiary.isChecked();
+        //user.isNRCBeneficiary = mCbIsNrcBeneficiary.isChecked();
 //        user.contact_phone = ;
 //        user.address = ;
-        if(mCbIsNrcBeneficiary.isChecked()){
+        /*if(mCbIsNrcBeneficiary.isChecked()){
             user.document_number = mEtDocumentNumber.getText().toString();
             user.document_type = documentType;
             user.role = role;
@@ -444,7 +463,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             user.condition = condition;
             user.origin_city = originTown;
             user.actual_city = geographicLocation;
-        }
+        }*/
 //        user.latitude = ;
 //        user.longitude = ;
 
@@ -543,7 +562,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     }
                 };
         spinerGenderArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpGender.setAdapter(spinerGenderArrayAdapter);
+        //mSpGender.setAdapter(spinerGenderArrayAdapter);
 
         ArrayAdapter<String> spinerDocumentTypeArrayAdapter =
                 new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, document_type_list){
@@ -561,7 +580,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     }
                 };
         spinerDocumentTypeArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpDocumentType.setAdapter(spinerDocumentTypeArrayAdapter);
+        //mSpDocumentType.setAdapter(spinerDocumentTypeArrayAdapter);
 
         ArrayAdapter<String> spinerEthnicGroupArrayAdapter =
                 new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, ethnic_group_list){
@@ -579,7 +598,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     }
                 };
         spinerEthnicGroupArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpEthnicGroup.setAdapter(spinerEthnicGroupArrayAdapter);
+        //mSpEthnicGroup.setAdapter(spinerEthnicGroupArrayAdapter);
 
         ArrayAdapter<String> spinerGeographicLocationArrayAdapter =
                 new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, state_list){
@@ -597,8 +616,8 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     }
                 };
         spinerGeographicLocationArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpState.setAdapter(spinerGeographicLocationArrayAdapter);
-        mSpState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+        //mSpState.setAdapter(spinerGeographicLocationArrayAdapter);
+        /*mSpState.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 if (position > 0){
@@ -617,7 +636,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
             public void onNothingSelected(AdapterView<?> parent) {
 
             }
-        });
+        });*/
 
         ArrayAdapter<String> spinerConditionArrayAdapter =
                 new ArrayAdapter<String>(mCtx, R.layout.spinner_header_item, R.id.tv_direction, condition_list){
@@ -635,7 +654,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     }
                 };
         spinerConditionArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpCondition.setAdapter(spinerConditionArrayAdapter);
+        //mSpCondition.setAdapter(spinerConditionArrayAdapter);
 
 
         ArrayAdapter<String> spinerRoleArrayAdapter =
@@ -654,7 +673,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                     }
                 };
         spinerRoleArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpRole.setAdapter(spinerRoleArrayAdapter);
+        //mSpRole.setAdapter(spinerRoleArrayAdapter);
 
     }
 
@@ -683,7 +702,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                 }
             };
         spinerOriginTownArrayAdapter.setDropDownViewResource(R.layout.spinner_direction_list_item);
-        mSpCity.setAdapter(spinerOriginTownArrayAdapter);
+        //mSpCity.setAdapter(spinerOriginTownArrayAdapter);
         Models.RegisterUserResponse user  = ConseApp.getActualUser(mCtx);
         if (editionMode && ConseApp.getActualUser(mCtx).profile.isNRCBeneficiary){
             try{
@@ -691,8 +710,8 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
                         + ConseApp.getAppConfiguration(mCtx).getCityIndexById(user.profile.origin_city.state,
                         user.profile.origin_city.id)+1);
 
-                mSpCity.setSelection(ConseApp.getAppConfiguration(mCtx).getCityIndexById(user.profile.origin_city.state,
-                        user.profile.origin_city.id));
+                /*mSpCity.setSelection(ConseApp.getAppConfiguration(mCtx).getCityIndexById(user.profile.origin_city.state,
+                        user.profile.origin_city.id));*/
             } catch (Exception ea){
                 ea.printStackTrace();
             }
@@ -704,12 +723,12 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         final DatePickerDialog picker = new DatePickerDialog(mCtx, this, 1940,01,01);
         picker.getDatePicker().setMaxDate(System.currentTimeMillis());
 
-        mEtBirthdate.setOnClickListener(new View.OnClickListener() {
+        /*mEtBirthdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 picker.show();
             }
-        });
+        });*/
     }
 
     @Override
@@ -718,7 +737,7 @@ public class ProfileFragment extends Fragment implements DatePickerDialog.OnDate
         int _month = month + 1;
         int _day = dayOfMonth;
         birthDateTosave = _birthYear + "-" + _month +"-" + _day;
-        mEtBirthdate.setText(_day + "/" + _month +"/" + _birthYear);
+        //mEtBirthdate.setText(_day + "/" + _month +"/" + _birthYear);
     }
 
     private void goToSelectContacts() {

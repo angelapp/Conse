@@ -167,6 +167,8 @@ public class AlertDialog extends DialogFragment {
         String coordinates = " ";
         String coordinates2 = " ";
 
+
+
         if (!PermissionClass.isPermissionRequestRequired(getActivity(), new String[]{ACCESS_COARSE_LOCATION},
                 LOCATION_PERMISSION_CODE)) {
             // Your code if permission available

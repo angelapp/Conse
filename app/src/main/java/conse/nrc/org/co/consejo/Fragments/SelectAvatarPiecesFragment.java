@@ -18,6 +18,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,6 +29,7 @@ import conse.nrc.org.co.consejo.Utils.ConseApp;
 import conse.nrc.org.co.consejo.Utils.LocalConstants;
 import conse.nrc.org.co.consejo.Utils.Models;
 import conse.nrc.org.co.consejo.Utils.RequestTask;
+import conse.nrc.org.co.consejo.Utils.SecureImageDownloader;
 import conse.nrc.org.co.consejo.Utils.ServerRequest;
 import conse.nrc.org.co.consejo.Utils.UtilsFunctions;
 
@@ -47,6 +49,7 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
     FrameLayout mFlPreview;
     LinearLayout mLyPrincipalContent;
     private com.nostra13.universalimageloader.core.ImageLoader imageLoader;
+    private SecureImageDownloader imageDownloader;
     DisplayImageOptions options, optionsPreview;
     ProgressDialog listener;
 
@@ -82,7 +85,14 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
         });
 
 
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(getContext())
+                .imageDownloader(new SecureImageDownloader(getContext(),1000,1000))
+                .build();
+
         imageLoader = imageLoader.getInstance();
+        imageLoader.init(config);
+
+
 
         options = new DisplayImageOptions.Builder()
                 .showImageOnLoading(R.drawable.circulo)
@@ -111,6 +121,8 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
 
         return mView;
     }
+
+
 
     private void fillLayouts() {
         int layout_index = 1;
@@ -142,6 +154,9 @@ public class SelectAvatarPiecesFragment extends Fragment implements RequestTask.
                     }
                 });
                 (mRgList.get(index-1)).addView(avatarPiece);
+
+
+
                 imageLoader.displayImage(piece.icon, piece_icon, options);
                 avatarPiece.setOnClickListener(new View.OnClickListener() {
                     @Override

@@ -275,6 +275,10 @@ public abstract class RequestTask {
 
         };
         jsonArrayRequest.setTag(TAG);
+        jsonArrayRequest.setRetryPolicy(new DefaultRetryPolicy(
+                MAX_REQUEST_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue mQueue = VolleyInstance.getRequestQueue(this.ctx);
         mQueue.add(jsonArrayRequest);
     }
@@ -320,6 +324,10 @@ public abstract class RequestTask {
         };
 
         jsonRequet.setTag(TAG);
+        jsonRequet.setRetryPolicy(new DefaultRetryPolicy(
+                MAX_REQUEST_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue mQueue = VolleyInstance.getRequestQueue(this.ctx);
         mQueue.add(jsonRequet);
 
@@ -328,6 +336,7 @@ public abstract class RequestTask {
     private void volleyExecuteGet() {
 
         if (DEBUG) Log.d(TAG, "[REQUEST_TASK] GET_METHOD URL: " + url);
+        if (DEBUG) Log.d(TAG, "[REQUEST_TASK] GET_METHOD API-KEY: " + url);
 
         JsonObjectRequest jsonRequet = new JsonObjectRequest(Method.GET, url, (String) null,
 
@@ -567,6 +576,10 @@ public abstract class RequestTask {
             }
 
         };
+        jsonRequet.setRetryPolicy(new DefaultRetryPolicy(
+                MAX_REQUEST_TIMEOUT_MS,
+                DefaultRetryPolicy.DEFAULT_MAX_RETRIES,
+                DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         RequestQueue mQueue = VolleyInstance.getRequestQueue(this.ctx);
         mQueue.add(jsonRequet);
 
@@ -576,8 +589,10 @@ public abstract class RequestTask {
         Map<String, String> params = new HashMap<>();
         //read token saved on sharedPreference previously and them put token on headers
         params.put(API_KEY, LocalConstants.API_KEY);
+        if (DEBUG) Log.d(TAG, "[REQUEST_TASK] API-KEY: " + LocalConstants.API_KEY);
         try {
             if (ConseApp.getActualUser(ctx).token != null) {
+                if (DEBUG) Log.d(TAG, "[REQUEST_TASK] POST_METHOD TOKEN: " + ConseApp.getActualUser(ctx).token);
                 params.put(KEY_USER_TOKEN, "token " + ConseApp.getActualUser(ctx).token);
             }
         } catch (Exception ea){
@@ -607,7 +622,8 @@ public abstract class RequestTask {
                     Log.d(TAG, "Error response code: " + error.networkResponse.statusCode + " Detail: " + errorMessage
                     + "For task: " + id);
                 } else {
-                    Log.d(TAG, "[REQUEST_TASK] VOLLEY NETWORK RESPONSE IS NULL! FOR TASK ID: " + id  + ": " + error.getMessage());
+                    Log.d(TAG, "[REQUEST_TASK] VOLLEY NETWORK RESPONSE IS NULL! FOR TASK ID: " + id  + ": " + error.getMessage() + " ERROR CODE: " + error.getCause());
+
                     listener.onRequestError(ErrorCodes.IO_EXCEPT, ErrorMessage.VOLLEY_ERROR_NETWORK, id);
                 }
             } catch (JSONException e) {

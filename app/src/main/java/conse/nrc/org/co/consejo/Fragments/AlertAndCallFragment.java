@@ -1,11 +1,14 @@
 package conse.nrc.org.co.consejo.Fragments;
 
+import android.Manifest;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.DialogFragment;
 import android.util.Log;
@@ -39,6 +42,8 @@ public class AlertAndCallFragment extends DialogFragment implements View.OnClick
     AlertTestInterfaces alertTestInterfaces;
 
 
+
+
     public AlertAndCallFragment(){
 
     }
@@ -59,14 +64,15 @@ public class AlertAndCallFragment extends DialogFragment implements View.OnClick
         //actualStep = 0;
         View mView = inflater.inflate(R.layout.send_alert_call_fragment, container, false);
 
+
         mBtSendAlert = (Button) mView.findViewById(R.id.bt_send_alert);
         mBtSendAlert.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AlertDialog alertDialog = new AlertDialog();
-                alertDialog.isTest = false;
-                alertDialog.show(getFragmentManager(), "tag");
-                dismiss();
+                    AlertDialog alertDialog = new AlertDialog();
+                    alertDialog.isTest = false;
+                    alertDialog.show(getFragmentManager(), "tag");
+                    dismiss();
             }
         });
 
@@ -76,8 +82,14 @@ public class AlertAndCallFragment extends DialogFragment implements View.OnClick
         ((Button)mView.findViewById(R.id.bt_call_0314)).setOnClickListener(this);
         ((Button)mView.findViewById(R.id.bt_call_01800)).setOnClickListener(this);
 
+
+
         return mView;
     }
+
+
+
+
 
 
     @Override
